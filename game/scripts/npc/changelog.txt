@@ -17,6 +17,15 @@ Version 1.94
 HEROES
 =========
 
+HORROR has been reworked
+- Terrify is the same as before.
+- Deathmark has been replaced with Obscure:
+The target enemy is blinded for 4/5/6/7s. When striking an Obscured enemy, Horror gains bonus movespeed and attack speed for a short time.
+- Shadowclone has been replaced by Paranoia:
+The target unit becomes paranoid, taking damage over time for each of their nearby allied units or Heroes. At the end of the duration, they take damage if there is a Hero ally within the check radius.
+- Alone has been replaced with Sinister:
+Horror gains vision of all enemies on the map. With a subability, he can jump to an enemy, dealing large damage.
+
 FURY
 - Increased base attack damage to 35 - 45 (was 30 - 35).
 

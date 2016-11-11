@@ -3,9 +3,12 @@
 	"AbilityLayout" 		"4"
 	"override_hero"			"npc_dota_hero_night_stalker"
 	"Ability1"				"horror_terrify" // The targeted enemy is slowed and forced to run away from Horror for a short time, taking damage over time over the duration.
-	"Ability2"				"horror_obscure" // The target ally is obscured from enemy vision, granting them invisibility. For 1/1.5/2/2.5s, the invisibility is unrevealable. Lasts 6/8/10/12s.
-	"Ability3"				"horror_sinister" // 
-	"Ability4"				"horror_stalking" // When activated, Horror gains vision of all enemies on the map. The closest enemy to him is slowed and marked for death, making his next attack against them deal massive bonus damage.
+	"Ability2"				"horror_obscure" // The targeted enemy is blinded, causing them to lose their vision for 4/5/6/7s. Each time Horror Obscures a unit, he gains a movespeed and
+	// attack speed buff that lasts for 25s.
+	"Ability3"				"horror_paranoia" // Horror curses the target unit with insurmountable paranoia. After a 1s delay, they will begin to take damage over time for each allied
+	// unit near them. Lasts 8s. The radius for checking for allied units is 1200. Heroes grant 4/8/12/16 damage per second, creeps grant 1/2/3/4 damage per second. At the end of the
+	// duration, they take bonus damage if there is still a Hero within 1200 units, equal to 125/175/225/275 damage.
+	"Ability4"				"horror_sinister" // When activated, Horror gains vision of all enemies on the map. He may cast a subability to jump to an enemy, damaging them.
 	"Ability5"				""
 	"Ability6"				""
 	"Ability7"				""
