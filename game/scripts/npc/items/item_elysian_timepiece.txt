@@ -1,0 +1,176 @@
+//=================================================================================================================
+// Elysian Timepiece
+//=================================================================================================================
+"item_elysian_timepiece"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3027"  //Valve's version of this item uses the ID "39".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	"Model"							"models/props_gameplay/clarity.mdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityChannelTime"			"1.75"
+	"AbilityTextureName"			"item_elysian_timepiece"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"              "0"
+	"AbilityCooldown"				"16"
+	"AbilityManaCost"				"0"
+	"AbilityCastRange"				"350"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"1000"
+	"ItemShopTags"					"artifact"
+	"ItemQuality"					"epic"
+	"ItemAliases"					"elysian_timepiece"
+	"ItemStackable"					"0"
+	"ItemPermanent"					"0"
+	"ItemPurchasable"				"1"
+
+	"precache"
+	{
+	
+		"particle" "particles/items/elysian_timepiece.vpcf"
+		"particle" "particles/items/elysian_timepiece_slow.vpcf"
+		"soundfile"	"soundevents/game_sounds_items.vsndevts"
+	
+	}
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"2.30"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"str"					"12"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"int"					"12"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"agi"					"12"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_regen"			"6"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"mana_regen"			"175"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow"					"-40"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow_duration"			"3"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow_radius"			"350"
+		}
+	}
+	
+	"OnSpellStart"
+	{			
+		"RunScript"
+		{
+			"ScriptFile"	"items/item_pendulum_fragment.lua"
+			"Function"		"activate_elysian"
+		}
+	}
+
+	"OnChannelFinish"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"items/item_pendulum_fragment.lua"
+			"Function"		"stop_elysian"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_elysian_timepiece_passive"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%str"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%int"
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%agi"
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%health_regen"
+				"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE" "%mana_regen"
+			}
+		}
+		"modifier_elysian_timepiece_activate"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+			"Duration"			"%duration"
+			//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+
+			"OnCreated"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_elysian_timepiece_slow"
+					"Target"
+					{
+						"Center"  	"TARGET"
+						"Radius" 	"%slow_radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+					"Duration"		"%duration"
+				}
+			}
+		
+			"States"
+			{
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		"modifier_elysian_timepiece_slow"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+		
+			"EffectName"		"particles/items/elysian_timepiece_slow.vpcf"
+			"EffectAttachType"	"follow_origin"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow"
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+			}
+		}
+	}
+}

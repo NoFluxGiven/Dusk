@@ -1,0 +1,92 @@
+"npc_dota_unit_blood_fiend"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/heroes/visage/visage_familiar.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"                     "Hero_Leshrac"
+	"GameSoundsFile"               "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+	"Level"						"1"
+	"ModelScale" 				"1.0"
+	"ConsideredHero"			"0"
+	"IsAncient"					"0"
+	"CanBeDominated"			"1"
+	"UnitLabel"			"axial"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"bloodfiend_feast"			// Feasts on the target unit for 4s.  On success, restores Health and Mana to full, and counts down the Revival count.
+	"Ability2"					"bloodfiend_dive"			// Grants bonus movespeed and reduced damage for 1.5s
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"2"			// Physical protection.
+	"MagicalResistance"				"25"	// Magical protection (percentage).
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"56"		// Damage range min.
+	"AttackDamageMax"			"60"		// Damage range max.	
+	"AttackRate"				"1.0"		// Speed of attack.
+	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"375"		// Range within a target can be acquired.
+	"AttackRange"				"375"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_arc_warden/arc_warden_base_attack.vpcf"			// Particle system model for projectile.
+	"ProjectileSpeed"			"1150"			// Speed of projectile.	   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"75"
+	"HealthBarOffset"			"215"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"30"		// Experience earn.
+	"BountyGoldMin"				"35"		// Gold earned min.
+	"BountyGoldMax"				"55"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+	"MovementSpeed"				"320"		// Speed.
+	"MovementTurnRate"			"1.4"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"200"		// Base health.
+	"StatusHealthRegen"			"4"			// Health regeneration rate.
+	"StatusMana"				"150"		// Base mana.
+	"StatusManaRegen"			"2"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	//Inventory
+	"HasInventory"				"0"
+
+	
+	"AutoAttacksByDefault"		"1"
+
+	"Creature"
+	{
+		"HPGain"                    "70"
+		"DamageGain"                "25"
+		"ArmorGain"                 "1"
+		"ManaGain"                  "10"
+		"MagicResistGain"           "3"
+		"MoveSpeedGain"             "10"
+		"BountyGain"                "20"
+		"XPGain"                    "50"
+	}
+}	

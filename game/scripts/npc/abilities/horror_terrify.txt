@@ -1,0 +1,149 @@
+//=====================================================================================================
+// HORROR: Terrify
+//=====================================================================================================
+"horror_terrify"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"horror_terrify"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"475"
+	"AbilityCastPoint"				"0.452 0.452 0.452 0.452"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"14"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"80"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"2.00 2.75 3.50 4.25"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow"					"-35"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_over_time"		"30 40 50 60"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow_scepter"			"-60"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
+		"particle"	"particles/econ/items/nightstalker/nightstalker_black_nihility/nightstalker_black_nihility_void_swarm.vpcf"
+		"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf"
+		"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
+
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Nightstalker.Trickling_Fear"
+			"Target"		"TARGET"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_horror_terrify_eff"
+			"Target" 		"TARGET"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_horror_terrify_eff"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+			"Duration"			"%duration"
+	
+			"EffectName"		"particles/econ/items/nightstalker/nightstalker_black_nihility/nightstalker_black_nihility_void_swarm.vpcf"
+			"EffectAttachType"	"attach_hitloc"
+
+			"ThinkInterval"  "0.1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/horror_abilities.lua"
+					"Function"		"horror_terrify"
+				}
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%damage_over_time/10"
+				}
+			}
+	
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+			}
+		}
+		"modifier_horror_terrify_eff_scepter"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"Duration"			"%duration_scepter"
+	
+			"EffectName"		"particles/econ/items/nightstalker/nightstalker_black_nihility/nightstalker_black_nihility_void_swarm.vpcf"
+			"EffectAttachType"	"attach_hitloc"
+
+			"ThinkInterval"  "0.1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/horror_abilities.lua"
+					"Function"		"horror_terrify"
+				}
+			}
+	
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+			}
+		}
+		"modifier_horror_terrify_command"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"1"
+			"Duration"			"0.50"
+
+			"States"
+			{
+				"MODIFIER_STATE_COMMAND_RESTRICTED" "MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

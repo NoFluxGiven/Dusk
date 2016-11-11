@@ -1,0 +1,172 @@
+//=====================================================================================================
+// NEITH: Monsoon
+//=====================================================================================================
+"neith_monsoon"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"neith_monsoon"
+	"AnimationPlaybackRate"			"1"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"225"
+	"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"16"
+	"AbilityDuration"				"1.1 1.2 1.3 1.4"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"60 120 180 240"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50 60 70 80"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"shock_radius"				"250"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_steal"				"-8 -12 -16 -20"
+		}
+		// Extra variables
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"12"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"armor_reduction"			"-1 -2 -3 -4"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_gain"				"8 12 16 20"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"						"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+		"particle"						"particles/econ/items/axe/axe_weapon_practos/axe_attack_blur_counterhelix_practos.vpcf"
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/neith_abilities.lua"
+			"Function"		"Inspire"
+		}
+
+		"FireSound"
+		{
+			"Target"					"CASTER"
+			"EffectName"				"Hero_LegionCommander.Courage"
+		}
+	
+		"FireEffect"
+		{
+			"Target"					"CASTER"
+			"EffectName"				"particles/econ/items/axe/axe_weapon_practos/axe_attack_blur_counterhelix_practos.vpcf"
+			"EffectAttachType"			"start_at_origin"
+		}
+	
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"	"CASTER"
+				"Radius"	"%shock_radius"
+				"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types"		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"Flags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+			}
+			
+			"Action"
+			{
+				"Damage"
+				{
+					"Target"	"TARGET"
+					"Damage"	"%AbilityDamage"
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+				}
+				
+				"ApplyModifier"
+				{
+					"Target"		"TARGET"
+					"ModifierName"	"modifier_monsoon_damage_steal"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_monsoon_damage_gain"
+					"Target" 		"CASTER"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_monsoon_damage_gain_show"
+					"Target" 		"CASTER"
+				}
+			}
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_monsoon_damage_steal"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"Duration"			"%duration"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%attack_steal"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_reduction"
+			}
+		}
+		"modifier_monsoon_damage_gain"
+		{
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+			"Duration"			"%duration"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%attack_gain"
+			}
+		}
+		"modifier_monsoon_damage_gain_show"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+			"Duration"			"%duration"
+		}
+	}
+}

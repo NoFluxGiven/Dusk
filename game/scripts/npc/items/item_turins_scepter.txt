@@ -1,0 +1,159 @@
+//=================================================================================================================
+// Turin's Scepter
+//=================================================================================================================
+"item_turins_scepter"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3020"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_turins_scepter"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30"
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.0"
+	"AbilityManaCost"				"550"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"11475"
+	"ItemShopTags"					"attack_speed;armor;hard_to_tag"
+	"ItemQuality"					"epic"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"0"
+	"ItemAliases"					"turins_scepter;exalted"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		"particle"	"particles/items/turin_electricity.vpcf"
+		"particle"	"particles/items/turins_scepter.vpcf"
+
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intelligence"	"45"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"20"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agility"			"20"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_mana_regen"		"400"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"active_slow"			"-60"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"active_damage"			"50" //per half second
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"active_duration"		"4.5"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"spell_damage"			"25"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile" "items/item_turins_scepter.lua"
+			"Function" "turins_scepter_active_apply"
+			"duration" "%active_duration"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_turins_scepter"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%bonus_intelligence"
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_agility"
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%bonus_strength"
+				"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"			"%bonus_mana_regen"
+				"MODIFIER_PROPERTY_HEALTH_BONUS"					"%bonus_health"
+				"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"		"%spell_damage"
+			}
+		
+		}
+		"modifier_item_turins_scepter_crush"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"ThinkInterval"		"0.5"
+			"EffectName"		"particles/items/turins_scepter.vpcf"
+			"EffectAttachType"	"follow_origin"
+			
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile" "items/item_turins_scepter.lua"
+					"Function" "turins_scepter_tick"
+					"ability_damage" "%active_damage"
+				}
+			}
+			
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile" "items/item_turins_scepter.lua"
+					"Function" "turins_scepter_tick"
+					"ability_damage" "%active_damage"
+				}
+			}
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%active_slow"
+			}
+			
+			"States"
+			{
+				"MODIFIER_STATE_DISARMED" "MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_MUTED" "MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED"
+			}
+			
+		}
+	}
+}

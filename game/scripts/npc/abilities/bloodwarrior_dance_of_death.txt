@@ -1,0 +1,70 @@
+"bloodwarrior_dance_of_death"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "bloodwarrior_dance_of_death"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "750"
+    "AbilityCastPoint"              "0.1"
+    
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "14 12 10 8"
+
+    // Damage.
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityDamage"                 "0"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "50 55 60 65"
+    
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "damage"            "25 75 125 175"
+        }
+        "02"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "marked_damage"     "50 75 150 225"
+        }
+    }
+
+    "precache"
+    {
+        "particle"  "particles/status_fx/status_effect_shaman_shackle.vpcf"
+        "particle"  "particles/units/heroes/hero_bloodwarrior/dod_end.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "heroes\bloodwarrior_abilities.lua"
+            "Function"        "DanceOfDeath"
+            "damage"        "%damage"
+            "mdamage"       "%marked_damage"
+        }
+    }
+
+    "Modifiers"
+    {
+    }
+}
+

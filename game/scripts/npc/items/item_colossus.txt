@@ -1,0 +1,121 @@
+//=================================================================================================================
+// Colossus
+//=================================================================================================================
+"item_colossus"
+{
+// General
+//-------------------------------------------------------------------------------------------------------------
+"BaseClass"						"item_datadriven"
+"ID"							"3003"  //Valve's version of this item uses the ID "114".
+"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+"Model"							"models/props_gameplay/red_box.vmdl" 
+"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+"AbilityTextureName"			"item_colossus"
+
+// Stats		
+//-------------------------------------------------------------------------------------------------------------
+"AbilityCooldown"				"4"
+	
+// Item Info
+//-------------------------------------------------------------------------------------------------------------
+"ItemCost"						"5500"
+"ItemShopTags"					"str;regen_health;health_pool"
+"ItemQuality"					"epic"
+"ItemAliases"					"colossus;exalted"
+"ItemPurchasable"				"0"
+"ItemSellable"					"0"
+"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+// Special	
+//-------------------------------------------------------------------------------------------------------------
+"AbilitySpecial"
+{
+	"01"
+	{
+		"var_type"							"FIELD_INTEGER"
+		"bonus_strength"					"50"
+	}
+	"02"
+	{
+		"var_type"							"FIELD_INTEGER"
+		"bonus_health"						"300"
+	}
+	"03"
+	{
+		"var_type"							"FIELD_FLOAT"
+		"health_regen_percent_per_second"	"5.25"
+	}
+	"04"
+	{
+		"var_type"							"FIELD_FLOAT"
+		"cooldown_melee"					"2.5"
+	}
+	"05"
+	{
+		"var_type"							"FIELD_FLOAT"
+		"heal_interval"						".03"
+	}
+	"06"
+	{
+		"var_type"							"FIELD_INTEGER"
+		"damage_reduction"					"-20"
+	}
+}
+
+"Modifiers"
+{
+	"colossus_mod"
+	{
+		"Passive"			"1"
+		"IsHidden"			"1"
+		"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+		
+		"Properties"
+		{
+			"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+			"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
+			"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"  "%damage_reduction"
+		}
+	}
+	"colossus_heal_mod"
+	{
+		"Passive"			"1"
+		"IsHidden"			"1"
+		
+		"ThinkInterval" 		"%heal_interval"
+		"OnIntervalThink"  //Heal the unit if the item is not on cooldown.
+		{
+			"RunScript"
+			{
+				"ScriptFile"					"items/item_colossus.lua"
+				"Function"						"colossus_regen"
+				"HealthRegenPercentPerSecond"	"%health_regen_percent_per_second"
+				"HealInterval"					"%heal_interval"
+			}
+		}
+		
+		"OnTakeDamage"  //Put the item on cooldown if the damage came from Roshan or a hero.
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items/item_colossus.lua"
+				"Function"			"colossus_stop_regen"
+			}
+		}
+		
+		"OnDestroy"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items/item_colossus.lua"
+				"Function"			"colossus_cancel_regen"
+			}
+		}
+	}
+	"colossus_heal_visible_mod"  //A modifier that will appear on the unit's modifier bar while they are being healed.
+	{
+		"Passive"			"0"
+		"IsHidden"			"0"
+	}
+}
+}

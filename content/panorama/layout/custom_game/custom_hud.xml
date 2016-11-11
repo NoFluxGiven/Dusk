@@ -1,0 +1,52 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/custom_hud.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/custom_hud.js" />
+	</scripts>
+	<Panel class = "helper" hittest = "false">
+		<Button id = "helperButton" onactivate = "helperButtonPressed('things')">
+			<Label id = "helperButtonLabel" text="Hero Help"/>
+			<DOTAHeroImage id = "helperButtonImage" heroid="npc_dota_hero_pudge" scaling="stretch" heroimagestyle="icon" />
+		</Button>
+		<Panel hittest = "false" class = "helperArea">
+			<Panel id = "helperPullout">
+				<!--<Label id = "helperHeroName" text = "No hero name" html = "true"/>-->
+				<!--<Panel class = "helperText" hittest = "false">-->
+				<Panel id = "helperOverviewLabel">
+					<Label hittest = "false" id = "helperHeroOverviewTitle" text = "Overview" html = "true"/>
+					<Label hittest = "false" id = "helperHeroOverviewRating" text = "" html = "true"/>
+				</Panel>
+					<Label hittest = "false" id = "helperHeroOverview" text = "No overview data." html = "true"/>
+					
+				<Panel id = "helperMidlaneLabel">
+					<Label hittest = "false" id = "helperHeroMidlaneTitle" text = "Midlane" html = "true"/>
+					<Label hittest = "false" id = "helperHeroMidlaneRating" text = "" html = "true"/>
+				</Panel>
+					<Label hittest = "false" id = "helperHeroMidlane" text = "No data for this lane." html = "true"/>
+				
+				<Panel id = "helperOfflaneLabel">
+					<Label hittest = "false" id = "helperHeroOfflaneTitle" text = "Offlane" html = "true"/>
+					<Label hittest = "false" id = "helperHeroOfflaneRating" text = "" html = "true"/>
+				</Panel>
+					<Label hittest = "false" id = "helperHeroOfflane" text = "No data for this lane." html = "true"/>
+				
+				<Panel id = "helperSafelaneLabel">	
+					<Label hittest = "false" id = "helperHeroSafelaneTitle" text = "Safelane" html = "true"/>
+					<Label hittest = "false" id = "helperHeroSafelaneRating" text = "" html = "true"/>
+				</Panel>
+					<Label hittest = "false" id = "helperHeroSafelane" text = "No data for this lane." html = "true"/>
+				
+				<Panel id = "helperJungleLabel">
+					<Label hittest = "false" id = "helperHeroJungleTitle" text = "Jungle" html = "true"/>
+					<Label hittest = "false" id = "helperHeroJungleRating" text = "" html = "true"/>
+				</Panel>
+					<Label hittest = "false" id = "helperHeroJungle" text = "No data for this lane." html = "true"/>
+				<!--</Panel>-->
+			</Panel>
+		</Panel>
+	</Panel>
+
+</root>

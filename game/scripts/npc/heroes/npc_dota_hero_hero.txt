@@ -1,0 +1,56 @@
+"npc_dota_hero_hero"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_tusk"
+	"Ability1"				"hero_justice_kick" // Hero kicks the target enemy, knocking them away and interrupting them.  Units hit on the way are damaged and slowed.
+	"Ability2"				"hero_hyper_kick"
+	"Ability3"				"hero_freedom_strike" // Hero leaps forward and slams the ground, dealing damage in an AoE.
+	"Ability4"				"hero_heroic_soul" // Hero breaks out of any purgable stun or disable and gains percentage bonus damage on his attacks and abilities for a short time.
+	"Ability5"				"hero_one_punch" // Hero winds up and strikes with an impossibly strong punch, dealing massive damage and knocking the opponent across the map.
+	"Ability6"				"" //Automatically levelled to 1 when the character is picked.
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"4"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRange"				"150"
+	"AttackRate"				"1.6"
+	"AttackDamageMin"			"30"										// Damage range min.
+	"AttackDamageMax"			"34"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"25"										// Base strength
+	"AttributeStrengthGain"		"2.4"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"22"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"20"										// Base agility
+	"AttributeAgilityGain"		"2.15"										// Agility bonus per level.
+
+	//"BountyXP"					"0"							`		// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"310"									// Speed.
+	"MovementTurnRate"			"1.0"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

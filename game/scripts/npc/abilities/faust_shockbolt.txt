@@ -1,0 +1,98 @@
+//=====================================================================================================
+// FAUST: Shockbolt
+//=====================================================================================================
+"faust_shockbolt"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAGS_NOT_ANCIENTS"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"fate_chains_of_fate"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"4.5 4.0 3.5 3.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"80"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"dmg"							"4.0 4.5 5.0 5.5"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_fate/fate_chains_of_fate.vpcf"
+		"particle" "particles/units/heroes/hero_fate/fate_chains_of_fate_buff.vpcf"
+		"particle" "particles/units/heroes/hero_fate/fate_displace_debuff.vpcf"
+		"soundfile" "soundevents\hero_fate.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/faust_abilities.lua"
+				"Function"		"shockbolt"
+				"dmg"			"%dmg"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_chains_of_fate"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				"Duration"			"%duration"
+			
+				"EffectName"		"particles/units/heroes/hero_fate/fate_chains_of_fate_buff.vpcf"
+				"EffectAttachType"	"follow_rootbone"
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/fate_abilities.lua"
+						"Function"		"ChainStop"
+					}
+				}
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/fate_abilities.lua"
+						"Function"		"ChainsOfFateDeath"
+						"damage"		"%dmg"
+						"creep_damage"	"%dmg_creep"
+					}
+				}
+			}
+		}
+}

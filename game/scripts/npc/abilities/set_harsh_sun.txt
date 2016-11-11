@@ -1,0 +1,110 @@
+//=====================================================================================================
+// SET: Harsh Sun
+//=====================================================================================================
+"set_harsh_sun"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"set_harsh_sun"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_slow"			"-10 -14 -18 -22"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_reduction"		"-8 -10 -12 -14"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"creep_attack_slow"		"-2 -4 -6 -8"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+		"particle"			"particles/units/heroes/hero_set/set_harsh_climate.vpcf"
+	}
+	
+	"Modifiers"
+		{
+			"modifier_harsh_sun_aura"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"Aura"          	"modifier_harsh_sun_hero"
+				"Aura_Radius"   	"99999"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+				"Aura_ApplyToCaster" "0"
+			}
+
+			"modifier_harsh_sun_aura_creep"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"Aura"          	"modifier_harsh_sun_unit"
+				"Aura_Radius"   	"99999"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+				"Aura_ApplyToCaster" "0"
+			}
+
+			"modifier_harsh_sun_unit"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%creep_attack_slow"
+				}
+			}
+
+			"modifier_harsh_sun_hero"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_slow"
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%damage_reduction"
+				}
+			}
+
+
+		}
+}

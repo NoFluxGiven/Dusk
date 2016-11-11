@@ -1,0 +1,98 @@
+//=====================================================================================================
+// AXIAL SEAL: Phase
+//=====================================================================================================
+"axial_phase"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AnimationPlaybackRate"			"0.8"
+	"AbilityTextureName"			"axial_phase"
+	"MaxLevel"						"1"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"duration"						"15"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_baal/baal_otherworld_screen_effect.vpcf"
+		"particle" "particles/units/heroes/hero_baal/baal_otherworld_start_cast.vpcf"
+		"soundfile" "soundevents/hero_baal.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+		}
+	
+	"Modifiers"
+		{
+			"modifier_axialphase"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+
+				"OnAttackLanded"
+				// "%attack_damage" is set to the damage value before mitigation
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_axialphase_primer_buff"
+						"Target"
+						{
+							"Center"  	"TARGET"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+							"Flags"     "DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+						}
+						"Duration"		"%duration"
+					}
+				}
+			}
+			"modifier_axialphase_primer_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"2"
+			
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/baal_abilities.lua"
+						"Function"		"axial_kill_unit"
+						"duration"		"%duration"
+					}
+				}
+			}
+		}
+}

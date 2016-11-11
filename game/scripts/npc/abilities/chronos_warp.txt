@@ -1,0 +1,100 @@
+//=====================================================================================================
+// CHRONOS: Warp
+//=====================================================================================================
+"chronos_warp"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	"AbilityTextureName"			"chronos_warp"
+	"AoERadius"						"250"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1200"
+	"AbilityCastPoint"				"0.45"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"15"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"80"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"50 80 110 140"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"250"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow"							"-100"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"duration"						"2"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"delay"							"5"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_chronos/warp.vpcf"
+		"particle" "particles/units/heroes/hero_chronos/unwarp.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/chronos_abilities.lua"
+				"Function"		"Warp"
+				"damage"		"%damage"
+				"radius"		"%radius"
+				"delay"			"%delay"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_chronos_warp_slow"
+			{
+				"Duration"			"%duration"
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				}
+			}
+		}
+}

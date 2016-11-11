@@ -1,0 +1,167 @@
+//=====================================================================================================
+// HORROR: Alone
+//=====================================================================================================
+"horror_alone"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"FightRecapLevel"				"1"
+	"AnimationPlaybackRate"			"0.75"
+	"AbilityTextureName"			"horror_alone"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.45"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"140"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"175"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"6 7 8"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"600"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"linger_duration"		"1"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movespeed_bonus"		"20 30 40"
+		}
+		
+	}
+
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		"particle"					"particles/units/heroes/hero_horror/horror_alone.vpcf"
+		"particle"					"particles/units/heroes/hero_horror/horror_alone_start.vpcf"
+
+
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_horror_caster"
+			"Target" 		"CASTER"
+			"Duration"		"%duration"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_alone_passive"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+		
+			"ThinkInterval"  "0.1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/horror_abilities.lua"
+					"Function"		"AlonePassive"
+				}
+			}
+		}
+		"modifier_alone_passive_eff"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+		
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movespeed_bonus"
+			}
+		}
+		"modifier_alone_remove"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+			"Duration"			"%linger_duration"
+		
+			"OnDestroy"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_alone_passive_eff"
+					"Target" 		"TARGET"
+				}
+			}
+		}
+		"modifier_horror_alone_eff"
+		{
+			"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+		
+			"EffectName"		"particles/units/heroes/hero_horror/horror_alone.vpcf"
+			"EffectAttachType"	"follow_origin"
+		
+			"States"
+			{
+				"MODIFIER_STATE_BLIND"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		"modifier_horror_caster"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_horror/horror_alone_radius.vpcf"
+					"EffectAttachType"  "follow_origin"
+					"Target"            "TARGET"
+					"ControlPoints"
+					{
+						"01"	"%radius 0 0"
+					}
+				}
+			}
+
+			"Aura"          	"modifier_horror_alone_eff"
+			"Aura_Radius"   	"%radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_OTHER | DOTA_UNIT_TARGET_COURIER"
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"Aura_ApplyToCaster" "0"
+		}
+	}
+}

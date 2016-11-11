@@ -1,0 +1,171 @@
+//=====================================================================================================
+// SHADE: Shadowbreak
+//=====================================================================================================
+"shade_shadowbreak"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityTextureName"			"shade_shadowbreak_no_distort"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"800 1000 1200 1400"
+	"AbilityCastPoint"				"0.5"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"16"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"115"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"80 100 120 140"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"steal"						"-5 -10 -15 -20"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"speed"						"1400"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"width"						"150"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"range"						"1400"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"gain"						"3 4 5 6"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"atksteal"					"-10 -15 -20 -25"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"atkgain"					"3 4 5 6"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles\neutral_fx\satyr_hellcaller.vpcf"
+		"soundfile" "soundevents/game_sounds_creeps.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+		"LinearProjectile"
+			{
+				"Target"      	"POINT"
+				"EffectName"  	"particles\neutral_fx\satyr_hellcaller.vpcf"
+				"MoveSpeed"   	"%speed"
+				"StartRadius"   "%width"
+				"StartPosition" "attach_origin"
+				"EndRadius"     "%width"
+				"FixedDistance" "%range"
+				"TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+				"HasFrontalCone"    "0"
+				"ProvidesVision"	"1"
+				"VisionRadius"	"500"
+			}
+		"FireSound"
+			{
+			"EffectName" "n_creep_SatyrHellcaller.Shockwave"
+			"Target" "CASTER"
+			}
+		}
+	"OnProjectileHitUnit"
+		{
+		"Damage"
+			{
+			"Damage" "%damage"
+			"Target" "TARGET"
+			"Type" "DAMAGE_TYPE_PURE"
+			}
+		"ApplyModifier"	
+			{
+			"Target" "TARGET"
+			"ModifierName" "shade_speed_steal_mod"
+			}
+		"ApplyModifier"	
+			{
+			"Target" "CASTER"
+			"ModifierName" "shade_speed_gain_mod"
+			}
+		"ApplyModifier"	
+			{
+			"Target" "CASTER"
+			"ModifierName" "shade_shadowbreak_display_amt_mod"
+			}
+		"FireSound"
+			{
+			"EffectName" "n_creep_SatyrHellcaller.Shockwave.Damage"
+			"Target" "TARGET"
+			}
+		"DeleteOnHit" "0"
+		}
+	
+	"Modifiers"
+		{
+		"shade_speed_steal_mod"
+			{
+			"Duration" "8"
+			"IsDebuff" "1"
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%steal"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%atksteal"
+				}
+			}
+		"shade_speed_gain_mod"
+			{
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Duration" "8"
+			"IsHidden" "1"
+			"IsBuff" "1"
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%gain"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%atkgain"
+				}
+			}
+		"shade_shadowbreak_display_amt_mod"
+			{
+			"Duration" "8"
+			"IsBuff" "1"
+			}
+		}
+}

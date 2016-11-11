@@ -1,0 +1,152 @@
+"item_demonfire"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3004"  //Valve's version of this item uses the ID "156".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_demonfire"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"35.0"
+	"AbilityManaCost"				"0.0"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"6150"
+	"ItemShopTags"					"hard_to_tag"
+	"ItemQuality"					"artifact"
+	"ItemAliases"					"demonfire;exalted"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"0"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"lifesteal_percent"			"40"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"unholy_lifesteal_percent"	"225"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"unholy_duration"			"5"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_damage"				"100"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_strength"			"25"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_armor"				"5"
+		}
+	}
+
+	"precache"
+	{
+		"particle"  "particles/items2_fx/satanic_buff.vpcf"
+	}
+	
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target"			"CASTER"
+			"ModifierName"		"modifier_item_satanic_datadriven_unholy_rage"
+		}
+		"FireSound"
+		{
+			"EffectName"	"DOTA_Item.Satanic.Activate"
+			"Target" 		"CASTER"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_satanic_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%bonus_strength"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+			}
+			
+			"Orb"
+			{
+				"Priority"		"DOTA_ORB_PRIORITY_ITEM"
+			}
+
+			"OnOrbImpact"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"items/item_demonfire.lua"
+					"Function"				"modifier_demonfire"
+				}
+			}
+		}
+		"modifier_item_satanic_datadriven_unholy_rage"
+		{
+			"Duration"			"%unholy_duration"
+			"Passive"			"0"
+			"IsHidden"			"0"
+
+			"EffectName" "particles/items2_fx/satanic_buff.vpcf"
+			"EffectAttachType" "attach_hitloc"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bonus_damage"
+			}
+		}
+		"modifier_item_satanic_datadriven_lifesteal"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			
+			"OnDealDamage"
+			{
+				"Lifesteal"
+				{
+					"Target"			"ATTACKER"
+					"LifestealPercent"	"%lifesteal_percent"
+				}
+			}
+		}
+		"modifier_item_satanic_datadriven_unholy_rage_lifesteal"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			
+			"OnDealDamage"
+			{
+				"Lifesteal"
+				{
+					"Target"			"ATTACKER"
+					"LifestealPercent"	"%unholy_lifesteal_percent"
+				}
+			}
+		}
+	}
+}

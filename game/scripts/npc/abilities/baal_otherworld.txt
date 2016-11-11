@@ -1,0 +1,175 @@
+//=====================================================================================================
+// BAAL: Otherworld!
+//=====================================================================================================
+"baal_otherworld"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"0.8"
+	"AbilityTextureName"			"baal_otherworld"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.6"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"40"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"110 140 170 200"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"duration"						"4 5 6 7"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_ms"						"15 20 25 30"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"mres_reduction"				"-50"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_baal/baal_otherworld_screen_effect.vpcf"
+		"particle" "particles/units/heroes/hero_baal/baal_otherworld_start_cast.vpcf"
+		"soundfile" "soundevents/hero_baal.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+			"CreateThinker"
+			{
+				"ModifierName"	"modifier_otherworld_particle_thinker"
+				"Target" 		"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_otherworld"
+				"Target"		"CASTER"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/baal_abilities.lua"
+				"Function"		"otherworld_cast"
+				"cast"			"1"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_otherworld"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+
+				"Priority" "MODIFIER_PRIORITY_ULTRA"
+
+				"StatusEffectName" 		"particles/status_fx/status_effect_ghost.vpcf"
+				"StatusEffectPriority"  "10"
+
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/baal_abilities.lua"
+						"Function"		"otherworld_check"
+					}
+				}
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/baal_abilities.lua"
+						"Function"		"otherworld_screenspace"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/baal_abilities.lua"
+						"Function"		"otherworld_stop"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/baal_abilities.lua"
+						"Function"		"otherworld_cast"
+						"cast"			"0"
+					}
+					"CreateThinker"
+					{
+						"ModifierName"	"modifier_otherworld_particle_thinker"
+						"Target" 		"TARGET"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL" "1"
+					//"MODIFIER_PROPERTY_INVISIBILITY_LEVEL"			"4"
+					//"MODIFIER_PROPERTY_PERSISTENT_INVISIBILITY"		"1"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_ms"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%mres_reduction"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_TRUESIGHT_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MUTED"					"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_otherworld_particle_thinker"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"1"
+			
+				"OnCreated"
+				{
+					"FireEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_baal/baal_otherworld_start_cast.vpcf"
+						"EffectAttachType"  "follow_customorigin"
+						"Target"            "TARGET"
+						"ControlPointEntities"
+						{
+							"CASTER"	"follow_hitloc"
+						}
+					}
+				}
+			}
+		}
+}

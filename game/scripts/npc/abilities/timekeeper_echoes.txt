@@ -1,0 +1,68 @@
+//=====================================================================================================
+// TIMEKEEPER: Parallels 2
+//=====================================================================================================
+"timekeeper_echoes"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityTextureName"			"timekeeper_parallels"
+	"AoERadius"						"%radius"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"800 1000 1200 1400"
+	"AbilityCastPoint"				"0.5"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"190 180 170 160"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"4 4.75 5.25 6"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"450"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_timekeeper/timekeeper_parallels.vpcf"
+		"particle" "particles/status_fx/status_effect_keeper_spirit_form.vpcf"
+		"soundfile" "soundevents\hero_phantom.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/timekeeper_abilities.lua"
+				"Function"		"parallels"
+				"duration"		"%duration"
+			}
+		}
+	
+	"Modifiers"
+		{
+			
+		}
+}

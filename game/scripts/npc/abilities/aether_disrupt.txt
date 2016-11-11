@@ -1,0 +1,109 @@
+//=====================================================================================================
+// AETHER: Disrupt
+//=====================================================================================================
+"aether_disrupt"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"aether_disrupt"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"300"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"6"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"80 120 160 200"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"300"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"duration"					"2.05 2.30 2.45 2.70"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"slow"						"-25 -40 -55 -70"
+		}
+	}
+	
+	"precache"
+		{
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+			"particle" "particles/units/heroes/hero_aether/aether_disrupt.vpcf"
+		}
+
+	"OnSpellStart"
+	{
+		"Damage"
+		{
+			"Target"
+			{
+				"Center"  	"CASTER"
+				"Radius" 	"%radius"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Damage"		"%damage"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_disrupt_slow_effect"
+			"Target"
+			{
+				"Center"  	"CASTER"
+				"Radius" 	"%radius"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+		}
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/aether_abilities.lua"
+			"Function"		"disrupt"
+			"radius"		"%radius"
+		}
+	}
+	
+	"Modifiers"
+		{
+			"modifier_disrupt_slow_effect"
+			{
+				"Duration" "%duration"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow"
+				}
+			}
+		}
+}

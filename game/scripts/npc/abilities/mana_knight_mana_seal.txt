@@ -1,0 +1,159 @@
+//=====================================================================================================
+// NU: Gravity Pulse
+//=====================================================================================================
+"mana_knight_mana_seal"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AoERadius"						"%radius"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlayBackRate"			"1"
+	"AbilityTextureName"			"mana_knight_mana_seal"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"650"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"16"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"75 100 125 150"
+
+	"AbilityDamage"					"40 80 120 160"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"mana_removal"				"4 6 8 10" // percent of Max Mana per second (0.1s intervals)
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"slow"						"-100" // per 1 percent of Mana
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"10"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"350"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_mana_knight/mana_seal.vpcf"
+		"particle" "particles/units/heroes/hero_mana_knight/mana_seal_unit.vpcf"
+		"particle" "particles/econ/items/silencer/silencer_ti6/silencer_last_word_dmg_ti6.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+		}
+	
+	"OnSpellStart"
+		{
+			"CreateThinker"
+			{
+				"ModifierName"	"modifier_mana_seal_fx"
+				"Target" 		"POINT"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_mana_seal_fx"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"10"
+
+				"Aura"          	"modifier_mana_seal"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_mana_knight/mana_seal.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+						"ControlPoints"
+						{
+							"01"	"%radius 0 0"
+						}
+					}
+					"FireSound"
+					{
+						"EffectName"	"Hero_Dazzle.Weave"
+						"Target" 		"TARGET"
+					}
+				}
+			}
+
+			"modifier_mana_seal"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+
+				"EffectName" "particles/units/heroes/hero_mana_knight/mana_seal_unit.vpcf"
+				"EffectAttachType" "attach_origin"
+
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/mk_abilities.lua"
+						"Function"		"ManaSealRemoveMana"
+						"mana_removal"	"%mana_removal"
+						"damage"		"%AbilityDamage"
+					}
+				}
+			}
+
+			"modifier_mana_seal_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				}
+			}
+
+			"modifier_mana_seal_ignore_unit"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+			}
+		}
+}

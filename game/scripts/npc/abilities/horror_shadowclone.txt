@@ -1,0 +1,131 @@
+//=====================================================================================================
+// HORROR: Shadowclone
+//=====================================================================================================
+"horror_shadowclone"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"FightRecapLevel"				"1"
+	"AnimationPlaybackRate"			"2"
+	"AbilityTextureName"			"horror_shadowclone"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"70"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"illusion_duration"		"6 9 12 15"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"illusion_damage"		"-50 -45 -40 -35"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"illusion_incoming"		"225"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"illusion_bonus_attack_speed" "15 20 25 30"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"illusion_bonus_move_speed" "10 20 30 40"
+		}
+		
+	}
+
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		"particle"					"particles/units/heroes/hero_horror/horror_shadowclone.vpcf"
+
+
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/horror_abilities.lua"
+			"Function"		"horror_shadowclone"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_shadowclone"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+			"Duration"			"%illusion_duration-0.1"
+
+			"OnDealDamage"
+			// "%attack_damage" is set to the damage value after mitigation
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/horror_abilities.lua"
+					"Function"		"track_damage"
+					"attack_damage" "%attack_damage"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/horror_abilities.lua"
+					"Function"		"reverse"
+				}
+			}
+
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%illusion_bonus_move_speed"
+			}
+
+			"States"
+			{
+				"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		"modifier_shadowclone_regen"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+			"Duration"			"2"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "0.5"
+			}
+		}
+	}
+}

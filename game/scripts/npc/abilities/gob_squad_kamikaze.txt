@@ -1,0 +1,127 @@
+"gob_squad_kamikaze"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"gob_squad_kamikaze"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_crystal_maiden.vsndevts"
+		"particle"		"particles/units/heroes/hero_gob_squad/kamikaze_unit.vpcf"
+		"particle"		"particles/units/heroes/hero_gob_squad/kamikaze_explosion.vpcf"
+	}
+
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"350"
+	"AbilityCastPoint"				"0.3"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60 50 40 30"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"80 160 240 320"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"125"
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"350"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"4"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movespeed_bonus"		"60"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_damage"			"40"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"total"					"100"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"reduction"				"-35"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_kamikaze"
+			"Target" 		"CASTER"
+			"Duration"		"%duration"
+		}
+		"FireSound"
+		{
+			"EffectName"	"hero_Crystal.freezingField.explosion"
+			"Target" 		"CASTER"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_kamikaze"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+		
+			"EffectName"		"particles/units/heroes/hero_gob_squad/kamikaze_unit.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/gob_squad_abilities"
+					"Function"		"kamikaze"
+					"radius"		"%radius"
+					"health_damage"	"%health_damage"
+					"damage"		"%AbilityDamage"
+					"total"			"%total"
+				}
+			}	
+		
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movespeed_bonus"
+			    "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%reduction"
+			}	
+		}
+	}
+}

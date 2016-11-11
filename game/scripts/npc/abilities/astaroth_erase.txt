@@ -1,0 +1,125 @@
+//=====================================================================================================
+// ASTAROTH: Erase
+//=====================================================================================================
+"astaroth_erase"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AbilityTextureName"			"astaroth_erase"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"750"
+	"AbilityCastPoint"				"0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"75"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"125"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"duration"						"10"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"hp_damage"						"25 50 75"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"mana_damage"					"20 40 60"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"stat_damage"					"-1 -2 -3"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_astaroth/astaroth_erase_unit_target.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+		"soundfile" "soundevents\hero_astaroth.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_astaroth_erase_effects"
+				"Target" 		"TARGET"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_astaroth_erase_effects"
+			{
+				"Duration"			"%duration"
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+
+				"EffectName" "particles/units/heroes/hero_astaroth/astaroth_erase_unit_target.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Astaroth.Erase"
+						"Target" 		"TARGET"
+					}	
+				}
+
+				"ThinkInterval"  "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/astaroth_abilities.lua"
+						"Function"		"erase"
+						"hp"			"%hp_damage"
+						"mana"			"%mana_damage"
+					}
+				}
+			}
+
+			"modifier_astaroth_erase_reduce_stats"
+			{
+				"Passive"			"0"
+				"Duration"			"1.4"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+			
+				"Properties"
+				{
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%stat_damage"
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%stat_damage"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%stat_damage"
+				}
+			}
+		}
+}

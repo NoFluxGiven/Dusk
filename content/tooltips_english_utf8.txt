@@ -1,0 +1,486 @@
+﻿// **********************************************************************************************************************
+// This file contains generated tooltips created from the files in the scripts/npc directory of this mod.
+// It does not contain tooltips already defined in addon_english.txt, nor modifiers with the property "IsHidden" "1".
+// **********************************************************************************************************************
+
+		// ******************** HEROES ********************
+		"npc_dota_hero_alchemist"                                                         "Alchemist"
+		"npc_dota_hero_ancient_apparition"                                                "Ancient Apparition"
+		"npc_dota_hero_jakiro"                                                            "Jakiro"
+
+		// ******************** UNITS ********************
+		"npc_dota_unit_cloakfield"                                                        "Dota Unit Cloakfield"
+		"npc_dota_unit_forcefield"                                                        "Dota Unit Forcefield"
+		"npc_dota_unit_tesla_coil"                                                        "Dota Unit Tesla Coil"
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_alchemist_bt_effect_item_tango"                                     "Alchemist Bt Effect Item Tango"
+		"DOTA_Tooltip_alchemist_bt_effect_item_tango_Description"                         ""
+
+		"DOTA_Tooltip_alchemist_bt_effect_item_smoke_of_deceit"                           "Alchemist Bt Effect Item Smoke Of Deceit"
+		"DOTA_Tooltip_alchemist_bt_effect_item_smoke_of_deceit_Description"               ""
+
+		"DOTA_Tooltip_alchemist_bt_effect_item_dust"                                      "Alchemist Bt Effect Item Dust"
+		"DOTA_Tooltip_alchemist_bt_effect_item_dust_Description"                          ""
+
+		"DOTA_Tooltip_alchemist_bt_effect_item_tango_enhanced"                            "Alchemist Bt Effect Item Tango Enhanced"
+		"DOTA_Tooltip_alchemist_bt_effect_item_tango_enhanced_Description"                ""
+
+		"DOTA_Tooltip_alchemist_bt_effect_item_smoke_of_deceit_enhanced"                  "Alchemist Bt Effect Item Smoke Of Deceit Enhanced"
+		"DOTA_Tooltip_alchemist_bt_effect_item_smoke_of_deceit_enhanced_Description"      ""
+
+		"DOTA_Tooltip_alchemist_gold_armor_mod"                                           "Alchemist Gold Armor Mod"
+		"DOTA_Tooltip_alchemist_gold_armor_mod_Description"                               ""
+
+		"DOTA_Tooltip_alchemist_motherloads_bonus_gold_mod"                               "Alchemist Motherloads Bonus Gold Mod"
+		"DOTA_Tooltip_alchemist_motherloads_bonus_gold_mod_Description"                   ""
+
+		"DOTA_Tooltip_alchemist_motherloads_target_mod"                                   "Alchemist Motherloads Target Mod"
+		"DOTA_Tooltip_alchemist_motherloads_target_mod_Description"                       ""
+
+		"DOTA_Tooltip_crimson_disintegrate_reduction_mod"                                 "Crimson Disintegrate Reduction Mod"
+		"DOTA_Tooltip_crimson_disintegrate_reduction_mod_Description"                     ""
+
+		"DOTA_Tooltip_crimson_life_drain2_mod"                                            "Crimson Life Drain2 Mod"
+		"DOTA_Tooltip_crimson_life_drain2_mod_Description"                                ""
+
+		"DOTA_Tooltip_elena_diverge_mod_aura"                                             "Elena Diverge Mod Aura"
+		"DOTA_Tooltip_elena_diverge_mod_aura_Description"                                 ""
+
+		"DOTA_Tooltip_elena_diverge_owner_mod"                                            "Elena Diverge Owner Mod"
+		"DOTA_Tooltip_elena_diverge_owner_mod_Description"                                ""
+
+		"DOTA_Tooltip_modifier_blinding_speed_active"                                     "Blinding Speed Active"
+		"DOTA_Tooltip_modifier_blinding_speed_active_Description"                         ""
+
+		"DOTA_Tooltip_modifier_blinding_speed_active_aghs"                                "Blinding Speed Active Aghs"
+		"DOTA_Tooltip_modifier_blinding_speed_active_aghs_Description"                    ""
+
+		"DOTA_Tooltip_modifier_blinding_speed_damage_apply"                               "Blinding Speed Damage Apply"
+		"DOTA_Tooltip_modifier_blinding_speed_damage_apply_Description"                   ""
+
+		"DOTA_Tooltip_modifier_blinding_speed_passive"                                    "Blinding Speed Passive"
+		"DOTA_Tooltip_modifier_blinding_speed_passive_Description"                        ""
+
+		"DOTA_Tooltip_modifier_ball_lightning_buff_datadriven"                            "Ball Lightning Buff Datadriven"
+		"DOTA_Tooltip_modifier_ball_lightning_buff_datadriven_Description"                ""
+
+		"DOTA_Tooltip_modifier_lightning_dagger_slow"                                     "Lightning Dagger Slow"
+		"DOTA_Tooltip_modifier_lightning_dagger_slow_Description"                         ""
+
+		"DOTA_Tooltip_modifier_overload_slow_effect"                                      "Overload Slow Effect"
+		"DOTA_Tooltip_modifier_overload_slow_effect_Description"                          ""
+
+		"DOTA_Tooltip_modifier_thunder_wave_buff"                                         "Thunder Wave Buff"
+		"DOTA_Tooltip_modifier_thunder_wave_buff_Description"                             ""
+
+		
+
+		"DOTA_Tooltip_modifier_tesla_coil"                                                "Tesla Coil"
+		"DOTA_Tooltip_modifier_tesla_coil_Description"                                    ""
+
+		"DOTA_Tooltip_modifier_repair_building_tgt"                                       "Repair Building Tgt"
+		"DOTA_Tooltip_modifier_repair_building_tgt_Description"                           ""
+
+
+		// ******************** ITEM MODIFIERS ********************
+		"DOTA_Tooltip_modifier_item_clarity_datadriven_active"                            "Item Clarity Datadriven Active"
+		"DOTA_Tooltip_modifier_item_clarity_datadriven_active_Description"                ""
+
+		"DOTA_Tooltip_colossus_heal_visible_mod"                                          "Colossus Heal Visible Mod"
+		"DOTA_Tooltip_colossus_heal_visible_mod_Description"                              ""
+
+		"DOTA_Tooltip_dust_truesight_slow_mod"                                            "Dust Truesight Slow Mod"
+		"DOTA_Tooltip_dust_truesight_slow_mod_Description"                                ""
+
+		"DOTA_Tooltip_modifier_item_shield"                                               "Item Shield"
+		"DOTA_Tooltip_modifier_item_shield_Description"                                   ""
+
+		"DOTA_Tooltip_fenrir_bash_mod"                                                    "Fenrir Bash Mod"
+		"DOTA_Tooltip_fenrir_bash_mod_Description"                                        ""
+
+		"DOTA_Tooltip_fenrir_active_mod"                                                  "Fenrir Active Mod"
+		"DOTA_Tooltip_fenrir_active_mod_Description"                                      ""
+
+		"DOTA_Tooltip_modifier_item_flask_datadriven_active"                              "Item Flask Datadriven Active"
+		"DOTA_Tooltip_modifier_item_flask_datadriven_active_Description"                  ""
+
+		"DOTA_Tooltip_modifier_item_magisteel_datadriven_ally_aura"                       "Item Magisteel Datadriven Ally Aura"
+		"DOTA_Tooltip_modifier_item_magisteel_datadriven_ally_aura_Description"           ""
+
+		"DOTA_Tooltip_modifier_item_magisteel_datadriven_enemy_aura"                      "Item Magisteel Datadriven Enemy Aura"
+		"DOTA_Tooltip_modifier_item_magisteel_datadriven_enemy_aura_Description"          ""
+
+		"DOTA_Tooltip_modifier_item_shield_2"                                             "Item Shield 2"
+		"DOTA_Tooltip_modifier_item_shield_2_Description"                                 ""
+
+		"DOTA_Tooltip_multiteam_example_aoe_ability"                                      "Multiteam Example Aoe Ability"
+		"DOTA_Tooltip_multiteam_example_aoe_ability_Description"                          ""
+
+		"DOTA_Tooltip_modifier_item_thunderbolt_slow"                                     "Item Thunderbolt Slow"
+		"DOTA_Tooltip_modifier_item_thunderbolt_slow_Description"                         ""
+
+		"DOTA_Tooltip_modifier_item_turins_scepter_crush"                                 "Item Turins Scepter Crush"
+		"DOTA_Tooltip_modifier_item_turins_scepter_crush_Description"                     ""
+
+		"DOTA_Tooltip_modifier_item_blink_datadriven_slow"                                "Item Blink Datadriven Slow"
+		"DOTA_Tooltip_modifier_item_blink_datadriven_slow_Description"                    ""
+
+		"DOTA_Tooltip_modifier_item_blink_datadriven_damaged"                             "Item Blink Datadriven Damaged"
+		"DOTA_Tooltip_modifier_item_blink_datadriven_damaged_Description"                 ""
+
+		"DOTA_Tooltip_modifier_vajra_active_orb_mres"                                     "Vajra Active Orb Mres"
+		"DOTA_Tooltip_modifier_vajra_active_orb_mres_Description"                         ""
+
+
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_alchemist_bottle_throw_enhanced_dust_slow"                  "ENHANCED DUST SLOW:"
+		"DOTA_Tooltip_ability_alchemist_bottle_throw_enhanced_smoke_of_deceit_duration"   "ENHANCED SMOKE OF DECEIT DURATION:"
+		"DOTA_Tooltip_ability_alchemist_bottle_throw_enhanced_tango_damage"               "ENHANCED TANGO DAMAGE:"
+		"DOTA_Tooltip_ability_alchemist_bottle_throw_enhanced_flask_damage"               "ENHANCED FLASK DAMAGE:"
+
+		"DOTA_Tooltip_ability_alchemist_motherloads_duration"                             "DURATION:"
+		"DOTA_Tooltip_ability_alchemist_motherloads_damage"                               "DAMAGE:"
+		"DOTA_Tooltip_ability_alchemist_motherloads_bonus_gold"                           "BONUS GOLD:"
+
+		"DOTA_Tooltip_ability_avatar_raze"                                                "Avatar Raze"
+		"DOTA_Tooltip_ability_avatar_raze_Description"                                    ""
+
+		"DOTA_Tooltip_ability_avatar_stasis"                                              "Avatar Stasis"
+		"DOTA_Tooltip_ability_avatar_stasis_Description"                                  ""
+
+		"DOTA_Tooltip_ability_crimson_disintegrate_mana_cost_scepter"                     "MANA COST SCEPTER:"
+		"DOTA_Tooltip_ability_crimson_disintegrate_damage_delay"                          "DAMAGE DELAY:"
+		"DOTA_Tooltip_ability_crimson_disintegrate_cooldown_scepter"                      "COOLDOWN SCEPTER:"
+
+		"DOTA_Tooltip_ability_crimson_life_drain_radius"                                  "RADIUS:"
+
+		"DOTA_Tooltip_ability_crimson_red_rituals_slow"                                   "SLOW:"
+		"DOTA_Tooltip_ability_crimson_red_rituals_regen"                                  "REGEN:"
+
+		"DOTA_Tooltip_ability_debug_blink"                                                "Debug Blink"
+		"DOTA_Tooltip_ability_debug_blink_Description"                                    ""
+
+		"DOTA_Tooltip_ability_debug_mass_teleport"                                        "Debug Mass Teleport"
+		"DOTA_Tooltip_ability_debug_mass_teleport_Description"                            ""
+
+		"DOTA_Tooltip_ability_elementalist_electric_bolt_trinity_as"                      "TRINITY AS:"
+
+		"DOTA_Tooltip_ability_elementalist_fire_bolt_trinity_damage"                      "TRINITY DAMAGE:"
+
+		"DOTA_Tooltip_ability_elementalist_trinity_duration"                              "DURATION:"
+
+		"DOTA_Tooltip_ability_elena_diverge_damage_reduction"                             "DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_elena_diverge_radius"                                       "RADIUS:"
+		"DOTA_Tooltip_ability_elena_diverge_return"                                       "RETURN:"
+
+		"DOTA_Tooltip_ability_example_ability_damage"                                     "DAMAGE:"
+
+		"DOTA_Tooltip_ability_fury_rend_bonus_reset_time_roshan"                          "BONUS RESET TIME ROSHAN:"
+
+		"DOTA_Tooltip_ability_fury_terashock_shock_radius"                                "SHOCK RADIUS:"
+		"DOTA_Tooltip_ability_fury_terashock_self_damage"                                 "SELF DAMAGE:"
+
+		"DOTA_Tooltip_ability_gemini_abyssal_vortex_radius"                               "RADIUS:"
+
+		"DOTA_Tooltip_ability_gemini_realm_blister_radius"                                "RADIUS:"
+		"DOTA_Tooltip_ability_gemini_realm_blister_vision_radius"                         "VISION RADIUS:"
+		"DOTA_Tooltip_ability_gemini_realm_blister_aura_interval"                         "AURA INTERVAL:"
+
+		"DOTA_Tooltip_ability_gemini_voidal_flare_magic_missile_speed"                    "MAGIC MISSILE SPEED:"
+
+		"DOTA_Tooltip_ability_hawkeye_double_tap_duration"                                "DURATION:"
+		"DOTA_Tooltip_ability_hawkeye_double_tap_mult_scepter"                            "MULT SCEPTER:"
+
+		"DOTA_Tooltip_ability_hawkeye_double_tap_visuals"                                 "Hawkeye Double Tap Visuals"
+		"DOTA_Tooltip_ability_hawkeye_double_tap_visuals_Description"                     ""
+
+		"DOTA_Tooltip_ability_hawkeye_hit_n_run_damage"                                   "DAMAGE:"
+		"DOTA_Tooltip_ability_hawkeye_hit_n_run_duration"                                 "DURATION:"
+		"DOTA_Tooltip_ability_hawkeye_hit_n_run_radius"                                   "RADIUS:"
+
+		"DOTA_Tooltip_ability_hawkeye_ricochet_damage_reduction"                          "DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_hawkeye_ricochet_duration"                                  "DURATION:"
+		"DOTA_Tooltip_ability_hawkeye_ricochet_charges"                                   "CHARGES:"
+		"DOTA_Tooltip_ability_hawkeye_ricochet_maxbounce"                                 "MAXBOUNCE:"
+		"DOTA_Tooltip_ability_hawkeye_ricochet_final"                                     "FINAL:"
+
+		"DOTA_Tooltip_ability_ironfist_hissatsu_radius"                                   "RADIUS:"
+
+		"DOTA_Tooltip_ability_ironfist_typhoon_radius"                                    "RADIUS:"
+		"DOTA_Tooltip_ability_ironfist_typhoon_duration"                                  "DURATION:"
+
+		"DOTA_Tooltip_ability_lich_absolute_zero_interval"                                "INTERVAL:"
+
+		"DOTA_Tooltip_ability_lich_traveling_frost_speed"                                 "SPEED:"
+		"DOTA_Tooltip_ability_lich_traveling_frost_width"                                 "WIDTH:"
+		"DOTA_Tooltip_ability_lich_traveling_frost_range"                                 "RANGE:"
+
+		"DOTA_Tooltip_ability_lich_winters_requiem_duration"                              "DURATION:"
+		"DOTA_Tooltip_ability_lich_winters_requiem_radius"                                "RADIUS:"
+		"DOTA_Tooltip_ability_lich_winters_requiem_interval_l"                            "INTERVAL L:"
+
+		"DOTA_Tooltip_ability_lightning_blinding_speed_radius"                            "RADIUS:"
+		"DOTA_Tooltip_ability_lightning_blinding_speed_duration"                          "DURATION:"
+
+		"DOTA_Tooltip_ability_lightning_lightning_dagger_ball_lightning_initial_mana_percentage"		"BALL LIGHTNING INITIAL MANA PERCENTAGE:"
+		"DOTA_Tooltip_ability_lightning_lightning_dagger_ball_lightning_initial_mana_base"		"BALL LIGHTNING INITIAL MANA BASE:"
+		"DOTA_Tooltip_ability_lightning_lightning_dagger_ball_lightning_move_speed"       "BALL LIGHTNING MOVE SPEED:"
+		"DOTA_Tooltip_ability_lightning_lightning_dagger_ball_lightning_aoe"              "BALL LIGHTNING AOE:"
+		"DOTA_Tooltip_ability_lightning_lightning_dagger_ball_lightning_travel_cost_base"		"BALL LIGHTNING TRAVEL COST BASE:"
+		"DOTA_Tooltip_ability_lightning_lightning_dagger_ball_lightning_travel_cost_percent"		"BALL LIGHTNING TRAVEL COST PERCENT:"
+		"DOTA_Tooltip_ability_lightning_lightning_dagger_ball_lightning_vision_radius"    "BALL LIGHTNING VISION RADIUS:"
+		"DOTA_Tooltip_ability_lightning_lightning_dagger_tree_destroy_radius"             "TREE DESTROY RADIUS:"
+		"DOTA_Tooltip_ability_lightning_lightning_dagger_distance_per_mana"               "DISTANCE PER MANA:"
+		"DOTA_Tooltip_ability_lightning_lightning_dagger_tree_destroy_interval"           "TREE DESTROY INTERVAL:"
+		"DOTA_Tooltip_ability_lightning_lightning_dagger_distance_per_damage"             "DISTANCE PER DAMAGE:"
+
+		"DOTA_Tooltip_ability_lightning_thunder_wave_explosions"                          "EXPLOSIONS:"
+		"DOTA_Tooltip_ability_lightning_thunder_wave_interval"                            "INTERVAL:"
+		"DOTA_Tooltip_ability_lightning_thunder_wave_radius"                              "RADIUS:"
+		"DOTA_Tooltip_ability_lightning_thunder_wave_speed"                               "SPEED:"
+		"DOTA_Tooltip_ability_lightning_thunder_wave_lightning_damage"                    "LIGHTNING DAMAGE:"
+
+		"DOTA_Tooltip_ability_main_damage"                                                "Main Damage"
+		"DOTA_Tooltip_ability_main_damage_Description"                                    ""
+
+		"DOTA_Tooltip_ability_mifune_genso_illusion_damage"                               "ILLUSION DAMAGE:"
+
+		"DOTA_Tooltip_ability_mifune_raigeki_explosion_damage"                            "EXPLOSION DAMAGE:"
+		"DOTA_Tooltip_ability_mifune_raigeki_range"                                       "RANGE:"
+
+		"DOTA_Tooltip_ability_mifune_zanmato_radius"                                      "RADIUS:"
+		"DOTA_Tooltip_ability_mifune_zanmato_attack_interval"                             "ATTACK INTERVAL:"
+		"DOTA_Tooltip_ability_mifune_zanmato_creep_damage_penalty"                        "CREEP DAMAGE PENALTY:"
+
+		"DOTA_Tooltip_ability_mifune_zanmato_scepter_radius_scepter"                      "RADIUS SCEPTER:"
+		"DOTA_Tooltip_ability_mifune_zanmato_scepter_bonus_hero_damage_scepter"           "BONUS HERO DAMAGE SCEPTER:"
+		"DOTA_Tooltip_ability_mifune_zanmato_scepter_attack_interval"                     "ATTACK INTERVAL:"
+		"DOTA_Tooltip_ability_mifune_zanmato_scepter_creep_damage_penalty"                "CREEP DAMAGE PENALTY:"
+
+		"DOTA_Tooltip_ability_multiteam_example_ability"                                  "Multiteam Example Ability"
+		"DOTA_Tooltip_ability_multiteam_example_ability_Description"                      ""
+		"DOTA_Tooltip_ability_multiteam_example_ability_damage"                           "DAMAGE:"
+
+		"DOTA_Tooltip_ability_multiteam_example_aoe_ability"                              "Multiteam Example Aoe Ability"
+		"DOTA_Tooltip_ability_multiteam_example_aoe_ability_Description"                  ""
+		"DOTA_Tooltip_ability_multiteam_example_aoe_ability_damage"                       "DAMAGE:"
+
+		"DOTA_Tooltip_ability_paragon_cleanse_radius"                                     "RADIUS:"
+
+		"DOTA_Tooltip_ability_paragon_smite_scepter_damage"                               "SCEPTER DAMAGE:"
+		"DOTA_Tooltip_ability_paragon_smite_scepter_damage_per_kill"                      "SCEPTER DAMAGE PER KILL:"
+
+		"DOTA_Tooltip_ability_paragon_tranquility_seal_radius"                            "RADIUS:"
+		"DOTA_Tooltip_ability_paragon_tranquility_seal_secondary"                         "SECONDARY:"
+
+		"DOTA_Tooltip_ability_reflex_dummy_unit"                                          "Reflex Dummy Unit"
+		"DOTA_Tooltip_ability_reflex_dummy_unit_Description"                              ""
+
+		"DOTA_Tooltip_ability_reflex_empty1"                                              "Reflex Empty1"
+		"DOTA_Tooltip_ability_reflex_empty1_Description"                                  ""
+
+		"DOTA_Tooltip_ability_reflex_empty2"                                              "Reflex Empty2"
+		"DOTA_Tooltip_ability_reflex_empty2_Description"                                  ""
+
+		"DOTA_Tooltip_ability_reflex_empty3"                                              "Reflex Empty3"
+		"DOTA_Tooltip_ability_reflex_empty3_Description"                                  ""
+
+		"DOTA_Tooltip_ability_reflex_empty4"                                              "Reflex Empty4"
+		"DOTA_Tooltip_ability_reflex_empty4_Description"                                  ""
+
+		"DOTA_Tooltip_ability_reflex_empty5"                                              "Reflex Empty5"
+		"DOTA_Tooltip_ability_reflex_empty5_Description"                                  ""
+
+		"DOTA_Tooltip_ability_reflex_empty6"                                              "Reflex Empty6"
+		"DOTA_Tooltip_ability_reflex_empty6_Description"                                  ""
+
+		"DOTA_Tooltip_ability_sentinel_rockets_bonus_armor"                               "BONUS ARMOR:"
+
+		"DOTA_Tooltip_ability_sentinel_spin_up_base_as"                                   "BASE AS:"
+
+		"DOTA_Tooltip_ability_shade_isolation_vision"                                     "VISION:"
+
+		"DOTA_Tooltip_ability_shade_shadowbreak_speed"                                    "SPEED:"
+		"DOTA_Tooltip_ability_shade_shadowbreak_width"                                    "WIDTH:"
+		"DOTA_Tooltip_ability_shade_shadowbreak_range"                                    "RANGE:"
+		"DOTA_Tooltip_ability_shade_shadowbreak_gain"                                     "GAIN:"
+		"DOTA_Tooltip_ability_shade_shadowbreak_atkgain"                                  "ATKGAIN:"
+
+		"DOTA_Tooltip_ability_shade_smoke_bomb_damage"                                    "DAMAGE:"
+		"DOTA_Tooltip_ability_shade_smoke_bomb_duration"                                  "DURATION:"
+		"DOTA_Tooltip_ability_shade_smoke_bomb_radius"                                    "RADIUS:"
+
+		"DOTA_Tooltip_ability_shadowmender_black_coil"                                    "Shadowmender Black Coil"
+		"DOTA_Tooltip_ability_shadowmender_black_coil_Description"                        ""
+		"DOTA_Tooltip_ability_shadowmender_black_coil_damage_per_missing_health_percent"		"DAMAGE PER MISSING HEALTH PERCENT:"
+
+		"DOTA_Tooltip_ability_shadowmender_white_coil"                                    "Shadowmender White Coil"
+		"DOTA_Tooltip_ability_shadowmender_white_coil_Description"                        ""
+		"DOTA_Tooltip_ability_shadowmender_white_coil_heal"                               "HEAL:"
+		"DOTA_Tooltip_ability_shadowmender_white_coil_damage_per_missing_health_percent"		"DAMAGE PER MISSING HEALTH PERCENT:"
+
+		"DOTA_Tooltip_ability_summoner_build_cloaking_field_gen_damage"                   "DAMAGE:"
+
+		"DOTA_Tooltip_ability_summoner_build_force_field_gen_damage"                      "DAMAGE:"
+
+		"DOTA_Tooltip_ability_summoner_summon_blue_vassal_damage"                         "DAMAGE:"
+
+		"DOTA_Tooltip_ability_summoner_summon_green_vassal_damage"                        "DAMAGE:"
+
+		"DOTA_Tooltip_ability_summoner_summon_red_vassal_damage"                          "DAMAGE:"
+
+		"DOTA_Tooltip_ability_summoner_tesla_coil_bounces"                                "BOUNCES:"
+
+		"DOTA_Tooltip_ability_timekeeper_dilation_duration"                               "DURATION:"
+		"DOTA_Tooltip_ability_timekeeper_dilation_respawn_increase"                       "RESPAWN INCREASE:"
+
+		"DOTA_Tooltip_ability_timekeeper_parallels_respawn"                               "RESPAWN:"
+
+		"DOTA_Tooltip_ability_vajra_proj"                                                 "Vajra Proj"
+		"DOTA_Tooltip_ability_vajra_proj_Description"                                     ""
+
+		"DOTA_Tooltip_ability_vassal_aggression_aura_radius"                              "RADIUS:"
+
+		"DOTA_Tooltip_ability_vassal_crush_radius"                                        "RADIUS:"
+
+		"DOTA_Tooltip_ability_vassal_electric_flare_ch"                                   "CH:"
+
+		"DOTA_Tooltip_ability_vassal_hide"                                                "Vassal Hide"
+		"DOTA_Tooltip_ability_vassal_hide_Description"                                    ""
+
+		"DOTA_Tooltip_ability_vassal_hookshot"                                            "Vassal Hookshot"
+		"DOTA_Tooltip_ability_vassal_hookshot_Description"                                ""
+		"DOTA_Tooltip_ability_vassal_hookshot_range"                                      "RANGE:"
+
+		"DOTA_Tooltip_ability_vassal_lightning_leash_tick_interval"                       "TICK INTERVAL:"
+		"DOTA_Tooltip_ability_vassal_lightning_leash_total_damage"                        "TOTAL DAMAGE:"
+
+		"DOTA_Tooltip_ability_vassal_repair"                                              "Vassal Repair"
+		"DOTA_Tooltip_ability_vassal_repair_Description"                                  ""
+		"DOTA_Tooltip_ability_vassal_repair_heal"                                         "HEAL:"
+		"DOTA_Tooltip_ability_vassal_repair_channel_time"                                 "CHANNEL TIME:"
+
+		"DOTA_Tooltip_ability_watcher_curse"                                              "Watcher Curse"
+		"DOTA_Tooltip_ability_watcher_curse_Description"                                  ""
+
+
+		// ******************** ITEMS ********************
+		"DOTA_Tooltip_ability_item_bulwark_slow"                                          "SLOW:"
+		"DOTA_Tooltip_ability_item_bulwark_damage"                                        "DAMAGE:"
+		"DOTA_Tooltip_ability_item_bulwark_slow_duration"                                 "SLOW DURATION:"
+		"DOTA_Tooltip_ability_item_bulwark_passive_armor"                                 "PASSIVE ARMOR:"
+		"DOTA_Tooltip_ability_item_bulwark_passive_mres"                                  "PASSIVE MRES:"
+		"DOTA_Tooltip_ability_item_bulwark_forcefield_duration"                           "FORCEFIELD DURATION:"
+		"DOTA_Tooltip_ability_item_bulwark_active_duration"                               "ACTIVE DURATION:"
+		"DOTA_Tooltip_ability_item_bulwark_reduction"                                     "REDUCTION:"
+		"DOTA_Tooltip_ability_item_bulwark_return_damage"                                 "RETURN DAMAGE:"
+
+		"DOTA_Tooltip_ability_item_cake"                                                  "Cake"
+		"DOTA_Tooltip_ability_item_cake_Description"                                      ""
+		"DOTA_Tooltip_ability_item_cake_restore"                                          "RESTORE:"
+
+		"DOTA_Tooltip_ability_item_clarity_enhanced_mana_per_second"                      "MANA PER SECOND:"
+
+		"DOTA_Tooltip_ability_item_colossus_health_regen_percent_per_second"              "HEALTH REGEN PERCENT PER SECOND:"
+		"DOTA_Tooltip_ability_item_colossus_cooldown_melee"                               "COOLDOWN MELEE:"
+		"DOTA_Tooltip_ability_item_colossus_heal_interval"                                "HEAL INTERVAL:"
+
+		"DOTA_Tooltip_ability_item_fenrir_bash_cooldown"                                  "BASH COOLDOWN:"
+		"DOTA_Tooltip_ability_item_fenrir_stun_duration"                                  "STUN DURATION:"
+
+		"DOTA_Tooltip_ability_item_flask_enhanced_total_health_regen"                     "TOTAL HEALTH REGEN:"
+
+		"DOTA_Tooltip_ability_item_magisteel_aura_attack_speed"                           "AURA ATTACK SPEED:"
+		"DOTA_Tooltip_ability_item_magisteel_aura_positive_armor"                         "AURA POSITIVE ARMOR:"
+		"DOTA_Tooltip_ability_item_magisteel_aura_negative_armor"                         "AURA NEGATIVE ARMOR:"
+		"DOTA_Tooltip_ability_item_magisteel_aura_positive_magic_resistance"              "AURA POSITIVE MAGIC RESISTANCE:"
+		"DOTA_Tooltip_ability_item_magisteel_aura_negative_magic_resistance"              "AURA NEGATIVE MAGIC RESISTANCE:"
+
+		"DOTA_Tooltip_ability_item_multiteam_action"                                      "Multiteam Action"
+		"DOTA_Tooltip_ability_item_multiteam_action_Description"                          ""
+		"DOTA_Tooltip_ability_item_multiteam_action_duration"                             "DURATION:"
+		"DOTA_Tooltip_ability_item_multiteam_action_damage_reduction"                     "DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_item_multiteam_action_radius"                               "RADIUS:"
+		"DOTA_Tooltip_ability_item_multiteam_action_speed"                                "SPEED:"
+		"DOTA_Tooltip_ability_item_multiteam_action_distance"                             "DISTANCE:"
+
+		"DOTA_Tooltip_ability_item_multiteam_action2"                                     "Multiteam Action2"
+		"DOTA_Tooltip_ability_item_multiteam_action2_Description"                         ""
+		"DOTA_Tooltip_ability_item_multiteam_action2_damage"                              "DAMAGE:"
+		"DOTA_Tooltip_ability_item_multiteam_action2_duration"                            "DURATION:"
+		"DOTA_Tooltip_ability_item_multiteam_action2_speed"                               "SPEED:"
+
+		"DOTA_Tooltip_ability_item_recipe_bulwark"                                        "Recipe Bulwark"
+		"DOTA_Tooltip_ability_item_recipe_bulwark_Description"                            ""
+
+		"DOTA_Tooltip_ability_item_recipe_thunderbolt"                                    "Recipe Thunderbolt"
+		"DOTA_Tooltip_ability_item_recipe_thunderbolt_Description"                        ""
+
+		"DOTA_Tooltip_ability_item_recipe_turins_scepter"                                 "Recipe Turins Scepter"
+		"DOTA_Tooltip_ability_item_recipe_turins_scepter_Description"                     ""
+
+		"DOTA_Tooltip_ability_item_recipe_vagrant_dagger"                                 "Recipe Vagrant Dagger"
+		"DOTA_Tooltip_ability_item_recipe_vagrant_dagger_Description"                     ""
+
+		"DOTA_Tooltip_ability_item_recipe_vajra"                                          "Recipe Vajra"
+		"DOTA_Tooltip_ability_item_recipe_vajra_Description"                              ""
+
+		"DOTA_Tooltip_ability_item_summoning_stone_radius"                                "RADIUS:"
+
+		"DOTA_Tooltip_ability_item_sword_of_greed_bonus_gold"                             "BONUS GOLD:"
+		"DOTA_Tooltip_ability_item_sword_of_greed_transmute_gold"                         "TRANSMUTE GOLD:"
+		"DOTA_Tooltip_ability_item_sword_of_greed_transmute_xp"                           "TRANSMUTE XP:"
+		"DOTA_Tooltip_ability_item_sword_of_greed_tick_gold"                              "TICK GOLD:"
+
+		"DOTA_Tooltip_ability_item_tango_enhanced_total_heal_ward_tooltip"                "TOTAL HEAL WARD TOOLTIP:"
+		"DOTA_Tooltip_ability_item_tango_enhanced_cast_range_ward"                        "CAST RANGE WARD:"
+
+		"DOTA_Tooltip_ability_item_thunderbolt_bonus_attack_speed"                        "BONUS ATTACK SPEED:"
+		"DOTA_Tooltip_ability_item_thunderbolt_bonus_agility"                             "BONUS AGILITY:"
+		"DOTA_Tooltip_ability_item_thunderbolt_evasion"                                   "EVASION:"
+		"DOTA_Tooltip_ability_item_thunderbolt_bonus_movespeed"                           "BONUS MOVESPEED:"
+		"DOTA_Tooltip_ability_item_thunderbolt_active_damage"                             "ACTIVE DAMAGE:"
+		"DOTA_Tooltip_ability_item_thunderbolt_active_slow"                               "ACTIVE SLOW:"
+		"DOTA_Tooltip_ability_item_thunderbolt_active_duration"                           "ACTIVE DURATION:"
+
+		"DOTA_Tooltip_ability_item_turins_scepter"                                        "Turins Scepter"
+		"DOTA_Tooltip_ability_item_turins_scepter_Description"                            ""
+		"DOTA_Tooltip_ability_item_turins_scepter_bonus_intelligence"                     "BONUS INTELLIGENCE:"
+		"DOTA_Tooltip_ability_item_turins_scepter_bonus_strength"                         "BONUS STRENGTH:"
+		"DOTA_Tooltip_ability_item_turins_scepter_bonus_agility"                          "BONUS AGILITY:"
+		"DOTA_Tooltip_ability_item_turins_scepter_bonus_mana_regen"                       "BONUS MANA REGEN:"
+		"DOTA_Tooltip_ability_item_turins_scepter_bonus_damage"                           "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_item_turins_scepter_bonus_health"                           "BONUS HEALTH:"
+		"DOTA_Tooltip_ability_item_turins_scepter_active_slow"                            "ACTIVE SLOW:"
+		"DOTA_Tooltip_ability_item_turins_scepter_active_damage"                          "ACTIVE DAMAGE:"
+		"DOTA_Tooltip_ability_item_turins_scepter_active_duration"                        "ACTIVE DURATION:"
+
+		"DOTA_Tooltip_ability_item_vagrant_dagger"                                        "Vagrant Dagger"
+		"DOTA_Tooltip_ability_item_vagrant_dagger_Description"                            ""
+		"DOTA_Tooltip_ability_item_vagrant_dagger_max_blink_range"                        "MAX BLINK RANGE:"
+		"DOTA_Tooltip_ability_item_vagrant_dagger_blink_range_clamp"                      "BLINK RANGE CLAMP:"
+		"DOTA_Tooltip_ability_item_vagrant_dagger_blink_damage_cooldown"                  "BLINK DAMAGE COOLDOWN:"
+		"DOTA_Tooltip_ability_item_vagrant_dagger_bonus_movespeed"                        "BONUS MOVESPEED:"
+		"DOTA_Tooltip_ability_item_vagrant_dagger_bonus_damage"                           "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_item_vagrant_dagger_bonus_int"                              "BONUS INT:"
+		"DOTA_Tooltip_ability_item_vagrant_dagger_bonus_regen"                            "BONUS REGEN:"
+		"DOTA_Tooltip_ability_item_vagrant_dagger_slow"                                   "SLOW:"
+		"DOTA_Tooltip_ability_item_vagrant_dagger_damage"                                 "DAMAGE:"
+
+		"DOTA_Tooltip_ability_item_vajra_radius"                                          "RADIUS:"
+		"DOTA_Tooltip_ability_item_vajra_burn"                                            "BURN:"
+		"DOTA_Tooltip_ability_item_vajra_slow"                                            "SLOW:"
+		"DOTA_Tooltip_ability_item_vajra_stack"                                           "STACK:"
+		"DOTA_Tooltip_ability_item_vajra_interval"                                        "INTERVAL:"
+		"DOTA_Tooltip_ability_item_vajra_damage"                                          "DAMAGE:"
+		"DOTA_Tooltip_ability_item_vajra_resistance_reduction"                            "RESISTANCE REDUCTION:"
+		"DOTA_Tooltip_ability_item_vajra_distance"                                        "DISTANCE:"
+		"DOTA_Tooltip_ability_item_vajra_cleave_percent"                                  "CLEAVE PERCENT:"
+
+		"DOTA_Tooltip_ability_item_watchers_eye"                                          "Watchers Eye"
+		"DOTA_Tooltip_ability_item_watchers_eye_Description"                              ""
+		"DOTA_Tooltip_ability_item_watchers_eye_radius"                                   "RADIUS:"
+
+		"DOTA_Tooltip_ability_item_watchers_eye_inactive_radius"                          "RADIUS:"
+

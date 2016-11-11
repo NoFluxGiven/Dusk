@@ -1,0 +1,57 @@
+"npc_dota_hero_alexander"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_dragon_knight"
+	"Ability1"				"alexander_soulseal" // Alexander uses the Godslayer to seal away a target's soul, rendering them unable to cast spells for a short time.  Lasts 3/4/5/6s.
+	"Ability2"				"alexander_elandras_blessing" // Alexander gains bonus Armor and Health Regen as he loses health.
+	"Ability3"				"alexander_radiant" // Alexander is bathed in an unearthly light, a magick used oft by Paladins.  Causes opponents to miss attacks against him, as he rapidly
+	// recovers health over time.  Recovers 20/40/60/80 health per second for 5s, with a 15/30/45/60% miss chance to all nearby enemies in a 325 radius.
+	"Ability4"				"alexander_godfall" // The Godslayer thirsts for blood, imbued with incredible power.  After a short channel time, Alexander's next attack deals massive bonus
+	// Pure damage through Spell Immunity in an area around him.  The main target receives the brunt of the damage.
+	"Ability5"				""
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"3"									// Physical protection.
+	"MagicalResistance"				"20"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRate"				"1.6"
+	"AttackDamageMin"			"23"										// Damage range min.
+	"AttackDamageMax"			"27"										// Damage range max.
+
+	//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"23"										// Base strength
+	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"17"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.75"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"11"										// Base agility
+	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"									// Speed.
+	"MovementTurnRate"			"1.0"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"2"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

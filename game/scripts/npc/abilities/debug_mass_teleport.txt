@@ -1,0 +1,24 @@
+//=====================================================================================================
+// DEBUG: MASS TELEPORT
+//=====================================================================================================
+"debug_mass_teleport"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityTextureName"			"holdout_blade_fury"
+	
+	"OnSpellStart"
+		{
+		"RunScript"
+			{
+			"ScriptFile" "heroes/debug_abilities.lua"
+			"Function" "debug_mass_teleport"
+			}
+		}
+	
+	"Modifiers"
+		{
+		}
+}

@@ -1,0 +1,81 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor =
+	[
+		85,
+		0,
+		0,
+		255,
+	]
+	m_flConstantLifespan = 0.750000
+	m_Operators =
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 5.000000
+		},
+		{
+			_class = "C_OP_MovementRotateParticleAroundAxis"
+			m_flRotRate = 270.000000
+		},
+		{
+			_class = "C_OP_SpinUpdate"
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderTrails"
+			m_flMinLength = 10.000000
+			m_flLengthScale = 3.000000
+			m_bAdditive = true
+			m_hTexture = resource:"materials/particle/basic_trail.vtex"
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 62
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RingWave"
+			m_flParticlesPerOrbit = 5.000000
+			m_flInitialRadius = 100.000000
+			m_bEvenDistribution = true
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+		},
+	]
+	m_ForceGenerators =
+	[
+		{
+			_class = "C_OP_AttractToControlPoint"
+			m_fForceAmount = 2000.000000
+			m_fFalloffPower = 0.000000
+		},
+	]
+	m_Children =
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_crimson/crimson_lifebreak_b.vpcf"
+		},
+	]
+}

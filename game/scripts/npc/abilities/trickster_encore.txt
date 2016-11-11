@@ -1,0 +1,103 @@
+//=====================================================================================================
+// TRICKSTER: Encore
+//=====================================================================================================
+"trickster_encore"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"trickster_encore"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+		"soundfile" 		"soundevents/hero_trickster.vsndevts"
+		"particle"			"particles/units/heroes/hero_siren/naga_siren_song_debuff.vpcf"
+		"particle"			"particles/units/heroes/hero_trickster/encore.vpcf"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1000"
+	"AbilityCastPoint"				"0.7"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"120"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"275"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"8 10 12"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration_scepter"		"20 25 30"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_trickster_encore"
+			"Target" 		"TARGET"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_Wisp.Relocate"
+			"Target" 		"CASTER"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Trickster.Encore"
+			"Target" 		"TARGET"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_trickster_encore"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsPurgable"		"0"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsStunDebuff"		"0"
+			//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+			"Duration"			"%duration"
+			"OnCreated"
+			{
+				"FireEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_trickster/encore.vpcf"
+					"EffectAttachType"  "follow_hitloc"
+					"Target"            "TARGET"
+				}
+			}
+			
+
+			"EffectName"			"particles/units/heroes/hero_siren/naga_siren_song_debuff.vpcf"
+			"EffectAttachType"		"follow_origin"
+		}
+	}
+}

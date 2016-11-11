@@ -1,0 +1,159 @@
+//=====================================================================================================
+// MANA KNIGHT: Vorpal Assault
+//=====================================================================================================
+"mana_knight_vorpal_assault"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"mana_knight_vorpal_assault"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"75"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"bonus_damage"				"0.20 0.30 0.40" // based on Mana missing
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attacks"					"4"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_attackspeed"			"100"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"mana_damage"				"60 100 140"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_mana_knight/vorpal_assault_strike.vpcf"
+		"particle" "particles/units/heroes/hero_mana_knight/vorpal_assault_unit_buffs.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_underlord.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
+		}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/mk_abilities.lua"
+			"Function"		"VorpalAssault"
+			"amount"		"%attacks"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_Underlord.DarkRift.Complete"
+			"Target" 		"CASTER"
+		}
+	}
+	
+	"Modifiers"
+		{
+			"modifier_vorpal_assault"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+
+				"EffectName"		"particles/units/heroes/hero_mana_knight/vorpal_assault_unit_buffs.vpcf"
+				"EffectAttachType"	"attach_origin"
+			}
+			"modifier_vorpal_assault_prehit"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"OnAttackStart"
+				// "%attack_damage" is set to the damage value before mitigation
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_vorpal_assault_onhit"
+						"Target" 		"ATTACKER"
+					}
+					"FireEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_mana_knight/vorpal_assault_strike.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "ATTACKER"
+					}
+					"FireSound"
+					{
+						"EffectName"	"Hero_Brewmaster.Brawler.Crit"
+						"Target" 		"ATTACKER"
+					}
+					"FireSound"
+					{
+						"EffectName"	"Hero_razor.lightning"
+						"Target" 		"ATTACKER"
+					}
+				}
+			}
+			"modifier_vorpal_assault_onhit"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"OnAttackLanded"
+				// "%attack_damage" is set to the damage value before mitigation
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/mk_abilities.lua"
+						"Function"		"VorpalAssaultStrike"
+						"damage"		"%bonus_damage"
+						"mana_damage"	"%mana_damage"
+						"ATTACKER"		"ATTACKER"
+					}
+				}
+			}
+			"modifier_vorpal_assault_attackspeed"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attackspeed"
+				}
+			}
+		}
+}
+

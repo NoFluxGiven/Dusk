@@ -1,0 +1,117 @@
+//=====================================================================================================
+// AETHER: Reality Shift
+//=====================================================================================================
+"aether_reality_shift"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"aether_reality_shift"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"400 425 450"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"100 90 80"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200 300 400"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"duration"					"4"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"400 425 450"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"stun"						"2 3 4"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"225 350 475"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"predamage"					"200 300 400"
+		}
+	}
+	
+	"precache"
+		{
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+			"particle" "particles/units/heroes/hero_aether/aether_reality_shift.vpcf"
+		}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/aether_abilities.lua"
+			"Function"		"reality_shift"
+			"radius"		"%radius"
+			"duration"		"%duration"
+			"damage"		"%predamage"
+		}
+	}
+	
+	"Modifiers"
+		{
+			"modifier_reality_shift_unit"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+		
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_reality_shift_show"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/aether_abilities.lua"
+						"Function"		"Show"
+						"radius"		"%radius"
+						"damage"		"%damage"
+						"stun"			"%stun"
+					}
+				}
+		
+			}
+		}
+}

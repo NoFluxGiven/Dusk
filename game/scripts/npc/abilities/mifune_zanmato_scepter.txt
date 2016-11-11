@@ -1,0 +1,219 @@
+//=====================================================================================================
+// MIFUNE: Zanmato Scepter
+//=====================================================================================================
+"mifune_zanmato_scepter"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AoERadius"						"600"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"mifune_zanmato"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"800"
+	"AbilityCastPoint"				"0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"40"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"175"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius_scepter"			"750"
+		}
+		
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_hero_damage_scepter"	"150 225 300"
+		}
+					
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"attack_interval"			"0.2"
+		}
+
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"creep_damage_penalty"		"0"
+		}
+
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"orb_damage"				"60 70 80"
+		}
+	}
+	
+	"precache"
+	{
+		"soundfile"						"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+		"soundfile" 					"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
+		"particle"						"particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_cast.vpcf"
+		"particle"						"particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_caster.vpcf" // for dummy
+		"particle"						"particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_targetted_marker.vpcf"
+		"particle"						"particles/units/heroes/hero_ember_spirit/ember_spirit_sleightoffist_tgt.vpcf"
+		"particle"						"particles/units/heroes/hero_ember_spirit/ember_spirit_sleightoffist_trail.vpcf"
+		"particle"						"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
+		"particle"						"particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"Target"					"CASTER"
+			"EffectName"				"Hero_EmberSpirit.SleightOfFist.Cast"
+		}
+	
+		"ApplyModifier"
+		{
+			"Target"					"CASTER"
+			"ModifierName"				"modifier_sleight_of_fist_caster_datadriven"
+		}
+	
+		"RunScript"
+		{
+			"ScriptFile"				"heroes/mifune_abilities.lua"
+			"Function"					"zanmato_init"
+			"Target"					"TARGET"
+		}
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"Damage"
+		{
+			"Target"		"TARGET"
+			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Damage"		"%orb_damage"
+		}
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf"
+			"EffectAttachType"  "attach_hitloc"
+			"Target"            "TARGET"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_Jakiro.LiquidFire"
+			"Target"		"TARGET"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_sleight_of_fist_caster_datadriven"
+		{
+			"IsPurgable"				"0"
+		
+			"States"
+			{
+				"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_ROOTED"				"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		
+		"modifier_sleight_of_fist_dummy_datadriven"
+		{
+			"IsPurgable"				"0"
+			"IsHidden"					"1"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target"					"TARGET"
+					"EffectName"				"particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_caster.vpcf"
+					"EffectAttachType"			"start_at_customorigin"
+					"ControlPointEntities"
+					{
+						"TARGET"				"attach_hitloc"
+					}
+				}
+			}
+			
+			"States"
+			{
+				"MODIFIER_STATE_INVULNERABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_COMMAND_RESTRICTED"				"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_DISARMED"						"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		
+		"modifier_sleight_of_fist_target_datadriven"
+		{
+			"IsPurgable"				"0"
+		
+			"EffectName"				"particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_targetted_marker.vpcf"
+			"EffectAttachType"			"follow_overhead"
+		}
+
+		"modifier_sleight_of_fist_main_target_datadriven"
+		{
+			"IsPurgable"				"0"
+		
+			"EffectName"				"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"			"follow_overhead"
+
+			"OverrideAnimation"     "ACT_DOTA_DISABLED"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		
+		"modifier_sleight_of_fist_target_hero_datadriven"
+		{
+			"IsPurgable"				"0"
+			"IsHidden"					"1"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_hero_damage"
+			}
+		}
+		
+		"modifier_sleight_if_fist_target_creep_datadriven"
+		{
+			"IsPurgable"				"0"
+			"IsHidden"					"1"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%creep_damage_penalty"
+			}
+		}
+	}
+
+}
+

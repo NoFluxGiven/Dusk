@@ -1,0 +1,68 @@
+//=====================================================================================================
+// FATE: Copy Spell
+//=====================================================================================================
+"fate_copy_spell"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"rubick_spell_steal"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"pugna_life_drain"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"975"
+	"AbilityCastPoint"				"0.6"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"1"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"45"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"120"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"3000"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_scepter"		"1000"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cooldown_scepter"			"0.5"
+			}
+	}
+	
+	"precache"
+		{
+		"particle" "particles\units\heroes\hero_treant\treant_leech_seed_projectile.vpcf"
+		}
+	
+	"Modifiers"
+		{
+		}
+}

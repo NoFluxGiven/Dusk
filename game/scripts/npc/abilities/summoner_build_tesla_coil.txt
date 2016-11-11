@@ -1,0 +1,99 @@
+"summoner_build_tesla_coil"
+{
+    // General
+    //-------------------------------------------------------------------------------------
+    "BaseClass" "ability_datadriven"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
+    "AbilityTextureName" "summoner_tesla"
+    "MaxLevel" "4"
+
+    // Stats
+    //-------------------------------------------------------------------------------------
+    "AbilityCastRange" "125"
+    "AbilityCastPoint" "0.0"
+    "AbilityCooldown" "20 18 16 14"
+    "AbilityManaCost" "75 100 125 150"
+    "AbilityChannelTime" "2 1.75 1.5 1.25"   // This sets the max time the spell can be channeled
+
+    // Special
+    //-------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+    }
+
+    "precache"
+    {
+        "particle"  "particles/units/heroes/hero_summoner/build.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_HERO.vsndevts"
+    }
+
+    // Data Driven
+    //-------------------------------------------------------------------------------------
+    "OnSpellStart"
+    {
+        "ApplyModifier"
+        {
+            "Target" "CASTER"
+            "ModifierName" "modifier_build"
+        }
+        "RunScript"
+        {
+            "ScriptFile"    "heroes/summoner_abilities.lua"
+            "Function"      "build"
+        }
+    }
+    "OnChannelFinish"
+    {
+        "RemoveModifier"
+        {
+            "Target" "CASTER"
+            "ModifierName" "modifier_build"
+        }
+        "RunScript"
+        {
+            "ScriptFile"    "heroes/summoner_abilities.lua"
+            "Function"      "buildend"
+        }
+    }
+    "OnChannelInterrupted"
+    {
+        "RemoveModifier"
+        {
+            "Target" "CASTER"
+            "ModifierName" "modifier_build"
+        }
+        "RunScript"
+        {
+            "ScriptFile"    "heroes/summoner_abilities.lua"
+            "Function"      "buildend"
+        }
+    }
+    "OnChannelSucceeded"
+    {
+        "RemoveModifier"
+        {
+            "Target" "CASTER"
+            "ModifierName" "modifier_build"
+        }
+        "RunScript"
+        {
+            "ScriptFile"    "heroes/summoner_abilities.lua"
+            "Function"      "summon_vassal"
+            "vassal"        "7"
+        }
+        "RunScript"
+        {
+            "ScriptFile"    "heroes/summoner_abilities.lua"
+            "Function"      "buildend"
+        }
+    }
+
+    "Modifiers" 
+    { 
+        "modifier_build" 
+        {
+            "IsDebuff" "1"
+        }
+    }
+}

@@ -1,0 +1,87 @@
+//=====================================================================================================
+// SUMMONER: Force Field
+//=====================================================================================================
+"summoner_cloakfield"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"summoner_cloak"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"500"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_summoner/cloaking_field.vpcf"
+		"particle" "particles/units/heroes/hero_summoner/cloaked.vpcf"
+		}
+	
+	"Modifiers"
+		{
+			"modifier_cloak"
+			{
+
+				"Passive"			"1"
+				"IsPurgable"		"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"0"
+				"IsStunDebuff"		"0"
+				"IsHidden"			"1"
+				"EffectName"		"particles/units/heroes/hero_summoner/cloaking_field.vpcf"
+				//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+				"Aura"          	"modifier_cloak_now"
+				"Aura_Radius"   	"500"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+				"ThinkInterval"  "29.9"
+				"OnIntervalThink"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_cloak"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+			"modifier_cloak_now"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsDebuff"			"0"
+				"IsStunDebuff"		"0"
+				"EffectName"		"particles/units/heroes/hero_summoner/cloaked.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+				
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+}

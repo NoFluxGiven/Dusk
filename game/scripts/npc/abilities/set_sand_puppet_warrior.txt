@@ -1,0 +1,99 @@
+//=====================================================================================================
+// SET: Sand Puppet
+//=====================================================================================================
+"set_sand_puppet_warrior"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"bloodseeker_thirst"
+	"MaxLevel"						"8"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow"					"-4 -6 -8 -10 -12 -14 -16 -18"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow_duration"			"1"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+		"particle"			"particles/units/heroes/hero_meepo/meepo_geostrike.vpcf"
+		"particle"			"particles/status_fx/status_effect_phantom_lancer_illusion.vpcf"
+		"particle"			"particles/units/heroes/hero_phantom_lancer/phantom_lancer_death.vpcf"
+	}
+	
+	"Modifiers"
+		{
+			"modifier_sand_puppet_warrior"
+			{
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERSISTENT"
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"StatusEffectName" 		"particles/status_fx/status_effect_phantom_lancer_illusion.vpcf"
+				"StatusEffectPriority"  "10"
+
+				"OnAttackLanded"
+				// "%attack_damage" is set to the damage value before mitigation
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_sand_puppet_slow"
+						"Target" 		"TARGET"
+					}
+				}
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/set_abilities.lua"
+						"Function"		"Dust"
+					}
+				}
+			}
+
+			"modifier_sand_puppet_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%slow_duration"
+			
+				"EffectName"		"particles/units/heroes/hero_meepo/meepo_geostrike.vpcf"
+				"EffectAttachType"	"follow_origin"
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				}
+			}
+		}
+}

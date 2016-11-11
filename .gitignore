@@ -1,0 +1,9 @@
+*.vpcf_c
+*.vmap
+*.vsnd_c
+content/models
+content/materials
+game/models
+game/materials
+tools_thumbnail_cache.bin
+tools_thumbnail_cache_new.bin

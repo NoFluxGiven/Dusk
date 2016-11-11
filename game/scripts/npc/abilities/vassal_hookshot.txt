@@ -1,0 +1,75 @@
+"vassal_hookshot"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"   
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "vassal_hookshot"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "400"
+    "AbilityCastPoint"              "0.3 0.3 0.3 0.3"
+    
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "12"
+
+    // Damage.
+    //------------------------------------------------------------------------------------------------------------
+    "AbilityDamage"                 "100"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "75"
+    
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "range"             "1000 1250 1500 1750"
+        }
+    }
+
+    "precache"
+    { 
+        "particle"  "particles/units/heroes/hero_rattletrap/rattletrap_hookshot.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_rattletrap.vsndevts"
+    }
+
+    "OnSpellStart"
+    {
+        "TrackingProjectile"
+        {
+            "Target"               "TARGET"
+            "EffectName"        "particles/units/heroes/hero_rattletrap/rattletrap_hookshot.vpcf"
+            "Dodgeable"            "1"
+            "ProvidesVision"    "1"
+            "VisionRadius"        "200"
+            "MoveSpeed"            "1100"
+            "SourceAttachment"    "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+        }
+    }
+
+    "OnProjectileHitUnit"
+    {
+        "DeleteOnHit"    "1"
+        "RunScript"
+        {
+            "ScriptFile"    "heroes/summoner_abilities.lua"
+            "Function"      "hookshot_retract"
+        }
+    }
+
+    "Modifiers"
+    {
+    }
+}

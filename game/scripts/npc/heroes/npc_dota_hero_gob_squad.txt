@@ -1,0 +1,60 @@
+"npc_dota_hero_gob_squad"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_techies"
+	//"Ability1"				"gob_squad_kamikaze" // Gob Squad charges at the target location with great speed. Colliding with an enemy unit will cause them to explode,
+	// dealing 150/225/300/375 damage in a 300 AoE, with bonus damage equivalent to 15% of their current Health. Gob Squad loses 40% of their current Health upon exploding, and stuns all
+	// affected units (including themselves) for 1s.
+	//"Ability2"				"gob_squad_rocket_blast" // Gob Squad fires a rocket at the target location. Deals damage and knocks enemies away from the centre. Gob Squad is also affected
+	// by the knockback, but doubly so. The rocket deals 75/150/225/300 damage, and deals half damage to Gob Squad.
+	//"Ability3"				"gob_squad_whoops" // Upon death, the Gob Squad explodes, dealing Magical damage in a small area. Deals 150/225/300/375 damage in a 300 AoE.
+	//"Ability4"				"gob_squad_clearance_sale" // The Gob Squad offloads all of their unused explosives, throwing bombs at random nearby locations for 10s. The bombs deal
+	// 140/200/260 damage each in a 200 AoE, and explode upon landing. They throw one bomb every 0.75s.
+	//"Ability5"			""
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"2"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"450"
+	"AttackRate"				"2.0"
+	"AttackDamageMin"			"10"										// Damage range min.
+	"AttackDamageMax"			"15"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"17"										// Base strength
+	"AttributeStrengthGain"		"1.0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"19"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"6"										// Base agility
+	"AttributeAgilityGain"		"0.7"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"285"									// Speed.
+	"MovementTurnRate"			"1.0"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

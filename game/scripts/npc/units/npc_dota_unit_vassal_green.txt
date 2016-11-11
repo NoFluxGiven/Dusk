@@ -1,0 +1,93 @@
+//------------------------------------------------------------------------------------
+  //- This unit can be used to precache different models/particles/sounds              -
+  //- that are needed every game.  Uncomment any model/particle/sound you need to load -
+  //------------------------------------------------------------------------------------
+"npc_dota_unit_vassal_green"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/summoner/summoner_vassal_green.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"                     "Hero_TemplarAssassin"
+	"GameSoundsFile"               "soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+	"Level"						"1"
+	"ModelScale" 				"1"
+	"ConsideredHero"			"0"
+	"IsAncient"					"1"
+	"CanBeDominated"			"0"
+	"UnitLabel"			"vassal_green"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"vassal_repair"			// Ability 1
+	"Ability2"					"vassal_hide"			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"3"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"AttackDamageMin"			"14"		// Damage range min.
+	"AttackDamageMax"			"17"		// Damage range max.	
+	"AttackRate"				"1.7"		// Speed of attack.
+	"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"450"		// Range within a target can be acquired.
+	"AttackRange"				"450"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_templar_assassin/templar_assassin_base_attack.vpcf"			// Particle system model for projectile.
+	"ProjectileSpeed"			"800"			// Speed of projectile.		   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"215"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"100"		// Experience earn.
+	"BountyGoldMin"				"100"		// Gold earned min.
+	"BountyGoldMax"				"100"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"315"		// Speed.
+	"MovementTurnRate"			"1.4"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"350"		// Base health.
+	"StatusHealthRegen"			"5"			// Health regeneration rate.
+	"StatusMana"				"100"		// Base mana.
+	"StatusManaRegen"			"5"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	//Inventory
+	"HasInventory"				"0"
+	
+	"AutoAttacksByDefault"		"0"
+
+	"Creature"
+	{
+		"HPGain"                    "0"
+		"DamageGain"                "0"
+		"ArmorGain"                 "0"
+		"MagicResistGain"           "0"
+		"MoveSpeedGain"             "0"
+		"BountyGain"                "0"
+		"XPGain"                    "0"
+	}
+}	

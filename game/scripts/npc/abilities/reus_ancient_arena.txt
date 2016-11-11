@@ -1,0 +1,170 @@
+"reus_ancient_arena"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"				   
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1.0"
+	"FightRecapLevel"				"1.5"
+	"AbilityTextureName"			"reus_ancient_arena"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
+		"particle"		"particles/units/heroes/hero_reus/reus_rockfall.vpcf"
+		"particle"		"particles/status_fx/status_effect_earth_spirit_petrify.vpcf"
+	}
+
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"875"
+	"AbilityCastPoint"				"1.20"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"180 160 140"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"250"
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"875"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"10"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attackspeed"		"40 60 80"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_movespeed"		"15 20 25"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"40 80 120"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"			"15 30 45"
+		}
+				
+	}
+
+	"OnAbilityPhaseStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_ElderTitan.EchoStomp.Channel"
+			"Target" 		"CASTER"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"CreateThinker"
+		{
+			"ModifierName"	"modifier_ancient_arena"
+			"Target" 		"CASTER"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_ancient_arena_caster"
+			"Target" 		"CASTER"
+			"Duration"		"%duration"
+		}
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/reus_abilities.lua"
+			"Function"		"reus_ancient_arena_start"
+			"duration"		"%duration"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_ancient_arena"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+			"Duration"			"%duration"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_reus/reus_rockfall.vpcf"
+					"EffectAttachType"  "follow_origin"
+					"Target"            "TARGET"
+
+					"ControlPoints"
+					{
+						"00"	"0 0 0"
+						"02"	"%radius 0 0"
+					}
+				}
+			}
+
+			"ThinkInterval"  "0.03"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/reus_abilities.lua"
+					"Function"		"reus_ancient_arena_check"
+					"range"			"%radius"
+				}
+			}
+		
+		}
+		"modifier_ancient_arena_sticky"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"1"
+			"Duration"			"%duration+1"
+		}
+		"modifier_ancient_arena_caster"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+			"IsBuff"			"1"
+
+			"StatusEffectName" 		"particles/status_fx/status_effect_earth_spirit_petrify.vpcf"
+			"StatusEffectPriority"  "10"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attackspeed"
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movespeed"
+			    "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "%bonus_damage"
+			    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+			}
+		}
+	}
+}

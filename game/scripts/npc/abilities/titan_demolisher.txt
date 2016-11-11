@@ -1,0 +1,77 @@
+//=====================================================================================================
+// TITAN: Command Aura
+//=====================================================================================================
+"titan_demolisher"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AbilityTextureName"			"bahamut_reckoning_aura"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//---------------------------------------------------a----------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_damage_buildings"		"160"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/creeps/lane_creeps/creep_dire_hulk_swipe_right.vpcf"
+		"particle" "particles/creeps/lane_creeps/creep_dire_hulk_swipe_left.vpcf"
+		"particle" "particles/creeps/lane_creeps/creep_radiant_hulk_swipe_right.vpcf"
+		"particle" "particles/creeps/lane_creeps/creep_radiant_hulk_swipe_left.vpcf"
+		"soundfile" "soundevents\hero_phantom.vsndevts"
+		}
+	
+	"Modifiers"
+		{
+			"modifier_demolisher"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+
+				"OnAttackLanded"
+				// "%attack_damage" is set to the damage value before mitigation
+				{
+					"Damage"
+					{
+						"Target"
+						{
+							"Center"  	"TARGET"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_BUILDING"
+						}
+						"Type"			"DAMAGE_TYPE_PHYSICAL"
+						"Damage"		"%bonus_damage_buildings"
+					}
+				}
+			}
+		}
+}

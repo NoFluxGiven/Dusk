@@ -1,0 +1,81 @@
+//=====================================================================================================
+// ELENA: Grave Guard
+//=====================================================================================================
+"elena_graveguard"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	"AbilityTextureName"			"elena_graveguard"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"775"
+	"AbilityCastPoint"				"0.5"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"19"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"90 95 100 105"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"duration"						"8"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"percent"						"30 35 40 45"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_explode.vpcf"
+		"particle" "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
+		"particle" "particles/units/heroes/hero_elena/elena_grave_guard.vpcf"
+		"soundfile""soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+		"soundfile""soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+		"soundfile""soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+		"soundfile" "soundevents\hero_phantom.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/elena_abilities.lua"
+				"Function"		"applyShield"
+				"pc"			"%percent"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"elena_graveguard_mod_shld"
+			{
+				"Duration" "%duration"
+
+				"EffectName"		"particles/units/heroes/hero_elena/elena_grave_guard.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+		}
+}
+

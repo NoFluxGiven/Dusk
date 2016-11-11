@@ -1,0 +1,117 @@
+"odin_gungnir"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL" 
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "FightRecapLevel"               "1"
+    "AoERadius"                     "%arrow_radius"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+    "AnimationPlaybackRate"         "1.5"
+    "AbilityTextureName"            "odin_gungnir"
+
+    // Precache
+    //-------------------------------------------------------------------------------------------------------------
+    "precache"
+    {
+        "soundfile"         "soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+        "soundfile"         "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+        "soundfile"         "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+        "particle"          "particles/units/heroes/hero_odin/odin_gungnir.vpcf"
+    }
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "0"
+    "AbilityCastPoint"              "0.3 0.3 0.3 0.3"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "70 65 60"
+    "AbilityDuration"               "3.11 3.11 3.11 3.11"
+
+    // Damage.
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityDamage"                 "400 500 600"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "0"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"          "FIELD_FLOAT"
+            "arrow_speed"       "1500"
+        }
+        "02"
+        {
+            "var_type"          "FIELD_FLOAT"
+            "arrow_stun"        "2.0 3.0 4.0"
+        }
+        "03"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "arrow_radius"      "325"
+        }
+        "04"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "scepter_damage"    "625 750 875"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "FireSound"
+        {
+            "EffectName"            "Hero_Mirana.ArrowCast"
+            "Target"                "CASTER"
+        }
+
+        "RunScript"
+        {
+            "ScriptFile"            "heroes/odin_abilities.lua"
+            "Function"              "gungnir"
+            "arrow_speed"           "%speed"
+            "stunduration"          "%arrow_stun"
+            "radius"                "%arrow_radius"
+            "damage"                "%AbilityDamage"
+            "scepter_damage"        "%scepter_damage"
+        }       
+    }
+
+    "Modifiers"
+    {
+        "modifier_gungnir_no_attack"
+        {
+            "Duration"           "10"
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "1"
+
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "-150"
+                "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "-60"
+            }
+
+            "OnDestroy"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/odin_abilities.lua"
+                    "Function"      "Rearm"
+                }
+            }
+        }
+    }
+
+}
+

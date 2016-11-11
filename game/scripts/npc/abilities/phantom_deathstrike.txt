@@ -1,0 +1,138 @@
+//=====================================================================================================
+// PHANTOM: Deathstrike
+//=====================================================================================================
+"phantom_deathstrike"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"phantom_deathstrike"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"crit"							"125 150 175"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_damage"					"7 14 21"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_reduction"				"-10 -20 -30"
+		}
+	}
+	
+	"precache"
+		{
+		"particle"	"particles/units/heroes/hero_phantom/phantom_crit.vpcf"
+		"soundfile" "soundevents\hero_phantom.vsndevts"
+		}
+	
+	"Modifiers"
+		{
+		"phantom_deathstrike_attk_mod"
+		{
+		"Passive" "1"
+		"IsHidden" "1"
+		"OnAttackStart"
+			{
+			"RemoveModifier"
+				{
+				"ModifierName" "phantom_crit_bonus_damage_mod"
+				"Target" "CASTER"
+				}
+			"Random"
+				{
+				"Chance" "15"	
+				"PseudoRandom"	"DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
+				"OnSuccess"
+					{
+					"ApplyModifier"
+						{
+						"ModifierName" "phantom_crit_bonus_damage_mod"
+						"Target" "CASTER"
+						}
+					}
+				}
+			}
+		}
+		"phantom_crit_bonus_damage_mod"
+		{
+		"IsHidden" "1"
+		"Properties"
+			{
+			"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit"
+			}
+		"OnAttackLanded"
+			{
+			"ApplyModifier"
+				{
+				"ModifierName" "phantom_crit_damage_reduction_mod"
+				"Target" "TARGET"
+				}
+			"RemoveModifier"
+				{
+				"ModifierName" "phantom_crit_bonus_damage_mod"
+				"Target" "CASTER"
+				}
+			"RunScript"
+				{
+				"ScriptFile" "heroes/phantom_abilities.lua"
+				"Function" "phantom_crit"
+				"bonus_damage" "%bonus_damage"
+				}
+			"FireSound"
+				{
+				"EffectName" "Phantom.DeathstrikeCrit"
+				"Target"
+					{
+					"Center" "TARGET"
+					"Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					}
+				}
+			}
+		}
+		"phantom_crit_damage_reduction_mod"
+		{
+		"Duration" "3"
+		"IsHidden" "0"
+		"IsPurgable"		"1"
+		"IsBuff"			"0"
+		"IsDebuff"			"1"
+		"IsStunDebuff"		"0"
+		//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+		"Properties"
+			{
+			"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%damage_reduction"
+			}
+		}
+		}
+}

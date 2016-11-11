@@ -1,0 +1,110 @@
+"techies_focused_detonate"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"gob_squad_clearance_sale"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
+		"particle"		"particles/units/heroes/hero_gob_squad/whoops_explosion.vpcf"
+	}
+
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"450"
+	"AbilityCastPoint"				"0.4"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"120 100 80"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"140 180 220"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200"
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"300"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"10"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/gob_squad_abilities.lua"
+			"Function"		"clearance_sale_start"
+			"duration"		"%duration"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_clearance_sale_throw"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+
+			"ThinkInterval"  "0.45"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/gob_squad_abilities.lua"
+					"Function"		"clearance_sale"
+					"radius"		"%radius"
+					"damage"		"%AbilityDamage"
+				}
+			}
+		}
+		"modifier_clearance_sale_throw_aghs"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+
+			"ThinkInterval"  "0.30"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/gob_squad_abilities.lua"
+					"Function"		"clearance_sale"
+					"radius"		"%radius"
+					"damage"		"%AbilityDamage"
+				}
+			}
+		}
+	}
+}

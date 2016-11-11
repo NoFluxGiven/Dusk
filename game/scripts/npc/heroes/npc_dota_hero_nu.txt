@@ -1,0 +1,59 @@
+"npc_dota_hero_nu"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_enigma"
+	"Ability1"				"nu_antimatter_mines" // Summons a large amount of mines to a target area. The mines explode when anything in their vicinity moves, dealing Pure damage to units.
+	"Ability2"				"nu_micronebula" // Dark nebulae orbit the targeted enemy. After a short formation time, the mebulae begin to rotate around them.
+	// After a period of time, the nebulae ceases orbit, dealing large damage to the target based on the amount of damage they took during the duration over 3s.
+	"Ability3"				"nu_gravity_pulse" // Nu summons an incredible gravitational pulse, slowing all enemies caught in the radius to 50 movespeed for 1s. This overrides Haste runes,
+	// and other types of abilities that would otherwise be an absolute movement speed buff. Deals 175/250/325/400 Physical damage. Has a large cast point, and a small radius.
+	"Ability4"				"nu_warpstar" // Gathering his energies, Nu creates the impossible; a devastating cosmological entity called the Warpstar. The Warpstar destabilises the space
+	// around it, slowing enemy Heroes. After a delay time, they take a large amount of Physical, Magical and Pure damage, and are transported to Nu's position when he cast the spell.
+	"Ability5"				""
+	"Ability6"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+	
+
+	"ArmorPhysical"				"0"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"400"
+	"AttackRate"				"1.5"
+	"AttackDamageMin"			"22"										// Damage range min.
+	"AttackDamageMax"			"26"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"20"										// Base strength
+	"AttributeStrengthGain"		"1.0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"28"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.7"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"19"										// Base agility
+	"AttributeAgilityGain"		"2.1"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"									// Speed.
+	"MovementTurnRate"			"1.0"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

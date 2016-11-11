@@ -1,0 +1,158 @@
+//=====================================================================================================
+// NU: Warpstar
+//=====================================================================================================
+"nu_warpstar"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AoERadius"						"350"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlayBackRate"			"0.60"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityTextureName"			"nu_warpstar"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"2000"
+	"AbilityCastPoint"				"0.8"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"120"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"250 300 350"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"125 200 275"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"slow"						"-25 -35 -45"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"stun"						"1.5 2.0 2.5"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"350"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"delay"						"2"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_over_time"			"40 60 80"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_nu/warpstar.vpcf"
+		"soundfile" "soundevents/hero_nu.vsndevts"
+		}
+
+	"OnAbilityPhaseStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Warlock.FatalBondsPrecast"
+			"Target" 		"CASTER"
+		}
+	}
+	
+	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/nu_abilities.lua"
+				"Function"		"warpstar_start"
+				"delay"			"%delay"
+			}
+		}
+	
+	"Modifiers"
+		{
+			
+			"modifier_warpstar_exit"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			}
+
+			"modifier_warpstar_entrance"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+
+				"Aura"          	"modifier_warpstar_slow"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/nu_abilities.lua"
+						"Function"		"warpstar_transport"
+						"radius"		"%radius"
+						"damage"		"%damage"
+						"stun"			"%stun"
+					}
+				}	
+			}
+
+			"modifier_warpstar_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage_over_time"
+					}
+				}
+
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				}
+			}
+		}
+}
+	

@@ -1,0 +1,37 @@
+//=================================================================================================================
+// Tips Item - Astaroth
+//=================================================================================================================
+"item_tips_astaroth"
+{
+// General
+//-------------------------------------------------------------------------------------------------------------
+"BaseClass"						"item_datadriven"
+"ID"							"9905"  //Valve's version of this item uses the ID "114".
+"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+"Model"							"models/props_gameplay/red_box.vmdl" 
+"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+"AbilityTextureName"			"item_tips"
+
+// Stats		
+//-------------------------------------------------------------------------------------------------------------
+"AbilityCooldown"				"0"
+	
+// Item Info
+//-------------------------------------------------------------------------------------------------------------
+"ItemCost"						"0"
+"ItemShopTags"					"tips;"
+"ItemQuality"					"epic"
+"ItemAliases"					""
+"ItemPurchasable"				"1"
+"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+// Special	
+//-------------------------------------------------------------------------------------------------------------
+"AbilitySpecial"
+{
+}
+
+"Modifiers"
+{
+}
+}

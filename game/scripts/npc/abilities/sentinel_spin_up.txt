@@ -1,0 +1,84 @@
+//=====================================================================================================
+// SENTINEL: Spin Up
+//=====================================================================================================
+"sentinel_spin_up"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "ability_datadriven"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "gyrocopter_flak_cannon"
+    "MaxLevel"                      "1"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "0"
+    "AbilityCastPoint"              "0.0"
+    
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "0"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "0"
+    
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityModifierSupportValue"   "0.0"   // All about the damage
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "bonus_as"            "10"
+        }
+        "02"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "base_as"             "100"
+        }
+    }
+    
+    "precache"
+        {
+        "particle" "particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
+        "soundfile" "soundevents\hero_phantom.vsndevts"
+        }
+    
+    "Modifiers"
+        {
+            "modifier_sentinel_auto_attack"
+            {
+                "Passive" "1"
+                "IsHidden" "1"
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%base_as"
+                }
+                "OnAttackLanded"
+                // "%attack_damage" is set to the damage value before mitigation
+                {
+                    "ApplyModifier"
+                    {
+                        "ModifierName"    "modifier_sentinel_spin_up"
+                        "Target"         "CASTER"
+                    }
+                }
+            }
+            "modifier_sentinel_spin_up"
+            {
+                "Duration" "8"
+                "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+                "IsHidden"          "1"
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_as"
+                }
+            }
+        }
+}

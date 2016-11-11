@@ -1,0 +1,105 @@
+//=====================================================================================================
+// BLOODWARRIOR: Blood Curse
+//=====================================================================================================
+"bloodwarrior_blood_curse"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"	
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"bloodwarrior_blood_curse"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"115 100 85"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	}
+
+	"precache"
+	{
+		"soundfile"			"soundevents/voscripts/game_sounds_vo_bloodseeker.vsndevts"
+		"soundfile"			"soundevents/music/game_sounds_stingers_main.vsndevts"
+		"particle"			"particles/units/heroes/hero_bloodwarrior/blood_curse_activate.vpcf"
+		"particle"			"particles/units/heroes/hero_bloodwarrior/blood_curse_revive.vpcf"
+	}
+	
+	"Modifiers"
+		{
+			"modifier_blood_curse_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+
+				"ThinkInterval"  "0.03"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes\bloodwarrior_abilities.lua"
+						"Function"		"CheckBloodfiend"
+					}
+				}
+			}
+
+			"modifier_blood_curse_hide"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+
+				"OnCreated"
+				{
+					"CreateThinker"
+					{
+						"ModifierName"	"modifier_blood_curse_fx"
+						"Target" 		"TARGET"
+					}
+				}
+			
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_blood_curse_fx"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"OnCreated"
+				{
+					"FireEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_bloodwarrior/blood_curse_activate.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+			}
+
+
+		}
+}

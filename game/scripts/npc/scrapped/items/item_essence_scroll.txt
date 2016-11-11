@@ -1,0 +1,50 @@
+//=================================================================================================================
+// Essence Scroll
+//=================================================================================================================
+"item_essence_scroll"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3501"  //Special item
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_essence_scroll"
+	"FightRecapLevel"				"1"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"0"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"350"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"epic"
+	"ItemAliases"					"legendary;essence_scroll"
+	"ItemPurchasable"				"1"
+	"ItemSellable"					"1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDroppable"					"1"
+	"SideShop"						"0"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"1000"
+		}
+	}
+	
+	"Modifiers"
+	{
+	}
+}

@@ -1,0 +1,78 @@
+//=================================================================================================================
+// Arcanite Shards
+//=================================================================================================================
+"item_arcanite_shards"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3026"  //Valve's version of this item uses the ID "39".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/clarity.mdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_arcanite_shards"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"              "0"
+	"AbilityCooldown"				"3.5"
+	"AbilityManaCost"				"0"
+	"AbilityCastRange"				"0"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"275"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"arcanite_shards"
+	"ItemStackable"					"0"
+	"ItemPermanent"					"0"
+	"ItemPurchasable"				"0"
+	"ItemInitialCharges"			"4"
+	"ItemStockMax" "2" 
+	"ItemStockTime" "150"
+	"ItemStockInitial" "0"
+
+	"precache"
+	{
+	
+		"particle" "particles/items/arcanite_shards.vpcf"
+	
+	}
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"dmg"					"75"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"minimum_dmg"			"150"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_dmg"				"6"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_arcanite_shards"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_dmg"
+			}
+		}
+	}
+}

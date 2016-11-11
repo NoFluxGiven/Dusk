@@ -1,0 +1,119 @@
+"Alroth.Raze"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/alroth_raze.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Alroth.Shatter"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/alroth_shatter.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Alroth.EnergyBurst"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/alroth_energyburst.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Alroth.Solcharge"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/alroth_solcharge.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
+                    }
+                }
+            }
+        }
+    }
+
+}

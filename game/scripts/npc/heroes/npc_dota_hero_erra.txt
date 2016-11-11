@@ -1,0 +1,61 @@
+"npc_dota_hero_erra"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_necrolyte"
+	"Ability1"				"erra_morbid_blade" // Erra strikes a target area with the wind of the Black Tide, slicing through enemies in it. Deals Physical damage, but if any units hit
+	// are at 35% or less Health, it deals Pure damage instead, and its cooldown is halved. Erra gains Health back based on the Health missing from enemy targets. Gains 1/2/3/4% Health
+	// for each target AFTER the damage occurs.
+	"Ability2"				"erra_to_dust" // When cast, grants Erra bonus damage based off the missing Health of all nearby enemy Heroes and creeps. Grants 6/8/10/12% of the missing
+	// Health of enemy Heroes, and 2% of the missing Health of creeps at the time. Lasts 12s. 5 enemy Heroes with 50% Health and 650 Max Health would grant 195 damage at Max level.
+	"Ability3"				"erra_grave_guard" // Erra finds it difficult to succumb to death, thanks to a dark enchantment cast upon him many eons ago. When he would die, he
+	// becomes immune to damage for a short time and gains back 25/30/35/40% of his Max Health and Mana over 2/3/4/5s. The ability goes on cooldown after this point.
+	"Ability4"				"erra_deathtouch" // With but a touch, Erra can rip souls asunder, dealing massive Magical damage, then damage over time. Deals 460/580/700 damage immediately,
+	// then 35/40/45 damage per second for 10s.  
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"2"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"475"
+	"AttackRate"				"1.6"
+	"AttackDamageMin"			"25"										// Damage range min.
+	"AttackDamageMax"			"32"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"22"										// Base strength
+	"AttributeStrengthGain"		"2.1"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"14"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"15"										// Base agility
+	"AttributeAgilityGain"		"2.1"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"305"									// Speed.
+	"MovementTurnRate"			"0.5"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
+}

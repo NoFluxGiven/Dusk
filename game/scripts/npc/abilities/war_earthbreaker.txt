@@ -1,0 +1,80 @@
+"war_earthbreaker"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+    "AnimationPlaybackRate"         "0.9"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "war_earthbreaker"
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "325"
+    "AbilityCastPoint"              "0.4"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "10"
+
+    // Damage.
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityDamage"                 "100 150 200 250"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "50"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityModifierSupportValue"   "0.5"   // Applies two modifiers
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "pure_threshold"        "40"
+        }
+        
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "radius"                "325"
+        }
+
+        "03"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "stun"                  "1.00 1.50 2.00 2.50"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/hero_war.vsndevts"
+        "particle"  "particles/units/heroes/hero_war/earthbreaker.vpcf"
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "heroes/war_abilities.lua"
+            "Function"      "earthbreaker"
+            "damage"        "%AbilityDamage"
+            "stun"          "%stun"
+            "radius"        "%radius"
+        }
+    }
+
+    "Modifiers"
+    {
+    }
+}

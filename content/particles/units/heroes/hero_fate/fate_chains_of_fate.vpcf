@@ -1,0 +1,80 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor =
+	[
+		85,
+		0,
+		127,
+		255,
+	]
+	m_flConstantLifespan = 3.000000
+	m_Operators =
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+			m_flStartAlpha = 0.000000
+		},
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderRopes"
+			m_flTessScale = 8.000000
+			m_flFinalTextureScaleV = 0.500000
+			m_flRadiusScale = 4.000000
+			m_bMod2X = true
+			m_flOverbrightFactor = 15.000000
+			m_hTexture = resource:"materials/particle/beam_chain_2.vtex"
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_VelocityRandom"
+			m_LocalCoordinateSystemSpeedMin =
+			[
+				0.000000,
+				0.000000,
+				-50.000000,
+			]
+			m_LocalCoordinateSystemSpeedMax =
+			[
+				0.000000,
+				0.000000,
+				50.000000,
+			]
+		},
+		{
+			_class = "C_INIT_RingWave"
+			m_flInitialRadius = 200.000000
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 40
+		},
+	]
+	m_ForceGenerators =
+	[
+		{
+			_class = "C_OP_AttractToControlPoint"
+			m_fForceAmount = 50.000000
+			m_fFalloffPower = 0.000000
+		},
+	]
+	m_Children =
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_fate/fate_chains_of_fate_orb.vpcf"
+		},
+	]
+}

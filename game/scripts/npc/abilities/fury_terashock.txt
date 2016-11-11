@@ -1,0 +1,139 @@
+//=====================================================================================================
+// FURY: Terashock
+//=====================================================================================================
+"fury_terashock"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"fury_terashock"
+	"AnimationPlaybackRate"			"0.85"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"320"
+	"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"8"
+	"AbilityDuration"				"1.1 1.2 1.3 1.4"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"80 160 240 320"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"shock_radius"				"320"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"movement_slow"				"-25 -30 -35 -40"
+		}
+		// Extra variables
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"debuff_duration"			"0.4"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"slow_duration"				"3.8"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"armor_reduction"			"-1 -2 -3 -4"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"						"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
+		"particle"						"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"
+	}
+	
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"Target"					"CASTER"
+			"EffectName"				"Hero_Ursa.Earthshock"
+		}
+	
+		"FireEffect"
+		{
+			"Target"					"CASTER"
+			"EffectName"				"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"
+			"EffectAttachType"			"start_at_origin"
+			"EffectRadius"				"%shock_radius"
+		}
+	
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"	"CASTER"
+				"Radius"	"%shock_radius"
+				"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types"		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+			
+			"Action"
+			{
+				"Damage"
+				{
+					"Target"	"TARGET"
+					"Damage"	"%AbilityDamage"
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+				}
+				
+				"ApplyModifier"
+				{
+					"Target"		"TARGET"
+					"ModifierName"	"modifier_earthshock_debuff_datadriven"
+				}
+			}
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_earthshock_debuff_datadriven"
+		{
+			"IsHidden"			"0"
+			"IsPurgable"		"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsStunDebuff"		"0"
+			//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+		
+			"Duration"			"%slow_duration"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movement_slow"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_reduction"
+			}
+		}
+	}
+}

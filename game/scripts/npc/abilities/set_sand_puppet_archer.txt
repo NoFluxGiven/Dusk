@@ -1,0 +1,73 @@
+//=====================================================================================================
+// SET: Sand Puppet
+//=====================================================================================================
+"set_sand_puppet_archer"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"bloodseeker_thirst"
+	"MaxLevel"						"8"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"range_bonus"			"75 100 125 150 175 200 225 250"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+		"particle"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff_rune.vpcf"
+		"particle"			"particles/status_fx/status_effect_phantom_lancer_illusion.vpcf"
+		"particle"			"particles/units/heroes/hero_phantom_lancer/phantom_lancer_death.vpcf"
+	}	
+	
+	"Modifiers"
+		{
+			"modifier_sand_puppet_archer"
+			{
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERSISTENT"
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"StatusEffectName" 		"particles/status_fx/status_effect_phantom_lancer_illusion.vpcf"
+				"StatusEffectPriority"  "10"
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/set_abilities.lua"
+						"Function"		"Dust"
+					}
+				}
+
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "%range"
+				}
+			}
+		}
+}

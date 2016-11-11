@@ -1,0 +1,146 @@
+"erra_deathtouch"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AnimationPlaybackRate"         "0.5"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "erra_deathtouch"
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "150"
+    "AbilityCastPoint"              "1.0"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "135.0 90.0 45.0"
+
+    // Damage.
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityDamage"                 "460 580 700"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "200 325 450"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityModifierSupportValue"   "0.5"   // Applies two modifiers
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "dot_amount"            "40 50 60"
+        }
+        
+        "02"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "dot_duration"          "8.0"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/hero_erra.vsndevts"
+        "particle"  "particles/units/heroes/hero_erra/deathtouch.vpcf"
+        "particle"  "particles/units/heroes/hero_erra/deathtouch_unit.vpcf"
+    }
+
+    "OnAbilityPhaseStart"
+    {
+        "FireSound"
+        {
+            "EffectName"    "Erra.DeathtouchPrecast"
+            "Target"         "CASTER"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "internal/util.lua"
+            "Function"      "StopUnit"
+        }
+        "RunScript"
+        {
+            "ScriptFile"    "internal/util.lua"
+            "Function"      "StopCaster"
+        }
+        "Damage"
+        {
+            "Target"        "TARGET"
+            "Type"          "DAMAGE_TYPE_MAGICAL"
+            "Damage"        "%AbilityDamage"
+        }
+        "FireEffect"
+        {
+            "EffectName"        "particles/units/heroes/hero_erra/deathtouch.vpcf"
+            "EffectAttachType"  "follow_origin"
+            "Target"
+            {
+                "Center"      "TARGET"
+                "Radius"     "1"
+                "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Types"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                "Flags"     "DOTA_UNIT_TARGET_FLAG_DEAD"
+            }
+        }
+        "FireEffect"
+        {
+            "EffectName"        "particles/units/heroes/hero_erra/deathtouch.vpcf"
+            "EffectAttachType"  "follow_origin"
+            "Target"            "TARGET"
+        }
+
+        "FireSound"
+        {
+            "EffectName"    "Erra.Deathtouch"
+            "Target"        "CASTER"
+        }
+
+        "ApplyModifier"
+        {
+            "ModifierName"   "modifier_deathtouch_dot"
+            "Target"         "TARGET"
+        }
+    }
+
+    "Modifiers"
+    {
+
+        "modifier_deathtouch_dot"
+        {
+            "IsHidden"  "0"
+            "IsDebuff"  "1"
+            "Duration"  "%dot_duration"
+            "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+            "EffectName" "particles/units/heroes/hero_erra/deathtouch_unit.vpcf"
+            "EffectAttachType" "attach_origin"
+
+            "ThinkInterval"     "1"
+            "OnIntervalThink"
+            {
+                "Damage"
+                {
+                    "Target"    "TARGET"
+                    "Type"      "DAMAGE_TYPE_MAGICAL"
+                    "Damage"    "%dot_amount"
+                }
+            }
+        }
+    }
+}

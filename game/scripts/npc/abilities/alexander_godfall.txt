@@ -1,0 +1,138 @@
+//=====================================================================================================
+// ALEXANDER: Godfall
+//=====================================================================================================
+"alexander_godfall"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	"AbilityChannelTime"			"1"
+	"AbilityTextureName"			"alexander_godfall"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"70"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"125"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"duration"						"7"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"135 170 205"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"scepter_mult"					"75"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_ambient.vpcf"
+		"particle" "particles/units/heroes/hero_alexander/godfall_start.vpcf"
+		"particle" "particles/units/heroes/hero_alexander/godfall_charged.vpcf"
+		"particle" "particles/units/heroes/hero_alexander/godfall_strike.vpcf"
+		"particle" "particles/units/heroes/hero_alexander/godfall_success.vpcf"
+		"soundfile" "soundevents\hero_alexander.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+		}
+
+	"OnSpellStart"
+	{
+		"AttachEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_alexander/godfall_start.vpcf"
+				"EffectAttachType"  "follow_customorigin"
+				"Target"            "CASTER"
+				"ControlPointEntities"
+	            {
+	                "CASTER" "attach_hitloc"
+	            }
+			}
+		"FireSound"
+		{
+			"EffectName"	"Alexander.Godfall.Charge"
+			"Target" 		"CASTER"
+		}
+	}
+		
+	"OnChannelSucceeded"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_alexander_godfall"
+				"Target" 		"CASTER"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_alexander_godfall"
+			{
+				"Duration" "%duration"
+				"IsHidden" "0"
+				"IsPurgable" "0"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/alexander_abilities.lua"
+						"Function"		"GodfallSound"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/alexander_abilities.lua"
+						"Function"		"GodfallSoundStop"
+					}
+				}
+
+				"EffectName"			"particles/units/heroes/hero_alexander/godfall_charged.vpcf"
+				"EffectAttachType"		"follow_origin"
+
+				"States"
+				{
+					"MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"OnAttackLanded"
+				// "%attack_damage" is set to the damage value before mitigation
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/alexander_abilities.lua"
+						"Function"		"Godfall"
+						"mult"			"%damage"
+						"scepter_mult"	"%scepter_mult"
+					}
+				}
+			}
+		}
+}

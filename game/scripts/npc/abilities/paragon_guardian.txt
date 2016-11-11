@@ -1,0 +1,103 @@
+//=====================================================================================================
+// PARAGON: Guardian
+//=====================================================================================================
+"paragon_guardian"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"holdout_gods_strength"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"reduction"				"20 25 30 35"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		"particle"			"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_halo_buff.vpcf"
+
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"paragon_guardian_aura_mod"
+			"Target" 		"CASTER"
+		}
+	}
+	
+	"Modifiers"
+		{
+		"paragon_guardian_aura_mod"
+			{
+			"Duration" "5"
+			"IsHidden" "1"
+			"Aura" "paragon_guardian_mod"
+			"Aura_Radius" "700"
+			"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types" "DOTA_UNIT_TARGET_HERO"
+			"Aura_ApplyToCaster" "0"
+			}
+		"paragon_guardian_mod"
+			{
+			"IsHidden" "0"
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/paragon_abilities.lua"
+					"Function"		"guardian"
+				}
+			}
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/paragon_abilities.lua"
+					"Function"		"guardian"
+				}
+			}
+			}
+		"paragon_guardian_effect_mod"
+			{
+			"Duration" "1"
+			"IsHidden" "1"
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_halo_buff.vpcf"
+					"EffectAttachType"	"follow_overhead"
+					"Target"			"TARGET"
+				}
+			}
+			}
+		}
+}

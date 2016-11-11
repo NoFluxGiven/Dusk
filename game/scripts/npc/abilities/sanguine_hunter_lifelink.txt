@@ -1,0 +1,138 @@
+//=====================================================================================================
+// SANGUINE HUNTER: LIFELINK
+//=====================================================================================================
+"sanguine_hunter_lifelink"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"sanguine_hunter_lifelink"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1200"
+	"AbilityCastPoint"				"0.452 0.452 0.452 0.452"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"20"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heal_from_target"		"10 20 30 40"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heal_damage_to_target"	"10 20 30 40"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+		"particle"			"particles/units/heroes/hero_sanguine_hunter/sanguine_hunter_lifelink.vpcf"
+		"particle"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_silence.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"sanguine_heroes/hunter_abilities.lua"
+			"Function"		"lifelink_start"
+		}
+	}
+	
+	"Modifiers"
+		{
+		"modifier_lifelink_ally"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsBuff"			"1"
+			"IsDebuff"			"0"
+			"Duration"			"%duration"
+		
+			"EffectName"		"particles/units/heroes/hero_sanguine_hunter/sanguine_hunter_lifelink.vpcf"
+			"EffectAttachType"	"follow_hitloc"
+		
+			"OnDealDamage"
+			// "%attack_damage" is set to the damage value after mitigation
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hunter_abilities.lua"
+					"Function"		"lifelink_deal"
+					"dmg"			"%attack_damage"
+					"heal"			"%heal_from_target"
+				}
+			}	
+		}
+		"modifier_lifelink_caster"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsBuff"			"1"
+			"IsDebuff"			"0"
+			"Duration"			"%duration"
+		
+			"EffectName"		"particles/units/heroes/hero_sanguine_hunter/sanguine_hunter_lifelink.vpcf"
+			"EffectAttachType"	"follow_hitloc"
+		
+			"OnTakeDamage"
+			// "%attack_damage" is set to the damage value after mitigation
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hunter_abilities.lua"
+					"Function"		"lifelink_take"
+					"dmg"			"%attack_damage"
+					"heal"			"%heal_damage_to_target"
+				}
+			}
+		}
+		"modifier_lifelink_enemy"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsBuff"			"1"
+			"IsDebuff"			"0"
+			"Duration"			"%duration"
+		
+			"EffectName"		"particles/units/heroes/hero_sanguine_hunter/sanguine_hunter_lifelink.vpcf"
+			"EffectAttachType"	"follow_hitloc"
+		
+			"OnDealDamage"
+			// "%attack_damage" is set to the damage value after mitigation
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hunter_abilities.lua"
+					"Function"		"lifelink_deal"
+					"dmg"			"%attack_damage"
+					"heal"			"%heal_from_target"
+				}
+			}
+		}
+		}
+}

@@ -1,0 +1,86 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+			m_flStartAlpha = 0.0
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndTime = 0.4
+			m_flStartScale = 1.4
+		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = 25
+			m_nSpinRateMinDegrees = 5
+			m_fSpinRateStopTime = 1.0
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartTime = 0.6
+			m_flEndScale = 0.0
+			m_flBias = 0.2
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nOrientationType = 2
+			m_bAdditive = true
+			m_hTexture = resource:"materials/particle/frost_add_projected_color_psd_e16f0483.vtex"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 25.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 150.0 ]
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RemapCPtoScalar"
+			m_nCPInput = 1
+			m_flInputMax = 1000.0
+			m_flOutputMax = 1000.0
+			m_bScaleInitialRange = true
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 0.65
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 165, 42, 42, 255 ]
+			m_ColorMax = [ 210, 105, 30, 255 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 15
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_war/fight_me_ring.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_war/fight_me_start.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_war/fight_me_glow.vpcf"
+		},
+	]
+}

@@ -1,0 +1,3509 @@
+Changelog:
+
+To Do:
+
+Add an effect for Bloodfiend's Dive.
+
+Current Bugs and Issues:
+
+None.
+
+Balance Changes:
+
+None.
+
+Version 1.94
+
+HEROES
+=========
+
+FURY
+- Increased base attack damage to 35 - 45 (was 30 - 35).
+
+BAHAMUT
+- Reduced Agi gain to 2.2 (was 2.8).
+
+Version 1.93c - Hotfix 2
+
+- Fixed an exploit where Paragon could convert Roshan.
+
+Version 1.93c - Hotfix 1
+
+- Fixed an issue with Backdoor Protection malfunctioning due to dummy units.
+- Updated the game mode to show a short description at the top of the changelog.
+
+Version 1.93c
+
+HEROES
+=========
+
+ASTAROTH
+- Black Insignia no longer works with illusions.
+
+FURY
+- Rend is no longer disabled by Break (Bloodsport is still affected however).
+
+ALEXANDER
+- Soulseal cooldown increased to 22s (was 20/18/16/14s).
+- Soulseal now applies Break over its duration.
+- Elandra's Blessing Mana cost reduced to 20/40/60/80 (was 80).
+- Elandra's Blessing bonus Armor reduced to 3/6/9/12 (was 6/12/18/24).
+- Elandra's Blessing bonus damage reduced to 15/30/45/60 (was 20/40/60/80).
+- Elandra's Blessing cooldown increased to 20s (was 16s).
+- Elandra's Blessing duration reduced to 10s (was 12s).
+- Elandra's Blessing no longer affects towers.
+
+Version 1.93b
+
+HEROES
+=========
+
+BAAL
+- Compress Mana cost reduced to 155 (was 250/225/200/175).
+- Compress cast point increased to 0.75s (was 0.3s).
+- Compress now lasts 3.0s before stunning Baal (was 3.5s). On allied Heroes, the time is doubled to 6.0s.
+- Compress now deals Pure damage over time to Baal if the Compressed target is an enemy. The damage over time is equivalent to 10% of their attack damage every 0.25 seconds.
+
+Version 1.93 - Hotfix 2
+
+- Fixed a (hilarious) glitch where Heroes respawned almost instantly after a few deaths. Respawn time is now (2.75 * Hero Level) + 4.
+- Buyback Penalty is now a 10% respawn time increase while Buyback is on cooldown.
+
+Version 1.93 - Hotfix 1
+
+- Bloodwarrior's Dance of Death can no longer damage allies.
+- Fixed an issue with reincarnating Heroes taking ages (aegis?) to respawn.
+
+Version 1.93 - Major Balance and Clean-Up Update
+
+CREEPS
+=========
+
+TITAN creeps have been temporarily removed. They will be back in the next patch.
+
+HEROES
+=========
+
+The following Heroes have been temporarily disabled in the pick screen, pending some balance changes and/or reworks:
+CRIMSON, CHRONOS, TRICKSTER
+
+The following Heroes are still disabled pending possible reworks:
+ELEMENTALIST, ALCHYMIST
+
+THE LICH
+- Absolute Zero slow reduced to 20/30/40% (was 50/80/120%).
+- Absolute Zero Scepter slow reduced to 50/60/70% (was 90/180/270%).
+- Absolute Zero now only disables healing when it is upgraded with Aghanim's Scepter.
+- Absolute Zero now deals 25% damage to creeps.
+- Absolute Zero cooldown increased to 160/140/120.
+- Traveling Frost mana cost reduced to 110/130/150/170 (was 175).
+- Winter's Requiem interval reduced to 0.25s (was 0.33s).
+- Winter's Requiem now lasts 8s (was 4s).
+- Winter's Requiem radius increased to 325 (was 250).
+- Winter's Requiem no longer has two different intervals for its damage.
+- Winter's Requiem now has a minimum radius of 125.
+- Winter's Requiem damage radius increased to 200.
+
+ARTIFICER
+- Unmaking mana cost reduced to 40/50/60/70 (was 80/85/90/95).
+- Unmaking damage per second increased to 3.00/3.75/4.50/5.25% (was 2.00/2.50/3.00/3.50%).
+- Unmaking now deals Current Health percentage based damage instead of max Health percentage based damage.
+- Unmaking slow and damage over time duration increased to 4.0s (was 3.0s).
+- Replica cooldown reduced to 70s (was 110s).
+- Replica mana cost reduced to 150 (was 200).
+- Replica duration rescaled to 20/30/40 (was 16/32/48).
+- Replica outgoing damage reduced to 100% (was 100/125/150%).
+- Reshape cast point increased to 0.4s (was 0.3s).
+- Reshape cooldown reduced to 20s (was 40/35/30/25s).
+- Reshape mana cost reduced to 110/120/130/140 (was 140/145/150/155).
+- Reshape duration increased to 2/3/4/5s (was 2.5/3.0/3.5/4.0s).
+- Naturalise now affects units in a 250 radius, and is a point target area-of-effect ability. Does not target units that are not visible.
+
+HORROR
+- Alone is now an AoE active-passive. Creates an area around Horror that blinds enemies.
+The passive effect grants Horror bonus movespeed over the movespeed cap while he is not visible to the enemy team. The effect will linger for 1s after he enters vision of an enemy unit.
+- Alone cast point reduced to 0.4s (was 0.8s).
+- Terrify now deals 30/40/50/60 damage per second in 0.1s intervals.
+- Terrify slow increased to 35% (was 25%).
+
+WAR
+- FIGHT ME! no longer reflects damage back to its attackers.
+- FIGHT ME! now heals War for the damage he takes from affected targets instead.
+- FIGHT ME! no longer prevents the affected targets from taking damage from other sources.
+- FIGHT ME! bonus attack speed rescaled to 40/60/80 (was 80).
+- FIGHT ME! duration reduced to 2.25/3.0/3.75s (was 4.0/4.5/5.0s).
+- FIGHT ME! radius increased to 500 (was 400).
+- FIGHT ME! now deals Magical damage in a radius at the end of the duration equal to the combined attack damage stat of all affected units and War himself.
+- FIGHT ME! now disables War's block and evasion while active.
+- FIGHT ME! now silences and mutes affected units (prevents Immediate cast spells and items from being used whilst affected).
+
+IRONFIST
+- Hissatsu damage radius increased to 250 (was 175).
+
+PHANTOM
+- Nightmare cleave radius increased to 500 (was 400).
+- Nightmare's cleave percentage now increases per stack on the affected units. Grants 2/4/6/8% cleave per stack. Max 10 stacks.
+- Nightmare no longer deals bonus damage to attack targets affected by Nightmare stacks with the first attack on them.
+- Nightmare now applies stacks to the main target.
+- Nightmare now deals its cleave damage to the main target.
+- Nightmare base cleave damage reduced to 10% (was 10/16/22/28%).
+
+MIFUNE
+- Zanmato Mana cost reduced to 140 (was 225).
+
+NEITH
+- Decisive Strike Mana cost reduced to 70/80/90/100 (was 95/100/105/110).
+- Decisive Strike Armor steal reduced to 1/2/3/4 (was 2/4/6/8).
+- Monsoon Mana cost reduced to 50/60/70/80 (was 90).
+- Monsoon duration increased to 12s (was 8s).
+- Monsoon cooldown increased to 16s (was 12s).
+
+FATE
+- Displace cooldown increased to 30s (was 20s).
+- Displace cast range decreased to 500 (was 750).
+
+FURY
+- Rend max stacks increased to 8 (was 6).
+- Rend no longer grants bonus attack speed.
+- Rend attack damage per stack increased to 7/14/21/28 (was 7/10/14/16).
+- Rend now reduces the target's attack speed by 3/6/9/12 per stack.
+- Bloodsport is no longer a proc based ability.
+- Bloodsport damage per second reduced to 2/4/6/8 per stack.
+- Bloodsport no longer deals bonus damage upon striking.
+- Bloodsport duration reduced to 10s (was 16s).
+- Rampage now reduces BAT to 1.4/1.2/1.0 (was 1.4).
+- Rampage now lasts 5s.
+- Rampage no longer grants bonus attack damage based on missing Health.
+- Rampage Berserk now lasts 5s.
+- Rampage Berserk no longer reduces BAT further.
+
+BLOODWARRIOR
+- Grapple drain reduced to 1/3/5/7% (was 2/4/6/8%).
+- Grapple Bloodmarked drain reduced to 3/5/7/9% (was 6/8/10/12%).
+- Red Ritual tick damage reduced to 8/12/16/20 (was 12/16/20/24).
+- Red Ritual Bloodmarked tick damage reduced to 10/20/30/40 (was 15/25/35/45).
+- Red Ritual base damage increased to 60/90/120/150 (was 40/70/100/130).
+- Red Ritual tick damage duration increased to 2.00s (was 1.25s).
+- Red Ritual now deals its damage over 0.5s intervals (was 0.25s).
+- Dance of Death marked damage reduced to 50/75/150/225 (was 75/150/225/300).
+- Blood Fiend Feast mana cost reduced to 25 (was 75).
+- Blood Fiend Feast cooldown reduced to 6s (was 8s).
+- Blood Fiend Feast channel time reduced to 3s (was 4s).
+- Blood Fiend Dive duration increased to 2.0s (was 1.5s).
+
+AETHER
+- Monolith time reduced to 45s (was 160s).
+- Monolith cooldown reduced to 45s (was 160s).
+- Disrupt cooldown reduced to 6s (was 8s).
+- Disrupt damage reduced to 80/120/160/200 (was 60/120/180/240).
+
+NU
+- Micronebula damage reduced to 20/30/40/50% (was 22/34/46/58%).
+- Micronebula no longer reduces Armor.
+- Warpstar slow reduced to 25/35/45% (was 40/50/60%).
+- Warpstar damage reduced to 125/200/275 (was 250/325/400).
+- Warpstar cast range increased to 2000 (was 1750).
+- Warpstar now deals 40/60/80 Magical damage per second while charging.
+
+PARAGON
+- Conversion delay increased to 5s.
+
+REUS
+- Magnitude mana cost reduced to 120 (was 140).
+
+SET
+- Duststorm damage increased to 40/80/120/160 (was 60/80/100/120).
+- Sands of War damage increased to 60/90/120/150 (was 50/80/110/140).
+- Sands of War miss chance increased to 20/30/40/50% (was 25%).
+
+TEK
+- Tesla Microarray stun reduced to 2.00/2.75/3.50s (was 2.25/3.00/3.75s).
+- Tesla Microarray radius reduced to 315 (was 350).
+
+LIGHTNING
+- Lightning Dagger slow duration is now 0.5s (was 1s).
+- Lightning Dagger damage is now 40/75/110/145 (was 40/80/120/160).
+
+HAWKEYE
+- Detonator Dart mana cost reduced to 75/95/115/135 (was 95/115/135/155).
+- Detonator Dart damage delay reduced to 6s (was 10s).
+
+HERO
+- One Punch! crit reduced to 300/400/500% (was 375/450/525%).
+- One Punch! cooldown increased to 60s (was 60/50/40s).
+
+MISC
+=======
+
+- Respawn times are now reduced by 25%.
+- The Ancient's Last Resort now lasts 8s (was 15s).
+- The Ancient's Last Resort now grants 50 regen per second to buildings in its radius.
+- Tower's Frenzy now lasts 4s (was 6s).
+- Tower's Frenzy now grants 300 attack speed (was 200).
+
+BUGFIXES
+===========
+
+- Fixed Alroth's Shatter and Ultimate not functioning.
+- Fixed some Valve event items showing up in Quick Buy instead of Dusk items.
+- Hopefully fixed an issue with lag bursts due to multiple calls to non-existent units with the following Heroes:
+TEK, BAAL, LYSANDER, ALROTH
+
+Version 1.92d - Hotfix 1
+
+- Fixed Ouroboros' Dissipation malfunctioning.
+
+Version 1.92d
+
+HEROES
+=========
+
+FATE
+- Displace now removes Tranquility Seal from units when it ends.
+- Displace is now delayed while the target is Invulnerable.
+
+Version 1.92c
+
+HEROES
+=========
+
+WAR
+- FIGHT ME! damage reflect reduced to 80/90/100% (was 100/110/120%).
+- FIGHT ME! bonus attack speed reduced to 80 (was 125).
+
+BUGFIXES
+===========
+
+- War's Bloodlust slow now only affects enemies.
+
+Version 1.92b
+
+HEROES
+=========
+
+WAR
+- Bloodlust slow increased to 10/15/20/25% (was 15%).
+- Bloodlust slow now only affects enemy units.
+- Earthbreaker stun reduced to 1.00/1.50/2.00/2.50s (was 1.25/1.75/2.25/2.75s).
+- FIGHT ME! duration rescaled to 4/4.5/5s (was 3/4/5s).
+- FIGHT ME! bonus attack speed increased to 125 (was 100).
+
+ERRA
+- Grave Guard Health regen increased to 60/80/100/120 (was 40/60/80/100).
+- Grave Guard Mana regen increased to 15/30/45/60 (was 10/20/30/40).
+- Grave Guard cooldown reduced to 60s (was 80/70/60/50s).
+- Morbid Blade damage increased to 75/125/175/225 (was 50/100/150/200).
+- Added a sound and visual indication for when Morbid Blade deals Pure damage due to a unit being under the threshold.
+
+MISC
+=======
+
+- All under the hood changes to gameplay (such as tick gold, time before the match starts, etc) have been reverted to that of the original DotA gamemode.
+
+BUGFIXES
+===========
+
+- Fixed a visual/mechanical error with Hero kill gold gain and kill credits.
+- Fixed an issue with comeback gold not being awarded correctly.
+
+Version 1.9-god-damn-2 hotfix 33 1/3rd
+
+- Actually fixed the issue outline in the last hotfix.
+
+Version 1.92 hotfix 2
+
+- Fixed an issue with damage dealing abilities not dealing damage (oops).
+- Fixed War's name being Big Red Guy With An Axe.
+
+Version 1.92
+
+HEROES
+=========
+
+Added a NEW Hero!!
+
+WAR. Use him or something.
+
+ALEXANDER
+- Base Strength increased to 23 (was 19).
+- Base Health regeneration increased to 2 (was none).
+- Base Attack Time reduced to 1.6s (was 1.7s).
+- Elandra's Blessing Main Attribute reflect damage increased to 60/90/120/150% (was 25/50/75/100%).
+- Elandra's Blessing duration increased to 12s (was 8s).
+
+BAHAMUT
+- Base Attack Time increased to 1.5s (was 1.4s).
+- Attack range reduced to 425 (was 475).
+
+HAWKEYE
+- Detonator Dart initial damage reduced to 30/40/50/60 (was 25/50/75/100).
+- Detonator Dart mana cost increased to 95/115/135/155 (was 95).
+- Detonator Dart cooldown reduced to 13s (was 22s).
+- Detonator Dart cast range reduced to 600 (was 725).
+- Rapidfire cooldown reduced to 15/12/9/6s.
+- Hit 'n' Run cooldown increased to 20s (was 16s).
+- Double Tap range reduced to 2000 (was 3000).
+- Double Tap Aghanim's Scepter range reduced to 3000 (was 4500).
+
+PARAGON
+- Base attack damage reduced to 40 - 50 (was 54 - 59).
+
+MIFUNE
+- Base Attack Time is now 1.4s (was 1.5s).
+- Genso illusions now have a large movespeed bonus for 1s after spawning.
+
+TEK
+- Mosquito Missiles cooldown reduced to 14s (was 30/25/20/15s).
+- Mosquito Missiles mana cost 100/120/140/160 (was 100/150/200/250).
+- Mosquito Missiles channel time reduced to 6/5/4/3s (was 6s).
+- Mosquito Missiles lock-on interval reduced to 0.20/0.16/0.13/0.10s (was 0.20s). This means around 30 will land for each level.
+- Aerial Assault Mines cooldown rescaled to 30s (was 50/40/30/20s).
+- Aerial Assault Mines mana cost reduced to 110/130/170/200 (was 120/150/180/210).
+- Aerial Assault Mines now deals damage in two radii; the inner radius deals 40/60/80/100 damage, the outer radius deals 20/40/60/80 damage.
+
+BAAL
+- Superposition duration increased 6/7/8s (was 5/6/7s).
+- Superposition movespeed bonus increased to 32% (was 25%).
+
+MISC
+=======
+
+- The following passives are now disabled by Break:
+ALROTH: Shatter
+ASTAROTH: Black Insignia
+FURY: Rend, Bloodsport
+LIGHTNING: Spark
+MANA KNIGHT: Arcanum Break
+MIFUNE: Ouichi
+NEITH: Inspire
+ODIN: Oppression
+OUROBOROS: Dissipation
+PHANTOM: Nightmare, Deathstrike
+SHADE: Venomous
+
+- Keep in mind that the following passives are NOT disabled by Break:
+SET: Harsh Climate
+THE LICH: Cold Aura
+BAHAMUT: Reckoning Aura
+WAR: Berserker Aura	
+GOB SQUAD: Whoops!
+
+- Gold increased to 1 per 0.4s (was 0.75s).
+
+BUGFIXES
+===========
+
+- Fixed an issue with Elandra's Blessing denying enemies killed by the damage reflect.
+- Celestial Spear's recipe no longer has an ID clash with another item.
+- Lysander's Phantom Fleet's cannonballs now are locked to the ground level they are flying over (makes  "invisible cannonballs" impossible).
+
+Version 1.91
+
+CREEPS
+=========
+
+ADDED a new creep type!
+
+The TITANs:
+These creeps spawn every third Siege Cart, and will grant nearby allied creeps bonuses, alongside dealing massive bonus damage to towers.
+
+HEROES
+=========
+
+ADDED a spooooooky new Hero!
+
+(Happy belated Halloween, guys and gals)
+
+ERRA, the Deathmancer
+
+Long considered masters of death itself, the Valstrada were sworn enemies of living beings on the planes. One, however, rose above the rest in both his power and hatred of life. Erra wreaked havoc upon the planes, casting living, and dead, to the Underneath alike. Afraid of his powers, the Valstrada sealed him into a mortal form, barely able to recollect his past. Now he is but a splinter of his former self; but powerful nonetheless.
+
+Erra is a ranged Strength carry that is highly durable in fights thanks to his Grave Guard, and can quickly demolish single targets with both his Ultimate, Deathtouch, a short range nuke, and his W, To Dust, which grants him bonus damage equal to a portion of the amount of missing Health of nearby enemies. Finally, his Q, Morbid Blade, allows him to deal large Pure damage to enemies, provided he casts it so that it hits the correct, low-Health targets.
+
+GOB SQUAD
+- Kamikaze damage increased to 100% of Health lost.
+- Kamikaze Health lost reduced to 40% (was 50%).
+- Kamikaze cast time reduced to 0.3s (was 0.4s).
+- Kamikaze cooldown reduced to 60/50/40/30s (was 60/55/50/45s).
+- Kamikaze now reduces damage taken by 35% during the charge up time.
+- Clearance Sale damage reduced to 100/150/200 (was 140/180/220).
+- Clearance Sale now persists after death even without Aghs.
+- Clearance Sale cast point reduced to 0.2s (was 0.4s).
+- Clearance Sale now randomly throws 3 different bomb types that deal Physical, Magical and Pure damage respectively. Pure bombs stun the affected targets for 0.60s, and Physical bombs apply a stacking slow.
+- Gob Squad now takes 33% damage from Clearance Sale (was 50%).
+- Clearance Sale Aghanim's Scepter upgrade now reduces the time between bomb throws to 0.3s (was 0.4s).
+- Clearance Sale Aghanim's Scepter upgrade now adds a gigantic bomb at the end of the duration, or when Gob Squad dies. When the bomb lands, it deals 300/450/600 Magical damage in a 1000 radius.
+- Whoops! damage increased to 225/350/475/600 (was 200/300/400/500).
+- Whoops! now passively reduces Gob Squad's respawn time by 15/30/45/60%.
+- Rocket Blast damage increased to 125/200/275/350 (was 80/160/240/320).
+- Rocket Blast mana cost increased to 60/75/90/105 (Was 40/60/80/100).
+
+ASTAROTH
+- Black Insignia stun time reduced to 0.80s (was 0.75/1.00/1.25/1.50s).
+- Black Insignia base damage increased to 100/175/250/325 (Was 80/140/200/260).
+- Black Insignia HP removal reduced to 4/8/12/16% (was 10/15/20/25%).
+- Black Insignia damage radius increased to 500 (was 340).
+- Black Insignia now restores a percentage of the caster's Max Health (15/20/25/30%) instead of the amount drained by the HP removal.
+
+ALEXANDER
+- Elandra's Blessing cooldown reduced to 16s (was 50s).
+
+LYSANDER
+- Grapeshot cast range reduced to 750 (was 1100).
+- Grapeshot cooldown reduced to 10/8/6/4s (was 16/12/8/4s).
+
+Version 1.9
+
+HEROES
+=========
+
+NEW HERO!!
+
+GOB SQUAD
+They explode! A lot. If you like explosions, then these are the Heroes you want to play. Just don't say I didn't warn you...
+
+MIFUNE
+- Zanmato now stuns for a bonus 0.6s after the slashes end.
+
+ELENA
+- Convoke radius increased to 350/375/400/425 (was 350).
+
+PARAGON
+- Smite damage reduced to 250/325/475 (was 325/475/650).
+- Smite Aghanim's Scepter Upgrade damage reduced to 300/430/560 (was 400/600/800).
+- Smite Aghanim's Scepter Upgrade bonus damage reduced to 75/150/225 (was 200/300/400).
+- Smite cooldown reduced to 100s (was 120s).
+- Smite now interrupts the target.
+- Smite cast time reduced to 0.6s (was 0.754s).
+- Conversion duration reduced to 15/20/25/30s (was 20/30/40/50s).
+- Conversion cooldown increased to 75/70/65/60s (was 60s).	
+- Conversion bonus Movespeed increased to 7/14/21/28% (was 5/10/15/20%).
+- Conversion bonus attack damage rescaled to 8/16/24/32 (was 10/20/30/40).
+- Conversion bonus attack speed increased to 5/25/45/65 (was 15/30/45/60).
+
+ALEXANDER
+- Base Strength reduced to 19 (was 21).
+- Strength gain reduced to 2.0 (was 2.3).
+- Base damage reduced to 23 - 27 (was 28 - 32).
+- Soulseal Mana cost increased to 80 (was 50).
+- Godfall damage reduced to 135/170/205% (was 200/225/250%).
+- Godfall Aghanim's Scepter Upgrade now deals 75% of the damage of the main hit (was 40%).
+STEADFAST has been reworked into ELANDRA'S BLESSING
+Grants bonus damage and Armor to the target. When they are attacked, they deal Magical damage back to the target based on their main attribute.
+
+ITEMS
+========
+
+PENDULUM FRAGMENT
+- Cost increased to 875 (was 475).
+- Mana cost reduced to 25 (was 65).
+- Cooldown increased to 28s (was 25s).
+- Invulnerability time increased to 1s (was 0.6s).
+
+ELYSIAN TIMEPIECE
+Created from Perseverance, Ultimate Orb, Pendulum Fragment and a 500 gold Recipe.
+- Now grants +12 to all stats (was +11).
+- Now grants 6 Health regeneration and 175% Mana regeneration.
+- Invulnerability time increased to 2.30s (was 1.75s).
+- Cooldown reduced to 16s (was 20s).
+- When used, Elysian Timepiece slows enemies in a 350 Radius. The slow lasts for 3s.
+
+Version 1.81
+
+HEROES
+=========
+
+AETHER
+- Teleport cast range increased to 1400/2000/2600/3200 (was 700/1100/1500/1900).
+- Teleport cooldown is now 40s (was 40/35/30/25s).
+
+LIGHTNING
+- Spark damage reduced to 20/40/60 (was 40/60/80).
+- Spark radius increased to 900 (was 750).
+- Lightning Daggers damage reduced to 40/80/120/160 (was 50/100/150/200).
+- Lightning Daggers Mana cost reduced to 20/30/40/50 (was 40/50/60/70).
+- Lightning Daggers cooldown reduced to 2.5s (was 3s).
+- Overload cooldown reduced to 2.5s (was 3s).
+
+VULCAN
+- Short Range Teleport now teleports units that are in the radius at the end of its delay, rather than when it was activated.
+- Short Range Teleport no longer transports Vulcan, only his owned units.
+- Short Range Teleport now displays its teleport radius during the charge-up time.
+- Short Range Teleport now displays a targeting indicator for allies and enemies when cast, after a 0.75s delay.
+- Short Range Teleport cast range increased to 1600/1800/2000/2200 (was 1175/1375/1575/1775).
+- Short Range Teleport charge-up time reduced to 2.00s at all levels (was 2.5/2.25/2.00/1.75s).
+- Short Range Teleport cooldown is now 25s at all levels (was 30/25/20/15s).
+- Tesla Coil attack slow reduced to 10/15/20/25 (was 10/20/30/40).
+- Sentinel now automatically attacks when summoned. It will attack the closest unit.
+
+IRONFIST
+- Hissatsu cooldown increased to 8s (was 7s).
+- Hissatsu duration increased to 2s (was 1.25/1.50/1.75/2.00s).
+- Hissatsu Mana cost increased to 60 (was 45).
+- Hissatsu now damages in an area around Ironfist.
+
+LYSANDER
+- Aghanim's Scepter Upgrade no longer allows Grapeshots on secondary targets to crit or stun.
+- Grapeshot Aghanim's Scepter Upgrade radius increased to 800 (was 400).
+- Grapeshot Aghanim's Scepter Upgrade now finds targets around the main target, instead of the caster.
+- Grapeshot Aghanim's Scepter Upgrade now grants a guaranteed crit every 10s (was every 14s).
+- Grapeshot now stuns creeps for 3x the stun time instead of 5x.
+- Grapeshot now stuns Roshan for 2x the stun time instead of 3x.
+- Grapeshot now deals half damage to buildings.
+
+PARAGON
+- Cleanse mana cost is now 80/100/120/140 (was 140).
+- Smite is now a global unit target ability.
+- Smite cooldown reduced to 120s (was 225/200/175s).
+- Smite Aghanim's Scepter Upgrade now increases the damage, and deals bonus damage if the target was the last person to get a kill on the enemy team.
+- Tranquility Seal mana cost reduced to 75 (was 140).
+- Tranquility Seal cast point reduced to 0.3s (was 0.45s).
+- Tranquility Seal cooldown increased to 28s (was 40/30/23/15s).
+- Tranquility Seal is no longer purgable.
+- Guardian has been reworked into Conversion:
+Following a 4s delay, converts the target creep to your side, granting it special powers.
+Grants bonus Health, Mana, move speed, attack speed, attack damage, Health regen and Mana regen to the creep.
+Converted creeps last 20/30/40/50s.
+Only one creep may be converted at a time.
+
+VOIDWALKER
+- Intelligence gain reduced to 2.5 (was 3.5).
+- Unstable Rift Mana cost reduced to 260/200/140/80 (was 195).
+- Unstable Rift cooldown increased to 160/150/140/130s (was 80s).
+- Realm Blister no longer amplifies damage for targets inside the area.
+- Realm Blister cast range increased to 900 (was 600).
+- Realm Blister radius increased to 400 (was 325).
+- Realm Blister duration increased to 6.0/6.5/7.0/7.5s (was 4.0/4.5/5.0/5.5s).
+
+OUROBOROS
+- Dragon's Wing cast point reduced to 0.1s (was 0.3s).
+- Dragon's Wing knockback duration reduced to 0.50s (was 0.75s).
+- Dragon's Wing mana cost increased to 90 (was 50).
+- Dragon's Wing bonus movespeed reduced to 10% (was 15/20/25/30%).
+- Dragon's Wing slow duration reduced to 2s (was 4.75s).
+- Dragon's Wing duration increased to 8s (was 7.5s).
+- Nexus damage reduced to 300/400/500 (was 375/450/525).
+- Nexus Mana cost reduced to 200 (was 275).
+
+ELENA has been reworked!
+CONVOKE now creates an area where enemies' health is drained and granted to Elena, and allies are healed. Enemies in the area have their ability to regenerate health disabled.
+GRAVE GUARD is now MEDITATION:
+Elena channels, targeting an enemy. The enemy is rooted for a short time, then for the rest of the channel duration is drastically slowed with both their move speed and attack speed.
+DEVOTION is now an aura that reduces enemy Armor and Magic Resistance, and increases your allies' Armor and Magic Resistance.
+DIVERGE is no longer channelled. Instead, it can be cast on the target area. Deals damage over time to enemies within. When allies take damage inside the area, its damage over time increases in strength.
+
+
+ITEMS
+========
+
+ARCANITE SHARDS
+- Arcanite Shards now only activate when dealing damage to Heroes.
+
+TURIN'S SCEPTER
+- Magic Amp damage reduced to 25% (was 35%).
+
+MISC
+=======
+
+- Fixed Arcanite Shards' tooltip to display the correct Bonus Damage and +attack damage value.
+- Elena and Paragon have received some sprucing up and changes to their ability icons.
+- Cleared everyone's default builds, so weird items don't show up as suggestions. New builds will be rolled out in the coming updates.
+
+Version 1.8
+
+HEROES
+=========
+
+IRONFIST
+- Base Armor reduced to 0 (was 2).
+- Quake damage reduced to 25/50/75/100 (was 40/65/85/110).
+- Hissatsu duration reduced to 1.25/1.50/1.75/2.00s (was 2s).
+- Hissatsu Mana cost reduced to 45 (was 80/60/40/20).
+- Hissatsu is now immediate cast.
+- Hissatsu is now max movespeed at all levels (was a percentage value).
+- Reversal window increased to 0.60s (was 0.40s).
+- Reversal cooldown reduced to 6s (was 14/12/6/4s).
+- Reversal damage reduced to 40/80/120/160 (was 50/100/150/200).
+- Reversal no longer stuns.
+- Reversal now has a 0.15s period where the counter hit is considered perfect. Perfect hits deal bonus damage and stun the attacker for a short time, alongside entirely negating the attack's Physical damage.
+- Stonewall Stance bonus Armor reduced to 2/3/4/5 (was 2/4/6/8).
+
+ARTIFICER
+- Naturalise duration reduced to 4s (was 6s).
+- Naturalise damage over time increased to 10/12/14/16 per 0.33s (was 4/6/8/10).
+- Naturalise bonus regen reduced to 10/15/20/25 (was 10/20/30/40).
+- Naturalise cooldown reduced to 30/24/18/12s (was 30s).
+
+PARAGON
+- Cleanse cooldown increased to 12s (was 8.75s).
+
+LIGHTNING
+- Lightning is now an Intelligence Hero (was Agility).
+- Base Strength increased to 19 (was 17).
+- Strength gain increased to 1.5 (was 1.4).
+- Base Intelligence increased to 23 (was 20).
+- Intelligence gain increased to 3.0 (was 2.2).
+- Base Agility reduced to 16 (was 25).
+- Agility gain reduced to 2.0 (was 2.5).
+- Overload Mana cost increased to 50 (was 35).
+- Overload damage increased to 80/120/160/200 (was 60/80/100/120).
+- Overload radius increased to 250 (was 200).
+- Overload cooldown increased to 3s (was 2.75s).
+- Blinding Speed has been reworked into Spark.
+Upon use of any of her abilities, Lightning deals a small amount of Magical damage to all enemies within a 750 radius, slowing them slightly.
+
+VULCAN
+- Tesla Coil build channel time reduced to 2/1.75/1.5/1.25s (was 4/3.5/3.0/2.5s).
+- Tesla Coil cooldown reduced to 20/18/16/14s (was 50/40/30/20s).
+- Tesla Coil mana cost reduced to 75/100/125/150 (was 125/150/175/200).
+- Tesla Coil duration increased to 160s (was 120s).
+- Short Range Teleport delay time reduced to 2.5/2.25/2.00/1.75s (was 3.5/3.0/2.5/2.0s).
+- Build Vassal mana cost reduced to 75 (was 150).
+- Build Vassal cooldown increased to 60s (was 60/55/50/45s).
+- Build Vassal channel time decreased to 2s (was 4s).
+- Nanobots damage rescaled to 6/12/24/32 (was 10/15/20/25).
+- Nanobots armor reduction increased to 1.0 (was 0.7/0.8/0.9/1.0).
+- Nanobots duration reduced to 8s (was 8/9/10/11s).
+- Nanobots initial damage increased to 40/60/80/100 (was 25/50/75/100).
+- Sentinel build time reduced to 1.25s (was 2s).
+- Sentinel bonus attack speed from Spin Up reduced to 10 (was 20).
+- Sentinel now lasts for 24s (was 16s).
+- Vassal Switch Modes Channel Time reduced to 2s (was 4s).
+- Vassal Electric Leash cast point reduced to 0.1s (was 0.3s).
+- Vassal Shield damage reduction decreased to 10/14/18/22% (was 20/30/40/50%).
+- Vassal Shield is now a passive Aura with a radius of 500.
+- Vassal Shield now grants 4/8/12/16 Physical damage block.
+- Vassal Armor Type changed to basic (was Strong).
+- Switching to a different Vassal now no longer replaces the unit completely (preserving Control Group settings), but carries over their Health and Mana from the last form.
+- Blue Vassal Mana Regen reduced to 2.5 (was 5).
+- Blue Vassal Health Regen increased to 4 (was 1).
+
+PHANTOM
+- Shadowstep duration increased to 4.5s (was 4s).
+- Shadowstep cooldown increased to 25s (was 30/25/20/15s).
+- Deathstrike bonus damage based on missing Health reduced to 7/14/21% (was 15/20/25%).
+- Deathstrike damage reduction reduced to 10/20/30% (was 40/60/80%).
+- Soul Wave stun reduced to 1.0s (was 1.5s).
+- Nightmare cleave reduced to 10/16/22/28% (was 12/24/36/48%).
+- Nightmare cleave now deals Pure damage (was Physical).
+- Nightmare now applies a Nightmare stack to affected targets. Each Nightmare stack on units will make the next direct attack from Phantom deal bonus Pure damage.
+
+ITEMS
+========
+
+ADDED 3 NEW ITEMS, available from Ob's Oddities in the fountain.
+
+ARCANITE SHARDS
+275 Gold
+4 Charges
+When Magical damage over 150 is dealt to a single target, a charge is consumed and a bonus 75 Magical damage is dealt.
+Grants 6 damage.
+
+PURGING POWDER
+275 Gold
+2 Charges
+200 Cast Range
+When cast on a target, purges buffs or debuffs, dependent on whether the target is an ally, or enemy.
+Grants +10% Magic Resistance.
+
+PENDULUM FRAGMENT
+475 Gold
+Grants a short period of Invulnerability. Lasts 0.6s.
+
+ADDED 1 NEW ARTIFACT ITEM
+
+ELYSIAN TIMEPIECE
+Created from Pendulum Fragment, Ultimate Orb, and a 1000 Gold recipe.
+Grants a short period of Invulnerability. Lasts 1.75s. The caster may choose when to exit the Invulnerability state.
+Grants +11 to all stats.
+
+GRIM GAUNTLET
+- Can no longer target Ancient creeps.
+
+MISC
+=======
+
+- Changed some tooltips to be more accurate to their skill data.
+- Added some missing Modifier tooltips.
+
+BUGFIXES
+===========
+
+- Fixed a bug where players could have an instance of both Stonewall Stance and Gale Stance on Ironfist simultaneously.
+- Paragon's Smite now hits the proper target.
+- Fixed some particle effects not appearing for some abilities.
+
+Version 1.72f
+
+HEROES
+=========
+
+BLOODWARRIOR
+- Blood Fiend duration reduced to 25s (was 60s).
+- Blood Fiend Dive damage reduction increased to 80% (was 50%).
+
+HORROR
+- Deathmark duration reduced to 30s (was 70s).
+- Deathmark increase interval reduced to 3s (was 5s).
+- Deathmark slow duration is now half the amount of stacks.
+- Alone duration increased to 6/7/8s (was 5/6/7s).
+
+BUGFIXES
+===========
+
+- Fixed a client crash that occurred when using some abilities then levelling another.
+
+Version 1.72e
+
+HEROES
+=========
+
+MANA KNIGHT
+- Mana Seal radius is now 350 at all levels (was 350/400/450/500).
+- Mana Seal now mini-stuns on 0 Mana and applies a slow, instead of stunning for 2.5s.
+- Mana Seal mana drain reduced to 4/6/8/10% (was 5/8/11/14%).
+- Infusion Bolt now deals damage based on missing Mana.
+- Infusion Bolt damage increased to 20/30/40/50% (was 20/25/30/35%).
+- Infusion Bolt now has a minimum damage of 50.
+- Vorpal Assault bonus damage per point of missing Mana increased to 30/40/50% (was 20/30/40%).
+- Vorpal Assault Mana damage increased to 60/100/140 (was 40/80/120).
+- Vorpal Assault attacks reduced to 4 (was 4/6/8).
+- Vorpal Assault cooldown reduced to 75s (was 160s).
+
+ALEXANDER
+- Godfall damage reduced to 200/225/250% (was 240/280/320%).
+- Steadfast Armor and Regen gain per 10% of missing Health reduced to 0.40/0.60/0.80/1.00 (was 0.40/0.60/0.80/1.00).
+- Radiant miss chance is now 60% at all levels (was 20/40/60/80%).
+- Radiant duration reduced to 5s (was 8s).
+- Radiant regen increased to 15/30/45/60 (was 10/20/30/40).
+- Soulseal cooldown increased to 20/18/16/14s (was 11s).
+
+BAHAMUT
+- Reduced Mega Flare Outer Radius Damage to 150/200/250 (was 275/325/375).
+- Reduced Mega Flare Inner Radius to 250 (was 300).
+
+FURY
+- Fury is now a Strength Hero.
+- Fury's BAT increased to 1.75 (was 1.5).
+- Fury's Rampage BAT increased to 1.4 (was 1.2).
+- Fury's Rampage Berserk Mode BAT increased to 1.2 (was 1.0/0.9/0.8).
+
+SHADE
+- Isolation cooldown reduced to 50 (was 65).
+
+LYSANDER
+- Grapeshot Aghanim's Scepter Upgrade now causes it to hit all enemy units in a 400 AoE around the target. Each strike has its own crit chance and damage.
+- Phantom Fleet's boat now slows by 100% (was 30/40/50%).
+- Phantom Fleet's boat now deals damage over time whilst under it, 25/50/75 damage per second.
+
+HAWKEYE
+- Reduced Base Agility to 25 (was 28).
+- Reduced Agility Gain to 2.0 (was 2.1).
+- Increased BAT to 1.65 (was 1.6).
+- Attack range increased to 635 (was 600).
+- Reworked Scattershot into Rapidfire.
+Fires 2/3/4/5 shots in quick succession at the target unit.
+The damage of each shot is 40% of a normal attack, but preserves all UAMs and attack effects.
+
+ITEMS
+========
+
+- Grim Gauntlet recipe cost increased to 1450.
+
+BUGFIXES
+===========
+
+- Fixed a bug where Grim Gauntlet was still going up to 8 charges.
+
+MISC
+=======
+
+- Removed Spell Blocking rules.
+
+Version 1.72d
+
+BUGFIXES
+===========
+
+- Fixed an issue where Alexander's Godfall was not working.
+- Fixed an issue where Hawkeye's Double Tap was not working.
+
+Version 1.72c
+
+HEROES
+=========
+
+BLOODWARRIOR
+- Grapple now affects all Bloodmarked targets with the Bloodmark Drain Amount (including creeps).
+
+ITEMS
+========
+
+GRIM GAUNTLET
+- Now requires:
+Hand of Midas + Soul Vial + 1000 Gold Recipe
+- Reduced Health restore to 30% (was 40%).
+- Reduced Mana restore to 20% (was 30%).
+- Cooldown increased to 20s (was 17s).
+- Max charges reduced to 4 (was 7).
+- Damage per charge increased to 135 (was 80, total damage with max charges is now 540).
+- Removed bonus Health.
+- Removed bonus Mana.
+
+BUGFIXES
+===========
+
+- Fixed an issue where Lysander's Grapeshot was not working.
+- Fixed an issue where Odin's Gungnir was not working.
+- Fixed an issue where Alexander's Godfall was not working.
+- Fixed an issue where Hawkeye's Double Tap was not working.
+
+MISC
+=======
+
+- Added some Linken's Sphere and Spell Blocking rules.
+- Made Mana Knight's Vorpal Assault's particle effects more obvious.
+
+Version 1.72b
+
+HEROES
+=========
+
+ARTIFICER
+- Reshape duration reduced to 2.5/3/3.5/4s (was 3/4/5/6s).
+- Reshape now halves ALL damage.
+- Naturalise reworked:
+No longer removes Armor from the target. Instead, deals damage immediately, slows, then deals damage over time. On allies, heals immediately, then heals over time. Purges buffs off enemies, debuffs off allies.
+- Added an Aghanim's Upgrade to Replica:
+When an enemy Hero dies within a 1000 radius of the Artificer, a Replica of them will spawn. The Replica deals 50% damage, and takes 200% damage.
+
+CRIMSON
+- Disintegrate debuff is now purgeable.
+
+MISC
+=======
+
+- Fixed some missing or inaccurate tooltips.
+
+BUGFIXES
+===========
+
+- Corrected the duration on Shade's Smoke Bomb so that it doesn't permanently render allies invisible.
+
+Version 1.72
+
+HEROES
+=========
+
+A NEW HERO HAS BEEN ADDED!!
+
+Orcus, the ARTIFICER
+A remnant of a race long forgotten, Orcus was, amongst his people, a legendary manipulator of the energies of the World. His impressive and sometimes terrifying powers of moulding the reality around him gave some reason to be wary of his incredible abilities. One night, when the moon was shrouded, an assassin slipped into his room and planted a blade in his belly. Awakening to the throes of death, Orcus used the last of his energy to reshape not a place, or thing, but a moment; the moment of his passing. From this, incredible visions of the Voidal Chasm flooded his mind, granting him great and terrible knowledge. Seeing his madness, the Elders cast him out, into the Voidal Chasm, fearing him dangerous. Now he returns, his powers honed and ready for war.
+
+Transform your opponents into Immobile statues, remove their Armor completely, strike them with Voidal attacks, and create a replica of a target enemy or ally unit!
+
+His entry has been added to the Hero Tips database.
+
+ELEMENTALIST has been disabled temporarily, pending some incoming reworks.
+
+ELENA has been disabled temporarily, pending some incoming reworks.
+
+LIGHTNING
+- Lightning Daggers base damage increased to 50/100/150/200 (was 10).
+- Lightning Daggers initial slow duration increased to 1s (was 0.75s).
+- Lightning Daggers cooldown reduced to 3s (was 3.5/2.5/1.5/0.5s).
+- Lightning Daggers mana cost increased to 40/50/60/70 (was 30/35/40/45).
+- Lightning Daggers no longer applies a Mark.
+- Lightning Daggers projectile speed increased to 2000 (was 1500).
+- Lightning Daggers cast time reduced to 0.1s (was 0.2s).
+- Lightning Daggers particle effect has been improved.
+
+BAAL
+- Spatial Rift duration increased to 6/8/10/12s (was 6/7/8/9s).
+
+MANA KNIGHT
+- Mana Seal no longer silences targets.
+- Mana Seal no longer slows targets.
+- Mana Seal now deals damage AND stuns when the targets' Mana pools hit zero.
+- Mana Seal drain increased to 5/8/11/14% (was 2/4/6/8%).
+- Mana Seal cooldown increased to 16s (was 10s).
+- Infusion Bolt now deals damage based upon the target's Max Mana, instead of the Mana that Mana Knight spends.
+- Infusion Bolt mana cost is now 80/85/90/95.
+- Infusion Bolt cooldown increased to to 15/14/13/12s (was 14/12/10/8s).
+- Infusion Bolt damage is now 20/25/30/35% of the opponent's Max Mana as damage (was 10/20/30/40%).
+
+TIMEKEEPER
+- Dilation slow is now purgable.
+- Futurestrike now has a random delay. The larger the delay, the larger the damage.
+- Futurestrike now has a minimum delay of 4s.
+- Futurestrike delay increased to 16s (was 15s).
+- Futurestrike now has a minimum damage of 50/100/150/200.
+- Futurestrike now has a maximum damage of 150/300/450/600.
+- Futurestrike can no longer be purged.
+- Futurestrike cooldown decreased to 24s (was 25s).
+- Futurestrike now deals Pure damage.
+
+HERO
+- Hero is now a Strength Hero (was Agility).
+- Base Strength increased to 25 (was 21).
+- Strength gain increased to 2.4 (was 2.1).
+- Base Intelligence increased to 22 (was 14).
+- Intelligence gain increased to 2.0 (was 1.4).
+- Base Agility increased to 20 (was 15).
+- Agility gain increased to 2.15 (was 1.95).
+- Base Armor increased to 4 (was 0).
+- Base movespeed increased to 310.
+- One Punch!! cooldown reduced to 60/50/40s (was 60s).
+- One Punch!! now refreshes the cooldown of Freedom Strike, plus makes his next Freedom Strike travel the distance his Punch sent them, provided he uses it within 3s.
+- One Punch!! can now target allies, but deals no damage to them.
+
+TEK
+- Base Intelligence reduced to 26 (was 30).
+- Intelligence gain reduced to 3.0 (was 3.2).
+- Strength gain reduced to 1.2 (was 1.3).
+- Base Agility increased to 23 (was 19).
+- Agility gain reduced to 1.9 (was 2.3).
+- Base Armor reduced by 1 (was 2).
+- Turn rate reduced to 0.7 (was 1.1).
+- Base damage increased to 30 - 35 (was 20 - 25).
+- Improved Skycrack's particle effect.
+- Added an Aghanim's Scepter upgrade to Skycrack: doubles the range of the ability when cast.
+- REWORKED the following abilities:
+Shield is now Aerial Assault Mines
+Tek targets up to 6 spots on the map, with global range, and then fires up to 6 deployment missiles. After a short delay, they land, burying into the ground, and after a second very short delay, they explode, dealing Magical damage in an area and slowing slightly. The mines also interrupt targets.
+Power Up! is now Tesla Microarray
+Tek charges for a short time, then unleashes a blast of electrical energy that stuns nearby enemies for 2.25/3.00/3.75s and deals 95/165/235 Magical damage. Deals double damage to enemies that are already stunned.
+- Mosquito Missiles cooldown increased to 24/20/16/12 (was 18/14/10/6).
+- Mosquito Missiles interval reduced to 0.20s (was 0.25s).
+- Mosquito Missiles damage reduced to 10/20/30/40 (was 16/28/40/52).
+- Mosquito Missiles channel duration increased to 6s (was 4s). Increases the total missile count to 30, meaning the total damage on all targets would be 300/600/900/1200.
+
+NU
+- Micronebula now deals half its damage to enemies in the radius when the unit dies.
+
+MISC
+=======
+
+- Added the new Hero Tips system. In the top right hand corner of the screen is a button labelled "Hero Tips". Clicking this button will bring up a small dialogue describing the various elements of your Hero and how they often fare in each lane. Some Heroes are unsupported by this system as of yet. For these Heroes, the button is disabled.
+- Added recommended builds and Hero Tips for the following Heroes:
+Tek, Phantom, Fury, Hawkeye, Bloodwarrior, Astaroth
+- Added a recommended build for Baal.
+
+BUGFIXES
+===========
+
+- Fixed an issue where Soul Vial and Celestial Spear could not be purchased due to an ID conflict.
+- Fixed some items not being visible in Quick Buy.
+
+Version 1.71 - The Clean-Up Update
+
+HEROES
+=========
+
+HAWKEYE
+- Base Agility increased to 28 (was 21).
+- Base movespeed reduced to 285 (was 290).
+- Attack range reduced to 600 (was 800).
+- Detonator Dart damage reduced to 50/100/150/200 (was 150/200/250/300).
+- Detonator Dart now deals an initial damage of 25/50/75/100.
+- Detonator Dart now takes 10s to explode (was 8s).
+- Detonator Dart mana cost reduced to 95 (was 90/100/110/120).
+- Detonator Dart cooldown reduced to 20s (was 24s).
+- Detonator Dart cast range reduced to 725 (was 800).
+- Detonator Dart stun reduced to 0.5s (was 1s).
+- Double Tap now has a 75 Mana cost.
+- Double Tap base damage reduced to 75/100/125 (was 100/200/300).
+- Double Tap Second Shot mult reduced to 1.50 (was 2.25).
+- Hit 'n' Run cooldown reduced to 16s (was 22s).
+- Hit 'n' Run damage reduced to 10/20/30/40 (was 15/30/45/60).
+- Hit 'n' Run radius reduced to 325 (was 350).
+- Hit 'n' Run slow increased to 12/24/36/48% (was 10/15/20/25%).
+- Hit 'n' Run cast time increased to 0.5s (was 0.1s).
+
+LIGHTNING
+- Lightning Dagger mark damage reduced to 40/70/110/140 (was 140/180/220/260).
+- Lightning Dagger slow duration rescaled to 1s (was 4s).
+- Lightning Dagger base damage reduced to 10 (was 50).
+- Lightning Dagger mana cost reduced to 45 (was 65/45/30/15).
+- Lightning Dagger cooldown reduced to 3.5/2.5/1.5/0.5s (was 4s).
+- Lightning Dagger cast range reduced to 875.
+- Lightning Dagger initial slow duration reduced to 0.5s (was 0.75s).
+
+NU
+- Warpstar delay reduced to 2s (was 3s).
+- Warpstar now deals 75 damage immediately upon cast.
+
+FURY
+- Base Attack Time reduced to 1.5 (was 1.6).
+- Rend max stacks increased to 6.
+- Fixed some inaccurate tooltips.
+
+VOIDWALKER
+- Unstable Rift now takes 4s per unit to transport them. The selected unit it is transporting is random.
+- Abyssal Vortex now deals non-lethal damage to allies.
+
+TIMEKEEPER
+- Chronoshift now targets a single unit, and can be activated to bring the unit back to the position, Health and Mana they were when targeted.
+- Dilation cooldown rescaled to 38/34//30/26s (was 38s).
+- Dilation duration increased to 5s (was 2/3/4/5s).
+- Dilation no longer increases respawn time on death.
+- Dilation now increments the cooldown timer of on-cooldown abilities while affecting units.
+
+ITEMS
+========
+
+NEW ITEM!
+
+The CELESTIAL SPEAR
+- Created from Aether Lens, Dragon Lance, and a 600 gold recipe.
+- Grants bonus attack range.
+- On activation, grants more bonus attack range.
+
+MISC
+=======
+
+- Added Recommended Item builds and Hero tips for the following Heroes:
+Astaroth, Fury, Hawkeye, Phantom, Lightning
+- Added an NPC that spouts random tips near the Fountain. Attacking him will shut him up, but he'll be sad.
+- Added a version indicator to the pregame screen.
+- Added a scrollbox that shows a shortform version of the current changelog!
+
+BUGFIXES
+===========
+
+- The "FRENZIED!" tower label now disappears when they stop being Frenzied as intended.
+- Temporarily disabled bot thinking to prevent crashes.
+
+Version 1.7
+
+HEROES
+=========
+
+NEW HERO!
+
+Jue, the MANA KNIGHT.
+
+A steel tempered guardian of the sacred Alioth, this warrior was borne in the flames of dead Arcana, fed by the dissipating Magical energies of his foes. With each Mage he decimated, he grew stronger, until he finally met his match, and fell to the cunning magic of Turin. He now roams the lands as a shadow of his former glory, but be warned... his power is still as unfathomable as ever.
+
+Crush your opponent's Mana pool, stun them with your own, create silencing glyphs, and unleash hell upon casters with this scary anti-Magic Hero!
+
+Version 1.6
+
+HEROES
+=========
+
+NEW HERO!
+
+NU, the Voidal Guardian
+
+Many beings claim to know the Void as their own, but only one can truly claim this title; Nu, the Voidal Guardian, a being of immense and often bewildering power. To this creature, bending space itself is as simple as breathing,
+and it makes its home amongst the blackness of the Void.
+
+You can crush your enemies with gravity wells, summon deadly mines of antimatter, surround your opponents in damaging micronebulae, and summon the dreaded Warpstar, to strike fear into your enemies' hearts, and manipulate their positioning.
+
+BUILDINGS
+============
+
+- Frenzied towers now deal 50 Magical splash damage instead of 75.
+
+ITEMS
+========
+
+- Turin's Scepter mana regen reduced to 400% (was 1200%).
+- Turin's Scepter now increases Spell damage by 35%.
+
+MISC
+=======
+
+- Fixed some missing data in the Turin's Scepter tooltip.
+- Added some missing tooltips.
+
+Version 1.52d
+
+BUILDINGS
+============
+
+- Hero damage from Giga Graviton is now non-lethal.
+- Giga Graviton now ticks every 4s (instead of every 7s).
+- Giga Graviton now shows a countdown above the Ancient.
+- Giga Graviton Hero damage reduced to 9% of Max Health (was 14%).
+- Giga Graviton creep damage reduced to 55% of Max Health (was 100%).
+
+Version 1.52c
+
+MISC
+=======
+
+- Added some missing tooltips.
+
+Version 1.52b
+
+BUILDINGS
+============
+
+- Towers now have a warning label when they are near Frenzy range. They also display when they are Frenzied.
+- The Ancients now have a warning before they drop below 33%.
+
+Version 1.52
+
+BUILDINGS
+============
+
+- The Ancient now has 9500 Health.
+- The Ancient now has two new abilities:
+Giga Graviton
+When below 33% health, an area around the Ancient becomes inhospitable for enemy creeps and Heroes.
+Every 7s, a beam falls on all nearby creeps,instantly killing them, and on all nearby Heroes, dealing 14% of their Max Health as damage.
+and
+Last Resort
+When the Ancient drops below 10%, as a last hurrah, it revives all dead Heroes protecting it, granting temporary invulnerability to damage, and restores Health and Mana in a large radius. The building itself does not restore Health or Mana, but is immune to damage for the duration.
+- Towers now have 50% more Health.
+- Towers now have an ability called Frenzy, which, when dropping below 25% Health, increases their attack speed drastically and gives them splash damage for 6s.
+- All of these changes occur when the game timer hits 0.
+
+Version 1.51c
+
+MISC
+======
+
+- Updated some missing particle effects.
+
+Version 1.51b
+
+ASTAROTH
+- Base Agility increased to 26 (was 17).
+- Agility gain increased to 3.0 (was 2.1).
+- Black Insignia duration increased to 16s (was 5s).
+- Overwhelm damage reduced to 100/175/250/325 (was 125/200/275/350).
+- Overwhelm now slows by 20/25/30/35% during the charge-up.
+- Overwhelm no longer deals half damage to enemies.
+- Overwhelm can now only target enemy units.
+- Overwhelm cooldown reduced to 9s (was 11s).
+- Erase no longer reduces stats.
+- Erase damage increased to 25/50/75 (was 20/30/40).
+- Erase Mana damage increased to 20/40/60 (was 15/20/25).
+- Erase duration reduced to 10s (was 14s).
+- Pain Transferral reworked into Pain Curse.
+- Pain Curse increases the damage the unit takes and causes them to be slowed when taking damage for a short time.
+
+Version 1.51
+
+HEROES
+=========
+
+NEITH
+- Decisive Strike slow rescaled to 40/50/60/70% (was 60%).
+- Decisive Strike now stuns for 0.5s.
+- Decisive Strike slow duration increased to 4.25s (was 4s).
+- Decisive Strike now steals 2/4/6/8 Armor for the duration. The Armor steal occurs before the damage instance
+- Decisive Strike damage reduced to 100/160/220/280 (was 100/175/250/325).
+- Decisive Strike is now Physical damage.
+- Decisive Strike mana cost increased to 95/100/105/110 (was 70).
+- Decisive Strike cooldown increased to 25/23/21/19s (was 14s).
+
+TEK
+- Base mana regeneration reduced to 0.
+- Mosquito Missiles and Powered Mosquito Missiles no longer have a mana cost per second.
+- Mosquito Missiles Mana cost is now 100/150/200/250 (was 40).
+- Mosquito Missiles cooldown is now 18/14/10/6s (was 8s).
+- Powered Mosquito Missiles Mana cost is now 150/225/300/375.
+- Powered Mosquito Missiles cooldown is now 8/6/4/2s (was 4s).
+- Skycrack mana cost increased to 50/75/100/125 (was 70).
+- Skycrack damage reduced to 60/120/180/240 (was 140/180/220/260).
+- Powered Skycrack damage reduced to 100/180/260/320 (was 240/280/320/360).
+- Powered Skycrack mana cost increased to 160 (was 70).
+
+ASTAROTH
+- Erase mana damage reduced to 15/20/25 (was 30/40/50).
+- Black Insignia now restores Astaroth's health by the current Health damage he deals when he strikes for the seventh time.
+
+BUGFIXES
+===========
+
+- Black Insignia (Astaroth) now deals damage in an area of effect as intended.
+- Fixed a precaching error with Blood Fiend.
+---- Fixed a major bug that caused unit labels and data to become mismatched.
+
+MISC
+=======
+
+- Updated the map to the latest version of the DotA map.
+
+Version 1.5e
+
+HEROES
+=========
+
+ASTAROTH
+- Deathmark base damage increased to 80/140/200/260 (was 80/120/160/200).
+- Deathmark duration increased to 5s (was 4s).
+- Deathmark HP removal increased to (10/15/20/25).
+- Deathmark HP removal now functions as damage (but is still HP Removal).
+- Deathmark now deals its base damage in an AoE of 340.
+
+PHANTOM
+- Strength gain increased to 2.0 (was 1.6).
+- Strength base increased to 20 (was 15).
+- Agility base increased to 23 (was 20).
+- Nightmare Cleave damage increased to 12/24/36/48%.
+- Shadowstep cooldown increased to 30/25/20/15s (was 14s).
+- Shadowstep damage now measured per second instead of per 0.25s.
+- Shadowstep damage is now 30/40/50/60 per second (was 20/32/44/56).
+- Shadowstep no longer grants 700 movespeed. Instead, it grants 15% bonus movespeed. She can still move through terrain with this ability.
+- Shadowstep no longer grants Invulnerability, but reduces all damage from Physical sources to 0, and she cannot be attacked. Magical and Pure damage still hurt her.
+- Updated the Shadowstep particle effect to reflect these changes better.
+- Shadowstep duration increased to 4s (was 2.2s).
+- Deathstrike missing health damage is now Magical.
+- Deathstrike's damage reduction effect and bonus damage no longer pierces Magic Immunity, and the reduction is purgable.
+
+BLOODWARRIOR
+- Reduced Blood Fiend's Max Health to 200 (was 400).
+- Reduced Health increase per level to 70 (was 125).
+
+BUGFIXES
+===========
+
+- Fixed an issue where Phantom's Nightmare Cleave would not cleave.
+- Fixed a visual bug where Phantom's Shadowstep would cause the Hero to disappear temporarily.
+
+Version 1.5d
+
+HEROES
+=========
+
+SHADE
+- Isolation damage rescaled to 250/360/470 (was 280/340/460).
+- Isolation Max Health damage reduced to 12/16/20% (was 15/20/25%).
+- Isolation damage type is now Physical.
+- Isolation now functions as follows:
+Now deals Max Health damage regardless of whether the unit is alone.
+The Blind and Silence apply regardless as well, but is half duration against units that are not alone.
+If the unit is not alone, the ability deals half its normal damage.	
+- Isolation Blind and Silence duration is now 5s at all levels (was 5/6/7s).
+- Isolation Blind and Silence debuff is now unpurgeable.
+- Venomous damage reduced to 5/10/15/20 (was 15/20/25/30).
+- Venomous slow increased to 16/22/28/34% (was 7/10/13/16%).
+- Venomous duration is now 4s at all levels.
+- Venomous now deals Physical damage instead of Magical damage.
+- Venomous now reduces Armor by 2.
+- Smoke Bomb damage rescaled to 40/100/160/220 (was 50/75/100/125).
+- Smoke Bomb miss chance reduced to 30/40/50/60% (was 70%).
+- Smoke Bomb now slows enemies by 30%.
+- Smoke Bomb damage is now Magical (was Physical).
+- Smoke Bomb no longer causes Shade to become invisible; instead, it creates an area where allies become invisible with a 1s fade time. The effect lingers for 2s after leaving the area.
+- Smoke Bomb duration is now 6s (was 4s).
+
+
+CHRONOS
+- Future Sight damage negation chance increased to 50% (was 33%).
+- Future Sight duration reduced to 6s (was 5/6/7/8s).
+- Future Sight radius increased to 575 (was 450).
+- Future Sight cooldown increased to 40s (was 32s).
+- Continuum Crystal now heals only 3% per second at all levels for enemies.
+- Continuum Crystal now negates Magical damage.
+- Continuum Crystal cast range increased to 1250 (was 750).
+- Continuum Crystal damage per second increased to 50/100/150 (was 40/60/80).
+- Continuum Crystal base recovery increased to 8/10/12% (was 7/9/11%).
+- Continuum Crystal slow reduced to 25% at all levels (was 20/30/40%).
+- Continuum Crystal now has an Aghanim's Scepter upgrade: increases the heal to 20/30/40% (does not affect enemies).
+
+SET
+- An Army Beneath the Sands now summons 4 units (2 ranged, 2 melee) immediately upon cast (includes the Aghanim's Scepter Upgrade).
+- An Army Beneath the Sands interval increased to 1s (was 0.9/0.8/0.7s).
+- An Army Beneath the Sands Aghanim's Scepter interval increased to 0.75s.
+- An Army Beneath the Sands slow rescaled to 20/40/60% (was 40%).
+- An Army Beneath the Sands damage increased to 40/60/80 (was 30/45/60).
+- An Army Beneath the Sands Aghanim's Scepter damage increased to 60/80/100 (was 45/60/75).
+- An Army Beneath the Sands radius increased to 950 (was 875).
+
+HAWKEYE
+- Double Tap range reduced to 3000 (was 6000).
+- Double Tap Scepter range reduced to 4500 (was 16000).
+- Double Tap base damage reduced to 200/300/400 (was 140/250/360).
+- Double Tap Multiplier reduced to 1.75/2.00/2.25x (was 2.25x).
+- Double Tap cooldown increased to 45s (was 17s).
+- Double Tap second shot Scepter damage reduced to 3.00x (was 4.75x).
+- Double Tap mana cost is now 0.
+- Hit 'n' Run damage increased to 15/30/45/60 (was 20/30/40/50).
+
+Version 1.5c
+
+ALEXANDER
+- Corrected the tooltip for Godfall to specify both that the ability is channelled and its channelling duration.
+
+BLOODWARRIOR
+- Increased Blood Curse cooldown to 115/100/85s (was 90/70/50s).
+- Aghanim's Scepter no longer removes the cooldown, but increases the level of the Blood Fiend to 2x its current level, and adds the following ability:
+- Berserk
+Increases attack speed by 145 for 2.5s.
+- Blood Fiend now has a base Magic Resistance of 25%, which increases by 3% per level.
+- Decreased Dance of Death mana cost to 50/55/60/65 (was 50/60/70/80).
+- Dance of Death now disjoints projectiles on cast.
+
+ELENA
+- Increased base Armor to 1 (was 0).
+
+MISC
+- Disabled ELENA temporarily for a rework.
+
+Version 1.5b
+
+HEROES
+=========
+
+BLOODWARRIOR
+- Red Rituals cooldown increased to 10s (was 7.5s).
+- Red Rituals initial damage reduced to 40/70/100/130 (was 60/90/120/150).
+- Red Rituals mana cost increased to 40/60/80/100.
+- Dance of Death cooldown reduced to 14/12/10/8s (was 16/14/12/10s).
+- Dance of Death mana cost increased to 50/60/70/80 (was 20/30/40/50).
+- Grapple Max Health and Max Mana damage percentage reduced to 4/5/6/7% (was 4/6/8/10%).
+- Grapple Max Health and Max Mana Bloodmarked damage percentage reduced to 6/8/10/12% (was 8/10/12/14%)
+- Grapple Health and Mana recovery is now 1.5x the amount drained.
+- Blood Curse now has a 90/70/50s cooldown.  The cooldown only starts when the Blood Fiend revives Bloodwarrior, or dies.
+- Blood Curse now has an Aghanim's Scepter upgrade.  Removes the cooldown from the ability and revives the Bloodwarrior at 100% Health and Mana instead of 50%.
+- Blood Fiend movespeed reduced to 320 (was 340).
+- Blood Fiend attack damage increased to 56 - 60 (was 45 - 50).
+- Blood Fiend now has 40% Magic Resistance (was 0).
+- While Blood Fiend is reviving, it reduces all damage by 35%.
+
+Version 1.5
+
+HEROES
+=========
+
+Some major changes to some Heroes, including:
+
+FATE
+- Reworked Doomsayer.
+Doomsayer now creates a 350 AoE that, after a short delay, deals damage equivalent to 30/35/40% of the affected targets' Max Health as Pure damage.
+Cooldown is now 75s.
+- Updated some tooltips to reflect his abilities more accurately and concisely.
+
+SANGUINE HUNTER is now BLOODWARRIOR
+- Reworked his skillset into the following:
+
+Soul Claw => Grapple
+-------
+The Bloodwarrior grapples his target, draining their blood for a short time.
+Stuns the target for 3s and drains 4/6/8/10% of their Max Health and Max Mana per second.
+Has a melee cast range, and is a channelled spell.
+Bloodmarked enemies are drained for a small amount more.
+
+Lifelink => Dance of Death
+-------
+The Bloodwarrior jumps to a target enemy or ally, dealing a small amount of damage to enemies.
+All nearby Bloodmarked enemies take damage as well.
+If jumping to a Bloodmarked enemy, the Bloodmark is consumed, and they are dealt bonus damage.
+
+Sadistic => Red Ritual
+-------
+Deals large Magical damage to the target enemy, then some damage over time.
+After the damage over time duration, it applies a Bloodmark to them, causing Bloodwarrior's abilities to have more effects.
+If they are Bloodmarked, ministuns them, deals bonus damage and consumes the Bloodmark.
+
+Bloodcall => Blood Curse
+-------
+Cursed blood runs through Vale's veins.  Unable to relinquish his blackened soul upon death, a creature remains behind to feast on his enemies.
+When the Bloodwarrior would die from taking damage, he instead transforms into a Blood Fiend.
+The Blood Fiend is a flying unit with a ranged attack.  It has Health, Mana, and attack damage based on the level of Bloodwarrior's Ultimate.
+The Blood Fiend has 2 abilities:
+FEAST: Target unit (creeps or neutrals only) is disabled for 5s.  At the end of the duration, the unit is killed, the death timer is reset, and the Blood Fiend's Health and Mana is restored to full.  Feasting successfully on 5 units will revive Bloodwarrior.
+DIVE: Grants the Blood Fiend bonus movespeed and reduced damage for a short time.
+If the Blood Fiend kills a Hero, or Feasts on enough creeps, Bloodwarrior is revived at the Blood Fiend's location, with full Health and Mana.
+The Blood Fiend's death timer is 60s, but this can be reset by Feasting on creeps and neutrals.
+
+ITEMS
+========
+
+REGAL SIGIL
+- Price reduced to 3500 (was 4500).
+
+Version 1.47c
+
+BUGFIXES
+===========
+
+- Fixed a crash when Tek fired rockets at non-existent units.
+
+Version 1.47b
+
+BUGFIXES
+===========
+
+- Fixed an issue with Smite not functioning.
+- Fixed an issue with Sanguine Hunter's abilities not working as intended.
+
+Version 1.47
+
+HEROES
+=========
+
+HORROR
+- Reduced Alone duration to 5/6/7s (was 6/8/10s).
+- The debuff for Alone can now be dispelled with a strong dispel.
+- Reduced Terrify slow to 25% (was 45%).
+- Terrify is now purgable.
+- Reduced Terrify mana cost to 80 (was 115).
+- Reduced Terrify cooldown to 14s (was 16s).
+- Reduced Scepter Terrify slow to 60% (was 100%).
+- Reduced Alone bonus movespeed to 30% (was 45%).
+- Reduced Alone Scepter movespeed to 45% (was 90%).
+- Reduced Alone Scepter attackspeed to 120 (was 130).
+- Reduced Shadowclone damage to 50/55/60/65% (was 60/70/80/90%).
+- Reduced Shadowclone cooldown to 20s (was 24s).
+- Reduced Shadowclone manacost to 70 (was 85).
+- Shadowclone illusions now take 225% incoming damage (was 150%).
+- Deathmark no longer has a passive slow.
+
+MIFUNE
+- Increased Oiuchi threshold to 40%.
+- Reduced Oiuchi damage per Agility to 0.20/0.40/0.60/0.80x (was 0.25/0.50/0.75/1.00x).
+- Oiuchi now deals Pure damage instead of Physical.
+- Increased illusion Oiuchi damage to 25% (was 20%).
+- Zanmato cooldown reduced to 75s.
+- Zanmato mana cost reduced to 225 (was 175/250/325).
+- Increased Zanmato radius to 650 (was 600).
+- Rescaled Zanmato bonus Hero damage to 150/200/250 (was 140/180/220).
+- Increased Zanmato orb damage to 80/120/160 (was 60/90/120).
+- Increased Genso illusion damage to 40% (was 35%).
+- Rescaled Genso cooldown to 10/8/6/4s (was 8/7/6/5s).
+- Increased Genso duration to 8s (was 7s).
+
+Version 1.46
+
+ITEMS
+========
+
+SOUL VIAL
+- Reduced damage per charge to 1 (was 2).
+- Reduced cost to 475 gold (was 750).
+- Reduced heal to 15 (was 20).
+
+GRIM GAUNTLET
+- Reduced bonus damage to 25 (was 40).
+- Increased damage per charge to 80 (was 70).
+- Reduced slow duration per charge to 0.75s (was 1s), meaning that at max charges (8) it will slow for 6s.
+- Increased Health heal to 40% (was 35%).
+- Increased Mana heal to 30% (was 25%).
+- Increased cooldown to 17s (was 12s).
+- Decreased cast range to 475 (was 500).
+- Now has no mana cost.
+
+HOLDING ORB
+- Increased damage per stack to 25 (was 20), meaning that at max charges you can deal 625 damage (was 500).
+- Decreased threshold to 35 (was 40), meaning that to get max charges you would have to take 875 damage (was 1000).
+
+IRIS
+- Duration increased to 6s.
+
+Version 1.45
+
+HEROES
+=========
+
+LIGHTNING
+- Increased Intelligence gain to 2.2 (was 1.7).
+- Increased base Intelligence to 20 (was 16).
+- Increased Agility gain to 2.5 (was 2.3).
+- Increased Blinding Speed stack duration to 4s (was 3s).
+- Decreased Lightning Dagger mana cost to 65/50/35/15 (was 65).
+- Decreased Overload mana cost to 35 (was 50).
+- Increased Thunder Wave mana cost to 110 (was 75).
+
+FURY
+- Rampage and Berserk now do not Purge debuffs.
+- Rend Damage bonus reduced to 7/10/13/16 (was 8/12/16/20).
+- Rend Attackspeed bonus rescaled to 5/10/15/20 (was 8/12/16/20).
+
+ALEXANDER
+- Increased base Intelligence to 17 (was 15).
+- Increased Intelligence gain to 1.75 (was 1.4).
+- Base damage increased to 29 - 34 (was 25 - 28).
+- Godfall channel time reduced to 1s (was 1.5s).
+- Godfall mana cost reduced to 125 (was 155).
+- Radiant mana cost reduced to 80 (was 100).
+- Soulseal mana cost reduced to 50 (was 75).
+- Soulseal cooldown reduced to 11s (was 12s).
+
+LYSANDER
+- Reduced Strength gain to 2.6 (was 2.9).
+- Reduced Grapeshot damage multiplier to 0.70/0.95/1.10/1.25 (was 1.00/1.07/1.14/1.21).
+- Reduced Phantom Fleet damage to 60/90/120 (was 80/100/120).
+- Reduced Phantom Fleet slow to 30/40/50% (was 40/50/60%).
+
+REUS
+- Reduced Stoneblast mana cost to 95/105/115/125 (was 105/125/145/165).
+- Reduced Magnitude mana cost to 140 (was 160).
+- Reduced Ancient Arena mana cost to 250 (was 350).
+- Reduced Ancient Arena cooldown reduced to 180/160/140s (was 200s).
+
+ELENA
+- Devotion regen reduced to 0.4/0.8/1.2/1.6 (was 1/2/3/4).
+- Convoke damage/heal reduced to 10/20/30/40 (was 20/40/60/80).
+- Creeps now grant half the heal from Convoke.
+
+ASTAROTH
+- Increased Pain Transferral cast range to 700 (was 450).
+
+HORROR
+- Deathmark damage rescaled to 20/30/40/50 (was 20/30/45/60).
+
+ALROTH
+- Solcharge now has a minimum travel time of 0.5s.
+
+TIMEKEEPER
+- Futurestrike damage reduced to 125/225/325/425 (was 150/225/350/475).
+- Parallels cooldown increased to 22s (was 20s).
+
+TEK
+- Reduced Powered Mosquito Missiles cooldown to 4s (was 12s).
+- Reduced Mosquito Missiles cooldown to 10s (was 25s).
+
+ITEMS
+========
+
+SOUL VIAL
+- Increased heal per charge to 20 (was 12).
+
+BUGFIXES
+===========
+
+- Fixed an issue with Hawkeye being rooted on the spot by his Ultimate.
+- Holding Orb is now able to be created with no odd glitches.
+- Tek's Power Up! now properly swaps out his abilities.
+
+Version 1.44
+
+ITEMS
+========
+
+Added GRIM GAUNTLET
+- Created from Soul Vial, Soul Booster, Soul Ring and a Gloves of Haste.
+- When activated on a creep, instantly kills it, gaining 35% of its Health as healing and 25% of its Health as Mana.
+- When activated on a Hero, deals damage and slows based on the charges accumulated.  The slow duration increases with the charges.
+
+SOUL VIAL
+- Increased max charges to 20.
+
+MISC
+=======
+
+- IRIS and HOLDING ORB now grant bonus damage instead of base damage.
+- IRIS and HOLDING ORB's stats now stack.
+- Reorganised the shops to reflect the item types.
+
+Version 1.43B - Clean Up
+
+BUGFIXES
+===========
+
+- Fixed a bug where Horror's Deathmark would not apply the correct modifier.
+- Fixed Astaroth's Overwhelm not working on enemy Heroes.
+
+Version 1.43
+
+ITEMS
+========
+
+IRIS
+- Increased Mana cost to 150 (was 80).
+- Increased Duration to 5s (was 4s).
+
+Added SOUL VIAL
+- Grants +2 bonus damage per charge.  Gains a charge upon killing an enemy unit, and 8 upon killing an enemy Hero.
+- When killed, all charges disappear.
+- When used, restores Health and Mana for each charge accumulated, then consumes all charges.
+
+Version 1.42
+
+ITEMS
+========
+
+HOLDING ORB
+- Decreased threshold to 40 (was 50).
+- Increased Mana cost to 75 (was 0).
+- Decreased cooldown to 20s (was 25s).
+
+Added IRIS
+- Targets an enemy Hero.  For the duration of the effect, any major debuffs you receive, including Stuns, Disarms, Silences, Mutes, Roots and Blinds, will be copied to that unit as well.
+
+Version 1.41
+
+ITEMS
+========
+
+- Removed Linken's Sphere, Lotus Orb, Magic Stick and Magic Wand.
+- Added Holding Orb.
+
+HOLDING ORB
+- Upon use, creates a shield that absorbs 100% of Magical damage to convert it into stacks of Release Energies.
+- Upon secondary use, unleashes the stored energy in the Orb to deal damage.
+
+Version 1.4
+
+SHOPS
+========
+
+ADDED
+The Dark Materials Shopkeeper
+- Sells Regal Sigils, but only at night.
+- Next to him is his trusty sidekick, a Grimoire Keeper, who lists all of the upgrades in a handy chart.  Mouse over them for more details.
+- Regal Sigils work the way they did before.
+- Also sells Essence of Agility, Essence of Strength, and Essence of Intelligence, which are cost inefficient consumables that grant permanent buffs.  Useful if you have excess gold you need to use.
+
+HEROES
+=========
+
+!!!NEW HERO!!!
+
+ASTAROTH, the Veil of Death.
+Crush your enemies with the power of the Beyond; turn your allies and enemies into walking bombs, transfer the pain of one unit to another, every 7th strike deal massive bonus damage, and tear away your opponents' being!
+
+ODIN
+- God's Eye renamed to The Eye of Truth.
+- The Eye of Truth now roots invisible targets instead of Disarming them, reveals invisible units at all levels, and kills illusions.
+- The Eye of Truth damage reduced to 15/17/19/21 (was 15/20/25/30).
+
+ITEMS
+========
+
+ALL EXALTED ITEMS ARE NOW UNAVAILABLE IN THE REGULAR SHOP.  See SHOPS above.
+	
+=CHANGES=
+
+VAGRANT'S DAGGER
+- Is now an Exalted Item (can only be obtained by upgrading a regular item with a Regal Sigil).
+- Reduced bonus damage from invis to 125 (was 225), and decreased regular bonus damage to 35 (was 40).
+- Made both Invis and Blink look as similar as possible.
+- Reduced cooldown to 10s.
+- Removed bonus Int and bonus Regen.
+
+THUNDERBOLT
+- Now deals 120 damage per chain lightning jump, diminishing by 15% each time.
+- Now has a 100% chance to generate chain lightning on attacks.
+- Reduced attack speed bonus to 140 (was 200).
+
+SWORD OF GREED
+- Reduced bonus damage to 45.
+
+FENRIR
+- Is now built from upgrading Daedalus with a Regal Sigil.
+- Grants a 23% chance to deal 325% damage.
+- When activated, grants a 100% chance to deal 450% damage.
+- Reduced bonus damage to 90 (was 140).
+- No longer grants bonus Strength or Attackspeed.
+- No longer bashes.
+- Removed active Stun component.
+
+REGAL SIGIL
+- Prevented Regal Sigil from consuming all items that shared its name when it was used.
+- Added a global message for when Regal Sigil is used with a player that already has an Exalted item.
+
+=ADDITIONS=
+
+ESSENCES
+Contains ESSENCE OF AGILITY, ESSENCE OF STRENGTH and ESSENCE OF INTELLIGENCE.
+- All Essences grant 3 to their respective stat.
+
+Version 1.32b
+
+MISC
+=======
+
+- Changed loading screen to match the gamemode instead of using the default Barebones.
+- Updated the info text to reflect the actual version.
+
+Version 1.32
+
+HEROES
+=========
+
+ODIN
+- Gungnir AoE Radius increased to 325 (was 300).
+- Gungnir cooldown increased to 70/65/60 (was 60/50/40).
+- Gungnir damage increased to 400/500/600 (was 350/450/550).
+- Gungnir Aghanim's Scepter damage reduced to 625/750/875 (was 500/750/1000).
+
+BAAL
+- Compress cannot target Ancients.
+- Spatiotemporal Anchor cannot target Ancients.
+
+BUGFIXES
+===========
+
+- Fixed a bug where Odin's Gungnir would not appear to enemies if cast from fog.
+- Fixed a bug where Odin's Oppression worked on the Fountain.
+- Removed Anti-Mage.
+
+Version 1.31
+
+HEROES
+=========
+
+ODIN
+- Reduced Gungnir AoE radius to 300 (was 350).
+- Increased Sleipnir's Veil mana cost to 50/60/70/80 (was 50).
+- Reduced Sleipnir's Veil duration to 2.00/2.75/3.50/4.25s (was 4s).
+- Sleipnir's Veil movespeed bonus is now 45% (was 35%).
+- God's Eye now disarms as well as its other effects for Invisible units.
+
+Version 1.3
+
+MISC
+========
+
+Changed over to a new Barebones framework.	
+
+HEROES
+============
+
+!!NEW HERO!!
+
+Odin
+Hailing from the depths of the Farseer's Caverns, the Patriarch, his mind long lost to time, wanders the battlefield, proclaiming himself a God of some mythology long forgotten.  However, his powers afford him such outlandish claims, with a Farseer's reality bending abilities, he truly is a god.
+Reveal invisible units, escape in the nick of time, strike despair into the hearts of your opponents, and obliterate them from global range!
+
+CHANGES
+
+Baal has been reworked.
+
+BAAL
+- Replaced Axial Seal with Spatiotemporal Anchor
+Anchors the target unit to a point.  If they move outside of the radius, they are damaged, stunned and forced back to the anchor point.
+- Replaced Vector Plate with Spatial Rift.
+Creates a rift in space after a short channel time, dealing damage and slowing when it appears.  The Rift can be jumped to at any time with the Subability Port Out, which consumes the Rift.
+- Replaced Otherworld with Compress.
+Compresses the targeted enemy, turning them into a carriable orb.  After 3.5s, they break out and stun Baal.  The Orb can be thrown at a nearby location, dealing damage on arrival.
+- Superposition now functions like Otherworld.
+
+Timekeeper has been reworked.
+
+TIMEKEEPER
+- Replaced Echoes with Futurestrike
+After a large delay, deals massive Magical damage to the target.  Can be dispelled off.
+- Replaced Chaos Wave with Chronoshift.
+Saves allies' and enemies' positions and health and mana pools.  After a delay, returns them to those positions with the saved health and mana.  Dead units and units affected by Dilation are ignored.
+- Increased Parallels cooldown to 20s.
+
+Version 1.26d
+
+HEROES
+=========
+
+LIGHTNING
+- Lightning Dagger nows deals its damage and slow in an AoE around the marked target.
+- Aghanim's Scepter now causes Lightning Dagger to mark all targets in the AoE except for the main one, and reduces the cooldown of the dagger based on the targets hit.
+- Updated her tooltips to reflect the changes.
+
+MISC
+=======
+
+- Added some Lore to tooltips.
+
+Version 1.26c
+
+HEROES
+=========
+
+ALROTH
+- Base Strength decreased to 23 (was 27).
+- Base Intelligence increased to 19 (was 16).
+- Intelligence gain increased to 2.2 (was 2.0).
+- Agility gain decreased to 1.4 (was 2.0).
+- Base attack time increased to 2 (was 1.7).
+- Shatter damage multiplier reduced to 0.4/0.6/0.8/1.0 (was 1.0/1.1/1.2/1.3).
+- Shatter damage is now based on base damage only, and removes Mana based on the damage dealt.
+- Shatter Magic Resistance reduction changed to 10/20/30/40% (was 20/30/40/50%).
+- Shatter slow increased to 20/25/30/35% (was 20%).
+- Shatter no longer activates when illusions attack.
+- Raze damage increased to 40/60/80/100 (was 40/50/60/70).
+- Energy Burst damage increased to 100/180/225/275 (was 100/150/200/250).
+- Energy Burst cooldown increased to 12/10/8/6s (was 10/8/6/4s).
+- Solcharge radius reduced to 350 (was 500).
+- Solcharge stun radius reduced to 175 (was 250).
+- Solcharge cast range reduced to 1600 (was 3000).
+- Solcharge travel speed increased to 1250 (was 950).
+
+CHRONOS
+- Base Strength reduced to 16 (was 20).
+- Strength gain reduced to 2.2 (was 2.4).
+- Base Agility reduced to 15 (was 20).
+- Agility gain reduced to 2.0 (was 2.2).
+- Sync bonus Armor increased to 3/6/9/12 (was 2/4/6/8).
+- Sync bonus Magic Resistance increased to 20/25/30/35% (was 15/20/25/30%).
+- Future Sight cooldown reduced to 32s (was 45s).
+- Future Sight duration reduced to 5/6/7/8s (was 8/10/12/14s).
+- Continuum Crystal no longer makes the unit invulnerable.
+- Continuum Crystal health and Mana recovery over time increased to 7/9/11% (was 4/5/6%).
+
+BAAL
+- Vector Plate damage increased to 50/80/110/140 (was 25/50/75/100).
+
+SANGUINE HUNTER
+- Base health regen increased to 3 (was 0).
+- Movespeed increased to 315 (was 300).
+- Bloodcall amount per second increased to 12/14/16% (was 10%).
+- Bloodcall duration reduced to 10s (was 12/14/16s).
+- Bloodcall now deals Magical damage instead of Pure damage.
+- Bloodcall is no longer non-lethal.
+
+HAWKEYE
+- Hit 'n' Run radius for shrapnel reduced to 350 (was 500).
+- Reduced Single Tap cooldown to 17s (was 30/25/20s).
+- Reduced Single Tap mana cost to 150 (was 175).
+- Increased Single Tap base damage to 140/250/360 (was 180/240/300).
+- Decreased Single Tap multiplier to 2.25 (was 2/2.5/3).
+- Decreased Double Tap multiplier to 2.25 (was 2/2.2/2.4).
+- Reduced Double Tap cooldown upon cast to 1s (was 3s).
+- Double Tap no longer has a mana cost.
+- Aghanim's Scepter Upgrade for Single Tap reduces the multiplier of Single Tap, but increases Double Tap's multiplier to 4.5 (was 2.4/2.6/2.8).
+- Single Tap and Double Tap now only affect Hero units.
+
+LIGHTNING
+- Lightning Dagger reworked into:
+Lightning throws a dagger at the target enemy, dealing a small amount of Pure damage and marking them.  If a marked enemy is struck with a dagger, the mark is removed, they take bonus damage, and are slowed for a short time as well.
+- Lightning Dagger cooldown reduced to 6.0s at all levels (was 8.0/7.5/7.0/6.5s).
+
+BUGFIXES
+===========
+
+- Fixed an issue where sometimes issuing attack commands would play the wrong voice file.
+
+Version 1.26b
+
+BUGFIXES
+- Axial Seal can no longer target Ancients, and cannot kill Roshan.
+
+Version 1.26
+
+~~NEW HERO~~
+ALROTH, the Betwixt Demon
+A demon found floating between the planes, Alroth quickly demonstrated his powers to his rescuer, Faust, before realising he had saved him.  Upon tending to his wounds, the demon granted Faust a portion of his power, and he promptly disappeared...
+Alroth is a strong, tanky nuker Hero that focuses on dispatching enemies with great speed.  Shatter through your opponents' magic resistance, create a whorl of energy that deals damage over time and slows, release bursts of power to damage enemies, and transform into a floating sun that flies at the targeted location, dealing damage upon arrival.
+
+Version 1.25
+
+~~NEW HERO~~
+BAAL, the Parallel Sentinel
+A being of immense power, cast down into the world through means unknown.  Baal seeks to regain his lost powers through his enemies, and will stop at nothing until he does.  A powerful positional manipulation Hero, Baal can summon barely perceivable beings from the planes below, push and pull enemies and allies around the battlefield with his Vector Plate, enter an entirely different dimension to escape from his enemies, and open a pocket of space to reveal to his unfortunate adversaries a dilapidated remnant of his homeworld.
+
+Version 1.24
+
+HEROES
+=========
+
+FURY
+- Terashock cooldown reduced to 8s (was 10s).
+- Terashock cast point increased to 0.4s (was 0.3s).
+- Terashock radius increased to 320 (was 255).
+- Terashock no longer stuns.
+- Terashock now reduces Armor by 1/2/3/4.
+- Rend max stacks increased to 5 (was 4).
+- Rend damage bonus and attack speed bonus rescaled to 8/12/16/20 (was 5/10/15/20).
+- Rend now deals its damage bonus as a part of Fury's attacks, instead of a separate instance.
+- Rend no longer gains stacks or bonuses against buildings.
+- Rampage no longer removes the stack limit of Rend against buildings.
+- Rampage damage per percent missing reduced to 0.5/1.0/1.5 (was 1/2/3).
+- Rampage duration increased to 6s (was 4.5s).
+- Rampage damage is no longer bonus base damage.
+- Berserk damage per percent missing reduced to 1/1.5/2 (was 3/4/5).
+- Bloodsport has been reworked:
+No longer grants Lifesteal.  Instead, Fury has a 25% chance of dealing bonus damage and applying a Bloodsport stack to the target.  Targets with Bloodsport stacks will be slowed and take damage over time based on the amount of stacks accumulated.  Stacks last for 16s, and cannot be purged.  The stacks deal Physical damage.
+
+CHRONOS
+- Future Sight cooldown increased to 45s (was 40s).
+- Future Sight now affects creeps.
+- Synchronisation can now be activated to instantly switch to the opposite phase.
+- Fixed an issue with Warp sometimes not returning to the original position.
+
+HORROR
+- Deathmark duration increased to 70s (was 50s).
+- Alone cast point reduced to 0.7s (was 1.4s).
+- Alone duration increased to 6/8/10s (was 6/7/8s).
+- Shadowclone illusion no longer gains bonus attack speed.
+- Shadowclone outgoing damage reduced to 60/70/80/90% (was 70/80/90/100%).
+- Shadowclone incoming damage increased to 250% (was 200%).
+- Terrify slow increased to 45%.
+- Terrify radius reduced to 240 (was 480).
+- Base intelligence increased to 14 (was 11).
+- Intelligence gain increased to 1.6 (was 1.5).
+- Base Agility increased to 20 (was 16).
+- Agility gain increased to 2.2 (was 2.0).
+Added Aghanim's Scepter Upgrade to Alone:
+Grants flying movement, greater movespeed and attack speed bonuses, allows Horror to exceed the movespeed cap for the duration, grants vision of and applies a 4s Terrify effect to all enemy Heroes.
+
+LYSANDER
+- Captain's Compass no longer allows Lysander to exceed the movespeed cap.
+- Captain's Compass duration is now 15s at all levels (was 8/10/12/14s).
+- Captain's Compass damage increase reduced to 20% (was 25%).
+- Captain's Compass slow is now 17% at all levels (was 5/10/15/20%).
+- Captain's Compass cooldown increased to 45s (was 35s).
+
+VULCAN
+- Short Range Teleport cooldown reduced to 30/25/20/15s (was 25s).
+- Short Range Teleport mana cost changed to 50 (was 80).
+- Short Range Teleport delay increased to 3.5/3/2.5/2s (was 3s).
+- Short Range Teleport range reduced to 1175/1375/1575/1775 (was 1775).
+
+SET
+- Harsh Sun creep attack speed reduction reduced to 2/4/6/8 (was 5/7/9/11).
+- Harsh Sun no longer reduces creep's damage.
+- Harsh Sun Hero damage reduction reduced to 8/10/12/14% (was 5/10/15/20%).
+- Duststorm damage increased to 60/80/100/120 (was 40/60/80/100).
+- Duststorm travel time reduced to 6s (was 9s, speed increased to compensate).
+- An Army Beneath the Sands radius increased to 875 (was 750).
+- An Army Beneath the Sands interval reduced to 0.90/0.80/0.70s (was 1.00/0.85/0.70s).
+- An Army Beneath the Sands Aghanim's Scepter interval reduced to 0.60/0.50/0.40s (was 0.70/0.60/0.50s).
+
+SANGUINE HUNTER
+- Bloodcall cast range increased to 1600 units (was 1000).
+
+PARAGON
+- Smite Aghanim's Scepter damage per kill increased to 140 (was 80/100/120).
+
+THE LICH
+- Traveling Frost cooldown reduced to 14s (was 28/24/20/16s).
+- Traveling Frost AoE increased to 150 (was 125).
+
+HAWKEYE
+- Hit and Run cooldown increased to 14s (was 10s).
+
+VOIDWALKER
+- Unstable Rift cooldown increased to 80s (was 60s).
+- Realm Blister now blocks damage from inside-to-outside sources and outside-to-inside sources.  Units on the outside of the Realm Blister cannot damage or be damaged by units on the inside of it.
+
+AETHER
+- Reality Shift duration reduced to 4s.
+- Reality Shift now deals 200/300/400 Magical damage to enemies before it scoops up its targets.
+- Reality Shift now deals 50 damage to enemies upon returning.
+
+SHADE
+- Isolation Silence duration decreased to 5/6/7s (was 5/7.5/10s).
+
+PHANTOM
+- Soul Wave damage increased to 60/120/180/240 (was 20/40/60/80).
+- Soul Wave now only hits once.
+- Soul Wave stun increased to 1.5s (was 0.45, 0.60, 0.75s respective per each proc).
+- Soul Wave slow duration increased to 4s (was 2s).
+
+TEK
+- Base intelligence increased to 30 (was 24).
+- Intelligence gain increased to 3.2 (was 2.4).
+- Attack range increased to 450 (was 400).
+- Base strength increased to 17 (was 15).
+- Base mana regen increased to 2 (was 0).
+
+ITEMS
+========
+
+Added Talos
+= Created by synthesising Mekansm.
+Grants 15 to all stats, 7 armor, and 6 health regen in an aura.  Upon activation, heals allies in a 1550 radius for 300, and grants them 75 health regen for 5s.
+
+MISC
+=======
+
+ANCIENT
+- The Ancient now has bonus Armor, regen and a damage dealing aura to help defend better.
+
+TOWERS
+- Towers now have slightly boosted health levels.
+
+Version 1.23c
+
+HEROES
+=========
+
+CHRONOS
+- Decreased Warp delay to 5s.
+- Continuum Crystal recovery percentage reduced to 4/5/6% (was 4/6/8%).
+- Continuum Crystal slow increased to 20/30/40% (was 25/30/35%).
+- Continuum Crystal radius increased to 875 (was 800).
+
+VULCAN
+- Nanobots duration rescaled to 8/9/10/11s (was 6/8/10/12s).
+- Nanobots damage over time increased to 10/15/20/25 (was 10/12/14/16).
+- Nanobots armor reduction reduced to 0.7/0.8/0.9/1.0 (was 0.50/0.75/1.00/1.25).
+- Nanobots base damage reduced to 25/50/75/100 (was 40/80/100/120).
+- Vassal Lightning Leash stun duration increased to 2.25/2.75/3.25/3.75s (was 2/2.5/3/3.5s).
+- Vassal Switch Modes mana cost reduced to 25 (was 100).
+- Vassal Switch Modes channel time reduced to 4s (was 5s).
+
+Version 1.23b
+
+HEROES
+=========
+
+CHRONOS
+- Increased Future Sight damage avoid chance to 33% (was 25%).
+- Synchronisation Tick AS bonus 20/40/60/80 (was 30/40/50/60).
+
+Version 1.23
+
+~~~NEW HERO~~~
+
+CHRONOS, the Temporal Warden
+Heralding from a plane beyond our own, Chronos is a trickster of time, and a being that has engraved its name amongst many ancient texts.  Calling upon unfathomable arts, he can instantaneously appear before his opponents, before just as swiftly disappearing, grant himself and his allies the ability to see into the future to predict and avoid damage, draw from the power of the Timepiece's phases to gain attack strength or defenses, and encase his enemies or allies in a temporally displaced crystal.
+
+Version 1.22c
+
+CHANGES
+
+HEROES
+=========
+
+HERO
+- One Punch! now has True Strike upon activation, meaning it will never miss.
+
+Version 1.22b
+
+CHANGES
+
+HEROES
+=========
+
+HERO
+- Freedom Strike damage reduced to 130/170/210/250 (was 150/190/230/270).
+- Justice Kick damage rescaled to 90/120/150/180 (was 50/100/150/200).
+- Some...  changes to Justice Kick.
+- :D
+
+Version 1.22
+
+~~~ THE ITEM UPDATE ~~~
+
+Legendary items have been reintroduced, and are now called EXALTED items!  There are some new buffs to them, as you'll read below, but there are also some new restrictions:
+
+- Only one Exalted item is allowed per player.
+- Exalted items must be synthesised by upgrading a late game item using the new Regal Sigil, available in the shop.
+- The Regal Sigil grants no stats and will be consumed upon use, regardless of whether the synthesisation succeeds at all (that is, unless there is an invalid item in the first slot).
+- This item will always upgrade the first item it finds going from left to right, top to bottom, that is a valid item.
+
+The main buff to all of them is that you only require the base item, and then that is upgraded.  Some items have not changed.
+
+IMPORTANT: Items that are upgraded through Regal Sigil will possess the Exalted keyword.  Items that are powerful combinations of smaller items, such as Magisteel Armor, Vagrant's Dagger, Spellproof Bulwark and Vajra are Legendary items, and as such you can have more than one.
+
+CHANGES
+
+ITEMS
+========
+
+FENRIR
+= Created by synthesising Abyssal Blade.
+- Bash duration increased to 2s (was 1.5s).
+- Bash cooldown increased to 4s (was 2s).
+- Bonus Strength increased to 20 (was 14).
+- Active stun duration reduced to 2.5s (was 2.8s).
+- Bonus damage increased to 175 (was 140).
+- Bonus attack speed reduced to 40 (was 55).
+- Fixed the item granting bonus base damage.
+
+COLOSSUS
+= Created by synthesising Heart of Tarrasque.
+- Bonus Strength reduced to 50 (was 60).
+- Bonus Health reduced to 300 (was 475).
+- Health regen cooldown decreased to 2.5s (was 4s).
+- Health regen per second increased to 5.25% (was 4.5%).
+
+SWORD OF GREED
+= Created by synthesising the Hand of Midas.
+
+THUNDERBOLT
+= Created by synthesising Mjollnir.
+- Bonus attack speed increased to 200 (was 140).
+- Removed evasion, bonus Agility, and bonus movespeed from the item.
+- Active damage increased to 275 (was 250).
+- Active slow duration increased to 3s (was 2.5s).
+- Mana cost reduced to 75 (was 200).
+
+TURIN'S SCEPTER
+= Created by synthesising Scythe of Vyse.
+- Removed bonus health and damage.
+- Bonus Intelligence reduced to 45 (was 100).
+- Bonus mana regeneration increased to 1200% (was 400%).
+- No longer reduces Magical Resistance with its active.
+- Reduced cooldown to 30s (was 60s).
+
+ADDED
+CHARGED OCTARINE CORE
+= Created by synthesising Octarine Core.
+Increases health by 600, mana by 500, health regen by 8, mana regen by 200%, Intelligence by 30, and reduces cooldowns by 40%.
+
+DEMONFIRE
+= Created by synthesising Satanic.
+- Grants 40% Lifesteal, 25 Strength and 5 Armor.  Upon activation, grants 225% lifesteal and +100% base damage for 5s.
+
+HEROES
+=========
+
+HERO
+- One Punch! Mega Crit chance increased to 20% (was 10%).
+- One Punch! cooldown reduced to 60s (was 70s).
+- One Punch! Mega Crit percentage increase changed to 500/575/650% (was 475/550/625%).
+- Fixed Justice Kick's tooltip incorrectly displaying its damage type as Physical.
+
+Version 1.21
+
+HEROES
+=========
+
+FATE
+- Doomsayer now requires the target to be below 40% health.  If targeting an enemy above this threshold, it deals moderate Magical damage instead.
+- Doomsayer now reduces respawn time by 30% (was 60%).
+- Doomsayer mana cost reduced to 200 (was 275).
+- Doomsayer cooldown reduced to 110/100/90s (was 160/130/100s).
+
+HERO
+- Heroic Soul now reduces damage by 75% for 0.75s on activation.
+- Heroic Soul cooldown rescaled to 20/18/16/14s (was 25/20/15/10s).
+- One Punch! cooldown reduced to 70s (was 80s).
+- One Punch! now provides vision of the target during their flight.
+- One Punch! crit damage increased to 375/450/525% (was 325/400/475%).
+- One Punch! scepter bonus crit damage removed.
+- One Punch! mega crit damage reduced to 475/550/625% (was 750%).
+- One Punch! mega crit chance increased to 10% (was 5%).
+- One Punch! scepter knockback reduced to 1750 units (was 3000 units).
+- One Punch! scepter now increases mega crit damage to 1000%.
+
+Version 1.20
+
+~~~NEW HERO~~~
+
+HERO
+Yes, his name is Hero.  Starting from zero, Hero's (assumedly an alias, but who knows?) fishing village burned down thanks to a bunch of awfully nasty criminals.  From then on, he vowed to be the most heroic, the most courageous, and most effective saviour of the downtrodden!  Kick your opponents in their privates, leap around the battlefield with huge momentum and slam the ground, get out of any purgable stun, and strike your opponents with a devastating punch that knocks them far away!
+
+Version 1.19f
+
+HEROES
+=========
+
+HAWKEYE
+- Double Tap cast time reduced to 1.00s (was 1.25s).
+
+Version 1.19e
+
+~~NEW HERO~~
+
+Added Horror
+A terrifying beast heralding from the abyssal unknown, his abilities play tricks on the minds of his enemies.  This tanky Hero is excellent as a carry.  Scare your enemies silly, mark them for death to strike them for extreme damage later, summon a clone of yourself that deals reversible damage, and remove vision from everyone on the map but yourself.  Muahaha!!
+
+HEROES
+=========
+
+LYSANDER
+- Captain's Compass damage increase reduced to 15% (was 6/12/18/24%).
+
+VULCAN
+- Vassal's Mark damage increase reduced to 10/12/14/16% (was 15/20/25/30%).
+
+BAHAMUT
+- Reckoning Aura damage increase reduced to 5/10/15/20% (was 10/15/20/25%).
+
+CRIMSON
+- Reduced Sacrifice Mana cost to 80 (was 115).
+- Reduced Sacrifice cooldown to 8s (was 11s).
+- Reduced Destruction Sphere delay time to 2.3s (was 2.5s).
+- Increased Destruction Sphere base damage to 125/200/275/350 (was 150).
+- Decreased Destruction Sphere missing health damage to 0.10/0.15/0.20/0.25 (was 0.35/0.40/0.45/0.50).
+- Increased Destruction Sphere AoE to 425 (was 400).
+- Increased Ancient Pact cooldown to 32/24/16/8s (was 32/16/8/4s).
+- Ancient Pact now costs 0.75x the amount of health to heal.
+
+Version 1.19d
+
+HEROES
+=========
+
+BAHAMUT
+- Reduced Fulmination timer to 3s (was 4s).
+- Fulmination no longer adds stacks on Magic Immune targets.
+- Reckoning Aura now persists through Magic Immunity.
+
+CRIMSON
+- Reduced Destruction Sphere delay to 2.5s (was 3s).
+- Disintegrate now slows attack speed as well (60/120/180).
+
+Version 1.19c
+
+HEROES
+=========
+
+BAHAMUT
+- Reduced Mega Flare speed to 360 (was 425).
+- Reduced Desolation damage to 60/110/160/210 (was 80/130/180/230).
+- Reduced Fulmination bonus increase to 1.15x (was 1.20x).
+
+VULCAN
+- Increased Nanobots cast range to 575 (was 450).
+- Increased Nanobots initial damage to 40/80/100/120 (was 40/50/60/70).
+- Reduced Nanobots damage to 10/12/14/16 (was 12/16/20/24).
+- Increased Short Range Teleport cooldown to 25s (was 24/20/16/12s).
+- Increased Short Range Teleport mana cost to 80 (was 100/50/25/0).
+- Increased Short Range Teleport range to 1775 (was 1250).
+- Increased Tesla Coil duration to 120s (was 80s).
+- Increased base movespeed to 295 (was 285).
+- Increased Strength gain to 2.4 (was 2.0).
+- Reduced base Strength to 21 (was 24).
+
+Version 1.19b
+
+HEROES
+=========
+
+~~REWORKS~~
+
+VULCAN has been reworked
+BUILD FORCEFIELD is now SHORT RANGE TELEPORT
+After a short delay, teleports Vulcan and nearby units under his control to the location.
+BUILD CLOAKING FIELD is now NANOBOTS
+Fires a payload of deadly nanobots into the target unit, dealing damage over time and removing some Armor over the duration.
+
+MISC
+=======
+
+- Added sounds for Bahamut's abilities.
+
+Version 1.19
+
+NEW FEATURES !!
+===============
+
+LEGENDARY ITEMS
+have been temporarily removed, pending a new system, which will be implemented in the next patch.
+
+HEROES
+=========
+
+~~NEW HEROES~~
+
+BAHAMUT, the Elemental Guardian
+A powerful Agility carry with an array of devastating abilities.  Wittle down your enemies with Fulmination, turn a target into a walking Radiance with Desolation, amplify your opponent's incoming damage with Reckoning Aura, and obliterate the entire enemy team with a perfectly placed Mega Flare.
+
+~~REWORKS~~
+
+CRIMSON has been reworked (again!)
+LIFE DRAIN is now DESTRUCTION SPHERE
+- Creates an area where, after a short delay, enemies are damaged and slowed.  Deals more damage the less health they have in relation to Crimson.  AoE radius is decent, but effect is seen by both teams during the charge time.
+RED RITUALS is now SACRIFICE
+- Crimson rips the soul from a targeted enemy, dealing damage and taking a small amount of Mana.
+BLOOD SORCERY is now ANCIENT PACT
+- Uses all of his Mana, healing him by the amount used.  Instant cast.
+DISINTEGRATE
+- Now removes a percentage of the target's Health, dealing Pure damage, alongside removing a portion of Armor, Magic Resistance and movespeed for a short time.
+
+NEITH
+- Monsoon damage reduced to 60/120/180/240 (was 80/160/240/300).
+- Monsoon mana cost reduced to 80 (was 95).
+- Decisive Strike damage reduced to 100/175/250/325 (was 125/200/275/350).
+- Decisive Strike mana cost increased to 70/75/80/85 (was 70).
+- Rally now increases creep damage by 1/4th of the amount it increases Hero damage by.
+
+FATE
+- Doomsayer now reduces respawn time by 60% upon killing a target.
+- Doomsayer's cooldown is now 160/130/100s (was 120/90/60s).
+- Doomsayer mana cost increased to 250 (was 230).
+- Doomsayer's timer is now 140/110/80s (was 120/90/60s).
+- Doomsayer's ally timer is now 14/11/8s (was 12/9/6s).
+
+TIMEKEEPER
+- Dilation can now target allies, increasing their movespeed, attackspeed and turn-rate.  Can increase movespeed past the move limit.
+- Dilation cast range decreased to 800 (was 1600).
+- Dilation cooldown increased to 38s (was 30s).
+- Dilation increase/decrease is now 20/40/60/80% (was 30/60/90/120%).
+- Dilation now removes the effects of Chaos Wave, and its cooldown is reset when this occurs.  Dilation has no other effects when removing Chaos Wave.
+- Chaos Wave has been reworked.
+Now freezes all allied and enemy units for a large amount of time in a large radius.  Frozen units are invulnerable, but cannot perform any actions.
+
+Version 1.18d
+
+HEROES
+=========
+
+FATE
+- Doomsayer now resets on ANY Hero kill, not just Fate.  Does not reset on illusion kills.
+- Doomsayer now ticks down at twice its normal speed on Displaced targets (includes the debuff too).
+- Doomsayer cast range is now 700 (was 550).
+- Doomsayer cooldown reduced to 120/90/60 (was 200/150/100).
+- Doomsayer allied duration increased to 12/9/6s (was 8/6/4s).
+- Doomsayer cast point increased to 0.2s (was instant).
+- Doomsayer now pierces Magic Immunity.
+- Doomsayer minimum health threshold increased to 9%.
+- Added Aghanim's Scepter Upgrade to Doomsayer: ticks down at twice its normal speed (4x on Displaced targets).
+- Added an exception in Doomsayer for Fury's ultimate.
+- Displace no longer prevents Doomsayer's effect from occurring when the timer hits zero.
+- Displace now purges buffs and debuffs once every second.
+- Added Disable Help rules to Doomsayer, Displace and Chains of Fate.
+- Reduced Chains of Fate cooldown to 2.5s (was 3s)
+- Chains of Fate cast range increased to 600.
+- Realign no longer purges negative or positive effects (still removes Displace from targets).
+- Added missing Attribute bonus.
+
+Version 1.18c
+
+HEROES
+=========
+
+FATE
+- Reduced Realign's damage and heal to 120/160/200/240 (was 80/160/240/320).
+- Reduced Realign's cooldown to 7s (was 9s).
+- Reduced Realign's AoE to 300 (was 345).
+- Reduced Doomsayer cast range to 550 (was 1250).
+- Added a 7% instant kill threshold to Doomsayer for enemies to prevent neutral creep denies (you can still deny yourself if you drop to 0 instantly).
+- Reduced Doomsayer allied timer to 8/6/4s (was 20/15/10s).
+
+LIGHTNING
+- Reduced Lightning Dagger's cast range to 1000.
+- Overload no longer refreshes Lightning Dagger's cooldown.
+- Reduced Lightning Dagger's buff duration to 0.75s (was 1s).
+- Lightning Dagger deals 50 damage (was 40/60/80/100).
+
+BUGFIXES
+===========
+
+- Fixed an issue where the sound for Doomsayer would still play even if the timer had stopped counting down.
+
+Version 1.18b
+
+MISC
+=======
+
+- Added sounds for Fate.
+
+Version 1.18
+
+!! NEW HERO !!
+
+Fate
+Annoy your enemies with this tricky and potentially very powerful support.  Delay an ally's damage and healing, completely lock down enemies, bind units together so that when one dies, the others take massive damage, and place a timer on them that guarantees death.
+
+Version 1.17e
+
+NEITH
+- Rally no longer resets the cooldown of Monsoon and Decisive Strike.
+- Rally now has an Aghanim's Scepter upgrade.  Increases the duration and causes it to decrease enemies' damage, movespeed and attack speed by the same amount as it increases her allies' stats.
+
+SET
+- Sand Warriors can now acquire targets up to 1100 units away.
+
+Version 1.17d
+
+HEROES
+=========
+
+NEITH
+- Increased Rally attack speed to 60/80/100 (was 40/60/80).
+- Increased Rally damage to 40/60/80 (was 30/40/50).
+- Rally now only increases damage on Heroes, but still increases creep attack speed.
+- Rally now has a 15% movement speed boost.
+- Rally now resets the cooldowns of Monsoon and Decisive Strike.
+- Rally mana cost reduced to 125 (was 150).
+- Increased Monsoon damage steal to 8/12/16/20 (was 8/11/14/17).
+- Increased Decisive Strike damage to 125/200/275/350 (was 125/175/250/325).
+- Decisive Strike now slows attack speed as well.
+- Base movespeed increased to 305 (was 295).
+
+FURY
+- Rend max stacks is now 4 at all levels (was 4/5/6/7).
+- Rend now deals 1/5th of its damage to buildings (was 1/4th).
+- Reduced base Strength to 21 (was 25).
+- Reduced Strength gain to 2.5 (was 2.6).
+- Reduced Agility gain to 2.0 (was 2.4).
+- Base movespeed increased to 305 (was 295).
+- Reduced base Armor to 0 (was 3).
+- Terashock cooldown is now 10s at all levels (was 16/13/10/7s).
+- Type of damage Terashock deals is now Magical (was Physical).
+- Reduced Terashock damage to 80/160/240/320 (was 160/220/280/340).
+- Terashock cast time reduced to 0.3s (was 0.6s).
+- Terashock stun duration reduced to 0.4s (was 1.1/1.4/1.7/2.0s).
+- Terashock slow is now purgable.
+- Rampage movespeed reduced to 0.5/1.0/1.5% per percent missing (was 3/4/5%).
+- Rampage no longer has a mana cost.
+- Rampage cooldown is now 60s at all levels (was 80/70/60s).
+- Rampage now reduces BAT to 1.2.
+- BAT is now 1.6 (was 1.75).
+
+SET
+- Sands of War miss chance reduced to 25% (was 50%).
+- Sands of War cooldown is now 14s at all levels (was 16/14/12/10s).
+- Duststorm range reduced to 2000 (was 3000).
+- Duststorm damage reduced to 40/60/80/100 (was 50/80/110/140).
+- Duststorm slow reduced to 50% (was 70%).
+- Duststorm mana cost reduced to 100 (was 175).
+- Duststorm cooldown reduced to 20s (was 30s).
+- An Army Beneath the Sands Slow reduced to 40% (was 50%).
+- An Army Beneath the Sands Scepter Slow reduced to 75% (was 100%).
+- An Army Beneath the Sands now has no cast time (was 0.4s).
+- An Army Beneath the Sands now has a fade time of 1s.
+- Sand Archers can now acquire targets up to 1100 units away.
+
+Version 1.17c
+
+MISC
+=======
+
+- Added some missing tooltips.
+
+ITEMS
+========
+
+- Sword of Greed has been reworked:
+SWORD OF GREED
+- Upon death, grants bonus gold to the killer and removes gold from the holder based on their level, and levels up the item (causing it to lose efficacy).
+- Transmute gold reduced to 240/230/220/210/200 (was 260).
+- Transmute XP reduced to 3/2.8/2.6/2.4/2.2 (was 3).
+- Bonus gold on unit kill reduced to 25/22/19/16/13 (was 25).
+- Cooldown increased to 100s.
+- Sword of Greed can no longer be sold.
+
+FENRIR
+- Can no longer stun buildings.
+- Active Stun duration reduced to 2.8s (was 4s).
+- Crit multiplier reduced to 260% (was 280%).
+- Bash chance melee reduced to 15% (was 16%).
+
+COLOSSUS
+- Health regeneration per second reduced to 4.5% (was 10%).
+- Cooldown reduced to 4s (was 10s).
+- Bonus Strength reduced to 60 (was 140).
+- Bonus Health reduced to 475 (was 750).
+- Now passively reduces all damage sources by 20%.
+- Recipe now requires a Heart, a Reaver, a Vanguard and a recipe (was a Heart and 3 Reavers and a recipe).
+
+SPELLPROOF BULWARK
+- Can no longer be used whilst stunned.
+- Forcefield bonus Armor reduced to 2 (was 6).
+- Forcefield Magic Res reduced to 4 (was 9).
+- Units that damage an enemy holding the Spellproof Bulwark are slowed and take damage over time.
+
+VAGRANT DAGGER
+- Cooldown increased to 12s (was 9s).
+- Blink range decreased to 1300 units (was 1600).
+
+MAGISTEEL ARMOR
+- Reduced Aura Armor bonus to 5 (was 7).
+- Reduced bonus Magic Resistance to 17% (was 25%).
+
+
+Version 1.17b
+
+HEROES
+=========
+
+NEITH
+- Reduced Rally cooldown to 60/50/40s (was 70/60/50s).
+
+Version 1.17
+
+NEW HERO!!
+
+Neith
+A powerful Strength Hero with a focus on buffing her allies while dealing damage to enemies.  Steal your opponents' attack damage, strike at their most critical point, buff your allies as you cast spells, and rally them to battle with this dangerous pusher/nuker.
+
+HEROES
+=========
+
+SET
+- Added a slow to Sand Warriors and a range bonus to Sand Archers based upon their level.  They are maxed at rank 8 when they reach level 16.
+- Changed Aghanim's Scepter upgraded An Army Beneath the Sands to deal more damage over time, increase its slow and lower the interval between spawns.  No longer removes the level restriction.
+- An Army Beneath the Sands now generates units based on a multiplier of Set's level, at 0.64x.
+
+Version 1.16b
+
+BUGFIXES
+===========
+
+- Fixed an issue with Set's Duststorm sometimes not showing out of fog.
+- Fixed Sands of War particles not being loaded properly.
+
+Version 1.16
+
+MAPS
+========
+- We are now on the latest Reborn map.  All shiny and new!
+
+HEROES
+=========
+
+SET
+- Dust Storm range increased to 3000 (was 1700).
+- Dust Storm no longer blinds enemies.
+- Dust Storm damage per second decreased to 50/80/110/140 (was 40/80/120/160) 
+- Dust Storm now grants vision in a small area around it.
+- Increased attack slow from Harsh Climate to 10/14/18/22 (was 5/10/15/20).
+- Increased damage reduction from Harsh Climate to 5/10/15/20% (was 6/9/12/15%).
+- Harsh Climate no longer affects Roshan or Ancients.
+- Harsh Climate's effects are halved on creeps.
+- An Army Beneath the Sands now deals 30/45/60 damage per second.
+
+REUS
+- Units spawned inside Ancient Arena will not be removed from it.
+
+LIGHTNING
+- Reduced Lightning Dagger cast range to 1400 (was 1600).
+
+IRONFIST
+- Reduced cast time on Focus to 0.3s (was 0.7s).
+- Hissatsu movespeed increased to max (was 15/20/25/30%).
+- Hissatsu duration reduced to 2s (was 4s).
+- Hissatsu cooldown reduced to 7s (was 16s).
+- Hissatsu cast time reduced to 0.3s (was 0.4s).
+- Hissatsu mana cost increased to 80/60/40/20 (was 25).
+- Stonewall and Gale Stance cooldowns increased to 12s (was 8s).
+- Typhoon no longer stuns.
+- Typhoon now slows by 100% for 1.75s.
+- Typhoon cooldown reduced to 6s (was 8/7/6/5s).
+- All base stats increased to 21 (was 20).
+- All base stat growths decreased to 1.5 (was 2.0).
+- Reduced night vision to 800 (was 1170).
+- Stonewall Stance bonus armor reduced to 2/4/6/8 (was 3/6/9/12).
+- Gale Stance movespeed reduced to 3/5/7/9%, and is now a percentage increase (was 10/20/30/40 units).
+- Base armor increased to 2 (was 0).
+- Base damage reduced to 22 - 25 (was 27 - 29).
+
+BUGFIXES
+===========
+
+- Fixed an issue where Colossus would not stop its regen upon the owner being hit by a player-controlled unit.
+- Fixed some issues with particle effects appearing in the wrong positions.
+- Typhoon now correctly ignores unit collision.
+- Fixed an issue with Set's Sands of War not showing out of fog.
+
+MISC
+==========
+
+- Stonewall and Gale Stance for Ironfist now have particle effects to show which one is active at the time.
+- Ironfist's Focuses now have new particle effects.
+- Set's Ultimate now has a different particle effect.
+- Made some sounds louder and others softer.
+- Updated the custom game mode properties to be more in line with the newer formatting.
+- Removed older maps from the available maps.
+- Added sounds to An Army Beneath the Sands.
+- Fixed a memory leak due to a deprecated method of storing table values.
+- Added some missing Notes to some abilities.
+
+Version 1.15
+
+HEROES
+=========
+
+TEK
+- Shield damage reduction increased to 15/25/35/45% (was 15%).
+- Shield no longer grants Magic Immunity.
+- Shield duration increased to 8s (was 5/6/7/8s).
+- Powered Shield damage reduction increased to 30/45/60/75% (was 45%).
+- Powered Shield no longer grants Magic Immunity.
+- Powered Mosquito Missiles damage reduced to 40/50/60/70 (was 60/80/100/120).
+- Skycrack damage reduced to 140/180/220/260 (was 150/200/250/300).
+- Powered Skycrack damage reduced to 240/280/320/360 (was 160/260/350/410).
+- Powered Skycrack cooldown reduced to 3s (was 4s).
+- Self Destruct now purges all buffs and debuffs when successfully used, including Shield and Powered Shield.
+
+MISC
+=========
+
+- Added sounds for Set's abilities.
+- Added sounds for Aether's Ultimate.
+
+Version 1.14
+
+ADDED NEW HERO!
+
+Set, the Sand God
+
+Command the armies of the sands with this pusher/teamfighter extraordinaire; blind your enemies with whorling dust storms, debilitate them with your very presence on the battlefield, and obliterate your enemies with an insurmountable army of sand warriors.
+
+HEROES
+==========
+
+AETHER
+- Self casting Teleport causes the start up time to be doubled.
+- Decreased Disrupt damage to 60/120/180/240 (was 80/140/200/260).
+- Increased Monolith time to 160s (was 120s).
+- Increased Monolith cooldown to 160s (was 60s).
+
+BUGFIXES
+==========
+
+- Fixed a bug where Voidwalker's cosmetics would be removed completely when he was picked.  He now resets to default cosmetics.
+
+Version 1.13b
+
+BUGFIXES
+===========
+
+- Fixed an issue where Aether's Reality Shift would make unit models invisible.
+
+Version 1.13
+
+HEROES
+==========
+
+AETHER
+- Can self cast Teleport to jump to her Monolith.
+- Monolith cooldown reduced to 60s (was 120s).
+- One Monolith may exist at a time.
+- Increased base damage to 28 - 29 (was 20 - 22).
+- Increased base Strength to 14 (was 12).
+- Increased Disrupt effects radius to 300 (was 245).
+- Disrupt is now an instant cast spell.
+- Disrupt now also slows attack speed.
+
+ELEMENTALIST
+- Reduced passive Bolt buffs by 50%, excluding Fire Bolt's passive.
+- Increased attack rate to 1.6 (was 1.5).
+- Reduced base Intelligence to 14 (was 20).
+- Reduced base movespeed to 295 (was 300).
+
+BUGFIXES
+==========
+
+- Fixed an issue where Cake and other non-purchasable items could be bought in the shop.
+
+Version 1.12b
+
+BUGFIXES
+==========
+
+- Fixed an issue with Aether's ultimate dealing more damage based on the amount of units that it collected.
+- Fixed an issue with Elementalist's Ultimate not activating due to a scripting error.
+
+Version 1.12
+
+ADDED AETHER
+Save your allies from near death with Teleport, annoy your enemies and disjoint projectiles with Disrupt, summon ability extending Monoliths, and remove units from reality... temporarily, with your Ult.
+
+HEROES
+==========
+
+SANGUINE HUNTER
+- Reduced channel time of Soul Claw to 2s (was 3.5s).
+- Reduced Soul Claw HP drain to 33% (was 50%).
+- Increased Sadistic Lifesteal to 25/30/35/40% (was 20/25/30/35%).
+
+HAWKEYE
+- Detonator Dart cooldown increased to 24s (was 16s).
+
+FURY
+- Rampage move speed increased to 3/4/5% (was 1/2/3%).
+- Rampage damage increased to 3/4/5 (was 1/2/3).
+- Rampage duration decreased to 4.5s (was 7s).
+- Rampage Berserk now also constantly dispels all debuffs.
+- Fury is now a bear.
+
+BUGFIXES
+==========
+
+- Fixed an issue with Voidwalker being the wrong colour.
+
+Version 1.11
+
+HEROES
+==========
+
+LIGHTNING
+- Reduced Lightning Dagger's range to 1600 units.
+- Increased Lightning Dagger's cooldown to 8.0/7.5/7.0/6.5s (was 10/8/6/4s).
+- Increased Overload cooldown to 2.75s (was 5/4/3/2s).
+- Decreased Overload damage to 60/80/100/120 (was 50/80/110/140).
+- Increased Thunder Wave cooldown to 20s (was 14s).
+
+REUS
+- Ancient Arena duration reduced to 10s (was 15s).
+
+Version 1.1
+
+HEROES
+=========
+
+ELENA
+- Grave Guard duration decreased to 8s (was 8/10/12/14s).
+- Grave Guard amount decreased to 30/35/40/45% (was 50/60/70/80%).
+
+HAWKEYE
+- Single Tap base damage increased to 180/240/300 (was 100/200/300).
+- Detonator Dart damage decreased to 150/200/250/300 (was 175/225/275/325).
+- Detonator Dart cooldown decreased to 20s (was 45/35/25/15s).
+- Detonator Dart stun increased to 1.0s (was 0.4s).
+- Scattershot cooldown reduced to 16/12/8/4s (was 24/16/8/4).
+
+ELEMENTALIST
+- Trinity Fire Bolt damage reverted to 20/40/60/80 (was 30/60/90/120).
+- Trinity Electric Bolt attack speed reverted to 20/40/60/80 (was 30/60/90/120).
+- All Bolt cast points are now 0.3.
+- Bolts have been reworked to be a bit more situational and interesting.
+- Trinity now silences Elementalist for the duration.
+- Trinity duration is now 15s at all levels.
+
+Version 1.1c Alpha (UNSTABLE)
+
+HEROES
+========
+
+SANGUINE HUNTER
+- Stat gain and base stats reworked to give more Agility.
+- Soul Claw's damage is now based off Base Damage, rather than being a flat bonus.
+
+IRONFIST
+- Reduced various stats on his two forms.
+
+Version 1.1b Alpha (UNSTABLE)
+
+HEROES
+========
+
+SANGUINE HUNTER
+- Changed Sadistic to now be a passive that grants bonuses for each nearby enemy or ally that is below a health threshold.
+- Changes some stats around with his abilities.
+
+Version 1.1 Alpha (UNSTABLE)
+
+! NEW HEROES !
+==============
+
+ADDED Sanguine Hunter:
+Ganking tank carry with huge amounts of sustain and damage output.  Redirect the flow of damage through battles, strike your enemies with a decisive blow, gain regen based on how much burst damage you can deal, and curse or bless an enemy or ally with damage over time or regeneration, based on your health level.
+
+Sanguine has been added for testing purposes.  His abilities are subject to change, and a lot of them have missing sound effects or particle effects.
+
+BUGFIXES
+========
+
+- Added some missing tooltips for modifiers.
+
+Version 1.09
+
+HEROES
+========
+
+LYSANDER
+- Ghostly Dreadnought now fires cannonballs with a random deviation on their trajectory.
+- Ghostly Dreadnought's projectiles now affect Magic Immune units.
+- Ghostly Dreadnought's ministun is now 0.15s (was 0.30s).
+- Ghostly Dreadnought now slows enemies trapped under the ship by 40/50/60%.
+- Grapeshot mana cost reduced to 50 (was 60).
+- Grapeshot multiplier increased to 1.00/1.07/1.14/1.21 (was 1.00/1.05/1.10/1.15).
+- Grapeshot ministun increased to 0.8s (was 0.5/0.6/0.7/0.8s).
+- Grapeshot crit stun increased to 1.0/1.2/1.4/1.6s (was 1.00/1.15/1.30/1.45s).
+- Grapeshot now deals base damage alongside its multiply damage, at 30/40/50/60.
+- Captain's Compass now reveals invisible targets.
+- Captain's Compass' slow increased to 5/10/15/20% (was 4/8/12/16%).
+- Captain's Compass speed boost can now exceed the movespeed cap.
+- Captain's Compass cooldown increased to 35s (was 20s).
+- Captain's Compass cast point reduced to 0.5s (was 0.6s).
+
+VOIDWALKER
+- Unstable Rift cooldown reduced to 60s (was 120/90/60/30s).
+- Voidal Flare cooldown reduced to 6s (was 8/7/6/5s).
+- Voidal Flare cast range reduced to 550 (was 750).
+
+FURY
+- Terashock cast range increased to 350 (was 335).
+
+CRIMSON
+- Life Drain health drain increased to 100/140/180/220 (was 80/120/160/200).
+- Life Drain cooldown reduced to 10.4s (was 14s).
+
+LICH
+- Winter's Requiem cooldown increased to 25s (was 16s).
+
+OUROBOROS
+- Searing Flame cast point reduced to 0.4s (was 0.55s).
+- Dissipation magic resistance bonus increased to 20/25/30/35% (was 15/20/25/30%).
+- Dissipation magic damage increased to 10/20/30/40 (was 10/15/20/25).
+
+PARAGON
+- Cleanse primary heal increased to 60/120/180/240 (was 50/100/175/225).
+- Cleanse secondary heal increased to 75/125/175/225 (was 50/100/150/200).
+- Cleanse cooldown increased to 8.75s (was 8s).
+
+TRICKSTER
+- Surprise! now shows a disarm icon on the affected targets.
+
+Version 1.08
+
+HEROES
+========
+
+CRIMSON
+- Disintegrate damage reduced to 300/350/400 (was 375/450/525).
+- Disintegrate magic resistance reduction reduced to 10/20/30% (was 15/30/45%).
+
+VULCAN
+- Tesla Coil damage reduced to 10/15/20/25 (was 20/30/40/50).
+- Tesla Coil slow reduced to 10/20/30/40% (was 20/30/40/50%).
+- Forcefield duration reduced to 15s (was 30s).
+- Vassal's Lightning Leash duration reduced to 2/2.5/3/3.5s (was 3/3.5/4/4.5s).
+
+PHANTOM
+- Base Agility reduced to 20 (was 25).
+- Agility gain reduced to 2.5 (was 3).
+
+MIFUNE
+- Strength gain reduced to 1.4 (was 1.6).
+- Base Strength reduced to 16 (was 17).
+- Base damage reduced to 19 - 22 (was 25 - 27).
+- Agility gain reduced to 2.6 (was 3.0).
+- Oiuchi no longers grants bonus Agility.
+- Oiuchi no longer has a chance to activate.  It will always deal damage when enemies are below the threshold.
+- Oiuchi threshold reduced to 35% (was 35/40/45/50%).
+- Oiuchi damage per agility point decreased to 0.25/0.50/0.75/1.00 (was 1.0/1.2/1.4/1.6).
+- Genso cooldown reduced to 8/7/6/5s (was 11/9/7/5s).
+- Zanmato cooldown increased to 90s (was 90/80/70s).
+- Zanmato mana cost increased to 175/250/325 (was 175).
+
+LICH
+- Traveling Frost's stun is now purgable.
+- Absolute Zero's effect is now purgable, unless Aghanim's Scepter is purchased.
+
+ELEMENTALIST
+- Base damage reduced to 28 - 30 (was 30 - 35).
+- Fire Bolt damage rescaled to 80/100/150/180 (was 60/90/120/160).
+- Electric Bolt damage over time changed to 30/40/50/60 per second.
+- Electric Bolt damage over time duration changed to 2s (was 4s).
+- Ice Bolt slow increased to 20/25/30/35% (was 15/20/25/30%).
+- Ice Bolt slow duration increased to 3.5s (was 2s).
+- Trinity and Ice Bolt's slows now stack.
+- Increased the damage bonus on Fire Bolt for Trinity to 30/60/90/120 (was 20/40/60/80).
+- Increased the attack speed bonus on Electric Bolt for Trinity to 30/60/90/120 (was 20/40/60/80).
+- Increased the duration of Trinity to 12/14/16s (was 10s).
+- Increased the cooldown of Trinity to 80s (was 80/60/40s).
+- Rescaled the mana cost of Trinity to 150/125/100 (was 150).
+- Trinity can no longer be purged.
+- All Bolt abilities now passively grant bonuses, such as base damage for Fire Bolt, attack speed for Electric Bolt and a slow for Ice Bolt.  These effects stack with Trinity.
+- Added tooltips to reflect these changes and show the bonuses gained from passives and Trinity.
+
+TEK
+- Skycrack cooldown reduced to 4s (was 10/8/6/4s).
+- Skycrack mana cost reduced to 70 (was 80).
+- Powered Skycrack damage reduced to 170/230/320/410 (was 100/200/325/450).
+- Powered Skycrack and Skycrack cast time reduced to 0.2s (was 0.3s).
+- Powered Mosquito Missiles and Mosquito Missiles mana cost reduced to 40 (was 30/40/50/60).  The channelled mana cost per second is still 30/40/50/60.
+- Shield damage reduction reduced to 15% (was 12/16/20/24%).
+- Powered Shield and Shield duration increased/decreased to 5/6/7/8s (was 3/4/5/6s and 6/7/8/9s, respectively).
+- Powered Shield and Shield now grant Magic Immunity.
+- Powered Shield and Shield cooldown increased to 30s (was 20s).
+- Powered Shield damage reduction reduced to 40% (was 50%).
+- Power Up cooldown reduced to 50 (was 75/60/45).
+- Power Up mana cost reduced to 50 (was 125).
+- Power Up duration increased to 9/12/15 (was 6/9/12).
+- Power Up cast time reduced to 0.4s (was 0.5s).
+- Self Destruct mana cost reduced to 140 (was 225).
+
+BUGFIXES
+=========
+
+- Lysander's name is now visible.
+- Fixed an issue with some tooltips not showing correctly.
+
+
+Version 1.07b
+
+- Fixed items not showing up in shops correctly.  You still need to type "Legendary" to access the Legendary items (volvo pls).
+
+Version 1.07
+
+HEROES
+
+LYSANDER
+- Lysander now has a name.
+- Phantom Fleet duration increased to 14s (was 10s).
+- Phantom Fleet fire interval is now uniform.
+- Grapeshot crit stun is now 1.0/1.15/1.3/1.45s (was 1s).
+- Aghanim's now affects Grapeshot, granting Lysander a guaranteed crit every 14s, increasing the stun and causing it to autocast on nearby Captain's Compass'd targets.  Removes the critical chance of the ability.  The crit has a sound to signify it's ready.
+- The Adventurous Gale now disarms units caught in it, instead of lowering attack speed, and enemies caught in it now perform their flail animation (but can still cast spells).
+- Adventurous Gale now leaves a trail that slows enemies and speeds up allies.
+- Cooldown of Captain's Compass reduced to 20s (was 60/48/36/24s).
+
+REUS
+- Ancient Arena's mana cost increased to 350 (was 200).
+- Magnitude's mana cost increased to 160 (was 140).
+- Stoneblast mana cost increased to 105/125/145/165 (was 100).
+- Stalagmite's mana cost increased to 115 (was 110).
+- Stoneblast's cooldown reduced to 15 (was 17).
+- Stalagmite's cooldown reduced to 12 (was 20).
+
+
+Version 1.06
+
+HEROES
+
+PHANTOM
+- Decreased Soul Wave stun duration to 0.45s (was 0.60s).
+
+Version 1.05
+
+HEROES
+
+MIFUNE
+- Changed Genso's cooldown to 11/9/7/5 (was 15/11/7/3).
+- Reduced Genso's Illusion outgoing damage to 35% (was 40%).
+- Increased base Strength to 17 (was 14).
+
+ELENA
+- Reduced Convoke mana cost to 75 (was 85).
+- Reduced Convoke cooldown to 4 (was 6/5/4/3).
+
+BUGFIXES
+
+- Fixed sounds not playing for some of Lysander's abilities.
+- Fixed sounds not playing for some of Elena's abilities.
+- Fixed missing particle effect on Elena's Grave Guard.
+
+Version 1.04
+
+ADDED TEST HERO Lysander, the Fleet Admiral.  Shoot your enemies with your culverin, ride the waves into battle, use your magical compass to guide you towards your opponents and summon a deadly ship to fire upon your enemies with a chase cannon.  Keep in mind this Hero has been added for testing purposes; some things may be broken.
+
+Version 1.03b
+
+BUGFIXES
+
+- Fixed Shade's Isolation incorrectly targeting Ancients or Roshan.
+- Fixed some tooltips showing the wrong damage type or Spell Immunity piercing.
+- Fixed Elena's Grave Guard using a deprecated method of negating damage.
+- Fixed Tek's Shields not being immediate cast point.
+- Fixed Shade's Smokebomb not piercing Spell Immunity.
+- Fixed Phantom's Soul Wave incorrectly piercing Spell Immunity.
+- Fixed Paragon's Cleanse not having an AoE indicator.
+
+Version 1.03
+
+HEROES
+
+LICH
+- Strength gain increased to 1.6 (was 1.3)
+- Base Strength increased to 19 (was 14)
+- Base Intelligence reduced to 23 (was 26).
+- Base Armor increased to 2.
+COLD AURA
+- Range increased to 450 (was 225).
+- Now passively grants bonus Armor.
+TRAVELING FROST
+- Damage increased to 40/120/200/280 (was 50/100/150/200)
+- Speed reduced to 1100 (was 1200)
+
+OUROBOROS
+DISSIPATION
+- Magic resistance reduced to 15/20/25/30% (was 10/20/30/40%)
+
+VULCAN
+- Strength gain increased to 2.8.
+- Base Strength increased to 24.
+
+SHADE
+- Smoke Bomb damage reduced to 50/75/100/125 (100/125/150/175)
+- Shadowbreak damage reduced to 80/100/120/140 (was 80/120/160/200)
+- Agility gain increased to 2.8 (was 2.5)
+
+ITEMS
+
+TURIN'S SCEPTER
+- Reduced damage per half second to 50 (was 80 (?!))
+- Increased cooldown to 60s (was 45s).
+- Decreased duration to 4.5s (was 6s).
+
+MAGISTEEL ARMOR
+- Recipe is now:
+Hood of Defiance, Assault Cuirass, Octarine Core
+(was Hood of Defiance, Assault Cuirass, Soul Booster, Arcane Boots)
+- Stats changed to reflect this.
+- Removed bonus movespeed.
+- Now has a 33% cooldown reduction component.
+
+Version 1.02
+
+HEROES
+
+PHANTOM
+SOUL WAVE
+- Cooldown increased to 14s (was 8s).
+- Delay per proc increased to 1.25s (was 1s)
+- Damage increased to 30/60/90/120 (was 50/60/70/80).  Total damage is now 90/180/270/360.
+- Stun time changed to 0.60s for all procs (was 0.25s, 0.5s and 1s)
+
+REUS
+- BAT to 1.85 (was 2.00)
+- Base Damage is now 40 - 44 (was 50 - 60)
+- Base Strength is now 32 (was 28)
+- Strength gain reduced to 3.4 (was 4.0)
+- Base Intelligence is now 17 (was 14)
+- Intelligence gain increased to 1.9 (was 1.4)
+- Base Agility increased to 8 (was 6)
+- Agility gain increased to 0.7.
+- Base movespeed increased to 285 (was 275)
+- Turn rate increased to 0.7 (was 0.4)
+- Base Armor reduced to 6 (was 8)
+
+TIMEKEEPER
+CHAOS WAVE
+- Cooldown reduction reduced to 20/25/30% (was 30/40/50%)
+
+PARAGON
+SMITE
+- Damage reduced to 350/500/750.
+- Scepter damage reduced to 475/625/840.
+
+Version 1.01
+
+HEROES
+
+REUS
+MAGNITUDE
+- Reduced damage to 50/60/70/80 (was 40/60/80/100)
+- Reduced slow time to 1.2/1.4/1.6/1.8s (was 0.80/1.25/1.5/2.0s)
+- Reduced mana cost to 140 (was 150).
+- Reduced cooldown to 45 (was 60).
+STONEBLAST
+- Reduced damage to 120/160/200/240 (was 100/150/200/250)
+- Increased stun to 1.2/1.6/2.0/2.4 (was 1.0/1.4/1.8/2.2)
+- Increased cooldown to 17s (was 15s)
+
+PHANTOM
+- Shadowstep cooldown to 16s (was 12s)
+- Shadowstep duration to 2.2s (was 2/2.5/3/3.5s)
+- Reduced base damage to 14 - 17 (was 20 - 23)
+
+MIFUNE
+ZANMATO
+- Decreased cooldown to 90/80/70 (was 140/130/120)
+- Increased bonus hero damage to 140/180/220 (was 100/160/220)
+- Increased orb damage to 60/90/120 (was 80/90/100)
+
+CRIMSON
+BLOOD SORCERY
+- Decreased Strength per Intelligence to 0.1/0.15/0.2/0.25 (was 0.2/0.3/0.4/0.5)
+DISINTEGRATE
+- Increased Mana cost to 425/500/575 (was 200/400/600)
+RED RITUALS
+- Increased cooldown to 24s (was 14s)
+- Decreased DPS to 20/30/40/50 (was 30/40/50/60)
+- Increased stun threshold to 450/400/350/300 (was 350/300/250/200)
+- Decreased duration to 4s (was 5s)
+
+BUGS
+
+- Fixed an issue where Reus would kick units outside of his Ancient Arena regardless of whether or not they were supposed to be.
+- Fixed getting stuck in terrain due to abilities that move units around.
+
+Version 1.0
+
+We are now public!
+
+NOTABLE CHANGES
+
+Disabled Alchemist for the time being while he is reworked.
+
+HEROES
+
+Added Timekeeper: manipulate your opponents' and allies' cooldowns, cause enemies to echo the damage they take, and utilise parallel timelines to become nearly invincible.
+Added Elena: a powerful healing support, absorb your opponents' health and mana to give to allies, summon a barrier that gets stronger as what you're protecting gets weaker, rejuvenate your allies with your presence alone, and turn your opponent's damage against them.
+Added Mifune: powerful Agility carry with extreme range.  Able to rip the ground asunder, summon armies of clones, obliterate enemies with crits, and slice his opponents to bits with a dreaded legendary swordsman technique.
+Added Vulcan: Build deadly machinery to destroy your foes from afar.
+Added Lightning: Blitz around the battlefield with reckless abandon as this feisty Agility carry.
+Added Tek: Use the power of science to incinerate your foes and occasionally explode.
+Added Ouroboros: Raze your enemies with the power of dragon fire.
+Added Trickster: Annoy your enemies with this control-obsessed Intelligence disabler.
+Added Reus: Crack the earth in twain with the sheer force of a Titan.
+
+FURY
+- Reduced Lifesteal per Bloodsport stack from 5% to 1/1.75/2.5/3.25%, increased max stacks to 10.
+- Fury's Rampage now purges negative effects while active.
+
+HAWKEYE
+- Reduced Detonator Dart damage to 175/225/275/325 (from 150/200/300/400).
+- Reduced Strength gain to 1.3 (from 1.4).
+- Detonator Dart can now be purged with no effect.
+
+IRONFIST
+- Fixed an issue where he could use Reversal to damage and stun towers
+- Changed Stonewall Stance to grant 5/10/15/20 armor (used to be 7/11/15/20)
+- Stonewall Stance's Magical Resistance is now 10/20/30/40% (from 15/30/45/60%)
+- Gale Stance's movespeed increased to 15/30/45/60 (from 7/14/21/28)
+- Quake damage changed to 40/65/85/110 (from 50/75/100/125)
+- Quake stun reduced to 1.25s (from 2s)
+- Quake radius increased to 200 (from 175)
+- Hissatsu mana cost reduced to 25 (from 75)
+- Typhoon cooldown increased to 8/7/6/5 (from 7/6/5/4)
+- Typhoon stun changed to 0.75 (from 0.50/0.75/1.00/1.25s)
+- Typhoon damage reduced to 50/100/150/200 (from 60/120/180/240)
+- All Focus abilities have had their duration increased to 24s (from 12s)
+- All Focus abilities have had their stat reduction reduced to 1 (from 1/2/3)
+
+PHANTOM
+- Fixed a sound issue with Nightmare's cleave hits.
+- Reduced Nightmare's radius to 400 (was 500).
+- Reduced Deathstrike's damage to 125/150/175% (was 225/300/375%)
+- Increased Deathstrike's missing health damage to 15/20/25% (was 10/15/20%)
+- Increased Deathstrike's chance to 15% (was 10%)
+- Increased Strength gain to 1.6.
+- Increased Intelligence gain to 1.4
+- Decreased Agility gain to 3.0
+- Increased base Agility to 25
+- Reduced turn rate to 0.7 (was 1.1)
+- Shadowstep now has a mana cost of 60 (was 50/40/30/20).
+- Magical Resistance is now 25%.
+- Nightmare cleave percent is now 15/20/25/30% (was 10/20/30/40%)
+- Reduced Soul Wave cast range to 750 (was 1000)
+- Reduced Soul Wave mana cost to 60 (was 110)
+- Increased Soul Wave cooldown to 8 (was 5)
+- Soul Wave now stuns for 0.2s, 0.3s then 0.5s on the damage ticks
+- Reduced Soul Wave damage to 50/60/70/80 (was 50/75/100/125)
+- Shadowstep REWORK:
+Shadowstep is now a state change instead of a blink.  Phantom surrounds herself in a tenebrous cloak, and moves through terrain at high speed.  She is invulnerable whilst using Shadowstep.  She is still able to cast abilities and use items.
+
+PARAGON
+- Reduced Cleanse heal to 50/100/175/225 (from 100/200/300/400)
+- Cleanse now has a visible AoE.
+- Guardian is no longer a passive.  When activated, protects nearby allies from damage for 4s, dealing the damage to Paragon instead with a reduction.
+
+SHADE
+- Reduced Shadowbreak damage to 80/120/160/200 (was 100/150/200/250)
+- Reduced Shadowbreak move steal to 5/10/15/20% and gain to 3/4/5/6% (was 10/15/20/25% and 5/6/7/8%)
+- Reduced Isolation check radius to 400.
+- Isolation now checks for creeps in the area as well.
+- Reduced Isolation damage to 250/350/450 (from 400/500/600)
+- Isolation damage is now Pure and pierces Magic Immunity.
+- Reduced Isolation bonus max health damage to 15/20/25% (was 20/30/40%)
+- Isolation duration reduced to 5/7.5/10s (was 10s)
+- Reduced Isolation damage reduction per unit to 30.  Isolation cannot reduce more than 50% of its damage based on surrounding units.
+- Isolation no longer just reduces vision radius.
+- Isolation now blinds the unit.
+- Venomous damage reduced from 10/20/30/40 per second to 15/20/25/30.
+- Illusions can no longer poison enemies with Venomous' effects.
+
+CRIMSON
+- Life Drain is now an AoE spell.  The main target takes the full damage and drain and the secondary targets take half.
+- Life Drain cooldown increased to 14s (was 10s)
+- Life Drain reduced to 80/120/160/200 (was 150/200/250/300)
+- Disintegrate reworked, now deals 375/450/525 damage and burns through 10/20/30 Armor, reduces Magic Resistance by 15/30/45%, and slows by 40/50/60% for 5/6/7s.  Still resets upon killing an enemy Hero.
+- Blood Sorcery reworked, now grants 0.2/0.3/0.4/0.5 Strength per point of Intelligence Crimson has, alongside granting bonus Health and Mana regeneration and Armor when he is low on HP.
+
+THE LICH
+- Lich's Cold Aura now deals Max Health damage per 0.5s.
+Version 0.9c
+
+Changes
+
+ITEMS
+
+- Added Vagrant's Dagger.
+- Added Watcher's Eye.  Dropped from the Watcher.
+- Added Summoning Stone.
+- Changed Fenrir's icon to make it look nicer.
+- Turin's Scepter no longer requires Dagon 5.
+- Turin's Scepter cooldown is 7 seconds for creep targets.
+- Turin's Scepter now pierces magic immunity, but lasts for half the duration on Magic Immune targets.
+- Turin's Scepter duration increased to 6s from 5.
+- Colossus now functions like Heart of Tarrasque, going on cooldown when taking damage from Roshan.
+
+UNITS
+
+- The Watcher!  Summoned by using a Summoning Stone.  Can't be summoned near buildings.  Drops the Watcher's Eye.
+
+TOOLTIPS
+
+- Added Lore to most items.
+
+Version 0.9b
+
+Changes
+
+HEROES
+
+- Alchemist
+Alchemise Gold Yield is now 80/105/130/155 (from 140).
+Enhance cooldown reduced to 40/30/20/10 from 80/60/40/20.
+
+GENERAL GAMEPLAY
+
+Gold tick now increases by five times for all players after the 45 minute mark to encourage explosive late game battles.
+
+ITEMS
+
+- Colossus
+Now only goes on cooldown from Hero damage.
+Cooldown increased to 12s (from 8s).
+Now is created from a Heart of Tarrasque, 3 Reavers and a 900 gold recipe, like all Legendary items.
+Stats changed to properly reflect the components.
+
+=NEW ITEMS=
+
+- Thunderbolt added.  Legendary item with huge attack speed and Agility bonuses, evasion, movespeed, and a powerful passive and active spell.
+- Turin's Scepter added.  Legendary item with large intelligence bonus, alongside a devastating active that deals damage and prevents the target from attacking, using items, and using spells.
+
+Bugfixes
+
+- Fixed a bug where Alchemist and Sword of Greed were both able to Transmute Roshan and Ancient Creeps.
+- Fixed an issue where picking Voidwalker would crash the game.
+- Fixed an issue where barracks were incorrectly being labelled as units instead of buildings by some abilities.
+- Corrected some inaccurate tooltips.
+- Numerous other bugfixes involving spell interactions.
+
+Version 0.9
+
+- Alchemist
+Motherloads!! reworked into the following:
+	Blesses a target ally with a strange magick, causing them to gain bonus gold from any units they kill based on the unit's bounty.  Denies also grant gold.
+Alchemise reworked into the following:
+	Cooldown reduced to 30s.
+	Gold yield reduced to 140.
+	Tick gold has been removed.
+
+=NEW ITEMS=
+
+- LEGENDARY ITEMS
+====IMPORTANT:
+====LEGENDARY ITEMS ARE ACCESSIBLE BY TYPING "legendary" INTO THE SEARCH BAR
+When the late game arrives, things get bigger, better, and more insane.  Newly introduced Legendary items allow you to destroy your foes with ease, wield the strength of a titan, augment your team's defenses, or even give in to temptation and let the greed take you over.
+Added the following items:
+Colossus - Grants huge amounts of health and strength, and restores 10% of maximum health per second if damage hasn't been taken in 10s.
+Fenrir - Grants large bonus damage, critical strike, and a chance to bash, alongside some extra attack speed.
+Magisteel Armor - Grants attack speed, armor, magic resistance, mana, health, mana regeneration, move speed and health regeneration, along with an aura that augments the team's armor, magic resistance, mana regeneration and health regeneration, and reduces the opponent's armor and magic resistance.
+Sword of Greed - Grants bonus tick gold, bonus gold when killing creeps and Heroes, and can transmute enemy creeps into gold.  However, be careful when you die...
+
+Version 0.8
+
+=NEW HERO=
+
+Alchemist
+Do you like gold?  You'll love this Hero.
+
+Version 0.7b
+
+Changes
+
+- Phantom
+Changed Strength gain to 1.1 from 1.3.
+Changed Deathstrike missing health damage to 10/15/20% from 15/20/25%.
+Changed Deathstrike chance to 10% from 15%.
+
+Version 0.7
+
+=NEW HERO=
+
+Ironfist
+A monk rises from the ashes of a fallen civilisation, bringing with him incredible mobility and a versatile skillset.  Get around quickly while stunning your enemies with Typhoon, switch between the tanky Stonewall Stance and the quick Gale Stance, destroy your enemies with the deadly Quake, expose their weak points with your ultimate Focus, and then make a quick getaway with Hissatsu.
+
+Changes
+
+- Elementalist
+Reduced Strength gain from 1.9 to 1.7.
+Increased Intelligence gain from 2.0 to 2.2.
+
+- Hawkeye
+Increased Single Tap's multiplier from 1.5/2/2.5 to 2/2.5/3.
+Decreased Single Tap's base damage from 170/240/310 to 100/200/300.
+Decreased Single Tap's mana cost from 225 to 175.
+Added a mana cost to Double Tap, at 125 Mana.
+Reduced Double Tap's base damage from 75/100/125 to 50/75/100.
+Increased Double Tap's multiplier from 2 to 2/2.2/2.4.
+Decreased Double Tap's Scepter multiplier from 3 to 2.4/2.6/2.8.
+Hit 'n' Run's cooldown is now 10s at all levels, instead of 16/13/10/7.
+
+- Voidwalker
+Decreased Strength gain from 1.7 to 1.6.
+
+Version 0.6c
+
+Changes
+
+- Phantom
+Increased Strength gain to 1.3 from 0.9.
+Increased Agility gain from 2.8 to 3.2.
+Increased base movespeed from 290 to 295.
+Increased attack damage reduction duration on her Deathstrike to 3s from 2.5s.
+Decreased Shadowstep cooldown to 12/9/6/3 from 10/8/6/4.
+Reduced Shadowstep cast point from 0.4 to 0.3.
+
+- Voidwalker
+Reduced Unstable Rift cooldown from 120/100/80/60 to 120/90/60/30.
+
+- Hawkeye
+Detonator Dart now ministuns the target for 0.4s.
+Double Tap and Single Tap now have base damage, the multiplier of his attack damage is bonus damage.
+Single Tap multiplier reduced from 2/3/4 to 1.5/2/2.5.
+Single Tap base damage added at 170/240/310.
+Double Tap multiplier reduced from 3/4/5 to 2.
+Double Tap base damage added at 75/100/125
+Double Tap Aghanim's Upgrade now increases the Multiplier to 3, range and shot speed upgrades unchanged.
+Reduced the time between to two shots to 8 seconds, and reduced the cooldown on Double Tap to 3s, meaning 5s of effective time to make the shot.
+If the shot cast animation does not finish before the Double Tap buff indicator ticks down to zero, the shot will not fire.
+
+Bugfixes
+
+- Corrected an issue with damage negation scripts that caused units that took more damage than their current health to regenerate the difference.
+Abilities affected by this change:
+Guardian - Now negates damage instead of healing.
+Realm Blister - Enemies outside of the sphere cannot deal damage to those within the sphere.
+Tranquility Seal - Negates damage against all units from the target while Tranquility Seal is in effect on them.
+
+Version 0.6b
+
+Changes
+
+- Fixed Phantom's name still showing as Spectre.
+
+Version 0.6
+
+=NEW HERO=
+
+Phantom
+A glass cannon Agility carry heralding from the Void.  Blink around the battlefield with Shadowstep, slow and damage enemies with your Soul Wave, cleave through swathes of poor, helpless creeps with your Nightmare, and desolate your hardier foes with Deathstrike's devastating critical damage.
+
+Changes
+
+- Reduced Fury's Strength gain from 2.8 to 2.3.
+- Added more modifier tooltips.
+- Added some new particles for various entities.
+- Increased gold at the start of the match from 500 to 625.
+
+Version 0.5c
+
+Changes
+- Added missing modifier tooltips.
+- Increased Pull Speed of Abyssal Vortex from 75/100/125 to 100/130/160.
+- Respawn times are globally reduced by 25%.
+- Elementalist now has more particles.
+- Fury's Terashock radius increased from 235 to 255.
+- Added some colour to spell descriptions and numbers.
+
+Version 0.5b
+
+Changes
+
+Fury
+- Reduced Agility gain from 2.9 to 2.4.
+- Increased BAT from 1.7 to 1.75.
+- Bloodsport is now a UAM.
+- Reduced Bloodsport stack time from 2 to 1.
+- Lowered Bloodsport lifesteal from 7/8/9/10 to 2/3/4/5
+- Increased maximum Bloodsport stacks from 7 to 8.
+- Bloodsport now counts the bonus physical damage from Rend as lifesteal.
+- Decreased reset time on Rend from 7s to 4s.
+- Rend now affects buildings, but deals 1/4 of the damage.
+- Reduced the size that Fury grows to when going berserk.
+
+Bugfixes
+- Fixed a bug where the first stack of Fury's Rend would remain indefinitely.
+
+Version 0.50
+
+- Uploaded new image because the old one broke valve pls
+
+Version 0.5
+
+=NEW HERO=
+
+- Added Fury.
+Very powerful Agility carry, capable of out-DPSing literally any other hero in a manfight.  Very susceptible to disables.
+
+Version 0.4b
+
+Changes
+
+- Lich
+Added Aghanim's Scepter Upgrade for Lich.
+Reduced Absolute Zero damage to 30/40/50 from 50/60/70.
+Absolute Zero can now be purged from targets.
+Increased Absolute Zero duration to 4/5/6 from 5.
+Increased Traveling Frost hit radius to 150 from 100.
+
+- Voidwalker
+Added Aghanim's Scepter Upgrade for Voidwalker.
+Increased Unstable Rift duration to 25 from 15.
+Reduced Voidal Flare damage to 50/90/130/170 from 75/125/175/225
+Reduced Intelligence gain to 3.5 from 3.9.
+
+- Hawkeye
+Added Aghanim's Scepter Upgrade for Hawkeye.
+
+- Crimson
+Disintegrate now reduces respawn time by 50% if you deny yourself with the damage component.
+
+- Paragon
+Tranquility Seal is now purgable.
+
+Bugfixes
+
+- Definitely 100% actually fixed the bug where Crimson's Red Rituals wouldn't stun when it reached its threshold.
+- Fixed a rare issue where Hawkeye would get stuck in terrain after firing his Single Tap.
+- Fixed multiple sound issues with dead or removed units.
+- Corrected a wrong tooltip for Crimson.
+- Added some missing tooltips for Hawkeye.
+
+Version 0.4
+
+Changes
+
+=NEW HERO=
+
+- Added Voidwalker.
+Extremely strong and versatile support, but heavy mana costs and abilities that can backfire quite easily.
+
+- Nerfed Crimson's Aghanim's Scepter Upgrade Disintegrate damage slightly to make up for the jump change from last version, to 700/850/1050 from 825/1075/1200.
+
+Bugfixes
+
+- Fixed a bug where Crimson's Disintegrate wouldn't jump to the correct target...  again.
+- Fixed a bug where Crimson's Red Rituals wouldn't stun when it reached the threshold...  again.
+
+Version 0.3f
+
+Changes
+
+- Lich:
+Winter's Requiem damage reduced from 50/60/70/80 to 30/40/50/60
+Duration from 4s to 2s
+Absolute Zero now deals half damage to creeps
+Traveling Frost projectile speed reduced from 1600 to 1200
+Traveling Frost stun duration reduced from 2/3/4/5 to 2/2.5/3/3.5
+Cold Aura radius increased from 180 to 225
+Nighttime vision range increased from 750 to 850
+
+- Hawkeye:
+Attack range increased from 800 to 950
+BAT improved from 1.7 to 1.6
+Agility gain increased from 1.6 to 2.1
+Single Tap/Double Tap cast time reduced to 1.25s from 2.00s, cooldown reduced to 28/22/16s from 30/25/20s, Double Tap projectile speed increased from 4000 to 8000
+Hit 'n' Run slow reduced from 50% to 10/20/30/40%
+Detonator Bolt cooldown reduced from 60s to 45/35/25/15, Mana Cost increased from 115 to 90/100/110/120
+Scattershot cast range increased from 800 to 1150
+Scattershot now deals 50/60/70/80 bonus physical damage to its targets
+
+- Crimson:
+Disintegrate damage rebalanced from 750/925/1050 to 650/800/1000
+Disintegrate's Aghanim's Scepter Upgrade now causes it to jump regardless of whether or not the main target is killed (the target still must be a hero)
+Added Disintegrate's Aghanim's Scepter damage tooltip and modified the description to reflect the above
+Reduced Intelligence gain from 1.7 to 1.4
+Reduced Strength gain from 3.1 to 3.0
+Red Rituals' stun now stuns for longer based on how far the damage exceeds its threshold.  Read the tooltip for more information.
+Red Rituals no longer grants bonus regeneration
+
+- Elementalist:
+Improved BAT to 1.55 from 1.60
+Increased attack range to 650 from 600
+Increased base armor to 1 from 0
+Increased base move speed to 300 from 295
+Decreased base health regeneration from 2.0 to 0
+Decreased turn rate from 1.0 to 0.8
+Trinity cooldown increased from 60/40/30 to 80/60/40
+Ice Bolt damage rebalanced to 40/60/80/100 from 90
+Ice Bolt slow reduced to 15/20/25/30% from 20/30/40/50%
+Fire Bolt damage reduced to 60/90/120/150 from 135
+Electric Bolt damage reduced to 30/40/50/60 from 750
+Electric Bolt damage over time is now 30/40/50/60 damage per second over 4 seconds
+Fire Bolt, Electric Bolt and Ice Bolt cast time reduced to 0.3s from 0.4/0.3/0.2/0.1s
+Added Aghanim's Scepter upgrade; increases stats by an amount when the Ult is active
+
+- Shade:
+Base Agility increased to 27 from 22
+Base Agility gain increased to 2.8 from 2.5
+Base move speed increased 315 from 295
+Shadowbreak range changed to 1400 from 800/1000/1200/1400
+
+- Paragon:
+Smite damage increased to 550/875/1200 from 400/600/800
+Smite cooldown increased to 225/200/175 from 200
+Smite mana cost increased to 425/500/575
+Tranquility Seal now has a sound effect
+Cleanse mana cost reduced to 140 from 90/140/190/240

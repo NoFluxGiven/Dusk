@@ -1,0 +1,49 @@
+//=================================================================================================================
+// Essence
+//=================================================================================================================
+"item_essence_red"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3204"  //Special item
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_essence_red"
+	"FightRecapLevel"				"1"
+	
+	// Stats	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"0"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"0"
+	"ItemShopTags"					"special"
+	"ItemQuality"					"epic"
+	"ItemAliases"					"essence"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"0"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDroppable"					"0"
+	"SideShop"						"0"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+	"Modifiers"
+	{
+	}
+
+	// Nature's Guardian: 1
+		// Zeus: 2
+		// Siren: 3
+		// Sand Golem: 4
+		// Romulus/Remus: 5
+		// Greed: 6
+		// Seraphim: 7
+		// Grimoire Keeper: 8
+		// Darkness: 9
+}

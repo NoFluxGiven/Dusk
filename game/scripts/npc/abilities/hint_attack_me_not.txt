@@ -1,0 +1,60 @@
+//=====================================================================================================
+// HintsAttackMeNot
+//=====================================================================================================
+"hints_attack_me_not"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"set_harsh_sun"
+	"MaxLevel"						"1"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	}
+
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+		"particle"			"particles/units/heroes/hero_set/set_harsh_climate.vpcf"
+	}
+	
+	"Modifiers"
+		{
+			"modifier_harsh_sun_aura"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"OnAttacked"
+				// "%attack_damage" is set to the damage value after mitigation
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/util.lua"
+						"Function"		"onHelperIsAttacked"
+					}
+				}
+			}
+
+
+		}
+}

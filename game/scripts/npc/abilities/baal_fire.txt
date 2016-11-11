@@ -1,0 +1,66 @@
+//=====================================================================================================
+// BAAL: Fire
+//=====================================================================================================
+"baal_fire"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+	"AnimationPlaybackRate"			"0.95"
+	"AbilityTextureName"			"baal_fire"
+	"AoERadius"						"300"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"550"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"2"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"300"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"75 125 175 225"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_baal/baal_spatial_rift.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
+		}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+			{
+				"ScriptFile"	"heroes/baal_abilities.lua"
+				"Function"		"compress_release"
+				"damage"		"%damage"
+				"radius"		"%radius"
+			}
+	}
+}

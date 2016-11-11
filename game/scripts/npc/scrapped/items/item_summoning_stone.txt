@@ -1,0 +1,59 @@
+//=================================================================================================================
+// Summoning Stone, Blank
+//=================================================================================================================
+"item_summoning_stone"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3000"  //Special item
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_summoning_stone_blank"
+	"FightRecapLevel"				"1"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"0"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"800"
+	"ItemShopTags"					"special"
+	"ItemQuality"					"epic"
+	"ItemAliases"					"summoning_stone"
+	"ItemPurchasable"				"1"
+	"ItemSellable"					"0"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDroppable"					"0"
+	"SideShop"						"1"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	"ItemStockMax" 					"1" 
+	"ItemStockTime" 				"240"
+	"ItemStockInitial"	 			"1"
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"1000"
+		}
+	}
+	
+	"precache"
+	{
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+
+	}
+	
+	"Modifiers"
+	{
+	}
+}

@@ -1,0 +1,359 @@
+//=====================================================================================================
+// ALCHEMIST: Bottle Throw
+//=====================================================================================================
+"alchemist_bottle_throw"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"alchemist_bottle_throw"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1200"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"10 8 6 4"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50"
+	
+	//Damage
+	//-------------------------------------------------------------------------------------------------------------
+	
+	"AbilityDamage"					"40 80 120 160"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"tango_damage"					"4 6 8 10"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"tango_duration"				"15"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"flask_damage"					"75 100 125 150"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"clarity_mana_burn"				"30 40 50 60"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"smoke_of_deceit_duration"		"6"
+		}
+	"06"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"dust_slow"						"-10 -15 -20 -25"
+		}
+	"07"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"dust_duration"					"10"
+		}
+	"08"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"enhanced_dust_slow"			"-20 -30 -40 -50"
+		}
+	"09"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"enhanced_smoke_of_deceit_duration"			"12"
+		}
+	"10"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"enhanced_tango_damage"			"8 12 20 24"
+		}
+	"11"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"enhanced_flask_damage"			"150 200 250 300"
+		}
+		
+	}
+	
+	"precache"
+		{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+		"particle"	"particles/units/heroes/hero_alchemist/alchemist_unstable_concoction_projectile.vpcf"
+		"particle"	"particles/units/heroes/hero_alchemist/alchemist_unstable_concoction_explosion.vpcf"
+		}
+		
+	"OnSpellStart"
+		{
+		"FireSound"
+			{
+			"EffectName"		"Hero_Alchemist.UnstableConcoction.Throw"
+			"Target"			"CASTER"
+			}
+		"RunScript"
+			{
+			"ScriptFile" "heroes/alchemist_abilities.lua"
+			"Function" "alchemist_bottle_throw_start"
+			}
+		}
+	
+	"OnProjectileHitUnit"
+		{
+		"RunScript"
+			{
+			"ScriptFile" "heroes/alchemist_abilities.lua"
+			"Function" "alchemist_bottle_throw_boom"
+			}
+		"Damage"
+			{
+			"Damage" "%AbilityDamage"
+			"Type" "DAMAGE_TYPE_MAGICAL"
+			"Target" "TARGET"
+			}
+		"Stun"
+			{
+			"Duration" "0.5"
+			"Target" "TARGET"
+			}
+		}
+	
+	"Modifiers"
+		{
+		"alchemist_bt_item_tango"
+			{
+			"IsHidden" "1"
+			}
+		"alchemist_bt_item_clarity"
+			{
+			"IsHidden" "1"
+			}
+		"alchemist_bt_item_flask"
+			{
+			"IsHidden" "1"
+			}
+		"alchemist_bt_item_smoke_of_deceit"
+			{
+			"IsHidden" "1"
+			}
+		"alchemist_bt_item_dust"
+			{
+			"IsHidden" "1"
+			}
+		"alchemist_bt_item_tango_enhanced"
+			{
+			"IsHidden" "1"
+			}
+		"alchemist_bt_item_clarity_enhanced"
+			{
+			"IsHidden" "1"
+			}
+		"alchemist_bt_item_flask_enhanced"
+			{
+			"IsHidden" "1"
+			}
+		"alchemist_bt_item_smoke_of_deceit_enhanced"
+			{
+			"IsHidden" "1"
+			}
+		"alchemist_bt_item_dust_enhanced"
+			{
+			"IsHidden" "1"
+			}
+			
+		"alchemist_bt_effect_item_tango"
+			{
+			"Duration" "%tango_duration"
+			"IsDebuff" "1"
+			"IsPurgable" "1"
+			"ThinkInterval" "1"
+			"OnIntervalThink"
+				{
+				"Damage"
+					{
+					"Target" "TARGET"
+					"Damage" "%tango_damage"
+					"Type" "DAMAGE_TYPE_MAGICAL"
+					}
+				}
+			}
+		"alchemist_bt_effect_item_clarity"
+			{
+			"IsHidden" "1"
+			"IsDebuff" "1"
+			"IsPurgable" "1"
+			"OnCreated"
+				{
+				"RunScript"
+					{
+					"ScriptFile" "heroes/alchemist_abilities.lua"
+					"Function" "alchemist_bottle_throw_mana_burn"
+					"mana_burn" "%clarity_mana_burn"
+					}
+				"RemoveModifier"
+					{
+					"Target" "TARGET"
+					"ModifierName" "alchemist_bt_effect_item_clarity"
+					}
+				}
+			}
+		"alchemist_bt_effect_item_flask"
+			{
+			"IsHidden" "1"
+			"IsDebuff" "1"
+			"IsPurgable" "1"
+			"OnCreated"
+				{
+				"Damage"
+					{
+					"Target" "TARGET"
+					"Damage" "%flask_damage"
+					"Type" "DAMAGE_TYPE_MAGICAL"
+					}
+				"RemoveModifier"
+					{
+					"Target" "TARGET"
+					"ModifierName" "alchemist_bt_effect_item_flask"
+					}
+				}
+			}
+		"alchemist_bt_effect_item_smoke_of_deceit"
+			{
+			"Duration" "%smoke_of_deceit_duration"
+			"IsDebuff" "1"
+			"IsPurgable" "1"
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_MISS_PERCENTAGE" "100"
+				}
+			}
+		"alchemist_bt_effect_item_dust"
+			{
+			"Duration" "%dust_duration"
+			"IsDebuff" "1"
+			"IsPurgable" "1"
+			"OnCreated"
+				{
+				"ApplyModifier"
+					{
+					"ModifierName" "modifier_truesight"
+					"Target" "TARGET"
+					"Duration" "%dust_duration"
+					}
+				}
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%dust_slow"
+				}
+			}
+		
+		"alchemist_bt_effect_item_tango_enhanced"
+			{
+			"Duration" "%tango_duration"
+			"IsDebuff" "1"
+			"IsPurgable" "1"
+			"ThinkInterval" "1"
+			"OnIntervalThink"
+				{
+				"Damage"
+					{
+					"Target" "TARGET"
+					"Damage" "%enhanced_tango_damage"
+					"Type" "DAMAGE_TYPE_MAGICAL"
+					}
+				}
+			}
+		"alchemist_bt_effect_item_clarity_enhanced"
+			{
+			"IsHidden" "1"
+			"IsDebuff" "1"
+			"IsPurgable" "1"
+			"OnCreated"
+				{
+				"RunScript"
+					{
+					"ScriptFile" "heroes/alchemist_abilities.lua"
+					"Function" "alchemist_bottle_throw_mana_burn"
+					"mana_burn" "%clarity_mana_burn"
+					"sp" "1"
+					}
+				"RemoveModifier"
+					{
+					"Target" "TARGET"
+					"ModifierName" "alchemist_bt_effect_item_clarity_enhanced"
+					}
+				}
+			}
+		"alchemist_bt_effect_item_flask_enhanced"
+			{
+			"IsHidden" "1"
+			"IsDebuff" "1"
+			"IsPurgable" "1"
+			"OnCreated"
+				{
+				"Damage"
+					{
+					"Target" "TARGET"
+					"Damage" "%enhanced_flask_damage"
+					"Type" "DAMAGE_TYPE_MAGICAL"
+					}
+				"RemoveModifier"
+					{
+					"Target" "TARGET"
+					"ModifierName" "alchemist_bt_effect_item_flask"
+					}
+				}
+			}
+		"alchemist_bt_effect_item_smoke_of_deceit_enhanced"
+			{
+			"Duration" "%enhanced_smoke_of_deceit_duration"
+			"IsDebuff" "1"
+			"IsPurgable" "1"
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_MISS_PERCENTAGE" "100"
+				}
+			}
+		"alchemist_bt_effect_item_dust"
+			{
+			"Duration" "%dust_duration"
+			"IsDebuff" "1"
+			"IsPurgable" "1"
+			"OnCreated"
+				{
+				"ApplyModifier"
+					{
+					"ModifierName" "modifier_truesight"
+					"Target" "TARGET"
+					"Duration" "%dust_duration"
+					}
+				}
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%enhanced_dust_slow"
+				}
+			}
+		}
+}

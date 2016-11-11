@@ -1,0 +1,256 @@
+//=================================================================================================================
+// Vajra
+//=================================================================================================================
+"item_vajra"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3022"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	"Model"							"models/props_gameplay/red_box.vmdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_vajra"
+	"FightRecapLevel"				"1"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"775"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"26.0"
+	"AbilityManaCost"				"115"
+	
+	"AOERadius"						"400"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"2250"
+	"ItemShopTags"					"mana_burn;weaponry"
+	"ItemQuality"					"epic"
+	"ItemAliases"					"legendary; vajra"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"0"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"300"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"burn"							"30"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow"							"-2"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"stack"							"45"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"interval"						"0.1"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"160"
+		}
+		"07"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"resistance_reduction"			"-25"
+		}
+		"08"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"distance"						"900"
+		}
+		"09"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"cleave_percent"				"40"
+		}
+		"10"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_strength"				"6"
+		}
+		"11"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_agility"					"41"
+		}
+		"12"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_intelligence"			"16"
+		}
+		"13"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_hp_regen"				"14	"
+		}
+		"14"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_mana_regen"				"150"
+		}
+		"15"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_damage"					"65"
+		}
+		"16"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_armor"					"7"
+		}
+	}
+	
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_items.vsndevts"
+		"particle"	"particles/items/vajra_projectile.vpcf"
+		"particle"	"particles/items/vajra_orb_illusory_orb.vpcf"
+		"particle"  "particles/items_fx/battlefury_cleave.vpcf"
+		"particle"  "particles/items2_fx/veil_of_discord.vpcf"
+		"particle"  "particles/items2_fx/veil_of_discord_debuff.vpcf"
+		"particle"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_explode.vpcf"
+
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile" "items/item_vajra.lua"
+			"Function" "orb_hit"
+		}
+		"FireSound"
+		{
+			"EffectName"			"DOTA_Item.VeilofDiscord.Activate"
+			"Target"				"CASTER"
+		}
+
+		"FireEffect"
+		{
+			"TargetPoint"			"TARGET"
+			"EffectName"			"particles/items2_fx/veil_of_discord.vpcf"
+			"EffectAttachType"		"world_origin"
+			"ControlPoints"
+			{
+				"01"				"400 400 400"
+			}
+		}
+	}
+	
+	"OnProjectileHitUnit"
+	{
+		"RunScript"
+			{
+				"ScriptFile" "items/item_vajra.lua"
+				"Function" "burn_mana"
+				"mana_burn" "%burn"
+			}
+	}
+	
+	"Modifiers"
+	{
+	"modifier_vajra"
+	{
+		"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+		"Passive" "1"
+		"IsHidden" "1"
+		"ThinkInterval" "0.03"
+		"OnIntervalThink"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "items/item_vajra.lua"
+				"Function" "check_melee"
+			}
+		}
+		"Properties"
+		{
+			"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%bonus_strength"
+			"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%bonus_agility"
+			"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_intelligence"
+			"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%bonus_hp_regen"
+			"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE" "%bonus_mana_regen"
+			"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "%bonus_damage"
+			"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+		}
+		"OnAttackLanded"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "items/item_vajra.lua"
+				"Function" "projectile"
+				"radius" "%radius"
+			}
+		}
+	}
+	"modifier_vajra_cleave_atk"
+	{
+		"IsHidden" "1"
+		"OnAttackLanded"
+		{
+			"CleaveAttack"
+			{
+				"CleavePercent"		"%cleave_percent"
+				"CleaveRadius"		"%radius"
+				"CleaveEffect"		"particles/items_fx/battlefury_cleave.vpcf"
+			}
+			
+			"FireSound"
+			{
+				"EffectName"				"DOTA_Item.BattleFury"
+				"Target"					"TARGET"
+			}
+		}
+	}
+	"modifier_vajra_active_orb"
+	{
+		
+		"IsDebuff" "1"
+		"IsHidden" "1"
+		"ThinkInterval" "%interval"
+		"OnIntervalThink"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "items/item_vajra.lua"
+				"Function" "interval"
+			}
+		}
+		"Properties"
+		{
+			"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+		}
+	}
+	"modifier_vajra_active_orb_mres"
+	{
+		
+		"IsDebuff" "1"
+		"EffectName" "particles/items2_fx/veil_of_discord_debuff.vpcf"
+		"Properties"
+		{
+			"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%resistance_reduction"
+		}
+	}
+	}
+}

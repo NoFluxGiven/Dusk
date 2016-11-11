@@ -1,0 +1,76 @@
+//=====================================================================================================
+// BAAL: Vector Plate Switch
+//=====================================================================================================
+"baal_vector_plate_switch"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"baal_vector_plate_switch"
+	"MaxLevel"						"1"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"duration"						"10"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_baal/baal_otherworld_screen_effect.vpcf"
+		"particle" "particles/units/heroes/hero_baal/baal_otherworld_start_cast.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
+		}
+		
+	"OnToggleOn"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_vector_plate_dont_affect_baal"
+				"Target" 		"CASTER"
+			}
+		}
+	"OnToggleOff"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_vector_plate_dont_affect_baal"
+				"Target" 		"CASTER"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_vector_plate_dont_affect_baal"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+			}
+		}
+}

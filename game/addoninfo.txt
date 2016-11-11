@@ -1,0 +1,22 @@
+"AddonInfo"
+{
+  "TeamCount" "2"
+  "maps"      "dota"
+  "IsPlayable"  "1"
+  "dota"
+  {
+          "MaxPlayers"                    "10"
+  }
+"playground"
+{
+         "MaxPlayers"                    "10"
+}
+//  "desert_duo"
+//  {
+//          "MaxPlayers"                    "10"
+//  }
+//  "forest_solo"
+//  {
+//          "MaxPlayers"                    "10"
+//  }
+}

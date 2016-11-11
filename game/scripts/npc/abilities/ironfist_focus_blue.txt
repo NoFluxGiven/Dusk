@@ -1,0 +1,116 @@
+//=====================================================================================================
+// IRONFIST: Focus Blue
+//=====================================================================================================
+"ironfist_focus_blue"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilitySharedCooldown"			"ironfist_focus"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"ironfist_focus_blue"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1000"
+	"AbilityCastPoint"				"0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"120"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"int_red"						"-1"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"mana_burn"						"10 20 30 40"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_ironfist/ironfist_weakpoint_blue.vpcf"
+		}
+		
+	"OnUpgrade"
+		{
+		"RunScript"
+			{
+			"ScriptFile" "heroes/ironfist_abilities.lua"
+			"Function" "ironfist_focus_level_sync"
+			}
+		}
+		
+	"OnSpellStart"
+		{
+		"FireSound"
+			{
+			"EffectName" "Hero_Axe.Battle_Hunger"
+			"Target" "TARGET"
+			}
+		"ApplyModifier"
+			{
+			"ModifierName" "ironfist_focus_blue_mod"
+			"Target" "TARGET"
+			}
+		}
+	
+	"Modifiers"
+		{
+		"ironfist_focus_blue_mod"
+			{
+			"EffectName" "particles/units/heroes/hero_ironfist/ironfist_weakpoint_blue.vpcf"
+			"EffectAttachType" "follow_overhead"
+			"Duration" "24"
+			"OnCreated"
+				{
+				"RunScript"
+					{
+					"ScriptFile" "heroes/ironfist_abilities.lua"
+					"Function" "ironfist_focus_increase"
+					"red" "0"
+					"blue" "1"
+					"green" "0"
+					"mana_burn" "0"
+					"startup" "1"
+					}
+				}
+			"OnAttacked"
+				{
+				"RunScript"
+					{
+					"ScriptFile" "heroes/ironfist_abilities.lua"
+					"Function" "ironfist_focus_increase"
+					"red" "0"
+					"blue" "1"
+					"green" "0"
+					"mana_burn" "%mana_burn"
+					}
+				}
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%int_red"
+				}
+			}
+		}
+}

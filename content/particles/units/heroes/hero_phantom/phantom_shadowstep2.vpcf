@@ -1,0 +1,82 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+			m_flStartAlpha = 0.0
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 40.0
+		},
+		{
+			_class = "C_OP_SpinUpdate"
+		},
+		{
+			_class = "C_OP_Orient2DRelToCP"
+			m_nFieldOutput = 12
+		},
+		{
+			_class = "C_OP_Orient2DRelToCP"
+			m_nFieldOutput = 20
+		},
+		{
+			_class = "C_OP_LockToBone"
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 0, 0, 0, 255 ]
+			m_flFadeEndTime = 2.0
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nOrientationType = 2
+			m_bDisableZBuffering = true
+			m_hTexture = resource:"materials/models/heroes/morphling/watersprites/prowflow.vtex"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateOnModel"
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomRotationSpeed"
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 0, 0, 0, 255 ]
+			m_ColorMax = [ 170, 0, 127, 255 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 15.0
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_phantom/phantom_shadowstep2_dist.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_phantom/phantom_shadowstep2_whoos.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_phantom/phantom_shadowstep2_dist2.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_phantom/phantom_shadowstep2_bk.vpcf"
+		},
+	]
+}

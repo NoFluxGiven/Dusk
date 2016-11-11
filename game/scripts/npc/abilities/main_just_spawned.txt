@@ -1,0 +1,35 @@
+//=====================================================================================================
+// Spawn Checker
+//=====================================================================================================
+"main_just_spawned"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityTextureName"			"holdout_blade_fury"
+	
+	"Modifiers"
+		{
+		"modifier_spawned_in_last_frame"
+			{
+				"Passive" "1"
+				"IsHidden" "1"
+				"Duration" "0.03"
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_spawned_in_last_frame"
+						"Target" 		"TARGET"
+					}
+					"RemoveAbility"
+					{
+						"AbilityName" "main_just_spawned"
+						"Target" "TARGET"
+					}
+				}
+			}
+		}
+}

@@ -1,0 +1,76 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nTopology = "PARTICLE_TOPOLOGY_POINTS"
+	m_flConstantRadius = 25.0
+	m_flConstantLifespan = 3.0
+	m_nMaxParticles = 250
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_MovementRotateParticleAroundAxis"
+			m_flRotRate = 120.0
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+			m_flDecayTime = 0.4
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_bAdditive = true
+			m_flOverbrightFactor = 15.0
+			m_hTexture = resource:"materials/particle/phantom_lancer/pl_lance_flare.vtex"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RingWave"
+			m_nOverrideCP = 1
+			m_flParticlesPerOrbit = 50.0
+			m_flInitialRadius = 1.0
+			m_flThickness = 4.0
+			m_bEvenDistribution = true
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 170, 0, 0, 255 ]
+			m_ColorMax = [ 255, 170, 0, 255 ]
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 25.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 24.0 ]
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 45
+			m_nAlphaMax = 89
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_elena/convoke_circle_orb2.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_elena/convoke_circle_orb.vpcf"
+		},
+	]
+}

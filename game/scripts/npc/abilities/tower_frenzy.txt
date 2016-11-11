@@ -1,0 +1,136 @@
+//=====================================================================================================
+// TOWER: Frenzy
+//=====================================================================================================
+"tower_frenzy"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+	"AbilityTextureName"			"tower_frenz"
+	"MaxLevel"						"1"
+	"AbilitySharedWithTeammates" 	"1"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
+	
+	"AbilityDamage" 				"50"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"duration"					"4"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_attack_speed"		"300"
+		}
+	}
+	
+	"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"particle"					"particles/units/building/last_resort_ally.vpcf"
+			"particle"					"particles/units/heroes/hero_tek/skycrack_eff.vpcf"
+		}
+	
+	"Modifiers"
+		{
+			"modifier_frenzy"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+			
+				"ThinkInterval"  "0.03"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"buildings/ancient_abilities.lua"
+						"Function"		"frenzy"
+					}
+				}
+			}
+			"modifier_frenzy_bonus_effects"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
+				}
+
+				"Orb"
+				{
+					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+					"ProjectileName"    "particles/base_attacks/frenzy_tower.vpcf"
+					"CastAttack"		"0"
+				}
+				
+				"OnOrbFire"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_SkywrathMage.ArcaneBolt.Impact"
+						"Target" 		"CASTER"
+					}
+				}
+				
+				"OnOrbImpact"
+				{
+					"Damage"
+					{
+						"Target"
+						{
+							"Center"  	"TARGET"
+							"Radius" 	"300"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%AbilityDamage"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/util.lua"
+						"Function"		"resetLabel"
+					}
+				}
+				
+				
+			}
+		}
+}

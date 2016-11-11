@@ -1,0 +1,60 @@
+"vassal_hide" //Also controls the general AI of the repair bot
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "vassal_hide"
+    "MaxLevel"                      "1"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "0"
+    "AbilityCastPoint"              "0"
+    "AbilitySharedWithTeammates"    "1"
+    
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityChannelTime"            "0"
+    "AbilityCooldown"               "0"
+
+    // Damage.
+    //------------------------------------------------------------------------------------------------------------
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "0"
+    
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+    }
+
+    "precache"
+        {
+            "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+            "particle"                  "particles/units/heroes/hero_summoner/green_laser.vpcf"
+        }
+
+    "Modifiers"
+    {
+        "modifier_hide"
+        {
+            "IsHidden"        "1"
+            "IsBuff"          "1"
+            "Passive"         "1"
+
+            "ThinkInterval"  "0.5"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "items/item_vulcans_repair_kit.lua"
+                    "Function"      "AI"
+                }
+            }
+        }
+    }
+}

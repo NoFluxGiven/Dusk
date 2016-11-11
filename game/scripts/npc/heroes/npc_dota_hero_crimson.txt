@@ -1,0 +1,56 @@
+"npc_dota_hero_crimson"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_lion"
+	"Ability1"				"crimson_life_drain" 
+	"Ability2"				"crimson_red_rituals" 
+	"Ability3"				"crimson_blood_sorcery"
+	"Ability4"				"crimson_disintegrate"
+	"Ability5"				""
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"0"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"550"
+	"AttackRate"				"1.7"
+	"AttackDamageMin"			"27"										// Damage range min.
+	"AttackDamageMax"			"29"										// Damage range max.
+
+	//"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"19"										// Base strength
+	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"24"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.8"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"11"										// Base agility
+	"AttributeAgilityGain"		"1.6"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"290"									// Speed.
+	"MovementTurnRate"			"1.0"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

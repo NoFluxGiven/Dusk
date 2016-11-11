@@ -1,0 +1,170 @@
+"item_celestial_spear"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "item_datadriven"
+    "ID"                            "3101"  //Valve's version of this item uses the ID "123".
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "Model"                         "models/props_gameplay/red_box.vmdl" 
+    "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityTextureName"            "item_celestial_spear"
+    "FightRecapLevel"               "1"
+    
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastPoint"              "0.0"
+    "AbilityCastRange"              "475"
+    "AbilityCooldown"               "45"
+    "AbilityManaCost"               "100"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"                      "1"
+    "ItemShopTags"                  "regen_health;str;agi;"
+    "ItemQuality"                   "epic"
+    "ItemAliases"                   "cs;celestial_spear"
+    "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+    "precache"
+    {
+        "particle"  "particles/items/celestial_spear_activate.vpcf"
+        "particle"  "particles/items/celestial_spear_unit.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+    }
+
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_agility"             "16"
+        }
+        "02"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_strength"            "16"
+        }
+        "03"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_mana"                "225"
+        }
+        "04"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_damage"              "35"
+        }
+        "05"
+        {
+            "var_type"                  "FIELD_FLOAT"
+            "bonus_hpregen"             "8"
+        }
+        "06"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_castrange"           "335"
+        }
+        "07"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_attackrange"         "225"
+        }
+        "08"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "active_attackrange"        "325"
+        }
+        "09"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "active_castrange"          "300"
+        }
+        "10"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "duration"                  "6"
+        }
+    }
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "items/item_celestial_spear.lua"
+            "Function"      "Cast"
+        }
+    }
+    
+    "Modifiers"
+    {
+        "modifier_celestial_spear_passive"
+        {
+            "Passive"            "1"
+            "IsHidden"            "1"
+            "IsDebuff"            "0"
+            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+            "ThinkInterval"  "0.1"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "items/item_celestial_spear.lua"
+                    "Function"      "CheckRanged"
+                }
+            }
+        
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"  "%bonus_strength"
+                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"  "%bonus_agility"
+                "MODIFIER_PROPERTY_MANA_BONUS"                  "%bonus_mana"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      "%bonus_damage"
+            }
+        }
+        "modifier_celestial_spear_attack_range"
+        {
+            "Passive"            "0"
+            "IsHidden"            "1"
+            "IsDebuff"            "0"
+        
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "%bonus_attackrange"
+            }
+        }
+        "modifier_celestial_spear_attack_range_active"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "0"
+            "Duration"            "%duration"
+
+            "EffectName" "particles/items/celestial_spear_unit.vpcf"
+            "EffectAttachType" "attach_origin"
+
+            "OnCreated"
+            {
+                "FireEffect"
+                {
+                    "EffectName"        "particles/items/celestial_spear_activate.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                }
+            }
+        
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "%active_attackrange"
+            }
+            "States"
+            {
+                "MODIFIER_STATE_CANNOT_MISS"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+    }
+}

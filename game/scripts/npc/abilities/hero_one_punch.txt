@@ -1,0 +1,216 @@
+//=====================================================================================================
+// HERO: One Punch
+//=====================================================================================================
+"hero_one_punch"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilityTextureName"			"hero_one_punch"
+	"AnimationPlaybackRate"			"0.9"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"125"
+	"AbilityCastPoint"				"0.5"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"125"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"crit"						"300 400 500"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"knockback"					"750 1000 1250"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"scepter_knockback"			"1750"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"mega_crit_chance"			"20"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"mega_crit"					"500 575 650"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"scepter_mega_crit_chance"	"10"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"scepter_mega_crit"			"1000"
+		}
+	}
+	
+	"precache"
+		{
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+		"particle" "particles/units/heroes/hero_tusk/tusk_walruspunch_start.vpcf"
+		"particle" "particles/units/heroes/hero_hero/one_punch_mega_crit.vpcf"
+		"particle" "particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
+		}
+
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_abilities.lua"
+			"Function"		"OnePunchAbilityPhaseStart"
+		}
+	}
+		
+	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_abilities.lua"
+				"Function"		"OnePunch"
+				"knockback"		"%knockback"
+			}
+		}
+		
+	"Modifiers"
+		{
+			"modifier_one_punch_crit"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_one_punch_mega_crit"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%mega_crit"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_one_punch_mega_crit_scepter"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%scepter_mega_crit"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_one_punch_knockback"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"OnCreated"
+				{
+					"Knockback"
+					{
+						"Target"            "TARGET"
+						"Center" 	        "CASTER"
+						"Distance"	        "%knockback"
+						"Duration"	        "1"
+						"Height"	        "500"
+						"IsFixedDistance"	"1"
+						"ShouldStun"        "1"	
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_PROVIDES_VISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_one_punch_knockback_s"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"OnCreated"
+				{
+					"Knockback"
+					{
+						"Target"            "TARGET"
+						"Center" 	        "CASTER"
+						"Distance"	        "%scepter_knockback"
+						"Duration"	        "1"
+						"Height"	        "500"
+						"IsFixedDistance"	"1"
+						"ShouldStun"        "1"	
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_PROVIDES_VISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_one_punch_freedom_strike_augment"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"3"
+			}
+		}
+}

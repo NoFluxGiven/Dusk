@@ -1,0 +1,84 @@
+//=================================================================================================================
+// Charged Octarine Core
+//=================================================================================================================
+"item_charged_octarine_core"
+{
+// General
+//-------------------------------------------------------------------------------------------------------------
+"BaseClass"						"item_datadriven"
+"ID"							"3002"  //Valve's version of this item uses the ID "114".
+"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+"Model"							"models/props_gameplay/red_box.vmdl" 
+"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+"AbilityTextureName"			"item_charged_octarine_core"
+
+// Stats		
+//-------------------------------------------------------------------------------------------------------------
+"AbilityCooldown"				"0"
+	
+// Item Info
+//-------------------------------------------------------------------------------------------------------------
+"ItemCost"						"5500"
+"ItemShopTags"					"regen_health;regen_mana;health_pool;mana_pool"
+"ItemQuality"					"epic"
+"ItemPurchasable"				"0"
+"ItemSellable"					"0"
+"ItemAliases"					"charged_octarine;exalted"
+"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+// Special	
+//-------------------------------------------------------------------------------------------------------------
+"AbilitySpecial"
+{
+	"01"
+	{
+		"var_type"							"FIELD_INTEGER"
+		"bonus_health"						"600"
+	}
+	"02"
+	{
+		"var_type"							"FIELD_INTEGER"
+		"bonus_mana"						"500"
+	}
+	"03"
+	{
+		"var_type"							"FIELD_INTEGER"
+		"health_regen"						"8"
+	}
+	"04"
+	{
+		"var_type"							"FIELD_INTEGER"
+		"mana_regen"						"200"
+	}
+	"05"
+	{
+		"var_type"							"FIELD_INTEGER"
+		"bonus_int"							"30"
+	}
+	"06"
+	{
+		"var_type"							"FIELD_INTEGER"
+		"cooldown_reduc"					"45"
+	}
+}
+
+"Modifiers"
+{
+	"core_mod"
+	{
+		"Passive"			"1"
+		"IsHidden"			"1"
+		"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+		
+		"Properties"
+		{
+			"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_strength"
+			"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
+			"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%health_regen"
+			"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%mana_regen"
+			"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_int"
+			"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"			"%cooldown_reduc"
+		}
+	}
+}
+}

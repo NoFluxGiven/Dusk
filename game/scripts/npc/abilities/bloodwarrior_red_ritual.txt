@@ -1,0 +1,149 @@
+"bloodwarrior_red_ritual"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "bloodwarrior_red_ritual"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "550"
+    "AbilityCastPoint"              "0.4"
+    
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "10"
+
+    // Damage.
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityDamage"                 "0"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "40 60 80 100"
+    
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "damage"            "60 90 120 150"
+        }
+        "02"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "tick_damage"       "8 12 16 20"
+        }
+        "03"
+        {
+            "var_type"          "FIELD_FLOAT"
+            "ministun"          "0.6"
+        }
+        "04"
+        {
+            "var_type"           "FIELD_INTEGER"
+            "marked_tick_damage" "10 20 30 40"
+        }
+
+    }
+
+    "precache"
+    {
+        "particle"  "particles/status_fx/status_effect_shaman_shackle.vpcf"
+        "particle"  "particles/units/heroes/hero_bloodwarrior/red_ritual.vpcf"
+        "particle"  "particles/units/heroes/hero_bloodwarrior/red_ritual_marked_unit.vpcf"
+        "particle"  "particles/units/heroes/hero_bloodwarrior/bloodmark.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_blood_seeker.vsndevts"
+    }
+
+    "OnSpellStart"
+    {
+
+        "ApplyModifier"
+        {
+            "ModifierName"  "modifier_bloodwarrior_red_ritual"
+            "Target"        "TARGET"
+            "Duration"      "%channel_time"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_bloodwarrior_red_ritual"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "1"
+            "Duration"            "2.00"
+
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes\bloodwarrior_abilities.lua"
+                    "Function"        "redRitualStartDamage"
+                    "dmg"           "%damage"
+                    "stun"          "%ministun"
+                }
+            }
+
+            "ThinkInterval"  "0.50"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes\bloodwarrior_abilities.lua"
+                    "Function"        "redRitualTickDamage"
+                    "dmg"           "%tick_damage"
+                    "mdmg"          "%marked_tick_damage"
+                }
+            }
+
+            "OnDestroy"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes\bloodwarrior_abilities.lua"
+                    "Function"        "redRitualEnd"
+                }
+            }
+        }
+        "modifier_bloodmark"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "1"
+
+            "EffectName" "particles/units/heroes/hero_bloodwarrior/bloodmark.vpcf"
+            "EffectAttachType" "follow_overhead"
+        }
+        "modifier_bloodmark_strike"
+        {
+            "Passive"            "1"
+            "IsHidden"            "1"
+            "IsDebuff"            "0"
+        
+            "OnAttackLanded"
+            // "%attack_damage" is set to the damage value before mitigation
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/bloodwarrior_abilities.lua"
+                    "Function"      "bloodmarkAttacks"
+                    "attack_damage" "%attack_damage"
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,11 @@
+GOB SQUAD
+
+Hello and welcome to a Dusk Hero Spotlight for Gob Squad. Gob Squad is a ranged Intelligence Hero with an odd focus on sacrificing himself to deal massive damage to the enemy team.
+
+Their first ability is Rocket Blast. This fires a rocket from a long range, dealing Magical damage in an AoE. If it hits a building directly, it deals the AoE damage, and deals a quarter of the damage to the building.
+
+Their second ability is Kamikaze. After a 4s delay, in which they gains a large amount of bonus movespeed, they explode, losing a percentage of their Health, and becoming stunned, to deal damage in an AoE that scales with the Health they lost.
+
+Next up is Whoops! This ability, so named, causes them to explode when they die, dealing large Magical damage in a large radius. They also stun enemies affected for a short time.
+
+Finally, their Ultimate is Clearance Sale. The Gob Squad will offload all the bombs they have, throwing them in random directions. When the bombs land, they explode, dealing Magical damage in a small area. The Gob Squad takes half the damage from this ability.

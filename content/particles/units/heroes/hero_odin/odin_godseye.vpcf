@@ -1,0 +1,121 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_flConstantRadius = 50.000000
+	m_Operators =
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.100000
+		},
+		{
+			_class = "C_OP_MovementRotateParticleAroundAxis"
+			m_flRotRate = 90.000000
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_RateMin = 50.000000
+			m_RateMax = 125.000000
+			m_FrequencyMax = 2.000000
+			m_nField = 3
+			m_bProportional = false
+			m_flEndTime_min = 4.000000
+			m_flEndTime_max = 4.000000
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndTime = 0.250000
+			m_flStartScale = 0.250000
+			m_flEndScale = 3.000000
+		},
+		{
+			_class = "C_OP_Orient2DRelToCP"
+			m_flRotOffset = 90.000000
+			m_nFieldOutput = 12
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+			m_flDecayTime = 0.250000
+		},
+		{
+			_class = "C_OP_LerpEndCapScalar"
+			m_flOutput = 0.000000
+			m_flLerpTime = 0.200000
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_bLockRot = true
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nOrientationType = 1
+			m_bAdditive = true
+			m_hTexture = resource:"materials/particle/dark_eye.vtex"
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin =
+			[
+				0,
+				85,
+				127,
+				255,
+			]
+			m_ColorMax =
+			[
+				0,
+				170,
+				255,
+				255,
+			]
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 45.000000
+			m_flRadiusMax = 50.000000
+		},
+		{
+			_class = "C_INIT_RingWave"
+			m_nOverrideCP = 1
+			m_flParticlesPerOrbit = 16.000000
+			m_flInitialRadius = 1.500000
+			m_flInitialSpeedMin = -1200.000000
+			m_flInitialSpeedMax = -1200.000000
+			m_bEvenDistribution = true
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin =
+			[
+				0.000000,
+				0.000000,
+				80.000000,
+			]
+			m_OffsetMax =
+			[
+				0.000000,
+				0.000000,
+				80.000000,
+			]
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 16
+		},
+	]
+	m_Children =
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_odin/odin_godseye_b.vpcf"
+		},
+	]
+}

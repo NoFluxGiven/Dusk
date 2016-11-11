@@ -1,0 +1,60 @@
+"npc_dota_hero_tek"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_tinker"
+	"Ability1"				"tek_skycrack" // Fires a laser directly in front of Tek that deals large damage and slows.
+	"Ability2"				"tek_mosquito_missiles" // Locks on to multiple targets within range, then fires a large amount of missiles at them.  The missiles deal small damage, but this ability can target one unit multiple times.
+	"Ability3"				"tek_aerial_assault_mines" // Tek can place 3/4/5/6 targets in quick succession within a huge range. 
+	// Upon placing all of them, or 2s after placing a target without placing another, Tek fires some small mines up into the stratosphere, where they quickly land at the targeted spots.
+	// After a short delay, the mines explode, dealing Magical damage in an AoE.
+	// The mines are fired in 0.4s intervals, and explode after 1s. They are visible to enemies, but the targets are not.
+	// Deals 40/60/80/100 damage per mine, allowing a total of 120/240/400/600 damage.
+	"Ability4"				"tek_tesla_microarray" // Following a short delay, Tek powers up his suit, making his abilities much stronger and more deadly.  After the duration, Tek is unable to attack or cast spells for a short time.
+	"Ability5"				"" // Fires a deadly laser directly in front of Tek that deals huge damage and slows.
+	"Ability6"				"" // Locks on to multiple targets within range extremely quickly, then fires a huge amount of missiles at them.
+	"Ability7"				"" // Passive. While Tek is Powered Up, droids become impervious to damage for a short time and attack a lot faster.
+	"Ability8"				"" // Tek sacrifices his life to enter a superpowered mode, reducing his cooldowns drastically but rapidly draining his health.  Takes 20% of max health as damage per second.  Tek cannot be killed by this ability, but it will end if his health drops to 1.
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"1"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"450"
+	"AttackRate"				"1.50"
+	"AttackDamageMin"			"30"										// Damage range min.
+	"AttackDamageMax"			"35"										// Damage range max.
+
+	"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"17"										// Base strength
+	"AttributeStrengthGain"		"1.2"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"26"										// Base intelligence
+	"AttributeIntelligenceGain"	"3.0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"23"										// Base agility
+	"AttributeAgilityGain"		"1.9"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"305"									// Speed.
+	"MovementTurnRate"			"0.75"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

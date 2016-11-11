@@ -1,0 +1,92 @@
+//=====================================================================================================
+// FURY: Bloodsport
+//=====================================================================================================
+"fury_bloodsport_old"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"fury_bloodsport"
+			
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"crit_chance"					"15"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bleed"							"4 6 8 10"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bleed_duration"				"25"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"							"particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
+		"particle"							"particles/units/heroes/hero_fury/fury_bloodsport.vpcf"
+	}
+	
+	"Modifiers"
+	{
+		"fury_bloodsport_lifesteal_mod"
+		{
+			"Passive"						"1"
+			"IsHidden"						"0"
+			"IsPurgable"					"0"
+			"Orb"
+			{
+			"Priority" "DOTA_ORB_PRIORITY_ABILITY"
+			"CastAttack" "0"
+			}
+		
+			"OnOrbImpact"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/fury_abilities.lua"
+					"Function"				"fury_bloodsport_lifesteal"
+					"max_stack"				"%max_stack"
+					"lifesteal"				"%lifesteal"
+					"dmg"					"%attack_damage"
+				}
+			}
+			
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_TOOLTIP" "%lifesteal"
+				}
+		}
+		"fury_bloodsport_count_mod"
+		{
+		"Duration" "1"
+		"IsHidden" "1"
+		"OnDestroy"
+			{
+			"RunScript"
+				{
+					"ScriptFile"			"heroes/fury_abilities.lua"
+					"Function"				"fury_bloodsport_lifesteal_red"
+				}
+			}
+		}
+		"fury_bloodsport_effect_mod"
+		{
+		"IsHidden" "1"
+		"EffectName" "particles/units/heroes/hero_fury/fury_bloodsport.vpcf"
+		}
+	}
+}

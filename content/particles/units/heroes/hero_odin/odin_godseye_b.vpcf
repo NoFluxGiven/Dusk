@@ -1,0 +1,124 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_flConstantRadius = 50.000000
+	m_Operators =
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+			m_flDecayTime = 0.250000
+		},
+		{
+			_class = "C_OP_LerpEndCapScalar"
+			m_flOutput = 0.000000
+			m_flLerpTime = 0.200000
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndTime = 0.500000
+			m_flStartScale = 0.000000
+		},
+		{
+			_class = "C_OP_SpinUpdate"
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+		{
+			_class = "C_OP_MovementRotateParticleAroundAxis"
+			m_flRotRate = 70.000000
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_bAdditive = true
+			m_bDisableZBuffering = true
+			m_hTexture = resource:"materials/materials/particle/basic_smoke.vtex"
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin =
+			[
+				0,
+				85,
+				127,
+				255,
+			]
+			m_ColorMax =
+			[
+				0,
+				170,
+				255,
+				255,
+			]
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMax = 0.750000
+			m_vecDistanceBias =
+			[
+				0.500000,
+				0.500000,
+				0.000000,
+			]
+			m_vecDistanceBiasAbs =
+			[
+				0.000000,
+				0.000000,
+				1.000000,
+			]
+			m_nScaleCP = 1
+			m_fSpeedMin = 1.000000
+			m_fSpeedMax = 5.000000
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomRotationSpeed"
+			m_flDegreesMax = 1.000000
+		},
+		{
+			_class = "C_INIT_RemapCPtoScalar"
+			m_nCPInput = 1
+			m_flInputMax = 1200.000000
+			m_flOutputMin = 20.000000
+			m_flOutputMax = 700.000000
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin =
+			[
+				0.000000,
+				0.000000,
+				25.000000,
+			]
+			m_OffsetMax =
+			[
+				0.000000,
+				0.000000,
+				100.000000,
+			]
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 26
+			m_nAlphaMax = 41
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 75
+		},
+	]
+}

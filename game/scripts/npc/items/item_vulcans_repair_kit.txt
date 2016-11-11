@@ -1,0 +1,58 @@
+//=================================================================================================================
+// Vulcan's Repair Kit
+//=================================================================================================================
+"item_vulcans_repair_kit"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3023"  //Valve's version of this item uses the ID "39".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
+	"Model"							"models/props_gameplay/clarity.mdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_vulcans_repair_kit"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"              "0"
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"150"
+	"AbilityCastRange"				"200"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"750"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"vulcans_repair_kit"
+	"ItemStackable"					"1"
+	"ItemPermanent"					"0"
+	"ItemPurchasable"				"0"
+	"ItemInitialCharges"			"1"
+	"ItemStockMax" "2" 
+	"ItemStockTime" "300"
+	"ItemStockInitial" "0"
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	}
+	
+	"OnSpellStart"
+	{			
+		"RunScript"
+		{
+			"ScriptFile"	"items/item_vulcans_repair_kit.lua"
+			"Function"		"useOnTowerNow"
+		}
+		"SpendCharge"
+		{}
+	}
+
+	"Modifiers"
+	{
+	}
+}

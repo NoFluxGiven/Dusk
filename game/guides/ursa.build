@@ -1,0 +1,137 @@
+"HeroGuide"
+{
+	"Hero"	"ursa"
+	"Title"	"The doctor is IN [6.84]"
+	"GuideRevision"	"1"
+	"FileVersion"	"1"
+	"Scratch"	"0"
+
+	"ItemBuild"
+	{
+		"Items"
+		{
+			"#DOTA_Item_Build_Starting_Items"
+			{
+				"item"	"item_courier"
+				"item"	"item_ward_observer"
+				"item"	"item_tango"
+				"item"	"item_branches"
+				"item"	"item_branches"
+				"item"	"item_flask"
+				"item"	"item_circlet"
+			}
+			"LANE"
+			{
+				"item"	"item_flying_courier"
+				"item"	"item_magic_stick"
+				"item"	"item_tpscroll"
+				"item"	"item_magic_wand"
+			}
+			"CORE"
+			{
+				"item"	"item_arcane_boots"
+				"item"	"item_mekansm"
+				"item"	"item_ultimate_scepter"
+			}
+			"tools of the trade"
+			{
+				"item"	"item_ward_observer"
+				"item"	"item_ward_sentry"
+				"item"	"item_dust"
+				"item"	"item_gem"
+				"item"	"item_smoke_of_deceit"
+				"item"	"item_enchanted_mango"
+			}
+			"situational/luxury/late"
+			{
+				"item"	"item_phase_boots"
+				"item"	"item_bracer"
+				"item"	"item_black_king_bar"
+				"item"	"item_force_staff"
+				"item"	"item_guardian_greaves"
+				"item"	"item_cyclone"
+				"item"	"item_sheepstick"
+			}
+		}
+		"ItemTooltips"
+		{
+				"item_branches"	"Branches are extremely cost effective starting stats items. They build into your Wand or Mekansm. In some cases, you may be flush with gold before finishing your Wand (after an early fight or tower kill), and you can skip it and start building your branches into the components of Mekansm early."
+				"item_circlet"	"Circlet is not the most cost efficient item in the game and it is often worth not purchasing it from the base at the start, since items like salves, clarities or sentries are more powerful items to have in hand. However, if you have extra gold, with stick it does now build into a quick, cheaper Wand"
+				"item_magic_wand"	"With 6.84, Wand is the most efficient stats item for early game, and I would now build this over Ring of Basillius since you probably need burst mana regen for stuns, healing or to get that ult off in a fight, more than armour or flat mana regen bonus."
+				"item_enchanted_mango"	"tastes better than wards"
+				"item_flask"	"Take the salve to lane for burst hp regen. This can often be the difference between fights going well or you or a lane partner dying, or being forced back to base. If your carry is low on hp and cannot farm, consider salving them up (make sure they will not take damage when you give it to them)."
+				"item_dust"	"If you're playing against invis heroes they are counting on you not having this item when needed. It's 90 gold to secure that kill that otherwise escapes. Always carry dust if you're in that type of game!"
+				"item_ward_observer"	"Knowing when and where to ward comes with experience, but generally floating gold should be spent on wards to retain map vision as the game progresses. If you have the gold and the wards are in stock, think about where your team most needs vision and try to provide it."
+				"item_ward_sentry"	"Sentries could be game winning or financially back breaking depending on your game. If your team is massively gold starved, getting into a dewarding battle you can't win is not a good idea. However, pre-emptive sentry use versus/with invis heroes remains as powerful and essential as ever."
+				"item_tango"	"ALWAYS take some form of regen to lane. Take the tango for extra utility - you can use this to eat trees and cut a path to pull creeps to jungle camps, for lane sustain during harassing, for quick escapes through trees if blocked, and to share with your allies."
+				"item_courier"	"Always buy the courier and/or wards at the beginning of a match."
+				"item_phase_boots"	"SITUATIONAL: Arguably better boots for a roaming, positional support, but you will most likely be building Arcanes for your team.
+
+Phase gives you the needed speed to roam to aid allies with your Mek and to regroup after stunning and maledicting."
+				"item_bracer"	"SITUATIONAL: If you are flush with gold after Mek, or you feel like you need extra sustainability to stay around in teamfights, then consider a bracer before starting Aghanims. You can later turn it into a drum which is a great support item in any match."
+				"item_mekansm"	"Witch Doctors heal is extremely mana intensive and unsustainable early on. When I play WD I instead opt to max his much stronger team fight and counter-initiation abilities first, and build a Mekansm, which in pub games you will probably build anyway. Again, the armour further beefs up WD."
+				"item_urn_of_shadows"	"can be an alternative to Mekansm if you`re going for an early Aghanims pickup. "
+				"item_sheepstick"	"LATE: Farming up this item is no enviable task for a support, but if the game is going late and you already have a certain amount of gold after Mek and/or Aghanims, then you should probably attempt to build this item. It will more than likely give you the conclusive edge in any later teamfights."
+				"item_cyclone"	"SITUATIONAL: Eul's is an excellent cheaper disable which can turn around fights where your team does not have the clear edge. It is no hex (Vyse) but it also costs nearly 3000 less gold. Increase to mana cost with 6.84 should not matter to a mid-game WD.
+
+Also provides useful move speed bonus."
+				"item_force_staff"	"SITUATIONAL: Force staff saves lives, and helps secure kills. Potentially the best item versus certain enemy heroes. Use it on teammates who are trying to escape from battle, or those who are pursuing enemies, to help them secure the kill.
+
+Also makes possible escapes over cliffs when being chased."
+				"item_ultimate_scepter"	"The upgrade that Aghanim's provides to WD's ult is absolutely devastating. Build this item to win any teamfights that may follow. With 6.84 there is an abundance of support gold and you can realistically look to finish this item after Mekansm, even as a pure support."
+				"item_black_king_bar"	"LATE: a great item to get WD's ult working without immediately being disabled. The extra strength is also of great benefit. In 6.84, it is a very real possibility that you will be able to afford this item, and can start building it before Aghanims if you think it is necessary."
+				"item_invis_sword"	"With 6.84 and the arrival of the cheaper Glimmer cape, there is less or no reason to buy Shadow Blade, since cape provides near enough the same function for cheaper."
+				"item_arcane_boots"	"**Disassemble later and sell booster to build your Aghanims!**
+
+You will probably be building arcane boots as a support unless others naturally are.
+
+If you do not feel that mana will be a big issue for the team and/or there is someone else providing mana, then go with Phase Boots."
+				"item_smoke_of_deceit"	"Probably the most strategically complex item in the game, I suggest reading guides that talk about use of this item, or to watch how it is used in competitive games. However, don't be surprised if the theory (amazing unseen gank attempt) doesn't translate into reality (enemy team is hiding where??)."
+				"item_guardian_greaves"	"On paper Guardian Greaves offer a very cost effective aura which will keep allies alive during sustained team fights. The question is, which games to build them in. If you are batting against multiple hard hitting physical carries, the +armour and hp regen could be a useful soft counter."
+				"item_glimmer_cape"	"Glimmer cape is a potentially useful new item on any hero with a chaneled ability like Witch Doctor and his totem. However, the 0.4sec fade time means that you do stand a chance of being disabled, and the 130 mana cost may be prohibitive if you already have Mek and Aghanims."
+		}
+	}	
+
+	"AbilityBuild"
+	{
+		"AbilityOrder"
+		{
+			"1"	"witch_doctor_paralyzing_cask"
+			"2"	"witch_doctor_maledict"
+			"3"	"witch_doctor_paralyzing_cask"
+			"4"	"witch_doctor_maledict"
+			"5"	"witch_doctor_paralyzing_cask"
+			"6"	"witch_doctor_death_ward"
+			"7"	"witch_doctor_maledict"
+			"8"	"witch_doctor_paralyzing_cask"
+			"9"	"witch_doctor_voodoo_restoration"
+			"10"	"witch_doctor_maledict"
+			"11"	"witch_doctor_death_ward"
+			"12"	"attribute_bonus"
+			"13"	"attribute_bonus"
+			"14"	"attribute_bonus"
+			"15"	"attribute_bonus"
+			"16"	"witch_doctor_death_ward"
+			"17"	"attribute_bonus"
+			"18"	"attribute_bonus"
+			"19"	"attribute_bonus"
+			"20"	"attribute_bonus"
+			"21"	"attribute_bonus"
+			"22"	"attribute_bonus"
+			"23"	"witch_doctor_voodoo_restoration"
+			"24"	"witch_doctor_voodoo_restoration"
+			"25"	"witch_doctor_voodoo_restoration"
+		}
+		"AbilityTooltips"
+		{
+				"witch_doctor_paralyzing_cask"	"Your bread and butter ability with multiple situational uses. Can be used throughout the entire match.
+
+1. Allows allies to escape dangerous situations.
+2. Initiation or anti-initiation for/during team fights.
+3. Sets up use of Maledict and Ult."
+				"witch_doctor_voodoo_restoration"	"The high mana cost of sustaining this spell really prevents you using it much early on. The advantage to leveling Cask and Maledict over this is they give you a much larger, damaging and controlling influence. They are proactive abilities. A single point taken later can still save fleeing allies."
+				"witch_doctor_maledict"	"For use during teamfights and ganks. After stunning your targets with Cask, ideally a group of bunched heroes, immediately land this ability squarely on their heads. The more damage they then take the greater its power. This ability can be the difference between securing kills and them escaping."
+				"witch_doctor_death_ward"	"Timing and positioning are key. Ideally the enemy team are stunned from Cask, Maledicted and being engaged by your allies. Stand off and drop your ult to ensure that the fight swings in your favour (not to steal kills). You can also use Ward defensively to cover retreats or slow base sieges."
+		}
+	}
+}

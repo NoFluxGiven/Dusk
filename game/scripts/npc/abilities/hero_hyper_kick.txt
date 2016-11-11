@@ -1,0 +1,154 @@
+//=====================================================================================================
+// HERO: Ultimate Saviour of the Downtrodden Hyper Justice Kick
+//=====================================================================================================
+"hero_hyper_kick"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityTextureName"			"hero_justice_kick"
+	"AnimationPlaybackRate"			"1.4"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+	"MaxLevel"						"1"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"125"
+	"AbilityCastPoint"				"0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"99999"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"9999"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"knockback"					"9001"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"slow"						"-100"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"duration"					"9999"
+		}
+	}
+	
+	"precache"
+		{
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
+		"soundfile" "soundevents/hero_hero.vsndevts"
+		"particle" "particles/units/heroes/hero_hero/hero_hyper_justice_kick.vpcf"
+		"particle" "particles/units/heroes/hero_hero/one_punch_mega_crit.vpcf"
+		}
+		
+	"OnSpellStart"
+		{
+			"Knockback"
+			{
+				"Target"            "TARGET"
+				"Center" 	        "CASTER"
+				"Distance"	        "%knockback"
+				"Duration"	        "0.6"
+				"Height"	        "125"
+				"IsFixedDistance"	"1"
+				"ShouldStun"        "1"
+			}
+			"DelayedAction"
+			{
+				"Delay"     "0.20"
+				"Action"    
+				{
+					"Damage"
+					{
+						"Target"
+						{
+							"Center"  	"TARGET"
+							"Radius" 	"99999"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_BOTH"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+						"Type"			"DAMAGE_TYPE_PURE"
+						"Damage"		"%damage"
+					}
+				}
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_hyper_justice_kick_slow"
+				"Target" 		"TARGET"
+				"Duration"		"%duration"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero.JusticeKick"
+				"Target"
+				{
+					"Center"  	"TARGET"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					"Flags"     "DOTA_UNIT_TARGET_FLAG_DEAD"
+				}
+			}
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_hero/hero_hyper_justice_kick.vpcf"
+				"EffectAttachType"  "follow_hitloc"
+				"Target"
+				{
+					"Center"  	"TARGET"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					"Flags"     "DOTA_UNIT_TARGET_FLAG_DEAD"
+				}
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_abilities.lua"
+				"Function"		"HyperKick"
+			}
+		}
+		
+	"Modifiers"
+		{
+			"modifier_justice_kick_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				}
+			}
+		}
+}

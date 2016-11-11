@@ -1,0 +1,29 @@
+//=====================================================================================================
+// DAMAGE CHECKER
+//=====================================================================================================
+"main_damage"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityTextureName"			"holdout_blade_fury"
+	
+	"Modifiers"
+		{
+		"main_damage_check_mod"
+			{
+			"Passive" "1"
+			"IsHidden" "1"
+			"ThinkInterval" "0.03"
+			"OnIntervalThink"
+				{
+				"RunScript"
+					{
+					"ScriptFile" "util.lua"
+					"Function" "DamageTables"
+					}
+				}
+			}
+		}
+}

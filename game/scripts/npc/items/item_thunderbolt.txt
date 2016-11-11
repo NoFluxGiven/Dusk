@@ -1,0 +1,112 @@
+//=================================================================================================================
+// Thunderbolt
+//=================================================================================================================
+"item_thunderbolt"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3019"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_thunderbolt"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"10"
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.0"
+	"AbilityManaCost"				"75"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"11475"
+	"ItemShopTags"					"attack_speed;armor;hard_to_tag"
+	"ItemQuality"					"epic"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"0"
+	"ItemAliases"					"thunderbolt;exalted"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		"particle"	"particles/units/heroes/hero_lightning/thunder_wave_lightning_bolt.vpcf"
+		"particle"	"particles/items_fx/chain_lightning.vpcf"
+
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"	"140"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"active_damage"			"275"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"active_slow"			"-100"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"active_duration"		"3"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile" "items/item_thunderbolt.lua"
+			"Function" "thunderbolt_lightning"
+			"damage" "%active_damage"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_thunderbolt"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+			}
+			
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile" "items/item_thunderbolt.lua"
+					"Function" "ChainLightning"
+				}
+			}
+		}
+		"modifier_item_thunderbolt_slow"
+		{
+			"Duration"			"%active_duration"
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%active_slow"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%active_slow"
+			}
+			
+		}
+	}
+}

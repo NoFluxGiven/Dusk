@@ -1,0 +1,45 @@
+"itembuilds"
+{
+	"author"		"bread"
+	"hero"			"npc_dota_hero_ursa"
+	"Title"			"Recommended items for Fury"
+	"Items"
+	{
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_tango"
+			"item"		"item_faerie_fire"
+			"item"		"item_branches"
+			"item"		"item_branches"
+			"item"		"item_orb_of_venom"
+		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{
+			"item"		"item_boots"
+			"item"		"item_infused_raindrops"
+		}
+		
+		"#DOTA_Item_Build_Core_Items"
+		{
+			"item"		"item_phase_boots"
+			"item"		"item_power_treads"
+			"item"		"item_helm_of_the_dominator"
+			"item"		"item_black_king_bar"
+			"item"		"item_blink"
+			"item"		"item_basher"
+		}
+		
+		"#DOTA_Item_Build_Luxury"
+		{
+			"item"		"item_heart"
+			"item"		"item_fenrir"
+			"item"		"item_blade_mail"
+			"item"		"item_skaadi"
+			"item"		"item_abyssal_blade"
+			"item"		"item_desolater"
+		}
+	}
+	
+	
+}

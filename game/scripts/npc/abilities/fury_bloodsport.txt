@@ -1,0 +1,111 @@
+//=====================================================================================================
+// FURY: Bloodsport
+//=====================================================================================================
+"fury_bloodsport"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"fury_bloodsport"
+			
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"crit_chance"					"25"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bleed"							"2 4 6 8"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bleed_duration"				"10"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bleed_slow"					"-2"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"							"particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
+		"particle"							"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+		"particle"							"particles/units/heroes/hero_fury/fury_bloodsport_strike_particle.vpcf"
+	}
+	
+	"Modifiers"
+	{
+		"modifier_bloodsport_crit"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+		
+			"OnAttackStart"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_bloodsport_crit_apply"
+					"Target" 		"CASTER"
+				}
+			}
+		}
+
+		"modifier_bloodsport_crit_apply"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+		
+			"OnAttackLanded"
+			// "%attack_damage" is set to the damage value before mitigation
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/fury_abilities.lua"
+					"Function"		"newBloodsportStackControl"
+				}
+			}
+		}
+
+		"modifier_bloodsport_bleed_tgt"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"Duration"			"%bleed_duration"
+
+			"EffectName" "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+			"EffectAttachType" "attach_origin"
+		
+			"ThinkInterval"  "1.0"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/fury_abilities.lua"
+					"Function"		"newBloodsportBleedDamage"
+					"damage"		"%bleed"
+				}
+			}
+
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bleed_slow"
+			}
+		}
+	}
+}

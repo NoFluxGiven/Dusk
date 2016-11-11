@@ -1,0 +1,119 @@
+//=====================================================================================================
+// FURY: Rend
+//=====================================================================================================
+"fury_rend"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"fury_rend"
+			
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"bonus_reset_time"				"6"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"bonus_reset_time_roshan"		"6"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_per_stack"				"7 14 21 28"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"max_stack"						"8"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"attack_slow"					"-3 -6 -9 -12"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"							"particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
+		"particle"							"particles/units/heroes/hero_ursa/ursa_fury_swipes_debuff.vpcf"
+	}
+	
+	"Modifiers"
+	{
+		"fury_rend_mod"
+		{
+			"Passive"						"1"
+			"IsHidden"						"1"
+			"IsPurgable"					"0"
+		
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/fury_abilities.lua"
+					"Function"				"fury_rend_atk"
+					"max_stack"				"%max_stack"
+					"dmg"					"%damage_per_stack"
+				}
+			}
+
+			"OnAttackStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/fury_abilities.lua"
+					"Function"				"fury_rend_preatk"
+				}
+			}
+		}
+
+		"modifier_fury_rend_damage"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+
+			"Properties"
+			{
+			"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%damage_per_stack"
+			}
+		}
+		
+		"fury_rend_damage_mod"
+		{
+			"IsHidden"					"0"
+			"IsPurgable"				"0"
+			"IsDebuff"					"1"
+			
+			"EffectName"				"particles/units/heroes/hero_ursa/ursa_fury_swipes_debuff.vpcf"
+			"EffectAttachType"			"follow_overhead"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target"				"TARGET"
+					"EffectName"			"particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
+					"EffectAttachType"		"follow_overhead"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_slow"
+			}
+		}
+	}
+}

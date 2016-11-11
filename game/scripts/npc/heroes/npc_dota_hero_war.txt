@@ -1,0 +1,63 @@
+"npc_dota_hero_war"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_axe"
+	"Ability1"				"war_earthbreaker" // War slams the ground with his axe, dealing Physical damage in an area and dazing the enemies hit. Deals 100/150/200/250 Physical damage
+	// and stuns enemies in the 250 radius for 2s.
+	"Ability2"				"war_bloodlust" // War silences all allies and enemies in a target area for 3/4/5/6s, increasing their attack speed and attack damage by 30.
+	// The debuff is purgable.
+	"Ability3"				"war_berserker_aura" // Allies gain bonus damage and attack speed whilst near War. Grants 10/15/20/25 damage and 12 attack speed.
+	"Ability4"				"war_fight_me" // All enemies in a sizeable radius are forced to attack War, with the enemies becoming immune to damage, and War gaining a large amount of
+	// bonus health regen.
+	// At the end of the duration, he unleashes a roar that deals Magical damage equivalent to the amount of damage he took from their attacks.
+	// He cannot die from attacks during the duration of this Ultimate.
+	// Magic Immune enemies are unaffected.
+	// Lasts 3/4/5s.
+	"Ability5"				"" // 
+	"Ability6"				"" // 
+	"Ability8"				"" // 
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+	
+
+	"ArmorPhysical"				"2"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRange"				"150"
+	"AttackRate"				"1.95"
+	"AttackDamageMin"			"30"										// Damage range min.
+	"AttackDamageMax"			"40"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"25"										// Base strength
+	"AttributeStrengthGain"		"3.5"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"11"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"19"										// Base agility
+	"AttributeAgilityGain"		"1.7"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"295"									// Speed.
+	"MovementTurnRate"			"1.0"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"2"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

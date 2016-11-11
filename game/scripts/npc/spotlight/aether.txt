@@ -1,0 +1,14 @@
+AETHER
+
+Hello and welcome to a Dusk hero Spotlight for Aether.
+Aether is a ranged intelligence Support that excels at saving allies from difficult situations, and being a nuisance around the map. She's played best in a supporting role, usually on the Safelane.
+
+Her first ability, Teleport, is a long range unit target ability that will pull an ally to your location after a short delay. The teleport will always bring them to where Aether was when she first cast the spell, rather than when the delay time finishes.
+
+Her second ability, Disrupt, deals Magical damage in an area of effect, slowing enemy attack speed and movement speed, and disjointing projectiles for all allies in the radius.
+
+Her third ability is called Monolith. This creates an area that grants bonus movespeed, Health regen, and Mana regen to allies, whilst slowing enemies. When Aether casts Disrupt, the Monolith will cast it too, allowing it to keep a lane safe, or deal massive combo damage. Additionally, when Aether self-casts her Teleport, it will transport her to whatever Monolith she currently has on the map, though with double the delay.
+
+Her fourth and final ability is Reality Shift. Reality Shift will pull in all affected allies and enemies, bringing them out of game, and making them invulnerable to all damage. Enemies take Magical damage when pulled in, and take Pure damage and are stunned if they are under the radius at the end of the duration, but were not affected by the initial cast.
+
+Thanks for watching this Hero Spotlight. If you enjoyed this video, and want to watch more, check out our channel. Dusk is available to play through DotA 2's Steam workshop.

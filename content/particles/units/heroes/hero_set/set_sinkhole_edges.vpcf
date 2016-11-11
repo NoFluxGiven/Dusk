@@ -1,0 +1,116 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor =
+	[
+		255,
+		242,
+		188,
+		30,
+	]
+	m_Operators =
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+			m_flEndFadeInTime = 0.100000
+			m_flStartFadeOutTime = 0.600000
+			m_flStartAlpha = 0.000000
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity =
+			[
+				0.000000,
+				0.000000,
+				215.000000,
+			]
+			m_fDrag = 0.150000
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 8.000000
+			m_flStartScale = 4.000000
+		},
+		{
+			_class = "C_OP_MovementRotateParticleAroundAxis"
+			m_flRotRate = -150.000000
+		},
+		{
+			_class = "C_OP_SpinUpdate"
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_hTexture = resource:"materials/particle/smoke1/smoke1.vtex"
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_vecDistanceBias =
+			[
+				1.000000,
+				1.000000,
+				0.000000,
+			]
+			m_fSpeedMin = 400.000000
+			m_fSpeedMax = 675.000000
+			m_fRadiusMax = 0.800000
+			m_nScaleCP = 1
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 15
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 25.000000
+			m_flRadiusMax = 50.000000
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin =
+			[
+				0.000000,
+				0.000000,
+				150.000000,
+			]
+			m_OffsetMax =
+			[
+				0.000000,
+				0.000000,
+				150.000000,
+			]
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin =
+			[
+				255,
+				248,
+				194,
+				255,
+			]
+			m_ColorMax =
+			[
+				255,
+				242,
+				201,
+				255,
+			]
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 160.000000
+		},
+	]
+}

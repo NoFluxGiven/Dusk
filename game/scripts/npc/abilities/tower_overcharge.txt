@@ -1,0 +1,133 @@
+//=====================================================================================================
+// TOWER: Overcharge
+//=====================================================================================================
+"tower_overcharge"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"FightRecapLevel"				"1"
+	"AnimationPlaybackRate"			"0.0"
+	"AbilityTextureName"			"wisp_overcharge"
+	"AbilitySharedWithTeammates" 	"1"
+	"MaxLevel"						"1"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"180"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_bonus"			"30"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow"					"-25"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"as_bonus"				"200"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"4"
+		}
+		
+	}
+
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		"particle"					"particles/units/heroes/hero_nevermore/nevermore_base_attack.vpcf"
+
+
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_ancient_overcharge"
+			"Target"
+			{
+				"Center"  	"CASTER"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Types" 	"DOTA_UNIT_TARGET_BUILDING"
+				"Flags"     "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+			}
+			"Duration"		"%duration"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_ancient_overcharge"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+		
+			"EffectName"		"particle_name"
+			"EffectAttachType"	"follow_origin"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%as_bonus"
+			    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%damage_bonus"
+			}
+
+			"Orb"
+			{
+				"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+				"ProjectileName"    "particles/units/heroes/hero_nevermore/nevermore_base_attack.vpcf"
+				"CastAttack"		"1"
+			}
+			
+			"OnOrbImpact"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_ancient_overcharge_slow"
+					"Target" 		"TARGET"
+					"Duration"		"%duration"
+				}
+			}
+		}
+
+		"modifier_ancient_overcharge_slow"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+		
+			"EffectName"		"particle_name"
+			"EffectAttachType"	"follow_origin"
+		
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+			}
+		}
+	}
+}

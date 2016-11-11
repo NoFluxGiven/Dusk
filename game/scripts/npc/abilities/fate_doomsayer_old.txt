@@ -1,0 +1,164 @@
+//=====================================================================================================
+// FATE: Doomsayer
+//=====================================================================================================
+"fate_doomsayer_old"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_CHECK_DISABLE_HELP"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"fate_doomsayer"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.2"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"110 100 90"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"275"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"duration"						"60 50 40"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"duration_ally"					"6 5 4"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"respawn_reduction"				"30"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"threshold"						"40"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"300 400 500"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_fate/fate_doomsayer.vpcf"
+		"particle" "particles/units/heroes/hero_fate/fate_doomsayer_fizz.vpcf"
+		"soundfile" "soundevents\hero_fate.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/fate_abilities.lua"
+				"Function"		"DoomsayerApply"
+				"p"				"%threshold"
+				"damage"		"%damage"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_caster_doomsayer"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			}
+			"modifier_doomsayer"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+
+				"OnHeroKilled"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/fate_abilities.lua"
+						"Function"		"DoomsayerOnDeath"
+					}
+				}
+
+				"ThinkInterval"  "0.2"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/fate_abilities.lua"
+						"Function"		"DoomsayerCheck"
+					}
+				}
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/fate_abilities.lua"
+						"Function"		"DoomsayerStart"
+						"timer"			"%duration"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/fate_abilities.lua"
+						"Function"		"DoomsayerEnd"
+						"respawn_time"	"%respawn_reduction"
+					}
+				}
+			}
+			"modifier_doomsayer_ally"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/fate_abilities.lua"
+						"Function"		"DoomsayerStart"
+						"timer"			"%duration_ally"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/fate_abilities.lua"
+						"Function"		"DoomsayerEnd"
+						"respawn_time"	"%respawn_reduction"
+					}
+				}
+			}
+		}
+}

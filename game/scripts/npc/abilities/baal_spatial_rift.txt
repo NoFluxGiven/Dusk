@@ -1,0 +1,149 @@
+//=====================================================================================================
+// BAAL: Spatial Rift
+//=====================================================================================================
+"baal_spatial_rift"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+	"AnimationPlaybackRate"			"0.95"
+	"AbilityChannelTime"			"1.5"
+	"AbilityTextureName"			"baal_spatial_rift"
+	"AoERadius"						"230"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1715"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"17 16 15 14"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"125"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"duration"						"6 8 10 12"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"80 160 240 320"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"230"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow"							"-30 -40 -50 -60"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow_duration"					"4"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_baal/baal_spatial_rift.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_puck.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
+
+		}
+
+	"OnUpgrade"
+	{
+		"LevelUpAbility"
+		{
+			"Target" 		"CASTER"
+			"AbilityName"	"baal_port_out"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+			{
+				"ScriptFile"	"heroes/baal_abilities.lua"
+				"Function"		"spatial_rift_start"
+				"duration"		"%duration"
+				"radius"		"%radius"
+			}
+	}
+		
+	"OnChannelSucceeded"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/baal_abilities.lua"
+			"Function"		"spatial_rift"
+			"duration"		"%duration"
+			"radius"		"%radius"
+		}
+	}
+
+	"OnChannelInterrupted"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/baal_abilities.lua"
+			"Function"		"spatial_riftend"
+		}
+	}
+	
+	"Modifiers"
+		{
+
+			"modifier_spatial_rift_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%slow_duration"
+
+				"OnCreated"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage"
+					}
+				}
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				}
+			}
+
+			"modifier_spatial_rift_show"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+			
+				"Duration"			"%duration"
+			}
+		}
+}

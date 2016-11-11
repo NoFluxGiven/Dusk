@@ -1,0 +1,1057 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"GetSpecial",
+				"GetLevelSpecialValueFor\tNo Description Set"
+			],
+			[
+				"GetBuyback",
+				"GetBuybackCooldownTime\tReturn ''float'' value for the amount of time left on cooldown for this hero's buyback."
+			],
+			[
+				"RemoveModifi",
+				"RemoveModifierByNameAndCaster\tRemoves a modifier that was cast by the given caster"
+			],
+			[
+				"GetTime",
+				"GetTimeUntilRespawn\tNo Description Set"
+			],
+			[
+				"unitarget",
+				"unitTargetCourier"
+			],
+			[
+				"unittarget",
+				"unitTargetOther"
+			],
+			[
+				"flag",
+				"unitTargetFlagNotMagicImmune"
+			],
+			[
+				"targetFal",
+				"unitTargetFlagInvulnerable"
+			],
+			[
+				"targetFlag",
+				"unitTargetFlagVisible"
+			],
+			[
+				"SetPartic",
+				"SetParticleControl\tSet the control point data for a control on a particle effect"
+			],
+			[
+				"modifierPropertyMove",
+				"modifierPropertyMovespeedbonuspercentage"
+			],
+			[
+				"modifier_blod",
+				"modifier_bloodlust_thinker"
+			],
+			[
+				"propertyHeal",
+				"modifierPropertyHealthregenconstant"
+			],
+			[
+				"GetHealth",
+				"GetHealthDeficit\tReturns integer amount of health missing from max."
+			],
+			[
+				"EFfect",
+				"EffectAttachType"
+			],
+			[
+				"Fire",
+				"FireEffect\tparticle on a Target"
+			],
+			[
+				"OnAttac",
+				"OnAttackLanded\tHit"
+			],
+			[
+				"propertydamage",
+				"modifierPropertyPreattackbonusdamage"
+			],
+			[
+				"scepter_end",
+				"scepter_end_bomb_damage"
+			],
+			[
+				"SetREsaw",
+				"SetTimeUntilRespawn\tNo Description Set"
+			],
+			[
+				"SetPart",
+				"SetParticleControl\tSet the control point data for a control on a particle effect"
+			],
+			[
+				"SetCOntrol",
+				"SetParticleControl\tSet the control point data for a control on a particle effect"
+			],
+			[
+				"SetRespawn",
+				"SetTimeUntilRespawn\tNo Description Set"
+			],
+			[
+				"GetRespawn",
+				"GetTimeUntilRespawn\tNo Description Set"
+			],
+			[
+				"Contr",
+				"ControlPoints\tCP1 CP2"
+			],
+			[
+				"OnProjec",
+				"OnProjectileFinish\tFix Distance"
+			],
+			[
+				"ONatt",
+				"OnAttacked\tBy ATTACKER"
+			],
+			[
+				"modifier_ale",
+				"modifier_alexander_steadfast_regen"
+			],
+			[
+				"modifier_al",
+				"modifier_alexander_steadfast_regen"
+			],
+			[
+				"propertyhealth",
+				"modifierPropertyHealthregenconstant"
+			],
+			[
+				"propertyManaRe",
+				"modifierPropertyManaregenpercentage"
+			],
+			[
+				"propertymanarege",
+				"modifierPropertyManaregenconstant"
+			],
+			[
+				"state",
+				"modifierStatePassivesDisabled"
+			],
+			[
+				"Modify",
+				"ModifyHealth\tSets the health to a specific value, with optional flags or inflictors."
+			],
+			[
+				"SetAttack",
+				"SetForceAttackTarget\tNo Description Set"
+			],
+			[
+				"SetMaxHealth",
+				"SetBaseMaxHealth\tSet a new base max health value."
+			],
+			[
+				"GetSelectedH",
+				"GetSelectedHeroEntity\tNo Description Set"
+			],
+			[
+				"GetPlayer",
+				"GetPlayer\tNo Description Set"
+			],
+			[
+				"Control",
+				"ControlPointEntities\tAttachment"
+			],
+			[
+				"SetParticleControl",
+				"SetParticleControlEnt\tNo Description Set"
+			],
+			[
+				"SetBaseHeal",
+				"SetBaseMaxHealth\tSet a new base max health value."
+			],
+			[
+				"SetManaReg",
+				"SetBaseManaRegen\tNo Description Set"
+			],
+			[
+				"SetBase",
+				"SetBaseDamageMax\tSets the minimum base damage."
+			],
+			[
+				"propertyblock",
+				"modifierPropertyPhysicalconstantblock"
+			],
+			[
+				"OnChanne",
+				"OnChannelFinish\tFires in any case"
+			],
+			[
+				"APpl",
+				"ApplyDataDrivenModifier\tNo Description Set"
+			],
+			[
+				"stateInv",
+				"modifierStateInvulnerable"
+			],
+			[
+				"ironfist_glae",
+				"ironfist_gale_stance"
+			],
+			[
+				"PROPERTY",
+				"modifierPropertyAbsolutenodamagephysical"
+			],
+			[
+				"OnAttack",
+				"OnAttacked\tBy ATTACKER"
+			],
+			[
+				"modifier_replica_aghanim",
+				"modifier_replica_aghanims_aura"
+			],
+			[
+				"propertyMove",
+				"modifierPropertyMovespeedbonuspercentage"
+			],
+			[
+				"healthregen",
+				"modifierPropertyHealthregenconstant"
+			],
+			[
+				"modifierpropertyincoming",
+				"modifierPropertyIncomingphysicaldamagepercentage"
+			],
+			[
+				"GetPhysical",
+				"GetPhysicalArmorValue\tHero armor is affected by attributes."
+			],
+			[
+				"light",
+				"lightning_dagger_arcana"
+			],
+			[
+				"SetOrigin",
+				"SetOriginalModel\tSets the original model of this entity, which it will tend to fall back to anytime its state changes"
+			],
+			[
+				"SetModel",
+				"SetModel\tNo Description Set"
+			],
+			[
+				"Contro",
+				"ControlPoints\tCP1 CP2"
+			],
+			[
+				"Create",
+				"CreateTimer"
+			],
+			[
+				"CreateParticle",
+				"CreateParticleForPlayer\tCreates a new particle effect that only plays for the specified player"
+			],
+			[
+				"Apply",
+				"ApplyDataDrivenModifier\tNo Description Set"
+			],
+			[
+				"GetSelected",
+				"GetSelectedHeroEntity\tNo Description Set"
+			],
+			[
+				"Destro",
+				"DestroyParticle"
+			],
+			[
+				"Reg",
+				"RegisterCommand\tRegisterCommand(name, fn, helpString, flags) : register a console command."
+			],
+			[
+				"item_diff",
+				"item_diffusal_blade_2"
+			],
+			[
+				"SetCursor",
+				"SetCursorCastTarget\tNo Description Set"
+			],
+			[
+				"GetLevel",
+				"GetLevelSpecialValueFor\tNo Description Set"
+			],
+			[
+				"modifier_shopek",
+				"modifier_shopkeeper_always_show"
+			],
+			[
+				"MODIFIERpropertystats",
+				"modifierPropertyStatsstrengthbonus"
+			],
+			[
+				"strength",
+				"modifierPropertyStatsstrengthbonus"
+			],
+			[
+				"modifier_arcanum_break",
+				"modifier_arcanum_break_spells"
+			],
+			[
+				"OnProj",
+				"OnProjectileHitUnit\tTarget detect"
+			],
+			[
+				"property",
+				"modifierPropertyMinhealth"
+			],
+			[
+				"modifier_grav",
+				"modifier_gravity_pulse_slow"
+			],
+			[
+				"Random",
+				"RandomVector\tGet a random 2D ''vector''. Argument (''float'') is the minimum length of the returned vector."
+			],
+			[
+				"SetCon",
+				"SetParticleControlEnt\tNo Description Set"
+			],
+			[
+				"SetArmor",
+				"SetPhysicalArmorBaseValue\tSets base physical armor value."
+			],
+			[
+				"modifier_last_resort",
+				"modifier_last_resort_invulnerability"
+			],
+			[
+				"modifier_last",
+				"modifier_last_resort_invulnerability"
+			],
+			[
+				"propertyregen",
+				"modifierPropertyHealthregenconstant"
+			],
+			[
+				"propertmovesp",
+				"modifierPropertyMovespeedbonuspercentage"
+			],
+			[
+				"propertyspeed",
+				"modifierPropertyMovespeedbonuspercentage"
+			],
+			[
+				"propertydisab",
+				"modifierPropertyDisablehealing"
+			],
+			[
+				"elena_diverge_",
+				"elena_diverge_owner_mod"
+			],
+			[
+				"propertyheal",
+				"modifierPropertyHealthregenconstant"
+			],
+			[
+				"elena_de",
+				"elena_devotion_mod_aura_enemy"
+			],
+			[
+				"Appl",
+				"ApplyDataDrivenModifier\tNo Description Set"
+			],
+			[
+				"OnDes",
+				"OnDestroy\tModifier Removed"
+			],
+			[
+				"OnATtack",
+				"OnAttackLanded\tHit"
+			],
+			[
+				"modifi",
+				"modifier_\tAdd one modifier"
+			],
+			[
+				"modifier",
+				"modifier_bloodmark"
+			],
+			[
+				"GetStrength",
+				"GetStrength\tNo Description Set"
+			],
+			[
+				"modifierPropstren",
+				"modifierPropertyStatsstrengthbonus"
+			],
+			[
+				"modifierProperheal",
+				"modifierPropertyHealthbonus"
+			],
+			[
+				"modifierpropertyhealth",
+				"modifierPropertyHealthbonus"
+			],
+			[
+				"modifier_doom",
+				"modifier_doomsayer_health_reduction"
+			],
+			[
+				"OnKill",
+				"OnHeroKilled\tmodf owner kill hero"
+			],
+			[
+				"OnChann",
+				"OnChannelSucceeded\tCompleted"
+			],
+			[
+				"Remove",
+				"RemoveSelf\tDelete this entity"
+			],
+			[
+				"Level",
+				"Level"
+			],
+			[
+				"outof",
+				"unitTargetFlagOutOfWorld"
+			],
+			[
+				"STATE",
+				"modifierStateInvulnerable"
+			],
+			[
+				"PATTACH",
+				"PATTACHParticleAttachCustomOrigin"
+			],
+			[
+				"Cont",
+				"ControlPoints\tCP1 CP2"
+			],
+			[
+				"blind",
+				"modifierStateBlind"
+			],
+			[
+				"Con",
+				"ControlPoints\tCP1 CP2"
+			],
+			[
+				"stats",
+				"modifierPropertyStatsagilitybonus"
+			],
+			[
+				"SetParticle",
+				"SetParticleControlEnt\tNo Description Set"
+			],
+			[
+				"modifierpropertystat",
+				"modifierPropertyStatsagilitybonus"
+			],
+			[
+				"SetParticl",
+				"SetParticleControlEnt\tNo Description Set"
+			],
+			[
+				"SetModeL",
+				"SetModelScale\tSets the model's scale to "
+			],
+			[
+				"GetHeal",
+				"GetHealth\tGet the health of this unit."
+			],
+			[
+				"propertyBonusDamage",
+				"modifierPropertyPreattackbonusdamage"
+			],
+			[
+				"propertymana",
+				"modifierPropertyManabonus"
+			],
+			[
+				"modifier_soul",
+				"modifier_soul_drain_stats_temporary"
+			],
+			[
+				"modifierstat",
+				"modifierPropertyStatsagilitybonus"
+			],
+			[
+				"ONAt",
+				"OnAttackLanded\tHit"
+			],
+			[
+				"CreateParti",
+				"CreateParticle\tCreates a new particle effect"
+			],
+			[
+				"modifierstate",
+				"modifierStateNoUnitCollision"
+			],
+			[
+				"Onsp",
+				"OnSpellStart\tFinished Cast Point"
+			],
+			[
+				"GetCursor",
+				"GetCursorPosition\tNo Description Set"
+			],
+			[
+				"SetParticleCo",
+				"SetParticleControlEnt\tNo Description Set"
+			],
+			[
+				"modifierPropertyRegen",
+				"modifierPropertyHealthregenconstant"
+			],
+			[
+				"modifierpropertyregen",
+				"modifierPropertyHealthregenconstant"
+			],
+			[
+				"GetIntell",
+				"GetBaseIntellect\tNo Description Set"
+			],
+			[
+				"GetAttackDA",
+				"GetAverageTrueAttackDamage\tReturns the average value of the minimum and maximum damage values."
+			],
+			[
+				"modifierincoming",
+				"modifierPropertyIncomingdamagepercentage"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 242.0,
+		"last_filter": "kv",
+		"selected_items":
+		[
+			[
+				"kv",
+				"Set Syntax: Dota KV"
+			],
+			[
+				"lua",
+				"Set Syntax: Lua Dota"
+			],
+			[
+				"lv",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"k",
+				"Set Syntax: Dota KV"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"dota",
+				"Set Syntax: Dota KV"
+			],
+			[
+				"lua dota",
+				"Set Syntax: Lua Dota"
+			],
+			[
+				"lua ",
+				"Set Syntax: Lua Dota"
+			],
+			[
+				"dota kv",
+				"Set Syntax: Dota KV"
+			],
+			[
+				"\\",
+				"Snippet: #!/usr/bin/env"
+			],
+			[
+				"dota ",
+				"Set Syntax: Dota KV"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"INstall",
+				"Package Control: Install Package"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/units",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/buildings",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/internal",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/libraries",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/itembuilds"
+	],
+	"file_history":
+	[
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_horror.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/ouroboros_dissipation.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/baal_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/astaroth_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/alexander_soulseal.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/alexander_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/alexander_elandras_blessing.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/phantom_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/internal/duskdota.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/paragon_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_fury.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_bahamut.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/units/npc_dummy_unit.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/fury_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lightning_lightning_dagger2.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/hawkeye_detonator_dart.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/hero_one_punch.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/baal_compress.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/gob_squad_whoops.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/gob_squad_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/bloodwarrior_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/events.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/ancient_last_resort.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/tower_frenzy.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/war_fight_me.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/duskdota.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/war_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/phantom_nightmare.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/horror_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/horror_terrify.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/horror_alone.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/tek_tesla_microarray.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/aether_monolith.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/aether_disrupt.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/nu_micronebula.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/nu_warpstar.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/paragon_conversion.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/reus_magnitude.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/set_duststorm.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/set_sands_of_war.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/odin_gods_eye.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/fury_bloodsport.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/fury_rend.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/fury_rampage.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/bloodwarrior_grapple.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/bloodwarrior_red_ritual.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/bloodwarrior_dance_of_death.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/bloodfiend_feast.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/bloodfiend_dive.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/herolist.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/mifune_zanmato.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/neith_decisive_strike.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/fate_displace.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/neith_monsoon.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/alroth_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_pendulum_fragment.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_purging_dust.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_iris.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_fenrir.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_magisteel.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_holdingorb.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_grim_gauntlet.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_essence_of_strength.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_essence_of_agility.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_essence_of_intelligence.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_elysian_timepiece.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_regal_sigil.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_soul_reaver.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_soul_vial.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_sword_of_greed.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_synthesis.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_talos.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_thunderbolt.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_turins_scepter.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_vagrant_dagger.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_vajra.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_vulcans_repair_kit.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_dust_enhanced.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_demonfire.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_colossus.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_charged_octarine_core.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_celestial_spear.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_bulwark.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_arcanite_shards.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/internal/util.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/libraries/extend.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/tek_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lich_traveling_frost.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lich_winters_requiem.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/lich_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/ironfist_hissatsu.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lich_absolute_zero.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/artificer_unmaking.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/artificer_naturalise.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/artificer_reshape.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/artificer_replica.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/artificer_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/erra_morbid_blade.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/fate_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/war_earthbreaker.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/war_bloodlust.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/erra_grave_guard.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/soundevents/hero_erra.vsndevts",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/erra_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/settings.lua",
+		"/C/Program Files (x86)/Steam/steamapps/common/dota 2 beta/game/dota_addons/dusk/scripts/vscripts/settings.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/hawkeye_double_tap.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/tek_mosquito_missiles.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/baal_superposition2.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/tek_aerial_assault_mines.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_paragon.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_mifune.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/mifune_genso.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/mifune_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/soundevents/hero_war.vsndevts",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_war.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/shade_venomous.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/hawkeye_hit_n_run.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/hawkeye_ricochet.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_alexander.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_recipe_celestial_spear.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/lysander_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/ouroboros_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_erra.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/war_berserker_aura.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/lightning_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lich_cold_aura.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/mk_abilities.lua"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\Program Files (x86)\\Steam\\SteamApps\\common\\dota 2 beta\\game\\dota_addons\\duskdota\\",
+			"C:\\Program Files (x86)\\Steam\\SteamApps\\common\\dota 2 beta\\game\\dota_addons\\duskdota\\scripts",
+			"C:\\Program Files (x86)\\Steam\\SteamApps\\common\\dota 2 beta\\game\\dota_addons\\duskdota\\scripts\\npc",
+			"C:\\Program Files (x86)\\Steam\\SteamApps\\common\\dota 2 beta\\game\\dota_addons\\duskdota\\scripts",
+			"C:\\Program Files (x86)\\Steam\\SteamApps\\common\\dota 2 beta\\game\\dota_addons\\custom_dota_pvp_2\\scripts",
+			"<open files>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"buyback",
+			"kill",
+			"axe",
+			"golem",
+			"tower",
+			"golem",
+			"catapult",
+			"siege",
+			"unit.",
+			"shake",
+			"creep",
+			"ast",
+			"arcanite",
+			"setparticlecontrolent",
+			"ob_shop_rad",
+			"contShopRadEntRadF",
+			"gamemode",
+			"compress_targetc",
+			"mod",
+			"\t\t\t",
+			"sphere",
+			"if tgt(target) then return end",
+			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+			"kill",
+			"npc_dota_roshan",
+			"getaveragetrueattackdamage()",
+			"getaveragetrueattackdamage",
+			"getaveragetrueattack",
+			"last_damage",
+			"kill",
+			"getattachment",
+			"getattachments",
+			"voodoo",
+			"attachment_configure",
+			"ability",
+			"skilled",
+			"1034",
+			"1128",
+			"1126",
+			"1226",
+			"physicstest",
+			"physicstestcommand",
+			"registerCommand",
+			"register",
+			"vplayers",
+			"phantom",
+			"template",
+			"fury",
+			"v",
+			"fastdummy",
+			"1250",
+			"follow_origin",
+			"})\n",
+			"dummy",
+			"initgamemode",
+			"self.nRadiantKills",
+			"nRadiantKills",
+			"nradiantkills",
+			"onentity",
+			"onkill",
+			"bot",
+			"\t",
+			" ",
+			"[a - z]*_abilities.lua",
+			"[a - z]_abilities.lua",
+			"1125",
+			"1124",
+			"1123",
+			"\"1124\"",
+			"LINKLUAMODIFIER",
+			"iris",
+			"particlecontrolent",
+			"ControlPOintEntities",
+			"setparticlecontrolent",
+			"contRadiantShop",
+			"contshopradent",
+			"contShopRadEnt = CreateUnitByName(\"npc_dummy_unit_barebones\", Vector(2975,-2096,0), false, nil, nil, DOTA_TEAM_NEUTRALS)\n  contShopRadEnt:AddNewModifier(contShopRadEnt, nil, \"modifier_shopkeeper\", {})\n  contShopRadEnt:AddNewModifier(contShopRadEnt, nil, \"modifier_shopkeeper_hide\", {})\n  contShopRadEnt:RemoveModifierByName(\"dummy_unit\")\n  contShopRadEnt:SetModel(\"models/items/courier/bookwyrm/bookwyrm.vmdl\")\n  contShopRadEnt:SetOriginalModel(\"models/items/courier/bookwyrm/bookwyrm.vmdl\")\n  contShopRadEnt:StartGesture(ACT_DOTA_IDLE)\n  contShopRadEnt:SetForwardVector(Vector(-0.71,-0.69,0))\n  contShopRadEnt:SetModelScale(1.75)\n\n  sItems,prices,stocks = CreateShop({\n    {\"item_regal_sigil\",4500},\n  })\n\n  --sItems[3]:SetCurrentCharges(2)\n\n  contRadiantShop = Containers:CreateShop({\n    layout =      {3},\n    skins =       {},\n    headerText =  \"Dark Materials\",\n    pids =        {},\n    position =    \"entity\", --\"1000px 300px 0px\",\n    entity =      contShopRadEnt,\n    items =       sItems,\n    prices =      prices,\n    stocks =      stocks,\n    closeOnOrder= true,\n    range =       600,\n    --OnCloseClickedJS = \"ExampleCloseClicked\",\n    OnSelect  =   function(playerID, container, selected)\n      print(\"Selected\", selected:GetUnitName())\n      container:Open(playerID)\n    end,\n    OnDeselect =  function(playerID, container, deselected)\n      print(\"Deselected\", deselected:GetUnitName())\n      container:Close(playerID)\n    end,\n    OnEntityOrder=function(playerID, container, unit, target)\n      print(\"ORDER ACTION radiant shop\", playerID)\n      container:Open(playerID)\n      unit:Stop()\n    end,\n  })",
+			"modifier_shopkeeper",
+			"dummy unit",
+			"remove",
+			"!!!",
+			"item_([a-zA-Z]*).lua",
+			"!!!",
+			"alexander_([a-zA-Z]*)\" // ([a-zA-Z ,.'/0-9\\%]*)",
+			"alexander_([a-zA-Z]*) // ([a-zA-Z ])",
+			"baal_abilities",
+			"baal_abilities.lua",
+			"[^/]([a-z]*)_abilities.lua",
+			"GameMode,",
+			"([a-z]*)_abilities.lua",
+			"Gamemode:",
+			"([a-z]*)_abilities.lua",
+			"[a-z]*_abilities.lua",
+			"[a-z]_abilities.lua",
+			"^._abilities.lua$",
+			"onhero",
+			"\"_abilities.lua$\"",
+			"_abilities.lua$",
+			"*_abilities.lua",
+			"dealdamage",
+			"PATTACH_WORLDORIGIN",
+			"getphysicsvelocity",
+			"get",
+			"getvelocity",
+			"getspeed",
+			"kill",
+			"onkill",
+			"spawndebugbear",
+			"createvisibilitynode",
+			"onallplayers",
+			".\n",
+			"purge",
+			"execute",
+			"executeorder",
+			"execute_order",
+			"oracle",
+			"warlock",
+			"gyrocopter",
+			"dealdamage",
+			"legendary;",
+			"item",
+			"ite",
+			")\n",
+			"\"\n",
+			"75",
+			"executeorder",
+			".[",
+			"\"\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"ob_shop_dir",
+			"ob_shop_rad",
+			"",
+			"GetAverageTrueAttackDamage(caster)",
+			"reshape",
+			"astaroth",
+			"phantom",
+			"hawkeye",
+			"target",
+			"attach_origin",
+			"",
+			"contRadiantShopD",
+			"contShopRadEntD",
+			"odin",
+			"astaroth",
+			"duskDota,",
+			"heroes/$1_abilities.lua",
+			"duskDota:",
+			"heroes/$1_abilities.lua",
+			"heroes/[a-z]*_abilities.lua",
+			"PATTACH_CUSTOMORIGIN",
+			"",
+			"unit",
+			"v"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "dusk.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"npc\\abilities\\elena_diverge.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		]
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 324.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,118 @@
+//=====================================================================================================
+// BAAL: Spatiotemporal Anchor
+//=====================================================================================================
+"baal_st_anchor"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AoERadius"						"%radius"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"baal_st_anchor"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
+		"particle"			"particles/units/heroes/hero_baal/baal_st_anchor.vpcf"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"550"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"32"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"80 120 160 200"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"150"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"750"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"stun"					"0.75 1.5 2.25 3"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"6"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow"					"-12"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_st_anchor"
+			"Target" 		"TARGET"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_st_anchor"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"1"
+			"Duration"			"%duration"
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/baal_abilities.lua"
+					"Function"		"st_anchor_start"
+					"duration"		"%duration"
+					"radius"		"%radius"
+				}
+			}	
+		
+			"ThinkInterval"  "0.1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/baal_abilities.lua"
+					"Function"		"st_anchor"
+					"radius"		"%radius"
+					"stun"			"%stun"
+					"damage"		"%AbilityDamage"
+				}
+			}
+
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+			}
+		}
+	}
+}

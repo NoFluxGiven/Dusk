@@ -1,0 +1,130 @@
+"techies_suicide"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"gob_squad_whoops"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+		"particle"		"particles/units/heroes/hero_gob_squad/whoops_explosion.vpcf"
+	}
+
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"400"
+	"AbilityCastPoint"				"0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"200 300 400 500"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"400"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"stun"					"0.4 0.8 1.2 1.6"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_whoops"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+		
+			"OnDeath"
+			{
+				"CreateThinker"
+				{
+					"ModifierName"	"modifier_whoops_activate"
+					"Target" 		"TARGET"
+				}
+			}
+		}
+		"modifier_whoops_activate"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+		
+			"OnCreated"
+			{
+				"Damage"
+				{
+					"Target"
+					{
+						"Center"  	"TARGET"
+						"Radius" 	"%radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%AbilityDamage"
+				}
+				"FireEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_gob_squad/whoops_explosion.vpcf"
+					"EffectAttachType"  "follow_origin"
+					"Target"            "TARGET"
+					"ControlPoints"
+					{
+						"01"	"%radius 0 0"
+						"02"	"0 0 0"
+					}
+				}
+				"Stun"
+				{
+					"Duration"   "%stun"
+					"Target"
+					{
+						"Center"  	"TARGET"
+						"Radius" 	"%radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+				}
+				"FireSound"
+				{
+					"EffectName"	"Hero_Techies.Suicide"
+					"Target" 		"TARGET"
+				}
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/gob_squad_abilities.lua"
+					"Function"		"whoops"
+				}
+			}
+		}
+	}
+}

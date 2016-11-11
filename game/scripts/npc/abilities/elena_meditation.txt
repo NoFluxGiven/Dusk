@@ -1,0 +1,177 @@
+//=====================================================================================================
+// ELENA: Diverge
+//=====================================================================================================
+"elena_meditation"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityTextureName"			"elena_meditation"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"775"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"40"
+
+	"AbilityChannelTime"			"6"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"145"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow"							"-25 -50 -75 -100"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"attack_slow"					"-75 -150 -225 -300"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"4.75 5.5 6.25 7.0"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"root_duration"					"1.0 1.40 1.8 2.2"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_elena/meditation.vpcf"
+		"particle" "particles/units/heroes/hero_elena/meditation_cast.vpcf"
+		"particle" "particles/units/heroes/hero_elena/meditation_target.vpcf"
+		"particle" "particles/units/heroes/hero_elena/meditation_complete.vpcf"
+		"particle" "particles/units/heroes/hero_chen/chen_test_of_faith.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
+		}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_meditation"
+			"Target" 		"TARGET"
+		}
+	}
+
+	"OnChannelFinish"
+	{
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_meditation"
+			"Target" 		"TARGET"
+		}
+	}
+
+	"OnChannelInterrupted"
+	{
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_meditation"
+			"Target" 		"TARGET"
+		}
+	}
+
+	"OnChannelSucceeded"
+	{
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_meditation"
+			"Target" 		"TARGET"
+		}
+	}
+	
+	"Modifiers"
+		{
+			"modifier_meditation"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+
+				"EffectName"		"particles/units/heroes/hero_elena/meditation.vpcf"
+				"EffectAttachType"	"attach_origin"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_elena/meditation_cast.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "CASTER"
+					}
+					"AttachEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_elena/meditation_target.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_meditation_root"
+						"Target" 		"TARGET"
+						"Duration"		"%root_duration"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_elena/meditation_complete.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target" "TARGET"
+					}
+				}
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_slow"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_PROVIDES_VISION" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_meditation_root"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsPurgable"		"1"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsStunDebuff"		"0"
+				//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+			
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+}

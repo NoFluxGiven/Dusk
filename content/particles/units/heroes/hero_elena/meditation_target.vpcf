@@ -1,0 +1,90 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 10.0
+			m_flStartScale = 50.0
+			m_flBias = 0.7
+			m_flEndTime = 0.5
+		},
+		{
+			_class = "C_OP_FadeAndKill"
+			m_flStartAlpha = 0.0
+		},
+		{
+			_class = "C_OP_SpinUpdate"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, 25.0 ]
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_RateMin = [ -250.0, -250.0, -250.0 ]
+			m_RateMax = [ 250.0, 250.0, 250.0 ]
+			m_FrequencyMin = [ 15.0, 10.0, 30.0 ]
+			m_FrequencyMax = [ 30.0, 20.0, 45.0 ]
+			m_bOffset = true
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_hTexture = resource:"materials/particle/earthshaker/earthshaker_ti6_bracer_glyph.vtex"
+			m_nOrientationType = 2
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMin = 1
+			m_nSequenceMax = 1
+		},
+		{
+			_class = "C_INIT_RandomRotationSpeed"
+			m_flDegreesMin = 45.0
+			m_flDegreesMax = 90.0
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 170, 85, 255, 255 ]
+			m_ColorMax = [ 170, 255, 255, 255 ]
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_nFieldOutput = 20
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 25.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 100.0 ]
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.75
+			m_fLifetimeMax = 1.0
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 15
+		},
+	]
+}

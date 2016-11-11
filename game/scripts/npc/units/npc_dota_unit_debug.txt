@@ -1,0 +1,79 @@
+//------------------------------------------------------------------------------------
+  //- This unit can be used to precache different models/particles/sounds              -
+  //- that are needed every game.  Uncomment any model/particle/sound you need to load -
+  //------------------------------------------------------------------------------------
+"npc_dota_unit_debug"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/heroes/lone_druid/spirit_bear.mdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"LoneDruid_SpiritBear"
+	"Level"						"99"
+	"ModelScale" 				".65"
+	"ConsideredHero"			"0"
+	"UnitLabel"			"debugbear"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"debug_blink"			// Ability 1
+	"Ability2"					"debug_mass_teleport"			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"-1"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"99999"		// Damage range min.
+	"AttackDamageMax"			"99999"		// Damage range max.	
+	"AttackRate"				"0.7"		// Speed of attack.
+	"AttackAnimationPoint"		"0.10"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+	"AttackRange"				"99999"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles\units\heroes\hero_drow\drow_frost_arrow.vpcf"			// Particle system model for projectile.
+	"ProjectileSpeed"			"2500"			// Speed of projectile.		  
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"215"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"99999"		// Experience earn.
+	"BountyGoldMin"				"99999"		// Gold earned min.
+	"BountyGoldMax"				"99999"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+	"MovementSpeed"				"522"		// Speed.
+	"MovementTurnRate"			"1.4"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"10000"		// Base health.
+	"StatusHealthRegen"			"0"			// Health regeneration rate.
+	"StatusMana"				"10000"		// Base mana.
+	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	//Inventory
+	"HasInventory"				"0"
+	
+	"AutoAttacksByDefault"		"0"
+}	

@@ -1,0 +1,137 @@
+//=====================================================================================================
+// OUROBOROS: Dissipation
+//=====================================================================================================
+"ouroboros_dissipation"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"ouroboros_dissipation"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"250"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_res"				"7 14 21 28"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"10 20 30 40"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"350"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"stun"					"1.25 1.5 1.75 2.00"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_res_reduction"	"-7 -14 -21 -28"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		"particle"			"particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf"
+		"particle"			"particles/items2_fx/radiance.vpcf"
+	}
+	
+	"Modifiers"
+		{
+		"modifier_ouroboros_dissipation_passive"
+		{
+			"Passive" 			"1"
+			"IsPurgable"		"0"
+			"IsBuff"			"1"
+			"IsDebuff"			"0"
+			"IsStunDebuff"		"0"
+			//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+			"ThinkInterval"  "0.25"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/ouroboros_abilities.lua"
+					"Function"		"dissipation"
+					"radius"		"%radius"
+				}
+			}
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_res"
+			}
+		}
+		"modifier_ouroboros_dissipation_dot"
+			{
+			"IsPurgable"		"0"
+			"IsBuff"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"1"
+			"IsStunDebuff"		"0"
+			"Duration"			"0.30"
+
+			"EffectName"			"particles/items2_fx/radiance.vpcf"
+			"EffectAttachType"		"follow_origin"
+
+			"ThinkInterval"  "0.25"
+			"OnIntervalThink"
+			{
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%damage / 4"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_ouroboros_dissipation_show"
+					"Target" 		"TARGET"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_res_reduction"
+			}
+			}
+		"modifier_ouroboros_dissipation_show"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+		}
+		}
+}

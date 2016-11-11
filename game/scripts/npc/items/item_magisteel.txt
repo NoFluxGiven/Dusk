@@ -1,0 +1,182 @@
+//=================================================================================================================
+// Magisteel Armor
+//=================================================================================================================
+"item_magisteel"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3013"  //Valve's version of this item uses the ID "112".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_magisteel"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"11475"
+	"ItemShopTags"					"attack_speed;armor;hard_to_tag"
+	"ItemQuality"					"epic"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"0"
+	"ItemAliases"					"magisteel_armor;ma;legendary;exalted"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"	"40"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"			"12"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_radius"			"900"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_attack_speed"		"30"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_positive_armor"	"5"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_negative_armor"	"-5"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_magic_resistance""15"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_positive_magic_resistance"	"12"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_negative_magic_resistance"	"-12"
+		}
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_regeneration"	"8"
+		}
+		"11"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_mana"			"450"
+		}
+		"12"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_health"			"600"
+		}
+		"13"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_mana_regen"		"200"
+		}
+		"14"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cdr"					"25"
+		}
+		"15"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intellect"		"25"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_magisteel_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%bonus_armor"
+				"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%bonus_magic_resistance"
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"			"%bonus_regeneration"
+				"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"			"%bonus_mana_regen"
+				"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"				"%bonus_mana_regen_constant"
+				"MODIFIER_PROPERTY_HEALTH_BONUS"					"%bonus_health"
+				"MODIFIER_PROPERTY_MANA_BONUS"						"%bonus_mana"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%bonus_intellect"
+			}
+		}
+		"modifier_item_magisteel_datadriven_ally_aura_emitter"
+		{
+			"Passive"				"1"
+			"IsHidden"				"1"
+			
+			"Aura" 					"modifier_item_magisteel_datadriven_ally_aura"
+			"Aura_Radius" 			"%aura_radius"
+			"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+			"Aura_ApplyToCaster" 	"1"
+		}
+		"modifier_item_magisteel_datadriven_ally_aura"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%aura_attack_speed"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%aura_positive_armor"
+				"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%aura_positive_magic_resistance"
+				"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"				"%bonus_mana_regen_constant"
+			}
+		}
+		"modifier_item_magisteel_datadriven_enemy_aura_emitter"
+		{
+			"Passive"				"1"
+			"IsHidden"				"1"
+			
+			"Aura" 					"modifier_item_magisteel_datadriven_enemy_aura"
+			"Aura_Radius" 			"%aura_radius"
+			"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+			"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+			"Aura_ApplyToCaster" 	"0"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE" "%cdr"
+			    
+			}
+		}
+		"modifier_item_magisteel_datadriven_enemy_aura"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%aura_negative_armor"
+				"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%aura_negative_magic_resistance"
+			}
+			
+		}
+	}
+}

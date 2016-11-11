@@ -1,0 +1,203 @@
+.helper
+{
+	width: 100%;
+	height: 100%;
+	margin-left: 0%;
+	margin-top: 0%;
+	z-index: 0;
+	opacity: 0.95;
+}
+
+#helperButton
+{
+	horizontal-align: left;
+	vertical-align: center;
+    width: auto;
+    height: auto;
+	margin-left: 95%;
+	margin-top: -48%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #747474 ), to( #0c0c0c ) );
+    overflow: squish;
+	flow-children: right;
+	animation-name: point;
+    animation-delay: 0;
+    animation-duration: 2;
+    animation-timing-function: linear;
+    animation-iteration-count: 5;
+}
+
+.helperButtonHovered
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #14380b ), to( #8fbb27 ) );
+	opacity: 1.0;
+}
+
+#helperButton:active
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #14380b ), to( #8fbb27 ) );
+	opacity: 1.0;
+}
+
+#helperButtonLabel
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	font-size: 12px;
+	margin-top: 2px;
+	margin-left: 9px;
+}
+
+#helperButtonImage
+{
+	horizontal-align: center;
+	margin-top: 1px;
+	margin-left: 2px;
+}
+
+.helperArea
+{
+	margin-left: 0%;
+	margin-top: 0%;
+	width: 100%;
+	height: 100%;
+}
+
+.hidePullout
+{
+	visibility: collapse;
+}
+
+#helperPullout
+{
+	background-color: #000000;
+	opacity: 1.0;
+	margin-top: 7%;
+	margin-left: 70%;
+	width: 600px;
+	height: auto;
+	max-height: 600px;
+	flow-children: down;
+	overflow: squish scroll;
+	saturation: 0.45;
+}
+
+#helperHeroName
+{
+	font-size: 45px;
+	horizontal-align: center;
+	color: #c0c0c0;
+}
+
+#helperHeroOverview
+{
+	font-size: 16px;
+	horizontal-align: left;
+	margin-left: 0px;
+	width: 100%;
+	height: auto;
+	border-left: 15px solid #76abe7;
+	background-color: #3a597c;
+	color: #f2f2f2;
+}
+#helperHeroOfflane
+{
+	font-size: 16px;
+	horizontal-align: left;
+	margin-left: 0px;
+	border-left: 15px solid #fff855;
+	width: 100%;
+	height: auto;
+	padding-left: 5px;
+	background-color: #5c5914;
+	color: #f2f2f2;
+}
+#helperHeroJungle
+{
+	font-size: 16px;
+	horizontal-align: left;
+	margin-left: 0px;
+	border-left: 15px solid #83ec68;
+	width: 100%;
+	height: auto;
+	padding-left: 5px;
+	background-color: #214518;
+	color: #f2f2f2;
+}
+#helperHeroSafelane
+{
+	font-size: 16px;
+	horizontal-align: left;
+	margin-left: 0px;
+	border-left: 15px solid #e33636;
+	width: 100%;
+	height: auto;
+	padding-left: 5px;
+	background-color: #490d0d;
+	color: #f2f2f2;
+}
+
+#helperHeroMidlane
+{
+	font-size: 16px;
+	horizontal-align: left;
+	margin-left: 0px;
+	width: 100%;
+	height: auto;
+	border-left: 15px solid #953ef0;
+	padding-left: 5px;
+	background-color: #4b286f;
+	overflow: clip;
+	color: #f2f2f2;
+}
+
+#helperHeroMidlaneTitle,
+#helperHeroSafelaneTitle,
+#helperHeroOfflaneTitle,
+#helperHeroJungleTitle,
+#helperHeroOverviewTitle
+{
+	font-size: 15px;
+	color: #cccccc;
+	width: 600px;
+	border-left: 15px solid #747474;
+	background-color: #505050;
+	
+}
+
+.helperOfflaneLabel,
+.helperMidlaneLabel,
+.helperSafelaneLabel,
+.helperJungleLabel
+{
+	width: 100%;
+	height: 100%;
+	flow-children: right;
+}
+
+#helperHeroJungleRating,
+#helperHeroSafelaneRating,
+#helperHeroOfflaneRating,
+#helperHeroMidlaneRating
+{
+	font-size: 20px;
+	color: yellow;
+	saturation: 1.0 !important;
+	margin-left: 80%;
+	margin-top: -2px;
+}
+
+@keyframes 'point'
+{
+	0%
+	{
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( #242424 ), to( #0c0c0c ) );
+	}
+	50%
+	{
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( #cccccc ), to( #0c0c0c ) );
+	}
+	100%
+	{
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( #242424 ), to( #0c0c0c ) );
+	}
+}

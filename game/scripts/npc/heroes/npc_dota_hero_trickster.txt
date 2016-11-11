@@ -1,0 +1,56 @@
+"npc_dota_hero_trickster"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_meepo"
+	"Ability1"				"trickster_surprise" // fires a damaging bolt at the target that stuns and disarms them.  When the effect wears off, it passes to a new nearby enemy Hero.  Can pass an infinite amount of times.
+	"Ability2"				"trickster_disappearing_act" // causes the target ally or enemy to disappear in a puff of smoke.  Disabled and invulnerable for the duration.  Reappears at a random location 800 - 1000 units away when this effect wears off.  Trickster sees an effect where they are going to reappear.
+	"Ability3"				"trickster_jam_magic" // silences enemies that enter an area around the Trickster.  Enemies recently affected cannot be silenced again
+	"Ability4"				"trickster_encore" // places a curse on the target that prevents them from casting any spells other than the last spell they cast for a large period of time
+	"Ability5"				""
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"4"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRange"				"125"
+	"AttackRate"				"1.65"
+	"AttackDamageMin"			"30"										// Damage range min.
+	"AttackDamageMax"			"34"										// Damage range max.
+
+	"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"16"										// Base strength
+	"AttributeStrengthGain"		"1.8"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"18"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.2"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"16"										// Base agility
+	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"285"									// Speed.
+	"MovementTurnRate"			"0.7"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

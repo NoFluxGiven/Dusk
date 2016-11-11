@@ -1,0 +1,59 @@
+"npc_dota_hero_sanguine_hunter"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_bloodseeker_old"
+	"Ability1"				"sanguine_hunter_soul_claw" // The Sanguine Hunter charges, rapidly consuming his health.
+	// Upon ceasing, he gains a damage bonus to his next attack that also slows, based on the amount of health used.
+	"Ability2"				"sanguine_hunter_lifelink" // The targeted unit becomes linked to the Sanguine Hunter, causing him to regain a percentage of damage they deal as health, and
+	// causing them to heal or take damage based on a percentage of damage he takes, depending on whether the targeted unit was an ally or enemy.
+	"Ability3"				"sanguine_hunter_sadistic" // When the Sanguine Hunter strikes his foes, he gains regen proportionate to the amount of damage he deals.
+	// The regeneration lasts for 1.6s.
+	"Ability4"				"sanguine_hunter_bloodcall" // The Hunter surrounds a target unit with a crimson glow, sacrificing a portion of his current health.
+	// Heals or damages over time, based upon the amount current health used, and dependent on whether or not his target was an ally or enemy.
+	"Ability5"				""
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				"attribute_bonus"
+
+	"ArmorPhysical"				"3"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRange"				"125"
+	"AttackRate"				"1.55"
+	"AttackDamageMin"			"30"										// Damage range min.
+	"AttackDamageMax"			"32"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"26"										// Base strength
+	"AttributeStrengthGain"		"2.5"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"15"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.2"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"19"										// Base agility
+	"AttributeAgilityGain"		"2.3"										// Agility bonus per level.
+
+	//"BountyXP"					"0"							`		// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"315"									// Speed.
+	"MovementTurnRate"			"1.3"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"3"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

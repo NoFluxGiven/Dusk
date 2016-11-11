@@ -1,0 +1,62 @@
+"npc_dota_hero_apple"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_windrunner"
+	"Ability1"				"apple_strafe" // Apple strafes the target enemy, attacking at 0.6/0.9/1.2/1.5x her attack speed while still being able to move and cast abilities.
+	// The first shot of strafe slows by 80% for 1s, and Apple gains 40% movespeed for the duration.  Lasts 4s.  She is disarmed whilst casting this ability.
+	"Ability2"				"apple_bouncing_arrow" // Apple fires an arrow at the target unit.  The arrow bounces 4 times (including the first hit), exploding on the last bounce.
+	"Ability3"				"apple_natures_blessing" // When Apple is within range of trees, she gains stacks that grant her bonus Armor and Magic Resistance every few seconds.
+	// Each time she would take damage, she loses a stack.  Each stack grants 2/4/6/8 Armor and 2/4/6/8% Magic Resistance with a maximum of 5 stacks.  At full stacks, she is healed instead.
+	// Regains 5/10/15/20 Health every 3s.
+	"Ability4"				"apple_corporeal_mine" // Apple sets a mine that gathers energies from its surrounds.  The longer the mine lays there, the more powerful its explosion will be.
+	// Mines have an activation delay of 0.75s, and when they explode deal up to 300/400/500 Magical damage and heal half that amount to nearby allied units.
+	// A maximum of 5 mines can be placed on the map.
+	"Ability5"				""
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"2"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"550"
+	"AttackRate"				"1.6"
+	"AttackDamageMin"			"25"										// Damage range min.
+	"AttackDamageMax"			"32"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+	"AttributeBaseStrength"		"16"										// Base strength
+	"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"22"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.3"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"28"										// Base agility
+	"AttributeAgilityGain"		"2.8"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"290"									// Speed.
+	"MovementTurnRate"			"0.7"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
+}

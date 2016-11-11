@@ -1,0 +1,119 @@
+//=====================================================================================================
+// LICH: Winter's Requiem
+//=====================================================================================================
+"lich_winters_requiem"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"lich_traveling_frost"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"225"
+	"AbilityCastPoint"				"0.5"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"30 40 50 60"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"duration"					"8"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"interval"					"0.25"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"325"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"slow"						"-30"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_slow"				"-60"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/status_fx/status_effect_frost_lich.vpcf"
+		"particle" "particles\units\heroes\hero_ancient_apparition\ancient_apparition_cold_feet_frozen.vpcf"
+		"particle" "particles/units/heroes/hero_lich/lich_frost_nova.vpcf"
+		"particle" "particles/units/heroes/hero_lich/lich_frost_nova_flash.vpcf"
+		"soundfile" "soundevents\game_sounds_heroes\game_sounds_tusk.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+		"ApplyModifier"
+			{
+			"Target" "CASTER"
+			"ModifierName" "lich_winters_requiem_cast_mod"
+			}
+		}
+	
+	"Modifiers"
+		{
+		"lich_winters_requiem_slow_mod"
+			{
+			"Duration" "%duration"
+			"IsDebuff" "1"
+			"StatusEffectName" "particles/status_fx/status_effect_frost_lich.vpcf"
+			"StatusEffectPriority" "10"
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_slow"
+				}
+			}
+		"lich_winters_requiem_cast_mod"
+			{
+			"Duration" "%duration"
+			"ThinkInterval" "%interval"
+			"OnIntervalThink"
+				{
+				"RunScript"
+					{
+					"ScriptFile" "heroes/lich_abilities.lua"
+					"Function" "lich_winters_requiem"
+					"radius" "%radius"
+					"damage" "%damage"
+					}
+				}
+			}
+		}
+}

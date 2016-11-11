@@ -1,0 +1,26 @@
+"itembuilds"
+{
+	"author"		"bread"
+	"hero"			"npc_dota_hero_chaos_knight"
+	"Title"			"Recommended items for Mana Knight"
+	"Items"
+	{
+		"#DOTA_Item_Build_Starting_Items"
+		{
+		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{
+		}
+		
+		"#DOTA_Item_Build_Core_Items"
+		{
+		}
+		
+		"#DOTA_Item_Build_Luxury"
+		{
+		}
+	}
+	
+	
+}

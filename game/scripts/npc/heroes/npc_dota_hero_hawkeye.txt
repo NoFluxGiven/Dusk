@@ -1,0 +1,56 @@
+"npc_dota_hero_hawkeye"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_sniper"
+	"Ability1"				"hawkeye_ricochet"
+	"Ability2"				"hawkeye_detonator_dart"
+	"Ability3"				"hawkeye_hit_n_run"
+	"Ability4"				"hawkeye_double_tap"
+	"Ability5"				"hawkeye_double_tap_visuals"
+	"Ability6"				"hawkeye_double_tap_second_shot"
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"0"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"635"
+	"AttackRate"				"1.65"
+	"AttackDamageMin"			"20"										// Damage range min.
+	"AttackDamageMax"			"25"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+	"AttributeBaseStrength"		"16"										// Base strength
+	"AttributeStrengthGain"		"1.3"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"17"										// Base Intelligence
+	"AttributeIntelligenceGain"	"2.2"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"25"										// Base agility
+	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
+
+	//"BountyXP"					"0"							`		// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"285"									// Speed.
+	"MovementTurnRate"			"0.7"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"1000"									// Range of vision at night time.
+}

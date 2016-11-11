@@ -1,0 +1,74 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor =
+	[
+		170,
+		0,
+		0,
+		255,
+	]
+	m_flConstantRadius = 6.384500
+	m_flConstantLifespan = 4.000000
+	m_Operators =
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+			m_flStartAlpha = 0.000000
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 2.000000
+			m_flEndScale = 0.100000
+		},
+		{
+			_class = "C_OP_LockToBone"
+			m_HitboxSetName = "hands"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity =
+			[
+				0.000000,
+				0.000000,
+				5.000000,
+			]
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_flAnimationRate = 1.985000
+			m_hTexture = resource:"materials/particle/particle_flares/particle_flare_004b_mod.vtex"
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 26.912001
+			m_flRadiusMax = 30.012501
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+		},
+		{
+			_class = "C_INIT_CreateOnModel"
+			m_HitboxSetName = "hands"
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 0
+			m_nAlphaMax = 97
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 34.900002
+			m_flEmissionScale = 1.000000
+		},
+	]
+}

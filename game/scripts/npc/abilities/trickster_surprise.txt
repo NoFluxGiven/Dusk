@@ -1,0 +1,141 @@
+//=====================================================================================================
+// TRICKSTER: Surprise
+//=====================================================================================================
+"trickster_surprise"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"trickster_surprise"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
+		"particle"			"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+		"particle"			"particles/generic_gameplay/generic_disarm.vpcf"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"400 450 500 550"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"16.0"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"125 200 275 325"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"80 100 120 140"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_missile_speed"	"2250"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"magic_missile_stun"	"0.75"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"magic_missile_disarm"	"3 4 5 6"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_VengefulSpirit.MagicMissile"
+			"Target" 		"CASTER"
+		}
+		
+		"TrackingProjectile"
+		{
+			"Target"           	"TARGET"
+			"EffectName"		"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+			"Dodgeable"			"1"
+			"ProvidesVision"	"0"
+			"MoveSpeed"        	"%magic_missile_speed"
+			"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+		}
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+
+		"Stun"
+		{
+			"Duration"   "%magic_missile_stun"
+			"Target" 	 "TARGET"
+		}
+		
+		"FireSound"
+		{
+			"EffectName"	"Hero_VengefulSpirit.MagicMissileImpact"
+			"Target" 		"TARGET"
+		}
+
+		"Damage"
+		{
+			"Target"
+				{
+				"Center" "TARGET"
+				"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				}
+			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Damage"		"%AbilityDamage"
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_trickster_surprise_disarm_transfer"
+			"Target" 		"TARGET"
+		}
+
+	}
+
+	"Modifiers"
+	{
+		"modifier_trickster_surprise_disarm_transfer"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsPurgable"		"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsStunDebuff"		"0"
+			//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+			"Duration"			"%magic_missile_disarm"
+
+			"EffectName"		"particles/generic_gameplay/generic_disarm.vpcf"
+			"EffectAttachType"	"follow_overhead"
+	
+			"States"
+			{
+				"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

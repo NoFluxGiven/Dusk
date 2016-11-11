@@ -1,0 +1,59 @@
+"npc_dota_hero_chronos"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_faceless_void"
+	"Ability1"				"chronos_warp" // Teleports to the target location, then returns to the location where this ability was casted after a short time.  Slows and damages at both locations
+	// on both leaving and returning.
+	"Ability2"				"chronos_future_sight" // Gives Chronos and nearby allies precognitive abilities for a short time, granting a chance to avoid sources of damage completely.
+	"Ability3"				"chronos_sync" // At Chronos' feet is the Timepiece, a powerful fundamental that dictates his strength.  When the hand is facing 12,
+	// he gains bonus attack speed and damage, and when it's facing 6, he gains bonus movespeed, Armor and Magic Resistance.
+	"Ability4"				"chronos_continuum_crystal" // Chronos summons a crystalline structure that envelops the target unit.  The unit is disabled for the duration and emits an aura
+	// that drastically slows enemies, and deals damage over time.  The main target is invulnerable and recovers a percentage of their health and mana over the duration.
+	"Ability5"				""
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"2"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRange"				"125"
+	"AttackRate"				"1.5"
+	"AttackDamageMin"			"27"										// Damage range min.
+	"AttackDamageMax"			"31"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"16"										// Base strength
+	"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"14"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.5"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"15"										// Base agility
+	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"285"									// Speed.
+	"MovementTurnRate"			"1.0"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

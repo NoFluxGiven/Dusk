@@ -1,0 +1,108 @@
+//=====================================================================================================
+// ANCIENT: Passive
+//=====================================================================================================
+"ancient_passive"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"FightRecapLevel"				"1"
+	"AnimationPlaybackRate"			"0.0"
+	"AbilityTextureName"			"ancient_passive"
+	"MaxLevel"						"1"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_regen"			"5"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"			"20"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_damage"			"70"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_radius"			"700"
+		}
+		
+	}
+
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		"particle"					"particles/units/heroes/hero_nevermore/nevermore_base_attack.vpcf"
+
+
+	}
+
+	"Modifiers"
+	{
+		"modifier_ancientpassive"
+		{
+			"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+
+			"Aura"          	"modifier_ancient_damage_aura"
+			"Aura_Radius"   	"%aura_radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"Aura_ApplyToCaster" "0"
+		
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+			    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%bonus_regen"
+			}
+		}
+
+		"modifier_ancient_damage_aura"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+
+			"EffectName" "particles/units/building/burning_aura.vpcf"
+			"EffectAttachType" "attach_origin"
+		
+			"ThinkInterval"  "1.0"
+			"OnIntervalThink"
+			{
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_PURE"
+					"Damage"		"%aura_damage"
+				}
+			}
+		}
+	}
+}

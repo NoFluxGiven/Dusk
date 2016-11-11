@@ -1,0 +1,180 @@
+//=====================================================================================================
+// OUROBOROS: Dragon's Wing
+//=====================================================================================================
+"ouroboros_dragons_wing"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"ouroboros_dragons_wing"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"300"
+	"AbilityCastPoint"				"0.1"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"45 40 35 30"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"90"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"8"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_movespeed"		"10"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"300"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"dmg"					"40 80 120 160"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow"					"-30 -35 -40 -45"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow_duration"			"2"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"knockback"				"300"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"knockback_dur"			"0.50"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		"particle"			"particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf"
+		"particle"			"particles/units/heroes/hero_winter_wyvern/wyvern_arctic_burn_start_dust_hit.vpcf"
+
+	}
+
+	"OnSpellStart"
+	{
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_winter_wyvern/wyvern_arctic_burn_start_dust_hit.vpcf"
+			"EffectAttachType"  "follow_origin"
+			"Target"            "CASTER"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_ouroboros_dragons_wing"
+			"Target" 		"CASTER"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_ouroboros_dragons_wing_slow"
+			"Target"
+			{
+				"Center"  	"CASTER"
+				"Radius" 	"%radius"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+		}
+		"Damage"
+		{
+			"Target"
+			{
+				"Center"  	"CASTER"
+				"Radius" 	"%radius"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+			"Type"			"DAMAGE_TYPE_PHYSICAL"
+			"Damage"		"%dmg"
+		}
+		"Knockback"
+		{
+			"Target"
+			{
+				"Center"  	"CASTER"
+				"Radius" 	"%radius"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+			"Center" 	        "CASTER"
+			"Distance"	        "%knockback"
+			"Duration"	        "%knockback_dur"
+			"Height"	        "50"
+			"IsFixedDistance"	"1"
+			"ShouldStun"        "0"	
+		}
+	}
+	
+	"Modifiers"
+		{
+		"modifier_ouroboros_dragons_wing"
+			{
+			"Duration" "%duration"
+			"EffectName" "particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf"
+			"IsPurgable"		"0"
+			"IsBuff"			"1"
+			"IsDebuff"			"0"
+			"IsStunDebuff"		"0"
+			//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movespeed" 
+				}
+				"States"
+				{
+					"MODIFIER_STATE_FLYING"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			"OnDestroy"
+			{
+				"DestroyTrees"
+		        {
+		        	"Target"	"CASTER"
+		        	"Radius"	"%radius"
+		        }
+			}
+			}
+		"modifier_ouroboros_dragons_wing_slow"
+			{
+			"Duration" "%slow_duration"
+			"IsPurgable"		"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsStunDebuff"		"0"
+			//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+			}
+		}
+}

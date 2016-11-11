@@ -1,0 +1,168 @@
+//=====================================================================================================
+// SHADE: Smoke Bomb
+//=====================================================================================================
+"shade_smoke_bomb"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"shade_smoke_bomb"
+	"AnimationPlaybackRate"			"2"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.2"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"17 16 15 14"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"95 80 75 70"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"40 100 160 220"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"miss"						"30 40 50 60"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"duration"					"6"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"slow"						"30"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"400"
+		}
+	}
+	
+	"OnSpellStart"
+		{
+		"CreateThinker"
+			{
+			"ModifierName" "shade_smoke_bomb_mod"
+			"Target" "CASTER"
+			}
+		"CreateThinker"
+			{
+			"ModifierName" "modifier_smoke_bomb_allies"
+			"Target" "CASTER"
+			}
+		"Damage"
+			{
+			"Target"
+				{
+				"Center" "CASTER"
+				"Radius" "%radius"
+				"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				}
+			"Damage" "%damage"
+			"Type" "DAMAGE_TYPE_MAGICAL"
+			}
+		}
+	
+	"precache"
+		{
+		"particle" "particles\units\heroes\hero_riki\riki_smokebomb.vpcf"
+		"particle" "particles/units/heroes/hero_doom_bringer/doom_bringer_lvl_death.vpcf"
+		}
+	
+	"Modifiers"
+		{
+		"modifier_smoke_bomb_allies"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+			"Duration"			"%duration"
+		
+			"Aura"          	"modifier_smoke_bomb_ally_aura"
+			"Aura_Radius"   	"%radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+			"Aura_ApplyToCaster" "1"
+		}
+		"modifier_smoke_bomb_ally_aura"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+			"Duration"			"%duration"
+		
+			"ThinkInterval"  "1"
+			"OnIntervalThink"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_invisible"
+					"Target" 		"TARGET"
+					"Duration"		"2"
+				}
+			}
+		}
+		"shade_smoke_bomb_mod"
+			{
+			"Aura"					"shade_smoke_bomb_miss_mod"
+			"Aura_Radius"			"%radius"
+			"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+			"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"Duration"				"%duration"
+			
+			"OnCreated"
+			{
+			"AttachEffect"
+				{
+					"EffectName"		"particles\units\heroes\hero_riki\riki_smokebomb.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"			"TARGET"
+					"ControlPoints"
+					{
+						"00" "0 0 0"
+						"01" "%radius %radius %radius"
+					}
+				}
+			}
+			}
+		"shade_smoke_bomb_miss_mod"
+			{
+			"IsDebuff" "1"
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_MISS_PERCENTAGE" "%miss"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				}
+			}
+		}
+}

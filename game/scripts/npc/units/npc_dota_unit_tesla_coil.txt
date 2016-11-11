@@ -1,0 +1,94 @@
+//------------------------------------------------------------------------------------
+  //- This unit can be used to precache different models/particles/sounds              -
+  //- that are needed every game.  Uncomment any model/particle/sound you need to load -
+  //------------------------------------------------------------------------------------
+"npc_dota_unit_tesla_coil"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models\items\rattletrap\cog_tesla\cog_tesla.mdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"                     "Hero_Sniper"
+	"GameSoundsFile"               "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+	"Level"						"1"
+	"ModelScale" 				"1"
+	"ConsideredHero"			"0"
+	"UnitLabel"			"tesla_coil"
+	"IsAncient"					"1"
+	"CanBeDominated"			"0"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"summoner_tesla_coil"			// Ability 1
+	"Ability2"					""			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"4"			// Physical protection.
+	"MagicalResistance"			"100"			// Magical protection (percentage).
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"AttackDamageMin"			"0"		// Damage range min.
+	"AttackDamageMax"			"0"		// Damage range max.	
+	"AttackRate"				"1.0"		// Speed of attack.
+	"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+	"AttackRange"				"0"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			"0"			// Speed of projectile.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"215"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"100"		// Experience earn.
+	"BountyGoldMin"				"15"		// Gold earned min.
+	"BountyGoldMax"				"30"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+	"MovementSpeed"				"0"		// Speed.
+	"MovementTurnRate"			"0.5"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"300"		// Base health.
+	"StatusHealthRegen"			"0.0"			// Health regeneration rate.
+	"StatusMana"				"200"		// Base mana.
+	"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"700"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	//Inventory
+	"HasInventory"				"0"
+	
+	"AutoAttacksByDefault"		"0"
+
+	"Creature"
+	{
+		"HPGain"                    "150"
+		"DamageGain"                "0"
+		"ArmorGain"                 "2"
+		"MagicResistGain"           "0"
+		"MoveSpeedGain"             "0"
+		"BountyGain"                "0"
+		"XPGain"                    "0"
+	}
+}	

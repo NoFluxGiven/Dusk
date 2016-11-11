@@ -1,0 +1,25 @@
+//=================================================================================================================
+// Turin's Scepter Recipe
+//=================================================================================================================
+"item_recipe_turins_scepter"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"ID"							"2020"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"BaseClass"						"item_recipe_arcane_boots"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"0"
+	"ItemShopTags"					""
+	
+	// Recipe
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_turins_scepter"
+	"ItemRequirements"
+	{
+		"01"						"item_sheepstick;item_regal_sigil;item_synthesis"
+	}
+}

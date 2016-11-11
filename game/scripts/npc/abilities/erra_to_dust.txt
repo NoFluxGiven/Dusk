@@ -1,0 +1,103 @@
+"erra_to_dust"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AnimationPlaybackRate"         "1"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "erra_to_dust"
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "875"
+    "AbilityCastPoint"              "0.3"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "45"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "115"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityModifierSupportValue"   "0.5"   // Applies two modifiers
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "hp_to_bonus_damage"    "4 6 8 10"
+        }
+        
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "creep_hp_to_bonus_damage" "2"
+        }
+
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "duration"              "10"
+        }
+
+        "04"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "radius"                "875"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/hero_erra.vsndevts"
+        "particle"  "particles/units/heroes/hero_erra/to_dust.vpcf"
+        "particle"  "particles/units/heroes/hero_erra/to_dust_affected_unit.vpcf"
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "heroes/erra_abilities.lua"
+            "Function"      "ToDust"
+            "dmg"           "%hp_to_bonus_damage"
+            "dmg_creep"     "%creep_hp_to_bonus_damage"
+            "radius"        "%radius"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_to_dust_damage"
+        {
+            "Passive"            "0"
+            "IsHidden"            "1"
+            "IsDebuff"            "0"
+            "Duration"            "%duration"
+        
+            "EffectName"        "particles/units/heroes/hero_erra/to_dust.vpcf"
+            "EffectAttachType"    "follow_origin"
+        
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "1"
+            }
+        }
+        "modifier_to_dust_show"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "0"
+            "Duration"            "%duration"
+        }
+    }
+}

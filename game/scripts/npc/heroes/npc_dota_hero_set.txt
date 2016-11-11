@@ -1,0 +1,55 @@
+"npc_dota_hero_set"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_sand_king"
+	"Ability1"				"set_sands_of_war" 
+	"Ability2"				"set_duststorm" 
+	"Ability3"				"set_harsh_sun"
+	"Ability4"				"set_an_army_beneath_the_sands"
+	"Ability5"				""
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"5"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRate"				"1.7"
+	"AttackDamageMin"			"19"										// Damage range min.
+	"AttackDamageMax"			"22"										// Damage range max.
+
+	//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"20"										// Base strength
+	"AttributeStrengthGain"		"2.4"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"21"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"8"										// Base agility
+	"AttributeAgilityGain"		"1.0"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"310"									// Speed.
+	"MovementTurnRate"			"1.0"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

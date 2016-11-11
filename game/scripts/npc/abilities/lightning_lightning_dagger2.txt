@@ -1,0 +1,161 @@
+"lightning_lightning_dagger2"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AnimationPlaybackRate"			"2.5"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"lightning_lightning_dagger"
+	
+		// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+	"AbilityCastRange"				"675"
+	"AbilityCooldown"				"2.5"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"20 30 40 50"
+	
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"40 75 110 145"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"								"FIELD_FLOAT"
+			"duration"								"0.5"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"							"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+		"soundfile"							"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+		"particle"							"particles/units/heroes/hero_lightning/lightning_dagger_arcana.vpcf"
+		"particle"							"particles/units/heroes/hero_lightning/lightning_dagger_mark_main.vpcf"
+		"particle" 							"particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf"
+		"particle"							"particles/units/heroes/hero_zuus/zuus_arc_lightning_impact.vpcf"
+	}
+	
+	"OnSpellStart"
+	{
+		"TrackingProjectile"
+		{
+			"Target"           "TARGET"
+		    "EffectName"       "particles/units/heroes/hero_lightning/lightning_dagger_arcana.vpcf"
+		    "Dodgeable"        "1"
+		    "ProvidesVision"   "1"
+		    "VisionRadius"     "300"
+		    "MoveSpeed"        "2000"
+		    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+		}
+
+		"FireSound"
+		{
+			"EffectName"		"Hero_PhantomAssassin.Dagger.Cast"
+			"Target"			"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/lightning_abilities.lua"
+			"Function"		"Spark"
+		}
+		
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/lightning_abilities.lua"
+			"Function"		"LightningDagger"
+		}
+
+	}
+	
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"						"1"
+
+		"Damage"
+		{
+			"Target"
+			{
+				"Center"  	"TARGET"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Damage"		"%AbilityDamage"
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_lightning_dagger_slow"
+			"Target"
+			{
+				"Center"  	"TARGET"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+		}
+
+		"FireSound"
+		{
+			"EffectName"		"Hero_PhantomAssassin.Dagger.Target"
+			"Target"			"TARGET"
+		}
+
+	}
+	
+	"Modifiers"
+	{
+		"modifier_lightning_dagger_slow"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%duration"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_zuus/zuus_arc_lightning_impact.vpcf"
+					"EffectAttachType"  "follow_origin"
+					"Target"
+					{
+						"Center"  	"TARGET"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						"Flags"     "DOTA_UNIT_TARGET_FLAG_DEAD"
+					}
+				}
+				"FireSound"
+				{
+					"EffectName"		"Hero_Zuus.StaticField"
+					"Target"
+					{
+						"Center"  	"TARGET"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						"Flags"     "DOTA_UNIT_TARGET_FLAG_DEAD"
+					}
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"-100"
+			}
+		}
+
+	}
+}

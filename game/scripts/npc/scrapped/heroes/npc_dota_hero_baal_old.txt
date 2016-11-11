@@ -1,0 +1,61 @@
+"npc_dota_hero_baal"
+{
+	"AbilityLayout" 		"5"
+	"override_hero"			""
+	"Ability1"				"baal_axial_seal" // Baal instantly converts an enemy or allied creep into an Axial Seal, which can be commanded.  Can hit enemies with powerful ranged attacks.
+	"Ability2"				"baal_vector_plate" // Creates a plate on the ground facing away from Baal.  Enemies and allies that step on the plate will be pushed in that direction
+	// with great speed and enemies will be slowed and damaged.
+	"Ability3"				"baal_vector_plate_change"
+	"Ability4"				"baal_otherworld" // The caster enters a secondary plane of existence for a short time.  In this plane, they are attack immune, take no Physical damage,
+	// and cannot be seen or detected by enemies.  Magical and Pure damage still affects them.  Can be exited at any time.
+	"Ability5"				"baal_otherworld_exit"
+	"Ability6"				"baal_vector_plate_switch" 
+	"Ability7"				"baal_superposition" // Baal creates an area around him where he is able to instantly occupy any location within it. Enemies and allies within the area are slowed.
+	// Increases his and his Axial Seals' attack speed and attack range whilst within the area.  Baal experiences no negative effects from this skill.  Issuing move orders will instantly transport him
+	// to that location instead of making him walk there.
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+	
+
+	"ArmorPhysical"				"0"									// Physical protection.
+	"MagicalResistance"				"10"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"450"
+	"AttackRate"				"1.5"
+	"AttackDamageMin"			"20"										// Damage range min.
+	"AttackDamageMax"			"26"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"22"										// Base strength
+	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"24"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.5"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"11"										// Base agility
+	"AttributeAgilityGain"		"1.4"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"									// Speed.
+	"MovementTurnRate"			"1.0"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

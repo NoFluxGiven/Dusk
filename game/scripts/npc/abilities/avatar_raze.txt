@@ -1,0 +1,99 @@
+//=====================================================================================================
+// AVATAR: Raze
+//=====================================================================================================
+"avatar_raze"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AOERadius"						"300"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"avatar_raze"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"710"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"4"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200"
+	
+	"AbilityDamage"					"375"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+
+	}
+	
+	"precache"
+	{
+		"particle" "particles/units/avatar/avatar_dark_raze.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+	}
+		
+	"OnSpellStart"
+		{
+			"CreateThinker"
+			{
+			"ModifierName" "raze_thinker"
+			"Target" "POINT"
+			}
+			"Damage"
+			{
+				"Damage" "%AbilityDamage"
+				"Type" "DAMAGE_TYPE_MAGICAL"
+				"Target"
+				{
+					"Center" "POINT"
+					"Radius" "300"
+					"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				}
+			}
+		}
+	
+	"Modifiers"
+		{
+		"raze_thinker"
+		{
+		"Duration" "2"
+		"IsHidden" "1"
+		"OnCreated"
+		{
+			"AttachEffect"
+				{
+					"EffectName" "particles\units\avatar\avatar_dark_raze.vpcf"
+					"EffectAttachType" "attach_origin"
+					"Target" "TARGET"
+					"ControlPoints"
+					{
+						"00" "0 0 0"
+						"01" "400 400 400"
+						"02" "0 0 0"
+						"03" "100 100 100"
+					}
+				}
+			"FireSound"
+			{
+				"EffectName" "Hero_Nevermore.Shadowraze"
+				"Target" "TARGET"
+			}
+		}
+		}
+		}
+}

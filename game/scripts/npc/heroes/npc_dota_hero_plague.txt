@@ -1,0 +1,74 @@
+"npc_dota_hero_plague"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_life_stealer"
+	
+	"Ability1"				"plague_venom_blast" // Fires a blast of venom forth, traveling a large distance. Deals damage on contact, then damage over time. Leaves behind toxic ground
+	// that, after a random delay, will explode, dealing damage again and applying more damage over time.
+	// Deals 50/100/150/200 damage on contact, then 20/30/40/50 damage per second for 4s.
+	// The toxic explosions deal 30/60/90/120 damage and then 15/30/45/60 damage per second for 3s.
+	// Leaves behind 6 explosive mushrooms in the line, with a random offset.  The mushrooms are a minimum of 100 units apart, with an offset of up to 25 units.
+	// The blast travels 600 units.
+	// The random delay is between 3 and 5s.
+	"Ability2"				"plague_noxious" // Plague expels foul smelling fumes from his body, dealing damage immediately. Enemies afflicted with the debuff from this ability
+	// cannot recover Health. Deals 80/160/240/320 damage and prevents healing for 4.5s. He can cast this whilst stunned.
+	"Ability3"				"plague_acidic_strike" // Plague's attacks gradually debilitate his target, reducing their Armor and movement speed. Lasts 4s. Reduces Armor by 1/2/2/3
+	// and movement speed by 4/8/12/16%. Stacks up to 5 times.
+	"Ability4"				"plague_parasites" // Fires a parasitic egg into the target enemy, dealing damage immediately, then small Physical damage over time. The Parasites slowly
+	// drain the target's Health, Mana, damage and attack speed, granting it to Plague. Lasts 20s.
+	// Drains 15/30/45 Health per second and 10/20/30 Mana per second.
+	// Drains 4/8/12 damage per second and 2/4/6 attack speed per second.
+	"Ability5"				"plague_pandemic" // Infects the target enemy instantly (within a short range) with a powerful, but dormant virus. For 60s, the virus remains dormant,
+	// spreading to nearby enemy units. After the 60s finishes, or when Plague activates it, over 10s, the targets afflicted with the infection take large amounts of Magical damage
+	// based on the amount of units infected.
+	// Deals 20/30/40 damage per Hero infected per second (including the initial infection target) and a bonus 5 damage per creep infected.
+	// Infection spreads instantly when infected targets move within a 325 radius of another unit. Newly infected units do not spread the infection until after a 2s grace period.
+	// Infected units have a particle effect above their heads, but this is not visible to enemies.
+	// After activation, the virus has a 1s delay before damage starts to occur.
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"4"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRange"				"150"
+	"AttackRate"				"1.6"
+	"AttackDamageMin"			"30"										// Damage range min.
+	"AttackDamageMax"			"34"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"21"										// Base strength
+	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"15"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.2"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"21"										// Base agility
+	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
+
+	//"BountyXP"					"0"							`		// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"295"									// Speed.
+	"MovementTurnRate"			"1.0"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

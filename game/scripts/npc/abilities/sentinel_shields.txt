@@ -1,0 +1,63 @@
+//=====================================================================================================
+// SENTINEL: Shields
+//=====================================================================================================
+"sentinel_shields"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "ability_datadriven"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "medusa_mana_shield"
+    "MaxLevel"                      "1"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "0"
+    "AbilityCastPoint"              "0.0"
+    
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "0"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "0"
+    
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityModifierSupportValue"   "0.0"   // All about the damage
+
+    // Specialhj
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_INTEGER"
+            "bonus_armor"            "15"
+        }
+    }
+    
+    "precache"
+        {
+        "particle" "particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
+        "particle" "particles/units/heroes/hero_summoner/big_mana_shield.vpcf"
+        "soundfile" "soundevents\hero_phantom.vsndevts"
+        }
+    
+    "Modifiers"
+        {
+            "modifier_sentinel_shields"
+            {
+                "Passive" "1"
+                "IsHidden" "1"
+                "EffectName" "particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
+                //"EffectName" "particles/units/heroes/hero_summoner/big_mana_shield.vpcf"
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+                }
+            }
+        }
+}

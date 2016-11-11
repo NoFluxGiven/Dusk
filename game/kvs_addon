@@ -1,0 +1,13 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="0">
+            <File firstVisibleLine="10" xOffset="0" scrollWidth="3682" startPos="2888" endPos="2888" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Program Files (x86)\Steam\SteamApps\common\dota 2 beta\game\dota_addons\duskdota\scripts\kv\learn.kv" backupFilePath="" originalFileLastModifTimestamp="1474371480" />
+            <File firstVisibleLine="2658" xOffset="0" scrollWidth="9100" startPos="253066" endPos="254270" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Program Files (x86)\Steam\SteamApps\common\dota 2 beta\game\dota_addons\duskdota\resource\addon_english.txt" backupFilePath="" originalFileLastModifTimestamp="1474355715" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="9100" startPos="135" endPos="135" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Program Files (x86)\Steam\SteamApps\common\dota 2 beta\game\dota_addons\duskdota\scripts\kv\skillbuilds_template.txt" backupFilePath="" originalFileLastModifTimestamp="1474371432" />
+            <File firstVisibleLine="391" xOffset="0" scrollWidth="9100" startPos="7288" endPos="7288" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Program Files (x86)\Steam\SteamApps\common\dota 2 beta\game\dota_addons\duskdota\scripts\kv\template.kv" backupFilePath="" originalFileLastModifTimestamp="1474371001" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="9100" startPos="8301" endPos="0" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Program Files (x86)\Steam\SteamApps\common\dota 2 beta\game\dota_addons\duskdota\scripts\kv\hero_ids.kv" backupFilePath="" originalFileLastModifTimestamp="1474341422" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="9100" startPos="224" endPos="224" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Program Files (x86)\Steam\SteamApps\common\dota 2 beta\game\dota_addons\duskdota\scripts\kv\builds.kv" backupFilePath="" originalFileLastModifTimestamp="1474371418" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

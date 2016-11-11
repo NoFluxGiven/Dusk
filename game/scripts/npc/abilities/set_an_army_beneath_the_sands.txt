@@ -1,0 +1,247 @@
+//=====================================================================================================
+// SET: An Army Beneath the Sands
+//=====================================================================================================
+"set_an_army_beneath_the_sands"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"FightRecapLevel"				"1"
+	"AbilityChannelTime"			"15"
+	"AbilityTextureName"			"set_an_army_beneath_the_sands"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"750"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"160"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"280"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"interval"				"1.00"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"950"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow"					"-20 -40 -60"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"scepter_interval"		"0.75"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"40 60 80"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"scepter_slow"			"-75"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"scepter_damage"		"60 80 100"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"level_multiplier"		"0.64"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+		"particle"			"particles/units/heroes/hero_set/set_sinkhole.vpcf"
+		"particle"			"particles/units/heroes/hero_set/set_spawn_sand_puppet.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/set_abilities.lua"
+			"Function"		"aabts"
+			"radius"		"%radius"
+		}
+	}
+
+	"OnChannelFinish"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/set_abilities.lua"
+			"Function"		"aabts_end"
+		}
+	}
+	
+	"Modifiers"
+		{
+			"modifier_aabts_summon"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/set_abilities.lua"
+						"Function"		"aabts_summon"
+						"radius"		"%radius"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/set_abilities.lua"
+						"Function"		"aabts_summon"
+						"radius"		"%radius"
+					}
+				}
+				"ThinkInterval"  "%interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/set_abilities.lua"
+						"Function"		"aabts_summon"
+						"radius"		"%radius"
+					}
+				}
+				"OverrideAnimation"     "ACT_DOTA_OVERRIDE_ABILITY_2"
+				"Aura"          	"modifier_aabts_slow"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+			}
+
+			"modifier_aabts_summon_scepter"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/set_abilities.lua"
+						"Function"		"aabts_summon"
+						"radius"		"%radius"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/set_abilities.lua"
+						"Function"		"aabts_summon"
+						"radius"		"%radius"
+					}
+				}
+				"ThinkInterval"  "%scepter_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/set_abilities.lua"
+						"Function"		"aabts_summon"
+						"radius"		"%radius"
+					}
+				}
+				"Aura"          	"modifier_aabts_slow_scepter"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+			}
+
+			"modifier_aabts_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"ThinkInterval"   	"0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/set_abilities.lua"
+						"Function"		"aabts_check"
+						"radius"		"%radius"
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_aabts_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage"
+					}
+				}
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				}
+			}
+
+			"modifier_aabts_slow_scepter"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%scepter_damage"
+					}
+				}
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%scepter_slow"
+				}
+			}
+		}
+}

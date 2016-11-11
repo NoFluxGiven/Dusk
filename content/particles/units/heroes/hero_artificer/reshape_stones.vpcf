@@ -1,0 +1,85 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+			m_flStartAlpha = 0.0
+		},
+		{
+			_class = "C_OP_LockToBone"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndTime = 0.5
+			m_flStartScale = 0.0
+			m_flBias = 0.2
+		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = 150
+			m_fSpinRateStopTime = 0.5
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartTime = 0.5
+			m_flEndScale = 0.0
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, 450.0 ]
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_bDisableZBuffering = true
+			m_hTexture = resource:"materials/models/props_structures/barracks_chunks.vtex"
+			m_bAdditive = true
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateOnModel"
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.25
+			m_fLifetimeMax = 0.75
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 25.0
+			m_flRadiusMax = 70.0
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMax = [ 170, 255, 127, 255 ]
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 7
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_artificer/reshape_rock.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_artificer/reshape_smoke.vpcf"
+		},
+	]
+}

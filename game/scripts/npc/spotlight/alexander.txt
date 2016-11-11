@@ -1,0 +1,11 @@
+ALEXANDER
+
+Hello and welcome to the Dusk Hero Spotlight for Alexander. Alexander is a melee Strength carry that can survive onslaughts of damage that would kill other Heroes.
+
+His first ability is called Soulseal. Casting this on an enemy will cause them to become silenced for a long period, and slow their movespeed significantly.
+
+His second ability is Steadfast. This grants bonus Armor and Health regen as his Health drops lower.
+
+Radiant is his third ability, granting him bonus Health regen and causing enemy attacks to miss when near him.
+
+Finally, his Ultimate is Godfall. After a short channel time, he deals massive bonus Pure damage, mini-stuns, and purges off positive buffs on his next attack.

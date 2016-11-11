@@ -1,0 +1,147 @@
+//=====================================================================================================
+// ARTIFICER: Naturalise
+//=====================================================================================================
+"artificer_naturalise"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+	"AbilityTextureName"			"artificer_naturalise"
+	"AoERadius"						"250"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"675"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30 24 18 12" // rescaled from 38
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"140 145 150 155"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"2" // percentage total
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"heal"							"50 75 100 125"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_regen"					"10 15 20 25"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"40 80 120 160"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_over_time"				"20 30 40 50"
+		}
+	"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow"							"-25 -35 -45 -55" // percentage total
+		}
+	"07"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"250"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_artificer/naturalise_unit.vpcf"
+		"particle" "particles/units/heroes/hero_artificer/naturalise_unit_ally.vpcf"
+		"particle" "particles/units/heroes/hero_artificer/naturalise.vpcf"
+		"particle" "particles/generic_gameplay/generic_silenced.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+			"RunScript"
+				{
+					"ScriptFile"	"heroes/artificer_abilities.lua"
+					"Function"		"naturalise2"
+					"damage"		"%damage"
+					"heal"			"%heal"
+					"duration" 		"%duration"
+					"radius"		"%radius"
+				}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_naturalise_damage_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"1"
+				"IsStunDebuff"		"0"
+				//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+
+				"EffectName"		"particles/units/heroes/hero_artificer/naturalise_unit.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"ThinkInterval"  "0.33"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/artificer_abilities.lua"
+						"Function"		"naturaliseDamage"
+						"damage"		"%damage_over_time"
+					}
+				}
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				}
+			}
+
+			"modifier_naturalise_health_regen"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"1"
+				"IsStunDebuff"		"0"
+				//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+			
+				"EffectName"		"particles/units/heroes/hero_artificer/naturalise_unit_ally.vpcf"
+				"EffectAttachType"	"follow_origin"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%bonus_regen"
+				}
+			}
+		}
+}

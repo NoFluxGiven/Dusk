@@ -1,0 +1,132 @@
+//=====================================================================================================
+// HORROR: Deathmark
+//=====================================================================================================
+"horror_deathmark"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"horror_deathmark"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.452 0.452 0.452 0.452"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"75"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"30"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"15 30 45 60"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movement_slow"			"-30 -40 -50 -60"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"passive_slow"			"0"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+		"particle"	"particles/units/heroes/hero_horror/horror_deathmark_effect.vpcf"
+		"particle"	"particles/units/heroes/hero_horror/horror_deathmark_hit.vpcf"
+		"particle"	"particles/units/heroes/hero_horror/horror_deathmark.vpcf"
+
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Axe.Battle_Hunger"
+			"Target"		"TARGET"
+		}
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/horror_abilities"
+			"Function"		"deathmark"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_deathmark"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"Duration"			"%duration"
+
+			"EffectName"		"particles/units/heroes/hero_horror/horror_deathmark.vpcf"
+			"EffectAttachType"	"follow_overhead"
+
+			"ThinkInterval"  "3"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/horror_abilities.lua"
+					"Function"		"deathmark_tick"
+				}
+			}
+		
+			"OnAttacked"
+			// "%attack_damage" is set to the damage value after mitigation
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/horror_abilities.lua"
+					"Function"		"deathmark_activate"
+					"damage"		"%damage"
+				}
+			}
+		}
+
+		"modifier_deathmarksilence"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+		
+			"EffectName"		"particles/units/heroes/hero_horror/horror_deathmark_effect.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_slow" 
+			}
+		
+			"States"
+			{
+				"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

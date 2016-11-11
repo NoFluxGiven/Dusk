@@ -1,0 +1,105 @@
+//=====================================================================================================
+// ELEMENTALIST: Trinity
+//=====================================================================================================
+"elementalist_trinity"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityTextureName"			"invoker_invoke"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"80"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"150 125 100"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"duration"					"15"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_scepter"				"10 20 30"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles\units\heroes\hero_invoker\invoker_alacrity_buff.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+	
+	"OnSpellStart"
+		{
+		"RunScript"
+			{
+			"ScriptFile" "heroes/elementalist_abilities.lua"
+			"Function" "elementalist_trinity"
+			"duration" "%duration"
+			}
+		}
+	
+	"Modifiers"
+		{
+		"elementalist_trinity_effect_mod"
+			{
+			"IsHidden" "1"
+			"IsBuff" "1"
+			"IsPurgable" "0"
+			"OnCreated"
+				{
+				"AttachEffect"
+					{
+					"EffectName"        "particles/units/heroes/hero_invoker/invoker_alacrity.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+					}
+				}
+			"States"
+			{
+				"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+			}
+		"elementalist_scepter_mod"
+			{
+			"IsHidden" "1"
+			"IsBuff" "1"
+			"IsPurgable" "0"
+			"OnCreated"
+				{
+				"AttachEffect"
+					{
+					"EffectName"        "particles/units/heroes/hero_invoker/invoker_alacrity.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+					}
+				}
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%bonus_scepter"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_scepter"
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%bonus_scepter"
+				}
+			}
+		}
+}

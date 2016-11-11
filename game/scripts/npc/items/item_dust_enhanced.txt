@@ -1,0 +1,114 @@
+//=================================================================================================================
+// Dust
+//=================================================================================================================
+"item_dust_enhanced"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3005"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+	"AbilityTextureName"			"item_enhanced_dust"
+	"Model"							"models/props_gameplay/dust.mdl"
+	"Effect"						"dropped_dust"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30.0"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"5"
+	"ItemCost"						"300"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"enhanced dust of appearance"
+	"ItemStackable"					"1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemSellable"					"0"
+	"ItemPermanent"					"0"
+	"ItemInitialCharges"			"1"		  
+	"ItemPurchasable"				"0"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+	"ItemSupport"					"1"
+	
+	"precache"
+	{
+	
+		"particle" "particles/items_fx/dust_of_appearance.vpcf"
+	
+	}
+
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"12"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"800"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movespeed"				"-40"
+		}
+	}
+	
+	"OnSpellStart"
+		{
+		"FireEffect"
+			{
+			"EffectName" "particles/items_fx/dust_of_appearance.vpcf"
+			"EffectRadius" "%radius"
+			"Target" "CASTER"
+			}
+		"FireSound"
+			{
+			"EffectName" "DOTA_Item.DustOfAppearance.Activate"
+			"Target" "CASTER"
+			}
+		"ActOnTargets"
+			{
+			"Target"
+				{
+				"Center" "CASTER"
+				"Radius" "%radius"
+				"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				}
+			"Action"
+				{
+				"ApplyModifier"
+					{
+					"ModifierName" "dust_truesight_slow_mod"
+					"Target" "TARGET"
+					}
+				}
+			}
+		"SpendCharge"
+			{}
+		}
+	"Modifiers"
+		{
+		"dust_truesight_slow_mod"
+			{
+			"Duration" "%duration"
+			"IsDebuff" "1"
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movespeed"
+				}
+			"States"
+				{
+				"MODIFIER_STATE_INVISIBLE" "MODIFIER_STATE_VALUE_DISABLED"
+				}
+			}
+		}
+}

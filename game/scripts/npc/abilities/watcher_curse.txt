@@ -1,0 +1,73 @@
+//=====================================================================================================
+// WATCHER: Curse
+//=====================================================================================================
+"watcher_curse"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityTextureName"			"watcher_curse"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	"AbilityDamage"					"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+
+	}
+	
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_nevermore/nevermore_shadowraze.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+	}
+		
+	
+	"Modifiers"
+	{
+		"watcher_curse_effects_mod"
+		{
+			"Duration" "360"
+			"Attributes" "MODIFIER_ATTRIBUTE_PERMANENT"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MISS_PERCENTAGE" "35"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "-60"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-30"
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "-30"
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "-30"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "-30"
+				"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "-50"
+				
+			}
+			"OnDestroy"
+			{
+				"RemoveAbility"
+				{
+					"Target" "TARGET"
+					"AbilityName" "watcher_curse"
+				}
+			}
+		}
+	}
+}

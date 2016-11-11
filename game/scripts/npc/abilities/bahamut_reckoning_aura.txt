@@ -1,0 +1,87 @@
+//=====================================================================================================
+// BAHAMUT: Reckoning Aura
+//=====================================================================================================
+"bahamut_reckoning_aura"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AbilityTextureName"			"bahamut_reckoning_aura"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"475"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"5 10 15 20"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"475"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_bahamut/bahamut_ambience.vpcf"
+		"particle" "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/bahamut_fulmination_model.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_2.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_3.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/desolation_cast.vpcf"
+		"soundfile" "soundevents\hero_phantom.vsndevts"
+		}
+	
+	"Modifiers"
+		{
+			"modifier_reckoning_aura"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"Aura"          	"modifier_reckoning_aura_eff"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"Aura_ApplyToCaster" "0"
+			}
+			"modifier_reckoning_aura_eff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%damage"
+				}
+			}
+		}
+}

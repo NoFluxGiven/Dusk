@@ -1,0 +1,142 @@
+"item_holdingorb"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "item_datadriven"
+    "ID"                            "3011"  //Valve's version of this item uses the ID "123".
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
+    "Model"                         "models/props_gameplay/red_box.vmdl" 
+    "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityTextureName"            "item_holding_orb"
+    "FightRecapLevel"               "1"
+    
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastPoint"              "0.0"
+    "AbilityCastRange"              "500"
+    "AbilityCooldown"               "20.0"
+    "AbilityManaCost"               "75"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"                      "5175"
+    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;hard_to_tag"
+    "ItemQuality"                   "epic"
+    "ItemAliases"                   "ls;linken's sphere"
+    "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+    "precache"
+    {
+        "particle"  "particles/items/holding_orb_shield.vpcf"
+        "particle"  "particles/items/holding_orb_reflect.vpcf"
+    }
+
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_all_stats"           "15"
+        }
+        "02"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_health_regen"        "6"
+        }
+        "03"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_mana_regen_percent"  "150"
+        }
+        "04"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_damage"              "10"
+        }
+        "05"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "damage"                    "25"
+        }
+        "06"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "maxstacks"                 "25"
+        }
+        "07"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "threshold"                 "35"
+        }
+        "08"
+        {
+            "var_type"                  "FIELD_FLOAT"
+            "duration"                  "3.5"
+        }
+    }
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "items/item_holdingorb.lua"
+            "Function"          "damage"
+            "damage"            "%damage"
+        }
+    }
+    
+    "Modifiers"
+    {
+        "modifier_holding_orb_passive"
+        {
+            "Passive"            "1"
+            "IsHidden"            "1"
+            "IsDebuff"            "0"
+            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+        
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"        "%bonus_all_stats"
+                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"         "%bonus_all_stats"
+                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"       "%bonus_all_stats"
+                "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"       "%bonus_health_regen"
+                "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"       "%bonus_mana_regen_percentage"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      "%bonus_damage"
+            }
+        }
+        "modifier_holding_orb_block"
+        {
+            "Duration"          "%duration"
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "0"
+
+            "OnCreated"
+            {
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/items/holding_orb_shield.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                    "ControlPointEntities"
+                    {
+                        "TARGET"    "attach_hitloc"
+                        "TARGET"    "attach_hitloc"
+                    }
+                }   
+            }
+            
+        }
+
+        "modifier_holding_orb_bide"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "0"
+        }
+    }
+}

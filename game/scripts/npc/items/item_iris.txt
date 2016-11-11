@@ -1,0 +1,228 @@
+"item_iris"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "item_datadriven"
+    "ID"                            "3012"  //Valve's version of this item uses the ID "123".
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
+    "Model"                         "models/props_gameplay/red_box.vmdl" 
+    "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityTextureName"            "item_iris"
+    "FightRecapLevel"               "1"
+    
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastPoint"              "0.0"
+    "AbilityCastRange"              "1000"
+    "AbilityCooldown"               "30.0"
+    "AbilityManaCost"               "150"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"                      "5175"
+    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;hard_to_tag"
+    "ItemQuality"                   "epic"
+    "ItemAliases"                   "ls;linken's sphere"
+    "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+    "precache"
+    {
+        "particle"  "particles/items/holding_orb_shield.vpcf"
+        "particle"  "particles/generic_gameplay/generic_disarm.vpcf"
+    }
+
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_all_stats"           "15"
+        }
+        "02"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_health"              "425"
+        }
+        "03"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_mana"                "425"
+        }
+        "04"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_regen"               "50"
+        }
+        "05"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_damage"              "15"
+        }
+        "06"
+        {
+            "var_type"                  "FIELD_FLOAT"
+            "duration"                  "6"
+        }
+    }
+    
+    "OnSpellStart"
+    {
+        "ApplyModifier"
+        {
+            "ModifierName"    "modifier_iris_copy_buffs"
+            "Target"         "TARGET"
+            "Duration"        "%duration"
+        }
+        "FireSound"
+        {
+            "EffectName"    "DOTA_Item.LinkensSphere.Target"
+            "Target"        "TARGET"
+        }
+    }
+    
+    "Modifiers"
+    {
+        "modifier_iris_passive"
+        {
+            "Passive"            "1"
+            "IsHidden"            "1"
+            "IsDebuff"            "0"
+            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+        
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"        "%bonus_all_stats"
+                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"         "%bonus_all_stats"
+                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"       "%bonus_all_stats"
+                "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"       "%bonus_regen"
+                "MODIFIER_PROPERTY_HEALTH_BONUS"                "%bonus_health"
+                "MODIFIER_PROPERTY_MANA_BONUS"                  "%bonus_mana"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      "%bonus_damage"
+            }
+        }
+
+        "modifier_iris_copy_buffs"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "0"
+
+            "EffectName" "particles/items/glyphs_iris_orb.vpcf"
+            "EffectAttachType" "follow_origin"
+        
+            "ThinkInterval"  "0.03"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "items/item_iris.lua"
+                    "Function"      "CopyBuffs"
+                }
+            }
+            "OnDestroy"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "internal/util.lua"
+                    "Function"        "PurgeAlly"
+                    "target"        "CASTER"
+                    "caster"        "CASTER"
+                }
+            }   
+        }
+
+        "modifier_iris_disarm"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "0"
+        
+            "EffectName"        "particles/generic_gameplay/generic_disarm.vpcf"
+            "EffectAttachType"    "follow_overhead"
+        
+            "States"
+            {
+                "MODIFIER_STATE_DISARMED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+
+        "modifier_iris_silence"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "0"
+        
+            "EffectName"        "particles/generic_gameplay/generic_silenced.vpcf"
+            "EffectAttachType"    "follow_overhead"
+        
+            "States"
+            {
+                "MODIFIER_STATE_SILENCED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+
+        "modifier_iris_rooted"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "0"
+        
+            //"EffectName"        "particles/generic_gameplay/generic_silenced.vpcf"
+            //"EffectAttachType"    "follow_overhead"
+        
+            "States"
+            {
+                "MODIFIER_STATE_ROOTED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+
+        "modifier_iris_stunned"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "0"
+        
+            "EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+            "EffectAttachType"    "follow_overhead"
+        
+            "States"
+            {
+                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+
+        "modifier_iris_blind"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "0"
+        
+            //"EffectName"        "particles/generic_gameplay/generic_silenced.vpcf"
+            //"EffectAttachType"    "follow_overhead"
+        
+            "States"
+            {
+                "MODIFIER_STATE_BLIND"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+
+        "modifier_iris_muted"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "0"
+        
+            //"EffectName"        "particles/generic_gameplay/generic_silenced.vpcf"
+            //"EffectAttachType"    "follow_overhead"
+        
+            "States"
+            {
+                "MODIFIER_STATE_MUTED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+    }
+}

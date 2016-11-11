@@ -1,0 +1,111 @@
+//=====================================================================================================
+// ARTIFICER: Reshape
+//=====================================================================================================
+"artificer_reshape"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+	"AbilityTextureName"			"artificer_reshape"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"550"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20" // rescaled from 38
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"110 120 130 140"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"2 3 4 5" // percentage total
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_artificer/reshape.vpcf"
+		"particle" "particles/units/heroes/hero_artificer/reshape_unit.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/artificer_abilities.lua"
+				"Function"		"reshape"
+				"duration"		"%duration"
+			}
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_artificer/reshape.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "TARGET"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_EarthSpirit.Petrify"
+				"Target" 		"TARGET"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_reshape_particle_fx"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"1"
+				"IsStunDebuff"		"0"
+				//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+			
+				"EffectName"		"particles/units/heroes/hero_artificer/reshape_unit.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/util.lua"
+						"Function"		"KVEnableProps"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"internal/util.lua"
+						"Function"		"KVEnableProps"
+					}
+				}
+
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "-50"
+				}
+			}
+		}
+}

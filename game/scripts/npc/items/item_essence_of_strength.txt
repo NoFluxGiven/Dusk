@@ -1,0 +1,54 @@
+//=================================================================================================================
+// Essence of Strength
+//=================================================================================================================
+"item_essence_of_strength"
+{
+// General
+//-------------------------------------------------------------------------------------------------------------
+"BaseClass"						"item_datadriven"
+"ID"							"3008"  //Valve's version of this item uses the ID "114".
+"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+"Model"							"models/props_gameplay/red_box.vmdl" 
+"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+"AbilityTextureName"			"item_essence_red"
+
+// Stats		
+//-------------------------------------------------------------------------------------------------------------
+"AbilityCooldown"				"0"
+	
+// Item Info
+//-------------------------------------------------------------------------------------------------------------
+"ItemCost"						"775"
+"ItemShopTags"					"essence;"
+"ItemQuality"					"epic"
+"ItemAliases"					"essence;"
+"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+"ItemStackable"					"1"
+"ItemInitialCharges"			"1"
+"ItemPurchasable"				"0"
+"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+// Special	
+//-------------------------------------------------------------------------------------------------------------
+"AbilitySpecial"
+{
+}
+
+"precache"
+		{
+		"particle" "particles/items/essence_of_strength.vpcf"
+		}
+
+"OnSpellStart"
+{
+	"RunScript"
+	{
+		"ScriptFile"	"items/item_essence.lua"
+		"Function"		"EssenceStrength"
+	}
+}
+
+"Modifiers"
+{
+}
+}

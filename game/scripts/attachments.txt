@@ -1,0 +1,544 @@
+"Attachments"
+{
+	"models/heroes/juggernaut/juggernaut.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/items/furion/hat_holiday_1.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"20"
+				"roll"		"105"
+				"yaw"		"-35"
+				"YPos"		"-10"
+				"ZPos"		"-159"
+				"XPos"		"19"
+			}
+		}
+	}
+	"models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/items/invoker/arsenal_magus_exort_mask/arsenal_magus_exort_mask.vmdl"
+			{
+				"scale"		"1.7000000476837"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-230"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"15"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/controllers/vr_controller.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"0"
+			}
+			"models/courier/baby_rosh/babyroshan_elemental_flying.vmdl"
+			{
+				"scale"		"0.5"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-85"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/heroes/mirana/mirana.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/items/furion/hat_holiday_1.vmdl"
+			{
+				"scale"		"0.89999997615814"
+				"pitch"		"-105"
+				"roll"		"-35"
+				"yaw"		"0"
+				"YPos"		"-6"
+				"ZPos"		"-146"
+				"XPos"		"14"
+			}
+		}
+	}
+	"models/heroes/antimage/antimage.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/props_gameplay/red_box.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"-70"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"-17"
+				"yaw"		"-135"
+				"XPos"		"-13"
+			}
+			"models/particle/snowball.vmdl"
+			{
+				"scale"		"0.30000001192093"
+				"pitch"		"-113"
+				"roll"		"131"
+				"ZPos"		"112"
+				"YPos"		"-27"
+				"yaw"		"45"
+				"XPos"		"-65"
+			}
+		}
+		"attach_h2"
+		{
+			"models/particle/snowball.vmdl"
+			{
+				"scale"		"0.30000001192093"
+				"pitch"		"105"
+				"roll"		"-90"
+				"ZPos"		"-19"
+				"YPos"		"-50"
+				"yaw"		"-90"
+				"XPos"		"-80"
+			}
+		}
+		"attach_h1"
+		{
+			"models/particle/snowball.vmdl"
+			{
+				"scale"		"0.30000001192093"
+				"pitch"		"-113"
+				"roll"		"0"
+				"ZPos"		"-19"
+				"YPos"		"97"
+				"yaw"		"0"
+				"XPos"		"60"
+			}
+		}
+	}
+	"models/heroes/dragon_knight/dragon_knight.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/props_structures/crystal001.vmdl"
+			{
+				"scale"		"0.40000000596046"
+				"pitch"		"70"
+				"roll"		"50"
+				"yaw"		"0"
+				"YPos"		"45"
+				"ZPos"		"50"
+				"XPos"		"0"
+			}
+		}
+		"attach_head"
+		{
+			"models/props_structures/crystal001.vmdl"
+			{
+				"scale"		"0.40000000596046"
+				"pitch"		"70"
+				"roll"		"50"
+				"yaw"		"0"
+				"YPos"		"45"
+				"ZPos"		"50"
+				"XPos"		"0"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/items/faceless_void/battlefury/battlefury.vmdl"
+			{
+				"scale"		"1.7999999523163"
+				"pitch"		"180"
+				"roll"		"10"
+				"ZPos"		"-90"
+				"YPos"		"120"
+				"yaw"		"190"
+				"XPos"		"0"
+			}
+			"models/props_structures/crystal001.vmdl"
+			{
+				"scale"		"0.40000000596046"
+				"pitch"		"70"
+				"roll"		"50"
+				"yaw"		"0"
+				"YPos"		"45"
+				"ZPos"		"50"
+				"XPos"		"0"
+			}
+			"models/items/sven/armature_of_the_belligerent_ram_sword/armature_of_the_belligerent_ram_sword.vmdl"
+			{
+				"scale"		"0.40000000596046"
+				"pitch"		"180"
+				"roll"		"-110"
+				"yaw"		"59"
+				"YPos"		"43"
+				"ZPos"		"-35"
+				"XPos"		"-140"
+			}
+		}
+	}
+	"models/heroes/axe/axe.vmdl"
+	{
+		"attach_weapon"
+		{
+			"models/items/faceless_void/battlefury/battlefury.vmdl"
+			{
+				"scale"		"2"
+				"pitch"		"-50"
+				"roll"		"28"
+				"ZPos"		"-63"
+				"YPos"		"111"
+				"yaw"		"0"
+				"XPos"		"0"
+			}
+			"models/items/wraith_king/winterblight_weapon/winterblight_weapon.vmdl"
+			{
+				"scale"		"2.2999999523163"
+				"YPos"		"0"
+				"pitch"		"-140"
+				"ZPos"		"0"
+				"roll"		"30"
+				"yaw"		"180"
+				"XPos"		"70"
+			}
+		}
+		"attach_hitloc"
+		{
+			"models/props_gameplay/red_box.vmdl"
+			{
+				"scale"		"1.2999999523163"
+				"pitch"		"-70"
+				"roll"		"0"
+				"yaw"		"-135"
+				"YPos"		"0"
+				"ZPos"		"0"
+				"XPos"		"-13"
+			}
+			"models/heroes/tiny_04/tiny04_deathsim.vmdl"
+			{
+				"Animation"		"tiny04_deathsim_anim"
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_origin"
+		{
+			"models/props_gameplay/red_box.vmdl"
+			{
+				"scale"		"2"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/heroes/sniper/sniper.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/items/furion/hat_holiday_1.vmdl"
+			{
+				"scale"		"0.89999997615814"
+				"pitch"		"-165"
+				"roll"		"169"
+				"yaw"		"186"
+				"YPos"		"5"
+				"ZPos"		"-159"
+				"XPos"		"39"
+			}
+		}
+	}
+	"models/heroes/windrunner/windrunner.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/items/furion/hat_holiday_1.vmdl"
+			{
+				"scale"		"0.89999997615814"
+				"pitch"		"-111"
+				"roll"		"-6"
+				"yaw"		"-19"
+				"YPos"		"-5"
+				"ZPos"		"-144"
+				"XPos"		"9"
+			}
+		}
+	}
+	"models/heroes/abaddon/abaddon.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/items/phantom_lancer/sunspear/sunspear.vmdl"
+			{
+				"scale"		"1.2000000476837"
+				"pitch"		"-26"
+				"roll"		"0"
+				"ZPos"		"-120"
+				"YPos"		"52"
+				"yaw"		"-26"
+				"XPos"		"31"
+			}
+		}
+	}
+	"models/heroes/lion/lion.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/items/sven/armature_of_the_belligerent_ram_sword/armature_of_the_belligerent_ram_sword.vmdl"
+			{
+				"scale"		"0.60000002384186"
+				"pitch"		"179"
+				"roll"		"180"
+				"yaw"		"78"
+				"YPos"		"-70"
+				"ZPos"		"-100"
+				"XPos"		"50"
+			}
+		}
+	}
+	"Particles"
+	{
+		"models/items/wraith_king/winterblight_weapon/winterblight_weapon.vmdl"
+		{
+			"particles/econ/items/wraith_king/wraith_king_winterblight_weapon/wraith_king_winterblight_ambient.vpcf"
+			{
+				"2"		"attach_mouth"
+				"1"		"attach_eye_l"
+				"0"		"attach_eye_r"
+			}
+		}
+	}
+	"models/heroes/arc_warden/arc_warden.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/items/skywrath_mage/cloud_forged_great_staff/cloud_forged_great_staff.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"25"
+				"YPos"		"0"
+				"yaw"		"25"
+				"XPos"		"0"
+			}
+			"models/items/axe/generic_reaver.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-50"
+				"YPos"		"130"
+				"yaw"		"88"
+				"XPos"		"0"
+			}
+			"models/props_structures/crystal001.vmdl"
+			{
+				"scale"		"0.40000000596046"
+				"pitch"		"25"
+				"roll"		"-25"
+				"ZPos"		"-15"
+				"YPos"		"-15"
+				"yaw"		"0"
+				"XPos"		"60"
+			}
+		}
+		"attach_head"
+		{
+			"models/props_structures/crystal001.vmdl"
+			{
+				"scale"		"0.40000000596046"
+				"pitch"		"70"
+				"roll"		"50"
+				"ZPos"		"50"
+				"YPos"		"45"
+				"yaw"		"0"
+				"XPos"		"0"
+			}
+			"models/items/skywrath_mage/cloud_forged_great_staff/cloud_forged_great_staff.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"25"
+				"YPos"		"0"
+				"yaw"		"25"
+				"XPos"		"0"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/items/axe/generic_reaver.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-50"
+				"YPos"		"130"
+				"yaw"		"88"
+				"XPos"		"0"
+			}
+			"models/items/skywrath_mage/cloud_forged_great_staff/cloud_forged_great_staff.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-50"
+				"YPos"		"130"
+				"yaw"		"88"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/heroes/shadow_fiend/shadow_fiend_arcana.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/items/furion/hat_holiday_1.vmdl"
+			{
+				"scale"		"0.89999997615814"
+				"pitch"		"-165"
+				"roll"		"169"
+				"yaw"		"186"
+				"YPos"		"5"
+				"ZPos"		"-99"
+				"XPos"		"39"
+			}
+		}
+		"attach_head"
+		{
+			"models/items/furion/hat_holiday_1.vmdl"
+			{
+				"scale"		"1.2000000476837"
+				"pitch"		"-95"
+				"roll"		"-90"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-174"
+				"XPos"		"14"
+			}
+		}
+	}
+	"models/heroes/lone_druid/lone_druid.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/items/necrolyte/tenplagues_necrolyte_head/tenplagues_necrolyte_head.vmdl"
+			{
+				"scale"		"1.2000000476837"
+				"pitch"		"35"
+				"roll"		"0"
+				"ZPos"		"-143"
+				"YPos"		"0"
+				"yaw"		"-3"
+				"XPos"		"-15"
+			}
+			"models/particle/warlock_hand_of_glory_grip.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-90"
+				"roll"		"-19"
+				"yaw"		"19"
+				"YPos"		"3"
+				"ZPos"		"-197"
+				"XPos"		"-7"
+			}
+			"models/items/skywrath_mage/manticore_of_the_eyrie_shoulder/manticore_of_the_eyrie_shoulder.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-90"
+				"roll"		"-19"
+				"ZPos"		"-197"
+				"YPos"		"3"
+				"yaw"		"19"
+				"XPos"		"-7"
+			}
+			"models/items/warlock/ceaseless/ceaseless.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"-45"
+				"roll"		"-48"
+				"yaw"		"-19"
+				"YPos"		"-18"
+				"ZPos"		"-109"
+				"XPos"		"-60"
+			}
+		}
+		"attach_mouth"
+		{
+			"models/items/necrolyte/tenplagues_necrolyte_head/tenplagues_necrolyte_head.vmdl"
+			{
+				"scale"		"1.2000000476837"
+				"pitch"		"35"
+				"roll"		"0"
+				"yaw"		"-3"
+				"YPos"		"0"
+				"ZPos"		"-143"
+				"XPos"		"-15"
+			}
+		}
+		"attach_origin"
+		{
+			"models/items/necrolyte/tenplagues_necrolyte_head/tenplagues_necrolyte_head.vmdl"
+			{
+				"scale"		"1.5"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/items/warlock/ceaseless/ceaseless.vmdl"
+			{
+				"scale"		"0.5"
+				"pitch"		"-95"
+				"roll"		"30"
+				"yaw"		"-38"
+				"YPos"		"-19"
+				"ZPos"		"0"
+				"XPos"		"-2"
+			}
+			"models/particle/warlock_hand_of_glory_grip.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-100"
+				"roll"		"79"
+				"yaw"		"15"
+				"YPos"		"0"
+				"ZPos"		"-256"
+				"XPos"		"5"
+			}
+			"models/items/warlock/tevent_2_gatekeeper_key/tevent_2_gatekeeper_key.vmdl"
+			{
+				"scale"		"0.5"
+				"pitch"		"-95"
+				"roll"		"30"
+				"yaw"		"-38"
+				"YPos"		"-19"
+				"ZPos"		"0"
+				"XPos"		"-2"
+			}
+		}
+	}
+	"ExtraKeys"		"Can Be Added Wherever"
+}

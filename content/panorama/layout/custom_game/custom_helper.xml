@@ -1,0 +1,21 @@
+<root>
+	<styles>
+		<include src=""/>
+	</styles>
+<scripts>
+	<include src=""/>
+</scripts>
+
+<Panel class="DUSKHelperInterface">
+	<Panel id="DUSKHelperArea">
+	</Panel>
+	
+	<Panel id="DUSKHelperHeroInfo">
+		<Label id="DUSKHelperHeroName" text="hero_name" hittest="false"/>
+		<Label id="DUSKHelperHeroGeneral" text="hero_playstyle_general"/>
+		<Button id="DUSKHelperHeroLaneButton1" text="hero_lane_offlane" onactivate="onOfflaneSelected()"/>
+		<Button id="DUSKHelperHeroLaneButton2" text="hero_lane_safelane" onactivate="onSafelaneSelected()"/>
+		<Button id="DUSKHelperHeroLaneButton3" text="hero_lane_midlane" onactivate="onMidlaneSelected()"/>
+		<Button id="DUSKHelperHeroLaneButton4" text="hero_lane_jungle" onactivate="onJungleSelected()"/>
+	</Panel>
+</Panel>

@@ -1,0 +1,94 @@
+//------------------------------------------------------------------------------------
+  //- This unit can be used to precache different models/particles/sounds              -
+  //- that are needed every game.  Uncomment any model/particle/sound you need to load -
+  //------------------------------------------------------------------------------------
+"npc_dota_unit_boss_natures_guardian"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/heroes/treant_protector/treant_protector.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"                     "Hero_TreantProtector"
+	"GameSoundsFile"               "soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
+	"Level"						"12"
+	"ModelScale" 				"2.00"
+	"ConsideredHero"			"0"
+	"IsAncient"					"1"
+	"CanBeDominated"			"0"
+	"UnitLabel"			"natures_guardian"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"boss_natures_guardian_summon_treants"			// Summons treants to attack nearby enemies.  Weak but creates many.
+	"Ability2"					"boss_natures_guardian_sap"			// The targeted Hero is held in place and has their life drained over time.  They cannot attack.
+	"Ability3"					"boss_natures_guardian_uproot"			// Creates a fast traveling shockwave in a direction that deals large damage and slows.
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"400"		// Damage range min.
+	"AttackDamageMax"			"450"		// Damage range max.	
+	"AttackRate"				"2.0"		// Speed of attack.
+	"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+	"AttackRange"				"250"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_drow/drow_base_attack.vpcf"			// Particle system model for projectile.
+	"ProjectileSpeed"			"1150"			// Speed of projectile.	   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"215"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"0"		// Experience earn.
+	"BountyGoldMin"				"0"		// Gold earned min.
+	"BountyGoldMax"				"0"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+	"MovementSpeed"				"0"		// Speed.
+	"MovementTurnRate"			"0.7"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"6000"		// Base health.
+	"StatusHealthRegen"			"0"			// Health regeneration rate.
+	"StatusMana"				"250"		// Base mana.
+	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	//Inventory
+	"HasInventory"				"0"
+	
+	"AutoAttacksByDefault"		"1"
+
+	"Creature"
+	{
+
+		"AttachWearables"
+		{
+		    "Wearable1" { "ItemDef" "227" }
+		    "Wearable2" { "ItemDef" "228" }
+		    "Wearable3" { "ItemDef" "229" }
+		    "Wearable4" { "ItemDef" "230" }
+		}
+	}
+}	

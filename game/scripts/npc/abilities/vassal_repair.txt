@@ -1,0 +1,130 @@
+"vassal_repair"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BUILDING"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "vassal_repair"
+    "MaxLevel"                      "1"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "300"
+    "AbilityCastPoint"              "0.0"
+    "AbilitySharedWithTeammates"    "1"
+    
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityChannelTime"            "60"
+    "AbilityCooldown"               "15"
+
+    // Damage.
+    //------------------------------------------------------------------------------------------------------------
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "100"
+    
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "heal"              "20"
+        }
+        "02"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "channel_time"      "60"
+        }
+    }
+
+    "precache"
+        {
+            "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+            "particle"                  "particles/units/heroes/hero_summoner/green_laser.vpcf"
+        }
+
+    "OnSpellStart"
+    {
+
+        "ApplyModifier"
+        {
+            "ModifierName"  "modifier_repair_building_tgt"
+            "Target"        "TARGET"
+            "Duration"      "%channel_time"
+        }
+        "ApplyModifier"
+        {
+            "ModifierName"    "modifier_channeling_vassals"
+            "Target"          "CASTER"
+        }
+    }
+
+    "OnChannelFinish"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"  "modifier_repair_building_tgt"
+            "Target"        "TARGET"
+        }
+        "RemoveModifier"
+        {
+            "ModifierName"    "modifier_channeling_vassals"
+            "Target"          "CASTER"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_repair_building_tgt"
+        {
+            "IsBuff"          "1"
+
+            "ThinkInterval"  "0.8"
+            "OnIntervalThink"
+            {
+                "Heal"
+                {
+                    "Target"        "TARGET"
+                    "HealAmount"    "%heal"
+                }
+                "TrackingProjectile"
+                {
+                    "Target"                "TARGET"
+                    "EffectName"            "particles/units/heroes/hero_summoner/green_laser.vpcf"
+                    "MoveSpeed"             "1100"
+                    "Dodgeable"             "0"
+                    "ProvidesVision"        "0"
+                    "SourceAttachment"      "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+                }
+            }
+        }
+        "modifier_channeling_vassals"
+            {
+                "IsHidden" "1"
+                "ThinkInterval" "0.8"
+                "OnIntervalThink"
+                {
+                    // Looping Animation
+                    "ApplyModifier"
+                    {
+                        "ModifierName"  "vassals_animation"
+                        "Target"        "CASTER"
+                    }
+                }
+            }
+
+            "vassals_animation"
+            {
+                "IsHidden" "1"
+                "Duration" "0.7"
+                "OverrideAnimation" "ACT_DOTA_ATTACK"
+            }
+    }
+}

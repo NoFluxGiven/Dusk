@@ -1,0 +1,71 @@
+"npc_dota_hero_elementalist"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_invoker"
+	"Ability1"				"elementalist_pillar_of_flame" // Creates a pillar of fire that deals damage instantly, then damage over time. Leaves behind a Fire rune.
+	"Ability2"				"elementalist_electric_whorl" // Creates a spinning vortex of electricity, damaging enemies inside it, then stunning enemies when it ends. Leaves behind
+	// an Electricity rune.
+	"Ability3"				"elementalist_blizzard" // Summons forth a mighty blizzard in a small area that slows and deals damage over time. Leaves behind an Ice rune.
+	"Ability4"				"elementalist_runic_detonation" // Detonates all Runes, creating Elemental explosions that deal damage and have a special effect:
+	// ICE
+	// Slows units.
+	// FIRE
+	// Deals more damage.
+	// ELECTRICITY
+	// Burns Mana.
+
+	// Passively, this ability causes Elementalist's attacks to gain special properties when standing atop a Rune, similar to the above, but gaining these additional defensive effects:
+	// ICE
+	// Increased Health regen.
+	// FIRE
+	// Increased Mana regen.
+	// ELECTRICITY
+	// Increased movespeed and attack speed.
+	"Ability5"				""
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"1"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"650"
+	"AttackRate"				"1.6"
+	"AttackDamageMin"			"28"										// Damage range min.
+	"AttackDamageMax"			"30"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"19"										// Base strength
+	"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"14"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.2"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"17"										// Base agility
+	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"295"									// Speed.
+	"MovementTurnRate"			"0.8"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

@@ -1,0 +1,126 @@
+"item_grim_gauntlet"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "item_datadriven"
+    "ID"                            "3010"  //Valve's version of this item uses the ID "123".
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+    "Model"                         "models/props_gameplay/red_box.vmdl" 
+    "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+    "AbilityTextureName"            "item_grim_gauntlet"
+    "FightRecapLevel"               "1"
+    
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastPoint"              "0.0"
+    "AbilityCastRange"              "475"
+    "AbilityCooldown"               "20.0"
+    "AbilityManaCost"               "0"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"                      "5175"
+    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;hard_to_tag"
+    "ItemQuality"                   "epic"
+    "ItemAliases"                   "ls;linken's sphere"
+    "ItemRequiresCharges"           "0"
+    "ItemDisplayCharges"            "1"
+    "ItemPermanent"                 "1"
+    "ItemInitialCharges"            "0"
+    "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+    "precache"
+    {
+        "particle"  "particles/items/grim_gauntlet.vpcf"
+        "particle"  "particles/items/grim_gauntlet_hero_b.vpcf"
+        "particle"  "particles/generic_gameplay/generic_disarm.vpcf"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+    }
+
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_attack_speed"        "15"
+        }
+        "02"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_damage"              "25"
+        }
+        "03"
+        {
+            "var_type"                  "FIELD_FLOAT"
+            "damage"                    "135"
+        }
+        "04"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "maxcharge"                 "4"
+        }
+        "05"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "health_perc"               "30"
+        }
+        "06"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "mana_perc"                 "20"
+        }
+        "07"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "slow"                      "-10"
+        }
+    }
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+           {
+               "ScriptFile"    "items/item_grim_gauntlet.lua"
+               "Function"      "Capture"
+               "maxcharge"     "%maxcharge"
+               "damage"        "%damage"
+               "health_perc"   "%health_perc"
+               "mana_perc"     "%mana_perc"
+           }
+    }
+    
+    "Modifiers"
+    {
+        "modifier_grim_gauntlet_passive"
+        {
+            "Passive"            "1"
+            "IsHidden"            "1"
+            "IsDebuff"            "0"
+            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+        
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%bonus_attack_speed"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      "%bonus_damage"
+            }
+        }
+        "modifier_grim_gauntlet_slow"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "1"
+        
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+            }
+        }
+    }
+}

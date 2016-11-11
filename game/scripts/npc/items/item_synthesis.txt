@@ -1,0 +1,37 @@
+//=================================================================================================================
+// Synthesis
+//=================================================================================================================
+"item_synthesis"
+{
+// General
+//-------------------------------------------------------------------------------------------------------------
+"BaseClass"						"item_datadriven"
+"ID"							"3017"  //Valve's version of this item uses the ID "114".
+"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+"Model"							"models/props_gameplay/red_box.vmdl" 
+"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+"AbilityTextureName"			"item_synthesis"
+
+// Stats		
+//-------------------------------------------------------------------------------------------------------------
+"AbilityCooldown"				"0"
+	
+// Item Info
+//-------------------------------------------------------------------------------------------------------------
+"ItemCost"						"0"
+"ItemShopTags"					"synthesis;"
+"ItemQuality"					"epic"
+"ItemAliases"					""
+"ItemPurchasable"				"0"
+"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+// Special	
+//-------------------------------------------------------------------------------------------------------------
+"AbilitySpecial"
+{
+}
+
+"Modifiers"
+{
+}
+}

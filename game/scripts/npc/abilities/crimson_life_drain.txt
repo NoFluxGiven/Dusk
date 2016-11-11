@@ -1,0 +1,82 @@
+//=====================================================================================================
+// CRIMSON: Destruction Sphere
+//=====================================================================================================
+"crimson_life_drain"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AoERadius"						"400"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"pugna_life_drain"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1400"
+	"AbilityCastPoint"				"0.6"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"14"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"175"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"base_damage"				"125 200 275 350"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"increase"					"0.10 0.15 0.20 0.25" //each point of health missing from the target increases the damage by this much against them
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"delay"						"2.3"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"aoe"						"425"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles\units\heroes\hero_crimson\crimson_destruction_sphere.vpcf"
+		}
+	
+	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/crimson_abilities.lua"
+				"Function"		"DestructionSphere"
+				"percent"		"%increase"
+				"base"			"%base_damage"
+				"delay"			"%delay"
+				"aoe"			"%aoe"
+			}
+		}
+	
+	"Modifiers"
+		{
+		}
+}

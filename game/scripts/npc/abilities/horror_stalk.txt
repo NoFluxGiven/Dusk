@@ -1,0 +1,86 @@
+//=====================================================================================================
+// HORROR: Stalk
+//=====================================================================================================
+"horror_stalk"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"horror_stalk"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"450"
+	"AbilityCastPoint"				"0.452 0.452 0.452 0.452"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"1450"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow"					"-25 -50 -75 -100"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movement_bonus"		"35"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		"particle"	"particles/econ/items/nightstalker/nightstalker_black_nihility/nightstalker_black_nihility_void_swarm.vpcf"
+		"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf"
+		"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
+
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"horror_abilities"
+			"Function"		"stalk"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_stalk_attack_eff"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+		
+			"OnAttackLanded"
+			// "%attack_damage" is set to the damage value before mitigation
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_stalk"
+					"Target" 		"TARGET"
+				}
+			}
+		}
+	}
+}

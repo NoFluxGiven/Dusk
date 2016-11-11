@@ -1,0 +1,148 @@
+//=====================================================================================================
+// IRONFIST: Hissatsu
+//=====================================================================================================
+"ironfist_hissatsu"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"ironfist_hissatsu"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"250"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"8"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"60"
+	
+	// Damage
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"60 120 180 240"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"movespeed"						"522"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"250"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"2"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_ironfist/hissatsu.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+		"FireSound"
+			{
+			"EffectName" "Hero_NyxAssassin.Vendetta"
+			"Target" "CASTER"
+			}
+		"ApplyModifier"
+			{
+			"ModifierName" "modifier_invisible"
+			"Target" "CASTER"
+			"Duration" "%duration"
+			}
+		"ApplyModifier"
+			{
+			"ModifierName" "ironfist_windwalk_movespeed"
+			"Target" "CASTER"
+			}
+		}
+	
+	"Modifiers"
+		{
+		"ironfist_windwalk_movespeed"
+			{
+			"Duration" "%duration"
+			"IsHidden" "1"
+			"OnCreated"
+				{
+					"CreateThinker"
+					{
+						"ModifierName"	"modifier_windwalk_fx"
+						"Target" 		"TARGET"
+					}
+					"Damage"
+					{
+						"Target"
+						{
+							"Center"  	"TARGET"
+							"Radius" 	"%radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%AbilityDamage"
+					}
+				}
+			"OnAbilityExecuted"
+				{
+				"RemoveModifier"
+					{
+					"ModifierName" "ironfist_windwalk_movespeed"
+					"Target" "TARGET"
+					}
+				}
+			"OnAttackLanded"
+				{
+				"RemoveModifier"
+					{
+					"ModifierName" "ironfist_windwalk_movespeed"
+					"Target" "TARGET"
+					}
+				}
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE" "%movespeed"
+				}
+			}
+		"modifier_windwalk_fx"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+			"Duration"			"1"
+		
+			"OnCreated"
+			{
+				"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_ironfist/hissatsu.vpcf"
+						"EffectAttachType"	"start_at_origin"
+					}
+			}
+		
+		}
+		}
+}

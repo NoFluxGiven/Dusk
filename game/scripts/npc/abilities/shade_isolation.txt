@@ -1,0 +1,109 @@
+//=====================================================================================================
+// SHADE: Isolation
+//=====================================================================================================
+"shade_isolation"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilityTextureName"			"shade_isolation"
+	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"125"
+	"AbilityCastPoint"				"0.55"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"50"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"basedamage"				"250 360 470"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"decrease_unit"				"25"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"silence_duration"			"5"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"isolation_bonus"			"12 16 20"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"vision"					"80"
+		}
+	}
+	
+	"precache"
+		{
+		"soundfile" "soundevents/hero_shade.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+		"particle" "particles\units\heroes\hero_night_stalker\nightstalker_ulti.vpcf"
+		"particle" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf"
+		"particle" "particles\items_fx\ethereal_blade.vpcf"
+		}
+		
+	"OnSpellStart"
+		{
+		"RunScript"
+			{
+			"ScriptFile" "heroes/shade_abilities.lua"
+			"Function" "shade_isolation"
+			"dmg" "%basedamage"
+			"decrease" "%decrease_unit"
+			"isolation_bonus" "%isolation_bonus"
+			"duration" "%silence_duration"
+			}
+		"FireEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf"
+				"EffectAttachType"	"attach_hitloc"
+				"Target"		"TARGET"
+			}
+		}
+		
+	"Modifiers"
+		{
+			"modifier_isolation"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+			
+				"States"
+				{
+					"MODIFIER_STATE_BLIND"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+}

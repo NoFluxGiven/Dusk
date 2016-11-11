@@ -1,0 +1,115 @@
+//=====================================================================================================
+// SANGUINE HUNTER: Bloodcall
+//=====================================================================================================
+"sanguine_hunter_bloodcall"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"sanguine_hunter_bloodcall"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+		"particle"			"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1600"
+	"AbilityCastPoint"				"0.3 0.3 0.3"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// Modifier just delays damage
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"consume"					"50"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"amount"					"12 14 16"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"duration"					"10"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hunter_abilities.lua"
+			"Function"		"bloodcall_start"
+			"consume"		"%consume"
+			"pct"			"%amount"
+			"duration"		"%duration"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_bloodcall_ally_heal"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsBuff"			"1"
+			"IsDebuff"			"0"
+		
+			"EffectName"		"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds.vpcf"
+			"EffectAttachType"	"follow_origin"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "1"
+			}
+		}
+		"modifier_bloodcall_enemy_hurt"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+		
+			"EffectName"		"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds.vpcf"
+			"EffectAttachType"	"follow_origin"
+		
+			"ThinkInterval"  "1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hunter_abilities.lua"
+					"Function"		"bloodcall_damage"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,83 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+			m_flEndFadeInTime = 0.1
+			m_flStartFadeOutTime = 0.9
+			m_flStartAlpha = 0.0
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 3.0
+			m_flBias = 0.8
+			m_flEndTime = 0.25
+		},
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_nCP1 = 2
+			m_vecCP1Pos = [ 0.0, 0.0, 125.0 ]
+		},
+		{
+			_class = "C_OP_LockToBone"
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_RateMin = 15.0
+			m_RateMax = 15.0
+			m_FrequencyMin = 4.0
+			m_FrequencyMax = 4.0
+			m_nField = 3
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_RateMin = [ -75.0, -75.0, -75.0 ]
+			m_RateMax = [ 75.0, 75.0, 75.0 ]
+			m_FrequencyMin = [ 25.0, 25.0, 25.0 ]
+			m_FrequencyMax = [ 50.0, 50.0, 50.0 ]
+			m_bOffset = true
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_RateMax = 2.0
+			m_FrequencyMin = 5.0
+			m_FrequencyMax = 12.0
+			m_nField = 4
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_hTexture = resource:"materials/models/items/broodmother/virulent_matriarchs_head/virulent_matriarchs_head_color_tga_90a1b0b9.vtex"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateOnModel"
+		},
+		{
+			_class = "C_INIT_VelocityRandom"
+			m_LocalCoordinateSystemSpeedMin = [ -100.0, -100.0, 150.0 ]
+			m_LocalCoordinateSystemSpeedMax = [ 100.0, 100.0, 400.0 ]
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 31
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 12.0
+		},
+	]
+	m_flConstantLifespan = 10.0
+}

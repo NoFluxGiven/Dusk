@@ -1,0 +1,86 @@
+//=================================================================================================================
+// Cake
+//=================================================================================================================
+"item_cake"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"1039"  //Valve's version of this item uses the ID "39".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"Model"							"models/props_gameplay/salve.mdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_winter_cake"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"              "0"
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"0"
+	"AbilityCastRange"				"100"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"400"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"cake"
+	"ItemStackable"					"0"
+	"ItemPermanent"					"0"
+	"ItemPurchasable"				"0"
+	"ItemInitialCharges"			"1"
+	"ItemSellable"					"1"
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"restore"				"475"
+		}
+	}
+	
+	"OnSpellStart"
+	{				
+		"ApplyModifier"
+		{
+			"Target"				"TARGET"
+			"ModifierName"			"modifier_item_cake_datadriven"
+		}
+		
+		"FireSound"
+		{
+			"EffectName"			"DOTA_Item.Cheese.Activate"
+			"Target"				"TARGET"
+		}
+		
+		"Heal"
+		{
+			"Target" "TARGET"
+			"HealAmount" "%restore"
+		}
+		"SpendCharge"
+		{}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_cake_datadriven"
+		{
+			"Duration"              	"1"
+			"Passive"					"0"
+			"IsHidden"					"1"
+			"IsBuff"					"1"
+			"IsDebuff"					"0"
+			"IsPurgable"				"1"
+			"EffectAttachType"      	"follow_origin"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "%restore"
+			}
+		}
+	}
+}

@@ -1,0 +1,169 @@
+"war_bloodlust"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+    "AnimationPlaybackRate"         "0.75"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "war_bloodlust"
+    "AoERadius"                     "375"
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "700"
+    "AbilityCastPoint"              "0.4"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "24 20 16 12"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "50"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityModifierSupportValue"   "0.5"   // Applies two modifiers
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_attack_damage"   "30"
+        }
+
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_attack_speed"    "30"
+        }
+        
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "radius"                "375"
+        }
+
+        "04"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "duration"              "3 4 5 6"
+        }
+
+        "05"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "slow"                  "-10 -15 -20 -25"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/hero_erra.vsndevts"
+        "particle"  "particles/units/heroes/hero_war/bloodlust.vpcf"
+    }
+
+    "OnSpellStart"
+    {
+        "CreateThinker"
+        {
+            "ModifierName"   "modifier_bloodlust_thinker"
+            "Target"         "POINT"
+        }
+        "ApplyModifier"
+        {
+            "ModifierName"   "modifier_bloodlust_debuff"
+            "Target"
+            {
+                "Center"    "POINT"
+                "Radius"    "%radius"
+                "Teams"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+                "Types"     "DOTA_UNIT_TARGET_HERO"
+            }
+            "Duration"       "%duration"
+        }
+        "ApplyModifier"
+        {
+            "ModifierName"   "modifier_bloodlust_slow"
+            "Target"
+            {
+                "Center"    "POINT"
+                "Radius"    "%radius"
+                "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Types"     "DOTA_UNIT_TARGET_HERO"
+            }
+            "Duration"       "%duration"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_bloodlust_debuff"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "1"
+            "IsPurgable"          "1"
+        
+            "EffectName"        "particles/units/heroes/hero_war/bloodlust_unit.vpcf"
+            "EffectAttachType"    "follow_origin"
+
+            "States"
+            {
+                "MODIFIER_STATE_SILENCED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_attack_damage"
+            }
+        }
+
+        "modifier_bloodlust_thinker"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "0"
+        
+            "OnCreated"
+            {
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/units/heroes/hero_war/bloodlust.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                    "ControlPoints"
+                    {
+                        "01"    "%radius 0 0"
+                    }
+                }
+                "FireSound"
+                {
+                    "EffectName"    "War.Bloodlust"
+                    "Target"        "TARGET"
+                }
+            }
+        }
+
+        "modifier_bloodlust_slow"
+        {
+            "Passive"            "0"
+            "IsHidden"            "1"
+            "IsDebuff"            "0"
+        
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+            }
+        }
+    }
+}

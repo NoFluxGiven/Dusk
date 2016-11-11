@@ -1,0 +1,118 @@
+//=====================================================================================================
+// BAHAMUT: Fulmination
+//=====================================================================================================
+"bahamut_fulmination"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AbilityTextureName"			"bahamut_fulmination"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"8 16 24 32"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"time"							"3"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"percent"						"1.15"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"max_stacks"					"16"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"max_bonus"						"10 15 20 25"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_bahamut/bahamut_ambience.vpcf"
+		"particle" "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/bahamut_fulmination_model.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_2.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_3.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/desolation_cast.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+		}
+	
+	"Modifiers"
+		{
+			"modifier_bahamut_fulmination_effects"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+
+				"OnAttackLanded"
+				// "%attack_damage" is set to the damage value before mitigation
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/bahamut_abilities.lua"
+						"Function"		"Fulmination"
+						"maxs"			"%max_stacks"
+						"dmg"			"%max_bonus"
+					}
+				}
+			
+			}
+			"modifier_bahamut_fulmination_stack"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%time"
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/bahamut_abilities.lua"
+						"Function"		"FulminationEnd"
+						"damage"		"%damage"
+						"percent"		"%percent"
+					}
+				}
+			
+				"EffectName"		"particles/units/heroes/hero_bahamut/bahamut_fulmination_model.vpcf"
+				"EffectAttachType"	"follow_hitloc"
+			}
+		}
+}

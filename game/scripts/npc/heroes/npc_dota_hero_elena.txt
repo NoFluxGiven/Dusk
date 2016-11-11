@@ -1,0 +1,55 @@
+"npc_dota_hero_elena"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_vengefulspirit"
+	"Ability1"				"elena_convoke" 
+	"Ability2"				"elena_meditation" 
+	"Ability3"				"elena_devotion"
+	"Ability4"				"elena_diverge_new"
+	"Ability5"				""
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"1"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRate"				"1.7"
+	"AttackDamageMin"			"26"										// Damage range min.
+	"AttackDamageMax"			"30"										// Damage range max.
+
+	"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"14"										// Base strength
+	"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"26"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.6"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"8"										// Base agility
+	"AttributeAgilityGain"		"0.4"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"295"									// Speed.
+	"MovementTurnRate"			"0.8"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"1000"									// Range of vision at night time.
+}

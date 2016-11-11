@@ -1,0 +1,82 @@
+//------------------------------------------------------------------------------------
+  //- This unit can be used to precache different models/particles/sounds              -
+  //- that are needed every game.  Uncomment any model/particle/sound you need to load -
+  //------------------------------------------------------------------------------------
+"npc_dota_unit_axial_3"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/heroes/oracle/crystal_ball.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"                     "Hero_Leshrac"
+	"GameSoundsFile"               "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+	"Level"						"5"
+	"ModelScale" 				"1.3"
+	"ConsideredHero"			"0"
+	"IsAncient"					"0"
+	"CanBeDominated"			"1"
+	"UnitLabel"			"axial"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"axial_phase"			// Ability 1
+	"Ability2"					""			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"2"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"41"		// Damage range min.
+	"AttackDamageMax"			"48"		// Damage range max.	
+	"AttackRate"				"1.0"		// Speed of attack.
+	"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"375"		// Range within a target can be acquired.
+	"AttackRange"				"375"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_arc_warden/arc_warden_base_attack.vpcf"			// Particle system model for projectile.
+	"ProjectileSpeed"			"1150"			// Speed of projectile.	   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"75"
+	"HealthBarOffset"			"215"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"30"		// Experience earn.
+	"BountyGoldMin"				"35"		// Gold earned min.
+	"BountyGoldMax"				"45"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"		// Speed.
+	"MovementTurnRate"			"1.4"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"350"		// Base health.
+	"StatusHealthRegen"			"0"			// Health regeneration rate.
+	"StatusMana"				"0"		// Base mana.
+	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	//Inventory
+	"HasInventory"				"0"
+	
+	"AutoAttacksByDefault"		"1"
+}	

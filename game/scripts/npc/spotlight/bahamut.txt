@@ -1,0 +1,11 @@
+BAHAMUT
+
+Hello and welcome to the Dusk Hero Spotlight for Bahamut. Bahamut is a ranged Agility Hero that has a decent balance of Pure, Magical and Physical damage. He is best suited to the carry role, thanks to his reliance on items, but is still capable as a nuker in the mid game.
+
+His first ability is Desolation. This sets the target enemy aflame, causing them to take initial damage, then damage over time. The damage over time also affects other units within a small area of effect.
+
+His second ability is Fulmination. As he attacks enemies, he builds up Fulmination stacks on them, until reaching a maximum of 16. After a 4s delay time, the stacks detonate, dealing damage per stack. Keep in mind this also deals bonus Magical damage when the attack lands.
+
+His third ability is Reckoning Aura. This increases the overall damage nearby enemies take. It is slightly smaller than his attack range, however.
+
+Finally, his Ultimate is Mega Flare, which fires an orb of pure energy at the target location. It travels slowly, but when it arrives, it deals devastating Pure damage in an area. Enemies at the centre take more than those on the edge.

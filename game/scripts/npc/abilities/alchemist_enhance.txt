@@ -1,0 +1,68 @@
+//=====================================================================================================
+// ALCHEMIST: Enhance
+//=====================================================================================================
+"alchemist_enhance"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"alchemist_enhance"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"40 30 20 10"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"75"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	}
+	
+	"precache"
+		{
+		}
+		
+	"OnSpellStart"
+		{
+		"RunScript"
+			{
+			"ScriptFile" "heroes/alchemist_abilities.lua"
+			"Function" "alchemist_enhance"
+			}
+		}
+	
+	"Modifiers"
+		{
+		"alchemist_enhance_item_tango"
+			{
+			"IsHidden" "1"
+			}
+		"alchemist_enhance_item_clarity"
+			{
+			"IsHidden" "1"
+			}
+		"alchemist_enhance_item_flask"
+			{
+			"IsHidden" "1"
+			}
+		"alchemist_enhance_item_dust"
+			{
+			"IsHidden" "1"
+			}
+		}
+}

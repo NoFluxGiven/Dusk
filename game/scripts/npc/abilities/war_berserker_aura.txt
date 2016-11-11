@@ -1,0 +1,90 @@
+//=====================================================================================================
+// TITAN: Command Aura
+//=====================================================================================================
+"war_berserker_aura"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"war_berserker_aura"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"900"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//---------------------------------------------------a----------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"900"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_attack_speed"			"12"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_damage"					"10 15 20 25"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/creeps/lane_creeps/creep_dire_hulk_swipe_right.vpcf"
+		"particle" "particles/creeps/lane_creeps/creep_dire_hulk_swipe_left.vpcf"
+		"particle" "particles/creeps/lane_creeps/creep_radiant_hulk_swipe_right.vpcf"
+		"particle" "particles/creeps/lane_creeps/creep_radiant_hulk_swipe_left.vpcf"
+		"soundfile" "soundevents\hero_phantom.vsndevts"
+		}
+	
+	"Modifiers"
+		{
+			"modifier_berserker_aura"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"Aura"          	"modifier_berserker_aura_fx"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO"
+				"Aura_Flags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "1"
+			}
+			"modifier_berserker_aura_fx"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"IsDebuff"			"0"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
+				}
+			}
+		}
+}

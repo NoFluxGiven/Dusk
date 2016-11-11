@@ -1,0 +1,23 @@
+"item_recipe_celestial_spear"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "item_datadriven"
+    "ID"                            "2101"  //Valve's version of this item uses the ID "122".
+    "Model"                         "models/props_gameplay/recipe.mdl"
+    "AbilityTextureName"            "item_recipe"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"                      "600"  
+    "ItemShopTags"                  ""
+    
+    // Recipe
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemRecipe"                    "1"
+    "ItemResult"                    "item_celestial_spear"
+    "ItemRequirements"
+    {
+        "01"                        "item_dragon_lance;item_aether_lens"
+    }
+}

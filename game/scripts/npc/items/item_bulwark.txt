@@ -1,0 +1,251 @@
+//=================================================================================================================
+// Bulwark
+//=================================================================================================================
+"item_bulwark"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3000"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"Model"							"models/props_gameplay/red_box.vmdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_bulwark"
+	"FightRecapLevel"				"1"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"60.0"
+	"AbilityManaCost"				"75"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"2250"
+	"ItemShopTags"					"defensive"
+	"ItemQuality"					"epic"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"0"
+	"ItemAliases"					"legendary; spellproof_bulwark"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_str"						"10"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_dmg"						"24"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_hp"						"250"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_hp_regen"				"6"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_int"						"15"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_armor"					"9"
+		}
+		"07"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow"							"-20"
+		}
+		"08"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"40"
+		}
+		"09"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow_duration"					"2"
+		}
+		"10"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"passive_armor"					"2"
+		}
+		"11"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"passive_mres"					"4"
+		}
+		"12"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"forcefield_duration"			"4"
+		}
+		"13"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"active_duration"				"6"
+		}
+		"14"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"reduction"						"-50"
+		}
+		"15"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"return_damage"					"17"
+		}
+	}
+	
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_items.vsndevts"
+		"particle"	"particles/items_fx/black_king_bar_avatar.vpcf"
+		"particle"	"particles/status_fx/status_effect_frost.vpcf"
+
+	}
+	
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_spellproof_bulwark_mi"
+			"Target" 		"CASTER"
+		}
+		"FireSound"
+		{
+			"EffectName"	"DOTA_Item.BlackKingBar.Activate"
+			"Target" 		"CASTER"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_spellproof_bulwark"
+		{
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Passive" "1"
+			"IsHidden" "1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%bonus_str"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
+				"MODIFIER_PROPERTY_HEALTH_BONUS" "%bonus_hp"
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%bonus_hp_regen"
+				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "%bonus_dmg"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+			}
+		}
+
+		"modifier_spellproof_bulwark_retribution"
+		{
+			"Passive" "0" // temporarily disabled
+			"IsHidden" "1"
+			"OnTakeDamage"
+			// "%attack_damage" is set to the damage value after mitigation
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"items/item_bulwark.lua"
+					"Function"		"gainstack"
+					"damage"		"%attack_damage"
+					"return_damage" "%return_damage"
+				}
+			}
+		}
+
+		"modifier_spellproof_bulwark_passive"
+		{
+			"IsBuff" "1"
+			"IsPurgable" "1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%passive_armor"
+				"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%passive_mres"
+			}
+		}
+
+		"modifier_spellproof_bulwark_passive_efft"
+		{
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Duration" "%forcefield_duration"
+			"IsHidden" "1"
+			"IsBuff" "1"
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"items/item_bulwark.lua"
+					"Function"		"losestack"
+				}
+			}
+		}
+
+		"modifier_spellproof_bulwark_mi"
+		{
+			"Duration" "%active_duration"
+			"IsBuff" "1"
+			"EffectName" "particles/items_fx/black_king_bar_avatar.vpcf"
+			"EffectAttachType" "PATTACH_ABSORIGIN"
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"items/item_bulwark.lua"
+					"Function"		"purge"
+				}
+			}
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%reduction"
+			}
+			"States"
+			{
+				"MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+
+		"modifier_spellproof_bulwark_slow"
+		{
+			"Duration" "%slow_duration"
+			"IsDebuff" "1"
+			"StatusEffectName" "particles/status_fx/status_effect_frost.vpcf"
+			"StatusEffectPriority" "10"
+			"ThinkInterval"  "1"
+			"OnIntervalThink"
+			{
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%damage"
+				}
+			}
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow"
+			}
+		}
+		"modifier_reflect"
+		{
+			"Duration" "0.06"
+			"IsHidden" "1"
+		}
+
+	}
+}

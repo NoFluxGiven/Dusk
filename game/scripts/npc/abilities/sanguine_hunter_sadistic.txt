@@ -1,0 +1,133 @@
+//=====================================================================================================
+// SANGUINE HUNTER: Sadistic
+//=====================================================================================================
+"sanguine_hunter_sadistic"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"sanguine_hunter_sadistic"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"900"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"regen"					"2 4 6 8"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"threshold"				"50"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"900"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"lifesteal"				"25 30 35 40"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movespeed"				"7 8 9 10"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"15 20 25 30"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+		"particle"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff_rune.vpcf"
+		"particle"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_silence.vpcf"
+	}
+	
+	"Modifiers"
+		{
+		"modifier_sadistic"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+		
+			"ThinkInterval"  "0.1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hunter_abilities.lua"
+					"Function"		"sadistic_check"
+					"threshold"		"%threshold"
+					"radius"		"%radius"
+				}
+			}
+
+			"OnAttackLanded"
+			// "%attack_damage" is set to the damage value before mitigation
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hunter_abilities.lua"
+					"Function"		"sadistic_attack"
+					"threshold"		"%threshold"
+					"lifesteal"		"%lifesteal"
+					"dmg"			"%attack_damage"
+				}
+			}
+		}
+		"modifier_sadistic_regen"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+			"IsBuff"			"1"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movespeed"
+				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "%damage"
+			}
+		}
+		"modifier_sadistic_regen_timer"
+		{
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+			"Duration"			"%duration"
+		
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hunter_abilities.lua"
+					"Function"		"sadistic_pop"
+				}
+			}
+		}
+		}
+}

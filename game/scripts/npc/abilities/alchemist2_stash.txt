@@ -1,0 +1,62 @@
+//=====================================================================================================
+// ALCHEMIST: Stash
+//=====================================================================================================
+"alchemist2_stash"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"alchemist_alchemise"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"onlevel_gold"					"300 325 350 375"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/items2_fx/hand_of_midas.vpcf"
+		"particle" "particles/units/heroes/hero_alchemist/alchemist_lasthit_coins.vpcf"
+		"particle" "particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf"
+		"soundfile" "soundevents/game_sounds_items.vsndevts"
+		}
+		
+	"OnUpgrade"
+		{
+		"RunScript"
+			{
+			"ScriptFile" "alchemist2heroes/_abilities.lua"
+			"Function" "GainGold"
+			"gold" "%onlevel_gold"
+			}
+		}
+	
+	"Modifiers"
+		{
+		}
+}

@@ -1,0 +1,172 @@
+//=====================================================================================================
+// TEK: Tesla Microarray
+//=====================================================================================================
+"tek_tesla_microarray"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"tek_tesla_microarray"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"350"
+	"AbilityCastPoint"				"0.1"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"190"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"140 200 260"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"315"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"stun"						"2.00 2.75 3.50"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"chargetime"				"1.25"
+		}
+		
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_tek/ftl_microarray.vpcf"
+		"particle" "particles/units/heroes/hero_tek/ftl_microarray_travel.vpcf"
+		"particle" "particles/units/heroes/hero_tek/ftl_microarray_unit_stunned.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+	
+	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/tek_abilities.lua"
+				"Function"		"tesla_start"
+				"chargetime"	"%chargetime"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_tek_microarray_charge"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+			
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_tek/ftl_microarray.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+						"ControlPoints"
+						{
+							"01"	"%radius 0 0"
+						}
+					}
+				}
+			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/tek_abilities.lua"
+						"Function"		"tesla_end"
+						"damage"		"%damage"
+						"radius"		"%radius"
+						"stun"			"%stun"
+					}
+				}
+
+				"OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_4"
+
+				"States"
+				{
+					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_tek_microarray_stun"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+			
+				"EffectName"		"particles/units/heroes/hero_tek/ftl_microarray_unit_stunned.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"ThinkInterval"  "0.06"
+				"OnIntervalThink"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_tek_microarray_rotate"
+						"Target" 		"TARGET"
+					}
+				}
+			
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FROZEN"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_tek_microarray_rotate"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"0.03"
+				
+				"OnCreated"
+				{
+					"Rotate"
+					{
+						"Target" "TARGET"
+						"PitchYawRoll" "0 8 0"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"Rotate"
+					{
+						"Target" "TARGET"
+						"PitchYawRoll" "0 -8 0"
+					}
+				}
+			}
+		}
+}

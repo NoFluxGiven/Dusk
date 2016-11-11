@@ -1,0 +1,52 @@
+//=================================================================================================================
+// Regal Sigil
+//=================================================================================================================
+"item_regal_sigil"
+{
+// General
+//-------------------------------------------------------------------------------------------------------------
+"BaseClass"						"item_datadriven"
+"ID"							"3014"  //Valve's version of this item uses the ID "114".
+"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+"Model"							"models/props_gameplay/red_box.vmdl" 
+"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+"AbilityTextureName"			"item_regal_sigil"
+
+// Stats		
+//-------------------------------------------------------------------------------------------------------------
+"AbilityCooldown"				"0"
+	
+// Item Info
+//-------------------------------------------------------------------------------------------------------------
+"ItemCost"						"4500"
+"ItemShopTags"					"regal_sigil;"
+"ItemQuality"					"epic"
+"ItemAliases"					"regal_sigil;exalted"
+"ItemPurchasable"				"0"
+"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+// Special	
+//-------------------------------------------------------------------------------------------------------------
+"AbilitySpecial"
+{
+}
+
+"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_custom.vsndevts"
+	}
+
+"OnSpellStart"
+{
+	"RunScript"
+	{
+		"ScriptFile"	"items/item_regal_sigil.lua"
+		"Function"		"Synthesise"
+	}
+}
+
+"Modifiers"
+{
+}
+}

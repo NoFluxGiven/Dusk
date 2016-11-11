@@ -1,0 +1,105 @@
+//------------------------------------------------------------------------------------
+  //- This unit can be used to precache different models/particles/sounds              -
+  //- that are needed every game.  Uncomment any model/particle/sound you need to load -
+  //------------------------------------------------------------------------------------
+"npc_dota_unit_sand_puppet_archer"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/heroes/drow/drow.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"                     "Hero_DrowRanger"
+	"GameSoundsFile"               "soundevents/game_sounds_heroes/game_sounds_drow.vsndevts"
+	"Level"						"1"
+	"ModelScale" 				"0.90"
+	"ConsideredHero"			"0"
+	"IsAncient"					"0"
+	"CanBeDominated"			"1"
+	"UnitLabel"			"sp_archer"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"set_sand_puppet_archer"			// Ability 1
+	"Ability2"					""			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"14"		// Damage range min.
+	"AttackDamageMax"			"14"		// Damage range max.	
+	"AttackRate"				"1.2"		// Speed of attack.
+	"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"1100"		// Range within a target can be acquired.
+	"AttackRange"				"650"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_drow/drow_base_attack.vpcf"			// Particle system model for projectile.
+	"ProjectileSpeed"			"1150"			// Speed of projectile.	   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"215"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"0"		// Experience earn.
+	"BountyGoldMin"				"0"		// Gold earned min.
+	"BountyGoldMax"				"0"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"340"		// Speed.
+	"MovementTurnRate"			"1.4"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"135"		// Base health.
+	"StatusHealthRegen"			"0"			// Health regeneration rate.
+	"StatusMana"				"100"		// Base mana.
+	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	//Inventory
+	"HasInventory"				"0"
+	
+	"AutoAttacksByDefault"		"1"
+
+	"Creature"
+	{
+		"HPGain"                    "20"
+		"DamageGain"                "4"
+		"ArmorGain"                 "0.2"
+		"MagicResistGain"           "0"
+		"MoveSpeedGain"             "0"
+		"BountyGain"                "0"
+		"XPGain"                    "0"
+
+		"AttachWearables"
+		{
+		    "Wearable1" { "ItemDef" "75" }
+		    "Wearable2" { "ItemDef" "76" }
+		    "Wearable3" { "ItemDef" "77" }
+		    "Wearable4" { "ItemDef" "78" }
+		    "Wearable5" { "ItemDef" "79" }
+		    "Wearable6" { "ItemDef" "80" }
+		    "Wearable7" { "ItemDef" "7054" }
+
+		}
+	}
+}	

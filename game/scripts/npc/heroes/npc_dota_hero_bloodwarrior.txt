@@ -1,0 +1,63 @@
+"npc_dota_hero_bloodwarrior"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_bloodseeker"
+	"Ability1"				"bloodwarrior_grapple" // The Bloodwarrior grabs a hold of a target unit and drains its Health and Mana for a short time.
+	// He is required to be within melee range of the unit, and this is a channelled ability.  Drains 2/4/6/8% of Max Health and Max Mana, restoring the same amount,
+	// per second for up to 2/2.3/2.6/3s, in ticks of 0.25s.  Heroes affected by Grapple are disabled for the duration.
+	// Bloodmarked enemies are drained for double the amount.
+	"Ability2"				"bloodwarrior_dance_of_death" // Bloodwarrior jumps to the target enemy, dealing Magical damage.
+	// If the target has a Bloodmark, they are slowed.
+	"Ability3"				"bloodwarrior_red_ritual" // The target enemy takes moderate Magical damage, then damage over time over 1.25s, dealing damage in 0.25s intervals.
+	// If the enemy is Bloodmarked, the damage is increased, and this skill ministuns.
+	"Ability4"				"bloodwarrior_blood_curse" // Passive. The Bloodwarrior's curse causes him to be in a state of undeath, unable to relinquish his soul fully upon death.
+	// When he dies, a corporeal form appears, called a Blood Fiend.  This creature can attack enemies and become invisible with its ability, Shadowwalk.  If the Blood Fiend kills
+	// 12/10/8/6 creeps or 1 Hero, the Bloodwarrior is revived with full Health and Mana, and does not die.
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				""
+	"Ability11"				""
+	"Ability12"				""
+	"Ability13"				""
+	"Ability14"				""
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"2"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRange"				"150"
+	"AttackRate"				"1.6"
+	"AttackDamageMin"			"25"										// Damage range min.
+	"AttackDamageMax"			"32"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+	"AttributeBaseStrength"		"19"										// Base strength
+	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"12"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.6"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"21"										// Base agility
+	"AttributeAgilityGain"		"1.7"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"290"									// Speed.
+	"MovementTurnRate"			"0.7"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
+}

@@ -1,0 +1,63 @@
+//=================================================================================================================
+// Tango
+//=================================================================================================================
+"item_tango_enhanced"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_tango"
+	"ID"							"1126"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityTextureName"			"item_winter_mushroom"
+	"Model"							"models/props_gameplay/tango.mdl"
+	"Effect"						"dropped_tango"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"300"
+	"AbilityCastPoint"				"0.0"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"125"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"enhanced tango"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	"ItemStackable"					"1"
+	"ItemSellable"					"0"
+	"ItemPermanent"					"0"
+	"ItemInitialCharges"			"1"
+	"ItemPurchasable"				"0"
+	"SideShop"						"0"
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"total_heal"			"220"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"total_heal_ward_tooltip"			"440"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cast_range_ward"			"500"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"buff_duration"			"5.0"
+		}
+	}
+}

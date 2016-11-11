@@ -1,0 +1,181 @@
+"techies_land_mines"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"gob_squad_rocket_blast"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+		"particle"		"particles/units/heroes/hero_gob_squad/rocket_blast.vpcf"
+		"particle"		"particles/units/heroes/hero_gob_squad/rocket_blast_explosion.vpcf"
+	}
+
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1600"
+	"AbilityCastPoint"				"0.40"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"8.0 7.5 7.0 6.5"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"80 160 240 320"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"40 60 80 100"
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"start_radius"			"145 145 145 145"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"end_radius"			"145 145 145 145"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"range"					"1600"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"speed"					"1050"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow"					"-50"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow_duration"			"1.40 1.80 2.20 2.60"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"radius"				"300"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"projectile_speed"		"1000"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"LinearProjectile"
+		{
+		    "Target"      	 "POINT"
+			"EffectName"	 "particles/units/heroes/hero_gob_squad/rocket_blast.vpcf"
+			"MoveSpeed"		 "%projectile_speed"
+			"StartRadius"	 "%start_radius"
+			"StartPosition"  "attach_attack1"
+			"EndRadius"      "%end_radius"
+			"HasFrontalCone" "0"
+			"FixedDistance"  "%range"
+			"TargetTeams"	 "DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"TargetTypes"	 "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BUILDING"
+			"TargetFlags"	 "DOTA_UNIT_TARGET_FLAG_NONE"				
+		    "ProvidesVision" "1"
+		    "VisionRadius" 	 "250"
+		}
+		"FireSound"
+		{
+			"EffectName" "Hero_Tinker.Heat-Seeking_Missile_Dud"
+			"Target" "CASTER"
+		}
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit" "1"
+		"Damage"
+		{
+			"Target"
+			{
+				"Center"  	"TARGET"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 	"DOTA_UNIT_TARGET_BUILDING"
+			}
+			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Damage"		"%AbilityDamage/4"
+		}
+		"CreateThinker"
+		{
+			"ModifierName"	"modifier_rocket_blast"
+			"Target" 		"TARGET"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_rocket_blast"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+		
+			"OnCreated"
+			{
+				"Damage"
+				{
+					"Target"
+					{
+						"Center"  	"TARGET"
+						"Radius" 	"%radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+					"Type" "DAMAGE_TYPE_MAGICAL"
+					"Damage" "%AbilityDamage"
+				}
+				"FireEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_gob_squad/rocket_blast_explosion.vpcf"
+					"EffectAttachType"  "follow_origin"
+					"Target"            "TARGET"
+					"ControlPoints"
+					{
+						"01"	"%radius 0 0"
+						"02"	"0 0 0"
+					}
+				}
+				"FireSound"
+				{
+					"EffectName"	"Hero_Techies.Suicide"
+					"Target" 		"TARGET"
+				}
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/gob_squad_abilities.lua"
+					"Function"		"rocket_blast"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,123 @@
+//=====================================================================================================
+// CRIMSON: Sacrifice
+//=====================================================================================================
+"crimson_red_rituals"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"bloodseeker_rupture"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1000"
+	"AbilityCastPoint"				"0.25"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"8"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"80"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"75 125 175 225"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"speed"					"550"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"0.75"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow"					"-100"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
+		"particle"	"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+			{
+				"ScriptFile"	"heroes/crimson_abilities.lua"
+				"Function"		"Sacrifice"
+				"damage"		"%damage"
+				"speed"			"%speed"
+			}	
+	}
+	
+	"Modifiers"
+		{
+			"modifier_sacrifice_damage_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+
+				"OnCreated"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage"
+					}
+				}
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				}
+			}
+
+			"modifier_sacrifice_move_aura"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Aura"          	"modifier_sacrifice_damage_slow"
+				"Aura_Radius"   	"170"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+
+				"ThinkInterval" "0.1"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/crimson_abilities.lua"
+						"Function"		"MoveSacrifice"
+					}
+				}
+			}
+		}
+}

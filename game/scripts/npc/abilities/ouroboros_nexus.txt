@@ -1,0 +1,211 @@
+"ouroboros_nexus"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"ouroboros_nexus"
+	
+	"AbilityCastRange"				"750"
+	"AbilityCastPoint"				"0.10"
+	"AOERadius"						"%light_strike_array_aoe"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		"particle"			"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+		"particle"			"particles/units/heroes/hero_lina/lina_spell_light_strike_array_ray_team.vpcf"
+		"particle"			"particles/units/heroes/hero_invoker/invoker_sun_strike.vpcf"
+		"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
+	}
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"40 30 20"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"300 400 500"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"light_strike_array_aoe"	"200"
+		}
+		
+		"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"light_strike_array_delay_time"	"1.50"
+		}
+					
+		"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"light_strike_array_stun_duration"	"1.0"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"CreateThinker"
+		{
+			"ModifierName"	"modifier_sun_strike_datadriven"
+			"Target" 		"POINT"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Ability.PreLightStrikeArray"
+			"Target"		"CASTER"
+		}
+
+		"FireEffect"
+		{
+			"EffectName"	"particles/units/heroes/hero_lina/lina_spell_light_strike_array_ray_team.vpcf"
+			"EffectAttachType"	"start_at_customorigin"
+			"TargetPoint"		"POINT"
+
+			"ControlPoints"
+            {
+            	"01"	"%light_strike_array_aoe 0 0"
+            	"03"	"0 0 0"
+            }
+		}
+
+		"DelayedAction"
+		{
+			"Delay"		"%light_strike_array_delay_time"
+
+			"Action"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Ability.LightStrikeArray"
+					"Target"		"CASTER"
+				}
+
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					"TargetPoint"		"POINT"
+
+					"ControlPoints"
+		            {
+		            	"00"	"POINT"
+		            	"01"	"%light_strike_array_aoe 0 0"
+		            	"03"	"0 0 0"
+		            }
+				}
+				
+				"DestroyTrees"
+		        {
+		        	"Target"	"POINT"
+		        	"Radius"	"%light_strike_array_aoe"
+		        }
+
+				"ActOnTargets"
+				{
+					"Target"
+		            {
+		                "Center" "POINT"
+		                "Radius" "%light_strike_array_aoe"
+		                "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		                "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		            }
+
+		            "Action"
+		            {
+		            	"Damage"
+		            	{
+		            		"Target"	"TARGET"
+		            		"Type"		"DAMAGE_TYPE_MAGICAL"
+		            		"Damage"	"%AbilityDamage"
+		            	}
+
+		            	"ApplyModifier"
+		            	{
+		            		"ModifierName"	"modifier_light_strike_array_datadriven"
+		            		"Target"		"TARGET"
+		            		"Duration"		"%light_strike_array_stun_duration"
+		            	}		            	
+		            }
+				}				
+			}
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_sun_strike_datadriven"
+		{
+			"Duration"		"%light_strike_array_delay_time"
+
+			"OnCreated"
+			{
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_Invoker.SunStrike.Charge"
+					"Target" 		"TARGET"
+				}
+
+				"DelayedAction"
+				{
+					"Delay"     "%light_strike_array_delay_time"
+					"Action"    
+					{
+						"FireSound"
+						{
+							"EffectName"	"Hero_Invoker.SunStrike.Ignite"
+							"Target" 		"TARGET"
+						}
+
+						"FireEffect"
+						{
+							"EffectName"        "particles/units/heroes/hero_invoker/invoker_sun_strike.vpcf"
+							"EffectAttachType"  "follow_origin"
+							"Target"            "TARGET"
+
+							"ControlPoints"
+							{
+								"01"	"%light_strike_array_aoe 0 0"
+							}
+						}
+					}
+				}
+			}
+		}
+		"modifier_light_strike_array_datadriven"
+		{
+			"IsDebuff"	"1"
+			"OverrideAnimation"	"ACT_DOTA_DISABLED"
+
+			"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

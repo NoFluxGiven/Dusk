@@ -1,0 +1,177 @@
+//=====================================================================================================
+// CRIMSON: Disintegrate
+//=====================================================================================================
+"crimson_disintegrate"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE	"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"dusk_disintegrate"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+		"particle"			"particles/units/heroes/hero_lion/lion_spell_finger_of_death.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3 0.3 0.3"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"100.0 90.0 80.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"225 325 450"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// Modifier just delays damage
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"25 30 35"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_scepter"			"30 40 50"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"mana_cost_scepter"			"600"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"damage_delay"				"0.65"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"cooldown_scepter"			"60.0"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"armor_reduction"			"-4 -8 -12"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"mres_reduction"			"-16 -22 -34"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"move_slow"					"-40 -50 -60"
+		}
+		"09"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"duration"					"5"
+		}
+		"10"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_slow"				"-60 -120 -180"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Lion.FingerOfDeath"
+			"Target"		"CASTER"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_Lion.FingerOfDeathImpact"
+			"Target"		"TARGET"
+		}
+
+		"FireEffect"
+		{
+			"EffectName"	"particles/units/heroes/hero_crimson/crimson_disintegrate.vpcf"
+			"EffectAttachType"	"start_at_customorigin"
+			
+
+			"ControlPointEntities"
+			{
+				"CASTER"	"attach_attack2"
+				"TARGET"	"attach_hitloc"
+			}
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"		"modifier_finger_of_death_datadriven"
+			"Target"			"TARGET"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_finger_of_death_datadriven"
+		{
+			"IsHidden"	"1"
+			"Duration"	"%damage_delay"
+
+			"OnCreated"
+			{
+				"RunScript"
+					{
+					"ScriptFile" "heroes/crimson_abilities.lua"
+					"Function" "crimson_disintegrate"
+					"damage" "%damage"
+					"damage_scepter" "%damage_scepter"
+					"selfdamage" "1"
+					}
+			}
+		}
+		"crimson_disintegrate_respawn_mod"
+		{
+			"IsHidden" "1"
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_RESPAWNTIME_PERCENTAGE" "-50"
+				}
+		}
+		"crimson_disintegrate_reduction_mod"
+		{
+			"Duration"			"%duration"
+			"IsPurgable"		"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsStunDebuff"		"0"
+			"IsHidden" "0"
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_reduction"
+				"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%mres_reduction"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_slow"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_slow"
+				}
+		}
+	}
+}

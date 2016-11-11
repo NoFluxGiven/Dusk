@@ -1,0 +1,99 @@
+"npc_dota_unit_avatar_dark"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/items/warlock/archivist_golem/archivist_golem.mdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"Hero_WarlockGolem"
+	"IdleSoundLoop"				"Hero_WarlockGolem.Spawn_Loop"
+	"Level"						"50"
+	"ModelScale" 				"2"
+	"ConsideredHero"			"0"
+	"IsAncient"					"1"
+	"UnitLabel"			"dark_avatar"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"avatar_raze"			// Ability 1
+	"Ability2"					"avatar_stasis"			// Ability 2
+	//"Ability3"					"avatar_draining_aura"			// Ability 3
+	//"Ability4"					"avatar_passive"			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"14"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"240"		// Damage range min.
+	"AttackDamageMax"			"270"		// Damage range max.	
+	"AttackRate"				"1"		// Speed of attack.
+	"AttackAnimationPoint"		"0.43"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
+	"AttackRange"				"128"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"210"
+	"HealthBarOffset"			"600"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"1000"		// Experience earn.
+	"BountyGoldMin"				"1000"		// Gold earned min.
+	"BountyGoldMax"				"1000"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"322"		// Speed.
+	"MovementTurnRate"			"1.4"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"25000"		// Base health.
+	"StatusHealthRegen"			"10"			// Health regeneration rate.
+	"StatusMana"				"1000"		// Base mana.
+	"StatusManaRegen"			"20"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	//Inventory
+	"HasInventory"				"0"
+	
+	"AutoAttacksByDefault"		"1"
+	
+	"Creature"
+	{
+		"DefaultState"       "Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"          "Invade"
+				"Aggression"    "100.0"
+				"Avoidance"     "0.0"
+				"Support"       "0.0"
+			}
+		}
+		"OffensiveAbilities"
+		{
+			"Ability1"                
+			{
+				"Name"                "avatar_raze"
+			}             
+		}
+	}
+}	

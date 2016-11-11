@@ -1,0 +1,56 @@
+"npc_dota_hero_lurker"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_lifestealer"
+	"Ability1"				"lurker1_hide" // becomes invisible after a delay.  Basically Riki's permanent invis.
+	"Ability2"				"lurker1_carapace" // blocks damage below a certain threshold, including magical.
+	"Ability3"				"lurker1_flee" // gains a decent amount of movespeed.
+	"Ability4"				"lurker2_devour" // eats a creep to regain health and get health regen and movespeed.  low cooldown
+	"Ability5"				"lurker2_improved_carapace" // blocks damage below a certain threshold, including magical.
+	"Ability6"				"lurker2_sense" // detects nearby enemies within a large radius and shows it through the buff bar.
+	"Ability7"				"lurker3_deadly_toxin" // deals damage over time on attacks and slows.
+	"Ability8"				"lurker3_acidic_carapace" // blocks damage below a certain threshold, and deals damage over time to enemies that do damage him within a range.
+	"Ability9"				"lurker3_hunger" // killing units grants the same bonuses as devour does for a short time.  heroes grant a larger bonus.
+	"Ability10"				"lurker4_supervirus" // deals Max HP damage per second and prevents healing.
+	"Ability11"				"lurker4_regeneration" // Lurker now regenerates health when he hasn't taken damage from a Hero source in the last 4s.
+	"Ability12"				"lurker4_crushing_blow" // has a chance to deal critical damage and stun the attacked enemy.
+	"Ability13"				"lurker5_apex_predator" // only granted at level 25, replaces Ult.  Grants massive bonuses.
+	"Ability14"				"lurker_evolution" // grants Lurker an ever changing set of abilities, bonus stats and damage, up to 3 times.  He starts at Lurker 1, then each rank of his Ult grants him an extra tier.
+	// The abilities do not stack, and old ones are removed when he levels Evolution.
+	"Ability15"				""
+	"Ability16"				"attribute_bonus"
+
+	"ArmorPhysical"				"-1"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRate"				"1.5"
+	"AttackDamageMin"			"15"										// Damage range min.
+	"AttackDamageMax"			"17"										// Damage range max.
+
+	"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+	"AttributeBaseStrength"		"10"										// Base strength
+	"AttributeStrengthGain"		"1.0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"11"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"13"										// Base agility
+	"AttributeAgilityGain"		"1.0"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"280"									// Speed.
+	"MovementTurnRate"			"1.0"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

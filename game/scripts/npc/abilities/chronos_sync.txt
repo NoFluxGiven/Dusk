@@ -1,0 +1,215 @@
+//=====================================================================================================
+// CHRONOS: Sync
+//=====================================================================================================
+"chronos_sync"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	"AbilityTextureName"			"chronos_sync"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"160"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"75"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_damage"					"20 30 40 50"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_attackspeed"				"20 40 60 80"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_armor"					"3 6 9 12"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_movespeed"				"15"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_mres"					"20 25 30 35"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_chronos/sync.vpcf"
+		"particle" "particles/units/heroes/hero_chronos/sync_clock_face_aggressive.vpcf"
+		"particle" "particles/units/heroes/hero_chronos/sync_clock_face_defensive.vpcf"
+		"particle" "particles/units/heroes/hero_chronos/sync_model_aggro.vpcf"
+		"particle" "particles/units/heroes/hero_chronos/sync_model_def.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
+		}
+		
+	"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/chronos_abilities.lua"
+				"Function"		"SyncUpgrade"
+			}
+		}
+
+	"OnSpellStart"
+	{
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_chronos_sync_override"
+			"Target" 		"CASTER"
+		}
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/chronos_abilities.lua"
+			"Function"		"Sync"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Chronos.Sync"
+			"Target" 		"CASTER"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_chronos_sync_override"
+			"Target" 		"CASTER"
+		}
+	}
+	
+	"Modifiers"
+		{
+			"modifier_chronos_sync"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/chronos_abilities.lua"
+						"Function"		"SyncBegin"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/chronos_abilities.lua"
+						"Function"		"Sync"
+					}
+				}
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/chronos_abilities.lua"
+						"Function"		"SyncOnDeath"
+					}
+				}
+			}
+
+			"modifier_chronos_tick"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"EffectName"		"particles/units/heroes/hero_chronos/sync_model_aggro.vpcf"
+				"EffectAttachType"	"follow_origin"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attackspeed"
+				    "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bonus_damage"
+				}
+			}
+			"modifier_chronos_tock"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"EffectName"		"particles/units/heroes/hero_chronos/sync_model_def.vpcf"
+				"EffectAttachType"	"follow_origin"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movespeed"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bonus_mres"
+				}
+			}
+			"modifier_show_tick"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"TextureName"		"chronos_sync_tick"
+			}
+			"modifier_show_tock"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"TextureName"		"chronos_sync_tock"
+			}
+
+			"modifier_chronos_sync_override"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"60"
+			}
+
+			"modifier_chronos_sync_timer"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/chronos_abilities.lua"
+						"Function"		"Sync"
+					}
+					"FireSound"
+					{
+						"EffectName"	"Chronos.Sync"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+}

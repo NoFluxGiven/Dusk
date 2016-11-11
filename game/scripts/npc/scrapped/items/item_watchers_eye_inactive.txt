@@ -1,0 +1,66 @@
+//=================================================================================================================
+// Watcher's Eye Inactive
+//=================================================================================================================
+"item_watchers_eye_inactive"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"6001"  //Special item
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"Model"							"models/props_gameplay/red_box.vmdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_watchers_eye_inactive"
+	"FightRecapLevel"				"1"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"0"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"2250"
+	"ItemShopTags"					"special"
+	"ItemQuality"					"component"
+	"ItemAliases"					"legendary; watchers_eye"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"0"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"1400"
+		}
+	}
+	
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_items.vsndevts"
+		"particle"	"particles/items/vagrant_dagger_start.vpcf"
+		"particle"	"particles/items/vagrant_dagger_end.vpcf"
+		"particle"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_explode.vpcf"
+
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile" "items/item_watcher.lua"
+			"Function" "activate"
+		}
+	}
+	
+	"Modifiers"
+	{
+	}
+}

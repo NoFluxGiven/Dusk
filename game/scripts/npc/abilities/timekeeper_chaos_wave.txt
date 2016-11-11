@@ -1,0 +1,95 @@
+//=====================================================================================================
+// TIMEKEEPER: Chaos Wave
+//=====================================================================================================
+"timekeeper_chaos_wave"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"timekeeper_chaos_wave"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"0.7"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"3000"
+	"AbilityCastPoint"				"0.8"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"160"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"250"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"3000"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"stun"							"5 6 7"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"total"							"20 25 30"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_timekeeper/timekeeper_chaos_wave.vpcf"
+		"soundfile" "soundevents\hero_phantom.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/timekeeper_abilities.lua"
+				"Function"		"chaos_wave2"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_chaos_wave_freeze"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"Duration"			"%stun"
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/timekeeper_abilities.lua"
+						"Function"		"chaos_wave_cooldown_freeze"
+					}
+				}
+			
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FROZEN"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+}

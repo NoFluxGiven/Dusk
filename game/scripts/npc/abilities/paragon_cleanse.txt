@@ -1,0 +1,124 @@
+//----------------
+// Character
+//----------------
+
+//=====================================================================================================
+// PARAGON: Cleanse
+//=====================================================================================================
+"paragon_cleanse"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AoERadius"						"310"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"paragon_cleanse"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"800"
+	"AbilityCastPoint"				"0.452 0.452 0.452 0.452"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"12"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"80 100 120 140"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heal"					"60 120 180 240"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"radius"					"310"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"secondary"				"75 125 175 225"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+		"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf"
+		"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
+
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Omniknight.Purification"
+			"Target"		"TARGET"
+		}
+
+		"FireEffect"
+		{
+			"Target"			"TARGET"
+			"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"ControlPoints"
+			{
+				"00"	"0 0 0"
+				"01"	"%radius %radius %radius"
+			}
+		}
+		
+		"FireEffect"
+		{
+			"Target"			"TARGET"
+			"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
+			"EffectAttachType"	"follow_origin"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile" "heroes/paragon_abilities.lua"
+			"Function" "paragon_cleanse"
+		}
+
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  			"TARGET"
+				"Radius"			"%radius"
+				"Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+
+			"Action"
+			{
+				"Heal"
+				{
+					"Target" 		"TARGET"
+					"HealAmount"	"%secondary"
+				}
+				"FireEffect"
+				{
+					"Target"			"TARGET"
+					"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf"
+					"EffectAttachType"	"follow_origin"
+				}
+			}
+		}
+	}
+}

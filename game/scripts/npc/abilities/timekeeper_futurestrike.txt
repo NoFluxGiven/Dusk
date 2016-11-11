@@ -1,0 +1,96 @@
+//=====================================================================================================
+// TIMEKEEPER: Futurestrike
+//=====================================================================================================
+"timekeeper_futurestrike"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"timekeeper_echo"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"550"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"24"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"160"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"min_delay"						"4"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"max_delay"						"20"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"min_damage"					"55 75 125 175"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"max_damage"					"110 225 375 525"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_timekeeper/timekeeper_futurestrike.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/timekeeper_abilities.lua"
+				"Function"		"futurestrike"
+				"min_delay"		"%min_delay"
+				"max_delay"		"%max_delay"
+				"min_damage"	"%min_damage"
+				"max_damage"	"%max_damage"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_futurestrike"
+			{
+				"IsHidden" "0"
+				"IsPurgable" "0"
+				"IsDebuff"	"1"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/timekeeper_abilities.lua"
+						"Function"		"futurestrike_end"
+					}
+				}
+			}
+		}
+}

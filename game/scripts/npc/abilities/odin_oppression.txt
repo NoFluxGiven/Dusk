@@ -1,0 +1,77 @@
+"odin_oppression"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityTextureName"            "odin_oppression"
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "350"
+    
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "aspd"                  "-5 -10 -15 -20"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "damage"                "-4 -6 -8 -10"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "duration"              "2"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+        "particle"  "particles/units/heroes/hero_omniknight/omniknight_degen_aura_debuff.vpcf"
+    }
+
+    "Modifiers"
+    {
+        "modifier_oppression"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "IsBuff"            "1"
+            "OnAttacked"
+            // "%attack_damage" is set to the damage value after mitigation
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/odin_abilities.lua"
+                    "Function"        "oppression_increment"
+                }   
+            }
+        }
+
+        "modifier_oppression_effect"
+        {
+            "Duration"          "%duration"
+            "IsDebuff"          "1"
+            "EffectName"        "particles/units/heroes/hero_omniknight/omniknight_degen_aura_debuff.vpcf"
+            "EffectAttachType"  "follow_origin"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%aspd"
+                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "%damage"
+            }
+        }
+
+    }
+
+
+}
+

@@ -1,0 +1,78 @@
+//=================================================================================================================
+// Purging Dust
+//=================================================================================================================
+"item_purging_dust"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3024"  //Valve's version of this item uses the ID "39".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"Model"							"models/props_gameplay/clarity.mdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_purging_dust"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"              "0"
+	"AbilityCooldown"				"60"
+	"AbilityManaCost"				"25"
+	"AbilityCastRange"				"175"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"275"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"purging_dust"
+	"ItemStackable"					"0"
+	"ItemPermanent"					"0"
+	"ItemPurchasable"				"0"
+	"ItemInitialCharges"			"2"
+
+	"precache"
+	{
+	
+		"particle" "particles/items/purging_dust.vpcf"
+		"soundfile"	"soundevents/game_sounds_items.vsndevts"
+	
+	}
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_resistance"		"10"
+		}
+	}
+	
+	"OnSpellStart"
+	{			
+		"RunScript"
+		{
+			"ScriptFile"	"items/item_purging_dust.lua"
+			"Function"		"purge"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_purging_dust_passive"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+			//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
+		
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
+			}
+		}
+	}
+}
