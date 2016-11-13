@@ -9,11 +9,17 @@
 		{
 			_class = "C_OP_InterpolateRadius"
 			m_flStartScale = 0.0
-			m_flEndScale = 5.0
 			m_flBias = 0.7
 		},
 		{
-			_class = "C_OP_LockToBone"
+			_class = "C_OP_SpinUpdate"
+		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = 25
+		},
+		{
+			_class = "C_OP_PositionLock"
 		},
 	]
 	m_Renderers = 
@@ -21,7 +27,9 @@
 		{
 			_class = "C_OP_RenderSprites"
 			m_flSourceAlphaValueToMapToOne = 0.352
-			m_hTexture = resource:"materials/particle/wisp/particle_swirl.vtex"
+			m_hTexture = resource:"materials/materials/particle/basic_glow.vtex"
+			m_nOrientationType = 2
+			m_bDisableZBuffering = true
 		},
 	]
 	m_Initializers = 
@@ -30,18 +38,9 @@
 			_class = "C_INIT_RandomRotation"
 		},
 		{
-			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 15.0
-			m_flRadiusMax = 50.0
-		},
-		{
-			_class = "C_INIT_CreateOnModel"
-			m_HitboxSetName = "head"
-		},
-		{
 			_class = "C_INIT_RandomColor"
 			m_ColorMin = [ 0, 0, 0, 255 ]
-			m_ColorMax = [ 30, 22, 22, 255 ]
+			m_ColorMax = [ 0, 0, 0, 255 ]
 		},
 		{
 			_class = "C_INIT_RandomSequence"
@@ -52,18 +51,31 @@
 			m_vecOutputMin = [ -50.0, -50.0, -50.0 ]
 			m_vecOutputMax = [ 50.0, 50.0, 50.0 ]
 		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.4
+			m_fLifetimeMax = 0.8
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 15.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 15.0 ]
+		},
+		{
+			_class = "C_INIT_RemapCPtoScalar"
+			m_nCPInput = 1
+			m_flInputMax = 1000.0
+			m_flOutputMax = 2000.0
+		},
 	]
 	m_Emitters = 
 	[
 		{
-			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 25.0
-		},
-	]
-	m_Children = 
-	[
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_horror/obscure_target_cover.vpcf"
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 25
 		},
 	]
 }

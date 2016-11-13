@@ -253,6 +253,7 @@ function reality_shift(keys)
 			print("UNIT: "..v:GetUnitName())
 			print("KEY: "..k.."/"..#found)
 			if v ~= unit and v:GetUnitName() ~= "npc_dummy_unit" then
+				v:Interrupt()
 				if v:GetTeam() ~= caster:GetTeam() then
 					DealDamage(v,caster,predamage,DAMAGE_TYPE_MAGICAL)
 				end

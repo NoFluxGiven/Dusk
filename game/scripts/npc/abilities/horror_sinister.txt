@@ -1,0 +1,161 @@
+//=====================================================================================================
+// HORROR: Sinister
+//=====================================================================================================
+"horror_sinister"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityTextureName"			"horror_sinister"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"100"
+
+	"AbilityChannelTime"			"4 3 2"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"165"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow"							"-20 -30 -40"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"channel_time"					"4 3 2"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"4.0"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"75 100 125"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"dot_channel"					"20 40 80"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_horror/sinister.vpcf"
+		"particle" "particles/units/heroes/hero_horror/sinister_end.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+		"soundfile" "soundevents/hero_horror.vsndevts"
+		}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/horror_abilities.lua"
+			"Function"		"SinisterStart"
+		}
+	}
+
+	"OnChannelFinish"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/horror_abilities.lua"
+			"Function"		"SinisterEnd"
+		}
+	}
+
+	"OnChannelInterrupted"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/horror_abilities.lua"
+			"Function"		"SinisterEnd"
+		}
+	}
+
+	"OnChannelSucceeded"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/horror_abilities.lua"
+			"Function"		"SinisterSucceed"
+			"damage"		"%damage"
+			"duration"		"%duration"
+		}
+	}
+	
+	"Modifiers"
+		{
+			"modifier_sinister"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%channel_time"
+
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%dot_channel"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PROVIDES_FOW_POSITION" "1"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_PROVIDES_VISION" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_sinister_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+
+				"EffectName" "particles/units/heroes/hero_night_stalker/nightstalker_void.vpcf"
+				"EffectAttachType" "attach_origin"
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_PROVIDES_VISION" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+}

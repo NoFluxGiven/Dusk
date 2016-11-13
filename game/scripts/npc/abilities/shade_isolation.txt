@@ -27,7 +27,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"200"
+	"AbilityManaCost"				"100"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -70,8 +70,20 @@
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
 		"particle" "particles\units\heroes\hero_night_stalker\nightstalker_ulti.vpcf"
 		"particle" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf"
+		"particle" "particles/units/heroes/hero_shade/isolation_debuff.vpcf"
+		"particle" "particles/units/heroes/hero_shade/precast_isolation.vpcf"
 		"particle" "particles\items_fx\ethereal_blade.vpcf"
 		}
+
+	"OnAbilityPhaseStart"
+	{
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_shade/precast_isolation.vpcf"
+			"EffectAttachType"  "follow_origin"
+			"Target"            "CASTER"
+		}
+	}
 		
 	"OnSpellStart"
 		{
@@ -98,7 +110,10 @@
 			{
 				"Passive"			"0"
 				"IsHidden"			"0"
-				"IsDebuff"			"0"
+				"IsDebuff"			"1"
+
+				"EffectName" "particles/units/heroes/hero_shade/isolation_debuff.vpcf"
+				"EffectAttachType" "attach_origin"
 			
 				"States"
 				{

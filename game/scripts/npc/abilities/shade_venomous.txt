@@ -48,12 +48,12 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"duration"					"4"
+			"duration"					"6"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"armor_reduction"			"-2"
+			"armor_reduction"			"-1 -2 -3 -4"
 		}
 	}
 	
@@ -82,6 +82,7 @@
 		"shade_venomous_dmg_slow_mod"
 		{
 			"Duration" "%duration"
+			"IsDebuff" "1"
 			"ThinkInterval" "1"
 			"EffectName" "particles\units\heroes\hero_viper\viper_poison_debuff.vpcf"
 			"OnIntervalThink"
@@ -96,6 +97,7 @@
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow"
 				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_reduction"
 			}
 		}

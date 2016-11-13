@@ -135,7 +135,7 @@ function phantom_nightmare(event)
       ]]
       local mod = v:FindModifierByName("modifier_nightmare_stacks")
       if mod:GetStackCount() < 10 then
-        mod:SetStackCount(mod:GetStackCount()+1)
+        if not attacker:IsIllusion() then mod:SetStackCount(mod:GetStackCount()+1) end
       end
 
       local pct_bonus = mod:GetStackCount()*stack_damage

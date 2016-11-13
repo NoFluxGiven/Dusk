@@ -6,23 +6,17 @@
 		//"game_mode_15"				"DUSK"
 		"addon_game_name"			"DUSK"
 		"addonname"					"DUSK"
-		"game_version"		"v1.92d - Bugfixes, bugfixes, bugfixes, bugfixes... and Fate buffs!"
+		"game_version"		"v1.93c - Hotfix 2"
 // DO NOT TAB THIS SECTION! It will break the formatting.
 // Changes template is as follows:
 //<br/><span class="changelog">- Change.</span>
 //<br/><font color='#b0e5ea'>- Change.</font>
 
-"game_version_scroller" "<b><font color='#a0db8e'>Just a note: this patch is huge, due to being a balance patch + bugfixes. Like, actually massive. There are a lot of changes made that I can't cover in this little box in detail, so I recommend checking out the official changelog this time, even if you don't normally.</font></b>
+"game_version_scroller" "<font color='#a0db8e'>Welcome to Dusk! Play as one of 37 unique Heroes, with unique abilities and special items! There are two new shops: one in the fountain (the purple guy with the hat) and one at the bottom rune at night (the guy riding the chicken).</font>
 <br/><b><font color='#ff9900'><i>As always, see the <a href='http://steamcommunity.com/sharedfiles/filedetails/changelog/426167013'>official changelog</a> on the Workshop page for more information.</i></font></b>
 <br/><font color='#b0e5ea'>- As a daily reminder, as of a few patches ago, some passives are affected by Break. Check out 1.92's changelog for details.</font>
 <br/><font color='#b0e5ea'>- Made changes to the following Heroes:</font>
-<br/>The Lich, Artificer, Horror, War, Ironfist, Phantom, Mifune, Neith, Fate, Fury, Bloodwarrior, Aether, Nu, Paragon, Reus, Set
-<br/><font color='#b0e5ea'>- Respawn times are now reduced by 25% globally. This is a possible temporary change! We'll see how it goes.</font>
-<br/><font color='#b0e5ea'>- Fixed some bugs involving various Heroes and items.</font>
-<br/><font color='#b0e5ea'>- Fixed a bug where multiple calls to non-existent units would crash the game or cause latency spikes for some clients.</font>
-<br/><font color='#b0e5ea'>- The following Heroes are temporarily removed from the pick screen pending reworks or balance changes:</font>
-<br/>Crimson, Chronos, Trickster, Elementalist, Alchymist
-<br/>"
+<br/>Fury, Bahamut"
 		
 		"dota_team_goodguys" "Radiant"
 		"dota_team_badguys" "Dire"
@@ -267,15 +261,16 @@
 			"DOTA_Tooltip_ability_shade_shadowbreak_Note0" "Shade does not gain the direct amount stolen per unit, but a percentage of it."
 			"DOTA_Tooltip_ability_shade_shadowbreak_Note1" "Movement speed stolen and gained is independent."
 			"DOTA_Tooltip_ability_shade_shadowbreak_damage" "DAMAGE:"
-			"DOTA_Tooltip_ability_shade_shadowbreak_steal" "%STEAL (MOVEMENT):"
-			"DOTA_Tooltip_ability_shade_shadowbreak_atksteal" "STEAL (ATTACK):"
+			"DOTA_Tooltip_ability_shade_shadowbreak_steal" "%STEAL (MOVEMENT SPEED):"
+			"DOTA_Tooltip_ability_shade_shadowbreak_atksteal" "STEAL (ATTACK SPEED):"
 			
 			"DOTA_Tooltip_ability_shade_venomous" "Venomous"
-			"DOTA_Tooltip_ability_shade_venomous_description" "The user's blades are imbued with a deadly toxin that is sent coursing through the veins of their opponents when they strike them.  Deals damage over time and slows enemy Heroes."
+			"DOTA_Tooltip_ability_shade_venomous_description" "The user's blades are imbued with a deadly toxin that is sent coursing through the veins of their opponents when they strike them.  Deals damage over time and slows enemy Heroes. Slows attack speed, and reduces Armor."
 			"DOTA_Tooltip_ability_shade_venomous_Lore" "The venom that coats the blades of the Nightwalker can down giants with a single drop."
 			"DOTA_Tooltip_ability_shade_venomous_damage" "DAMAGE:"
 			"DOTA_Tooltip_ability_shade_venomous_duration" "DURATION:"
-			"DOTA_Tooltip_ability_shade_venomous_slow" "%SLOW:"
+			"DOTA_Tooltip_ability_shade_venomous_slow" "%MOVE AND ATTACK SLOW:"
+			"DOTA_Tooltip_ability_shade_venomous_armor_reduction" "ARMOR REDUCTION:"
 			
 			"DOTA_Tooltip_ability_shade_isolation" "Isolation"
 			"DOTA_Tooltip_ability_shade_isolation_description" "Shade strikes the enemy, dealing large bonus damage.  The bonus damage is reduced for each of the target's nearby allies (heroes only).  If the target is truly alone, it deals huge bonus damage based on the target's max health, reducing their vision radius and silencing them."
@@ -2209,6 +2204,12 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 		"DOTA_Tooltip_modifier_purging_dust_passive"                                      "Purging Dust"
 		"DOTA_Tooltip_modifier_purging_dust_passive_Description"                          "Bonus Magic Resistance."
 		
+		"DOTA_Tooltip_modifier_elysian_timepiece_slow"                                    "Elysian Timepiece Slow"
+		"DOTA_Tooltip_modifier_elysian_timepiece_slow_Description"                        ""
+
+		"DOTA_Tooltip_modifier_item_soul_reaver_damage"                                   "Soul Reaver Damage"
+		"DOTA_Tooltip_modifier_item_soul_reaver_damage_Description"                       ""
+		
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_channel_start"                                             "Channel Start"
 		"DOTA_Tooltip_modifier_channel_start_description"                                 ""
@@ -3079,5 +3080,26 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 
 		"DOTA_Tooltip_modifier_to_dust_show"                                              "To Dust"
 		"DOTA_Tooltip_modifier_to_dust_show_Description"                                  "Granted bonus attack damage based on missing Health of nearby enemies when cast."
+		
+		"DOTA_Tooltip_modifier_berserker_aura_fx"                                         "Berserker Aura Fx"
+		"DOTA_Tooltip_modifier_berserker_aura_fx_Description"                             ""
+
+		"DOTA_Tooltip_modifier_bloodlust_debuff"                                          "Bloodlust"
+		"DOTA_Tooltip_modifier_bloodlust_debuff_Description"                              "Silenced, slowed, but gaining bonus attack damage and attack speed. Units allied to War are not slowed."
+
+		"DOTA_Tooltip_modifier_bloodlust_thinker"                                         "Bloodlust"
+		"DOTA_Tooltip_modifier_bloodlust_thinker_Description"                             ""
+
+		"DOTA_Tooltip_modifier_fight_me"                                                  "Fight Me!"
+		"DOTA_Tooltip_modifier_fight_me_Description"                                      "Forced to attack War. He regains Health from damage you deal to him."
+
+		"DOTA_Tooltip_modifier_fight_me_regen"                                            "Fight Me!"
+		"DOTA_Tooltip_modifier_fight_me_regen_Description"                                "Gaining Health from affected units' damaging abilities or attacks, then dealing Magical damage."
+		
+		"DOTA_Tooltip_modifier_alone_passive_eff"                                         "Alone"
+		"DOTA_Tooltip_modifier_alone_passive_eff_Description"                             "Gaining bonus movespeed, as we're out of vision."
+		
+		"DOTA_Tooltip_modifier_bloodfiend_aspd"                                           "Bloodfiend Frenzy"
+		"DOTA_Tooltip_modifier_bloodfiend_aspd_Description"                               "Attacking faster!"
 	}
 }

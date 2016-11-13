@@ -9,7 +9,7 @@
 		{
 			_class = "C_OP_InterpolateRadius"
 			m_flStartScale = 0.0
-			m_flEndScale = 5.0
+			m_flEndScale = 2.0
 			m_flBias = 0.7
 		},
 		{
@@ -21,7 +21,8 @@
 		{
 			_class = "C_OP_RenderSprites"
 			m_flSourceAlphaValueToMapToOne = 0.352
-			m_hTexture = resource:"materials/particle/wisp/particle_swirl.vtex"
+			m_bReverseZBuffering = true
+			m_hTexture = resource:"materials/materials/particle/basic_glow.vtex"
 		},
 	]
 	m_Initializers = 
@@ -43,27 +44,12 @@
 			m_ColorMin = [ 0, 0, 0, 255 ]
 			m_ColorMax = [ 30, 22, 22, 255 ]
 		},
-		{
-			_class = "C_INIT_RandomSequence"
-			m_nSequenceMax = 2
-		},
-		{
-			_class = "C_INIT_InitialVelocityNoise"
-			m_vecOutputMin = [ -50.0, -50.0, -50.0 ]
-			m_vecOutputMax = [ 50.0, 50.0, 50.0 ]
-		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 25.0
-		},
-	]
-	m_Children = 
-	[
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_horror/obscure_target_cover.vpcf"
+			m_flEmitRate = 40.0
 		},
 	]
 }

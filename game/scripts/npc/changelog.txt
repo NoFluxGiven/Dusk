@@ -2,7 +2,8 @@ Changelog:
 
 To Do:
 
-Add an effect for Bloodfiend's Dive.
+Add a sound effect for pre-cast Isolation.
+Finish Horror's new Ult.
 
 Current Bugs and Issues:
 
@@ -17,10 +18,16 @@ Version 1.94
 HEROES
 =========
 
+BAAL
+- Compress now interrupts channelled abilities.
+
+AETHER
+- Reality Shift now interrupts channelled abilities.
+
 HORROR has been reworked
-- Terrify is the same as before.
+- Terrify cast range increased to 600 (was 475).
 - Deathmark has been replaced with Obscure:
-The target enemy is blinded for 4/5/6/7s. When striking an Obscured enemy, Horror gains bonus movespeed and attack speed for a short time.
+Creates a blast of darkness around Horror that blinds and damages nearby enemies, causing them to miss their attacks and have no vision for a short time.
 - Shadowclone has been replaced by Paranoia:
 The target unit becomes paranoid, taking damage over time for each of their nearby allied units or Heroes. At the end of the duration, they take damage if there is a Hero ally within the check radius.
 - Alone has been replaced with Sinister:
@@ -31,6 +38,20 @@ FURY
 
 BAHAMUT
 - Reduced Agi gain to 2.2 (was 2.8).
+
+PHANTOM
+- Illusions no longer increment Nightmare stacks, but they still deal the bonus damage.
+
+SHADE
+- Shadowbreak Mana cost reduced to 60/70/80/90 (was 115).
+- Smoke Bomb Mana cost reduced to 50 (was 95/80/65/50).
+- Venomous duration increased to 6s (was 4s).
+- Venomous Armor reduction increased to 1/2/3/4 (was 2).
+- Venomous slow now affects attack speed.
+- Venomous slow now correctly affects the movespeed of creeps.
+- Isolation Mana cost reduced to 100 (was 200).
+- Added a visual effect for both the precast of Isolation plus the debuff.
+- Fixed some of the debuffs showing up as buffs on enemies.
 
 Version 1.93c - Hotfix 2
 

@@ -520,6 +520,8 @@ function compress_start(keys)
 
 	caster.compress_targetc = false
 
+	target:Interrupt()
+
 	target:AddNoDraw()
 	target:EmitSound("Hero_Dark_Seer.Vacuum")
 	keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_compress_target_inv", {}) --[[Returns:void

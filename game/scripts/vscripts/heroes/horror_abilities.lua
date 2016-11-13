@@ -305,3 +305,155 @@ function AlonePassive(keys)
 		end
 	end
 end
+
+function Paranoia(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local dmg = keys.damage
+	local cdmg = keys.creep_damage
+	local radius = keys.radius
+
+	local enemy_found = FindUnitsInRadius( caster:GetTeamNumber(),
+              target:GetAbsOrigin(),
+              nil,
+                radius,
+                DOTA_UNIT_TARGET_TEAM_ENEMY,
+                DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_BASIC,
+                DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+                FIND_CLOSEST,
+                false)
+
+	local heroes = -1
+	local creeps = 0
+
+	for k,v in pairs(enemy_found) do
+		if v:IsRealHero() then
+			heroes = heroes+1
+		else
+			creeps = creeps+1
+		end
+
+		Timers:CreateTimer(0.03*k,function()
+			local p = ParticleManager:CreateParticle("particles/units/heroes/hero_horror/paranoia_damage.vpcf", PATTACH_ABSORIGIN_FOLLOW, v) --[[Returns:int
+			Creates a new particle effect
+			]]
+
+			ParticleManager:SetParticleControlEnt(p, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+			ParticleManager:SetParticleControlEnt(p, 1, v, PATTACH_POINT_FOLLOW, "attach_hitloc", v:GetAbsOrigin(), true)
+		end)
+	end
+
+	local damage = dmg*heroes + cdmg*creeps
+
+	local n = RandomInt(1,4)
+
+	if damage > 0 then
+		target:EmitSound("Horror.Paranoia.Damage"..n)
+		DealDamage(target,caster,damage,DAMAGE_TYPE_MAGICAL)
+	end
+
+end
+
+function ParanoiaEnd(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local dmg = keys.damage
+	local radius = keys.radius or 1000
+
+	local enemy_found = FindUnitsInRadius( caster:GetTeamNumber(),
+              target:GetAbsOrigin(),
+              nil,
+                radius,
+                DOTA_UNIT_TARGET_TEAM_ENEMY,
+                DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_BASIC,
+                DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+                FIND_CLOSEST,
+                false)
+
+	local heroes = -1
+	local creeps = 0
+
+	for k,v in pairs(enemy_found) do
+		if v:IsRealHero() then
+			heroes = heroes+1
+		else
+			creeps = creeps+1
+		end
+	end
+
+	if heroes > 0 then
+		DealDamage(target,caster,dmg*heroes,DAMAGE_TYPE_MAGICAL)
+		--ParticleManager:CreateParticle("particles/units/heroes/hero_horror/paranoia_end.vpcf",PATTACH_ABSORIGIN_FOLLOW,target)
+		target:EmitSound("Horror.Paranoia.DamageEnd")
+	end
+end
+
+function SinisterStart(keys)
+	local caster = keys.caster
+	local target = keys.target
+
+	keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_sinister", {}) --[[Returns:void
+	No Description Set
+	]]
+
+	target:EmitSound("Hero_Nightstalker.Trickling_Fear") --[[Returns:void
+	 
+	]]
+	caster:EmitSound("Hero_Nightstalker.Trickling_Fear") --[[Returns:void
+	 
+	]]
+	target:EmitSound("Hero_Nightstalker.Trickling_Fear_lp")
+
+	caster.sinister_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_horror/sinister.vpcf", PATTACH_ABSORIGIN_FOLLOW, target) --[[Returns:int
+	Creates a new particle effect
+	]]
+end
+
+function SinisterEnd(keys)
+	local caster = keys.caster
+	local target = keys.target or keys.unit
+
+	ParticleManager:DestroyParticle(caster.sinister_particle,false)
+	target:RemoveModifierByName("modifier_sinister") --[[Returns:void
+	Removes a modifier
+	]]
+	target:StopSound("Hero_Nightstalker.Trickling_Fear_lp") --[[Returns:void
+	Stops a named sound playing from this entity.
+	]]
+end
+
+function SinisterSucceed(keys)
+	local caster = keys.caster
+	local target = keys.target
+
+	local damage = keys.damage
+	local duration = keys.duration
+
+	DealDamage(target,caster,damage,DAMAGE_TYPE_MAGICAL)
+
+	local tv = target:GetAbsOrigin()+RandomVector(RandomInt(50,150))
+
+	target:EmitSound("Hero_Medusa.ManaShield.On") --[[Returns:void
+	 
+	]]
+
+	keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_sinister_slow", {Duration=duration}) --[[Returns:void
+	No Description Set
+	]]
+
+	ParticleManager:CreateParticle("particles/units/heroes/hero_horror/sinister_end.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster) --[[Returns:int
+		Creates a new particle effect
+		]]
+
+	local unit = FastDummy(tv,caster:GetTeam(),1,100)
+
+	ParticleManager:CreateParticle("particles/units/heroes/hero_horror/sinister_end.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit) --[[Returns:int
+	Creates a new particle effect
+	]]
+
+	Timers:CreateTimer(0.2,function()
+		FindClearSpaceForUnit(caster, tv, true) --[[Returns:void
+		Place a unit somewhere not already occupied.
+		]]
+	end)
+end
