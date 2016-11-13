@@ -9,6 +9,7 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
@@ -39,7 +40,7 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage_inner"					"300 375 450"
+			"damage_inner"					"225 300 375"
 		}
 	"02"
 		{
@@ -49,7 +50,7 @@
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage_outer"					"150 200 250"
+			"damage_outer"					"100 150 200"
 		}
 	"04"
 		{

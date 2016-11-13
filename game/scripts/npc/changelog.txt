@@ -13,6 +13,15 @@ Balance Changes:
 
 None.
 
+Version 1.94b
+
+HEROES
+=========
+
+BAHAMUT
+- Mega Flare inner radius damage reduced to 225/300/375 (was 300/375/450).
+- Mega Flare outer radius damage decreased to 100/150/200 (was 150/200/250).
+
 Version 1.94
 
 HEROES
