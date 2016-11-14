@@ -25,7 +25,7 @@
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackRange"				"135"
+	"AttackRange"				"150"
 	"AttackAnimationPoint" 		"0.3"
 	"AttackRate"				"2.0"
 
@@ -33,10 +33,10 @@
 	"AttackDamageMax"			"36"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"23"										// Base strength
-	"AttributeStrengthGain"		"3.1"										// Strength bonus per level.
-	"AttributeBaseIntelligence"	"19"										// Base Intelligence
-	"AttributeIntelligenceGain"	"2.2"										// Intelligence bonus per level.
+	"AttributeBaseStrength"		"25"										// Base strength
+	"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"25"										// Base Intelligence
+	"AttributeIntelligenceGain"	"3.1"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"12"										// Base agility
 	"AttributeAgilityGain"		"1.4"										// Agility bonus per level.
 

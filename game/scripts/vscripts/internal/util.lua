@@ -280,7 +280,7 @@ function DealDamage(target,attacker,damageAmount,damageType,damageFlags,ability)
   local target = target
   local attacker = attacker or target -- if nil we assume we're dealing self damage
   local dmg = damageAmount
-  local type = damageType
+  local dtype = damageType
   local flags = damageFlags or DOTA_DAMAGE_FLAG_NONE
   -- Damage Flags are:
   -- DOTA_DAMAGE_FLAG_BYPASSES_BLOCK
@@ -299,7 +299,7 @@ function DealDamage(target,attacker,damageAmount,damageType,damageFlags,ability)
   -- DOTA_DAMAGE_FLAG_USE_COMBAT_PROFICIENCY
   
   if not IsValidEntity(target) and type(target) == "table" then -- assume a table was passed
-  print("[DealDamage] Dealing "..dmg.." of type "..type.." from attacker "..attacker:GetName().." to the following targets: ")
+  print("[DealDamage] Dealing "..dmg.." of type "..dtype.." from attacker "..attacker:GetName().." to the following targets: ")
     for kd,vd in pairs(target) do
       if IsValidEntity(vd) then
       print("==[DealDamage] Target "..k..": "..v:GetName())
@@ -307,7 +307,7 @@ function DealDamage(target,attacker,damageAmount,damageType,damageFlags,ability)
           victim = vd,
           attacker = attacker,
           damage = dmg,
-          damage_type = type,
+          damage_type = dtype,
           damage_flags = flags
         })
       end
@@ -315,13 +315,13 @@ function DealDamage(target,attacker,damageAmount,damageType,damageFlags,ability)
     return
   end
   
-  print("[DealDamage] Dealing "..dmg.." of type "..type.." to "..target:GetName().." from attacker "..attacker:GetName())
+  print("[DealDamage] Dealing "..dmg.." of type "..dtype.." to "..target:GetName().." from attacker "..attacker:GetName())
   
   ApplyDamage({
     victim = target,
     attacker = attacker,
     damage = dmg,
-    damage_type = type,
+    damage_type = dtype,
     damage_flags = flags
   })
 end

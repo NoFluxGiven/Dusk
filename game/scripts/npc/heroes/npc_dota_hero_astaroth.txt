@@ -21,11 +21,11 @@
 	"Ability15"				""
 	"Ability16"				"attribute_bonus"
 
-	"ArmorPhysical"				"0"									// Physical protection.
+	"ArmorPhysical"				"3"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackRate"				"1.4"
+	"AttackRate"				"1.6"
 	"AttackDamageMin"			"30"										// Damage range min.
 	"AttackDamageMax"			"40"										// Damage range max.
 
@@ -34,8 +34,8 @@
 	"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"14"										// Base Intelligence
 	"AttributeIntelligenceGain"	"1.4"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"26"										// Base agility
-	"AttributeAgilityGain"		"3.0"										// Agility bonus per level.
+	"AttributeBaseAgility"		"24"										// Base agility
+	"AttributeAgilityGain"		"2.6"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.

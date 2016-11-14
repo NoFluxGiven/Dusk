@@ -40,7 +40,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"20 40 60 80"
+			"damage"					"15 30 45 60"
 		}
 		"02"
 		{
@@ -65,7 +65,7 @@
 		"06"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"con_damage"				"40 60 80 100"
+			"con_damage"				"50 75 100 125"
 		}
 		"07"
 		{

@@ -22,6 +22,59 @@ BAHAMUT
 - Mega Flare inner radius damage reduced to 225/300/375 (was 300/375/450).
 - Mega Flare outer radius damage decreased to 100/150/200 (was 150/200/250).
 
+ASTAROTH
+- Base Attack Time increased to 1.6 (was 1.4).
+- Base Agility reduced to 24 (was 26).
+- Agility gain reduced to 2.6 (was 3.0).
+- Base Armor increased to 2 (was 0).
+- Overwhelm damage reduced to 75/125/175/225 (was 100/175/250/325).
+
+ALROTH
+- Base Strength increased to 25 (was 23).
+- Base Intelligence increased to 25 (was 19).
+- Strength gain reduced to 2.2 (was 3.1).
+- Intelligence gain increased to 3.1 (was 2.2).
+
+HAWKEYE
+- Base Strength increased to 19 (was 16).
+- Base Intelligence increased to 22 (was 17).
+- Base Agility reduced to 20 (was 25).
+- Base Armor increased to 2 (was 0).
+- Base Attack Time reduced to 1.6 (was 1.65).
+- Intelligence gain reduced to 2.0 (was 2.2).
+- Agility gain increased to 2.6 (was 2.0).
+- Detonator Dart mana cost reduced to 50/60/70/80 (was 65/95/115/135).
+
+TEK
+- Aerial Assault Mines outer radius damage reduced to 15/30/45/60 (was 20/40/60/80).
+- Aerial Assault Mines inner radius damage increased to 50/75/100/125 (was 40/60/80/100). 
+(The total damage you can deal with this ability on a target is now: 390/630/870/1110, provided you land them perfectly.
+If you hit them with the outer radius only, it will deal 90/180/270/360 damage instead.)
+- Skycrack slow duration reduced to 1.5s (was 2.0s).
+- Skycrack slow rescaled to 20/40/60/80% (was 60%).
+- Skycrack cooldown rescaled to 4.5/4.0/3.5/3.0s (was 4.0s).
+- Mosquito Missiles damage rescaled to 12/20/28/36 (was 10/20/30/40).
+- Mosquito Missiles Mana cost reduced to 135 (was 100/120/140/160).
+
+HORROR
+- Paranoia Hero damage increased to 10/15/20/25 (was 5/10/15/20).
+- Paranoia Creep damage increased to 3/6/9/12 (was 2/4/6/8).
+- Obscure Mana cost reduced to 75 (was 60/80/100/120).
+- Sinister Mana cost reduced to 145 (was 165).
+- Sinister no longer deals damage over time during channel time.
+- Sinister now deals damage over time and slows on arrival.
+- Sinister slow duration and bonus vision duration increased to 6s.
+- Added a note for Sinister explaining how Invulnerable and Out of Game targets cancel the channel.
+
+LIGHTNING
+- Base Attack Time reduced to 1.5 (was 1.7).
+- Intelligence gain reduced to 2.0 (was 3.0).
+- Lightning Dagger Mana cost increased to 35/40/45/50 (was 20/30/40/50).
+- Lightning Dagger damage reduced to 40/70/100/130 (was 40/75/110/145).
+- Fixed the Lightning Dagger tooltip incorrectly displaying Pure as the damage type.
+- Overload Mana cost increased to 60 (was 50).
+
+
 Version 1.94
 
 HEROES

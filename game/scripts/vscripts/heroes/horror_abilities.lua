@@ -407,6 +407,8 @@ function SinisterStart(keys)
 	caster.sinister_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_horror/sinister.vpcf", PATTACH_ABSORIGIN_FOLLOW, target) --[[Returns:int
 	Creates a new particle effect
 	]]
+
+	caster.sinister_saved_target = target
 end
 
 function SinisterEnd(keys)
@@ -424,7 +426,7 @@ end
 
 function SinisterSucceed(keys)
 	local caster = keys.caster
-	local target = keys.target
+	local target = keys.target or caster.sinister_saved_target
 
 	local damage = keys.damage
 	local duration = keys.duration

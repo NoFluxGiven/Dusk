@@ -43,12 +43,12 @@
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"hero_damage"					"5 10 15 20"
+			"hero_damage"					"10 15 20 25"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"creep_damage"					"2 4 6 8"
+			"creep_damage"					"3 6 9 12"
 		}
 	"04"
 		{

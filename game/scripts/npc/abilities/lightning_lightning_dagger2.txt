@@ -7,7 +7,7 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AnimationPlaybackRate"			"2.5"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"lightning_lightning_dagger"
@@ -20,11 +20,11 @@
 	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"20 30 40 50"
+	"AbilityManaCost"				"35 40 45 50"	
 	
 	// Damage.
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"40 75 110 145"
+	"AbilityDamage"					"40 70 100 130"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------

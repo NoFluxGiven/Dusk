@@ -139,7 +139,7 @@
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackRange"				"135"
+		"AttackRange"				"150"
 		"AttackAnimationPoint" 		"0.3"
 		"AttackRate"				"2.0"
 	
@@ -147,10 +147,10 @@
 		"AttackDamageMax"			"36"										// Damage range max.
 	
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"23"										// Base strength
-		"AttributeStrengthGain"		"3.1"										// Strength bonus per level.
-		"AttributeBaseIntelligence"	"19"										// Base Intelligence
-		"AttributeIntelligenceGain"	"2.2"										// Intelligence bonus per level.
+		"AttributeBaseStrength"		"25"										// Base strength
+		"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
+		"AttributeBaseIntelligence"	"25"										// Base Intelligence
+		"AttributeIntelligenceGain"	"3.1"										// Intelligence bonus per level.
 		"AttributeBaseAgility"		"12"										// Base agility
 		"AttributeAgilityGain"		"1.4"										// Agility bonus per level.
 	
@@ -373,11 +373,11 @@
 		"Ability15"				""
 		"Ability16"				"attribute_bonus"
 	
-		"ArmorPhysical"				"0"									// Physical protection.
+		"ArmorPhysical"				"3"									// Physical protection.
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackRate"				"1.4"
+		"AttackRate"				"1.6"
 		"AttackDamageMin"			"30"										// Damage range min.
 		"AttackDamageMax"			"40"										// Damage range max.
 	
@@ -386,8 +386,8 @@
 		"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
 		"AttributeBaseIntelligence"	"14"										// Base Intelligence
 		"AttributeIntelligenceGain"	"1.4"										// Intelligence bonus per level.
-		"AttributeBaseAgility"		"26"										// Base agility
-		"AttributeAgilityGain"		"3.0"										// Agility bonus per level.
+		"AttributeBaseAgility"		"24"										// Base agility
+		"AttributeAgilityGain"		"2.6"										// Agility bonus per level.
 	
 		//"BountyXP"					"0"									// Experience earn.
 		//"BountyGoldMin"				"0"										// Gold earned min.
@@ -1194,22 +1194,22 @@
 		"Ability15"				""
 		"Ability16"				"attribute_bonus"
 	
-		"ArmorPhysical"				"0"									// Physical protection.
+		"ArmorPhysical"				"2"									// Physical protection.
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackRange"				"635"
-		"AttackRate"				"1.65"
+		"AttackRate"				"1.6"
 		"AttackDamageMin"			"20"										// Damage range min.
 		"AttackDamageMax"			"25"										// Damage range max.
 	
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"16"										// Base strength
+		"AttributeBaseStrength"		"19"										// Base strength
 		"AttributeStrengthGain"		"1.3"										// Strength bonus per level.
-		"AttributeBaseIntelligence"	"17"										// Base Intelligence
-		"AttributeIntelligenceGain"	"2.2"										// Intelligence bonus per level.
-		"AttributeBaseAgility"		"25"										// Base agility
-		"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
+		"AttributeBaseIntelligence"	"22"										// Base Intelligence
+		"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
+		"AttributeBaseAgility"		"20"										// Base agility
+		"AttributeAgilityGain"		"2.6"										// Agility bonus per level.
 	
 		//"BountyXP"					"0"							`		// Experience earn.
 		//"BountyGoldMin"				"0"										// Gold earned min.
@@ -1480,7 +1480,7 @@
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackRange"				"125"
-		"AttackRate"				"1.7"
+		"AttackRate"				"1.5"
 		"AttackDamageMin"			"21"										// Damage range min.
 		"AttackDamageMax"			"23"										// Damage range max.
 	
@@ -1488,7 +1488,7 @@
 		"AttributeBaseStrength"		"19"										// Base strength
 		"AttributeStrengthGain"		"1.5"										// Strength bonus per level.
 		"AttributeBaseIntelligence"	"23"										// Base intelligence
-		"AttributeIntelligenceGain"	"3.0"										// Intelligence bonus per level.
+		"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
 		"AttributeBaseAgility"		"16"										// Base agility
 		"AttributeAgilityGain"		"2.0"										// Agility bonus per level.	
 	

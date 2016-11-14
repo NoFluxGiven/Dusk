@@ -25,7 +25,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"165"
+	"AbilityManaCost"				"145"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -48,7 +48,7 @@
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"4.0"
+			"duration"						"6.0"
 		}
 	"04"
 		{
@@ -58,7 +58,12 @@
 	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"dot_channel"					"20 40 80"
+			"dot_channel"					"20 30 40"
+		}
+	"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"dot_damage"					"20 30 40"
 		}
 	}
 	
@@ -117,17 +122,6 @@
 				"IsDebuff"			"1"
 				"Duration"			"%channel_time"
 
-				"ThinkInterval"  "1.0"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%dot_channel"
-					}
-				}
-
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PROVIDES_FOW_POSITION" "1"
@@ -146,6 +140,17 @@
 
 				"EffectName" "particles/units/heroes/hero_night_stalker/nightstalker_void.vpcf"
 				"EffectAttachType" "attach_origin"
+
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%dot_damage"
+					}
+				}
 			
 				"Properties"
 				{
