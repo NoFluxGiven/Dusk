@@ -618,9 +618,7 @@ function duskDota:OnGameInProgress()
         col = HEX_COLOR_GOLD
         col_pre = "<b><font color="
         col_suf = "</font></b>"
-      end
-
-      if playerIsMajorContributor(i) then
+      elseif playerIsMajorContributor(i) then
         print("Player "..i.." is a major contributor.")
         show_particle = "particles/special/contributor_major.vpcf"
         col = HEX_COLOR_PURPLE

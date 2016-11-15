@@ -12,6 +12,11 @@ Balance Changes:
 
 None.
 
+Version 1.94c - Hotfix 1
+
+- Updated the Contributors list.
+- Fixed the particle effects doing weird stuff sometimes.
+
 Version 1.94c
 
 HEROES
