@@ -2,10 +2,16 @@ function DisplaceStart(keys)
 	local caster = keys.caster
 	local target = keys.target
 
+	if target:HasModifier("modifier_displace_debuff") then keys.ability:RefundManaCost() keys.ability:EndCooldown() return end
+
 	if target.displace_damage == nil then target.displace_damage = 0 end
 	if target.displace_heal == nil then target.displace_heal = 0 end
 
 	target.displace_health = target:GetHealth()
+
+	keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_displace", {}) --[[Returns:void
+	No Description Set
+	]]
 
 	target:Purge(true,true,false,true,false)
 
@@ -47,6 +53,7 @@ function DisplaceDamage(keys)
 
 	if target:HasModifier("paragon_tranquil_seal_mod_ally") then target:RemoveModifierByName("paragon_tranquil_seal_mod_ally") end
 	if target:HasModifier("paragon_tranquil_seal_mod_enemy") then target:RemoveModifierByName("paragon_tranquil_seal_mod_enemy") end
+	if target:HasModifier("modifier_displace") then return end
 
 	if target:IsInvulnerable()
 	then
@@ -74,7 +81,7 @@ function DisplaceEnd(keys)
 
 	target.displace_damage = 0
 	target.displace_heal = 0
-	target.displace_health = 0
+	target.displace_health = 1
 end
 
 function ChainsOfFateDeath(keys)

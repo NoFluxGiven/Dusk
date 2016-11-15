@@ -1,0 +1,9 @@
+<root> 
+  <styles>
+    <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    <include src="file://{resources}/styles/worldpanels/shop_notification.css" />
+  </styles>
+  <Panel hittest="false" class="ShopNotPanel">
+    <Image id="shop_notification" src="content\panorama\images\custom_game\items.psd" />
+  </Panel>
+</root>

@@ -68,11 +68,6 @@
 		
 	"OnSpellStart"
 		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_displace"
-				"Target" 		"TARGET"
-			}
 			"FireEffect"
 			{
 				"EffectName"        "particles/units/heroes/hero_fate/fate_displace.vpcf"
@@ -83,6 +78,11 @@
 			{
 				"EffectName"	"Fate.Displace.Start"
 				"Target" 		"TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/fate_abilities.lua"
+				"Function"		"DisplaceStart"
 			}
 		}
 	
@@ -105,15 +105,6 @@
 					{
 						"ScriptFile"	"util.lua"
 						"Function"		"Purge"
-					}
-				}
-			
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/fate_abilities.lua"
-						"Function"		"DisplaceStart"
 					}
 				}
 

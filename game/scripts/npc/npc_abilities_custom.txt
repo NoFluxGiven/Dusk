@@ -5888,7 +5888,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"max_bonus"						"10 15 20 25"
+				"max_bonus"						"3 6 9 12"
 			}
 		}
 		
@@ -6035,7 +6035,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityTextureName"			"bahamut_mega_flare"
-		"AoERadius"						"750"
+		"AoERadius"						"400"
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -6071,12 +6071,12 @@
 		"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_outer"					"100 150 200"
+				"damage_outer"					"175 225 275"
 			}
 		"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"radius_outer"					"750"
+				"radius_outer"					"400"
 			}
 		"05"
 			{
@@ -10642,11 +10642,6 @@
 			
 		"OnSpellStart"
 			{
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_displace"
-					"Target" 		"TARGET"
-				}
 				"FireEffect"
 				{
 					"EffectName"        "particles/units/heroes/hero_fate/fate_displace.vpcf"
@@ -10657,6 +10652,11 @@
 				{
 					"EffectName"	"Fate.Displace.Start"
 					"Target" 		"TARGET"
+				}
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/fate_abilities.lua"
+					"Function"		"DisplaceStart"
 				}
 			}
 		
@@ -10679,15 +10679,6 @@
 						{
 							"ScriptFile"	"util.lua"
 							"Function"		"Purge"
-						}
-					}
-				
-					"OnCreated"
-					{
-						"RunScript"
-						{
-							"ScriptFile"	"heroes/fate_abilities.lua"
-							"Function"		"DisplaceStart"
 						}
 					}
 	
@@ -33772,7 +33763,7 @@
 	    "AnimationPlaybackRate"         "0.75"
 	    "FightRecapLevel"               "1"
 	    "AbilityTextureName"            "war_bloodlust"
-	    "AoERadius"                     "375"
+	    "AoERadius"                     "275"
 	    
 	    // Casting
 	    //-------------------------------------------------------------------------------------------------------------
@@ -33781,7 +33772,7 @@
 	
 	    // Time     
 	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityCooldown"               "24 20 16 12"
+	    "AbilityCooldown"               "20 19 18 17"
 	
 	    // Cost
 	    //-------------------------------------------------------------------------------------------------------------
@@ -33810,7 +33801,7 @@
 	        "03"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "radius"                "375"
+	            "radius"                "275"
 	        }
 	
 	        "04"

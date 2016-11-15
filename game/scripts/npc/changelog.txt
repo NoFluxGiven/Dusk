@@ -2,8 +2,7 @@ Changelog:
 
 To Do:
 
-Add a sound effect for pre-cast Isolation.
-Finish Horror's new Ult.
+Buff Shade's ability to be sneaky.
 
 Current Bugs and Issues:
 
@@ -13,13 +12,40 @@ Balance Changes:
 
 None.
 
+Version 1.94c
+
+HEROES
+=========
+
+BAHAMUT
+- Fulmination bonus strike damage reduced to 3/6/9/12 per 4 stacks (was 10/15/20/25).
+- Mega Flare Outer Radius damage increased to 175/225/275 (was 100/150/200).
+- Mega Flare Outer Radius reduced to 400 (was 750).
+
+WAR
+- Bloodlust radius reduced to 275 (was 350).
+- Bloodlust cooldown rescaled to 20/19/18/17s (was 24/20/16/12s).
+- Improved Bloodlust's particle effect to demonstrate that it applies a debuff in an area on cast, instead of creating an area where a debuff is applied over time.
+
+MISC
+=======
+
+- Added icons above custom shops and helper units to distinguish them better.
+- The Dark Materials shop now only starts appearing after 20 minutes, and now informs all players that it has arrived with a message and a sound effect.
+- Added special overhead effect and in-game shoutout for contributors to Dusk.
+
+BUGFIXES
+===========
+
+- Fixed an issue where Fate's Displace would break the game if cast on a unit twice. He can no longer cast Displace on units affected by the damage portion (casting Displace on a Displaced unit will elongate the buff, however).
+
 Version 1.94b
 
 HEROES
 =========
 
 BAHAMUT
-- Mega Flare inner radius damage reduced to 225/300/375 (was 300/375/450).
+- Mega Flare inner radius damage reduced to 225/300/375 (was 300/375/450).	
 - Mega Flare outer radius damage decreased to 100/150/200 (was 150/200/250).
 
 ASTAROTH

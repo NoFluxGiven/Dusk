@@ -505,10 +505,21 @@ function playerIsContributor(playerID)
   return checkContributor(playerID) > 0
 end
 
+function playerIsMajorContributor(playerID)
+  return checkContributor(playerID) >= 200
+end
+
+function playerIsCreator(playerID)
+  return checkContributor(playerID) == 999
+end
+
 function checkContributor(playerID)
   local steamID = PlayerResource:GetSteamAccountID(playerID) --[[Returns:<>
   No Description Set
   ]]
+
+  if not PlayerResource:GetPlayer(playerID) then return 0 end
+
   local conData = contributors[tostring(steamID)]
 
   local merit = 0

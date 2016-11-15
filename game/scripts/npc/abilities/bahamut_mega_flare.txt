@@ -14,7 +14,7 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	"AbilityTextureName"			"bahamut_mega_flare"
-	"AoERadius"						"750"
+	"AoERadius"						"400"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
@@ -50,12 +50,12 @@
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage_outer"					"100 150 200"
+			"damage_outer"					"175 225 275"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius_outer"					"750"
+			"radius_outer"					"400"
 		}
 	"05"
 		{

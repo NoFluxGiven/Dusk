@@ -76,6 +76,21 @@ function CDOTA_PlayerResource:PrintPData(pid)
 	end
 end
 
+function CDOTA_PlayerResource:GetPlayerList()
+	-- Returns a table of players in game and fully loaded
+	-- Each table element is the player's handle
+
+	local ptable = {}
+
+	for i=0,1,9 do
+		if GetPlayer(i) then
+			table.insert(ptable,GetPlayer(i))
+		end
+	end
+
+	return ptable
+end
+
 function CDOTA_BaseNPC:GetDamageBeforeReductions(damageAmount,damageType)
 	local unit = self
 	local damage = damageAmount

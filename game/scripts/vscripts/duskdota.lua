@@ -3,7 +3,14 @@ DUSKDOTA_VERSION = "1.00"
 
 -- Set this to true if you want to see a complete debug output of all events/processes done by duskdota
 -- You can also change the cvar 'duskdota_spew' at any time to 1 or 0 for output/no output
-DUSKDOTA_DEBUG_SPEW = false 
+DUSKDOTA_DEBUG_SPEW = false
+
+HEX_COLOR_AQUA = "#C3D6D6"
+HEX_COLOR_BLUE = ""
+HEX_COLOR_GREEN = ""
+HEX_COLOR_PURPLE = "#39316d"
+HEX_COLOR_RED = "#992E2E"
+HEX_COLOR_GOLD = "#FFD700"
 
 if duskDota == nil then
     DebugPrint( '[DUSKDOTA] creating duskdota game mode' )
@@ -144,6 +151,10 @@ function duskDota:OnFirstPlayerLoaded()
   ob_shop_rad:SetForwardVector(Vector(0.91,-0.41,0))
   ob_shop_rad:SetModelScale(1.25)
 
+  ParticleManager:CreateParticle("particles/world/shop_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, ob_shop_rad) --[[Returns:int
+        Creates a new particle effect
+        ]]
+
   radOShop = Containers:CreateShop({
     layout =      {4,4,4},
     skins =       {},
@@ -187,6 +198,10 @@ function duskDota:OnFirstPlayerLoaded()
   ob_shop_dir:StartGesture(ACT_DOTA_IDLE)
   ob_shop_dir:SetForwardVector(Vector(0.47,-0.88,0))
   ob_shop_dir:SetModelScale(1.25)
+
+  ParticleManager:CreateParticle("particles/world/shop_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, ob_shop_dir) --[[Returns:int
+        Creates a new particle effect
+        ]]
 
   dirOShop = Containers:CreateShop({
     layout =      {4,4,4},
@@ -233,6 +248,10 @@ function duskDota:OnFirstPlayerLoaded()
   contShopRadEnt:StartGesture(ACT_DOTA_IDLE)
   contShopRadEnt:SetForwardVector(Vector(-0.71,-0.7,0))
   contShopRadEnt:SetModelScale(1.75)
+
+  ParticleManager:CreateParticle("particles/world/shop_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, contShopRadEnt) --[[Returns:int
+        Creates a new particle effect
+        ]]
 
   sItems,prices,stocks = CreateShop({
     {"item_regal_sigil",3500},
@@ -288,6 +307,10 @@ function duskDota:OnFirstPlayerLoaded()
   contShopRadEntD:StartGesture(ACT_DOTA_IDLE)
   contShopRadEntD:SetForwardVector(Vector(-0.71,-0.69,0))
   contShopRadEntD:SetModelScale(1.25)
+
+  ParticleManager:CreateParticle("particles/world/info_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, contShopRadEntD) --[[Returns:int
+        Creates a new particle effect
+        ]]
 
   SynthesisItems = CreateShop({
     {"item_mjollnir"},
@@ -363,6 +386,10 @@ function duskDota:OnFirstPlayerLoaded()
   contShopRadEntRadF:SetForwardVector(Vector(0.54,-0.83,0))
   contShopRadEntRadF:SetModelScale(1.25)
 
+  ParticleManager:CreateParticle("particles/world/info_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, contShopRadEntRadF) --[[Returns:int
+        Creates a new particle effect
+        ]]
+
   contRadiantShopRadF = Containers:CreateContainer({
     layout =      SynthesisLayout,
     skins =       {},
@@ -409,6 +436,10 @@ function duskDota:OnFirstPlayerLoaded()
   contShopRadEntDireF:StartGesture(ACT_DOTA_IDLE)
   contShopRadEntDireF:SetForwardVector(Vector(-0.97,-0.20,0))
   contShopRadEntDireF:SetModelScale(1.25)
+
+  ParticleManager:CreateParticle("particles/world/info_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, contShopRadEntDireF) --[[Returns:int
+        Creates a new particle effect
+        ]]
 
   contRadiantShopDireF = Containers:CreateContainer({
     layout =      SynthesisLayout,
@@ -474,7 +505,7 @@ function duskDota:OnFirstPlayerLoaded()
   local ab = helperDire:FindAbilityByName("hints_attack_me_not")
   ab:SetLevel(1)
 
-  
+  duskDota.spawnDarkShop = false
 end
 
 --[[
@@ -564,6 +595,65 @@ end
 function duskDota:OnGameInProgress()
   DebugPrint("[DUSKDOTA] The game has officially begun")
 
+  local contrib_list = "The following players are community contributors to Dusk:\n"
+  local c = 0
+  local endcap = "Thanks for your additions to our community!"
+
+  for i=0,1,9 do
+    if playerIsContributor(i) then
+      local name = PlayerResource:GetPlayerName(i) --[[Returns:string
+      No Description Set
+      ]]
+      local col_pre = "<font color="
+      local col = HEX_COLOR_AQUA
+      local col_pre2 = ">"
+      local col_suf = "</font>"
+      local show_particle = "particles/special/contributor.vpcf"
+
+      print("Player "..i.." is a contributor.")
+
+      if playerIsCreator(i) then
+        print("Player "..i.." is the creator.")
+        show_particle = "particles/special/creator.vpcf"
+        col = HEX_COLOR_GOLD
+        col_pre = "<b><font color="
+        col_suf = "</font></b>"
+      end
+
+      if playerIsMajorContributor(i) then
+        print("Player "..i.." is a major contributor.")
+        show_particle = "particles/special/contributor_major.vpcf"
+        col = HEX_COLOR_PURPLE
+        col_pre = "<font color="
+        col_suf = "</font>"
+      end
+
+      print("Name is '"..name.."'.")
+      if not name == "" then
+        print("Name "..name.." added to contributor list.")
+        c = c+1
+        contrib_list = contrib_list..col_pre..col..col_pre2..name..col_suf..", "
+      end
+
+      local hero = PlayerResource:GetSelectedHeroEntity(i) --[[Returns:handle
+      No Description Set
+      ]]
+      if hero then
+        ParticleManager:CreateParticle(show_particle, PATTACH_OVERHEAD_FOLLOW, hero) --[[Returns:int
+        Creates a new particle effect
+        ]]
+      end
+
+    end
+  end
+
+  if c > 0 then
+    GameRules:SendCustomMessage(contrib_list, DOTA_TEAM_NEUTRALS, 0)
+    GameRules:SendCustomMessage(endcap, DOTA_TEAM_NEUTRALS, 0)
+  end
+
+
+
   duskDota.forts = Entities:FindAllByClassname("npc_dota_fort") --[[Returns:table
   Finds all entities by class name. Returns an array containing all the found entities.
   ]]
@@ -587,6 +677,18 @@ function duskDota:OnGameInProgress()
 
   end
 
+  Timers:CreateTimer(1200,function()
+    duskDota.spawnDarkShop = true
+    local messageinfo = {
+      message = "#dota_shop_spawn",
+      duration = 4
+    }
+    FireGameEvent("show_center_message",messageinfo)
+    GameRules:SendCustomMessage("<font color='#dd3f4e'>Dark Materials Shop</font> is now open and available at the bottom rune during nighttime.", DOTA_TEAM_NEUTRALS, 0)
+    GameRules:SendCustomMessage("<font color='#dd3f4e'>Regal Sigils</font>, purchased from here, can be used to upgrade some items to their Exalted variants.", DOTA_TEAM_NEUTRALS, 0)
+    EmitAnnouncerSound("sounds/vo/announcer/ann_custom_new_shop_01.vsnd")
+  end)
+
   Timers:CreateTimer(0, -- Start this timer immediately
     function()
       DebugPrint("This function is called immediately after the game begins, and every 15 seconds thereafter")
@@ -598,8 +700,16 @@ function duskDota:OnGameInProgress()
         No Description Set
         ]]
       else
-        contShopRadEnt:RemoveModifierByName("modifier_shopkeeper_hide")
-        contShopRadEntD:RemoveModifierByName("modifier_shopkeeper_hide")
+        if contShopRadEnt:HasModifier("modifier_shopkeeper_hide") and duskDota.spawnDarkShop then
+          contShopRadEnt:RemoveModifierByName("modifier_shopkeeper_hide")
+          contShopRadEntD:RemoveModifierByName("modifier_shopkeeper_hide")
+          ParticleManager:CreateParticle("particles/world/shop_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, contShopRadEnt) --[[Returns:int
+          Creates a new particle effect
+          ]]
+          ParticleManager:CreateParticle("particles/world/info_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, contShopRadEntD) --[[Returns:int
+          Creates a new particle effect
+          ]]
+        end
       end
       return 15.0 -- Rerun this timer every 30 game-time seconds 
     end)
