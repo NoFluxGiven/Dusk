@@ -61,6 +61,23 @@
 
 	"Modifiers"
 	{
+		"modifier_pendulum_fragment_passive"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+		
+			"OnTakeDamage"
+			// "%attack_damage" is set to the damage value after mitigation
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"items/pendulum_fragment.lua"
+					"Function"		"CheckDamage"
+					"damage"		"%attack_damage"
+				}
+			}
+		}
 		"modifier_pendulum_fragment_activate"
 		{
 			"Passive"			"0"

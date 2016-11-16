@@ -148,6 +148,13 @@ function fury_berserk(event)
   
   local n = current_scale
 
+  local fury_modifier_remove_list = {
+    "modifier_displace",
+    "modifier_displace_debuff",
+    "paragon_tranquil_seal_mod_ally",
+    "paragon_tranquil_seal_mod_enemy"
+  }
+
   --caster:Purge(false,true,false,true,false)
   
   if dmg > caster_health then
@@ -161,15 +168,18 @@ function fury_berserk(event)
     event.ability:ApplyDataDrivenModifier(caster,caster,"fury_berserk_bat_mod",{})
     caster:RemoveModifierByName("fury_rampage_mod")
     caster:RemoveModifierByName("fury_rampage_bat_mod")
-    Timers:CreateTimer(6,function()
+    Timers:CreateTimer(4,function()
       for i=1,10 do -- shrink
         Timers:CreateTimer(i/10,function()
           caster:SetModelScale(1.9-i*0.05)
         end)
       end
     end)
-    Timers:CreateTimer(7.1,function()
+    Timers:CreateTimer(5.1,function()
       caster:SetModelScale(0.8)
+      for k,v in pairs(fury_modifier_remove_list) do
+        caster:RemoveModifierByName(v)
+      end
       caster:Kill(event.ability,attacker)
     end)
   end
@@ -204,4 +214,49 @@ function newBloodsportBleedDamage(keys)
   local stacks = target:GetModifierStackCount("modifier_bloodsport_bleed_tgt",keys.ability)
 
   DealDamage(target,caster,damage*stacks,DAMAGE_TYPE_PHYSICAL)
+end
+
+function Terashock(keys)
+  local caster = keys.caster
+  local target = keys.target
+
+  local radius = keys.radius or 320
+
+  print("TERASHOCK")
+
+  local h = 0
+  local c = 0
+
+  local enemy_found = FindUnitsInRadius( caster:GetTeamNumber(),
+                              caster:GetCenter(),
+                              nil,
+                                radius,
+                                DOTA_UNIT_TARGET_TEAM_ENEMY,
+                                DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
+                                DOTA_UNIT_TARGET_FLAG_NONE,
+                                FIND_CLOSEST,
+                                false)
+
+  for k,v in pairs(enemy_found) do
+    if v:IsRealHero() then
+      print("FOUND A HERO")
+      h = h+1
+    else
+      print("FOUND A CREEP")
+      c = c+1
+    end
+  end
+
+  print(h.." HEROESES")
+  print(c.." CREEPS")
+
+  if h > 0 then
+    local ab = keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_terashock_attack_speed_hero", {})
+    ab:SetStackCount(h)
+  end
+  if c > 0 then
+    local ab = keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_terashock_attack_speed_creep", {})
+    ab:SetStackCount(c)
+  end
+
 end

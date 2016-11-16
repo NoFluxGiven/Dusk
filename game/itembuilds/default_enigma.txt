@@ -7,18 +7,31 @@
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
+			"item" "item_clarity"
+			"item" "item_clarity"
+			"item" "item_clarity"
+			"item" "item_tango"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
+			"item" "item_arcane_boots"
+			"item" "item_medallion_of_courage"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
+			"item" "item_blink"
+			"item" "item_shivas_guard"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
+			"item" "item_force_staff"
+			"item" "item_dagon"
+			"item" "item_octarine_core"
+			"item" "item_veil_of_discord"
+			"item" "item_orchid"
 		}
 	}
 	

@@ -11,13 +11,14 @@ function shade_isolation(event)
   local dayvision_changed = dayvision_base*vision_reduction
   local nightvision_changed = nightvision_base*vision_reduction
   local duration = event.duration
+  local radius = keys.radius
 
   
   
   local enemy_found = FindUnitsInRadius( caster:GetTeamNumber(),
                               target:GetCenter(),
                               nil,
-                                400,
+                                radius,
                                 DOTA_UNIT_TARGET_TEAM_ENEMY,
                                 DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
                                 DOTA_UNIT_TARGET_FLAG_NONE,

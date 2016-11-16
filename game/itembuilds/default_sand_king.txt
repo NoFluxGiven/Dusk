@@ -7,18 +7,29 @@
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
+			"item" "item_tango"
+			"item" "item_ring_of_basilius"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
+			"item" "item_arcane_boots"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
+			"item" "item_vladmir"
+			"item" "item_blink"
+			"item" "item_hand_of_midas"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
+			"item" "item_shivas_guard"
+			"item" "item_ultimate_scepter"
+			"item" "item_rod_of_atos"
+			"item" "item_force_staff"
+			"item" "item_black_king_bar"
 		}
 	}
 	

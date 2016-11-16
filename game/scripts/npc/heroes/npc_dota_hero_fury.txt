@@ -19,7 +19,7 @@
 	"Ability15"				""
 	"Ability16"				"attribute_bonus"
 
-	"ArmorPhysical"				"0"									// Physical protection.
+	"ArmorPhysical"				"2"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

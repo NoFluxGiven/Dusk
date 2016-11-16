@@ -7,18 +7,29 @@
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
+			"item" "item_clarity"
+			"item" "item_tango"
+			"item" "item_ring_of_protection"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
+			"item" "item_arcane_boots"
+			"item" "item_power_treads"
+			"item" "item_ring_of_basilius"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
+			"item" "item_ancient_janggo"
+			"item" "item_aether_lens"
+			"item" "item_blink"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
+			"item" "item_heart"
+			"item" "item_crimson_guard"
 		}
 	}
 	

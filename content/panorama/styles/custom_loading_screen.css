@@ -15,8 +15,8 @@
 {
   horizontal-align: left;
   vertical-align: bottom;
-  margin-bottom: 300px;
-  margin-left: 100px;
+  margin-bottom: 375px;
+  margin-left: 120px;
   flow-children: right;
 }
 
@@ -25,12 +25,12 @@
   horizontal-align: left;
   vertical-align: bottom;
   margin-bottom: 150px;
-  margin-left: 100px;
+  margin-left: 120px;
   background: #f00000;
   border: 1px solid white;
   width: 700px;
-  height: 125px;
-  overflow: clip scroll;
+  height: 200px;
+  overflow: squish scroll;
   flow-children: right;
 }
 
@@ -92,22 +92,4 @@
   {
     transform: translateX( 0px ) translateY( -200px );
   }
-}
-
-@keyframes 'scroller_anim'
-{
-	0%
-	{
-		transform: translateY( 0% );
-	}
-	
-	50%
-	{
-		transform: translateY( -100% );
-	}
-	
-	100%
-	{
-		transform: translateY( 0% );
-	}
 }

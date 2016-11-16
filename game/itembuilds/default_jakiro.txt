@@ -7,18 +7,27 @@
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
+			"item" "item_clarity"
+			"item" "item_clarity"
+			"item" "item_tango"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
+			"item" "item_arcane_boots"
+			"item" "item_wind_lace"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
+			"item" "item_cyclone"
+			"item" "item_veil_of_discord"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
+			"item" "item_blink"
+			"item" "item_ethereal_blade"
 		}
 	}
 	

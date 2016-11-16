@@ -8,7 +8,7 @@
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"fury_terashock"
 	"AnimationPlaybackRate"			"0.85"
@@ -61,6 +61,21 @@
 			"var_type"					"FIELD_INTEGER"
 			"armor_reduction"			"-1 -2 -3 -4"
 		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_speed_bonus_creep"	"5 10 15 20"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_speed_bonus_hero"	"10 20 30 40"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_duration"			"4"
+		}
 	}
 	
 	// Data driven
@@ -85,6 +100,13 @@
 			"EffectName"				"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"
 			"EffectAttachType"			"start_at_origin"
 			"EffectRadius"				"%shock_radius"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/fury_abilities.lua"
+			"Function"		"Terashock"
+			"radius"		"%shock_radius"
 		}
 	
 		"ActOnTargets"
@@ -133,6 +155,30 @@
 			{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movement_slow"
 				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_reduction"
+			}
+		}
+		"modifier_terashock_attack_speed_hero"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+			"Duration"			"%bonus_duration"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed_bonus_hero"
+			}
+		}
+		"modifier_terashock_attack_speed_creep"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+			"Duration"			"%bonus_duration"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed_bonus_creep"
 			}
 		}
 	}

@@ -66,6 +66,11 @@
 			"var_type"					"FIELD_INTEGER"
 			"attack_slow"				"-60"
 		}
+		"07"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"slow_duration"				"2.0"
+		}
 	}
 	
 	"precache"
@@ -90,7 +95,7 @@
 		{
 		"lich_winters_requiem_slow_mod"
 			{
-			"Duration" "%duration"
+			"Duration" "%slow_duration"
 			"IsDebuff" "1"
 			"StatusEffectName" "particles/status_fx/status_effect_frost_lich.vpcf"
 			"StatusEffectPriority" "10"

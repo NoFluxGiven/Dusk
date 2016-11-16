@@ -48,6 +48,11 @@
 			"var_type"						"FIELD_INTEGER"
 			"damage_reduction"				"-10 -20 -30"
 		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"chance"						"15"
+		}
 	}
 	
 	"precache"
@@ -71,7 +76,7 @@
 				}
 			"Random"
 				{
-				"Chance" "15"	
+				"Chance" "%chance"
 				"PseudoRandom"	"DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
 				"OnSuccess"
 					{

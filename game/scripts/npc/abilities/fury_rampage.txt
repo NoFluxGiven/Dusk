@@ -9,7 +9,6 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityTextureName"			"fury_rampage"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	
@@ -169,7 +168,7 @@
 		}
 		"fury_berserk_bat_mod"
 		{
-			"Duration"						"7"
+			"Duration"						"%berserk_duration"
 			"IsHidden"						"1"
 			"IsPurgable"					"0"
 			
@@ -177,6 +176,7 @@
 			{
 			"MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT" "%berserk_bat"
 			"MODIFIER_PROPERTY_MIN_HEALTH" "1"
+			"MODIFIER_PROPERTY_DISABLE_HEALING" "1"
 			}
 		}
 	}

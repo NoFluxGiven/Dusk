@@ -18,7 +18,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"0"
+	"AbilityCastRange"				"2000"
 	"AbilityCastPoint"				"1.00"
 	
 	// Time		
@@ -60,7 +60,7 @@
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"range_scepter"				"3000"
+			"range_scepter"				"2000"
 		}
 		"06"
 		{

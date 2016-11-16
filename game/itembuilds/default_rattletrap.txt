@@ -7,18 +7,27 @@
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
+			"item" "item_tango"
+			"item" "item_enchanted_mango"
+			"item" "item_clarity"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
+			"item" "item_arcane_boots"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
+			"item" "item_vladmir"
+			"item" "item_octarine_core"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
+			"item" "item_refresher"
+			"item" "item_blink"
+			"item" "item_force_staff"
 		}
 	}
 	

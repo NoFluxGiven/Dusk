@@ -237,7 +237,7 @@ function reality_shift(keys)
 	                                radius,
 	                                DOTA_UNIT_TARGET_TEAM_BOTH,
 	                                DOTA_UNIT_TARGET_BASIC+DOTA_UNIT_TARGET_HERO,
-	                                DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+	                                DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
 	                                FIND_ANY_ORDER,
 	                                false)
 
@@ -321,7 +321,7 @@ function Show(keys)
 	local p = 0
 
 	ScreenShake(caster:GetCenter(), 1200, 170, delay, 1200, 0, true)
-
+ 
 	if target:GetTeam() ~= caster:GetTeam() then
 		DealDamage(target,caster,50,DAMAGE_TYPE_MAGICAL)
 	end

@@ -1,33 +1,34 @@
 "itembuilds"
 {
 	"author"		"bread"
-	"hero"			"npc_dota_hero_vengeful_spirit"
-	"Title"			"Recommended items for Elena"
+	"hero"			"npc_dota_hero_axe"
+	"Title"			"Recommended items for War"
 	"Items"
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
 			"item"		"item_tango"
 			"item"		"item_clarity"
-			"item"		"item_clarity"
+			"item"		"item_stout_shield"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
-			"item"		"item_arcane_boots"
-			"item"		"item_headdress"
+			"item"		"item_power_treads"
+			"item"		"item_chainmail"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
-			"item"		"item_guardian_greaves"
-			"item"		"item_force_staff"
+			"item"		"item_blademail"
+			"item"		"item_blink"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
 			"item"		"item_octarine_core"
-			"item"		"item_blink"
+			"item"		"item_crimson_guard"
+			"item"		"item_assault"
 		}
 	}
 	

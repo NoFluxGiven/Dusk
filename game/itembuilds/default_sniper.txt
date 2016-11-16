@@ -23,7 +23,7 @@
 		"#DOTA_Item_Build_Core_Items"
 		{
 			"item" "item_desolator"
-			"item" "item_solar_crest"
+			"item" "item_maelstrom"
 			"item" "item_dragon_lance"
 			"item" "item_blink"
 		}
@@ -32,6 +32,7 @@
 		{
 			"item" "item_mjollnir"
 			"item" "item_celestial_spear"
+			"item" "item_shadow_blade"
 		}
 	}
 	

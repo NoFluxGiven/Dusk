@@ -51,6 +51,16 @@
 			"var_type"						"FIELD_FLOAT"
 			"slow"							"-55"
 		}
+	"04"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"stun"							"1.0"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"slow_duration"					"4.0"
+		}
 	}
 	
 	"precache"
@@ -92,7 +102,7 @@
 			}
 			"Stun"
 			{
-				"Duration" "1.0"
+				"Duration" "%stun"
 				"Target" "TARGET"
 			}
 			"FireEffect"
@@ -111,7 +121,7 @@
 		{
 		"phantom_soul_wave_slow_mod"
 			{
-			"Duration" "4"
+			"Duration" "%slow_duration"
 			"IsDebuff" "1"
 			"StatusEffectName" "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
 			"StatusEffectPriority" "10"

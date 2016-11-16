@@ -7,18 +7,28 @@
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
+			"item" "item_clarity"
+			"item" "item_clarity"
+			"item" "item_tango"
+			"item" "item_salve"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
+			"item" "item_ancient_janggo"
+			"item" "item_arcane_boots"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
+			"item" "item_blink"
+			"item" "item_mekansm"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
+			"item" "item_octarine_core"
+			"item" "item_dagon"
 		}
 	}
 	

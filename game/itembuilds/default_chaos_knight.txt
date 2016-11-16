@@ -7,18 +7,28 @@
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
+			"item" "item_clarity"
+			"item" "item_tango"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
+			"item" "item_ancient_janggo"
+			"item" "item_ring_of_basilius"
+			"item" "item_phase_boots"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
+			"item" "item_diffusal_blade"
+			"item" "item_basher"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
+			"item" "item_skadi"
+			"item" "item_monkey_king_bar"
+			"item" "item_moon_shard"
 		}
 	}
 	

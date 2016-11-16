@@ -7,18 +7,26 @@
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
+			"item" "item_clarity"
+			"item" "item_tango"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
+			"item" "item_arcane_boots"
+			"item" "item_urn_of_shadows"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
+			"item" "item_force_staff"
+			"item" "item_aether_lens"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
+			"item" "item_dagon"
+			"item" "item_rod_of_atos"
 		}
 	}
 	

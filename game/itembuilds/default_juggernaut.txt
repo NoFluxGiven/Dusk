@@ -7,18 +7,29 @@
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
+			"item" "item_clarity"
+			"item" "item_tango"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
+			"item" "item_power_treads"
+			"item" "item_ring_of_aquila"
+			"item" "item_wraith_band"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
+			"item" "item_manta"
+			"item" "item_blink"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
+			"item" "item_diffusal_blade"
+			"item" "item_skadi"
+			"item" "item_heart"
+			"item" "item_butterfly"
 		}
 	}
 	

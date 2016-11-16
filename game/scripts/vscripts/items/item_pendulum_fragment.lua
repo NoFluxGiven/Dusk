@@ -71,3 +71,15 @@ function stop_elysian(keys)
 	caster:RemoveNoDraw()
 	caster:RemoveModifierByName("modifier_elysian_timepiece_activate")
 end
+
+function check_damage(keys)
+	local caster = keys.caster
+
+	local dmg = keys.damage
+
+	local attacker = keys.attacker
+
+	if dmg > 50 then
+		keys.ability:StartCooldown(1.5)
+	end
+end

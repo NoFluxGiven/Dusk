@@ -7,18 +7,29 @@
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
+			"item" "item_wraith_band"
+			"item" "item_tango"
+			"item" "item_clarity"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
+			"item" "item_ring_of_aquila"
+			"item" "item_arcane_boots"
+			"item" "item_power_treads"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
+			"item" "item_force_staff"
+			"item" "item_dagon"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
+			"item" "item_shivas_guard"
+			"item" "item_veil_of_discord"
+			"item" "item_silver_edge"
 		}
 	}
 	

@@ -43,6 +43,21 @@
 			"var_type"					"FIELD_INTEGER"
 			"radius"					"250"
 		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"move_slow"					"-100"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_slow"				"-50"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"0.75"
+		}
 	}
 	
 	"precache"
@@ -98,11 +113,11 @@
 		{
 			"modifier_overload_slow_effect"
 			{
-				"Duration" "0.75"
+				"Duration" "%duration"
 				"Properties"
 				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-100"
-				    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "-50"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_slow"
+				    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_slow"
 				}
 			}
 		}

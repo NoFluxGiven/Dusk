@@ -895,3 +895,14 @@ function FindEnemies(caster,point,radius)
                             FIND_CLOSEST,
                             false)
 end
+
+function EmitSoundForAll(soundString)
+  for i=0,1,9 do
+    local pl = PlayerResource:GetPlayer(i)
+    if pl then
+      EmitSoundOnClient(soundString, pl) --[[Returns:void
+      Play named sound only on the client for the passed in player
+      ]]
+    end
+  end
+end

@@ -7,18 +7,29 @@
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
+			"item" "item_tango"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
+			"item" "item_bracer"
+			"item" "item_blight_stone"
+			"item" "item_power_treads"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
+			"item" "item_ultimate_scepter"
+			"item" "item_echo_sabre"
+			"item" "item_vanguard"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
+			"item" "item_abyssal_blade"
+			"item" "item_radiance"
+			"item" "item_octarine_core"
+			"item" "item_heart"
 		}
 	}
 	

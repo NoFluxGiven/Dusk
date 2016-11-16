@@ -13,6 +13,8 @@ function DisplaceStart(keys)
 	No Description Set
 	]]
 
+	
+
 	target:Purge(true,true,false,true,false)
 
 	target:EmitSound("Fate.Displace.Ambience")

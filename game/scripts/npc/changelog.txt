@@ -12,6 +12,48 @@ Balance Changes:
 
 None.
 
+Version 1.94d
+
+HEROES
+=========
+
+AETHER
+- Reality Shift no longer affects Invulnerable units.
+
+FURY
+- Increased Base Armor to 2 (was 0).
+- Terashock now empowers Fury for each unit hit, granting him bonus attack speed. Heroes grant 10/15/20/25 attack speed, and creep grants 3/6/9/12 attack speed for 4s.
+- Rampage's Berserk component now disables Fury's healing and regeneration.
+- Rampage's Berserk component now purges off most death-delaying buffs before it expires. This includes Invulnerability.
+
+HAWKEYE
+- Double Tap now has a range indicator. Hawkeye will move until he is within range if targeting outside of the range (this is normal behaviour with most Hero abilities).
+
+MISC
+=======
+
+- Added recommended builds for:
+Odin, Bloodwarrior, Shade, Mana Knight, Ironfist, Alroth, Alexander, Reus, Nu, Ouroboros, Mifune, Timekeeper, Lysander, The Lich, Artificer, Horror, Paragon, Fate, Vulcan, Voidwalker, Set, Gob Squad, Bahamut, Hero, Aether, War
+- Updated recommended builds for:
+Phantom, Fury, Hawkeye, Tek
+- Fixed the following Heroes' tooltips being inaccurate or otherwise misleading/unclear:
+Artificer, Fate, Fury, Hawkeye, Horror, Ironfist, Lightning, Lysander, Mifune, Odin, Ouroboros, Phantom, Set, Shade, The Lich, Voidwalker, Vulcan
+- Fixed the following Item tooltips being inaccurate or otherwise misleading/unclear:
+Turin's Scepter, Talos
+- Increased the size of the in-game changelog.
+
+ITEMS
+========
+
+PENDULUM FRAGMENT
+- Upon its user taking damage, goes on cooldown for 1.5s. Elysian Timepiece does not mimic this behaviour.
+
+BUGFIXES
+===========
+
+- Fixed an exploit where using Euls on a target, then Reality Shifting with Aether, could force them to sustain a NoDraw() flag indefinitely (causing the unit to be permanently unselectable).
+- Fixed Alexander's Elandra's Blessing's cast range being global (is now 775 range).
+
 Version 1.94c - Hotfix 1
 
 - Updated the Contributors list.

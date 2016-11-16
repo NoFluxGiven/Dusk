@@ -7,18 +7,27 @@
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
+			"item" "item_tango"
+			"item" "item_null_talisman"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
+			"item" "item_null_talisman"
+			"item" "item_power_treads"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
+			"item" "item_blink"
+			"item" "item_diffusal_blade"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
+			"item" "item_sheepstick"
+			"item" "item_rod_of_atos"
+			"item" "item_ultimate_scepter"
 		}
 	}
 	

@@ -595,18 +595,21 @@ end
 function duskDota:OnGameInProgress()
   DebugPrint("[DUSKDOTA] The game has officially begun")
 
-  local contrib_list = "The following players are community contributors to Dusk:\n"
+  local contrib_table = {}
+  local start = "The following players are community contributors to Dusk:"
   local c = 0
-  local endcap = "Thanks for your additions to our community!"
+  local endcap = "Thanks for your additions to our community everyone!"
+
+  table.insert(contrib_table,start)
 
   for i=0,1,9 do
     if playerIsContributor(i) then
       local name = PlayerResource:GetPlayerName(i) --[[Returns:string
       No Description Set
       ]]
-      local col_pre = "<font color="
+      local col_pre = "<font color='"
       local col = HEX_COLOR_AQUA
-      local col_pre2 = ">"
+      local col_pre2 = "'>"
       local col_suf = "</font>"
       local show_particle = "particles/special/contributor.vpcf"
 
@@ -616,7 +619,7 @@ function duskDota:OnGameInProgress()
         print("Player "..i.." is the creator.")
         show_particle = "particles/special/creator.vpcf"
         col = HEX_COLOR_GOLD
-        col_pre = "<b><font color="
+        col_pre = "<b><font color='"
         col_suf = "</font></b>"
       elseif playerIsMajorContributor(i) then
         print("Player "..i.." is a major contributor.")
@@ -627,11 +630,13 @@ function duskDota:OnGameInProgress()
       end
 
       print("Name is '"..name.."'.")
-      if not name == "" then
-        print("Name "..name.." added to contributor list.")
-        c = c+1
-        contrib_list = contrib_list..col_pre..col..col_pre2..name..col_suf..", "
-      end
+      print("Name "..name.." added to contributor list.")
+      c = c+1
+      local str = col_pre..col..col_pre2..name..col_suf
+
+      print(str)
+
+      table.insert(contrib_table,str)
 
       local hero = PlayerResource:GetSelectedHeroEntity(i) --[[Returns:handle
       No Description Set
@@ -640,17 +645,26 @@ function duskDota:OnGameInProgress()
         ParticleManager:CreateParticle(show_particle, PATTACH_OVERHEAD_FOLLOW, hero) --[[Returns:int
         Creates a new particle effect
         ]]
+        -- EmitSoundOnClient("Game.Thanks", PlayerResource:GetPlayer(i))
+        hero:EmitSound("Game.Thanks") --[[Returns:void
+        Play named sound only on the client for the passed in player
+        ]]
       end
 
     end
   end
 
+  table.insert(contrib_table,endcap)
+
   if c > 0 then
-    GameRules:SendCustomMessage(contrib_list, DOTA_TEAM_NEUTRALS, 0)
-    GameRules:SendCustomMessage(endcap, DOTA_TEAM_NEUTRALS, 0)
+    local s = ""
+    for k,v in pairs(contrib_table) do
+      print(k..": "..v)
+      GameRules:SendCustomMessage(v, 0, 0) --[[Returns:void
+      Displays a line of text in the left textbox (where usually deaths/denies/buysbacks are announced). This function takes restricted HTML as input! (&lt;br&gt;,&lt;u&gt;,&lt;font&gt;)
+      ]]
+    end
   end
-
-
 
   duskDota.forts = Entities:FindAllByClassname("npc_dota_fort") --[[Returns:table
   Finds all entities by class name. Returns an array containing all the found entities.

@@ -45,6 +45,11 @@
 			"var_type"						"FIELD_FLOAT"
 			"mana_burn"						"10 20 30 40"
 		}
+	"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"24"
+		}
 	}
 	
 	"precache"
@@ -81,7 +86,7 @@
 			{
 			"EffectName" "particles/units/heroes/hero_ironfist/ironfist_weakpoint_blue.vpcf"
 			"EffectAttachType" "follow_overhead"
-			"Duration" "24"
+			"Duration" "%duration"
 			"OnCreated"
 				{
 				"RunScript"

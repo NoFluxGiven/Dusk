@@ -7,18 +7,29 @@
 	{
 		"#DOTA_Item_Build_Starting_Items"
 		{
+			"item" "item_clarity"
+			"item" "item_clarity"
+			"item" "item_tango"
 		}
 		
 		"#DOTA_Item_Build_Early_Game"
 		{
+			"item" "item_arcane_boots"
+			"item" "item_null_talisman"
+			"item" "item_null_talisman"
 		}
 		
 		"#DOTA_Item_Build_Core_Items"
 		{
+			"item" "item_veil_of_discord"
+			"item" "item_rod_of_atos"
 		}
 		
 		"#DOTA_Item_Build_Luxury"
 		{
+			"item" "item_shivas_guard"
+			"item" "item_blink"
+			"item" "item_force_staff"
 		}
 	}
 	

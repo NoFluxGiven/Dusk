@@ -20,6 +20,16 @@
     //-------------------------------------------------------------------------------------
     "AbilitySpecial"
     {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "slow_tooltip"                  "-10 -20 -30 -40"
+        }
+        "02"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "damage_tooltip"                "10 15 20 25"
+        }
     }
 
     "precache"

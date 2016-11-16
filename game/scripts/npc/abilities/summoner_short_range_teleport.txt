@@ -44,6 +44,11 @@
 			"var_type"						"FIELD_INTEGER"
 			"radius"						"250 300 350 400"
 		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"range_tooltip"					"1600 1800 2000 2200"
+		}
 	}
 	
 	"precache"

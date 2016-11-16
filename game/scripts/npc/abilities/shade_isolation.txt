@@ -62,6 +62,11 @@
 			"var_type"					"FIELD_INTEGER"
 			"vision"					"80"
 		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"check_radius"				"400"
+		}
 	}
 	
 	"precache"
@@ -95,6 +100,7 @@
 			"decrease" "%decrease_unit"
 			"isolation_bonus" "%isolation_bonus"
 			"duration" "%silence_duration"
+			"radius" "%check_radius"
 			}
 		"FireEffect"
 			{
