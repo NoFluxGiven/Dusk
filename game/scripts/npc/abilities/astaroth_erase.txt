@@ -43,17 +43,22 @@
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"hp_damage"						"25 50 75"
+			"hp_damage"						"15 30 45"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"mana_damage"					"20 40 60"
+			"mana_damage"					"10 20 30"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"stat_damage"					"-1 -2 -3"
+			"current_hp_damage"				"3 4 5"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"current_mana_damage"			"2 4 6"
 		}
 	}
 	
@@ -103,6 +108,8 @@
 						"Function"		"erase"
 						"hp"			"%hp_damage"
 						"mana"			"%mana_damage"
+						"cdmgh"			"%current_hp_damage"
+						"cdmgm"			"%current_mana_damage"
 					}
 				}
 			}

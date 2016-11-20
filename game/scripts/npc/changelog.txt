@@ -2,7 +2,7 @@ Changelog:
 
 To Do:
 
-Buff Shade's ability to be sneaky.
+None.
 
 Current Bugs and Issues:
 
@@ -11,6 +11,135 @@ None.
 Balance Changes:
 
 None.
+
+Version 1.94e
+
+HEROES
+=========
+
+ALROTH
+- Shatter slow reduced to 15% (was 20/25/30/35%).
+- Raze no longer slows at the end of its duration.
+
+ARTIFICER
+- Unmaking no longer slows.
+- Naturalise no longer slows.
+
+ASTAROTH
+- Overwhelm no longer slows.
+- Overwhelm damage increased to 100/150/200/250 (was 75/125/175/225).
+- Overwhelm cooldown increased to 10s (was 8s).
+- Pain Curse incoming damage percentage bonus reduced to 5/10/15/20% (was 10/20/30/40%)
+- Pain Curse slow rescaled to 15/30/45/60% (was 30/40/50/60%).
+- Pain Curse now has an internal cooldown of 0.45s (this means that it cannot slow for 0.45s after the last time it slowed).
+- Erase health damage reduced to 15/30/45 (was 30/50/70).
+- Erase Mana damage reduced to 10/20/30 (was 20/40/60).
+- Erase now deals bonus damage equivalent to a percentage of the current Health of the target (3/4/5% per second).
+- Erase now reduces bonus Mana equivalent to a percentage of the current Mana of the target (2/4/6% per second).
+- Black Insignia now has a 7s cooldown. Astaroth cannot increment marks on any target whilst the ability is on cooldown.
+- Black Insignia no longer procs on creeps.
+- Black Insignia no longer restores Astaroth's Health when it procs.
+- Black Insignia no longer deals Pure damage to the target (it only removes their Health).
+- Black Insignia now reduces the target's current Health by 10/15/20/25% when it procs.
+- Black Insignia now takes 5 hits to proc (was 7).
+- Black Insignia now grants 30/60/90/120 bonus attack speed and true strike to Astaroth for 5s when it procs.
+- Black Insignia stun increased to 0.50/1.00/1.50/2.00s (was 0.80s).
+
+BAAL
+- Spatiotemporal Anchor no longer slows.
+
+BLOODWARRIOR
+- Bloodfiend now automatically casts Dive immediately as it spawns. Dive starts on a 2s cooldown.
+- Dance of Death damage reduced to 50/75/100/125 (was 25/75/125/175).
+- Red Ritual cast point increased to 0.5s (was 0.4s).
+
+ELENA
+- Meditation slow reduced to 20/30/40/50% (was 25/50/75/100%).
+- Meditation attack slow reduced to 40/80/120/160 (was 75/150/225/300).
+- Meditation duration reduced to 5.0s (was 4.75/5.5/6.25/7.00s).
+
+ERRA
+- Deathtouch damage over time increased to 30/60/90 (was 40/50/60).
+- Deathtouch base damage changed to 400/560/720 (was 460/580/700). The damage now matches the total damage over time amount, meaning that the total damage will always be double the main damage value (before reductions).
+- Morbid Blade lifesteal based on missing Health increased to 4/8/12/16% (was 3/6/9/12%).
+
+FURY
+- Bloodsport damage over time now ignores damage block.
+
+HERO
+- Freedom Strike slow is now 20% (was 20/30/40/50%).
+- Justice Kick slow is now 20% (was 20/30/40/50%).
+- Justice Kick slow duration reduced to 1s (was 2s).
+
+IRONFIST
+- Typhoon slow duration reduced to 1.0s (was 1.75s).
+
+THE LICH
+- Cold Aura slow is now 10% (was 15/20/25/30%).
+- Winter's Requiem slow is now 15% (was 30%).
+
+LYSANDER
+- Captain's Compass no longer slows.
+- Phantom Fleet under boat slow reduced to 50% (was 100%).
+
+MIFUNE
+- Genso outgoing damage reduced to 25% (was 35%).
+- Genso incoming damage increased to 300% (was 300/275/250/225%).
+- Genso Mana cost reduced to 40 (was 50).
+- Genso cooldown reduced to 8/6/4/2s (was 10/8/6/4s).
+- Genso illusion duration reduced to 6s (was 8s).
+- Oiuchi damage per agility point reduced to 0.15/0.30/0.45/0.60 (was 0.20/0.40/0.60/0.80).
+- Raigeki Mana cost reduced to 75 (was 95).
+- Raigeki slow reduced to 25% (was 25/30/35/40%).
+- Zanmato bonus damage reduced to 75/125/175 (was 150/200/250).
+- Zanmato attack interval reduced to 0.15s (was 0.2s).
+- Zanmato Mana cost reduced to 115 (was 145).
+- Zanmato Orb damage rescaled to 60/100/140 (was 80/140/160).
+
+MANA KNIGHT
+- Infusion Bolt now has a maximum damage and a minimum damage.
+- Fixed Infusion Bolt's tooltip to describe the correct ability function.
+
+NU
+- Gravity Pulse slow is now 100% (was 40/80/160/320%).
+- Gravity Pulse slow duration is now 1/2/3/4s (was 1.50/2.00/2.50/3.00s).
+- Warpstar slow is now 35% (was 25/35/45%).
+
+ODIN
+- Sleipnir's Veil slow duration reduced to 1s (was 2s).
+
+OUROBOROS
+- Searing Flame slow reduced to 25% (was 50%).
+- Searing Flame mana cost reduced to 40/50/60/70 (was 60/70/80/90).
+
+PHANTOM
+- Soul Wave slow reduced to 30% (was 55%).
+
+SET
+- An Army Beneath the Sands cooldown reduced to 160/130/100s (was 160s).
+- An Army Beneath the Sands Mana cost reduced to 200 (was 280).
+- Sands of War slow reduced to 20% (was 10/20/30/40%).
+- Sand Puppet Warriors now have a scaling movespeed bonus of 5/10/15/20/25/30/35/40%.
+- Harsh Climate attack slow increased to 6/12/18/24 (was 10/14/18/22).
+- Harsh Climate creep attack slow increased to 3/6/9/12 (was 2/4/6/8).
+- Harsh Climate now reduces creep damage by 4/5/6/7%.
+- Harsh Climate now reduces Set's Sands of War and Dust Storm cooldowns by 20/30/40/50% during the daytime.
+- Harsh Climate is now only active during the daytime.
+- Fixed an issue with Set's units not autoattacking when summoned on some config set-ups.
+
+VULCAN
+- Tesla Coil slow reduced to 5/10/15/20% (was 10/20/30/40%).
+
+TEK
+- Skycrack slow reduced to 20/30/40/50% (was 20/40/60/80%).
+
+ITEMS
+========
+
+- Pendulum Fragment on-damage cooldown increased to 3s (was 1.5s).
+- Pendulum Fragment now only goes on cooldown if the damage exceeds 20 and the attacker is a Hero or Hero illusion (or Hero controlled unit).
+- Pendulum Fragment cooldown reduced to 14s (was 26s).
+- Pendulum Fragment is now purchasable from both Ob's Shop and the Main Shop (probably easier to just buy it from Ob, since otherwise you have to search. This was enabled to allow recipe display for Elysian Timepiece).
 
 Version 1.94d
 

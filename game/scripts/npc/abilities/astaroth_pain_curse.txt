@@ -48,7 +48,7 @@
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"slow"							"-30 -40 -50 -60"
+			"slow"							"-15 -30 -45 -60"
 		}
 	"04"
 		{
@@ -57,8 +57,8 @@
 		}
 	"05"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"tick_damage"					"5 10 15 20"
+			"var_type"						"FIELD_FLOAT"
+			"cooldown"						"0.45"
 		}
 	}
 	
@@ -101,11 +101,6 @@
 			
 				"EffectName" "particles/units/heroes/hero_astaroth/astaroth_pain_transferral.vpcf"
 				"EffectAttachType" "attach_origin"
-
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%damage"
-				}
 			}
 
 			"modifier_astaroth_pain_curse_slow"
@@ -116,10 +111,36 @@
 
 				"EffectName" "particles/units/heroes/hero_astaroth/astaroth_pain_transferral_slow.vpcf"
 				"EffectAttachType" "attach_origin"
+
+				"OnDestroy"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_astaroth_pain_curse_cooldown"
+						"Target" 		"TARGET"
+					}
+				}
 			
 				"Properties"
 				{
 				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+			}
+			"modifier_astaroth_pain_curse_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%cooldown"
+			
+				"ThinkInterval"  "0.03"
+				"OnIntervalThink"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_astaroth_pain_curse_slow"
+						"Target" 		"TARGET"
+					}
 				}
 			}
 		}

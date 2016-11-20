@@ -58,11 +58,6 @@
             "var_type"                      "FIELD_INTEGER"
             "base_damage"                   "10 20 30 40"
         }
-        "04"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "slow"                          "-10"
-        }
     }
 
     "Modifiers"
@@ -134,11 +129,6 @@
                     "Function"      "unmakingTick"
                     "damage"        "%damage"
                 }
-            }
-
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%slow"
             }
         }
     }

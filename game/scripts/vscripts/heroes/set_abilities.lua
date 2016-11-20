@@ -209,6 +209,14 @@ function sandWave(keys)
 		No Description Set
 		]]
 
+		summonl:SetIdleAcquire(true) --[[Returns:void
+		No Description Set
+		]]
+
+		summonr:SetIdleAcquire(true) --[[Returns:void
+		No Description Set
+		]]
+
 		syncLevel(caster,summonl)
 		syncLevel(caster,summonr)
 	end)
@@ -353,11 +361,17 @@ function aabts_summon(keys)
 	No Description Set
 	]]
 
+	summon:MoveToPositionAggressive(summon:GetAbsOrigin()+Vector(100,100,0)) --[[Returns:void
+	Issue an Attack-Move-To command
+	]]
+
 	syncLevel(caster,summon,m,2)
 
-	keys.ability:ApplyDataDrivenModifier(caster, summon, "modifier_aabts_check", {}) --[[Returns:void
+	summon:SetIdleAcquire(true) --[[Returns:void
 	No Description Set
 	]]
+
+	keys.ability:ApplyDataDrivenModifier(caster, summon, "modifier_aabts_check", {})
 
 	local p = ParticleManager:CreateParticle("particles/units/heroes/hero_set/set_spawn_sand_puppet.vpcf", PATTACH_POINT, caster) --[[Returns:int
 	Creates a new particle effect
@@ -376,6 +390,10 @@ function aabts_check(keys)
 	local target = keys.target
 
 	local radius =  keys.radius
+
+	target:SetIdleAcquire(true) --[[Returns:void
+	No Description Set
+	]]
 
 	if not target:IsPositionInRange(caster:GetAbsOrigin(), radius) and not caster:HasScepter() then
 		target:ForceKill(true)
@@ -418,4 +436,48 @@ function aabts_end(keys)
 			v:ForceKill(true)
 		end
 	end
+end
+
+function HarshClimate(keys)
+	local caster = keys.caster
+
+	if GameRules:IsDaytime() then
+		if not caster:HasModifier("modifier_harsh_sun_aura") then
+			keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_harsh_sun_aura", {}) --[[Returns:void
+			No Description Set
+			]]
+			keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_harsh_sun_aura_creep", {}) --[[Returns:void
+			No Description Set
+			]]
+		end
+	else
+		if caster:HasModifier("modifier_harsh_sun_aura") then
+			caster:RemoveModifierByName("modifier_harsh_sun_aura") --[[Returns:void
+			Removes a modifier
+			]]
+			caster:RemoveModifierByName("modifier_harsh_sun_aura_creep") --[[Returns:void
+			Removes a modifier
+			]]
+		end
+	end
+end
+
+function ReduceCooldowns(keys)
+	local caster = keys.caster
+
+	print("REDUCING COOLDOWNS")
+
+	if not caster:HasModifier("modifier_harsh_sun_aura") then return end
+
+	local ab = caster:FindAbilityByName("set_harsh_sun")
+
+	local level = ab:GetLevel()-1
+
+	local reduction = 1 - math.abs((ab:GetLevelSpecialValueFor("cooldown_reduction", level)/100))
+
+	print("Reduction is: "..reduction)
+
+	local cooldown = keys.ability:GetCooldownTimeRemaining()
+	keys.ability:EndCooldown()
+	keys.ability:StartCooldown(reduction*cooldown)
 end

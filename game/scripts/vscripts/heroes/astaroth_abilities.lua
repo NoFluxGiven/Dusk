@@ -71,12 +71,20 @@ function deathmark(keys)
 	local stun = keys.stun
 	local removal = keys.removal / 100
 
+	local cooldown = keys.ability:GetCooldown(keys.ability:GetLevel()-1) --[[Returns:float
+	Get the cooldown duration for this ability at a given level, not the amount of cooldown actually left.
+	]]
+
 	local mult = 1 - removal
 
 	local mod = nil
 
+	if not target:IsHero() then return end
+
 	if caster:PassivesDisabled() then return end
 	if caster:IsIllusion() then return end
+
+	if not keys.ability:IsCooldownReady() then return end
 
 	if CheckClass(target,"npc_dota_roshan") then return end
 	if CheckClass(target,"npc_dota_building") then return end
@@ -97,7 +105,7 @@ function deathmark(keys)
 	]]
 	ParticleManager:SetParticleControlEnt(p, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetCenter(), true)
 
-	target:EmitSound("Astaroth.B"..mod:GetStackCount()) --[[Returns:void
+	target:EmitSound("Astaroth.B"..mod:GetStackCount()+2) --[[Returns:void
 	 
 	]]
 
@@ -109,23 +117,14 @@ function deathmark(keys)
 	ParticleManager:SetParticleControl(target.deathmark_particle, 1, Vector(mod:GetStackCount(),0,0))
 
 	if mod:GetStackCount() >= hits then
+		keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_deathmark_bonus", {}) --[[Returns:void
+		No Description Set
+		]]
 		mod:Destroy()
+		if target:IsHero() then keys.ability:StartCooldown(cooldown) end
 		target:ModifyHealth(hp*mult, keys.ability, false, -1) --[[Returns:void
 		Sets the health to a specific value, with optional flags or inflictors.
 		]]
-		local hp_gain = keys.hp_gain/100
-		local heal = hp_gain*caster:GetMaxHealth()
-		caster:Heal(heal,keys.ability)
-		local units_found = FindUnitsInRadius( caster:GetTeamNumber(),
-                              target:GetAbsOrigin(),
-                              nil,
-                                340,
-                                DOTA_UNIT_TARGET_TEAM_ENEMY,
-                                DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
-                                DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
-                                FIND_CLOSEST,
-                                false)
-		for k,v in pairs(units_found) do DealDamage(v,caster,damage,DAMAGE_TYPE_PURE) end
 		target:AddNewModifier(caster, nil, "modifier_stunned", {Duration=stun}) --[[Returns:void
 		No Description Set
 		]]
@@ -181,6 +180,11 @@ function erase(keys)
 
 	local damage = keys.hp
 	local manadmg = keys.mana
+	local chp_dmg = keys.cdmgh/100
+	local cmp_dmg = keys.cdmgm/100
+
+	local extra_dmg = chp_dmg*target:GetHealth()
+	local extra_drain = cmp_dmg*target:GetMana()
 
 	keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_astaroth_erase_reduce_stats", {})
 
@@ -190,6 +194,6 @@ function erase(keys)
 
 	--target:CalculateStatBonus()
 
-	DealDamage(target,caster,damage,DAMAGE_TYPE_MAGICAL)
-	target:ReduceMana(manadmg)
+	DealDamage(target,caster,damage+extra_dmg,DAMAGE_TYPE_MAGICAL)
+	target:ReduceMana(manadmg+extra_drain)
 end

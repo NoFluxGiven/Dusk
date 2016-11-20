@@ -23,7 +23,7 @@
         "01"
         {
             "var_type"                      "FIELD_INTEGER"
-            "slow_tooltip"                  "-10 -20 -30 -40"
+            "slow_tooltip"                  "-5 -10 -15 -20"
         }
         "02"
         {

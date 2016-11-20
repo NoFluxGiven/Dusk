@@ -213,7 +213,7 @@ function newBloodsportBleedDamage(keys)
 
   local stacks = target:GetModifierStackCount("modifier_bloodsport_bleed_tgt",keys.ability)
 
-  DealDamage(target,caster,damage*stacks,DAMAGE_TYPE_PHYSICAL)
+  DealDamageThroughBlock(target,caster,damage*stacks,DAMAGE_TYPE_PHYSICAL)  
 end
 
 function Terashock(keys)

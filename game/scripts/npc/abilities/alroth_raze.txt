@@ -48,16 +48,6 @@
 		}
 		"03"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"slow"						"-100"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow_duration"				"4"
-		}
-		"05"
-		{
 			"var_type"					"FIELD_INTEGER"
 			"radius"					"275 325 375 425"
 		}
@@ -122,21 +112,6 @@
 							"00"	"0 0 0"
 							"01"	"%radius 0 0"
 							"02"	"%duration 0 0"
-						}
-					}
-				}
-
-				"OnDestroy"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_alroth_raze_slow"
-						"Target"
-						{
-							"Center"  	"TARGET"
-							"Radius" 	"%radius"
-							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 						}
 					}
 				}

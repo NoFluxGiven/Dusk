@@ -47,12 +47,12 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"-40 -80 -160 -320"
+			"slow"						"-100"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"1.5 2 2.5 3"
+			"slow_duration"				"1.0 2.0 3.0 4.0"
 		}
 		"04"
 		{

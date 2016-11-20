@@ -81,7 +81,7 @@ function duskDota:StartEventTest()
 	ListenToGameEvent("dota_pause_event", Dynamic_Wrap(duskDota, 'On_dota_pause_event'), self)
 	ListenToGameEvent("dota_chat_kill_streak", Dynamic_Wrap(duskDota, 'On_dota_chat_kill_streak'), self)
 	ListenToGameEvent("dota_chat_first_blood", Dynamic_Wrap(duskDota, 'On_dota_chat_first_blood'), self)
-	ListenToGameEvent("dota_player_update_hero_selection", Dynamic_Wrap(duskDota, 'On_dota_player_update_hero_selection'), self)
+	--ListenToGameEvent("dota_player_update_hero_selection", Dynamic_Wrap(duskDota, 'On_dota_player_update_hero_selection'), self)
 	ListenToGameEvent("dota_player_update_selected_unit", Dynamic_Wrap(duskDota, 'On_dota_player_update_selected_unit'), self)
 	ListenToGameEvent("dota_player_update_query_unit", Dynamic_Wrap(duskDota, 'On_dota_player_update_query_unit'), self)
 	ListenToGameEvent("dota_player_update_killcam_unit", Dynamic_Wrap(duskDota, 'On_dota_player_update_killcam_unit'), self)
@@ -762,12 +762,6 @@ end
 
 function duskDota:On_dota_chat_first_blood(data)
   print("[DUSKDOTA] dota_chat_first_blood")
-  PrintTable(data)
-end
-
-
-function duskDota:On_dota_player_update_hero_selection(data)
-  print("[DUSKDOTA] dota_player_update_hero_selection")
   PrintTable(data)
 end
 

@@ -5,12 +5,17 @@
     "BaseClass"             "ability_datadriven"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HEROES"
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityTextureName"            "astaroth_deathmark"
     
     // Casting
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCastRange"              "0"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "7"
     
     // Special
     //-------------------------------------------------------------------------------------------------------------
@@ -19,37 +24,32 @@
         "01"
         {
             "var_type"              "FIELD_INTEGER"
-            "damage"                "100 175 250 325"
+            "hits"                  "5"
         }
         "02"
         {
-            "var_type"              "FIELD_INTEGER"
-            "hits"                  "7"
+            "var_type"              "FIELD_FLOAT"
+            "stun"                  "0.50 1.00 1.50 2.00"
         }
         "03"
-        {
-            "var_type"              "FIELD_FLOAT"
-            "stun"                  "0.80"
-        }
-        "04"
         {
             "var_type"              "FIELD_INTEGER"
             "duration"              "16"
         }
+        "04"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "removal"               "10 15 20 25"
+        }
         "05"
         {
             "var_type"              "FIELD_INTEGER"
-            "removal"               "4 8 12 16"
+            "attack_speed_bonus"    "30 60 80 120"
         }
         "06"
         {
-            "var_type"              "FIELD_INTEGER"
-            "radius"                "500"
-        }
-        "07"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "health_gain"           "15 20 25 30"
+            "var_type"              "FIELD_FLOAT"
+            "bonus_duration"        "5"
         }
     }
 
@@ -85,10 +85,8 @@
                     "ScriptFile"    "heroes/astaroth_abilities.lua"
                     "Function"        "deathmark"
                     "hits"         "%hits"
-                    "damage"       "%damage"
                     "stun"         "%stun"
                     "removal"      "%removal"
-                    "hp_gain"      "%health_gain"
                 }
             }
         }
@@ -106,6 +104,24 @@
                     "ScriptFile"    "heroes/astaroth_abilities.lua"
                     "Function"        "removeParticle"
                 }
+            }
+        }
+
+        "modifier_deathmark_bonus"
+        {
+            "Passive"            "0"
+            "IsHidden"            "0"
+            "IsDebuff"            "0"
+            "Duration"            "%bonus_duration"
+        
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed_bonus"
+            }
+
+            "States"
+            {
+                "MODIFIER_STATE_CANNOT_MISS"        "MODIFIER_STATE_VALUE_ENABLED"
             }
         }
 

@@ -17,7 +17,7 @@
 	// Stats		
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastPoint"              "0"
-	"AbilityCooldown"				"28"
+	"AbilityCooldown"				"14"
 	"AbilityManaCost"				"25"
 	"AbilityCastRange"				"0"
 	
@@ -29,7 +29,7 @@
 	"ItemAliases"					"pendulum_fragment"
 	"ItemStackable"					"0"
 	"ItemPermanent"					"0"
-	"ItemPurchasable"				"0"
+	"ItemPurchasable"				"1"
 
 	"precache"
 	{
@@ -72,8 +72,8 @@
 			{
 				"RunScript"
 				{
-					"ScriptFile"	"items/pendulum_fragment.lua"
-					"Function"		"CheckDamage"
+					"ScriptFile"	"items/item_pendulum_fragment.lua"
+					"Function"		"check_damage"
 					"damage"		"%attack_damage"
 				}
 			}

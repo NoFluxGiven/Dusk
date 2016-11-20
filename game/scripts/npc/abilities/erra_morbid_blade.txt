@@ -52,7 +52,7 @@
         "03"
         {
             "var_type"              "FIELD_INTEGER"
-            "lifesteal"             "3 6 9 12"
+            "lifesteal"             "4 8 12 16"
         }
     }
 

@@ -99,6 +99,7 @@ function duskDota:_InitduskDota()
   ListenToGameEvent('dota_player_pick_hero', Dynamic_Wrap(duskDota, 'OnPlayerPickHero'), self)
   ListenToGameEvent('dota_team_kill_credit', Dynamic_Wrap(duskDota, 'OnTeamKillCredit'), self)
   ListenToGameEvent("player_reconnected", Dynamic_Wrap(duskDota, 'OnPlayerReconnect'), self)
+  ListenToGameEvent("dota_player_update_hero_selection", Dynamic_Wrap(duskDota, 'On_dota_player_update_hero_selection'), self)
 
   ListenToGameEvent("dota_illusions_created", Dynamic_Wrap(duskDota, 'OnIllusionsCreated'), self)
   ListenToGameEvent("dota_item_combined", Dynamic_Wrap(duskDota, 'OnItemCombined'), self)

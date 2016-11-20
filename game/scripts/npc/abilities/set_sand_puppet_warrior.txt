@@ -38,6 +38,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"slow_duration"			"1"
 		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"movespeed_bonus"		"5 10 15 20 25 30 35 40"
+		}
 	}
 
 	"precache"
@@ -77,6 +82,11 @@
 						"ScriptFile"	"heroes/set_abilities.lua"
 						"Function"		"Dust"
 					}
+				}
+
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movespeed_bonus"
 				}
 			}
 

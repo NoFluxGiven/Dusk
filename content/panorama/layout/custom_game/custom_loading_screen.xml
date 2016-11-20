@@ -10,8 +10,8 @@
     <Panel id="TitlePanel"> 
       <Label id="AddonTitle" text="game_version" html="true"/>
     </Panel>
-	<Panel id="ScrollerPanel"> 
-      <Label id="AddonChangelog" text="game_version_scroller" html="true"/>
+	  <Panel id="ScrollerPanel"> 
+      <Label hittest = "true" id="AddonChangelog" text="game_version_scroller" html="true"/>
     </Panel>
   </Panel>
 </root>

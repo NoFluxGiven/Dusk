@@ -38,7 +38,7 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"dmg_per_agi_pt"				"0.20 0.40 0.60 0.80" // percentage total
+			"dmg_per_agi_pt"				"0.15 0.30 0.45 0.60" // percentage total
 		}
 	"02"
 		{

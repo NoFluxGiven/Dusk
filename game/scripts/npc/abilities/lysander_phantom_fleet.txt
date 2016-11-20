@@ -61,7 +61,7 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"slow"					"-100"
+			"slow"					"-50"
 		}
 		"07"
 		{

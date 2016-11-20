@@ -18,7 +18,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"14"
+	"AbilityCooldown"				"20"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -36,7 +36,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"slow"					"-10 -20 -30 -40"
+			"slow"					"-15"
 		}
 		"03"
 		{
@@ -75,6 +75,11 @@
 			"distance"		"700"
 			"radius"		"%radius"
 			"duration"		"%time"
+		}
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/set_abilities.lua"
+			"Function"		"ReduceCooldowns"
 		}
 	}
 

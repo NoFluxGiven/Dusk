@@ -351,6 +351,11 @@ function DealStaticDamage(target,attacker,damageAmount,damageType)
   DealDamage(target,attacker,damageAmount,damageType,DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS)
 end
 
+function DealDamageThroughBlock(target,attacker,damageAmount,damageType)
+  
+  DealDamage(target,attacker,damageAmount,damageType,DOTA_DAMAGE_FLAG_BYPASSES_BLOCK)
+end
+
 function FastDummy(target, team, duration, vision)
   duration = duration or 0.03
   vision = vision or  250

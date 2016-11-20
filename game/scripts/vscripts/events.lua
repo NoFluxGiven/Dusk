@@ -12,6 +12,9 @@ function duskDota:OnDisconnect(keys)
   local reason = keys.reason
   local userid = keys.userid
 
+  -- check if the player has left during the game, and if they did it of their own accord
+  -- if they did, play the ragequit sound
+
 end
 -- The overall game state has changed
 function duskDota:OnGameRulesStateChange(keys)
@@ -522,4 +525,9 @@ function duskDota:OnPlayerChat(keys)
   local playerID = self.vUserIds[userID]:GetPlayerID()
 
   local text = keys.text
+end
+
+function duskDota:On_dota_player_update_hero_selection(data)
+  print("[DUSKDOTA] dota_player_update_hero_selection")
+  PrintTable(data)
 end

@@ -64,11 +64,6 @@
 	"06"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"slow"							"-25 -35 -45 -55" // percentage total
-		}
-	"07"
-		{
-			"var_type"						"FIELD_INTEGER"
 			"radius"						"250"
 		}
 	}
@@ -118,11 +113,6 @@
 						"Function"		"naturaliseDamage"
 						"damage"		"%damage_over_time"
 					}
-				}
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
 				}
 			}
 

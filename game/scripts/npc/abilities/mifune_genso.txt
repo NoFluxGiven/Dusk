@@ -21,11 +21,11 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"10 8 6 4"
+	"AbilityCooldown"				"8 6 4 2"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"50"
+	"AbilityManaCost"				"40"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -38,22 +38,22 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusion_damage"				"-60" // percentage total
+			"illusion_damage"				"-75" // percentage total
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusion_incoming"				"300 275 250 225" // percentage total
+			"illusion_incoming"				"300" // percentage total
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusion_duration"				"8"
+			"illusion_duration"				"6"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusion_tooltip"				"35" // percentage total
+			"illusion_tooltip"				"25" // percentage total
 		}
 	}
 	

@@ -48,6 +48,11 @@ function CheckBloodfiend(keys)
 			elseif caster:GetTeam() == DOTA_TEAM_BADGUYS then
 				FindClearSpaceForUnit(caster, Vector(7042,6603,516), true) --[   VScript              ]: 7042.123046875	6603.5639648438	516.06188964844
 			end
+
+			caster:SetCursorTargetingNothing(true)
+			ab2:OnSpellStart()
+
+			ab2:StartCooldown(2)
 		end
 	end
 

@@ -39,19 +39,14 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"slow"					"-17"
+			"increase"				"15"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"increase"				"15"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
 			"damage"				"20"
 		}
-		"05"
+		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"movespeed_caster"		"25 30 35 40"
@@ -110,7 +105,6 @@
 
 			"Properties"
 			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
 				"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%damage"
 			}
 	

@@ -55,9 +55,13 @@ function infusionBolt(keys)
 
 	local damage = keys.damage/100
 
+	local min_damage = keys.min_damage
+	local max_damage = keys.max_damage
+
 	local amount = math.ceil((target:GetMaxMana()-target:GetMana()) * damage)
 
-	if amount < 50 then amount = 50 end
+	if amount < min_damage then amount = min_damage end
+	if amount > max_damage then amount = max_damage end
 
 	DealDamage(target,caster,amount,DAMAGE_TYPE_MAGICAL)
 

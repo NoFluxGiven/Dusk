@@ -1954,16 +1954,6 @@
 			}
 			"03"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"slow"						"-100"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"slow_duration"				"4"
-			}
-			"05"
-			{
 				"var_type"					"FIELD_INTEGER"
 				"radius"					"275 325 375 425"
 			}
@@ -2028,21 +2018,6 @@
 								"00"	"0 0 0"
 								"01"	"%radius 0 0"
 								"02"	"%duration 0 0"
-							}
-						}
-					}
-	
-					"OnDestroy"
-					{
-						"ApplyModifier"
-						{
-							"ModifierName"	"modifier_alroth_raze_slow"
-							"Target"
-							{
-								"Center"  	"TARGET"
-								"Radius" 	"%radius"
-								"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 							}
 						}
 					}
@@ -2132,7 +2107,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow"						"-20 -25 -30 -35"
+				"slow"						"-15"
 			}
 		}
 		
@@ -2762,11 +2737,6 @@
 		"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"slow"							"-25 -35 -45 -55" // percentage total
-			}
-		"07"
-			{
-				"var_type"						"FIELD_INTEGER"
 				"radius"						"250"
 			}
 		}
@@ -2816,11 +2786,6 @@
 							"Function"		"naturaliseDamage"
 							"damage"		"%damage_over_time"
 						}
-					}
-				
-					"Properties"
-					{
-					    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
 					}
 				}
 	
@@ -3222,11 +3187,6 @@
 	            "var_type"                      "FIELD_INTEGER"
 	            "base_damage"                   "10 20 30 40"
 	        }
-	        "04"
-	        {
-	            "var_type"                      "FIELD_INTEGER"
-	            "slow"                          "-10"
-	        }
 	    }
 	
 	    "Modifiers"
@@ -3299,11 +3259,6 @@
 	                    "damage"        "%damage"
 	                }
 	            }
-	
-	            "Properties"
-	            {
-	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%slow"
-	            }
 	        }
 	    }
 	}
@@ -3314,12 +3269,17 @@
 	    "BaseClass"             "ability_datadriven"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HEROES"
 	    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
 	    "AbilityTextureName"            "astaroth_deathmark"
 	    
 	    // Casting
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilityCastRange"              "0"
+	
+	    // Time     
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCooldown"               "7"
 	    
 	    // Special
 	    //-------------------------------------------------------------------------------------------------------------
@@ -3328,37 +3288,32 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "100 175 250 325"
+	            "hits"                  "5"
 	        }
 	        "02"
 	        {
-	            "var_type"              "FIELD_INTEGER"
-	            "hits"                  "7"
+	            "var_type"              "FIELD_FLOAT"
+	            "stun"                  "0.50 1.00 1.50 2.00"
 	        }
 	        "03"
-	        {
-	            "var_type"              "FIELD_FLOAT"
-	            "stun"                  "0.80"
-	        }
-	        "04"
 	        {
 	            "var_type"              "FIELD_INTEGER"
 	            "duration"              "16"
 	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "removal"               "10 15 20 25"
+	        }
 	        "05"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "removal"               "4 8 12 16"
+	            "attack_speed_bonus"    "30 60 80 120"
 	        }
 	        "06"
 	        {
-	            "var_type"              "FIELD_INTEGER"
-	            "radius"                "500"
-	        }
-	        "07"
-	        {
-	            "var_type"              "FIELD_INTEGER"
-	            "health_gain"           "15 20 25 30"
+	            "var_type"              "FIELD_FLOAT"
+	            "bonus_duration"        "5"
 	        }
 	    }
 	
@@ -3394,10 +3349,8 @@
 	                    "ScriptFile"    "heroes/astaroth_abilities.lua"
 	                    "Function"        "deathmark"
 	                    "hits"         "%hits"
-	                    "damage"       "%damage"
 	                    "stun"         "%stun"
 	                    "removal"      "%removal"
-	                    "hp_gain"      "%health_gain"
 	                }
 	            }
 	        }
@@ -3415,6 +3368,24 @@
 	                    "ScriptFile"    "heroes/astaroth_abilities.lua"
 	                    "Function"        "removeParticle"
 	                }
+	            }
+	        }
+	
+	        "modifier_deathmark_bonus"
+	        {
+	            "Passive"            "0"
+	            "IsHidden"            "0"
+	            "IsDebuff"            "0"
+	            "Duration"            "%bonus_duration"
+	        
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed_bonus"
+	            }
+	
+	            "States"
+	            {
+	                "MODIFIER_STATE_CANNOT_MISS"        "MODIFIER_STATE_VALUE_ENABLED"
 	            }
 	        }
 	
@@ -3468,17 +3439,22 @@
 		"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"hp_damage"						"25 50 75"
+				"hp_damage"						"15 30 45"
 			}
 		"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"mana_damage"					"20 40 60"
+				"mana_damage"					"10 20 30"
 			}
 		"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"stat_damage"					"-1 -2 -3"
+				"current_hp_damage"				"3 4 5"
+			}
+		"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"current_mana_damage"			"2 4 6"
 			}
 		}
 		
@@ -3528,6 +3504,8 @@
 							"Function"		"erase"
 							"hp"			"%hp_damage"
 							"mana"			"%mana_damage"
+							"cdmgh"			"%current_hp_damage"
+							"cdmgm"			"%current_mana_damage"
 						}
 					}
 				}
@@ -3572,14 +3550,14 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"9"
+		"AbilityCooldown"				"10"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"70"
 	
 		//Damage
-		"AbilityDamage"					"75 125 175 225"
+		"AbilityDamage"					"100 150 200 250"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3595,11 +3573,6 @@
 				"duration"						"2"
 			}
 		"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"slow"							"-20 -25 -30 -35"
-			}
-		"03"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"radius"						"275"
@@ -3727,7 +3700,7 @@
 		"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"slow"							"-30 -40 -50 -60"
+				"slow"							"-15 -30 -45 -60"
 			}
 		"04"
 			{
@@ -3736,8 +3709,8 @@
 			}
 		"05"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"tick_damage"					"5 10 15 20"
+				"var_type"						"FIELD_FLOAT"
+				"cooldown"						"0.45"
 			}
 		}
 		
@@ -3780,11 +3753,6 @@
 				
 					"EffectName" "particles/units/heroes/hero_astaroth/astaroth_pain_transferral.vpcf"
 					"EffectAttachType" "attach_origin"
-	
-					"Properties"
-					{
-					    "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%damage"
-					}
 				}
 	
 				"modifier_astaroth_pain_curse_slow"
@@ -3795,10 +3763,36 @@
 	
 					"EffectName" "particles/units/heroes/hero_astaroth/astaroth_pain_transferral_slow.vpcf"
 					"EffectAttachType" "attach_origin"
+	
+					"OnDestroy"
+					{
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_astaroth_pain_curse_cooldown"
+							"Target" 		"TARGET"
+						}
+					}
 				
 					"Properties"
 					{
 					    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+					}
+				}
+				"modifier_astaroth_pain_curse_cooldown"
+				{
+					"Passive"			"0"
+					"IsHidden"			"1"
+					"IsDebuff"			"0"
+					"Duration"			"%cooldown"
+				
+					"ThinkInterval"  "0.03"
+					"OnIntervalThink"
+					{
+						"RemoveModifier"
+						{
+							"ModifierName"	"modifier_astaroth_pain_curse_slow"
+							"Target" 		"TARGET"
+						}
 					}
 				}
 			}
@@ -5016,11 +5010,6 @@
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"6"
 			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-12"
-			}
 		}
 	
 		"OnSpellStart"
@@ -5063,11 +5052,6 @@
 						"stun"			"%stun"
 						"damage"		"%AbilityDamage"
 					}
-				}
-	
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
 				}
 			}
 		}
@@ -6717,7 +6701,7 @@
 	        "01"
 	        {
 	            "var_type"          "FIELD_INTEGER"
-	            "damage"            "25 75 125 175"
+	            "damage"            "50 75 100 125"
 	        }
 	        "02"
 	        {
@@ -6903,7 +6887,7 @@
 	    // Casting
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilityCastRange"              "550"
-	    "AbilityCastPoint"              "0.4"
+	    "AbilityCastPoint"              "0.5"
 	    
 	    // Time     
 	    //-------------------------------------------------------------------------------------------------------------
@@ -9634,7 +9618,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"40"
 	
-		"AbilityChannelTime"			"6"
+		"AbilityChannelTime"			"5.00"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -9651,17 +9635,17 @@
 		"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"slow"							"-25 -50 -75 -100"
+				"slow"							"-20 -30 -40 -50"
 			}
 		"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"attack_slow"					"-75 -150 -225 -300"
+				"attack_slow"					"-40 -80 -120 -160"
 			}
 		"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"4.75 5.5 6.25 7.0"
+				"duration"						"5.00"
 			}
 		"04"
 			{
@@ -9814,7 +9798,7 @@
 	
 	    // Damage.
 	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityDamage"                 "460 580 700"
+	    "AbilityDamage"                 "400 560 720"
 	
 	    // Cost
 	    //-------------------------------------------------------------------------------------------------------------
@@ -9822,16 +9806,12 @@
 	
 	    // Stats
 	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityModifierSupportValue"   "0.5"   // Applies two modifiers
-	
-	    // Special
-	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilitySpecial"
 	    {
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "dot_amount"            "40 50 60"
+	            "dot_amount"            "50 70 90"
 	        }
 	        
 	        "02"
@@ -10089,7 +10069,7 @@
 	        "03"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "lifesteal"             "3 6 9 12"
+	            "lifesteal"             "4 8 12 16"
 	        }
 	    }
 	
@@ -14096,7 +14076,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow"						"-20 -30 -40 -50"
+				"slow"						"-20"
 			}
 			"04"
 			{
@@ -14482,12 +14462,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow"						"-20 -30 -40 -50"
+				"slow"						"-20"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"duration"					"2"
+				"duration"					"1"
 			}
 		}
 		
@@ -17155,7 +17135,7 @@
 		"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"slow_duration"					"1.75"
+				"slow_duration"					"1.00"
 			}
 		}
 		
@@ -17426,7 +17406,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow"					"-15 -20 -25 -30"
+				"slow"					"-10"
 			}
 			"02"
 			{
@@ -17678,7 +17658,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow"						"-30"
+				"slow"						"-15"
 			}
 			"06"
 			{
@@ -19038,19 +19018,14 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow"					"-17"
+				"increase"				"15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"increase"				"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"damage"				"20"
 			}
-			"05"
+			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"movespeed_caster"		"25 30 35 40"
@@ -19109,7 +19084,6 @@
 	
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
 					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%damage"
 				}
 		
@@ -19362,7 +19336,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow"					"-100"
+				"slow"					"-50"
 			}
 			"07"
 			{
@@ -19737,6 +19711,16 @@
 				"var_type"					"FIELD_INTEGER"
 				"stun"						"2"
 			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_damage"				"475"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_damage"				"50"
+			}
 	
 		}
 		
@@ -19768,6 +19752,8 @@
 				"ScriptFile"	"heroes\mk_abilities.lua"
 				"Function"		"infusionBolt"
 				"damage"		"%damage"
+				"max_damage"	"%max_damage"
+				"min_damage"	"%min_damage"
 			}
 			}
 		
@@ -20116,11 +20102,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10 8 6 4"
+		"AbilityCooldown"				"8 6 4 2"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"
+		"AbilityManaCost"				"40"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -20133,22 +20119,22 @@
 		"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"illusion_damage"				"-60" // percentage total
+				"illusion_damage"				"-75" // percentage total
 			}
 		"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"illusion_incoming"				"300 275 250 225" // percentage total
+				"illusion_incoming"				"300" // percentage total
 			}
 		"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"illusion_duration"				"8"
+				"illusion_duration"				"6"
 			}
 		"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"illusion_tooltip"				"35" // percentage total
+				"illusion_tooltip"				"25" // percentage total
 			}
 		}
 		
@@ -20261,7 +20247,7 @@
 		"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"dmg_per_agi_pt"				"0.20 0.40 0.60 0.80" // percentage total
+				"dmg_per_agi_pt"				"0.15 0.30 0.45 0.60" // percentage total
 			}
 		"02"
 			{
@@ -20369,7 +20355,7 @@
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"95"
+		"AbilityManaCost"				"75"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -20402,7 +20388,7 @@
 		"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"slow"							"-25 -30 -35 -40"
+				"slow"							"-25"
 			}
 		}
 		
@@ -20513,7 +20499,7 @@
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"140"
+		"AbilityManaCost"				"115"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -20532,13 +20518,13 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_hero_damage"			"150 200 250"
+				"bonus_hero_damage"			"75 125 175"
 			}
 						
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"attack_interval"			"0.2"
+				"attack_interval"			"0.15"
 			}
 	
 			"04"
@@ -20550,7 +20536,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"orb_damage"				"80 140 160"
+				"orb_damage"				"80 120 160"
 			}
 		}
 		
@@ -21985,12 +21971,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow"						"-40 -80 -160 -320"
+				"slow"						"-100"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"1.5 2 2.5 3"
+				"slow_duration"				"1.0 2.0 3.0 4.0"
 			}
 			"04"
 			{
@@ -22305,7 +22291,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow"						"-25 -35 -45"
+				"slow"						"-35"
 			}
 			"03"
 			{
@@ -22837,7 +22823,7 @@
 	        "03"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "slow_duration"     "2"
+	            "slow_duration"     "1"
 	        }
 	    }
 	
@@ -23503,7 +23489,7 @@
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"60 70 80 90"
+		"AbilityManaCost"				"40 50 60 70"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -23532,7 +23518,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow"					"-50"
+				"slow"					"-25"
 			}
 			"06"
 			{
@@ -24639,7 +24625,7 @@
 		"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"slow"							"-55"
+				"slow"							"-30"
 			}
 		"04"
 			{
@@ -26317,11 +26303,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"160"
+		"AbilityCooldown"				"160 130 100"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"280"
+		"AbilityManaCost"				"200"
 	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -26620,6 +26606,12 @@
 				"distance"		"%distance"
 				"radius"		"%radius"
 			}
+	
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/set_abilities.lua"
+				"Function"		"ReduceCooldowns"
+			}
 		}
 		
 		"Modifiers"
@@ -26697,7 +26689,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_slow"			"-10 -14 -18 -22"
+				"attack_slow"			"-6 -12 -18 -24"
 			}
 			"02"
 			{
@@ -26707,7 +26699,17 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"creep_attack_slow"		"-2 -4 -6 -8"
+				"creep_attack_slow"		"-3 -6 -9 -12"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"creep_damage_reduction" "-4 -5 -6 -7"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_reduction" 	"20 30 40 50"
 			}
 		}
 	
@@ -26719,9 +26721,25 @@
 		
 		"Modifiers"
 			{
-				"modifier_harsh_sun_aura"
+				"modifier_harsh_sun_owner"
 				{
 					"Passive"			"1"
+					"IsHidden"			"1"
+					"IsDebuff"			"0"
+				
+					"ThinkInterval"  "1.0"
+					"OnIntervalThink"
+					{
+						"RunScript"
+						{
+							"ScriptFile"	"heroes/set_abilities.lua"
+							"Function"		"HarshClimate"
+						}
+					}
+				}
+				"modifier_harsh_sun_aura"
+				{
+					"Passive"			"0"
 					"IsHidden"			"1"
 					"IsDebuff"			"0"
 				
@@ -26735,7 +26753,7 @@
 	
 				"modifier_harsh_sun_aura_creep"
 				{
-					"Passive"			"1"
+					"Passive"			"0"
 					"IsHidden"			"1"
 					"IsDebuff"			"0"
 				
@@ -26756,6 +26774,7 @@
 					"Properties"
 					{
 						"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%creep_attack_slow"
+						"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%creep_damage_reduction"
 					}
 				}
 	
@@ -26795,7 +26814,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14"
+		"AbilityCooldown"				"20"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -26813,7 +26832,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow"					"-10 -20 -30 -40"
+				"slow"					"-15"
 			}
 			"03"
 			{
@@ -26852,6 +26871,11 @@
 				"distance"		"700"
 				"radius"		"%radius"
 				"duration"		"%time"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/set_abilities.lua"
+				"Function"		"ReduceCooldowns"
 			}
 		}
 	
@@ -27003,6 +27027,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"slow_duration"			"1"
 			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"movespeed_bonus"		"5 10 15 20 25 30 35 40"
+			}
 		}
 	
 		"precache"
@@ -27042,6 +27071,11 @@
 							"ScriptFile"	"heroes/set_abilities.lua"
 							"Function"		"Dust"
 						}
+					}
+	
+					"Properties"
+					{
+					    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movespeed_bonus"
 					}
 				}
 	
@@ -28138,7 +28172,7 @@
 	        "01"
 	        {
 	            "var_type"                      "FIELD_INTEGER"
-	            "slow_tooltip"                  "-10 -20 -30 -40"
+	            "slow_tooltip"                  "-5 -10 -15 -20"
 	        }
 	        "02"
 	        {
@@ -29008,7 +29042,7 @@
 		"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"slow"							"-10 -20 -30 -40"
+				"slow"							"-5 -10 -15 -20"
 			}
 		"02"
 			{
@@ -30609,7 +30643,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow"						"-20 -40 -60 -80"
+				"slow"						"-20 -30 -40 -50"
 			}
 		}
 		

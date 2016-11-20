@@ -79,7 +79,13 @@ function check_damage(keys)
 
 	local attacker = keys.attacker
 
-	if dmg > 50 then
-		keys.ability:StartCooldown(1.5)
+	if attacker:IsHero() or attacker:GetOwner():IsHero() then
+
+		print("Pendulum Fragment take damage event")
+
+		if dmg > 20 then
+			keys.ability:StartCooldown(3)
+		end
+		
 	end
 end

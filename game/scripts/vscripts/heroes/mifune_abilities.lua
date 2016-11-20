@@ -319,7 +319,7 @@ function zanmato_init( keys )
 				  iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
 				  fExpireTime = GameRules:GetGameTime() + 10.0,
 				  bDeleteOnHit = true,
-				  iMoveSpeed = 600,
+				  iMoveSpeed = 800,
 				  bProvidesVision = false,
 				  iVisionRadius = 275,
 				  iVisionTeamNumber = caster:GetTeamNumber(),

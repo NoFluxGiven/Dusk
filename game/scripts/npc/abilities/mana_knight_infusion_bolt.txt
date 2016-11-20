@@ -45,6 +45,16 @@
 			"var_type"					"FIELD_INTEGER"
 			"stun"						"2"
 		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"max_damage"				"475"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"min_damage"				"50"
+		}
 
 	}
 	
@@ -76,6 +86,8 @@
 			"ScriptFile"	"heroes\mk_abilities.lua"
 			"Function"		"infusionBolt"
 			"damage"		"%damage"
+			"max_damage"	"%max_damage"
+			"min_damage"	"%min_damage"
 		}
 		}
 	

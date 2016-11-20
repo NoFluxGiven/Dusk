@@ -75,6 +75,12 @@
 			"distance"		"%distance"
 			"radius"		"%radius"
 		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/set_abilities.lua"
+			"Function"		"ReduceCooldowns"
+		}
 	}
 	
 	"Modifiers"
