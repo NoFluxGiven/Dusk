@@ -42,6 +42,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"radius"				"575"
 		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_damage_creep"	"2 3 4 5"
+		}
 	}
 
 	"precache"
@@ -59,7 +64,7 @@
 				"Passive"			"0"
 				"IsHidden"			"0"
 				"IsDebuff"			"0"
-				"Duration"			"8"
+				"Duration"			"%duration"
 			
 				"Properties"
 				{
@@ -72,7 +77,7 @@
 				"Passive"			"0"
 				"IsHidden"			"0"
 				"IsDebuff"			"0"
-				"Duration"			"8"
+				"Duration"			"%duration"
 			
 				"Properties"
 				{
@@ -85,7 +90,7 @@
 				"Passive"			"0"
 				"IsHidden"			"0"
 				"IsDebuff"			"0"
-				"Duration"			"8"
+				"Duration"			"%duration"
 			
 				"Properties"
 				{
@@ -98,11 +103,24 @@
 				"Passive"			"0"
 				"IsHidden"			"0"
 				"IsDebuff"			"0"
-				"Duration"			"8"
+				"Duration"			"%duration"
 			
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "14"
+				}
+			}
+			"modifier_inspire_attack_damage_creep"
+			{
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%attack_damage_creep"
 				}
 			}
 		}

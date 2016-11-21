@@ -21,7 +21,7 @@
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"60 50 40"
+	"AbilityCooldown"				"60"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -34,7 +34,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_increase"			"40 60 80"
+			"damage_increase"			"20 30 40"
 		}
 		"02"
 		{
@@ -70,7 +70,7 @@
 		"08"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"scepter_damage_reduction"  "-40 -60 -80"
+			"scepter_damage_reduction"  "-20 -30 -40"
 		}
 		"09"
 		{
@@ -85,7 +85,7 @@
 		"11"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_increase_creep" 	"10 15 20"
+			"damage_increase_creep" 	"8 12 16"
 		}
 	}
 	

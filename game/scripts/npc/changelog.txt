@@ -12,6 +12,22 @@ Balance Changes:
 
 None.
 
+Version 1.94f
+
+HEROES
+=========
+
+NEITH
+- Reduced Decisive Strike slow to 20/25/30/35% (was 40/50/60/70%).
+- Decisive Strike damage reduced to 100/140/180/220 (was 100/160/220/280).
+- Decisive Strike slow and armor debuff is now purgable.
+- Decisive Strike damage is now Physical.
+- Decisive Strike hit radius increased to 200 (was 175).
+- Inspire now grants 2/3/4/5 damage to creeps. Grants the same bonus as before to Heroes (5/8/11/14).
+- Rally damage increase reduced to 20/30/40 (was 40/60/80).
+- Rally cooldown increased to 60s (was 60/50/40s).
+- Rally creep damage increase reduced to 8/12/16 (was 10/15/20).
+
 Version 1.94e
 
 HEROES

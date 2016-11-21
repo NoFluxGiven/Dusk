@@ -2806,7 +2806,7 @@
 	{
 	}
 	}
-	"item_soul_reaver"
+	"item_reaving_stone"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2815,7 +2815,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"			"item_soul_reaver"
+		"AbilityTextureName"			"item_reaving_stone"
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
@@ -2825,10 +2825,10 @@
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"6150"
+		"ItemCost"						"475"
 		"ItemShopTags"					"hard_to_tag"
 		"ItemQuality"					"artifact"
-		"ItemAliases"					"soul_reaver;exalted"
+		"ItemAliases"					"reaving_stone"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"

@@ -21078,7 +21078,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
@@ -21087,7 +21087,7 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"175"
+		"AbilityCastRange"				"200"
 		"AbilityCastPoint"				"0.15 0.15 0.15 0.15"
 	
 		// Time		
@@ -21097,7 +21097,7 @@
 	
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 160 220 280"
+		"AbilityDamage"					"100 140 280 220"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -21110,12 +21110,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hit_radius"				"175"
+				"hit_radius"				"200"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow"						"-40 -50 -60 -70"
+				"slow"						"-20 -25 -30 -35"
 			}
 			// Extra variables
 			"03"
@@ -21221,6 +21221,7 @@
 				"Passive"			"0"
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
+				"IsPurgable"		"1"
 				"Duration"			"%duration"
 			
 				"Properties"
@@ -21288,6 +21289,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"radius"				"575"
 			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_damage_creep"	"2 3 4 5"
+			}
 		}
 	
 		"precache"
@@ -21305,7 +21311,7 @@
 					"Passive"			"0"
 					"IsHidden"			"0"
 					"IsDebuff"			"0"
-					"Duration"			"8"
+					"Duration"			"%duration"
 				
 					"Properties"
 					{
@@ -21318,7 +21324,7 @@
 					"Passive"			"0"
 					"IsHidden"			"0"
 					"IsDebuff"			"0"
-					"Duration"			"8"
+					"Duration"			"%duration"
 				
 					"Properties"
 					{
@@ -21331,7 +21337,7 @@
 					"Passive"			"0"
 					"IsHidden"			"0"
 					"IsDebuff"			"0"
-					"Duration"			"8"
+					"Duration"			"%duration"
 				
 					"Properties"
 					{
@@ -21344,11 +21350,24 @@
 					"Passive"			"0"
 					"IsHidden"			"0"
 					"IsDebuff"			"0"
-					"Duration"			"8"
+					"Duration"			"%duration"
 				
 					"Properties"
 					{
 						"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "14"
+					}
+				}
+				"modifier_inspire_attack_damage_creep"
+				{
+					"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+					"Passive"			"0"
+					"IsHidden"			"0"
+					"IsDebuff"			"0"
+					"Duration"			"%duration"
+				
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%attack_damage_creep"
 					}
 				}
 			}
@@ -21548,7 +21567,7 @@
 	
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60 50 40"
+		"AbilityCooldown"				"60"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -21561,7 +21580,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_increase"			"40 60 80"
+				"damage_increase"			"20 30 40"
 			}
 			"02"
 			{
@@ -21597,7 +21616,7 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"scepter_damage_reduction"  "-40 -60 -80"
+				"scepter_damage_reduction"  "-20 -30 -40"
 			}
 			"09"
 			{
@@ -21612,7 +21631,7 @@
 			"11"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_increase_creep" 	"10 15 20"
+				"damage_increase_creep" 	"8 12 16"
 			}
 		}
 		

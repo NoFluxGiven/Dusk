@@ -4,6 +4,7 @@ function Inspire(keys)
 	local lvl = ab:GetLevel()
 	local radius = keys.radius or 575
 	local mod = "modifier_inspire_attack_damage"..tostring(lvl)
+	local mod_creep = "modifier_inspire_attack_damage_creep"
 
 	if lvl == 0 then return end
 
@@ -22,9 +23,15 @@ function Inspire(keys)
 		                    false)
 
 	for k,v in pairs(found) do
-		ab:ApplyDataDrivenModifier(caster, v, mod, {}) --[[Returns:void
-		No Description Set
-		]]
+		if v:IsHero() then
+			ab:ApplyDataDrivenModifier(caster, v, mod, {}) --[[Returns:void
+			No Description Set
+			]]
+		else
+			ab:ApplyDataDrivenModifier(caster, v, mod_creep, {}) --[[Returns:void
+			No Description Set
+			]]
+		end
 
 	end
 end
