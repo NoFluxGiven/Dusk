@@ -126,3 +126,36 @@ function earthbreaker(keys)
 		end
 	end
 end
+
+function BerserkerAura(keys)
+	local caster = keys.caster
+	local target = keys.target
+
+	local dmg = keys.dmg
+	local atk = keys.atk
+
+	local pct = 1-target:GetHealthPercent()/100
+
+	if caster:PassivesDisabled() then return end
+
+	local fdmg = math.floor(dmg*pct)
+	local fatk = math.floor(atk*pct)
+
+	if fdmg > 0 then
+
+		local dmg_mod = keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_berserker_aura_bonuses_dmg", {}) --[[Returns:void
+		No Description Set
+		]]
+		dmg_mod:SetStackCount(fdmg)
+
+	end
+
+	if fatk > 0 then
+
+		local atk_mod = keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_berserker_aura_bonuses_atk", {}) --[[Returns:void
+		No Description Set
+		]]
+		atk_mod:SetStackCount(fatk)
+
+	end
+end

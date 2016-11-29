@@ -17,7 +17,7 @@
 	"AbilityCastPoint"				"0"
 	
 	// Time		
-	//---------------------------------------------------a----------------------------------------------------------
+	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"0"
 
 	// Cost
@@ -40,21 +40,22 @@
 		"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_attack_speed"			"12"
+			"max_bonus_attack_speed"		"15 30 45 60"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"max_bonus_damage"				"10 20 30 40"
 		}
 		"04"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"10 15 20 25"
+			"var_type"						"FIELD_FLOAT"
+			"percent"						"10"
 		}
 	}
 	
 	"precache"
 		{
-		"particle" "particles/creeps/lane_creeps/creep_dire_hulk_swipe_right.vpcf"
-		"particle" "particles/creeps/lane_creeps/creep_dire_hulk_swipe_left.vpcf"
-		"particle" "particles/creeps/lane_creeps/creep_radiant_hulk_swipe_right.vpcf"
-		"particle" "particles/creeps/lane_creeps/creep_radiant_hulk_swipe_left.vpcf"
 		"soundfile" "soundevents\hero_phantom.vsndevts"
 		}
 	
@@ -80,10 +81,40 @@
 				"IsBuff"			"1"
 				"IsDebuff"			"0"
 			
+				"ThinkInterval"  "0.25"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/war_abilities.lua"
+						"Function"		"BerserkerAura"
+						"dmg"			"%max_bonus_damage"
+						"atk"			"%max_bonus_attack_speed"
+					}
+				}
+			}
+			"modifier_berserker_aura_bonuses_dmg"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"1"
+			
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "1"
+				}
+			}
+			"modifier_berserker_aura_bonuses_atk"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"1"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "1"
 				}
 			}
 		}

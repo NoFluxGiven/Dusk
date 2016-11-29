@@ -46,6 +46,7 @@
 	"npc_dota_hero_dragon_knight" "1"
 	"npc_dota_hero_axe" "1"
 	"npc_dota_hero_techies" "1"
+	"npc_dota_hero_leshrac" "1"
 	"npc_dota_hero_necrolyte" "1"
 	"npc_dota_hero_chaos_knight" "1"
 	"npc_dota_hero_enigma" "1"

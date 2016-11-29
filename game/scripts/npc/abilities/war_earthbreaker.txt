@@ -8,14 +8,14 @@
     "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
-    "AnimationPlaybackRate"         "0.9"
+    "AnimationPlaybackRate"         "0.85"
     "FightRecapLevel"               "1"
     "AbilityTextureName"            "war_earthbreaker"
     
     // Casting
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCastRange"              "325"
-    "AbilityCastPoint"              "0.4"
+    "AbilityCastPoint"              "0.45"
 
     // Time     
     //-------------------------------------------------------------------------------------------------------------
@@ -52,7 +52,7 @@
         "03"
         {
             "var_type"              "FIELD_FLOAT"
-            "stun"                  "1.00 1.50 2.00 2.50"
+            "stun"                  "1.00 1.35 1.70 2.05"
         }
     }
 

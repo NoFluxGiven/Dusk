@@ -12,6 +12,66 @@ Balance Changes:
 
 None.
 
+Version 1.95
+
+HEROES
+=========
+
+!!!NEW HERO!!!
+
+PTOMELY
+Heralding from the forests of Varille, Ptomely was a powerful bender of the mystic fabric, a construct his people claimed was the basis for life. At the age of 16, the young elf stumbled across a pitch black stone, glowing at its centre with a great and terrible force. When he touched it, his powers flared to life with new and destructive malevolence, a dark spirit controlling him and twisting his form. Now he crushes his foes on the battlefield with a malice unmatched by any, and feared by even the gods.
+A scaling Intelligence core nuker. Rip your enemies' souls from their bodies, slice them to pieces with blades of pure force, convert the Physical damage they take to Magical damage, and use their Mana pool against them with Expunge.
+
+ALROTH
+- Shatter is now purgable.
+
+WAR
+- FIGHT ME! radius reduced to 325 (was 500).
+- FIGHT ME! no longer grants bonus attack speed.
+- FIGHT ME! deals Magical damage at the end of its duration instead of Pure damage.
+- Earthbreaker stun duration reduced to 1.00/1.35/1.70/2.05s (was 1.00/1.50/2.00/2.50s).
+- Earthbreaker cast point increased to 0.45s (was 0.4s).
+- Bloodlust cast point increased to 0.4s (was 0.0s).
+- Bloodlust cast range reduced to 425 (was 700).
+- Bloodlust duration reduced to 3.00/3.75/4.50/5.25s (was 3/4/5/6s).
+- Bloodlust no longer slows.
+- Bloodlust now deals damage over time: 12/24/36/48 per 0.75s. Does not affect allies.
+- Berserker's Aura bonus attack speed increased to 15/30/45/60 (was 12).
+- Berserker's Aura bonus damage increased to 10/20/30/40 (was 10/15/20/25).
+- Berserker's Aura now grants its bonuses inversely proportionate to the affected unit's Health (less Health = more damage/attack speed).
+- Berserker's Aura now lingers for 2s after leaving the radius.
+- Berserker's Aura's effect is now disabled by Break.
+
+HAWKEYE
+- Rapidfire cooldown reduced to 10/8/6/4s (was 15/12/9/6s).
+
+SET
+- Sand Puppet Warriors now disable block for the slow duration when striking Heroes.
+- Dust Storm damage over time increased to 40/100/160/220 (was 40/80/120/160).
+
+ITEMS
+========
+
+Added the following new items:
+
+RAGE POTION
+200 gold, consumable, available at Ob's Shop and the Main Shop.
+- Grants bonus damage and attack speed to the target for 6s.
+- Purgable.
+
+IRONBLOOD POTION
+250 gold, consumable, available at Ob's Shop and the Main Shop.
+- Grants bonus Armor and Magic Resistance to the target for 6s.
+- Purgable.
+
+Made changes to the following items:
+
+ARCANITE SHARDS
+- Minimum damage reduced to 100 (was 150).
+- Bonus Magical damage on proc reduced to 60 (was 75).
+- Arcanite Shards can now be purchased in the main shop as well as Ob's shop.
+
 Version 1.94f
 
 HEROES

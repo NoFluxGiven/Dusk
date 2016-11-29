@@ -2156,6 +2156,85 @@
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
+	"npc_dota_hero_ptomely"
+	{
+		"AbilityLayout" 		"4"
+		// An extremely powerful spellcaster with terrible stats and huge mana costs.
+		// Meant to rely on his two nukes, Astralise and Mirror Blade, until he can sustain his E and R.
+		"override_hero"			"npc_dota_hero_leshrac"
+		"Ability1"				"ptomely_astralise" // Knocks the target enemy or ally out of their Physical body, dealing Magical damage to enemies.
+		// The Hero remains behind, stunned, but a ghostly orb of them appears behind them.
+		// The main Hero takes Physical damage but cannot take Magical damage.
+		// Periodically, the orb releases pulses of energy that deal Magical damage to nearby enemies.
+		// When targeted on allies, grants them bonus Mana and Health regen.
+		// Lasts 1.5/2.0/2.5/3.0s.
+		"Ability2"				"ptomely_mirror_blade" // Ptomely fires a flurry of barely visible blades a great distance in front of him. The blades deal Physical damage based
+		// off his Intelligence level.
+		// Each blade deals 0.40/0.50/0.60/0.70x his Intelligence. Fires 5 blades in 0.15s intervals.
+		"Ability3"				"ptomely_enthrall" // The unit targeted is enthralled, causing them to convert all Physical damage they take before reductions to Magical damage, and
+		// reducing their Magic Resistance. Reduces Magic Resistance by 20/25/30/35%. Lasts 8s. Reduces Magic Resistance by half the amount when targeting allies instead of enemies.
+		"Ability4"				"ptomely_expunge" // The target unit has its Magical energies expunged and their current Mana is drained,
+		// creating an orb of pure Mana above them and slowing them drastically.
+		// After a short delay, the orb explodes, dealing damage equivalent the amount of Mana consumed, and spreading all Mana equally between allies in the AoE.
+		// Slows by 40/60/80%.
+		// Drains 30/40/50% of the target's Mana.
+		// Has a 2.5s delay.
+		// Drains the target's Mana over the delay duration.
+		// ControlPoints:
+		// 0: Origin, but model attach
+		// 1: Orb position
+		// 2: Explosion size (endcap)
+	
+		"Ability5"				"" // 
+		"Ability6"				"" // 
+		"Ability7"				""
+		"Ability8"				""
+		"Ability9"				""
+		"Ability10"				""
+		"Ability11"				""
+		"Ability12"				""
+		"Ability13"				""
+		"Ability14"				""
+		"Ability15"				""
+		"Ability16"				"attribute_bonus"
+	
+		"ArmorPhysical"				"1"									// Physical protection.
+		"MagicalResistance"				"25"									// Magical protection (percentage).
+	
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackRange"				"400"
+		"AttackAnimationPoint" 		"0.3"
+		"AttackRate"				"1.6"
+	
+		"AttackDamageMin"			"7"										// Damage range min.
+		"AttackDamageMax"			"13"										// Damage range max.
+	
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"19"										// Base strength
+		"AttributeStrengthGain"		"1.6"										// Strength bonus per level.
+		"AttributeBaseIntelligence"	"36"										// Base Intelligence
+		"AttributeIntelligenceGain"	"2.3"										// Intelligence bonus per level.
+		"AttributeBaseAgility"		"12"										// Base agility
+		"AttributeAgilityGain"		"1.4"										// Agility bonus per level.
+	
+		//"BountyXP"					"0"									// Experience earn.
+		//"BountyGoldMin"				"0"										// Gold earned min.
+		//"BountyGoldMax"				"0"										// Gold earned max.
+	
+		//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		//"RingRadius"				"70"
+	
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"300"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+	
+		//"StatusHealth"			"981"									// Base health.
+		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		//"StatusMana"				"387"										// Base mana.
+		"StatusManaRegen"			"0"									// Mana regeneration rate.
+	
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	}
 	"npc_dota_hero_reus"
 	{
 		"AbilityLayout" 		"4"
@@ -2372,6 +2451,71 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"295"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
+	
+		//"StatusHealth"			"981"									// Base health.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
+		//"StatusMana"				"387"										// Base mana.
+		"StatusManaRegen"			"0"									// Mana regeneration rate.
+	
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	}
+	"npc_dota_hero_spike"
+	{
+		"AbilityLayout" 		"4"
+		"override_hero"			"npc_dota_hero_bristleback"
+		"Ability1"				"spike_spinstrike" // Spike begins spinning, charging up. After 4/3/2/1s of charge, he reaches the maximum speed allowed. While spinning he takes 60% less damage.
+		// Can charge for up to 4s. While spinning, he is able to reorient himself. If he does not use Release, he will simply stop using the ability.
+		"Ability2"				"spike_spinstrike_release" // Spike releases his Spinstrike, flying forward with great speed. Enemies in the way are damaged. At any time he can cast
+		// the subability Stop to get out of the Spinstrike, immediately removing any momentum he has. Each unit hit reduces the cooldown by 2s (Heroes) and 0.5s (creeps). Cooldown is
+		// 12/10/8/6s.
+		"Ability3"				"spike_spinstrike_stop" // Stops the Spinstrike at any point, turning Spike back into his normal form.
+		"Ability4"				"spike_toxic_spines" // Spike shoots a poisonous dart from his mouth at the target location. The first enemy hit takes damage over time and is slowed.
+		// Deals 75 damage immediately, then 20/40/60/80 damage every 3s for 12s.
+		"Ability5"				"spike_dustdevil" // Kicks up dust around Spike, leaving an area where enemies' fighting capabilities are limited, reducing their attack damage
+		// and attack speed.
+		"Ability6"				"spike_dig" // Spike digs into the ground, then rushes at the target location at great speed. Takes 0.25s to dig. Whilst under the ground, he is 
+		// invulnerable and unselectable. He will pop up at the target location, dealing 125/175/225 damage in an area around him.
+		// Has a low cooldown (12/8/4s).
+		"Ability7"				""
+		"Ability8"				""
+		"Ability9"				""
+		"Ability10"				""
+		"Ability11"				""
+		"Ability12"				""
+		"Ability13"				""
+		"Ability14"				""
+		"Ability15"				""
+		"Ability16"				"attribute_bonus"
+	
+		"ArmorPhysical"				"3"									// Physical protection.
+		"MagicalResistance"				"25"									// Magical protection (percentage).
+	
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackRange"				"160"
+		"AttackAnimationPoint" 		"0.3"
+		"AttackRate"				"1.5"
+	
+		"AttackDamageMin"			"23"										// Damage range min.
+		"AttackDamageMax"			"26"										// Damage range max.
+	
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"20"										// Base strength
+		"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
+		"AttributeBaseIntelligence"	"19"										// Base Intelligence
+		"AttributeIntelligenceGain"	"2.6"										// Intelligence bonus per level.
+		"AttributeBaseAgility"		"15"										// Base agility
+		"AttributeAgilityGain"		"1.5"										// Agility bonus per level.
+	
+		//"BountyXP"					"0"									// Experience earn.
+		//"BountyGoldMin"				"0"										// Gold earned min.
+		//"BountyGoldMax"				"0"										// Gold earned max.
+	
+		//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		//"RingRadius"				"70"
+	
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"310"									// Speed.
+		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
 		"StatusHealthRegen"			"1"									// Health regeneration rate.

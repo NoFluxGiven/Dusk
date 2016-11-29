@@ -1,0 +1,93 @@
+"item_rage_potion"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"3029"  //Valve's version of this item uses the ID "156".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_rage_potion"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"23"
+	"AbilityManaCost"				"0.0"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"200"
+	"ItemShopTags"					"hard_to_tag"
+	"ItemQuality"					"artifact"
+	"ItemAliases"					"rage_potion"
+	"ItemPurchasable"				"1"
+	"ItemSellable"					"1"
+	"ItemInitialCharges"            "1"
+	"ItemStackable"                 "1"
+    "ItemPermanent"                 "0"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_damage"				"20"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_attack_speed"		"40"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"buff_duration"				"6"
+		}
+	}
+
+	"precache"
+	{
+		"particle"  "particles/items/rage_potion.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_item_rage_potion"
+			"Target" 		"TARGET"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_Alchemist.ChemicalRage.Cast"
+			"Target" 		"TARGET"
+		}
+		"SpendCharge" {}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_rage_potion"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsBuff"			"1"
+			"IsPurgable"		"1"
+			"Duration"			"%buff_duration"
+
+			"EffectName" "particles/items/rage_potion.vpcf"
+			"EffectAttachType" "attach_origin"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
+			}
+		}
+	}
+}

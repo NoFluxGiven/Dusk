@@ -1,0 +1,149 @@
+//=====================================================================================================
+// PTOMELY: Astralise
+//=====================================================================================================
+"ptomely_astralise"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+	"AoERadius"						"400"
+	"AbilityTextureName"			"ptomely_astralise"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"475"
+	"AbilityCastPoint"				"0.30"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"12"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"120 130 140 150"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"100 150 200 250"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"400"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"pulse_damage"				"40 60 80 100"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"interval"					"0.5"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"1.5 2.0 2.5 3.0"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"pulse_duration"			"1.0 1.5 2.0 2.5"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"ally_heal"					"20"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles\units\heroes\hero_ptomely\astralise_unit_buff.vpcf"
+		"particle" "particles\units\heroes\hero_ptomely\astralise_ghost.vpcf"
+		"particle" "particles\units\heroes\hero_ptomely\astralise_pulse.vpcf"
+		"particle" "particles\units\heroes\hero_ancient_apparition\ancient_apparition_cold_feet_frozen.vpcf"
+		"soundfile" "soundevents\hero_ptomely.vsndevts"
+		}
+		
+	"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/ptomely_abilities.lua"
+				"Function"		"astralise"
+				"duration"		"%duration"
+				"p_duration"	"%pulse_duration"
+				"damage"		"%damage"
+			}
+		}
+	
+	"Modifiers"
+		{
+			"modifier_astralise"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+			
+				"EffectName"		"particles\units\heroes\hero_ptomely\astralise_unit_buff.vpcf"
+				"EffectAttachType"	"follow_origin"
+			
+				"OverrideAnimation"     "ACT_DOTA_DISABLED"
+
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL" "1"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_astralise_pulse"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			
+				"ThinkInterval"  "%interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/ptomely_abilities.lua"
+						"Function"		"astralise_pulse"
+						"radius"		"%radius"
+						"damage"		"%pulse_damage"
+					}
+				}
+			}
+
+			"modifier_astralise_ally"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			}
+		}
+}

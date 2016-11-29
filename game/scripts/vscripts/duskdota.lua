@@ -135,7 +135,9 @@ function duskDota:OnFirstPlayerLoaded()
   oItems,oPrices,oStocks = CreateShop({
       {"item_purging_dust"},
       {"item_arcanite_shards"},
-      {"item_pendulum_fragment"}
+      {"item_pendulum_fragment"},
+      {"item_rage_potion"},
+      {"item_ironblood_potion"}
       --{"item_glowing_jewel",1800}
     })
 
@@ -900,7 +902,39 @@ function duskDota:FilterExecuteOrder( filterTable )
   end
 
   if order_type == DOTA_UNIT_ORDER_CAST_TARGET then
+
   -- Unit Target Order Filters
+
+  -- START Ptomely Spell Reflect
+  -- Proof of concept, too OP
+  -- if target ~= nil then
+  --   if target:HasModifier("modifier_spell_reflect") then
+  --     if ability then
+  --       if hero then
+  --         print("BUMS")
+  --         --if hero:GetTeam() ~= target:GetTeam() then
+  --           local ab_name = ability:GetName()
+  --           local ab_level = ability:GetLevel()
+  --           print("POOS")
+
+  --           print("Adding ability "..ab_name.." at level "..ab_level.." to "..target:GetUnitName())
+
+  --           local ab = target:AddAbility(ab_name)
+  --           ab:SetLevel(ab_level)
+
+  --           print("Casting spell on "..hero:GetUnitName())
+
+  --           target:SetCursorCastTarget(hero)
+  --           ab:OnSpellStart()
+
+  --           target:RemoveAbility(ab:GetName())
+  --         --end
+  --       end
+  --     end
+  --   end
+  -- end
+  -- END Ptomely Spell Reflect
+
   -- START Timekeeper Echoes
     if IsValidEntity(hero.parallels_unit) then
       if hero.parallels_unit ~= nil then
@@ -970,6 +1004,20 @@ function duskDota:FilterTakeDamage( filterTable )
       return false
     end
 
+  end
+
+  -- ENTHRALL
+  if defender:HasModifier("modifier_enthralled") or defender:HasModifier("modifier_enthralled_ally") then
+    if dtype == DAMAGE_TYPE_PHYSICAL then
+      if defender:IsEthereal() then
+        print("Target is immune to the base damage, dealing none")
+      end
+      print("damage type is "..dtype.." converting to "..DAMAGE_TYPE_MAGICAL)
+      local damageb = defender:GetDamageBeforeReductions(damage,dtype)
+      print("Damage is "..damage..", before reduction is "..damageb)
+      DealDamage(defender,attacker,damageb,DAMAGE_TYPE_MAGICAL)
+      return false
+    end
   end
 
   -- GUARDIAN

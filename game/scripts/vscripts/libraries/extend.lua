@@ -98,4 +98,32 @@ function CDOTA_BaseNPC:GetDamageBeforeReductions(damageAmount,damageType)
 
 	local armor = unit:GetPhysicalArmorValue()
 	local magic_res = unit:GetMagicalArmorValue()
+
+	local reduction_amount = 0
+
+	if dtype == DAMAGE_TYPE_PHYSICAL then
+		reduction_amount = 1 - 0.06 * armor / (1 + 0.06 * armor)
+	elseif dtype == DAMAGE_TYPE_MAGICAL then
+		reduction_amount = magic_res -- /100?
+	else
+		return damage
+	end
+
+	local damageBefore = damage * (1/reduction_amount)
+
+	return damageBefore
+end
+
+function CDOTA_BaseNPC:IsEthereal()
+	local isEthereal = false
+
+	local ethereal_modifiers = {
+		"modifier_ethereal"
+	}
+
+	for k,v in pairs(ethereal_modifiers) do
+		if self:HasModifier(v) then isEthereal = true end
+	end
+
+	return isEthereal
 end
