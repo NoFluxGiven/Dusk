@@ -527,6 +527,8 @@ function checkContributor(playerID)
 
   local conData = contributors[tostring(steamID)]
 
+  print(conData)
+
   local merit = 0
 
   if conData then

@@ -54,12 +54,12 @@
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"scepter_mana_drain"		"8 12 16"
+			"scepter_mana_drain"		"15 20 25"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"minimum_damage"			"125 175 225"
+			"base_drain"				"175 250 325"
 		}
 	}
 	
@@ -79,7 +79,7 @@
 				"radius"		"%radius"
 				"pct"			"%mana_drain"
 				"aghs_pct"		"%scepter_mana_drain"
-				"min"			"%minimum_damage"
+				"base"			"%base_drain"
 			}
 		}
 	

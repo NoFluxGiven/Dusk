@@ -6,24 +6,24 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-	"AnimationPlaybackRate"			"1.5"
+	"AnimationPlaybackRate"			"2.25"
 	"AbilityTextureName"			"sniper_assassinate"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"2000"
-	"AbilityCastPoint"				"1.00"
+	"AbilityCastRange"				"1600"
+	"AbilityCastPoint"				"0.75"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"45"
+	"AbilityCooldown"				"26 24 22 20"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,7 +40,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"base_damage"				"75 100 125"
+			"base_damage"				"30 40 50 60"
 		}
 		"02"
 		{
@@ -50,7 +50,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"range"						"2000"
+			"range"						"1600"
 		}
 		"04"
 		{
@@ -65,7 +65,7 @@
 		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"mult"						"1.75 2.00 2.25"
+			"mult"						"0.50 0.60 0.70 0.80"
 		}
 		"07"
 		{

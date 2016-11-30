@@ -5,18 +5,18 @@ function hawkeye_double_tap(event)
   local target = caster:GetCursorPosition()
   local direction = (target - caster_pos):Normalized()
   local speed = 3500
-  if caster:HasScepter() then
-  distance = 16000
-  speed = 4500
-  if event.ability:HasAttribute("AbilityCastRange") then
-    print("FOUND ATTRIBUTE!!!!!!!!")
-    local f = event.ability:Attribute_GetIntValue("AbilityCastRange",0)
-    print("ATTRIBUTE IS "..f)
-  end
-  end
+  -- if caster:HasScepter() then
+  -- -- distance = 16000
+  -- -- speed = 4500
+  -- -- if event.ability:HasAttribute("AbilityCastRange") then
+  -- --   print("FOUND ATTRIBUTE!!!!!!!!")
+  -- --   local f = event.ability:Attribute_GetIntValue("AbilityCastRange",0)
+  -- --   print("ATTRIBUTE IS "..f)
+  -- -- end
+  -- end
   local point = caster_pos+direction*distance
   
-  EmitGlobalSound("Ability.Assassinate")
+  caster:EmitSound("Ability.Assassinate")
   
   caster.hitlist = {}
   
@@ -119,6 +119,10 @@ function hawkeye_double_tap_2_check(event)
   if n == 0 then caster:EmitSound("Hawkeye.Doh") caster:RemoveModifierByName("hawkeye_double_tap_second_shot_effect_mod") return end
   if caster.hitlist[n]:IsRealHero() and caster.hitlist[n]:GetHealth() <= dmg then caster:EmitSound("Hawkeye.Yes") end
   if not caster.hitlist[n]:IsRealHero() then caster:EmitSound("Hawkeye.Doh") end
+
+  event.ability:ApplyDataDrivenModifier(caster, caster.hitlist[n], "modifier_show_target", {}) --[[Returns:void
+  No Description Set
+  ]]
   
   caster.double_tap_target = caster.hitlist[n]
   
@@ -129,7 +133,7 @@ function hawkeye_double_tap_2(event)
   local caster = event.caster
   local ab = event.ability
   local ab2 = caster:FindAbilityByName("hawkeye_double_tap")
-  local speed = 6000
+  local speed = 3200
   local n = 1
   if caster.double_tap_target == nil then return end
 --  PrintTable(caster.hitlist)
@@ -148,6 +152,8 @@ function hawkeye_double_tap_2(event)
 --  
 --  local target = caster.hitlist[n]
   local target = caster.double_tap_target
+
+  caster:EmitSound("Ability.Assassinate")
   
   caster:RemoveModifierByName("hawkeye_double_tap_second_shot_effect_mod")
   
@@ -183,7 +189,7 @@ function hawkeye_double_tap_hit(event)
   local target = event.target
   local target_hp = target:GetMaxHealth()
   local mult = event.mult or 3
-  if caster:HasScepter() then mult = event.mult_scepter or 1.25 end
+  -- if caster:HasScepter() then mult = event.mult_scepter or 1.25 end
   table.insert(caster.hitlist,target)
   local ab = event.ability
   local ab2 = caster:FindAbilityByName("hawkeye_double_tap_second_shot")
@@ -220,7 +226,7 @@ function hawkeye_double_tap_hit_2(event)
   local scep_mult = ab:GetLevelSpecialValueFor("mult_scepter",ab:GetLevel()-1)
   local basedmg = ab:GetLevelSpecialValueFor("base_damage",ab:GetLevel()-1)
 
-  if caster:HasScepter() then mult = scep_mult end
+  -- if caster:HasScepter() then mult = scep_mult end
   
   local damage = caster:GetAverageTrueAttackDamage(caster)*mult+basedmg
   
@@ -333,4 +339,55 @@ function hawkeye_rapid_fire(event)
   Timers:CreateTimer(0.15*(hits-1)+0.08,function()
     Orders:IssueAttackOrder(caster,target)
   end)
+end
+
+function DetonateCountdown(keys)
+  local caster = keys.caster
+  local target = keys.target
+  local ticks = keys.ticks
+
+  local mod = target:FindModifierByName("modifier_detonator_dart")
+
+  mod:SetStackCount(ticks)
+end
+
+function DetonateTick(keys)
+  local caster = keys.caster
+  local target = keys.target
+
+  local damage = keys.damage
+  local radius = keys.radius
+  local forceExplode = keys.explode == 1
+
+  local mod = target:FindModifierByName("modifier_detonator_dart")
+
+  mod:SetStackCount(mod:GetStackCount()-1)
+
+  if mod:GetStackCount() <= 0 or forceExplode then
+    target:RemoveModifierByName("modifier_detonator_dart")
+    local enemy_found = FindUnitsInRadius( caster:GetTeamNumber(),
+                              target:GetCenter(),
+                              nil,
+                                radius,
+                                DOTA_UNIT_TARGET_TEAM_ENEMY,
+                                DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
+                                DOTA_UNIT_TARGET_FLAG_NONE,
+                                FIND_CLOSEST,
+                                false)
+    for k,v in pairs(enemy_found) do
+      DealDamage(v,caster,damage,DAMAGE_TYPE_MAGICAL)
+    end
+
+    ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf", PATTACH_ABSORIGIN_FOLLOW, target) --[[Returns:int
+    Creates a new particle effect
+    ]]
+    target:EmitSound("Hero_Gyrocopter.CallDown.Damage")
+
+    target:AddNewModifier(caster, nil, "modifier_stunned", {Duration=0.5}) --[[Returns:void
+    No Description Set
+    ]]
+    return
+  end
+
+  target:EmitSound("Hawkeye.DetBeep")
 end

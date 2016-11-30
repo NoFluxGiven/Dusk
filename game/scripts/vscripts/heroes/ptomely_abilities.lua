@@ -212,21 +212,19 @@ function expunge(keys)
 
 	local delay = keys.delay or 2.5
 
-	local amt = mp*pct
+	local base = keys.base
+
+	local amt = mp*pct + base
 
 	if aghs then
-		amt = mp*pct + bonus_mp*bonus_pct
+		amt = mp*pct + bonus_mp*bonus_pct + base
 	end
 
 	print(amt..", ".."Aghs: "..bonus_mp*bonus_pct.." Mana")
 
 	local radius = keys.radius
 
-	local min = keys.min
-
 	local total_damage = damage*amt
-
-	if total_damage <= min then total_damage = min end
 
 	local particle_name = "particles/units/heroes/hero_ptomely/expunge.vpcf"
 
