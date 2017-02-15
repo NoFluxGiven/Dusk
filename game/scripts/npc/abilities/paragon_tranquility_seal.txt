@@ -50,7 +50,7 @@
 	"precache"
 	{
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
-		"particle"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff_rune.vpcf"
+		"particle"			"particles/units/heroes/hero_paragon/tranquil_seal_rune.vpcf"
 		"particle"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_silence.vpcf"
 	}
 
@@ -76,7 +76,7 @@
 			"IsDebuff" "0"
 			"IsBuff" "1"
 			"IsPurgable" "0"
-			"EffectName" "particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff.vpcf"
+			"EffectName" "particles/units/heroes/hero_paragon/tranquil_seal_rune.vpcf"
 			"Properties"
 				{
 				"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL" "1"
@@ -97,7 +97,7 @@
 				"AttachEffect"
 				{
 					"Target"				"TARGET"
-					"EffectName"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff_rune.vpcf"
+					"EffectName"			"particles/units/heroes/hero_paragon/tranquil_seal_rune.vpcf"
 					"EffectAttachType"		"start_at_customorigin"
 					"ControlPointEntities"
 					{
@@ -113,7 +113,7 @@
 			"IsDebuff" "1"
 			"IsBuff" "0"
 			"IsPurgable" "0"
-			"EffectName" "particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff.vpcf"
+			"EffectName" "particles/units/heroes/hero_paragon/tranquil_seal_rune.vpcf"
 			"Properties"
 				{
 				"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL" "1"
@@ -134,7 +134,7 @@
 				"AttachEffect"
 				{
 					"Target"				"TARGET"
-					"EffectName"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff_rune.vpcf"
+					"EffectName"			"particles/units/heroes/hero_paragon/tranquil_seal_rune.vpcf"
 					"EffectAttachType"		"start_at_customorigin"
 					"ControlPointEntities"
 					{

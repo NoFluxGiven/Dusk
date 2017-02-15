@@ -155,5 +155,8 @@
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_mana_knight/infusion_bolt_trail_g.vpcf"
 		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_mana_knight/infusion_bolt_trail_glow.vpcf"
+		},
 	]
 }

@@ -12,6 +12,192 @@ Balance Changes:
 
 None.
 
+Version 1.96b
+
+HEROES
+=========
+
+TIMEKEEPER
+- Futurestrike can now stack fully.
+- Futurestrike can now target creeps.
+- Futurestrike now deals quadruple damage to illusions and non-Hero units (does not apply to Roshan).
+- Fixed some inaccurate tooltips.
+- Reworked Parallels into Haste Aura:
+HASTE AURA
+In a 900 radius, grants allies 4/8/12/16% movespeed and 4/8/12/16 attack speed. When an affected Hero casts a spell, there is a 25% chance the spell's cooldown will be reduced by 20/25/30/35%.
+- Added sound effects for Futurestrike and Dilation.
+
+ALEXANDER
+- Elandra's Blessing is now purgable.
+- Elandra's Blessing attribute to damage percentage reduced to 50/75/100/125% (was 60/90/120/150%).
+
+FURY
+- Fixed some inaccurate tooltips.
+
+WAR
+- Bloodlust duration increased to 3.0/4.0/5.0/6.0s (was 3.00/3.75/4.50/5.25s).
+- Bloodlust damage interval increased to 1.00s (was 0.75s).
+- Bloodlust damage over time increased to 15/30/45/60 (was 12/24/36/48).
+- Bloodlust cooldown reduced to 24/20/16/12s (was 20/19/18/17s).
+- Bloodlust can now affect creeps, but does not grant bonus attack speed or attack damage to them.
+
+MIFUNE
+- Raigeki initial damage increased to 75/125/175/225 (was 50/100/150/200).
+- Raigeki explosion damage increased to 60/90/120/150 (was 50/75/100/125).
+- Raigeki explosion delay increased to 1.75s (was 1.50s).
+- Raigeki mana cost increased to 65/75/85/95 (was 75).
+- Raigeki slow reduced to 20% (was 25%).
+
+BUGFIXES
+===========
+
+- Set's Duststorm deals damage again.
+- Fixed Mifune's Raigeki not travelling.
+- Fixed Reus' Magnitude not continuing after the first tremor.
+- Fixed Hero's One Punch!! not doing damage to enemies.
+- Removed Bristleback from pickable Heroes.
+
+Version 1.96
+
+HEROES
+=========
+
+AETHER
+- Teleport Mana cost reduced to 165/145/125/105 (was 165).
+
+SET
+- Harsh Sun cooldown reduction increased to 15/30/45/60% (was 20/30/40/50%).
+
+SHADE
+- Venomous now has an Aghanim's Scepter Upgrade: the damage and slow increases as the debuff remains on a target.
+
+PARAGON
+- Base damage reduced to 25 - 30 (total damage is 50 - 55).
+- Changed the particle effect for Tranquil Seal to be more in line with its new icon.
+- Conversion reworked into Divine Armour:
+DIVINE ARMOUR
+Damage levelled against the Paragon charges a radiant power inside his armour. Upon reaching a threshold of 250 damage, the armour unleashes a blast of light, dealing 6/8/10/12% of enemy units' Health within a 350 radius, and causing him to reduce incoming damage by 30% for 4s. Disabled by Break.
+
+MISC
+=======
+
+- Fixed some of the issues caused by 7.00.
+- Added Aghanim's Upgrade descriptions and "Upgradable by Aghanim's Scepter" tooltips to all Heroes with Aghanim's Scepter Upgrades.
+- Removed the Hero Help system.
+- Added descriptions of each Hero's basic playstyle in the pick screen.	
+- All talents for all Heroes are now +2/+4/+8/+16 to all stats. This is a temporary measure as we roll out individual talents for each Hero.
+- Cured dyslexia.
+
+Version 1.95c
+
+HEROES
+=========
+
+HAWKEYE
+- Fixed an error with Detonator Dart's explosion radius causing it to only deal damage to the main target.
+- Detonator Dart now properly explodes upon the unit's death.
+
+HERO
+- Justice Kick cooldown increased to 8/7/6/5s (was 10/8/6/4s).
+- Freedom Strike cast point increased to 0.15s (was 0.1s).
+- Freedom Strike damage reduced to 110/150/190/230 (was 130/170/210/250).
+- Freedom Strike slow reduced to 10/12/14/16% (was 20%).
+- ONE PUNCH!! crit damage reduced to 200/275/350% (was 300/400/500%).
+- ONE PUNCH!! Mega Crit damage reduced to 300/375/450% (was 550/600/650%).
+- ONE PUNCH!! Mega Crit Scepter damage reduced to 575% (was 1000%).
+- ONE PUNCH!! cooldown increased to 65s (was 60s).
+- ONE PUNCH!! no longer resets Freedom Strike's cooldown.
+
+PTOMELY
+- Astralise cooldown increased to 15s (was 12s).
+
+SHADE
+- Fixed Shade's Ultimate not doing damage.
+- Smoke Bomb duration reduced to 5s (was 6s).
+- Smoke Bomb linger duration reduced to 0.25s (was 1s).
+- Allies in Smoke Bomb's radius now remain invisible even when casting spells or attacking.
+
+MANA KNIGHT
+- Name changed to Mindflayer.
+- Striking buildings now consumes Vorpal Assault charges, but doesn't deal the damage.
+- Vorpal Assault now costs 125 Mana to activate.
+- Vorpal Assault now has a cast time of 0.50s.
+- Vorpal Assault damage per Mana point missing reduced to 0.10/0.15/0.20 (was 0.20/0.30/0.40).
+- Vorpal Assault base Mana drain reduced to 40/60/80 (was 60/100/140).
+- Vorpal Assault now drains 3/4/5% of the target's Max Mana with each strike, plus the base Mana Drain.
+- Added sounds for Vorpal Assault start up and a custom sound for Vorpal Assault strikes.
+- Arcanum Break spell damage reduction duration decreased to 4s (was 8s).
+- Infusion Bolt now makes a different noise when striking for maximum damage.
+- Infusion Bolt cast range reduced to 425 (was 500).
+- Mana Seal slow duration reduced to 1.5s (was 3.0s).
+- Mana Seal damage increased to 80/140/200/260 (was 40/80/120/160).
+- Mana Seal ignore time reduced to 8s (was 10s).
+- Mana Seal cast point increased to 0.6s (was 0.4s).
+- Added Aghanim's Scepter Upgrade: Upgrades Mana Seal to pierce Magic Immunity, increases the mana drain per second, reduces the ignore time to 4s, and makes the damage upon reaching zero Mana Pure.
+
+ITEMS
+========
+
+THUNDERBOLT
+- Now grants the +24 damage that Mjollnir does.
+- Active cooldown decreased to 8s (was 10s).
+- Active slow duration reduced to 2.0s (was 3s).
+- Active damage reduced to 200 (was 275).
+- Chain lightning now deals 70 damage, decaying by 15% per bounce (was 120 damage, decaying by 15% per bounce).
+- Chain lightning now bounces every 0.20s (was every 0.15s).
+- Chain lightning now no longer procs when Thunderbolt is on cooldown.
+	
+TURIN'S SCEPTER
+- Bonus Mana regen reduced to 100% (was 200%).
+- Bonus Intelligence reduced to 40 (was 45).
+- Bonus spell damage reduced to 15% (was 25%).
+- Active cooldown increased to 45s (was 30s).
+- Active Mana cost reduced to 225 (was 550).
+- Active can no longer target Magic immune enemies (but the slow, mute, disarm and silence still affects them if it was cast on the unit before the Magic Immunity began).
+- When the active debuff ends, it now applies a secondary debuff that reduces attack damage by 50% for 10s. Neither buff is purgable.
+
+VAGRANT'S DAGGER
+- Cooldown increased to 11s (was 10s).
+- Bonus movespeed increased to 60 (was 30).
+- Now has a modifier to show how long invisibility lasts upon feint blinking (self cast).
+
+FENRIR
+- Bonus damage reduced to 55.
+- Crit chance increased to 35% (was 23%).
+- Crit Multiplier reduced to 300% (was 350%).
+- Active is now Reave. Deals damage to target enemy equivalent to 150% of the user's attack damage. The damage is Pure and pierces Magic Immunity. Has a 25s cooldown and a 500 cast range.\
+
+SWORD OF GREED
+- Tick gold increased to 1.5 per 0.5s (was 1 per 0.5s).
+
+SOUL VIAL
+- Restore per charge reduced to 10 (was 15).
+
+REGAL SIGIL
+- Cost reduced to 3000 gold.
+
+ESSENCE OF AGILITY, STRENGTH, AND INTELLIGENCE
+- All costs increased to 850 gold.
+
+PURGING DUST
+- Gold cost reduced to 200 (was 275).
+- Initial charges reduced to 1 (was 2).
+- Cooldown reduced to 45s (was 60s).
+- No longer grants bonus Magic resistance.
+
+GRIM GAUNTLET
+- Cooldown reduced to 14s (was 20s).
+- Health percentage to healing reduced to 15% (was 30%).
+- Mana percentage to Mana restore reduced to 15% (was 20%).
+- Damage reduced to 115 per charge (was 135).
+
+COLOSSUS
+- Bonus Strength increased to 60 (was 50).
+- Damage reduction decreased to 10% (was 20%).
+
+CELESTIAL SPEAR
+- Celestial Spear has been removed.
+
 Version 1.95b
 
 HEROES

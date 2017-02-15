@@ -127,3 +127,11 @@ function CDOTA_BaseNPC:IsEthereal()
 
 	return isEthereal
 end
+
+function CDOTA_BaseNPC:HasTalent(talent_string)
+  if self:HasAbility("special_bonus_"..talent_string) then
+  	local ab = self:FindAbilityByName("special_bonus_"..talent_string)
+  	if ab:GetLevel() > 0 then return true end
+  end
+  return false
+end

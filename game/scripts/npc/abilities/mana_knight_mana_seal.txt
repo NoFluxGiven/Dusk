@@ -19,7 +19,7 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"650"
-	"AbilityCastPoint"				"0.4"
+	"AbilityCastPoint"				"0.6"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -29,7 +29,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"75 100 125 150"
 
-	"AbilityDamage"					"40 80 120 160"
+	"AbilityDamage"					"80 140 200 260"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -58,6 +58,16 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"radius"					"350"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"slow_duration"				"1.5"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"mana_removal_scepter"		"6 9 12 15" // percent of Max Mana per second (0.1s intervals)
 		}
 	}
 	
@@ -92,7 +102,7 @@
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 				"Aura_ApplyToCaster" "0"
 
 				"OnCreated"
@@ -118,11 +128,8 @@
 			"modifier_mana_seal"
 			{
 				"Passive"			"0"
-				"IsHidden"			"0"
+				"IsHidden"			"1"
 				"IsDebuff"			"1"
-
-				"EffectName" "particles/units/heroes/hero_mana_knight/mana_seal_unit.vpcf"
-				"EffectAttachType" "attach_origin"
 
 				"ThinkInterval"  "0.1"
 				"OnIntervalThink"
@@ -133,8 +140,20 @@
 						"Function"		"ManaSealRemoveMana"
 						"mana_removal"	"%mana_removal"
 						"damage"		"%AbilityDamage"
+						"mana_removal_scepter" "%mana_removal_scepter"
+						"slow_duration" "%slow_duration"
 					}
 				}
+			}
+
+			"modifier_mana_seal_particle" // also serves as the tooltip
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+			
+				"EffectName" "particles/units/heroes/hero_mana_knight/mana_seal_unit.vpcf"
+				"EffectAttachType" "attach_origin"
 			}
 
 			"modifier_mana_seal_slow"

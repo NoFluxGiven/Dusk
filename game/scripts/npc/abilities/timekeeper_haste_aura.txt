@@ -1,0 +1,64 @@
+//=====================================================================================================
+// TIMEKEEPER: Haste Aura
+//=====================================================================================================
+"timekeeper_haste_aura"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/timekeeper_haste_aura"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityTextureName"			"timekeeper_parallels"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"900"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"cooldown_reduction"			"20 25 30 35"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"900"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"speed_boost"					"4 8 12 16"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"chance"						"25"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"			"soundevents/hero_timekeeper.vsndevts"
+		"particle"			"particles/units/heroes/hero_timekeeper/haste_aura_proc.vpcf"
+	}
+}

@@ -11,9 +11,12 @@ function shade_isolation(event)
   local dayvision_changed = dayvision_base*vision_reduction
   local nightvision_changed = nightvision_base*vision_reduction
   local duration = event.duration
-  local radius = keys.radius
+  local radius = event.radius
 
-  
+  Notifications:TopToAll({image="file://{images}/notifications/dark_materials.png", duration=5.0})
+  duskDota.spawnDarkShop = true
+  GameRules:SendCustomMessage("<font color='#dd3f4e'>Dark Materials Shop</font> is now open and available at the bottom rune during nighttime.", DOTA_TEAM_NEUTRALS, 0)
+  GameRules:SendCustomMessage("<font color='#dd3f4e'>Regal Sigils</font>, purchased from here, can be used to upgrade some items to their Exalted variants.", DOTA_TEAM_NEUTRALS, 0)
   
   local enemy_found = FindUnitsInRadius( caster:GetTeamNumber(),
                               target:GetCenter(),
@@ -81,4 +84,17 @@ function Venomous(keys)
   keys.ability:ApplyDataDrivenModifier(caster, target, "shade_venomous_dmg_slow_mod", {}) --[[Returns:void
   No Description Set
   ]]
+end
+
+function ApplyInvis(keys)
+  local caster = keys.caster
+  local target = keys.target
+
+  local mod = "shade_smoke_bomb_invis_mod"
+
+  -- if not target:HasModifier(mod) then
+    keys.ability:ApplyDataDrivenModifier(caster, target, mod, {Duration=0.25}) --[[Returns:void
+    No Description Set
+    ]]
+  -- end
 end

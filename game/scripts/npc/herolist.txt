@@ -50,4 +50,6 @@
 	"npc_dota_hero_necrolyte" "1"
 	"npc_dota_hero_chaos_knight" "1"
 	"npc_dota_hero_enigma" "1"
+	"npc_dota_hero_bristleback" "0"
+	"npc_dota_hero_zeus" "0"
 }	

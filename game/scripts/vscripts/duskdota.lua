@@ -49,6 +49,8 @@ require('libraries/worldpanels')
 -- Extend functionality
 require('libraries/extend')
 
+require('internal/util') -- to initialise client functionality
+
 -- These internal libraries set up duskdota's events and processes.  Feel free to inspect them/change them if you need to.
 require('internal/duskdota')
 require('internal/events')
@@ -57,6 +59,8 @@ require('internal/events')
 --require('settings')
 -- events.lua is where you can specify the actions to be taken when any event occurs and is one of the core duskdota files.
 require('events')
+
+require('talents/talents')
 
 
 -- This is a detailed example of many of the containers.lua possibilities, but only activates if you use the provided "playground" map
@@ -256,10 +260,10 @@ function duskDota:OnFirstPlayerLoaded()
         ]]
 
   sItems,prices,stocks = CreateShop({
-    {"item_regal_sigil",3500},
-    {"item_essence_of_agility",775},
-    {"item_essence_of_strength",775},
-    {"item_essence_of_intelligence",775},
+    {"item_regal_sigil"},
+    {"item_essence_of_agility",850},
+    {"item_essence_of_strength",850},
+    {"item_essence_of_intelligence",850},
   })
 
   --sItems[3]:SetCurrentCharges(2)
@@ -528,7 +532,7 @@ end
 function duskDota:OnHeroInGame(hero)
   DebugPrint("[DUSKDOTA] Hero spawned in game for first time -- " .. hero:GetUnitName())
 
-  hero:SetGold(650, false)
+  Talents.OnUnitCreate(hero)
 
   if hero:GetUnitName() == "npc_dota_hero_rubick" then
       CosmeticLib:ReplaceDefault(hero,"npc_dota_hero_rubick")
@@ -693,11 +697,8 @@ function duskDota:OnGameInProgress()
 
   Timers:CreateTimer(1200,function()
     duskDota.spawnDarkShop = true
-    local messageinfo = {
-      message = "#dota_shop_spawn",
-      duration = 4
-    }
-    FireGameEvent("show_center_message",messageinfo)
+    Notifications:TopToAll({text="The Dark Materials Shop is open for business!", duration=4.0, style={color="green"}})
+    Notifications:TopToAll({item="item_regal_sigil", continue=true})
     GameRules:SendCustomMessage("<font color='#dd3f4e'>Dark Materials Shop</font> is now open and available at the bottom rune during nighttime.", DOTA_TEAM_NEUTRALS, 0)
     GameRules:SendCustomMessage("<font color='#dd3f4e'>Regal Sigils</font>, purchased from here, can be used to upgrade some items to their Exalted variants.", DOTA_TEAM_NEUTRALS, 0)
     EmitAnnouncerSound("sounds/vo/announcer/ann_custom_new_shop_01.vsnd")
@@ -936,52 +937,53 @@ function duskDota:FilterExecuteOrder( filterTable )
   -- END Ptomely Spell Reflect
 
   -- START Timekeeper Echoes
-    if IsValidEntity(hero.parallels_unit) then
-      if hero.parallels_unit ~= nil then
-        if target ~= 0 then
-          local found = FindUnitsInRadius( hero:GetTeamNumber(),
-                          hero.parallels_unit:GetCenter(),
-                          nil,
-                            450,
-                            DOTA_UNIT_TARGET_TEAM_BOTH,
-                            DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
-                            DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS,
-                            FIND_CLOSEST,
-                            false)
-          for k,v in pairs(found) do
-            if v == target and v ~= hero then
-              hero.parallels_unit:SetCursorCastTarget(v) --[[Returns:void
-              No Description Set
-              ]]
-              -- EXCEPTIONS (Casting from Hero)
-              local cfromhero = {
-                "timekeeper_chronoshift",
-                "item_diffusal_blade",
-                "item_diffusal_blade_2",
-                "timekeeper_futurestrike",
-                "item_force_staff",
-              }
-              if CheckTable(cfromhero,ability:GetName()) then
-                hero:SetCursorCastTarget(v)
-                ability:OnSpellStart()
-              else
-                -- DEFAULT
-                local ab = hero.parallels_unit:AddAbility(ability:GetName())
-                local lvl = ability:GetLevel()
-                ab:SetLevel(lvl)
-                ab:OnSpellStart()
-                hero.parallels_unit:RemoveAbility(ab:GetName())
-              end
-              -- use resources
-              ability:UseResources(true, false, true)
-              hero:Stop()
-              -- ability:StartCooldown(GetCooldown(ability:GetLevel()))
-              -- ability:PayManaCost()
-            end
-          end
-        end
-      end
-    end
+    -- if IsValidEntity(hero.parallels_unit) then
+    --   if hero.parallels_unit ~= nil then
+    --     if target ~= 0 then
+    --       local found = FindUnitsInRadius( hero:GetTeamNumber(),
+    --                       hero.parallels_unit:GetCenter(),
+    --                       nil,
+    --                         450,
+    --                         DOTA_UNIT_TARGET_TEAM_BOTH,
+    --                         DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
+    --                         DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS,
+    --                         FIND_CLOSEST,
+    --                         false)
+    --       for k,v in pairs(found) do
+    --         if v == target and v ~= hero then
+    --           hero.parallels_unit:SetCursorCastTarget(v) --[[Returns:void
+    --           No Description Set
+    --           ]]
+    --           -- EXCEPTIONS (Casting from Hero)
+    --           local cfromhero = {
+    --             "timekeeper_chronoshift",
+    --             "item_diffusal_blade",
+    --             "item_diffusal_blade_2",
+    --             "timekeeper_futurestrike",
+    --             "item_force_staff",
+    --             "baal_compress"
+    --           }
+    --           if CheckTable(cfromhero,ability:GetName()) then
+    --             hero:SetCursorCastTarget(v)
+    --             ability:OnSpellStart()
+    --           else
+    --             -- DEFAULT
+    --             local ab = hero.parallels_unit:AddAbility(ability:GetName())
+    --             local lvl = ability:GetLevel()
+    --             ab:SetLevel(lvl)
+    --             ab:OnSpellStart()
+    --             hero.parallels_unit:RemoveAbility(ab:GetName())
+    --           end
+    --           -- use resources
+    --           ability:UseResources(true, false, true)
+    --           hero:Stop()
+    --           -- ability:StartCooldown(GetCooldown(ability:GetLevel()))
+    --           -- ability:PayManaCost()
+    --         end
+    --       end
+    --     end
+    --   end
+    -- end
   -- END Timekeeper Echoes
   end
   return true

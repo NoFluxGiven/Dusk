@@ -72,6 +72,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"bonus_armor"			"15 30 45"
 		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration_sticky"		"11"
+		}
 				
 	}
 
@@ -146,7 +151,7 @@
 			"Passive"			"0"
 			"IsHidden"			"1"
 			"IsDebuff"			"1"
-			"Duration"			"%duration+1"
+			"Duration"			"%duration_sticky"
 		}
 		"modifier_ancient_arena_caster"
 		{

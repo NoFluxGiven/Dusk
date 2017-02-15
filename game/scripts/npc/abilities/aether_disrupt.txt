@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/aether_disrupt"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -45,7 +46,7 @@
 		}
 		"03"
 		{
-			"var_type"					"FIELD_INTEGER"
+			"var_type"					"FIELD_FLOAT"
 			"duration"					"2.05 2.30 2.45 2.70"
 		}
 		"04"
@@ -59,51 +60,5 @@
 		{
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
 			"particle" "particles/units/heroes/hero_aether/aether_disrupt.vpcf"
-		}
-
-	"OnSpellStart"
-	{
-		"Damage"
-		{
-			"Target"
-			{
-				"Center"  	"CASTER"
-				"Radius" 	"%radius"
-				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			}
-			"Type"			"DAMAGE_TYPE_MAGICAL"
-			"Damage"		"%damage"
-		}
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_disrupt_slow_effect"
-			"Target"
-			{
-				"Center"  	"CASTER"
-				"Radius" 	"%radius"
-				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			}
-		}
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/aether_abilities.lua"
-			"Function"		"disrupt"
-			"radius"		"%radius"
-		}
-	}
-	
-	"Modifiers"
-		{
-			"modifier_disrupt_slow_effect"
-			{
-				"Duration" "%duration"
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow"
-				}
-			}
 		}
 }

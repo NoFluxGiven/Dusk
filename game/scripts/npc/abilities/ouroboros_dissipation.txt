@@ -56,6 +56,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"magic_res_reduction"	"-7 -14 -21 -28"
 		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"damage_per_tick"		"3 5 8 10"
+		}
 	}
 
 	"precache"
@@ -109,7 +114,7 @@
 				{
 					"Target"		"TARGET"
 					"Type"			"DAMAGE_TYPE_MAGICAL"
-					"Damage"		"%damage / 4"
+					"Damage"		"%damage_per_tick"
 				}
 			}
 

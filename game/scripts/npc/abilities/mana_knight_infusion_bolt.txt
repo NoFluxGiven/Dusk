@@ -16,7 +16,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"500"
+	"AbilityCastRange"				"425"
 	"AbilityCastPoint"				"0.3"
 	
 	// Time		
@@ -65,6 +65,12 @@
 	
 	"OnSpellStart"
 		{
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_ChaosKnight.ChaosBolt.Cast"
+			"Target" 		"TARGET"
+		}
 		
 		"TrackingProjectile"
 			{

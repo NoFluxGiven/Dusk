@@ -10,18 +10,18 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"Model"							"models/props_gameplay/red_box.vmdl" 
 	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 	"AbilityTextureName"			"item_turins_scepter"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"30"
+	"AbilityCooldown"				"45"
 	"AbilityCastRange"				"600"
 	"AbilityCastPoint"				"0.0"
-	"AbilityManaCost"				"550"
+	"AbilityManaCost"				"225"
 	
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
@@ -46,7 +46,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_intelligence"	"45"
+			"bonus_intelligence"	"40"
 		}
 		"02"
 		{
@@ -61,7 +61,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_mana_regen"		"200"
+			"bonus_mana_regen"		"100"
 		}
 		"05"
 		{
@@ -81,7 +81,17 @@
 		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"spell_damage"			"25"
+			"spell_damage"			"15"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"linger_reduction"		"-50"
+		}
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"linger_duration"		"10"
 		}
 	}
 	
@@ -154,7 +164,28 @@
 				"MODIFIER_STATE_MUTED" "MODIFIER_STATE_VALUE_ENABLED"
 				"MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED"
 			}
+
+			"OnDestroy"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_item_turins_scepter_linger"
+					"Target" 		"TARGET"
+				}
+			}
 			
+		}
+		"modifier_item_turins_scepter_linger"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"Duration"			"%linger_duration"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%linger_reduction"
+			}
 		}
 	}
 }

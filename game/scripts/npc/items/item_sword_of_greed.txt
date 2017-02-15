@@ -74,8 +74,8 @@
 		}
 		"06"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"tick_gold"				"1"
+			"var_type"				"FIELD_FLOAT"
+			"tick_gold"				"1.5"
 		}
 		"07"
 		{

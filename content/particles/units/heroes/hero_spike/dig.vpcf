@@ -70,5 +70,8 @@
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_spike/dig_dirt_ground.vpcf"
 		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_spike/dig_start.vpcf"
+		},
 	]
 }

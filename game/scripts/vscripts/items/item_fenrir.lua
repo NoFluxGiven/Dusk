@@ -35,3 +35,19 @@ function fenrir_stun(keys)
   keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "fenrir_active_mod", nil)
   ParticleManager:CreateParticle("particles/items_fx/abyssal_blade.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.target)
 end
+
+function Reave(keys)
+  local caster = keys.caster
+  local target = keys.target
+
+  local admg = caster:GetAverageTrueAttackDamage(caster)
+
+  local m = keys.multiplier/100
+
+  local damage = admg*m
+
+  DealDamage(target,caster,damage,DAMAGE_TYPE_PURE)
+
+  ParticleManager:CreateParticle("particles/items/fenrir.vpcf",PATTACH_ABSORIGIN_FOLLOW,target)
+  -- target:EmitSound("Items.Reave")
+end

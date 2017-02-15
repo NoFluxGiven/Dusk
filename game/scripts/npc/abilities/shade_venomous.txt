@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/shade_venomous"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -22,6 +23,7 @@
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"0"
+	"HasScepterUpgrade"				"1"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -62,44 +64,4 @@
 		"particle" "particles\units\heroes\hero_viper\viper_poison_debuff.vpcf"
 		"particle" "particles/units/heroes/hero_doom_bringer/doom_bringer_lvl_death.vpcf"
 		}
-	
-	"Modifiers"
-	{
-		"shade_venomous_mod"
-		{
-			"Passive" "1"
-			"IsHidden" "1"
-			"AllowIllusionDuplicate" "0"
-			"OnAttackLanded"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/shade_abilities.lua"
-					"Function"		"Venomous"
-				}
-			}
-		}
-		"shade_venomous_dmg_slow_mod"
-		{
-			"Duration" "%duration"
-			"IsDebuff" "1"
-			"ThinkInterval" "1"
-			"EffectName" "particles\units\heroes\hero_viper\viper_poison_debuff.vpcf"
-			"OnIntervalThink"
-			{
-			"Damage"
-				{
-					"Damage" "%damage"
-					"Target" "TARGET"
-					"Type" "DAMAGE_TYPE_PHYSICAL"
-				}
-			}
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow"
-				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_reduction"
-			}
-		}
-	}
 }

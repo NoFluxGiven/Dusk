@@ -9,7 +9,7 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"timekeeper_echo"
@@ -82,6 +82,7 @@
 			{
 				"IsHidden" "0"
 				"IsPurgable" "0"
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"IsDebuff"	"1"
 				"OnDestroy"
 				{

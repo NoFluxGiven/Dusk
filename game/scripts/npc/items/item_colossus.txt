@@ -33,7 +33,7 @@
 	"01"
 	{
 		"var_type"							"FIELD_INTEGER"
-		"bonus_strength"					"50"
+		"bonus_strength"					"60"
 	}
 	"02"
 	{
@@ -58,7 +58,7 @@
 	"06"
 	{
 		"var_type"							"FIELD_INTEGER"
-		"damage_reduction"					"-20"
+		"damage_reduction"					"-10"
 	}
 }
 

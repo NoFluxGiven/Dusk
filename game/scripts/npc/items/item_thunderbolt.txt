@@ -14,7 +14,7 @@
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"10"
+	"AbilityCooldown"				"8"
 	"AbilityCastRange"				"700"
 	"AbilityCastPoint"				"0.0"
 	"AbilityManaCost"				"75"
@@ -47,17 +47,27 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"active_damage"			"275"
+			"bonus_attack_damage"	"24"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"active_slow"			"-100"
+			"active_damage"			"200"
 		}
 		"04"
 		{
+			"var_type"				"FIELD_INTEGER"
+			"active_slow"			"-100"
+		}
+		"05"
+		{
 			"var_type"				"FIELD_FLOAT"
-			"active_duration"		"3"
+			"active_duration"		"2.0"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"chain_damage"			"70"
 		}
 	}
 	
@@ -82,6 +92,7 @@
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_attack_damage"
 			}
 			
 			"OnAttackLanded"
@@ -90,6 +101,7 @@
 				{
 					"ScriptFile" "items/item_thunderbolt.lua"
 					"Function" "ChainLightning"
+					"damage" "%chain_damage"
 				}
 			}
 		}

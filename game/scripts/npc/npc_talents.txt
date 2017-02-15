@@ -1,0 +1,183 @@
+"TalentManifest"
+{
+	"DefaultTalentLevels" "10 15 20 25"
+	
+	"DefaultTalentSet"
+	{
+
+	    "Talents"
+	    {
+	        "1" {
+	            "left"
+	            {      
+	                "name" "All Stats +3 (1)"
+	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
+	            }
+	            "right"
+	            {       
+	                "name" "All Stats +3 (1)"
+	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
+	            }
+	        }
+	        "2" {
+	            "left"
+	            {      
+	                "name" "All Stats +3 (2)"
+	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
+	            }
+	            "right"
+	            {       
+	                "name" "All Stats +3 (2)"
+	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
+	            }
+	        }
+	        "3" {
+	            "left"
+	            {      
+	                "name" "All Stats +3 (3)"
+	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
+	            }
+	            "right"
+	            {       
+	                "name" "All Stats +3 (3)"
+	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
+	            }
+	        }
+	        "4" {
+	            "left"
+	            {      
+	                "name" "All Stats +3 (4)"
+	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
+	            }
+	            "right"
+	            {       
+	                "name" "All Stats +3 (4)"
+	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
+	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
+	            }
+	        }
+	    }
+	}
+
+	"TalentSets"
+	{
+		"TalentsAether"
+	    {
+	        "1" {
+	            "left"
+	            {      
+	                "name" "+20 Movement Speed"
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "10"
+	            }
+	            "right"
+	            {       
+	                "name" "+15 Damage"
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "15"
+	            }
+	        }
+	        "2" {
+	            "left"
+	            {      
+	                "name" "+6 Strength"
+	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "6"
+	            }
+	            "right"
+	            {       
+	                "name" "+4 Mana Regen"
+	                "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "4"
+	            }
+	        }
+	        "3" {
+	            "left"
+	            {      
+	                "name" "+60 Disrupt Damage"
+	                "Ability" "special_bonus_aether_disrupt"
+	            }
+	            "right"
+	            {       
+	                "name" "-1.0s Teleport Delay"
+	                "Ability" "special_bonus_aether_teleport"
+	            }
+	        }
+	        "4" {
+	            "left"
+	            {      
+	                "name" "+20 Monolith Regen"
+	                "Ability" "special_bonus_aether_monolith"
+	            }
+	            "right"
+	            {       
+	                "name" "-60s Reality Shift Cooldown"
+	                "Ability" "special_bonus_aether_reality_shift"
+	            }
+	        }
+	    }
+
+	    "TalentsParagon"
+	    {
+	        "1" {
+	            "left"
+	            {      
+	                "name" "+125 Mana"
+	                "MODIFIER_PROPERTY_EXTRA_MANA_BONUS" "125"
+	            }
+	            "right"
+	            {       
+	                "name" "+4 Armor"
+	                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "4"
+	            }
+	        }
+	        "2" {
+	            "left"
+	            {      
+	                "name" "+12 Strength"
+	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "12"
+	            }
+	            "right"
+	            {       
+	                "name" "+8% Divine Armour Damage/Heal"
+	                "Ability" "special_bonus_paragon_divine_armour"
+	            }
+	        }
+	        "3" {
+	            "left"
+	            {      
+	                "name" "+95 Damage"
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "95"
+	            }
+	            "right"
+	            {       
+	                "name" "+2s Tranquil Seal Duration"
+	                "Ability" "special_bonus_paragon_tranquil_seal"
+	            }
+	        }
+	        "4" {
+	            "left"
+	            {      
+	                "name" "Cleanse Purges Debuffs and Stuns"
+	                "Ability" "special_bonus_paragon_cleanse"
+	            }
+	            "right"
+	            {       
+	                "name" "+350 Smite Damage"
+	                "Ability" "special_bonus_paragon_smite"
+	            }
+	        }
+	    }
+	}
+}

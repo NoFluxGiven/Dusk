@@ -75,6 +75,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"attack_slow"			"-30 -60 -90 -120"
 		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"true_duration"			"13.6 13.8 14.0 14.2"
+		}
 				
 	}
 
@@ -102,7 +107,7 @@
 			"Passive"			"0"
 			"IsHidden"			"1"
 			"IsDebuff"			"0"
-			"Duration"			"%duration+%root_time+0.4"
+			"Duration"			"%true_duration"
 
 			"OnCreated"
 			{

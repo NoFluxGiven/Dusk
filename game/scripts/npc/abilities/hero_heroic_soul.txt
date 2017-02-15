@@ -30,7 +30,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"bonus_damage"			"20 40 60 80"
+			"bonus_damage"			"15 30 45 60"
 		}
 		"02"
 		{

@@ -37,23 +37,25 @@ function ChainLightning( event )
   local hero = event.caster
   local target = event.target
   local ability = event.ability
+
+  if not ability:IsCooldownReady() then return end
   
   if CheckClass(target,"npc_dota_building") then return end -- don't want it to activate on buildings
 
   if not hero:IsRealHero() then return end
 
-  local damage = 120
-  local bounces = 5
+  local damage = event.damage or 80
+  local bounces = 4
   local bounce_range = 600
   local decay = 0.15
-  local time_between_bounces = 0.10
+  local time_between_bounces = 0.20
 
   local lightningBolt = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_CUSTOMORIGIN, hero)
   ParticleManager:SetParticleControl(lightningBolt,0,Vector(hero:GetAbsOrigin().x,hero:GetAbsOrigin().y,hero:GetAbsOrigin().z + hero:GetBoundingMaxs().z )) 
   ParticleManager:SetParticleControl(lightningBolt,1,Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z + target:GetBoundingMaxs().z )) 
   --ParticleManager:SetParticleControlEnt(lightningBolt, 1, target, 1, "attach_hitloc", target:GetAbsOrigin(), true)
 
-  EmitSoundOn("Hero_Zuus.ArcLightning.Target", target)  
+  EmitSoundOn("Hero_Zuus.ArcLightning.Target", target) 
   ApplyDamage({ victim = target, attacker = hero, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
 
   -- Every target struck by the chain is added to a list of targets struck, And set a boolean inside its index to be sure we don't hit it twice.
@@ -114,6 +116,8 @@ function ChainLightning( event )
       ApplyDamage({ victim = target, attacker = hero, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
       PopupDamage(target,math.floor(damage))
       print("Bounce "..bounces.." Hit Unit "..target:GetEntityIndex().. " for "..damage.." damage")
+
+      EmitSoundOn("Hero_Zuus.ArcLightning.Target", target)
 
       -- play the sound
       target:EmitSoundParams("Item.Maelstrom.Chain_Lightning.Jump",0.25,0.15,1)

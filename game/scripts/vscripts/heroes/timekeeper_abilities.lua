@@ -483,12 +483,40 @@ function futurestrike(keys)
 	No Description Set
 	]]
 
-	target.futurestrike_damage = damage
+	if not target.futurestrike_table then
 
-	target.futurestrike_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_timekeeper/timekeeper_futurestrike.vpcf", PATTACH_OVERHEAD_FOLLOW, target) --[[Returns:int
-	Creates a new particle effect
-	]]
-	ParticleManager:SetParticleControl(target.futurestrike_particle, 1, Vector(delay,0,0)) --[[Returns:void
+		target.futurestrike_table = {}
+
+	end
+
+	local end_time = math.floor(GameRules:GetGameTime() + delay)
+
+	local bonus_time = 0
+
+	for k,v in pairs(target.futurestrike_table) do
+		if end_time == v["end_time"] then
+			bonus_time = bonus_time + 0.05
+		end
+	end
+
+	end_time = bonus_time+end_time
+
+	local t = {
+		["damage"] = damage,
+		["particle"] = ParticleManager:CreateParticle("particles/units/heroes/hero_timekeeper/timekeeper_futurestrike.vpcf", PATTACH_OVERHEAD_FOLLOW, target),
+		["end_time"] = end_time, -- so we know which particle to destroy
+		["bonus_time"] = bonus_time
+	}
+
+
+
+	print(t["end_time"])
+
+	target:EmitSound("Timekeeper.Futurestrike")
+
+	table.insert(target.futurestrike_table,t)
+
+	ParticleManager:SetParticleControl(t["particle"], 1, Vector(delay,0,0)) --[[Returns:void
 	Set the control point data for a control on a particle effect
 	]]
 end
@@ -497,12 +525,65 @@ function futurestrike_end(keys)
 	local caster = keys.caster
 	local target = keys.target
 
-	local damage = target.futurestrike_damage
+	local t = target.futurestrike_table
+	local time = math.floor(GameRules:GetGameTime())
 
-	ParticleManager:DestroyParticle(target.futurestrike_particle,false)
+	print(time)
 
-	if target:IsMagicImmune() then return end
+	local damage = 0
+	local particle = -1
+	local n = 0
 
-	DealDamage(target,caster,damage,DAMAGE_TYPE_PURE)
+	for k,v in pairs(t) do
+		if v["end_time"] == time+v["bonus_time"] then
+			particle = v["particle"]
+			damage = v["damage"]
+			--n = k
+		end
+	end
+
+	if particle ~= -1 then
+
+		target:EmitSound("Timekeeper.Futurestrike.Boom")
+
+		target:StopSound("Timekeeper.Futurestrike")
+
+		ParticleManager:DestroyParticle(particle,false)
+
+		--table.remove(target.futurestrike_table,n)
+
+		if target:IsMagicImmune() then return end
+
+		if not target:IsRealHero() and not CheckClass(target,"npc_dota_roshan") then damage = damage * 4 end
+
+		DealDamage(target,caster,damage,DAMAGE_TYPE_PURE)
+
+		target:AddNewModifier(caster, nil, "modifier_stunned", {Duration=0.4}) --[[Returns:void
+		No Description Set
+		]]
+
+		Timers:CreateTimer(0.06,function()
+			if not target:HasModifier("modifier_futurestrike") then
+				-- clear the table
+				print("CLEARING TABLE")
+				target.futurestrike_table = nil
+				for k,v in pairs(t) do
+					ParticleManager:DestroyParticle(v["particle"],false)
+				end
+			end
+		end)
+
+	else
+
+		for k,v in pairs(t) do
+			ParticleManager:DestroyParticle(v["particle"],false)
+		end
+
+		target:StopSound("Timekeeper.Futurestrike")
+		target:EmitSound("Timekeeper.Futurestrike.Boom")
+
+		target.futurestrike_table = {}
+
+	end
 	
 end

@@ -26,7 +26,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"75"
+	"AbilityManaCost"				"65 75 85 95"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,27 +39,32 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"initial_damage"				"50 100 150 200" // percentage total
+			"initial_damage"				"75 125 175 225" // percentage total
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"explosion_damage"				"50 75 100 125"
+			"explosion_damage"				"60 90 120 150"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"delay"							"1.5"
+			"delay"							"1.75"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"range"							"1000"
+			"range"							"1250"
 		}
 	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"slow"							"-25"
+			"slow"							"-20"
+		}
+	"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"speed"							"2000"
 		}
 	}
 	
@@ -91,7 +96,7 @@
 		{
 		    "Target"      	 "POINT"
 			"EffectName"	 "particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
-			"MoveSpeed"		 "%range * 1.7"
+			"MoveSpeed"		 "%speed"
 			"StartRadius"	 "100"
 			"StartPosition"  "attach_attack1"
 			"EndRadius"      "100"

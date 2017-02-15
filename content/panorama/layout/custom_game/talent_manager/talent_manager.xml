@@ -1,0 +1,19 @@
+<root>
+
+	<styles> 
+	</styles>
+	
+	<scripts>
+		<include src="file://{resources}/scripts/talent_manager/talent_manager.js" />
+	</scripts>
+	
+	<snippets>
+	
+	</snippets>
+	
+	<Panel >  
+			
+	</Panel>
+
+
+</root>

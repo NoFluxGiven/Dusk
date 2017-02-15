@@ -332,7 +332,7 @@ function hawkeye_rapid_fire(event)
   
   for i=0, hits-1 do
     Timers:CreateTimer(0.15*i,function()
-      caster:PerformAttack(target,true,true,true,false,true)
+      caster:PerformAttack(target,true,true,true,false,true,false,false)
     end)
   end
   
@@ -353,24 +353,28 @@ end
 
 function DetonateTick(keys)
   local caster = keys.caster
-  local target = keys.target
+  local target = keys.target or keys.unit
 
   local damage = keys.damage
   local radius = keys.radius
   local forceExplode = keys.explode == 1
 
+  print(radius)
+
   local mod = target:FindModifierByName("modifier_detonator_dart")
+
+  if not mod then return end
+  if target:HasModifier("modifier_detonator_dart_cooldown") then return end
 
   mod:SetStackCount(mod:GetStackCount()-1)
 
   if mod:GetStackCount() <= 0 or forceExplode then
-    target:RemoveModifierByName("modifier_detonator_dart")
     local enemy_found = FindUnitsInRadius( caster:GetTeamNumber(),
                               target:GetCenter(),
                               nil,
                                 radius,
                                 DOTA_UNIT_TARGET_TEAM_ENEMY,
-                                DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
+                                DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_BASIC,
                                 DOTA_UNIT_TARGET_FLAG_NONE,
                                 FIND_CLOSEST,
                                 false)
@@ -386,6 +390,10 @@ function DetonateTick(keys)
     target:AddNewModifier(caster, nil, "modifier_stunned", {Duration=0.5}) --[[Returns:void
     No Description Set
     ]]
+    keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_detonator_dart_cooldown", {}) --[[Returns:void
+    No Description Set
+    ]]
+    target:RemoveModifierByName("modifier_detonator_dart")
     return
   end
 

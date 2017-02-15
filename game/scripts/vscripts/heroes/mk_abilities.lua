@@ -3,19 +3,33 @@ function ManaSealRemoveMana(keys)
 	local target = keys.target
 	local mana = target:GetMaxMana()
 	local mana_removal = keys.mana_removal/100
-	local mana_damage = mana*mana_removal*0.1
 	local damage = keys.damage
+	local slow_duration = keys.slow_duration
+	local ignore_time = 8
+	local damage_type = DAMAGE_TYPE_MAGICAL
 
-	if target:IsMagicImmune() then return end
+	local ignore_time_scepter = 4
+	local damage_type_scepter = DAMAGE_TYPE_PURE
+	local mana_removal_scepter = keys.mana_removal_scepter/100
+
+	if caster:HasScepter() then
+		ignore_time = ignore_time_scepter
+		damage_type = damage_type_scepter
+		mana_removal = mana_removal_scepter
+	end
+
+	local mana_damage = mana*mana_removal*0.1
+
+	if target:IsMagicImmune() and not caster:HasScepter() then return end
 
 	if not target:HasModifier("modifier_mana_seal_ignore_unit") and target:GetMana() < mana_damage then
 		target:AddNewModifier(caster, nil, "modifier_stunned", {Duration=0.5}) --[[Returns:void
 		No Description Set
 		]]
-		keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_mana_seal_slow", {Duration=3}) --[[Returns:void
+		keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_mana_seal_slow", {Duration=slow_duration}) --[[Returns:void
 		No Description Set
 		]]
-		keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_mana_seal_ignore_unit", {Duration=10}) --[[Returns:void
+		keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_mana_seal_ignore_unit", {Duration=ignore_time}) --[[Returns:void
 		No Description Set
 		]]
 		ParticleManager:CreateParticle("particles/econ/items/silencer/silencer_ti6/silencer_last_word_dmg_ti6.vpcf", PATTACH_ABSORIGIN_FOLLOW, target) --[[Returns:int
@@ -25,8 +39,12 @@ function ManaSealRemoveMana(keys)
 		 
 		]]
 
-		DealDamage(target,caster,damage,DAMAGE_TYPE_MAGICAL)
+		DealDamage(target,caster,damage,damage_type)
 	end
+
+	keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_mana_seal_particle", {Duration=1}) --[[Returns:void
+	No Description Set
+	]]
 
 	target:ReduceMana(mana_damage)
 
@@ -58,10 +76,12 @@ function infusionBolt(keys)
 	local min_damage = keys.min_damage
 	local max_damage = keys.max_damage
 
+	local sound = "Hero_ChaosKnight.ChaosBolt.Impact"
+
 	local amount = math.ceil((target:GetMaxMana()-target:GetMana()) * damage)
 
 	if amount < min_damage then amount = min_damage end
-	if amount > max_damage then amount = max_damage end
+	if amount > max_damage then amount = max_damage  sound = "ManaKnight.InfusionBolt.Hit.Max" end
 
 	DealDamage(target,caster,amount,DAMAGE_TYPE_MAGICAL)
 
@@ -69,7 +89,7 @@ function infusionBolt(keys)
 
 	target:RemoveModifierByName("modifier_tek_microarray_charge")
 
-	target:EmitSound("Hero_ChaosKnight.ChaosBolt.Impact")
+	target:EmitSound(sound)
 
 	target:AddNewModifier(caster, nil, "modifier_stunned", {Duration=2}) --[[Returns:void
 	No Description Set
@@ -121,8 +141,6 @@ function VorpalAssaultStrike(keys)
 	local caster = keys.attacker
 	local target = keys.target or keys.unit
 
-	if CheckClass(target,"npc_dota_building") then return end
-
 	local mod = caster:FindModifierByName("modifier_vorpal_assault")
 	local mod_aspd = caster:FindModifierByName("modifier_vorpal_assault_attackspeed")
 	local mod_hits = caster:FindModifierByName("modifier_vorpal_assault_prehit")
@@ -141,9 +159,11 @@ function VorpalAssaultStrike(keys)
 	Remove mana from this unit, this can be used for involuntary mana loss, not for mana that is spent.
 	]]
 
-	DealDamage(target,caster,bonus_damage,DAMAGE_TYPE_MAGICAL)
-
-	Timers:CreateTimer(0.25,function() target:EmitSound("Hero_razor.lightning") end)
+	if not CheckClass(target,"npc_dota_building") then
+		DealDamage(target,caster,bonus_damage,DAMAGE_TYPE_MAGICAL)
+		Timers:CreateTimer(0.25,function() target:EmitSound("Hero_razor.lightning") end)
+		target:EmitSound("ManaKnight.VorpalAssault.Hit")
+	end
 
 	if mod == nil then return end
 

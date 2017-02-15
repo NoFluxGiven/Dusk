@@ -122,7 +122,7 @@
 				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Types" 	"DOTA_UNIT_TARGET_BUILDING"
 			}
-			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Type"			"DAMAGE_TYPE_PURE"
 			"Damage"		"%AbilityDamage/4"
 		}
 		"CreateThinker"

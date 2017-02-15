@@ -10,7 +10,7 @@
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flEndScale = 5.0
+			m_flStartScale = 8.0
 		},
 		{
 			_class = "C_OP_LockToBone"
@@ -22,6 +22,10 @@
 		{
 			_class = "C_OP_SpinUpdate"
 		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = -45
+		},
 	]
 	m_Renderers = 
 	[
@@ -29,7 +33,7 @@
 			_class = "C_OP_RenderSprites"
 			m_bAdditive = true
 			m_flOverbrightFactor = 15.0
-			m_hTexture = resource:"materials/particle/earthshaker/earthshaker_ti6_bracer_glyph_outer_color_tga_8ed2eeaa.vtex"
+			m_hTexture = resource:"panorama/images/minimap/minimaplaneglow_jungledire_psd.vtex"
 		},
 	]
 	m_Initializers = 
@@ -63,14 +67,20 @@
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 0.5
-			m_fLifetimeMax = 2.0
+			m_fLifetimeMin = 0.3
+			m_fLifetimeMax = 0.6
 		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_mana_knight/vorpal_assault_unit_buffs_start_flash.vpcf"
 		},
 	]
 }

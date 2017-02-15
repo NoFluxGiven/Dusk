@@ -18,9 +18,9 @@
 	
 	// Stats		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1600"
+	"AbilityCastRange"				"1300"
 	"AbilityCastPoint"				"0.0"
-	"AbilityCooldown"				"10.0"
+	"AbilityCooldown"				"11.0"
 	"AbilityManaCost"				"0"
 	
 	// Item Info
@@ -56,7 +56,7 @@
 		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_movespeed"				"30"
+			"bonus_movespeed"				"60"
 		}
 		"05"
 		{
@@ -140,7 +140,8 @@
 		"modifier_item_blink_datadriven_invis"
 		{
 			"Duration" "14"
-			"IsHidden" "1"
+			"IsHidden" "0"
+			"IsBuff" "1"
 			"OnCreated"
 			{
 				"ApplyModifier"

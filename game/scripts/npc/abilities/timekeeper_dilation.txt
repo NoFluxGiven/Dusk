@@ -105,6 +105,14 @@
 				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
 				    "MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE" "%slow"
 				}
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Timekeeper.Dilation"
+						"Target" 		"TARGET"
+					}
+				}
 				"ThinkInterval"  "0.03"
 				"OnIntervalThink"
 				{

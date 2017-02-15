@@ -50,7 +50,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_reduction" 	"20 30 40 50"
+			"cooldown_reduction" 	"15 30 45 60"
 		}
 	}
 

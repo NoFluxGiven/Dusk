@@ -913,3 +913,18 @@ function EmitSoundForAll(soundString)
     end
   end
 end
+
+function GetModifierSV(modifier,special_value,level) --  grabs the special value from an ability at whatever level the ability is at
+  if modifier then
+    if not level then
+      level = modifier:GetAbility():GetLevel()
+    end
+    return modifier:GetAbility():GetLevelSpecialValueFor(special_value, level)
+  end
+end
+
+function Link(modifier_name)
+  -- links a Lua modifier
+
+  LinkLuaModifier(modifier_name,"lua/modifiers/"..modifier_name,LUA_MODIFIER_MOTION_NONE)
+end

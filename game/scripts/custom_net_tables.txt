@@ -6,6 +6,7 @@
     "selection",
 	"learn_heroes",
 	"hero_ids",
-	"skillbuild_heroes"
+	"skillbuild_heroes",
+	"talent_manager"
   ]
 }

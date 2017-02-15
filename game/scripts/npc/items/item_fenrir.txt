@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"item_datadriven"
 	"ID"							"3009"  //Valve's version of this item uses the ID "208".
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -17,8 +17,8 @@
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"35"
-	"AbilityCastRange"				"0"
+	"AbilityCooldown"				"25"
+	"AbilityCastRange"				"500"
 	"AbilityCastPoint"				"0.0"
 	"AbilityManaCost"				"125"
 
@@ -39,37 +39,32 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"90"
+			"bonus_damage"			"55"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"crit_chance"			"23"
+			"crit_chance"			"35"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"crit_multiplier"		"325"
+			"crit_multiplier"		"300"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"act_crit_multiplier"	"450"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"6"
+			"act_crit_multiplier"	"150"
 		}
 	}
 	
 	"OnSpellStart"
 	{
-		"ApplyModifier"
+		"RunScript"
 		{
-			"ModifierName"	"fenrir_act_crit_mod"
-			"Target" 		"CASTER"
-			"Duration"		"%duration"
+			"ScriptFile"	"items/item_fenrir.lua"
+			"Function"		"Reave"
+			"multiplier"	"%act_crit_multiplier"
 		}
 	}
 	
@@ -105,26 +100,6 @@
 		"Properties"
 			{
 				"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_multiplier"
-			}
-		}
-
-		"fenrir_act_crit_mod"
-		{
-		"IsBuff"   "1"
-		"IsHidden" "0"
-		"EffectName"	"particles/items/fenrir_active.vpcf"
-		"OnAttackLanded"
-		// "%attack_damage" is set to the damage value before mitigation
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"fenrir_act_crit_mod"
-				"Target" 		"CASTER"
-			}
-		}
-		"Properties"
-			{
-				"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%act_crit_multiplier"
 			}
 		}
 		

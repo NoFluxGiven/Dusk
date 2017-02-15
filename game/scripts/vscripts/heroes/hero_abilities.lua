@@ -63,7 +63,7 @@ function OnePunch(keys)
 		No Description Set
 		]]
 
-		caster:PerformAttack(target, true, true, true, true, true) --[[Returns:void
+		caster:PerformAttack(target, true, true, true, true, false, false, true) --[[Returns:void
 		Performs an attack on a target. Params: Target, bUseCastAttackOrb, bProcessProcs, bSkipCooldown, bIgnoreInvis
 		]]
 
@@ -83,10 +83,10 @@ function OnePunch(keys)
 
 	caster.freedom_strike_bonus = knockback
 
-	local fs_ab = caster:FindAbilityByName("hero_freedom_strike") --[[Returns:handle
-	Retrieve an ability by name from the unit.
-	]]
-	fs_ab:EndCooldown()
+	-- local fs_ab = caster:FindAbilityByName("hero_freedom_strike") --[[Returns:handle
+	-- Retrieve an ability by name from the unit.
+	-- ]]
+	-- fs_ab:EndCooldown()
 
 	if not target:IsAlive() then
 		local culling_kill_particle = ParticleManager:CreateParticle(particle_kill, PATTACH_CUSTOMORIGIN, caster)

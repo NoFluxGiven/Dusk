@@ -4,8 +4,7 @@
 	"override_hero"			"npc_dota_hero_keeper_of_the_light"
 	"Ability1"				"timekeeper_dilation" 
 	"Ability2"				"timekeeper_futurestrike"
-	"Ability3"				"timekeeper_echoes" // Summons a unit that represents Timekeeper's Parallel timelines. Enemy units that stray into its immediate area
-	// are affected by all of Timekeeper's spells when he casts it on any unit.
+	"Ability3"				"timekeeper_haste_aura"
 	"Ability4"				"timekeeper_chronoshift"
 	"Ability5"				"timekeeper_chronoshift_end"
 	"Ability6"				""

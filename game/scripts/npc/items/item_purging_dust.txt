@@ -17,20 +17,20 @@
 	// Stats		
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastPoint"              "0"
-	"AbilityCooldown"				"60"
+	"AbilityCooldown"				"45"
 	"AbilityManaCost"				"25"
 	"AbilityCastRange"				"175"
 	
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-	"ItemCost"						"275"
+	"ItemCost"						"200"
 	"ItemShopTags"					"consumable"
 	"ItemQuality"					"consumable"
 	"ItemAliases"					"purging_dust"
 	"ItemStackable"					"0"
 	"ItemPermanent"					"0"
 	"ItemPurchasable"				"0"
-	"ItemInitialCharges"			"2"
+	"ItemInitialCharges"			"1"
 
 	"precache"
 	{
@@ -44,11 +44,6 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"magic_resistance"		"10"
-		}
 	}
 	
 	"OnSpellStart"
@@ -68,11 +63,6 @@
 			"IsHidden"			"1"
 			"IsDebuff"			"0"
 			//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
-		
-			"Properties"
-			{
-			    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance"
-			}
 		}
 	}
 }

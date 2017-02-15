@@ -6,7 +6,7 @@
 		//"game_mode_15"				"DUSK"
 		"addon_game_name"			"DUSK"
 		"addonname"					"DUSK"
-		"game_version"		"v1.94f - Some Small Changes to Neith"
+		"game_version"		"v1.96 - Paragon Reworks, The Beginning of Talents"
 // DO NOT TAB THIS SECTION! It will break the formatting.
 // Changes template is as follows:
 //<br/><span class="changelog">- Change.</span>
@@ -14,18 +14,15 @@
 
 "game_version_scroller" "<font color='#a0db8e'>Welcome to Dusk! Play as one of 37 unique Heroes, with unique abilities and special items!</font>
 <br/><b><font color='#ff9900'><i>As always, see the <a href='http://steamcommunity.com/sharedfiles/filedetails/changelog/426167013'>official changelog</a> on the Workshop page for more information.</i></font></b>
-<br/><font color='#b0e5ea'>1.94f:</font>
+<br/><font color='#b0e5ea'>1.96:</font>
 <br/><font color='#b0e5ea'>- Made changes to the following Heroes:</font>
-<br/>Neith
-<br/><font color='#b0e5ea'>1.94e:</font>
-<br/><font color='#b0e5ea'>- Contributors are now properly displayed in the sidebar at the 0:00 mark.</font>
-<br/><font color='#b0e5ea'>- Made changes to the following Heroes:</font>
-<br/>Alroth, Artificer, Astaroth, Baal, Bloodwarrior, Elena, Erra, Fury, Hero, Ironfist, The Lich, Lysander, Mifune, Mana Knight, Nu, Odin, Ouroboros, Phantom, Set, Vulcan, Tek
-<br/><font color='#b0e5ea'>- Made changes to the following Items:</font>
-<br/>Pendulum Fragment
-<br/><font color='#b0e5ea'>- Modified recommended builds for the following Heroes:</font>
-<br/>Astaroth, Set
-<br/><font color='#b0e5ea'>- Fixed tooltips for most of the above changed Heroes.</font>"
+<br/>Aether, Set, Shade, Paragon
+<br/><font color='#b0e5ea'>- Added a base +3 Stats talent set to all Heroes. This is temporary, until unique talents are added.</font>
+<br/><font color='#b0e5ea'>- Added Aghanim's Upgrade descriptions and 'Upgradable by Aghanim's Scepter' tooltips to all Heroes with Aghanim's Scepter Upgrades.</font>
+<br/><font color='#b0e5ea'>- Removed the Hero Help system.</font>
+<br/><font color='#b0e5ea'>- Added descriptions of each Hero's basic playstyle in the pick screen.</font>
+<br/><font color='#b0e5ea'>- Cured dyslexia.</font>"
+
 		
 		"dota_team_goodguys" "Radiant"
 		"dota_team_badguys" "Dire"
@@ -68,9 +65,91 @@
 		"npc_dota_hero_axe" "War"
 		"npc_dota_hero_enigma" "Nu"
 		"npc_dota_hero_lone_druid" "Artificer"
-		"npc_dota_hero_chaos_knight" "Mana Knight"
+		"npc_dota_hero_chaos_knight" "Mindflayer"
 		"npc_dota_hero_necrolyte" "Erra"
-		"npc_dota_hero_leshrac" "Ptomely"
+		"npc_dota_hero_leshrac" "Ptolemy"
+		
+		"npc_dota_hero_omniknight_hype" "A healer of mind and body, and a destroyer of his enemies, Paragon can entirely negate damage with his Tranquil Seal, staunchly defend himself with Divine Armour, heal his allies or damage his enemies with Cleanse, and inflict massive amounts of Pure damage globally with Smite."
+		
+		"npc_dota_hero_lion_hype" "None"
+		
+		"npc_dota_hero_invoker_hype" "None"
+		
+		"npc_dota_hero_bounty_hunter_hype" "Shade is a powerful Agility Hero that relies on his enemies being isolated to deal his damage. His blades may envenom a target, causing them to move slower and take damage over time, he can steal movement speed and attack speed with his Shadowbreak, and conceal his allies with Smoke Bomb. His Ultimate, Isolation, deals massive damage, blinding and silencing a target, if they are alone."
+		
+		"npc_dota_hero_lich_hype" "A progenitor of frost magic, The Lich freezes his foes with reckless abandon, crushing them with powerful long range disables, close range nukes, a devastating Aura, and a global chill that slows enemies drastically."
+		
+		"npc_dota_hero_sniper_hype" "A sharpshooter with a focus on dangerous equipment, Hawkeye matches his explosive madness with equally explosive abilities. Double Tap is a great mid-range nuke, and he has access to powerful escape in the form of Hit 'n' Run. His Ultimate, Detonator Dart, is a devastating delayed nuke that also stuns."
+		
+		"npc_dota_hero_rubick_hype" "Eccentric, perhaps, but undoubtably skilled, the Voidwalker can crush opposition with a set of dangerous abilities, including a purging bolt of pure energies, a portal that can transport allies to anywhere on the map, a blister in reality that prevents damage from the outside, and a terrifying vortex of abyssal energies that damages allies as well as enemies."
+		
+		"npc_dota_hero_ursa_hype" "A scary bear. Difficult to run from once he gets a few hits off, Fury is a powerful ganker and carry due to his incredible Bloodsport and Rend abilities, a damage over time per hit and bonus damage per hit, respectively. His Q is Terashock, empowering him for each unit hit in its AoE for bonus attack speed, and his Ultimate makes him attack even faster. Should anyone kill him whilst he's ulting, well... they'll be in trouble."
+		
+		"npc_dota_hero_spectre_hype" "A spectral form that can barely be perceived, Phantom may be fragile, but she is an incredibly powerful manfighter and late game carry. Possessing a cleave that increases its damage the more times it hits, a movespeed boosting attack immunity state, a mid-range stun and nuke, and a devastating critical strike that deals more damage the lower Health the target is on, Phantom is a force to be reckoned with."
+		
+		"npc_dota_hero_dark_seer_hype" "Master of many arts, Ironfist is a powerful adversary. Equipped with two sets of skills that he can switch between, and two modes: tanky or speedy, Ironfist is capable of adapting to most situations very quickly. His Ultimate has 3 permutations and changes each time it is used."
+		
+		"npc_dota_hero_vengefulspirit_hype" "The healer in chief, Elena is an excellent sustainer with incredible teamfight capabilities. Possessing damaging/healing AoEs and an Ultimate that turns the opponents' damage against them, she is difficult to deal with in any case."
+		
+		"npc_dota_hero_juggernaut_hype" "A powerful master swordsman, hailing from the land of spirits, Mifune has access to an array of extraordinary abilities, one of which being the devastating Zanmato, a strike that deals more damage to the target the more units are around them."
+		
+		"npc_dota_hero_rattletrap_hype" "The sieger, Vulcan is a defensive core that can place units all over the map. His Tesla Coils are weak on their own, but in groups they are devastatingly powerful, and the Sentinel can down towers in a short time."
+		
+		"npc_dota_hero_keeper_of_the_light_hype" "Keeper of timelines, the Timekeeper is difficult to use but rewarding when used correctly. Able to deal random damage after a random delay, slow enemies drastically, extend the range of his abilities with Parallels, and save/load an ally's position, Health and Mana, Timekeeper is a powerful and dependable support."
+		
+		"npc_dota_hero_phantom_assassin_hype" "A nuker with an emphasis on spammable abilities, Lightning is a quickfire Hero that allows very little to stand in her way. Crush your enemies with short range, extremely low cooldown nukes with Lightning Daggers, a powerful, long range and explosive blast of lightning in Thunder Wave, a pulse of slowing electrical energy with Overload, and augment all of the above with her Spark, dealing damage whenever she casts them."
+		
+		"npc_dota_hero_jakiro_hype" "A sturdy and dependable nuker, Ouroboros is tanky and destructive, capable of disrupting fights and single handedly taking down most enemies, should they be struck by his slow moving skills. Possessing fire breath in the form of Searing Fire, the ability to take flight and knock away enemies as he does so with Dragon Wing, a close range damage over time Aura that reduces Magical damage, and a devastating Magical damage Ult."
+		
+		"npc_dota_hero_meepo_hype" "None"
+		
+		"npc_dota_hero_tinker_hype" "An extremely dangerous nuker, Tek can crush most opposition in less than 3s. He may be squishy, but his access to Magical damage, slows, stuns, and global strikes make him a terrifying force."
+		
+		"npc_dota_hero_kunkka_hype" "This cap'n is all about disrupting his enemies. His long range Physical nuke, Grapeshot, makes him great at consistently damaging enemies. Captain's Compass grants him bonus movespeed whilst moving towards his enemies, whilst Adventurous Gale allows him to charge forth and carry enemies with him. Should he be in trouble, he can summon the great Dreadnaught, a ghostly ship that fires numerous cannonballs ahead of it."
+		
+		"npc_dota_hero_bloodseeker_hype" "A difficult to kill right-clicker with a wide subset of abilities. Able to drain the Health and Mana of a target whilst disabling them with Grapple, blink to enemies and allies with Dance of Death, deal damage over time and augment his right clicks and abilities on the target with Red Ritual, and have a second chance at living with Blood Curse."
+		
+		"npc_dota_hero_wisp_hype" "A support with a set of skills designed to save allies and annoy enemies, Aether can drag an ally out of a bad situation with Teleport, deal damage and disjoint projectiles with Disrupt, place buffing Monoliths with Monolith, and suck all enemies and allies in the immediate area into a dimensional safe zone."
+		
+		"npc_dota_hero_sand_king_hype" "A sieger and teamfighter, Set functions best in messy fights where he will not be interrupted whilst channelling his devastating An Army Beneath the Sands. Focused on creating powerful Sand Puppets through his Sands of War and Ultimate, he can quickly push down towers if not kept in check. His Harsh Sun passive reduces his cooldowns by a whopping 60% during the daytime, while reducing enemies' damage and attack speed globally."
+		
+		"npc_dota_hero_oracle_hype" "Fate is an extremely difficult but highly rewarding character to use. Frail and slow, but possessing a multitude of devastating spells that can function as both support or offensive abilities, Fate can destroy most enemies given enough space in a fight. Wrap your opponents in chains that bond their destinies together, dealing damage when one or the other dies, delay damage and healing for a short time, purge off buffs and remove a percentage of their Max Health."
+		
+		"npc_dota_hero_elder_titan_hype" "Not many Heroes can claim to have as much visceral impact with their abilities as Reus. Rending the earth itself asunder, Reus may fire stunning rocks with Stoneblast, create slowing and damaging tremors with Magnitude, summon the teeth of stone with Stalagmites, and trap his enemies and allies in an arena that is impossible to escape-- buffing himself in the process-- with Ancient Arena."
+		
+		"npc_dota_hero_faceless_void_hype" "None"
+		
+		"npc_dota_hero_tusk_hype" "Fast and furious, Hero is a get-in-get-out Hero with a fun to use skillset. Kick your enemies away with Justice Kick to set up for your pouncing Freedom Strike, break out of stuns and purgable disables with Heroic Soul, and obliterate your targets with the famed ONE PUNCH!!"
+		
+		"npc_dota_hero_terrorblade_hype" "Possessing a good balance of Physical and Magical damage, Bahamut is a powerful mid-game Agility carry. Turn your enemies into a walking radiance with Desolation, increase the damage they take with Reckoning Aura, deal ever increasing Magical damage with Fulmination, and finish the fight with the obliterating Mega Flare."
+		
+		"npc_dota_hero_arc_warden_hype" "A positional manipulator as masterful as they are irritating, Baal's job is to constantly keep the enemy on their toes. Grab an ally or enemy and compress them into a ball for a short time to carry around with Compress, anchor them to the ground with Spatiotemporal Anchor, teleport to a location after channelling with Spatial Rift, and enter a state of uncertainty to wreak havoc on your unsuspecting enemies with Superposition."
+		
+		"npc_dota_hero_night_stalker_hype" "Horror is a dangerous ganker, capable of forcing enemies to run away from him with Terrify, blind them with Obscure, cause them to isolate themselves from their allies with Paranoia, and teleport to anyone he can see with Sinister."
+		
+		"npc_dota_hero_legion_commander_hype" "A pusher and teamfighter, Neith's capabilities are devastating in the first 20 minutes of the game. Steal your opponents' attack damage with Monsoon, crush them solo with Decisive Strike, increase your allies' attack damage with Inspire, and Rally your creeps and Heroes to take tower after tower!"
+		
+		"npc_dota_hero_dragon_knight_hype" "A servant of her Radiance, former paladin and wielder of the legendary Godfall, Alexander is a tanky and difficult to deal with carry that can buff allies, Break and Silence enemies, heal himself and demolish those who would dare stand against him with his Ultimate."
+		
+		"npc_dota_hero_doom_bringer_hype" "A commander of fire and ash, the being known as Alroth brings a great deal to the table when it comes to Magical damage. Boasting an array of abilities like the area of effect damage over time Maelstrom, instant cast Health draining explosion Energy Burst, Magic Resistance breaking Shatter, and dangerously long range Solcharge, Alroth is capable of dealing with enemies his way, and no one else's."
+		
+		"npc_dota_hero_abaddon_hype" "A supportive tank, Odin's claim to fame is his legendary spear, Gungnir. Capable of being cast globally, this has a short delay before landing and stunning and damaging anyone in the radius. Otherwise, he possesses a great escape tool in Sleipnir's Veil, a difficult to get around defense against right clickers in Oppression, and a powerful True Sight AoE spell that punishes invisible units in Eye of Truth."
+		
+		"npc_dota_hero_antimage_hype" "A late game carry, Astaroth's job is to hit you five times with his Black Insignia to deal his damage. What he lacks in sturdiness he more than makes up for in spells, with access to a slow that activates upon the target taking damage (Pain Curse), a spell that transforms the target into a walking bomb (Overwhelm), and a devastating Ultimate that does its best to erase their existence (Erase)."
+		
+		"npc_dota_hero_techies_hype" "The meaning of madness, Gob Squad cares not for self-preservation, only for destruction. Firing long range rockets with Rocket Blast is where the sanity ends-- the rest of their skillset is dangerous for everyone. Become extremely fast, then explode, with Kamikaze. Throw numerous bombs out of your cart with their Ultimate, Clearance Sale, and of course... explode anyway on death, with Whoops!!"
+		
+		"npc_dota_hero_axe_hype" "A tank with access to a powerful stun in Earthbreaker and Silence with Bloodlust, War is a dangerous Hero to play against. Possessing one of the best Strength gains in the game, he is difficult to kill, and his Ultimate, Fight Me!, makes him even more disruptive."
+		
+		"npc_dota_hero_enigma_hype" "A disabler, nuker, and teamfighter, Nu is dangerous at all stages of the game. Possessing the strongest slow and Physical damage nuke in the game, Gravity Pulse, a damage augmenter with Micronebulae, numerous deadly floating mines with Antimatter Mines, and a powerful Ult, Warpstar, that can pull enemies in from thousands of units away and stun them, Nu is devastating if played correctly."
+		
+		"npc_dota_hero_lone_druid_hype" "The Artificer is a man of means, and many means he has. Able to transform enemies or allies into statues with Reshape, purge off buffs with Naturalise, deal massive Pure damage on each attack with Unmaking, and create an illusory Replica of a target."
+		
+		"npc_dota_hero_chaos_knight_hype" "Mindflayer, as the name implies, can destroy most casters. While his Ultimate, Vorpal Assault, may be strong, his real signature ability is his devastating Mana Seal, an area of effect spell that gradually drains the Mana of enemies standing in it. Should they reach zero Mana, they are mini-stunned, slowed, and take Magical damage, allowing him to continue his onslaught of stuns and Mana burning crits."
+		
+		"npc_dota_hero_necrolyte_hype" "Strangely well-rounded, Erra is a nuker with access to his signature Grave Guard, an ability that activates when he drops below a portion of Health and restores his Health and Mana rapidly for a short time. Otherwise, he has access to a nuke that has a reduced cooldown and Pure damage, should any of the targets in the AoE be below 40% Health, bonus damage gained from the missing Health of nearby enemies, and a devastating close range nuke/damage over time with his Ultimate, Deathtouch."
+		
+		"npc_dota_hero_leshrac_hype" "A master of late-game shenanigans, Ptolemy is a deadly scaling Intelligence core that can fire blades of light (Mirror Blade), convert Physical damage to Magical damage (Enthrall), force the target's soul out of their body (Astralise), and turn their Mana pool into a bomb (Expunge)."
 		
 
 		// ******************** UNITS ********************
@@ -195,6 +274,14 @@
 			"DOTA_Tooltip_ability_paragon_conversion_bonus_mana_regen"                        "BONUS MANA REGEN:"
 			"DOTA_Tooltip_ability_paragon_conversion_duration"                        		  "DURATION:"
 			
+			"DOTA_Tooltip_ability_paragon_divine_armour"                                      "Divine Armour"
+			"DOTA_Tooltip_ability_paragon_divine_armour_Description"                          "After 	reaching a threshold of damage, Paragon's Armour unleashes a blast of light, damaging nearby enemies based on their Maximum Health, and causing him to take less damage for a short time afterwards. Disabled by Break."
+			"DOTA_Tooltip_ability_paragon_divine_armour_radius"                               "RADIUS:"
+			"DOTA_Tooltip_ability_paragon_divine_armour_damage_heal"                          "%DAMAGE:"
+			"DOTA_Tooltip_ability_paragon_divine_armour_threshold"                            "THRESHOLD:"
+			"DOTA_Tooltip_ability_paragon_divine_armour_damage_block_duration"                "DAMAGE REDUCTION DURATION:"
+			"DOTA_Tooltip_ability_paragon_divine_armour_damage_reduction"                "%DAMAGE REDUCTION:"
+			
 			"DOTA_Tooltip_ability_paragon_smite"											"Smite"
 			"DOTA_Tooltip_ability_paragon_smite_description"								"The Paragon calls forth a divine bolt to strike the targeted enemy.\n\nUpgradable by Aghanim's Scepter."
 			"DOTA_Tooltip_ability_paragon_smite_aghanim_description"						"Damage increase. Adds bonus damage if the target was the last person to kill a member of your team."
@@ -282,7 +369,8 @@
 			"DOTA_Tooltip_ability_shade_shadowbreak_atksteal" "STEAL (ATTACK SPEED):"
 			
 			"DOTA_Tooltip_ability_shade_venomous" "Venomous"
-			"DOTA_Tooltip_ability_shade_venomous_description" "The user's blades are imbued with a deadly toxin that is sent coursing through the veins of their opponents when they strike them. Deals damage over time and slows enemy Heroes' attack speed and movespeed, whilst melting through some of their Armor."
+			"DOTA_Tooltip_ability_shade_venomous_description" "The user's blades are imbued with a deadly toxin that is sent coursing through the veins of their opponents when they strike them. Deals damage over time and slows enemy Heroes' attack speed and movespeed, whilst melting through some of their Armor.\n\nUpgradable by Aghanim's Scepter."
+			"DOTA_Tooltip_ability_shade_venomous_aghanim_description" "Causes the venom to deal more damage and slow more for every 8s it has been on the target.\nThe slow is capped at 100% and the damage is capped at 200."
 			"DOTA_Tooltip_ability_shade_venomous_Lore" "The venom that coats the blades of the Nightwalker can down giants with a single drop."
 			"DOTA_Tooltip_ability_shade_venomous_damage" "DAMAGE:"
 			"DOTA_Tooltip_ability_shade_venomous_duration" "DURATION:"
@@ -498,7 +586,7 @@
 			"DOTA_Tooltip_ability_ironfist_stonewall_stance_mres"                             "MAGIC RESISTANCE:"
 
 			"DOTA_Tooltip_ability_ironfist_focus_red"                                         "Red Focus"
-			"DOTA_Tooltip_ability_ironfist_focus_red_description"                             "Places a focus on the target enemy, causing their weakpoint to be exposed.  Attacks targeting them will reduce their Strength and Armor.  If Ironfist hits a target with a red Focus, he will gain bonus damage for a short time."
+			"DOTA_Tooltip_ability_ironfist_focus_red_description"                             "Places a focus on the target enemy, causing their weakpoint to be exposed.  Attacks targeting them will reduce their Strength and Armor.  If Ironfist hits a target with a red Focus, he will gain bonus damage for a short time.\n\nUpgradable by Aghanim's Scepter."
 			"DOTA_Tooltip_ability_ironfist_focus_red_aghanim_description"                     "This ability goes on cooldown only when all three focii are cast."
 			"DOTA_Tooltip_ability_ironfist_focus_red_str_red"                                 "STRENGTH REDUCTION:"
 			"DOTA_Tooltip_ability_ironfist_focus_red_armor_red"                               "ARMOR REDUCTION:"
@@ -506,7 +594,7 @@
 			"DOTA_Tooltip_ability_ironfist_focus_red_duration"                          	  "DURATION:"
 
 			"DOTA_Tooltip_ability_ironfist_focus_green"                                       "Green Focus"
-			"DOTA_Tooltip_ability_ironfist_focus_green_description"                           "Places a focus on the target enemy, causing their weakpoint to be exposed.  Attacks targeting them will reduce their Agility and movespeed.  If Ironfist hits a target with a green Focus, he will gain bonus attack speed for a short time."
+			"DOTA_Tooltip_ability_ironfist_focus_green_description"                           "Places a focus on the target enemy, causing their weakpoint to be exposed.  Attacks targeting them will reduce their Agility and movespeed.  If Ironfist hits a target with a green Focus, he will gain bonus attack speed for a short time.\n\nUpgradable by Aghanim's Scepter."
 			"DOTA_Tooltip_ability_ironfist_focus_green_aghanim_description"                   "This ability goes on cooldown only when all three focii are cast."
 			"DOTA_Tooltip_ability_ironfist_focus_green_agi_red"                               "AGILITY REDUCTION:"
 			"DOTA_Tooltip_ability_ironfist_focus_green_speed_red"                             "SPEED REDUCTION:"
@@ -514,7 +602,7 @@
 			"DOTA_Tooltip_ability_ironfist_focus_green_duration"                        	  "DURATION:"
 
 			"DOTA_Tooltip_ability_ironfist_focus_blue"                                        "Blue Focus"
-			"DOTA_Tooltip_ability_ironfist_focus_blue_description"                            "Places a focus on the target enemy, causing their weakpoint to be exposed.  Attacks targeting them will reduce their Intelligence and burn their mana.  If Ironfist hits a target with a blue Focus, he will gain the mana burned as well."
+			"DOTA_Tooltip_ability_ironfist_focus_blue_description"                            "Places a focus on the target enemy, causing their weakpoint to be exposed.  Attacks targeting them will reduce their Intelligence and burn their mana.  If Ironfist hits a target with a blue Focus, he will gain the mana burned as well.\n\nUpgradable by Aghanim's Scepter."
 			"DOTA_Tooltip_ability_ironfist_focus_blue_aghanim_description"                    "This ability goes on cooldown only when all three focii are cast."
 			"DOTA_Tooltip_ability_ironfist_focus_blue_int_red"                                "INTELLIGENCE REDUCTION:"
 			"DOTA_Tooltip_ability_ironfist_focus_blue_mana_burn"                              "MANA BURN:"
@@ -661,8 +749,8 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			"DOTA_Tooltip_ability_mifune_raigeki_delay"                                       "DELAY:"
 
 			"DOTA_Tooltip_ability_mifune_zanmato"                                             "Zanmato"
-			"DOTA_Tooltip_ability_mifune_zanmato_description"                                 "Mifune focuses for a moment, then unleashes the most powerful ability in his arsenal; he slashes at blinding speed, attacking all enemies in the radius of the spell.  After this ends, the energy created from his attacks converges on the main target, dealing Magical damage for each enemy within the radius.  The main target is stunned while Mifune is slashing.  Deals bonus damage to Heroes."
-			"DOTA_Tooltip_ability_mifune_zanmato_aghanim_description"                         "Creates an illusion based on the current level of Genso for each target attacked."
+			"DOTA_Tooltip_ability_mifune_zanmato_description"                                 "Mifune focuses for a moment, then unleashes the most powerful ability in his arsenal; he slashes at blinding speed, attacking all enemies in the radius of the spell.  After this ends, the energy created from his attacks converges on the main target, dealing Magical damage for each enemy within the radius.  The main target is stunned while Mifune is slashing.  Deals bonus damage to Heroes.\n\nUpgradable by Aghanim's Scepter."
+			"DOTA_Tooltip_ability_mifune_zanmato_aghanim_description"                         "Creates a Genso illusion based on the current level of Genso for each target attacked. The illusions are forced to attack the main target unit."
 			"DOTA_Tooltip_ability_mifune_zanmato_Note0"                                 	  "The main target is stunned for a minimum of 1s."
 			"DOTA_Tooltip_ability_mifune_zanmato_Note1"                                 	  "The slash preserves procs and orb effects."
 			"DOTA_Tooltip_ability_mifune_zanmato_Note2"                                 	  "The Orbs deal Magical damage, and converge on the main target when the initial slashes end."
@@ -1004,7 +1092,8 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			"DOTA_Tooltip_ability_lysander_captains_compass_movespeed_caster"                 "%MOVESPEED :"
 
 			"DOTA_Tooltip_ability_lysander_grapeshot"                                         "Grapeshot"
-			"DOTA_Tooltip_ability_lysander_grapeshot_description"                             "Lysander fires his handgun at a target unit or building, dealing Physical damage based on his attack strength.  When shooting at short range, it ministuns the target.  Has a chance to crit, which resets the ability's cooldown, increases the damage and ministuns regardless of how far away the target is."
+			"DOTA_Tooltip_ability_lysander_grapeshot_description"                             "Lysander fires his handgun at a target unit or building, dealing Physical damage based on his attack strength.  When shooting at short range, it ministuns the target.  Has a chance to crit, which resets the ability's cooldown, increases the damage and ministuns regardless of how far away the target is.\n\nUpgradable by Aghanim's Scepter."
+			"DOTA_Tooltip_ability_lysander_grapeshot_aghanim_description"                     "Removes the random chance for crit, granting a guaranteed crit every 8s, and makes the Grapeshot hit in an AoE."
 			"DOTA_Tooltip_ability_lysander_grapeshot_multiplier"                              "MULTIPLIER:"
 			"DOTA_Tooltip_ability_lysander_grapeshot_range_ministun"                          "RANGE STUN:"
 			"DOTA_Tooltip_ability_lysander_grapeshot_stun"                                    "STUN:"
@@ -1188,8 +1277,8 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			"DOTA_Tooltip_ability_neith_monsoon_duration"                                     "DURATION:"
 
 			"DOTA_Tooltip_ability_neith_rally"                                                "Rally"
-			"DOTA_Tooltip_ability_neith_rally_description"                                    "With a war cry, Neith rallies her nearby allies to battle, increasing their attack damage, move speed and attack speed for a very short time. Creeps gain less attack damage, but the same amount of move speed and attack speed."
-			"DOTA_Tooltip_ability_neith_rally_aghanim_description"                            "Increases the duration, and reduces nearby enemies' attackspeed, movespeed and damage by the same amount as it increases."
+			"DOTA_Tooltip_ability_neith_rally_description"                                    "With a war cry, Neith rallies her nearby allies to battle, increasing their attack damage, move speed and attack speed for a very short time. Creeps gain less attack damage, but the same amount of move speed and attack speed.\n\nUpgradable by Aghanim's Scepter."
+			"DOTA_Tooltip_ability_neith_rally_aghanim_description"                            "Increases the duration, and reduces nearby enemies' attackspeed, movespeed and damage by the same amount as it increases for your allies."
 			"DOTA_Tooltip_ability_neith_rally_damage_increase"                                "DAMAGE INCREASE:"
 			"DOTA_Tooltip_ability_neith_rally_attack_speed_increase"                          "ATTACK SPEED INCREASE:"
 			"DOTA_Tooltip_ability_neith_rally_bonus_movespeed"                          	  "%MOVESPEED INCREASE:"
@@ -1489,7 +1578,7 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			//ALEXANDER
 			//--------------------
 			"DOTA_Tooltip_ability_alexander_godfall"                                          "Godfall"
-			"DOTA_Tooltip_ability_alexander_godfall_description"                              "Unleashing the true power of the Godslayer, after a short channeling Duration, the next attack Alexander makes deals bonus Pure damage as a percentage of his attack damage.  This skill purges positive buffs from the enemy."
+			"DOTA_Tooltip_ability_alexander_godfall_description"                              "Unleashing the true power of the Godslayer, after a short channeling Duration, the next attack Alexander makes deals bonus Pure damage as a percentage of his attack damage.  This skill purges positive buffs from the enemy.\n\nUpgradable by Aghanim's Scepter."
 			"DOTA_Tooltip_ability_alexander_godfall_aghanim_description"                      "Deals a percentage of the Pure damage as beams from the sky to all other nearby enemies when striking the target.  Alexander regains half the damage the beams deal as health for each strike on creeps, and the full damage for Heroes."
 			"DOTA_Tooltip_ability_alexander_godfall_duration"                                 "RETAIN BUFF DURATION:"
 			"DOTA_Tooltip_ability_alexander_godfall_damage"                                   "%DAMAGE OUTPUT:"
@@ -1503,7 +1592,7 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			"DOTA_Tooltip_ability_alexander_radiant_radius"                                   "RADIUS:"
 
 			"DOTA_Tooltip_ability_alexander_soulseal"                                         "Soulseal"
-			"DOTA_Tooltip_ability_alexander_soulseal_description"                             "Seals away the target's soul with the power of the Godslayer to slow and prevent them from casting spells for a short time."
+			"DOTA_Tooltip_ability_alexander_soulseal_description"                             "Seals away the target's soul with the power of the Godslayer to slow, prevent them from casting spells, and break their passives for a short time."
 			"DOTA_Tooltip_ability_alexander_soulseal_Note0"                             	  "Purgable."
 			"DOTA_Tooltip_ability_alexander_soulseal_duration"                                "DURATION:"
 			"DOTA_Tooltip_ability_alexander_soulseal_slow"                                	  "%SLOW:"
@@ -1530,7 +1619,7 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			"DOTA_Tooltip_ability_odin_gods_eye_bonus_movespeed"                              "%SLOW"
 
 			"DOTA_Tooltip_ability_odin_gungnir"                                               "Gungnir"
-			"DOTA_Tooltip_ability_odin_gungnir_description"                                   "Odin throws his spear at a target location globally.  After a 2s delay, the spear lands with destructive impact, dealing large Magical damage to all those unfortunate enough to be caught in the blast, and stunning them.  For a short while afterwards, Odin's attacks are far weaker and shorter range, until his spear returns to his person."
+			"DOTA_Tooltip_ability_odin_gungnir_description"                                   "Odin throws his spear at a target location globally.  After a 2s delay, the spear lands with destructive impact, dealing large Magical damage to all those unfortunate enough to be caught in the blast, and stunning them.  For a short while afterwards, Odin's attacks are far weaker and shorter range, until his spear returns to his person.\n\nUpgradable by Aghanim's Scepter."
 			"DOTA_Tooltip_ability_odin_gungnir_aghanim_description"                           "Increases damage and removes attack range and damage debuff."
 			"DOTA_Tooltip_ability_odin_gungnir_scepter_damage"                                "SCEPTER DAMAGE:"
 			"DOTA_Tooltip_ability_odin_gungnir_arrow_stun"                                	  "STUN DURATION:"
@@ -1623,10 +1712,10 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			"DOTA_Tooltip_ability_nu_warpstar_delay"                                          "DELAY:"
 			
 			//--------------------
-			//MANA KNIGHT
+			//MANA KNIGHT (MINDFLAYER)
 			//--------------------
 			"DOTA_Tooltip_ability_mana_knight_arcanum_break"                                  "Arcanum Break"
-			"DOTA_Tooltip_ability_mana_knight_arcanum_break_Description"                      "Mana Knight's attacks have a chance to strike at the soul of his targets, shattering their Magical energies. Removes Mana from the target, and deals bonus Magical damage, alongside reducing all outgoing spell damage for a short time."
+			"DOTA_Tooltip_ability_mana_knight_arcanum_break_Description"                      "The Mindflayer's attacks have a chance to strike at the soul of his targets, shattering their Magical energies. Removes Mana from the target, and deals bonus Magical damage, alongside reducing all outgoing spell damage for a short time."
 			"DOTA_Tooltip_ability_mana_knight_arcanum_break_bonus_damage"                     "BONUS DAMAGE:"
 			"DOTA_Tooltip_ability_mana_knight_arcanum_break_duration"                         "DURATION:"
 			"DOTA_Tooltip_ability_mana_knight_arcanum_break_spell_damage_reduction"           "%SPELL DAMAGE REDUCTION:"
@@ -1634,20 +1723,22 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			"DOTA_Tooltip_ability_mana_knight_arcanum_break_chance"                           "%CHANCE:"
 
 			"DOTA_Tooltip_ability_mana_knight_infusion_bolt"                                  "Infusion Bolt"
-			"DOTA_Tooltip_ability_mana_knight_infusion_bolt_Description"                      "Mana Knight fires a bolt at the target that deals damage based on their missing Mana."
+			"DOTA_Tooltip_ability_mana_knight_infusion_bolt_Description"                      "Mindflayer fires a bolt at the target that deals damage based on their missing Mana."
 			"DOTA_Tooltip_ability_mana_knight_infusion_bolt_damage"                           "%MISSING MANA AS DAMAGE:"
 			"DOTA_Tooltip_ability_mana_knight_infusion_bolt_min_damage"                       "MINIMUM DAMAGE:"
 			"DOTA_Tooltip_ability_mana_knight_infusion_bolt_max_damage"                       "MAXIMUM DAMAGE:"
 			"DOTA_Tooltip_ability_mana_knight_infusion_bolt_stun"                             "STUN:"
 
 			"DOTA_Tooltip_ability_mana_knight_mana_seal"                                      "Mana Seal"
-			"DOTA_Tooltip_ability_mana_knight_mana_seal_Description"                          "The Mana Knight creates a glyph that seals away Magical energies, gradually draining the Mana of enemies that stand upon it. If their Mana hits 0, they are mini-stunned, damaged and slowed for 3s."
+			"DOTA_Tooltip_ability_mana_knight_mana_seal_Description"                          "The Mindflayer creates a glyph that seals away Magical energies, gradually draining the Mana of enemies that stand upon it. If their Mana hits 0, they are mini-stunned, damaged and slowed for 1.5s. Ignores targets affected by the 0 Mana mini-stun for 8s afterwards."
+			"DOTA_Tooltip_ability_mana_knight_mana_seal_aghanim_Description"                  "Upgrades Mana Seal to pierce Magic Immunity, increases the mana drain per second, reduces the ignore time to 4s, and makes the damage upon reaching zero Mana Pure."
 			"DOTA_Tooltip_ability_mana_knight_mana_seal_mana_removal"                         "%MANA REMOVAL PER SECOND:"
+			"DOTA_Tooltip_ability_mana_knight_mana_seal_mana_removal_scepter"                 "%SCEPTER MANA REMOVAL PER SECOND:"
 			"DOTA_Tooltip_ability_mana_knight_mana_seal_slow"                                 "%SLOW"
 			"DOTA_Tooltip_ability_mana_knight_mana_seal_duration"                             "DURATION:"
 
 			"DOTA_Tooltip_ability_mana_knight_vorpal_assault"                                 "Vorpal Assault"
-			"DOTA_Tooltip_ability_mana_knight_vorpal_assault_Description"                     "Imbues a number of the Mana Knight's attacks with a devastating anti-Arcane potency, granting him bonus attack speed, causing them to burn Mana, and making them deal bonus Magical damage based on the Mana the target is missing. He can still strike with Arcanum Break as well."
+			"DOTA_Tooltip_ability_mana_knight_vorpal_assault_Description"                     "Imbues a number of the Mindflayer's attacks with a devastating anti-Arcane potency, granting him bonus attack speed, causing them to burn Mana, and making them deal bonus Magical damage based on the Mana the target is missing. He can still strike with Arcanum Break as well."
 			"DOTA_Tooltip_ability_mana_knight_vorpal_assault_bonus_damage"                    "BONUS DAMAGE PER POINT OF MANA MISSING:"
 			"DOTA_Tooltip_ability_mana_knight_vorpal_assault_attacks"                         "ATTACKS:"
 			"DOTA_Tooltip_ability_mana_knight_vorpal_assault_bonus_attackspeed"               "BONUS ATTACK SPEED:"
@@ -1664,7 +1755,8 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			"DOTA_Tooltip_ability_artificer_naturalise_damage_over_time"                      "DAMAGE OVER TIME:"
 
 			"DOTA_Tooltip_ability_artificer_replica"                                          "Replica"
-			"DOTA_Tooltip_ability_artificer_replica_Description"                              "The Artificer moulds a near-perfect replica of the target ally or enemy. Creates an illusion copy of the target ally or enemy Hero, but it cannot cast spells or use items."
+			"DOTA_Tooltip_ability_artificer_replica_Description"                              "The Artificer moulds a near-perfect replica of the target ally or enemy. Creates an illusion copy of the target ally or enemy Hero, but it cannot cast spells or use items.\n\nUpgradable by Aghanim's Scepter."
+			"DOTA_Tooltip_ability_artificer_replica_aghanim_Description"                      "Causes enemies killed by Artificer to spawn weaker Replicas automatically."	
 			"DOTA_Tooltip_ability_artificer_replica_illusion_duration"                        "ILLUSION DURATION:"
 			"DOTA_Tooltip_ability_artificer_replica_illusion_damage_tooltip"                  "%OUTGOING DAMAGE:"
 			"DOTA_Tooltip_ability_artificer_replica_illusion_incoming_tooltip"                "%INCOMING DAMAGE:"
@@ -1683,7 +1775,8 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			// GOB SQUAD
 			//--------------------
 			"DOTA_Tooltip_ability_gob_squad_clearance_sale"                                   "Clearance Sale"
-			"DOTA_Tooltip_ability_gob_squad_clearance_sale_Description"                       "The Gob Squad offloads all of their excess explosives, throwing a bomb out of their cart every half second. Bombs deal Magical damage and land in a random location nearby. The Gob Squad takes half damage from the bombs."
+			"DOTA_Tooltip_ability_gob_squad_clearance_sale_Description"                       "The Gob Squad offloads all of their excess explosives, throwing a bomb out of their cart every half second. Bombs deal Magical damage and land in a random location nearby. The Gob Squad takes half damage from the bombs.\n\nUpgradable by Aghanim's Scepter."
+			"DOTA_Tooltip_ability_gob_squad_clearance_sale_aghanim_Description"               "Reduces interval between bombs, releases a giant bomb upon duration end or death."
 			"DOTA_Tooltip_ability_gob_squad_clearance_sale_radius"                            "EXPLOSION RADIUS:"
 			"DOTA_Tooltip_ability_gob_squad_clearance_sale_duration"                          "DURATION:"
 
@@ -1792,7 +1885,7 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			"DOTA_Tooltip_ability_war_fight_me_radius"                                        "RADIUS:"
 			
 			//--------------------
-			// PTOMELY
+			// PTOLEMY
 			//--------------------
 			"DOTA_Tooltip_ability_ptomely_astralise"                                          "Astralise"
 			"DOTA_Tooltip_ability_ptomely_astralise_Description"                              "The targeted unit has its soul removed from its body, dealing damage to enemies, and emitting pulses that heal allies and damage enemies. Deals damage based on a percentage of the target's Intelligence. Heals for half the amount."
@@ -1810,17 +1903,17 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			"DOTA_Tooltip_ability_ptomely_enthrall_duration"                                  "DURATION:"
 
 			"DOTA_Tooltip_ability_ptomely_expunge"                                            "Expunge"
-			"DOTA_Tooltip_ability_ptomely_expunge_Description"                                "Drains a portion of current Mana out of the target unit, slowing them and creating an orb of energy above them. After a short delay, the orb explodes, dealing Magical damage equivalent to the amount drained, and restoring Mana to nearby allies equal to half of the amount drained. The damage cannot go below a minimum amount.\n\nUpgradable by Aghanim's Scepter."
+			"DOTA_Tooltip_ability_ptomely_expunge_Description"                                "Drains a base amount plus a portion of current Mana out of the target unit, slowing them and creating an orb of energy above them. After a short delay, the orb explodes, dealing Magical damage equivalent to the amount drained, and restoring Mana to nearby allies equal to half of the amount drained. The damage cannot go below a minimum amount.\n\nUpgradable by Aghanim's Scepter."
 			"DOTA_Tooltip_ability_ptomely_expunge_aghanim_Description"                        "Causes the spell to drain a percentage of the target's Max Mana as well as their Current Mana."
-			"DOTA_Tooltip_ability_ptomely_expunge_mana_drain"                                 "%MANA DRAIN:"
+			"DOTA_Tooltip_ability_ptomely_expunge_mana_drain"                                 "%CURRENT MANA DRAIN:"
 			"DOTA_Tooltip_ability_ptomely_expunge_scepter_mana_drain"                         "%SCEPTER MAX MANA DRAIN:"
 			"DOTA_Tooltip_ability_ptomely_expunge_radius"                                     "RADIUS:"
 			"DOTA_Tooltip_ability_ptomely_expunge_slow"                                       "SLOW:"
-			"DOTA_Tooltip_ability_ptomely_expunge_minimum_damage"                             "MINIMUM DAMAGE:"
+			"DOTA_Tooltip_ability_ptomely_expunge_base_drain"                             	  "BASE MANA DRAIN:"
 
 			"DOTA_Tooltip_ability_ptomely_mirror_blade"                                       "Mirror Blade"
 			"DOTA_Tooltip_ability_ptomely_mirror_blade_Description"                           "Fires multiple blades of pure energy towards the target location, dealing Physical damage based upon Ptomely's Intelligence."
-			"DOTA_Tooltip_ability_ptomely_mirror_blade_damage"                                "%INT TO DAMAGE:"
+			"DOTA_Tooltip_ability_ptomely_mirror_blade_damage"                                "DAMAGE PER INT:"
 			"DOTA_Tooltip_ability_ptomely_mirror_blade_blades"                                "BLADES:"
 			"DOTA_Tooltip_ability_ptomely_mirror_blade_radius"                                "HIT RADIUS:"
 			"DOTA_Tooltip_ability_ptomely_mirror_blade_range"                                 "RANGE:"
@@ -2316,6 +2409,9 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 
 		"DOTA_Tooltip_modifier_item_soul_reaver_damage"                                   "Soul Reaver Damage"
 		"DOTA_Tooltip_modifier_item_soul_reaver_damage_Description"                       ""
+		
+		"DOTA_Tooltip_modifier_item_rage_potion"                                          "Rage Potion"
+		"DOTA_Tooltip_modifier_item_rage_potion_Description"                              "Grants bonus attack speed and attack damage for 6s."
 		
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_channel_start"                                             "Channel Start"
@@ -2889,7 +2985,7 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 		"DOTA_Tooltip_modifier_bloodsport_bleed_tgt_description"                          "Being slowed and taking damage over time."
 
 		"DOTA_Tooltip_modifier_fury_rend_damage"                                          "Rend"
-		"DOTA_Tooltip_modifier_fury_rend_damage_description"                              "Gaining %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% bonus damage and %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attack speed."
+		"DOTA_Tooltip_modifier_fury_rend_damage_description"                              "Gaining %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% bonus damage on attacks."
 		
 		"DOTA_Tooltip_modifier_ancient_damage_aura"                                       "Ancient Aura"
 		"DOTA_Tooltip_modifier_ancient_damage_aura_description"                           "Being dealt damage over time."
@@ -3050,8 +3146,8 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 		"DOTA_Tooltip_modifier_arcanum_break_spells"                                      "Arcanum Break"
 		"DOTA_Tooltip_modifier_arcanum_break_spells_Description"                          "Spell damage is reduced."
 
-		"DOTA_Tooltip_modifier_mana_seal"                                                 "Mana Seal"
-		"DOTA_Tooltip_modifier_mana_seal_Description"                                     "Losing mana over a short period of time."
+		"DOTA_Tooltip_modifier_mana_seal_particle"                                        "Mana Seal"
+		"DOTA_Tooltip_modifier_mana_seal_particle_Description"                            "Losing mana over a short period of time."
 		
 		"DOTA_Tooltip_modifier_celestial_spear_attack_range_active"                       "Celestial Spear"
 		"DOTA_Tooltip_modifier_celestial_spear_attack_range_active_Description"           "Gaining bonus attack range, and cannot miss attacks."
@@ -3072,7 +3168,7 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 		"DOTA_Tooltip_modifier_naturalise_armor_reduce_Description"                       "Losing Armor."
 
 		"DOTA_Tooltip_modifier_unmaking_debuff"                                           "Unmaking"
-		"DOTA_Tooltip_modifier_unmaking_debuff_Description"                               "Being slowed and taking damage based on Max Health over time."
+		"DOTA_Tooltip_modifier_unmaking_debuff_Description"                               "Taking damage based on Current Health over time."
 		
 		"DOTA_Tooltip_modifier_naturalise_damage_slow"                                    "Naturalise"
 		"DOTA_Tooltip_modifier_naturalise_damage_slow_Description"                        ""
@@ -3220,5 +3316,23 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 
 		"DOTA_Tooltip_modifier_sinister_slow"                                             "Sinister"
 		"DOTA_Tooltip_modifier_sinister_slow_Description"                                 "Slowed and granting your vision to Horror."
+		
+		"DOTA_Tooltip_modifier_astralise"                                                 "Astralise"
+		"DOTA_Tooltip_modifier_astralise_Description"                                     "Stunned, taking no Magical damage."
+
+		"DOTA_Tooltip_modifier_enthralled"                                                "Enthralled"
+		"DOTA_Tooltip_modifier_enthralled_Description"                                    "Converting all Physical damage to Magical damage."
+
+		"DOTA_Tooltip_modifier_enthralled_ally"                                           "Enthralled"
+		"DOTA_Tooltip_modifier_enthralled_ally_Description"                               "Converting all Physical damage to Magical damage."
+
+		"DOTA_Tooltip_modifier_expunge"                                                   "Expunge"
+		"DOTA_Tooltip_modifier_expunge_Description"                                       "Mana is being drained!"
+		
+		"DOTA_Tooltip_modifier_terashock_attack_speed_hero"                               "Terashock"
+		"DOTA_Tooltip_modifier_terashock_attack_speed_hero_Description"                   "Gaining attack speed from targets hit by Terashock."
+
+		"DOTA_Tooltip_modifier_terashock_attack_speed_creep"                              "Terashock"
+		"DOTA_Tooltip_modifier_terashock_attack_speed_creep_Description"                  "Gaining attack speed from targets hit by Terashock."
 	}
 }

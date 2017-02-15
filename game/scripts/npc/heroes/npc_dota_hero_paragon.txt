@@ -4,7 +4,7 @@
 	"override_hero"			"npc_dota_hero_omniknight"
 	"Ability1"				"paragon_cleanse" 
 	"Ability2"				"paragon_tranquility_seal" 
-	"Ability3"				"paragon_conversion"
+	"Ability3"				"paragon_divine_armour"
 	"Ability4"				"paragon_smite"
 	"Ability5"				""
 	"Ability6"				""
@@ -24,8 +24,8 @@
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackRate"				"1.8"
-	"AttackDamageMin"			"40"										// Damage range min.
-	"AttackDamageMax"			"50"										// Damage range max.
+	"AttackDamageMin"			"24"										// Damage range min.
+	"AttackDamageMax"			"30"										// Damage range max.
 
 	//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
 	"AttributeBaseStrength"		"25"										// Base strength
@@ -44,7 +44,7 @@
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 	"MovementSpeed"				"300"									// Speed.
-	"MovementTurnRate"			"1.0"									// Turning rate.
+	"MovementTurnRate"			"1.0"						// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
 	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
