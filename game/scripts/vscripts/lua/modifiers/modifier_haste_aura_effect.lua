@@ -24,24 +24,27 @@ function modifier_haste_aura_effect:GetModifierAttackSpeedBonus_Constant()
 end
 
 function modifier_haste_aura_effect:OnAbilityExecuted( params )
+	if not self:GetAbility():IsCooldownReady() then return end
 	local reduction = self:GetAbility():GetSpecialValueFor("cooldown_reduction")/100 --[[Returns:table
 	No Description Set
 	]]
 	local chance = self:GetAbility():GetSpecialValueFor("chance")
 
-	print(params.unit:GetName())
+	-- print(params.unit:GetName())
 
-	print(self:GetParent():GetName())
+	-- print(self:GetParent():GetName())
 
 	if params.unit ~= self:GetParent() then return end
+	if params.unit:HasModifier("modifier_haste_aura_effect_act") then return end
+	if params.ability:GetName() == "timekeeper_haste_aura" then return end
 
 	local ab = params.ability
 
-	print(ab:GetName())
+	-- print(ab:GetName())
 
 	local r = RandomInt(1, 100)
 
-	print(r)
+	-- print(r)
 
 	if r < chance then
 		local mult = 1 - reduction

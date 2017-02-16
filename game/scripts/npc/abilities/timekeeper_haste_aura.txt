@@ -10,7 +10,7 @@
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityTextureName"			"timekeeper_parallels"
 
 	// Casting
@@ -20,11 +20,11 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"0"
+	"AbilityCooldown"				"40"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"0"
+	"AbilityManaCost"				"100"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"cooldown_reduction"			"20 25 30 35"
+			"cooldown_reduction"			"8 12 16 20"
 		}
 	"02"
 		{
@@ -47,12 +47,27 @@
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"speed_boost"					"4 8 12 16"
+			"speed_boost"					"2 4 6 8"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"chance"						"25"
+			"atkspeed_boost"				"5 10 15 20"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"chance"						"40"
+		}
+	"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"active_chance"					"100"
+		}
+	"07"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"act_duration"					"8"
 		}
 	}
 
@@ -60,5 +75,6 @@
 	{
 		"soundfile"			"soundevents/hero_timekeeper.vsndevts"
 		"particle"			"particles/units/heroes/hero_timekeeper/haste_aura_proc.vpcf"
+		"particle"			"particles/units/heroes/hero_timekeeper/haste_aura_act_proc.vpcf"
 	}
 }
