@@ -12,6 +12,32 @@ Balance Changes:
 
 None.
 
+Version 1.96c
+
+HEROES
+=========
+
+TIMEKEEPER
+- Added a missing tooltip for Haste Aura's modifier.
+- Futurestrike cooldown reduced to 26/24/22/20s (was 24s).
+- Futurestrike Mana cost reduced to 145 (was 160).
+- Futurestrike now explodes twice as quickly on non-Hero units (the damage is the same).
+- Haste Aura cooldown reduction reduced to 8/12/16/20% (was 20/25/30/35%).
+- Haste Aura now has a cooldown of 40s.
+- Haste Aura movespeed boost and attack speed boosts are now separate.
+- Haste Aura grants 2/4/6/8% movement speed (was 4/8/12/16% movement speed).
+- Haste Aura grants 5/10/15/20 attack speed (was the same as above).
+- Haste Aura proc chance increased to 40% (was 25%).
+- Haste Aura now has an active effect:	
+When cast on a target, their next spell is guaranteed to have its cooldown reduced by double the normal amount.
+Will not proc cooldown reduction when casting Haste Aura.
+While this ability is on cooldown, it cannot proc cooldown reductions, or grant passive bonuses.
+
+BUGFIXES
+===========
+
+- Fixed War's Bloodlust still granting creeps bonus attack speed and attack damage.
+
 Version 1.96b
 
 HEROES

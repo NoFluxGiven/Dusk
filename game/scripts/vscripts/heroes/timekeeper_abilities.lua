@@ -479,6 +479,8 @@ function futurestrike(keys)
 	local damage = math.ceil(max_damage*pct)
 	if damage < min_damage then damage = min_damage end
 
+	if not target:IsRealHero() then delay = delay/2 end
+
 	local mod = keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_futurestrike", {Duration=delay}) --[[Returns:void
 	No Description Set
 	]]

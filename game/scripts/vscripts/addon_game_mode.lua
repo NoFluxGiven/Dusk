@@ -105,7 +105,75 @@ end
 
 -- Create the game mode when we activate
 function Activate()
+  print("Activate")
   GameRules.duskDota = duskDota()
+<<<<<<< HEAD
+  GameRules.duskDota:_InitduskDota()
+
+  local mode = GameRules:GetGameModeEntity()
+  -- mode:SetBotThinkingEnabled( true )
+  --mode:SetBotsAlwaysPushWithHuman( true )   
+
+  ListenToGameEvent( "game_rules_state_change", Dynamic_Wrap( duskDota, 'OnGameStateChanged' ), self )
+end
+
+function duskDota:OnGameStateChanged( keys )
+--     local state = GameRules:State_Get()
+
+--     Tutorial:StartTutorialMode()
+
+--     if state == DOTA_GAMERULES_STATE_STRATEGY_TIME then
+--         local num = 0
+--         local used_hero_name = "npc_dota_hero_luna"
+        
+--         for i=0, DOTA_MAX_TEAM_PLAYERS do
+--             if PlayerResource:IsValidPlayer(i) then
+--                 print(i)
+                
+--                 -- Random heroes for people who have not picked
+--                 if PlayerResource:HasSelectedHero(i) == false then
+--                     print("Randoming hero for:", i)
+                    
+--                     local player = PlayerResource:GetPlayer(i)
+--                     player:MakeRandomHeroSelection()
+                    
+--                     local hero_name = PlayerResource:GetSelectedHeroName(i)
+                    
+--                     print("Randomed:", hero_name)
+--                 end
+                
+--                 used_hero_name = PlayerResource:GetSelectedHeroName(i)
+--                 num = num + 1
+--             end
+--         end
+        
+--         self.numPlayers = num
+--         print("Number of players:", num)
+
+--         -- Eanble bots and fill empty slots
+--         if IsServer() == true and 10 - self.numPlayers > 0 then
+--             print("Adding bots in empty slots")
+            
+--             for i=1, 5 do
+--                 Tutorial:AddBot(used_hero_name, "", "", true)
+--                 Tutorial:AddBot(used_hero_name, "", "", false)
+--             end
+            
+--             GameRules:GetGameModeEntity():SetBotThinkingEnabled(true)
+--             --SendToServerConsole("dota_bot_set_difficulty 2")
+--             --SendToServerConsole("dota_bot_populate")
+--             --SendToServerConsole("dota_bot_set_difficulty 2")
+--         end
+--     elseif state == DOTA_GAMERULES_STATE_PRE_GAME then
+-- --      for i=0, DOTA_MAX_TEAM_PLAYERS do`
+-- --          print(i)
+-- --          if PlayerResource:IsFakeClient(i) then
+-- --              print(i)
+-- --              PlayerResource:GetPlayer(i):GetAssignedHero():SetBotDifficulty(2)
+-- --          end
+-- --      end
+--     end
+=======
   --GameRules.duskDota:_InitduskDota()
   --GameRules.duskDota = MOTA()
   GameRules.duskDota:Init()
@@ -202,4 +270,5 @@ function duskDota:OnGameStateChanged( keys )
 --          end
 --      end
     end
+>>>>>>> 6c7c24cdbed990028ea6e39f3cbb8bf0e2640b77
 end
