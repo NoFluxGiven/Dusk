@@ -30,8 +30,8 @@
 	"ItemPurchasable"				"1"
 	"ItemSellable"					"1"
 	"ItemInitialCharges"			"4"
-	"ItemStockMax" "2" 
-	"ItemStockTime" "150"
+	"ItemStockMax" "1"
+	"ItemStockTime" "180"
 	"ItemStockInitial" "0"
 
 	"precache"

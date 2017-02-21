@@ -10,6 +10,7 @@
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
     "FightRecapLevel"               "1"
     "AbilityTextureName"            "vassal_lightning_leash"
+    "MaxLevel"                      "1"
 
     // Casting
     //-------------------------------------------------------------------------------------------------------------
@@ -18,8 +19,8 @@
     
     // Time     
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityChannelTime"            "2 2.5 3 3.5"
-    "AbilityCooldown"               "16.0 16.0 16.0 16.0"
+    "AbilityChannelTime"            "2.5"
+    "AbilityCooldown"               "14.0"
 
     // Damage.
     //------------------------------------------------------------------------------------------------------------
@@ -40,18 +41,18 @@
         "02"
         {
             "var_type"          "FIELD_FLOAT"
-            "channel_time"      "2.25 2.75 3.25 3.75"
+            "channel_time"      "2.50"
         }
         "03"
         {
             "var_type"          "FIELD_FLOAT"
-            "total_damage"      "120 160 160 200"
+            "total_damage"      "160"
         }
         // Extra, calculated as total_damage / channel_time * tick_interval
         "03"
         {
             "var_type"          "FIELD_FLOAT"
-            "damage_per_tick"   "3.4 3.6 3.8 4"
+            "damage_per_tick"   "6.4"
         }
     }
 

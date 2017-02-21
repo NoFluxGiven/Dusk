@@ -137,11 +137,10 @@ function duskDota:OnFirstPlayerLoaded()
   -- Shop Oddities
 
   oItems,oPrices,oStocks = CreateShop({
-      {"item_purging_dust"},
-      {"item_arcanite_shards"},
+      -- {"item_arcanite_shards"},
       {"item_pendulum_fragment"},
-      {"item_rage_potion"},
-      {"item_ironblood_potion"}
+      -- {"item_rage_potion"},
+      -- {"item_ironblood_potion"}
       --{"item_glowing_jewel",1800}
     })
 
@@ -547,6 +546,11 @@ function duskDota:OnHeroInGame(hero)
       CosmeticLib:RemoveAll(hero)
       local ab = hero:FindAbilityByName("alroth_model_change")
       ab:SetLevel(1)
+  end
+
+  if hero:GetUnitName() == "npc_dota_hero_rattletrap" then
+    local ab = hero:FindAbilityByName("summoner_summon_blue_vassal")
+    ab:SetLevel(1)
   end
 
   if hero:GetUnitName() == "npc_dota_hero_abaddon" then

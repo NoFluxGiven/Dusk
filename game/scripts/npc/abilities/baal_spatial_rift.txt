@@ -66,6 +66,7 @@
 	"precache"
 		{
 		"particle" "particles/units/heroes/hero_baal/baal_spatial_rift.vpcf"
+		"particle" "particles/units/heroes/hero_baal/baal_rift_shockwave_port.vpcf"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_puck.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
 

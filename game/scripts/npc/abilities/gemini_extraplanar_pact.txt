@@ -1,0 +1,104 @@
+//=====================================================================================================
+// GEMINI: Extraplanar Pact
+//=====================================================================================================
+"gemini_extraplanar_pact"
+// Drags the target into another plane to make a pact with an extraplanar being.
+// When they return, they gain multiple powerful bonuses, but lose a portion of their current Health and Mana.
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/gemini_extraplanar_pact"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"gemini_extraplanar_pact"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"500"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"36 34 32 30"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	//"AbilityDamage"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"165"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_dmg"				"8 16 24 32" // pct
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_pdmg"			"10 20 30 40"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_movespeed"		"25"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"	"15 30 45 60"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_spell_damage"	"10 15 20 25"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"			"6 9 12 15"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_regen"			"20" // mana and health
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_mres"			"20 25 30 35"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"10.25"
+		}
+		"10"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"out_of_game_duration"	"2.25"
+		}
+		"11"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_and_mana_loss"	"20"
+		}
+	}
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_gemini/gemini_extraplanar_pact_oog.vpcf"
+		"particle"  "particles/units/heroes/hero_gemini/gemini_extraplanar_pact_unit.vpcf"
+		"soundfile"	"soundevents/hero_gemini.vsndevts"
+	}
+}

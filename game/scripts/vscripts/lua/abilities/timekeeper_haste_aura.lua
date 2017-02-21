@@ -17,4 +17,6 @@ function timekeeper_haste_aura:OnSpellStart()
 	No Description Set
 	]]
 
+	target:EmitSound("Timekeeper.HasteAura.Act")
+
 end

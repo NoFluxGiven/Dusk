@@ -22,6 +22,8 @@
 	{
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
 		"particle"			"particles/units/heroes/hero_baal/baal_st_anchor.vpcf"
+		"particle"			"particles/units/heroes/hero_baal/baal_st_anchor_target.vpcf"
+		"particle"			"particles/units/heroes/hero_baal/baal_st_anchor_target_start.vpcf"
 	}
 
 	// Casting
@@ -31,11 +33,11 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"32"
+	"AbilityCooldown"				"30"
 
 	// Damage.
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"80 120 160 200"
+	"AbilityDamage"					"100 140 180 220"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -53,12 +55,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"stun"					"0.75 1.5 2.25 3"
+			"stun"					"1.25 2.00 2.75 3.5"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"6"
+			"duration"				"8"
 		}
 	}
 

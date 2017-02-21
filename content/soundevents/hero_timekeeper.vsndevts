@@ -28,6 +28,36 @@
 
 }
 
+"Timekeeper.HasteAura.Act"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/haste_aura_act.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 "Timekeeper.Futurestrike"
 {
     "operator_stacks"

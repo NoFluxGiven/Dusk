@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"item_datadriven"
 	"ID"							"3024"  //Valve's version of this item uses the ID "39".
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"Model"							"models/props_gameplay/clarity.mdl"
@@ -23,14 +23,17 @@
 	
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-	"ItemCost"						"200"
+	"ItemCost"						"275"
 	"ItemShopTags"					"consumable"
 	"ItemQuality"					"consumable"
 	"ItemAliases"					"purging_dust"
 	"ItemStackable"					"0"
 	"ItemPermanent"					"0"
-	"ItemPurchasable"				"0"
-	"ItemInitialCharges"			"1"
+	"ItemPurchasable"				"1"
+	"ItemStockMax" 					"1" 
+	"ItemStockTime" 				"300"
+	"ItemStockInitial" 				"1"
+	"ItemInitialCharges"			"2"
 
 	"precache"
 	{

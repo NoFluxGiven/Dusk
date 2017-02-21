@@ -13,6 +13,7 @@
     "SpellImmunityType"             "SPELL_IMMUNITY_ALLIES_YES"
     "AbilityCastAnimation"          "ACT_DOTA_ATTACK"
     "AbilityTextureName"            "vassal_shield"
+    "MaxLevel"                      "1"
 
     // Casting
     //-------------------------------------------------------------------------------------------------------------
@@ -38,7 +39,7 @@
     "01"
         {
             "var_type"                      "FIELD_INTEGER"
-            "damage_reduction"              "-10 -14 -18 -22" // percentage total
+            "damage_reduction"              "-14" // percentage total
         }
     "02"
         {
@@ -48,7 +49,7 @@
     "03"
         {
             "var_type"                      "FIELD_INTEGER"
-            "block"                         "4 8 12 16" // percentage total
+            "block"                         "8" // percentage total
         }
     }
     

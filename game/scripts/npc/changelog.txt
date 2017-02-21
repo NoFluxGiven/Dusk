@@ -12,10 +12,18 @@ Balance Changes:
 
 None.
 
-Version 1.96c
+Version 1.97
 
 HEROES
 =========
+
+BAAL
+- Added new particle effects for Spatiotemporal Anchor and Spatial Rift.
+- Added new sound effects for Spatiotemporal Anchor.
+- Spatiotemporal Anchor damage increased to 100/140/180/220 (was 80/120/160/200).
+- Spatiotemporal Anchor stun increased to 1.25/2.00/2.75/3.50s (was 0.75/1.5/2.25/3.00s).
+- Spatiotemporal Anchor duration increased to 8s (was 6s).
+- Spatiotemporal Anchor cooldown reduced to 30s (was 32s).
 
 TIMEKEEPER
 - Added a missing tooltip for Haste Aura's modifier.
@@ -25,13 +33,72 @@ TIMEKEEPER
 - Haste Aura cooldown reduction reduced to 8/12/16/20% (was 20/25/30/35%).
 - Haste Aura now has a cooldown of 40s.
 - Haste Aura movespeed boost and attack speed boosts are now separate.
-- Haste Aura grants 2/4/6/8% movement speed (was 4/8/12/16% movement speed).
+- Haste Aura grants 2/4/6/8% movement speed (wa	s 4/8/12/16% movement speed).
 - Haste Aura grants 5/10/15/20 attack speed (was the same as above).
 - Haste Aura proc chance increased to 40% (was 25%).
 - Haste Aura now has an active effect:	
 When cast on a target, their next spell is guaranteed to have its cooldown reduced by double the normal amount.
 Will not proc cooldown reduction when casting Haste Aura.
 While this ability is on cooldown, it cannot proc cooldown reductions, or grant passive bonuses.
+
+VULCAN	
+- Added sound effects for Build abilities, Nanobots and Short Range Teleport.
+- Tesla Coil Health gain reduced to 80 (was 150).
+- Tesla Coil base Health reduced to 160 (was 300).
+- Red Vassal BAT increased to 1.4 (was 1.3).
+- Red Vassal damage increased to 45 - 60 (was 30 - 45 + 30/level).
+- Red Vassal Health increased to 500 (was 400 + 30/level).
+- Blue Vassal BAT increased to 1.75 (was 1.5).
+- Blue Vassal damage increased to 20 - 40 (was 15 - 30 + 15/level).
+- Blue Vassal base Health increased to 675 (was 500 + 40/level).
+- Blue Vassal base Health Regen reduced to 2 (was 4).
+- Build Vassal is now an innate ability. It cannot be skilled beyond level 1.
+- All Vassal sub abilities are now also innate.
+- Build Vassal cooldown increased to 180s (was 60s).
+- Red Vassal can no longer transform back into Blue Vassal (the change remains until it dies).
+- Red Vassal now has a new ability:
+Self Destruct
+After a short channelling time, the Vassal explodes, dealing large Magical damage to nearby enemies.
+- Both Vassals now have a new ability:
+Repair Module
+After not attacking or being attacked for 16s, the Vassal rapidly recovers its Health.
+Recovers 60 Health per second.
+
+VOIDWALKER
+- Reworked Realm Blister into Extraplanar Pact:
+EXTRAPLANAR PACT
+Drags the target into another plane for 1.75s. When they return, they gain various powerful bonuses to their attack speed, attack damage, armor, magic resistance, spellcasting prowess, movespeed and regen, at the cost of a percentage of their current Health and Mana.
+Lasts 8.75s (the buff begins as the spell is cast, so it effectively lasts for 7s).
+Health and Mana removed is 40%.
+Grants the following:
+10/15/20/25% Attack Damage
+10/15/20/25% Spell Damage
+10/15/20/25% Magic Resistance
+25% Movespeed
+20/30/40/50 Attack Speed
+6/9/12/15 Armor
+5 Health and Mana Regeneration
+- Abyssal Vortex duration increased to 5.00/5.75/6.50s (was 4s).
+- Abyssal Vortex radius increased to 675 (was 600).
+- Abyssal Vortex pull speed increased to 120/180/220 (was 100/130/160).
+- Abyssal Vortex Mana cost reduced to 175/250/325 (was 400/600/800).
+- Abyssal Vortex no longer affects allies.
+- Abyssal Vortex damage reduced to 75/125/175 per second (was 225/450/600 damage per second).
+- Abyssal Vortex cast range reduced to 750 (was 1000).
+- Abyssal Vortex cast point increased to 0.4s (was 0.3s).
+- Abyssal Vortex Aghanim's Scepter upgrade now causes enemies that reach the centre to be stunned periodically.
+
+ITEMS
+========
+
+The following items have been removed from Obb's Oddities, and added to the Main Shop:
+Purging Dust, Arcanite Shards, Rage Potion, Ironblood Potion
+
+PURGING DUST
+- Price increased to 275 (was 200).
+- Charges increased to 2 (was 1).
+- Now has 1 stock. Restocks every 5 minutes.
+- Purge now only affects the user (it cannot be targeted on allies or enemies).
 
 BUGFIXES
 ===========

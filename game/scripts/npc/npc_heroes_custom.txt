@@ -1064,7 +1064,7 @@
 		"override_hero"			"npc_dota_hero_rubick"
 		"Ability1"				"gemini_voidal_flare"
 		"Ability2"				"gemini_unstable_rift"
-		"Ability3"				"gemini_realm_blister"
+		"Ability3"				"gemini_extraplanar_pact"
 		"Ability4"				"gemini_abyssal_vortex"
 		"Ability5"				"" //Automatically levelled to 1 when the character is picked.
 		"Ability6"				""

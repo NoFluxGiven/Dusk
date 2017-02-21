@@ -60,10 +60,10 @@
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"300"		// Base health.
+	"StatusHealth"				"160"		// Base health.
 	"StatusHealthRegen"			"0.0"			// Health regeneration rate.
 	"StatusMana"				"200"		// Base mana.
-	"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+	"StatusManaRegen"			"10"		// Mana regeneration rate.
 	
 	// Vision
 	//----------------------------------------------------------------
@@ -83,7 +83,7 @@
 
 	"Creature"
 	{
-		"HPGain"                    "150"
+		"HPGain"                    "80"
 		"DamageGain"                "0"
 		"ArmorGain"                 "2"
 		"MagicResistGain"           "0"

@@ -8,9 +8,6 @@
 			m_flStartAlpha = 0.0
 		},
 		{
-			_class = "C_OP_LockToBone"
-		},
-		{
 			_class = "C_OP_InterpolateRadius"
 			m_flStartScale = 1.2
 		},
@@ -25,6 +22,9 @@
 			_class = "C_OP_LerpEndCapScalar"
 			m_flOutput = 0.0
 			m_flLerpTime = 0.15
+		},
+		{
+			_class = "C_OP_PositionLock"
 		},
 	]
 	m_Renderers = 

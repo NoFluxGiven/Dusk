@@ -88,16 +88,11 @@ function abyssal_vortex_aura(event)
                               target:GetCenter(),
                               nil,
                                 radius,
-                                DOTA_UNIT_TARGET_TEAM_BOTH,
+                                DOTA_UNIT_TARGET_TEAM_ENEMY,
                                 DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
-                                DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+                                DOTA_UNIT_TARGET_FLAG_NONE,
                                 FIND_CLOSEST,
                                 false)
-  if not caster:HasScepter() then -- Ignore magic immune units if we don't have Aghanim's Scepter
-    for k,v in pairs(enemy_found) do
-     if v:IsMagicImmune() then table.remove(enemy_found,k) end
-    end
-  end
   for k,v in pairs(enemy_found) do
     local direction = (target_pos - v:GetAbsOrigin()):Normalized()
     local distance = 1-((target_pos - v:GetAbsOrigin()):Length2D()/radius)
@@ -110,8 +105,17 @@ function abyssal_vortex_aura(event)
       Physics:Unit(v)
       v:SetPhysicsFriction(0.1)
       v:PreventDI(false)
-      
-      v:SetPhysicsVelocity(direction * pull_speed * 1.25 * (distance))
+      v:SetPhysicsVelocity(direction * pull_speed * 3 * (distance))
+    end
+
+    if caster:HasScepter() then
+      if truedistance > 0.95 then
+        if not v:IsStunned() then
+          v:AddNewModifier(caster, nil, "modifier_stunned", {Duration=event.ability:GetSpecialValueFor("scepter_stundur")}) --[[Returns:void
+          No Description Set
+          ]]
+        end
+      end
     end
     if v:GetTeam() ~= caster:GetTeam() then
       local damage_table = {
@@ -126,7 +130,7 @@ function abyssal_vortex_aura(event)
     else
       DealNonLethalDamage(v,caster,damage*0.06*truedistance,dtype)
     end
-  end                              
+  end
 end
 
 function unstable_rift(event)

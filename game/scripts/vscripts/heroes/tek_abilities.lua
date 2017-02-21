@@ -218,7 +218,7 @@ function tek_selfdestruct_charge(keys) -- creates the particle effects
 	caster:EmitSound("Hero_Tinker.MechaBoots.Loop")
 	caster:EmitSound("Hero_Oracle.FalsePromise.Target")
 
-	Timers:CreateTimer(2,function()
+	Timers:CreateTimer(1,function()
 		caster:StopSound("Hero_Tinker.MechaBoots.Loop")
 	end)
 end

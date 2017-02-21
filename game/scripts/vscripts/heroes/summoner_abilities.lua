@@ -70,6 +70,8 @@ function summon_vassal(keys)
 	v:SetControllableByPlayer(player, true)
 	v:CreatureLevelUp(lvl-1)
 
+	v:EmitSound("Vulcan.Build.End")
+
 	if vassal == 3 then v.mode = 0 end
 
 	if PutSwitchOnCooldown then v:GetAbilityByIndex(2):StartCooldown(45) end
@@ -197,6 +199,10 @@ function build(keys)
 	]]
 	ParticleManager:SetParticleControl(caster.buildpart, 0, origin) --[[Returns:void
 	Set the control point data for a control on a particle effect
+	]]
+
+	caster:EmitSound("Vulcan.Build") --[[Returns:void
+	 
 	]]
 
 end
@@ -363,18 +369,23 @@ function change_vassal(keys)
 
 	vassal:RemoveAbility("vassal_hel_array")
 	vassal:RemoveAbility("vassal_mark")
+	vassal:RemoveAbility("vassal_self_destruct")
 	vassal:RemoveAbility("vassal_shield")
 	vassal:RemoveAbility("vassal_lightning_leash")
 
 	if vassal.mode == BLUE then
+		-- Since we're changing into Red, we remove its Switch ability.
+		vassal:RemoveAbility("vassal_switch_modes")
 		-- Replace abilities.
 		vassal:RemoveModifierByName("modifier_vassal_shield_aura")
 
 		local ab1 = vassal:AddAbility("vassal_hel_array")
 		local ab2 = vassal:AddAbility("vassal_mark")
+		local ab3 = vassal:AddAbility("vassal_self_destruct")
 
-		ab1:SetLevel(lvl)
-		ab2:SetLevel(lvl)
+		ab1:SetLevel(1)
+		ab2:SetLevel(1)
+		ab3:SetLevel(1)
 
 		vassal:SetModel("models/summoner/summoner_vassal_red.vmdl") --[[Returns:void
 		No Description Set
@@ -383,15 +394,15 @@ function change_vassal(keys)
 		Sets the original model of this entity, which it will tend to fall back to anytime its state changes
 		]]
 
-		vassal:SetBaseAttackTime(1.3) --[[Returns:void
+		vassal:SetBaseAttackTime(1.4) --[[Returns:void
 		No Description Set
 		]]
 
-		vassal:SetBaseDamageMin(30+(lvl*30)) --[[Returns:void
+		vassal:SetBaseDamageMin(45) --[[Returns:void
 		Sets the minimum base damage.
 		]]
 
-		vassal:SetBaseDamageMax(40+(lvl*30)) --[[Returns:void
+		vassal:SetBaseDamageMax(60) --[[Returns:void
 		Sets the minimum base damage.
 		]]
 
@@ -401,8 +412,8 @@ function change_vassal(keys)
 
 		local p = vassal:GetHealthPercent()/100
 
-		vassal:SetMaxHealth(400+(lvl*50))
-		vassal:SetBaseMaxHealth(400+(lvl*50)) --[[Returns:void
+		vassal:SetMaxHealth(500)
+		vassal:SetBaseMaxHealth(500) --[[Returns:void
 		Set a new base max health value.
 		]]
 		vassal:SetHealth(p*vassal:GetMaxHealth())
@@ -418,8 +429,8 @@ function change_vassal(keys)
 		local ab1 = vassal:AddAbility("vassal_lightning_leash")
 		local ab2 = vassal:AddAbility("vassal_shield")
 
-		ab1:SetLevel(lvl)
-		ab2:SetLevel(lvl)
+		ab1:SetLevel(1)
+		ab2:SetLevel(1)
 
 		vassal:SetModel("models/summoner/summoner_vassal_blue.vmdl") --[[Returns:void
 		No Description Set
@@ -432,22 +443,22 @@ function change_vassal(keys)
 		No Description Set
 		]]
 
-		vassal:SetBaseAttackTime(1.5) --[[Returns:void
+		vassal:SetBaseAttackTime(1.75) --[[Returns:void
 		No Description Set
 		]]
 
-		vassal:SetBaseDamageMin(15+(lvl*15)) --[[Returns:void
+		vassal:SetBaseDamageMin(20) --[[Returns:void
 		Sets the minimum base damage.
 		]]
 
-		vassal:SetBaseDamageMax(25+(lvl*15)) --[[Returns:void
+		vassal:SetBaseDamageMax(40) --[[Returns:void
 		Sets the minimum base damage.
 		]]
 
 		local p = vassal:GetHealthPercent()/100
 
-		vassal:SetMaxHealth(400+(lvl*75))
-		vassal:SetBaseMaxHealth(400+(lvl*75)) --[[Returns:void
+		vassal:SetMaxHealth(675)
+		vassal:SetBaseMaxHealth(675) --[[Returns:void
 		Set a new base max health value.
 		]]
 		vassal:SetHealth(p*vassal:GetMaxHealth())

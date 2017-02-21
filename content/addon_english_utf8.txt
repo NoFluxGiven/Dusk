@@ -6,7 +6,7 @@
 		//"game_mode_15"				"DUSK"
 		"addon_game_name"			"DUSK"
 		"addonname"					"DUSK"
-		"game_version"		"v1.96 - Paragon Reworks, The Beginning of Talents"
+		"game_version"		"v1.96b - Paragon Reworks, The Beginning of Talents, Some Bugfixes"
 // DO NOT TAB THIS SECTION! It will break the formatting.
 // Changes template is as follows:
 //<br/><span class="changelog">- Change.</span>
@@ -14,6 +14,11 @@
 
 "game_version_scroller" "<font color='#a0db8e'>Welcome to Dusk! Play as one of 37 unique Heroes, with unique abilities and special items!</font>
 <br/><b><font color='#ff9900'><i>As always, see the <a href='http://steamcommunity.com/sharedfiles/filedetails/changelog/426167013'>official changelog</a> on the Workshop page for more information.</i></font></b>
+<br/><b><font color='#b0e5ea'>1.96b:</font></b>
+<br/><font color='#b0e5ea'>- Made changes to the following Heroes:</font>
+<br/>Timekeeper, Alexander, Fury, War, Mifune
+<br/><font color='#b0e5ea'>- Some game-breaking bugs and exploits were fixed.</font>
+<br/><font color='#b0e5ea'>- Some tooltips were corrected or updated to be accurate to the current version of Dusk.</font>
 <br/><font color='#b0e5ea'>1.96:</font>
 <br/><font color='#b0e5ea'>- Made changes to the following Heroes:</font>
 <br/>Aether, Set, Shade, Paragon
@@ -475,6 +480,20 @@
 			"DOTA_Tooltip_ability_gemini_realm_blister_radius" "RADIUS:"
 			"DOTA_Tooltip_ability_gemini_realm_blister_duration" "DURATION:"
 			
+			"DOTA_Tooltip_ability_gemini_extraplanar_pact"                                    "Extraplanar Pact"
+			"DOTA_Tooltip_ability_gemini_extraplanar_pact_Description"                        "Drags the target ally into another plane to make a pact with an extraplanar being, causing them to become invulnerable for a short time. After, grants various powerful bonuses at the cost of a percentage of the target's current Health and Mana."
+			"DOTA_Tooltip_ability_gemini_extraplanar_pact_bonus_dmg"                          "%BASE DAMAGE BONUS:"
+			"DOTA_Tooltip_ability_gemini_extraplanar_pact_bonus_movespeed"                    "%BONUS MOVESPEED:"
+			"DOTA_Tooltip_ability_gemini_extraplanar_pact_bonus_attack_speed"                 "%BONUS ATTACK SPEED:"
+			"DOTA_Tooltip_ability_gemini_extraplanar_pact_bonus_spell_damage"                 "%BONUS SPELL DAMAGE:"
+			"DOTA_Tooltip_ability_gemini_extraplanar_pact_bonus_armor"                        "BONUS ARMOR:"
+			"DOTA_Tooltip_ability_gemini_extraplanar_pact_bonus_regen"                        "BONUS REGEN:"
+			"DOTA_Tooltip_ability_gemini_extraplanar_pact_bonus_mres"                         "%BONUS MRES:"
+			"DOTA_Tooltip_ability_gemini_extraplanar_pact_duration"                           "BUFF DURATION:"
+			"DOTA_Tooltip_ability_gemini_extraplanar_pact_out_of_game_duration"               "OUT OF GAME DURATION:"
+			"DOTA_Tooltip_ability_gemini_extraplanar_pact_health_and_mana_loss"               "%HEALTH AND MANA LOSS:"
+			"DOTA_Tooltip_ability_gemini_extraplanar_pact_bonus_pdmg"                         "BONUS DAMAGE:"
+			
 			"DOTA_Tooltip_ability_gemini_unstable_rift" "Unstable Rift"
 			"DOTA_Tooltip_ability_gemini_unstable_rift_description" "Creates a portal at the Voidwalker's feet and another location on the map.  Any Hero, ally or enemy, that lingers on it for the delay time is instantly transported to the linked portal across the map. Those transported suffer 15%% of their maximum health as Magical damage. Silenced Heroes cannot use the portal, but will still count the delay time. The portal will only transport one unit at a time."
 			"DOTA_Tooltip_ability_gemini_unstable_rift_summon_time" "TELEPORTATION DELAY:"
@@ -726,6 +745,13 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			"DOTA_Tooltip_ability_timekeeper_futurestrike_min_damage"                         "MIN DAMAGE:"
 			"DOTA_Tooltip_ability_timekeeper_futurestrike_max_damage"                         "MAX DAMAGE:"
 			
+			"DOTA_Tooltip_ability_timekeeper_haste_aura"                                      "Haste Aura"
+			"DOTA_Tooltip_ability_timekeeper_haste_aura_Description"                          "Timekeeper hastens his nearby allies, causing them to gain movespeed and attack speed. When a spell is cast, there is a small chance its cooldown will be reduced."
+			"DOTA_Tooltip_ability_timekeeper_haste_aura_cooldown_reduction"                   "%COOLDOWN REDUCTION:"
+			"DOTA_Tooltip_ability_timekeeper_haste_aura_radius"                               "RADIUS:"
+			"DOTA_Tooltip_ability_timekeeper_haste_aura_speed_boost"                          "%MOVE SPEED/ATTACK SPEED BOOST:"
+			"DOTA_Tooltip_ability_timekeeper_haste_aura_chance"                               "%CHANCE:"
+			
 			//--------------------
 			//MIFUNE
 			//--------------------
@@ -815,12 +841,23 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			"DOTA_Tooltip_ability_vassal_mark_description"                                    "Marks the targeted enemy, causing them to take more damage from all sources."
 			"DOTA_Tooltip_ability_vassal_mark_bonus_damage"                                   "%BONUS DAMAGE:"
 			"DOTA_Tooltip_ability_vassal_mark_duration"                                       "DURATION:"
+			
+			"DOTA_Tooltip_ability_vassal_self_destruct"                                       "Self Destruct"
+			"DOTA_Tooltip_ability_vassal_self_destruct_Description"                           "The Vassal charges for a short duration, then explodes, dealing large Magical damage to nearby enemies."
+			"DOTA_Tooltip_ability_vassal_self_destruct_centre_damage"                         "CENTRE DAMAGE:"
+			"DOTA_Tooltip_ability_vassal_self_destruct_outer_damage"                          "OUTER DAMAGE:"
+			"DOTA_Tooltip_ability_vassal_self_destruct_centre_radius"                         "CENTRE RADIUS:"
+			"DOTA_Tooltip_ability_vassal_self_destruct_outer_radius"                          "OUTER RADIUS:"
 
 			"DOTA_Tooltip_ability_vassal_shield"                                              "Shield"
 			"DOTA_Tooltip_ability_vassal_shield_description"                                  "Shields nearby allies, causing them to take less damage, and block a small amount of Physical damage."
 			"DOTA_Tooltip_ability_vassal_shield_damage_reduction"                             "%DAMAGE REDUCTION:"
 			"DOTA_Tooltip_ability_vassal_shield_block"                             			  "DAMAGE BLOCK:"
 			"DOTA_Tooltip_ability_vassal_shield_radius"                                       "RADIUS:"
+			
+			"DOTA_Tooltip_ability_vassal_repair_module"                                       "Repair Module"
+			"DOTA_Tooltip_ability_vassal_repair_module_Description"                           "After not attacking or being attacked for some time, the Vassal engages powerful repair mechanisms in its body to recover Health with great speed."
+			"DOTA_Tooltip_ability_vassal_repair_module_health_recovery"                       "HEALTH REGEN:"
 
 			"DOTA_Tooltip_ability_vassal_siege"                                               "Siege"
 			"DOTA_Tooltip_ability_vassal_siege_description"                                   "This Vassal's attacks deal bonus Physical damage to towers and buildings."
@@ -1867,12 +1904,12 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 			"DOTA_Tooltip_ability_war_berserker_aura_max_bonus_damage"                        "MAX BONUS DAMAGE:"
 
 			"DOTA_Tooltip_ability_war_bloodlust"                                              "Bloodlust"
-			"DOTA_Tooltip_ability_war_bloodlust_Description"                                  "Silences all units, friend or foe, in the target area, granting them bonus attack damage and attack speed for a short time. Slows by a small amount as well."
+			"DOTA_Tooltip_ability_war_bloodlust_Description"                                  "Silences all units, friend or foe, in the target area, granting them bonus attack damage and attack speed for a short time."
 			"DOTA_Tooltip_ability_war_bloodlust_bonus_attack_damage"                          "BONUS ATTACK DAMAGE:"
 			"DOTA_Tooltip_ability_war_bloodlust_bonus_attack_speed"                           "BONUS ATTACK SPEED:"
 			"DOTA_Tooltip_ability_war_bloodlust_radius"                                       "RADIUS:"
 			"DOTA_Tooltip_ability_war_bloodlust_duration"                                     "DURATION:"
-			"DOTA_Tooltip_ability_war_bloodlust_slow"                                         "%SLOW:"
+			"DOTA_Tooltip_ability_war_bloodlust_dot"                                          "DAMAGE OVER TIME:"
 
 			"DOTA_Tooltip_ability_war_earthbreaker"                                           "Earthbreaker"
 			"DOTA_Tooltip_ability_war_earthbreaker_Description"                               "War slams the ground with his axe, dazing nearby enemies and dealing Physical damage."
@@ -3334,5 +3371,11 @@ ack_slow"                             	  "ATTACKSPEED SLOW:"
 
 		"DOTA_Tooltip_modifier_terashock_attack_speed_creep"                              "Terashock"
 		"DOTA_Tooltip_modifier_terashock_attack_speed_creep_Description"                  "Gaining attack speed from targets hit by Terashock."
+		
+		"DOTA_Tooltip_modifier_haste_aura_effect"                              "Haste Aura"
+		"DOTA_Tooltip_modifier_haste_aura_effect_Description"                  "Gaining movement speed, attack speed, and the chance to lower cooldowns upon spell cast."
+		
+		"DOTA_Tooltip_modifier_haste_aura_effect_act"                              "Haste Aura Active"
+		"DOTA_Tooltip_modifier_haste_aura_effect_act_Description"                  "The next spell cast will receive a reduced cooldown."
 	}
 }

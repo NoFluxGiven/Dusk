@@ -1,0 +1,179 @@
+"Vulcan.Build"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/build.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Vulcan.Build.End"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/build_end.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Vulcan.Nanobots"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/nanobots.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "2.50"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Vulcan.Nanobots.Hit"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/nanobots_hit.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "0.75"
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+"Vulcan.Weeop"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/weeop.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Vulcan.Weeop.End"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/weeop_end.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}

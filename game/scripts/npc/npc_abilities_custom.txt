@@ -4827,6 +4827,7 @@
 		"precache"
 			{
 			"particle" "particles/units/heroes/hero_baal/baal_spatial_rift.vpcf"
+			"particle" "particles/units/heroes/hero_baal/baal_rift_shockwave_port.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_puck.vsndevts"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
 	
@@ -4932,6 +4933,8 @@
 		{
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
 			"particle"			"particles/units/heroes/hero_baal/baal_st_anchor.vpcf"
+			"particle"			"particles/units/heroes/hero_baal/baal_st_anchor_target.vpcf"
+			"particle"			"particles/units/heroes/hero_baal/baal_st_anchor_target_start.vpcf"
 		}
 	
 		// Casting
@@ -4941,11 +4944,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"32"
+		"AbilityCooldown"				"30"
 	
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"80 120 160 200"
+		"AbilityDamage"					"100 140 180 220"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -4963,12 +4966,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun"					"0.75 1.5 2.25 3"
+				"stun"					"1.25 2.00 2.75 3.5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"6"
+				"duration"				"8"
 			}
 		}
 	
@@ -12036,8 +12039,8 @@
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -12047,11 +12050,11 @@
 	
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"225 450 600"
+		"AbilityDamage"					"75 125 175"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"400 600 800"
+		"AbilityManaCost"				"175 250 325"
 	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -12059,18 +12062,23 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"chargetime"			"4"
+				"var_type"				"FIELD_FLOAT"
+				"chargetime"			"5.00 5.75 6.50"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"				"600"
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"675"
 			}
 			"03"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"pull_speed"			"120 180 240"
+			}
+			"04"
+			{
 				"var_type"				"FIELD_FLOAT"
-				"pull_speed"			"100 130 160"
+				"scepter_stundur"		"1.40"
 			}
 		}
 	
@@ -12190,6 +12198,110 @@
 				}
 			}
 		}
+	//=====================================================================================================
+	// GEMINI: Extraplanar Pact
+	//=====================================================================================================
+	"gemini_extraplanar_pact"
+	// Drags the target into another plane to make a pact with an extraplanar being.
+	// When they return, they gain multiple powerful bonuses, but lose a portion of their current Health and Mana.
+		{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"lua/abilities/gemini_extraplanar_pact"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"gemini_extraplanar_pact"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"36 34 32 30"
+	
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityDamage"				"0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"165"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"8 16 24 32" // pct
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_pdmg"			"10 20 30 40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movespeed"		"25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"15 30 45 60"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_spell_damage"	"10 15 20 25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"6 9 12 15"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_regen"			"20" // mana and health
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mres"			"20 25 30 35"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"10.25"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"out_of_game_duration"	"2.25"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_and_mana_loss"	"20"
+			}
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_gemini/gemini_extraplanar_pact_oog.vpcf"
+			"particle"  "particles/units/heroes/hero_gemini/gemini_extraplanar_pact_unit.vpcf"
+			"soundfile"	"soundevents/hero_gemini.vsndevts"
+		}
+	}
 	//=====================================================================================================
 	// GEMINI: Realm Blister
 	//=====================================================================================================
@@ -29211,7 +29323,7 @@
 			{
 			"particle" "particles/units/heroes/hero_summoner/nanobots_target.vpcf"
 			"particle" "particles/units/heroes/hero_summoner/nanobots_model.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+			"soundfile" "soundevents/hero_vulcan.vsndevts"
 			}
 			
 		"OnSpellStart"
@@ -29228,7 +29340,7 @@
 				}
 				"FireSound"
 				{
-					"EffectName"	"Hero_BountyHunter.Shuriken"
+					"EffectName"	"Vulcan.Nanobots"
 					"Target"	"CASTER"
 				}
 			}
@@ -29238,7 +29350,7 @@
 			"DeleteOnHit"	"1"
 			"FireSound"
 	        {
-	        	"EffectName"	"Hero_BountyHunter.Shuriken.Impact"
+	        	"EffectName"	"Vulcan.Nanobots.Hit"
 	        	"Target"		"TARGET"
 	        }
 			"Damage"
@@ -29396,6 +29508,17 @@
 								"01"	"%radius 0 0"
 							}
 						}
+	
+						"FireSound"
+						{
+							"EffectName"	"Vulcan.Weeop"
+							"Target" 		"TARGET"
+						}
+						"FireSound"
+						{
+							"EffectName"	"Vulcan.Weeop.End"
+							"Target" 		"TARGET"
+						}
 					}
 				
 					"OnDestroy"
@@ -29417,13 +29540,13 @@
 	    "BaseClass" "ability_datadriven"
 	    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 	    "AbilityTextureName" "summoner_summon_blue_vassal"
-	    "MaxLevel" "4"
+	    "MaxLevel" "1"
 	
 	    // Stats
 	    //-------------------------------------------------------------------------------------
 	    "AbilityCastRange" "125"
 	    "AbilityCastPoint" "0.0"
-	    "AbilityCooldown" "60"
+	    "AbilityCooldown" "180"
 	    "AbilityManaCost" "75"
 	    "AbilityChannelTime" "2"   // This sets the max time the spell can be channeled
 	
@@ -33447,6 +33570,7 @@
 	    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
 	    "AbilityCastAnimation"          "ACT_DOTA_ATTACK"
 	    "AbilityTextureName"            "vassal_crush"
+	    "MaxLevel"                      "1"
 	
 	    // Casting
 	    //-------------------------------------------------------------------------------------------------------------
@@ -33687,6 +33811,7 @@
 	    "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"
 	    "AbilityCastAnimation"          "ACT_DOTA_ATTACK"
 	    "AbilityTextureName"            "vassal_hel_array"
+	    "MaxLevel"                      "1"
 	
 	    // Casting
 	    //-------------------------------------------------------------------------------------------------------------
@@ -33697,7 +33822,7 @@
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilityCooldown"               "16"
 	
-	    "AbilityDamage"                 "80 120 160 200"
+	    "AbilityDamage"                 "175"
 	
 	    // Cost
 	    //-------------------------------------------------------------------------------------------------------------
@@ -33714,7 +33839,7 @@
 	    "01"
 	        {
 	            "var_type"                      "FIELD_INTEGER"
-	            "armor_reduction"              "-2 -3 -4 -5" // percentage total
+	            "armor_reduction"              "-4" // percentage total
 	        }
 	    "02"
 	        {
@@ -33919,6 +34044,7 @@
 	    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
 	    "FightRecapLevel"               "1"
 	    "AbilityTextureName"            "vassal_lightning_leash"
+	    "MaxLevel"                      "1"
 	
 	    // Casting
 	    //-------------------------------------------------------------------------------------------------------------
@@ -33927,8 +34053,8 @@
 	    
 	    // Time     
 	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityChannelTime"            "2 2.5 3 3.5"
-	    "AbilityCooldown"               "16.0 16.0 16.0 16.0"
+	    "AbilityChannelTime"            "2.5"
+	    "AbilityCooldown"               "14.0"
 	
 	    // Damage.
 	    //------------------------------------------------------------------------------------------------------------
@@ -33949,18 +34075,18 @@
 	        "02"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "channel_time"      "2.25 2.75 3.25 3.75"
+	            "channel_time"      "2.50"
 	        }
 	        "03"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "total_damage"      "120 160 160 200"
+	            "total_damage"      "160"
 	        }
 	        // Extra, calculated as total_damage / channel_time * tick_interval
 	        "03"
 	        {
 	            "var_type"          "FIELD_FLOAT"
-	            "damage_per_tick"   "3.4 3.6 3.8 4"
+	            "damage_per_tick"   "6.4"
 	        }
 	    }
 	
@@ -34072,6 +34198,7 @@
 	    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
 	    "AbilityCastAnimation"          "ACT_DOTA_ATTACK"
 	    "AbilityTextureName"            "vassal_mark"
+	    "MaxLevel"                      "1"
 	
 	    // Casting
 	    //-------------------------------------------------------------------------------------------------------------
@@ -34097,7 +34224,7 @@
 	    "01"
 	        {
 	            "var_type"                      "FIELD_INTEGER"
-	            "bonus_damage"                  "10 12 14 16" // percentage total
+	            "bonus_damage"                  "15" // percentage total
 	        }
 	    "02"
 	        {
@@ -34268,6 +34395,135 @@
 	    }
 	}
 	//=====================================================================================================
+	// VASSAL: Repair Module
+	//=====================================================================================================
+	"vassal_repair_module"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "lua/abilities/repair_module"
+	    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "SpellImmunityType"             "SPELL_IMMUNITY_ALLIES_YES"
+	    "AbilityCastAnimation"          "ACT_DOTA_ATTACK"
+	    "AbilityTextureName"            "vassal_shield"
+	    "MaxLevel"                      "1"
+	
+	    // Casting
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCastRange"              "0"
+	    "AbilityCastPoint"              "0.45"
+	    
+	    // Time     
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCooldown"               "16"
+	
+	    // Cost
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityManaCost"               "0"
+	    
+	    // Stats
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityModifierSupportValue"   "0.0"   // All about the damage
+	
+	    // Special
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilitySpecial"
+	    {
+	    "01"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "health_recovery"               "60" // percentage total
+	        }
+	    "02"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "radius"                        "500" // percentage total
+	        }
+	    }
+	    
+	    "precache"
+	        {
+	        "particle" "particles/units/heroes/hero_summoner/vassal_regen_module.vpcf"
+	        "soundfile" "soundevents\hero_phantom.vsndevts"
+	        }
+	}
+	//=====================================================================================================
+	// VASSAL: Repair Module
+	//=====================================================================================================
+	"vassal_self_destruct"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "lua/abilities/vassal_self_destruct"
+	    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "SpellImmunityType"             "SPELL_IMMUNITY_ALLIES_NO"
+	    "AbilityCastAnimation"          "ACT_DOTA_ATTACK"
+	    "AbilityTextureName"            "vassal_shield"
+	    "AbilityChannelTime"            "1.40"
+	    "MaxLevel"                      "1"
+	
+	    // Casting
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCastRange"              "0"
+	    "AbilityCastPoint"              "0.0"
+	    
+	    // Time     
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCooldown"               "20"
+	
+	    // Cost
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityManaCost"               "25"
+	    
+	    // Stats
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityModifierSupportValue"   "0.0"   // All about the damage
+	
+	    // Special
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilitySpecial"
+	    {
+	    "01"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "centre_damage"                 "250" // percentage total
+	        }
+	    "02"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "outer_damage"                  "175" // percentage total
+	        }
+	    "03"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "centre_radius"                 "200" // percentage total
+	        }
+	    "04"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "outer_radius"                  "400" // percentage total
+	        }
+	    }
+	    
+	    "precache"
+	        {
+	        "particle" "particles/units/heroes/hero_summoner/self_destruct_charge.vpcf"
+	        "particle" "particles/units/heroes/hero_tek/self_destruct_explosion.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_tidehunter.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+	        }
+	}
+	//=====================================================================================================
 	// VASSAL: Shield
 	//=====================================================================================================
 	"vassal_shield"
@@ -34282,6 +34538,7 @@
 	    "SpellImmunityType"             "SPELL_IMMUNITY_ALLIES_YES"
 	    "AbilityCastAnimation"          "ACT_DOTA_ATTACK"
 	    "AbilityTextureName"            "vassal_shield"
+	    "MaxLevel"                      "1"
 	
 	    // Casting
 	    //-------------------------------------------------------------------------------------------------------------
@@ -34307,7 +34564,7 @@
 	    "01"
 	        {
 	            "var_type"                      "FIELD_INTEGER"
-	            "damage_reduction"              "-10 -14 -18 -22" // percentage total
+	            "damage_reduction"              "-14" // percentage total
 	        }
 	    "02"
 	        {
@@ -34317,7 +34574,7 @@
 	    "03"
 	        {
 	            "var_type"                      "FIELD_INTEGER"
-	            "block"                         "4 8 12 16" // percentage total
+	            "block"                         "8" // percentage total
 	        }
 	    }
 	    

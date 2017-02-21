@@ -95,6 +95,17 @@
 							"01"	"%radius 0 0"
 						}
 					}
+
+					"FireSound"
+					{
+						"EffectName"	"Vulcan.Weeop"
+						"Target" 		"TARGET"
+					}
+					"FireSound"
+					{
+						"EffectName"	"Vulcan.Weeop.End"
+						"Target" 		"TARGET"
+					}
 				}
 			
 				"OnDestroy"

@@ -8,7 +8,9 @@ function modifier_haste_aura:DeclareFunctions()
 end
 
 function modifier_haste_aura:IsAura()
-	if not self:GetAbility():IsCooldownReady() then return false end
+	if IsServer() then
+		if not self:GetAbility():IsCooldownReady() then return false end
+	end
 	return true
 end
 

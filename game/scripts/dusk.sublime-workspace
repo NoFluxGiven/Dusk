@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"propertydamageper",
+				"modifierPropertyBasedamageoutgoingpercentage"
+			],
+			[
+				"OnChannel",
+				"OnChannelFinish\tNo Description Set"
+			],
+			[
+				"propertyHealth",
+				"modifierPropertyHealthregenconstant"
+			],
+			[
 				"modifier_haste",
 				"modifier_haste_aura_effect_act"
 			],
@@ -502,109 +514,61 @@
 			[
 				"ONAt",
 				"OnAttackLanded\tHit"
-			],
-			[
-				"CreateParti",
-				"CreateParticle\tCreates a new particle effect"
-			],
-			[
-				"modifierstate",
-				"modifierStateNoUnitCollision"
-			],
-			[
-				"Onsp",
-				"OnSpellStart\tFinished Cast Point"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "npc/abilities/mifune_raigeki.txt",
+			"file": "vscripts/lua/modifiers/modifier_extraplanar_pact_oog.lua",
 			"settings":
 			{
-				"buffer_size": 4042,
+				"buffer_size": 425,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "vscripts/addon_game_mode.lua",
+			"file": "vscripts/lua/abilities/gemini_extraplanar_pact.lua",
 			"settings":
 			{
-				"buffer_size": 8995,
+				"buffer_size": 1836,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "npc/abilities/timekeeper_futurestrike.txt",
+			"file": "/C/Users/Shade/Desktop/Dusk/content/soundevents/hero_gemini.vsndevts",
 			"settings":
 			{
-				"buffer_size": 2712,
+				"buffer_size": 730,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "npc/abilities/timekeeper_haste_aura.txt",
+			"file": "vscripts/lua/modifiers/modifier_extraplanar_pact.lua",
 			"settings":
 			{
-				"buffer_size": 2338,
+				"buffer_size": 2462,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "vscripts/lua/abilities/timekeeper_haste_aura.lua",
+			"file": "npc/abilities/gemini_extraplanar_pact.txt",
 			"settings":
 			{
-				"buffer_size": 753,
+				"buffer_size": 2967,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "vscripts/lua/modifiers/modifier_haste_aura.lua",
+			"file": "npc/heroes/npc_dota_hero_gemini.txt",
 			"settings":
 			{
-				"buffer_size": 846,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "npc/abilities/war_bloodlust.txt",
-			"settings":
-			{
-				"buffer_size": 6333,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "vscripts/heroes/timekeeper_abilities.lua",
-			"settings":
-			{
-				"buffer_size": 17053,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "vscripts/lua/modifiers/modifier_haste_aura_effect.lua",
-			"settings":
-			{
-				"buffer_size": 1907,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "vscripts/lua/modifiers/modifier_haste_aura_effect_act.lua",
-			"settings":
-			{
-				"buffer_size": 1219,
+				"buffer_size": 2008,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -617,7 +581,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 242.0,
+		"height": 392.0,
 		"last_filter": "kv",
 		"selected_items":
 		[
@@ -630,16 +594,16 @@
 				"Set Syntax: Lua Dota"
 			],
 			[
+				"",
+				"About"
+			],
+			[
 				"lv",
 				"SublimeLinter: Lint This View"
 			],
 			[
 				"k",
 				"Set Syntax: Dota KV"
-			],
-			[
-				"",
-				"About"
 			],
 			[
 				"dota",
@@ -678,7 +642,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 432.0
+		"width": 1212.0
 	},
 	"console":
 	{
@@ -703,9 +667,12 @@
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/units",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/internal",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/items",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/libraries",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities",
@@ -715,22 +682,53 @@
 	],
 	"file_history":
 	[
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/hero_abilities.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/herolist.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/vassal_shield.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/vassal_repair_module.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/repair_module.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/modifiers/modifier_repair_regen.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/summoner_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/units/npc_dota_unit_vassal_blue.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/summoner_summon_blue_vassal.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/tek_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/vassal_self_destruct.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/vassal_self_destruct.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/modifiers/modifier_self_destruct.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/mifune_raigeki.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/addon_game_mode.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/units/npc_dota_unit_tesla_coil.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/baal_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/baal_spatial_rift.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/baal_st_anchor.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/soundevents/hero_baal.vsndevts",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/timekeeper_futurestrike.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/timekeeper_haste_aura.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/timekeeper_haste_aura.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/set_duststorm.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/modifiers/modifier_haste_aura_effect.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/timekeeper_dilation.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/timekeeper_futurestrike.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/items/item_purging_dust.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_arcanite_shards.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_purging_dust.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/duskdota.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/shops.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/soundevents/hero_vulcan.vsndevts",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/summoner_nanobots.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/summoner_short_range_teleport.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/vassal_lightning_leash.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/vassal_hel_array.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/vassal_crush.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/vassal_mark.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/modifiers/modifier_haste_aura.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/war_bloodlust.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/timekeeper_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/modifiers/modifier_haste_aura_effect.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/modifiers/modifier_haste_aura_effect_act.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/soundevents/hero_timekeeper.vsndevts",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/hero_abilities.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/herolist.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/set_duststorm.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/timekeeper_dilation.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/reus_ancient_arena.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/alexander_elandras_blessing.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/war_bloodlust.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/reus_magnitude.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/soundevents/hero_timekeeper.vsndevts",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/modifiers/modifier_venomous_lua.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/modifiers/modifier_haste_aura.lua",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_timekeeper.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_paragon.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_aether.txt",
@@ -739,7 +737,6 @@
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/aether_teleport.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/hawkeye_abilities.lua",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/paragon_divine_armour.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/duskdota.lua",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/paragon_tranquility_seal.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/modifiers/modifier_divine_armour_lua.lua",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/modifiers/modifier_divine_armour_block_lua.lua",
@@ -754,7 +751,6 @@
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/ouroboros_dissipation.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/shade_venomous.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_horror.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/baal_abilities.lua",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/astaroth_abilities.lua",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/alexander_soulseal.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/alexander_abilities.lua",
@@ -802,7 +798,6 @@
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/neith_monsoon.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/alroth_abilities.lua",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_pendulum_fragment.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_purging_dust.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_iris.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_fenrir.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_magisteel.txt",
@@ -814,35 +809,7 @@
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_elysian_timepiece.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_regal_sigil.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_soul_reaver.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_soul_vial.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_sword_of_greed.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_synthesis.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_talos.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_thunderbolt.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_turins_scepter.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_vagrant_dagger.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_vajra.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_vulcans_repair_kit.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_dust_enhanced.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_demonfire.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_colossus.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_charged_octarine_core.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_celestial_spear.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_bulwark.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_arcanite_shards.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/tek_abilities.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lich_traveling_frost.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lich_winters_requiem.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/lich_abilities.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/ironfist_hissatsu.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lich_absolute_zero.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/artificer_unmaking.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/artificer_naturalise.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/artificer_reshape.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/artificer_replica.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/artificer_abilities.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/erra_morbid_blade.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/fate_abilities.lua"
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_soul_vial.txt"
 	],
 	"find":
 	{
@@ -867,6 +834,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"repair_module",
+			"repair_mdoule",
+			"disrupt_slow_effect",
+			"aether_disrupt",
 			"haste_aura_effect",
 			"disrupt_slow",
 			"divine_armour",
@@ -990,11 +961,7 @@
 			"kill",
 			"onkill",
 			"spawndebugbear",
-			"createvisibilitynode",
-			"onallplayers",
-			".\n",
-			"purge",
-			"execute"
+			"createvisibilitynode"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1002,6 +969,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"self_destruct",
+			"vassal_repair_module",
+			"repair_regen",
+			"repair_module",
 			"haste_aura_effect_act",
 			"haste_aura",
 			"timekeeper_haste_aura",
@@ -1050,257 +1021,24 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "npc/abilities/mifune_raigeki.txt",
+					"file": "vscripts/lua/modifiers/modifier_extraplanar_pact_oog.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4042,
+						"buffer_size": 425,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1404,
-								1404
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "vscripts/addon_game_mode.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8995,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3140,
-								3140
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 225.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "npc/abilities/timekeeper_futurestrike.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2712,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1149,
-								1149
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 45.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "npc/abilities/timekeeper_haste_aura.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2338,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1070,
-								1070
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 45.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "vscripts/lua/abilities/timekeeper_haste_aura.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 753,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								724,
-								724
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "vscripts/lua/modifiers/modifier_haste_aura.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 846,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								224,
-								224
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "npc/abilities/war_bloodlust.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6333,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2947,
-								2947
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 855.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "vscripts/heroes/timekeeper_abilities.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17053,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								14544,
-								14544
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 6725.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "vscripts/lua/modifiers/modifier_haste_aura_effect.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1907,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1781,
-								1781
+								135,
+								135
 							]
 						],
 						"settings":
@@ -1316,20 +1054,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "vscripts/lua/modifiers/modifier_haste_aura_effect_act.lua",
+					"buffer": 1,
+					"file": "vscripts/lua/abilities/gemini_extraplanar_pact.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1219,
+						"buffer_size": 1836,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								344,
-								344
+								1288,
+								1288
 							]
 						],
 						"settings":
@@ -1338,10 +1076,127 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 45.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Shade/Desktop/Dusk/content/soundevents/hero_gemini.vsndevts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 730,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								379,
+								379
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "vscripts/lua/modifiers/modifier_extraplanar_pact.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2462,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2458,
+								2458
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 378.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "npc/abilities/gemini_extraplanar_pact.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2967,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2080,
+								2080
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Dota KV/dotaKV.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "npc/heroes/npc_dota_hero_gemini.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2008,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22,
+								22
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]

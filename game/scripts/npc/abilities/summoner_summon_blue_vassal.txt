@@ -5,13 +5,13 @@
     "BaseClass" "ability_datadriven"
     "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
     "AbilityTextureName" "summoner_summon_blue_vassal"
-    "MaxLevel" "4"
+    "MaxLevel" "1"
 
     // Stats
     //-------------------------------------------------------------------------------------
     "AbilityCastRange" "125"
     "AbilityCastPoint" "0.0"
-    "AbilityCooldown" "60"
+    "AbilityCooldown" "180"
     "AbilityManaCost" "75"
     "AbilityChannelTime" "2"   // This sets the max time the spell can be channeled
 

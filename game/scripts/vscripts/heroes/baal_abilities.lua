@@ -485,17 +485,25 @@ function port(keys)
 		return
 	end
 
-	FindClearSpaceForUnit(caster, point, true) --[[Returns:void
-	Place a unit somewhere not already occupied.
-	]]
+	local unit = FastDummy(caster:GetCenter(),caster:GetTeam(),2,350)
 
-	caster:EmitSound("Hero_Puck.EtherealJaunt")
+	ParticleManager:CreateParticle("particles/units/heroes/hero_baal/baal_rift_shockwave_port.vpcf",PATTACH_ROOTBONE_FOLLOW,unit)
 
-	caster:RemoveModifierByName("modifier_spatial_rift_show")
+	unit:EmitSound("Hero_Puck.EtherealJaunt")
 
-	keys.ability:SetActivated(false)
+	Timers:CreateTimer(0.06, function()
+		ParticleManager:CreateParticle("particles/units/heroes/hero_baal/baal_rift_shockwave_port.vpcf",PATTACH_ROOTBONE_FOLLOW,caster)
 
-	_spatial_riftend(caster)
+		FindClearSpaceForUnit(caster, point, true) --[[Returns:void
+		Place a unit somewhere not already occupied.
+		]]
+
+		caster:RemoveModifierByName("modifier_spatial_rift_show")
+
+		keys.ability:SetActivated(false)
+
+		_spatial_riftend(caster)
+	end)
 end
 
 function port_activated(keys)
@@ -717,7 +725,7 @@ function st_anchor_start(keys)
 
 	
 
-	local unit = FastDummy(target:GetAbsOrigin(),caster:GetTeam(),duration+0.1,0)
+	local unit = FastDummy(target:GetAbsOrigin(),caster:GetTeam(),duration+0.8,0)
 
 	target.st_anchor_unit = unit
 
@@ -727,6 +735,10 @@ function st_anchor_start(keys)
 	ParticleManager:SetParticleControl(p, 1, Vector(radius,0,0)) --[[Returns:void
 	Set the control point data for a control on a particle effect
 	]]
+
+	Timers:CreateTimer(duration,function()
+		ParticleManager:DestroyParticle(p,false)
+	end)
 
 	target:EmitSound("Hero_Visage.GraveChill.Cast")
 end
@@ -749,10 +761,14 @@ function st_anchor(keys)
 		target:AddNewModifier(caster, nil, "modifier_stunned", {Duration=stun}) --[[Returns:void
 		No Description Set
 		]]
-		target:EmitSound("Hero_Visage.SoulAssumption.Target")
-		FindClearSpaceForUnit(target, target.st_anchor_unit:GetAbsOrigin(), true) --[[Returns:void
-		Place a unit somewhere not already occupied.
-		]]
+		target:EmitSound("Baal.VectorPlate")
+		ParticleManager:CreateParticle("particles/units/heroes/hero_baal/baal_st_anchor_target_start.vpcf",PATTACH_ABSORIGIN_FOLLOW,target)
+		Timers:CreateTimer(0.03,function()
+			FindClearSpaceForUnit(target, target.st_anchor_unit:GetAbsOrigin(), true) --[[Returns:void
+			Place a unit somewhere not already occupied.
+			]]
+			ParticleManager:CreateParticle("particles/units/heroes/hero_baal/baal_st_anchor_target.vpcf",PATTACH_ABSORIGIN_FOLLOW,target)
+		end)
 		--target:RemoveModifierByName("modifier_st_anchor")
 		--target.st_anchor_unit:ForceKill(true)
 	end

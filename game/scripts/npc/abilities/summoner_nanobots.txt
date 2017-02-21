@@ -61,7 +61,7 @@
 		{
 		"particle" "particles/units/heroes/hero_summoner/nanobots_target.vpcf"
 		"particle" "particles/units/heroes/hero_summoner/nanobots_model.vpcf"
-		"soundfile" "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+		"soundfile" "soundevents/hero_vulcan.vsndevts"
 		}
 		
 	"OnSpellStart"
@@ -78,7 +78,7 @@
 			}
 			"FireSound"
 			{
-				"EffectName"	"Hero_BountyHunter.Shuriken"
+				"EffectName"	"Vulcan.Nanobots"
 				"Target"	"CASTER"
 			}
 		}
@@ -88,7 +88,7 @@
 		"DeleteOnHit"	"1"
 		"FireSound"
         {
-        	"EffectName"	"Hero_BountyHunter.Shuriken.Impact"
+        	"EffectName"	"Vulcan.Nanobots.Hit"
         	"Target"		"TARGET"
         }
 		"Damage"

@@ -1939,10 +1939,10 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"300"		// Base health.
+		"StatusHealth"				"160"		// Base health.
 		"StatusHealthRegen"			"0.0"			// Health regeneration rate.
 		"StatusMana"				"200"		// Base mana.
-		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"10"		// Mana regeneration rate.
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -1962,7 +1962,7 @@
 	
 		"Creature"
 		{
-			"HPGain"                    "150"
+			"HPGain"                    "80"
 			"DamageGain"                "0"
 			"ArmorGain"                 "2"
 			"MagicResistGain"           "0"
@@ -1994,8 +1994,8 @@
 		//----------------------------------------------------------------
 		"Ability1"					"vassal_lightning_leash"			// Ability 1
 		"Ability2"					"vassal_shield"			// Ability 2
-		"Ability3"					"vassal_switch_modes"			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability3"					"vassal_repair_module"			// Ability 3
+		"Ability4"					"vassal_switch_modes"			// Ability 4
 	
 		// Armor
 		//----------------------------------------------------------------
@@ -2033,7 +2033,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"450"		// Base health.
-		"StatusHealthRegen"			"4"			// Health regeneration rate.
+		"StatusHealthRegen"			"2"			// Health regeneration rate.
 		"StatusMana"				"100"		// Base mana.
 		"StatusManaRegen"			"2.5"		// Mana regeneration rate.		 
 		
