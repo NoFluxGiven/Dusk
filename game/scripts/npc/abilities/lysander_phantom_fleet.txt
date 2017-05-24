@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/lysander_phantom_fleet"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -61,7 +62,7 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"slow"					"-50"
+			"slow"					"35"
 		}
 		"07"
 		{
@@ -120,44 +121,5 @@
 
 	"Modifiers"
 	{
-		"modifier_lysander_phantom_fleet_aura"
-		{
-			"Passive"			"0"
-			"IsHidden"			"1"
-			"IsDebuff"			"0"
-			"Duration"			"%duration"
-		
-			"Aura"          	"modifier_lysander_phantom_fleet_slow"
-			"Aura_Radius"   	"500"
-			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
-			"Aura_ApplyToCaster" "0"
-		}
-
-		"modifier_lysander_phantom_fleet_slow"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsBuff"			"0"
-			"IsDebuff"			"1"
-
-			"ThinkInterval"  "1.0"
-			"OnIntervalThink"
-			{
-				"Damage"
-				{
-					"Target"		"TARGET"
-					"Type"			"DAMAGE_TYPE_MAGICAL"
-					"Damage"		"%boat_damage"
-				}
-			}
-
-		
-			"Properties"
-			{
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
-			}
-		}
 	}
 }

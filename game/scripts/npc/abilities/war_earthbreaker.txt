@@ -2,7 +2,8 @@
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "BaseClass"             "ability_datadriven"
+    "BaseClass"             "ability_lua"
+    "ScriptFile"            "lua/abilities/war_earthbreaker"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
@@ -15,11 +16,11 @@
     // Casting
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCastRange"              "325"
-    "AbilityCastPoint"              "0.45"
+    "AbilityCastPoint"              "0.38"
 
     // Time     
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"               "10"
+    "AbilityCooldown"               "14 12 10 8"
 
     // Damage.
     //-------------------------------------------------------------------------------------------------------------
@@ -27,7 +28,7 @@
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"               "50"
+    "AbilityManaCost"               "55 65 75 85"
 
     // Stats
     //-------------------------------------------------------------------------------------------------------------
@@ -60,18 +61,6 @@
     {
         "soundfile" "soundevents/hero_war.vsndevts"
         "particle"  "particles/units/heroes/hero_war/earthbreaker.vpcf"
-    }
-
-    "OnSpellStart"
-    {
-        "RunScript"
-        {
-            "ScriptFile"    "heroes/war_abilities.lua"
-            "Function"      "earthbreaker"
-            "damage"        "%AbilityDamage"
-            "stun"          "%stun"
-            "radius"        "%radius"
-        }
     }
 
     "Modifiers"

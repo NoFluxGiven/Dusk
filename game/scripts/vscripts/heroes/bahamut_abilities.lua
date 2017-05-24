@@ -171,8 +171,4 @@ function MegaFlare(keys)
 
   		ScreenShake(caster:GetCenter(), 2400, 170, 2, 1200, 0, true)
   	end)
-
-  	Timers:CreateTimer(t+2,function()
-
-  	end)
 end

@@ -128,10 +128,136 @@ function CDOTA_BaseNPC:IsEthereal()
 	return isEthereal
 end
 
-function CDOTA_BaseNPC:HasTalent(talent_string)
-  if self:HasAbility("special_bonus_"..talent_string) then
-  	local ab = self:FindAbilityByName("special_bonus_"..talent_string)
-  	if ab:GetLevel() > 0 then return true end
+-- Returns true if the Talent is skilled, false if not, nil if the Talent doesn't exist
+function CDOTA_BaseNPC:GetHasTalent(talent_string)
+	local name = self:GetUnitName()
+	local interim = "_talent_"
+
+	local str = name .. interim .. talent_string
+
+	return self:HasModifier(str)
+	
+	-- self.HasTalent(self,talent_string)
+end
+
+-- Returns the handle of the Talent ability if (and only if) the Talent is skilled, otherwise returns nil
+function CDOTA_BaseNPC:GetLearnedTalent(talent_string)
+  if self:HasAbility(talent_string) then
+  	local ab = self:FindAbilityByName(talent_string)
+  	if ab then
+  		if ab:GetLevel() > 0 then return ab end
+  	end
   end
-  return false
+  return nil
+end
+
+-- Returns the handle of the Talent ability, or nil if it doesn't exist
+function CDOTA_BaseNPC:GetTalent(talent_string)
+  if self:HasAbility(talent_string) then
+  	local ab = self:FindAbilityByName(talent_string)
+  	return ab
+  end
+end
+
+function CDOTABaseAbility:GetTalentSpecialValueFor(value)
+	local base = self:GetSpecialValueFor(value)
+	local talentName
+	local kv = self:GetAbilityKeyValues()
+	for k,v in pairs(kv) do -- trawl through keyvalues
+		if k == "AbilitySpecial" then
+			for l,m in pairs(v) do
+				if m[value] then
+					talentName = m["LinkedSpecialBonus"]
+				end
+			end
+		end
+	end
+	if talentName then 
+		local talent = self:GetCaster():FindAbilityByName(talentName)
+		if talent and talent:GetLevel() > 0 then base = base + talent:GetSpecialValueFor("value") end
+	end
+	return base
+end
+
+function CDOTABaseAbility:InflictDamage(target,attacker,damage,damage_type,flags)
+
+	local flags = flags or 0
+
+	ApplyDamage({
+	    victim = target,
+	    attacker = attacker,
+	    damage = damage,
+	    damage_type = damage_type,
+	    damage_flags = flags,
+	    ability = self
+  	})
+
+  	print("INFLICT: ","ABILITY: "..self:GetName(),"DAMAGE/TYPE: "..damage.." / "..damage_type)
+  	if flags ~= 0 then
+  		print("FLAGS: "..flags)
+  	end
+
+end
+
+function CDOTABaseAbility:FetchTalent(handle,suffix)
+	local handle = handle or self:GetCaster()
+	local suffix = suffix or ""
+	suffix = "" .. suffix -- convert to string
+
+	local ability_name = self:GetName() -- "<hero_name>_<ability_name>"
+	local unit_name = handle:GetUnitName()
+
+	local unit_entity_index = handle:GetEntityIndex()
+
+	local talent_string = "special_bonus_"..ability_name
+	local interim = "_talent_"
+
+	local str = unit_name .. interim .. talent_string
+
+	local gotIt = handle:HasModifier(str)
+
+	if gotIt then
+		local mod = handle:FindModifierByName(str)
+		local stack = 0
+		if mod then
+			stack = mod:GetStackCount()
+		end
+
+		if math.abs(stack) > 0 then
+			return mod:GetStackCount()
+		end
+
+		-- Ends here if stacks are found, otherwise we do the more expensive operation (hopefully only once)
+
+		local t = CustomNetTables:GetTableValue("talent_manager","unit_talent_data_"..unit_entity_index)
+
+		for i=1,4 do
+			local ltalent = t["data"][i..""]["left"]
+			local rtalent = t["data"][i..""]["right"]
+
+			if ltalent["name"] == talent_string then
+				local v = ltalent["v"]
+				if type(v) == "string" then v = tonumber(v) end
+				mod:SetStackCount(v)
+				-- print("TALENT VALUE: "..mod:GetStackCount().." Stack, "..v.." Main")
+				if v ~= 0 then -- if v is zero, it's most likely a "toggle" (do this when skilled etc)
+					return v 
+				else
+					return true
+				end
+			elseif rtalent["name"] == talent_string then
+				local v = rtalent["v"]
+				if type(v) == "string" then v = tonumber(v) end
+				mod:SetStackCount(v)
+				-- print("TALENT VALUE: "..mod:GetStackCount().." Stack, "..v.." Main")
+				if v ~= 0 then
+					return v
+				else
+					return true
+				end
+			end
+		end
+	else
+		return nil
+	end
 end

@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/bahamut_fulmination"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -36,7 +37,7 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"8 16 24 32"
+			"damage"						"10 20 30 40"
 		}
 		"02"
 		{
@@ -46,17 +47,12 @@
 		"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"percent"						"1.15"
+			"increase"						"12.5"
 		}
 		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"max_stacks"					"16"
-		}
-		"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"max_bonus"						"3 6 9 12"
+			"max_stacks"					"8"
 		}
 	}
 	
@@ -74,45 +70,5 @@
 	
 	"Modifiers"
 		{
-			"modifier_bahamut_fulmination_effects"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-
-				"OnAttackLanded"
-				// "%attack_damage" is set to the damage value before mitigation
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/bahamut_abilities.lua"
-						"Function"		"Fulmination"
-						"maxs"			"%max_stacks"
-						"dmg"			"%max_bonus"
-					}
-				}
-			
-			}
-			"modifier_bahamut_fulmination_stack"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-				"Duration"			"%time"
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/bahamut_abilities.lua"
-						"Function"		"FulminationEnd"
-						"damage"		"%damage"
-						"percent"		"%percent"
-					}
-				}
-			
-				"EffectName"		"particles/units/heroes/hero_bahamut/bahamut_fulmination_model.vpcf"
-				"EffectAttachType"	"follow_hitloc"
-			}
 		}
 }

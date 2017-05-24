@@ -108,6 +108,8 @@ function Activate()
   GameRules.duskDota = duskDota()
   GameRules.duskDota:_InitduskDota()
   --GameRules.duskDota = MOTA()
+
+  -- GameRules:GetGameModeEntity():SetBotThinkingEnabled( true )
   GameRules.duskDota:Init()
 end
 
@@ -116,7 +118,6 @@ function duskDota:Init()
     self.n_players_dire = 0
 
     self.mode = GameRules:GetGameModeEntity()
-    -- self.mode:SetBotThinkingEnabled( true )
 
     --Tutorial:StartTutorialMode()
     
@@ -133,72 +134,58 @@ function duskDota:Init()
 end
 
 function duskDota:OnGameStateChanged( keys )
-    local state = GameRules:State_Get()
+    -- local state = GameRules:State_Get()
 
---     if state == DOTA_GAMERULES_STATE_STRATEGY_TIME then
---         SendToServerConsole("sv_cheats 1")
---         local used_hero_name = "npc_dota_hero_luna"
---         print("Checking players...")
+    if state == DOTA_GAMERULES_STATE_STRATEGY_TIME then
+    --     local num = 0
+    --     local used_hero_name = "npc_dota_hero_luna"
         
---         for playerID=0, DOTA_MAX_TEAM_PLAYERS do
---             if PlayerResource:IsValidPlayer(playerID) then
---                 print("PlayedID:", playerID)
+    --     for i=0, DOTA_MAX_TEAM_PLAYERS do
+    --         if PlayerResource:IsValidPlayer(i) then
+    --             print(i)
                 
---                 if PlayerResource:GetTeam(playerID) == DOTA_TEAM_GOODGUYS then
---                     self.n_players_radiant = self.n_players_radiant + 1
---                 elseif PlayerResource:GetTeam(playerID) == DOTA_TEAM_BADGUYS then
---                     self.n_players_dire = self.n_players_dire + 1
---                 end
+    --             -- Random heroes for people who have not picked
+    --             if PlayerResource:HasSelectedHero(i) == false then
+    --                 print("Randoming hero for:", i)
+                    
+    --                 local player = PlayerResource:GetPlayer(i)
+    --                 player:MakeRandomHeroSelection()
+                    
+    --                 local hero_name = PlayerResource:GetSelectedHeroName(i)
+                    
+    --                 print("Randomed:", hero_name)
+    --             end
+                
+    --             used_hero_name = PlayerResource:GetSelectedHeroName(i)
+    --             num = num + 1
+    --         end
+    --     end
+        
+    --     self.numPlayers = num
+    --     print("Number of players:", num)
 
---                 -- Random heroes for people who have not picked
---                 if PlayerResource:HasSelectedHero(playerID) == false then
---                     print("Randoming hero for:", playerID)
---                     PlayerResource:GetPlayer(playerID):MakeRandomHeroSelection()
---                     print("Randomed:", PlayerResource:GetSelectedHeroName(playerID))
---                 end
-                
---                 used_hero_name = PlayerResource:GetSelectedHeroName(playerID)
---             end
---         end
-        
---         print("Number of players:", self.n_players_radiant + self.n_players_dire)
---         print("Radiant:", self.n_players_radiant)
---         print("Radiant:", self.n_players_dire)
-        
---         -- Enable bots and fill empty slots
+    --     -- Eanble bots and fill empty slots
+    --     if IsServer() == true and 10 - self.numPlayers > 0 then
+    --         print("Adding bots in empty slots")
             
---         if IsServer() and self.n_players_radiant + self.n_players_dire < 10 then
---             print("Adding bots in empty slots")
+    --         for i=1, 5 do
+    --             Tutorial:AddBot(used_hero_name, "", "", true)
+    --             Tutorial:AddBot(used_hero_name, "", "", false)
+    --         end
             
---             local next_playerID = self.n_players_radiant + self.n_players_dire
-
---             for i=self.n_players_radiant, 5 - 1 do
---                 print('Adding radiant bot', next_playerID)
---                 Tutorial:AddBot(used_hero_name, '', 'hard', true)
-                
---                 --PlayerResource:SetCustomTeamAssignment(next_playerID, DOTA_TEAM_GOODGUYS)
---                 --next_playerID = next_playerID + 1
---             end
-            
---             for i=self.n_players_dire, 5 - 1 do
---                 print('Adding dire bot', next_playerID)
---                 Tutorial:AddBot(used_hero_name, '', 'hard', false)
-                
---                 --PlayerResource:SetCustomTeamAssignment(next_playerID, DOTA_TEAM_BADGUYS)
---                 --next_playerID = next_playerID + 1
---             end
-            
---             GameRules:GetGameModeEntity():SetBotThinkingEnabled(true)
---             --SendToServerConsole("dota_bot_populate")
---             --SendToServerConsole("dota_bot_set_difficulty 2")
---         end
--- --  elseif state == DOTA_GAMERULES_STATE_PRE_GAME then
--- --      for i=0, DOTA_MAX_TEAM_PLAYERS do`
--- --          print(i)
--- --          if PlayerResource:IsFakeClient(i) then
--- --              print(i)
--- --              PlayerResource:GetPlayer(i):GetAssignedHero():SetBotDifficulty(2)
--- --          end
--- --      end
---     end
+    --         GameRules:GetGameModeEntity():SetBotThinkingEnabled(true)
+    --         --SendToServerConsole("dota_bot_set_difficulty 2")
+    --         --SendToServerConsole("dota_bot_populate")
+    --         --SendToServerConsole("dota_bot_set_difficulty 2")
+    --     end
+    -- elseif state == DOTA_GAMERULES_STATE_PRE_GAME then
+    --     Tutorial:StartTutorialMode()
+    --  -- for i=0, DOTA_MAX_TEAM_PLAYERS do`
+    --  --     print(i)
+    --  --     if PlayerResource:IsFakeClient(i) then
+    --  --         print(i)
+    --  --         PlayerResource:GetPlayer(i):GetAssignedHero():SetBotDifficulty(2)
+    --  --     end
+    --  -- end
+    end
 end

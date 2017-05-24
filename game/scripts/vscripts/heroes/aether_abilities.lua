@@ -16,7 +16,7 @@ function teleport_start(keys)
 	                                DOTA_UNIT_TARGET_TEAM_FRIENDLY,
 	                                DOTA_UNIT_TARGET_ALL,
 	                                DOTA_UNIT_TARGET_FLAG_INVULNERABLE,
-	                                FIND_ANY_ORDER,
+	                                FIND_CLOSEST,
 	                                false)
 
 		target = nil
@@ -24,7 +24,7 @@ function teleport_start(keys)
 		print("Target is now nil.")
 
 		for k,v in pairs(found) do
-			if v:HasModifier("modifier_monolith_slow_area_ally") then
+			if v:HasModifier("modifier_monolith_slow_area") then
 				target = caster
 				casterpos = v:GetAbsOrigin()
 				delay = delay*2
@@ -85,115 +85,6 @@ function teleport_end(keys)
 
 	target:EmitSound("Hero_Wisp.TeleportIn")
 
-
-end
-
-function disrupt(keys)
-	local caster = keys.caster
-	local range = keys.radius
-
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_aether/aether_disrupt.vpcf", PATTACH_ROOTBONE_FOLLOW, caster) --[[Returns:int
-	Creates a new particle effect
-	]]
-
-	--ParticleManager:SetParticleControl(particle, 0, caster:GetAbsOrigin())
-
-	caster:EmitSound("Hero_Wisp.Spirits.Target")
-
-	local found = FindUnitsInRadius( caster:GetTeamNumber(),
-                              caster:GetAbsOrigin(),
-                              nil,
-                                range,
-                                DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-                                DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
-                                DOTA_UNIT_TARGET_FLAG_NONE,
-                                FIND_ANY_ORDER,
-                                false)
-
-	for k,v in pairs(found) do
-		ProjectileManager:ProjectileDodge(v)
-	end
-
-	if caster:IsHero() then
-
-		local found_2 = FindUnitsInRadius( caster:GetTeamNumber(),
-	                              caster:GetAbsOrigin(),
-	                              nil,
-	                                FIND_UNITS_EVERYWHERE,
-	                                DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-	                                DOTA_UNIT_TARGET_ALL,
-	                                DOTA_UNIT_TARGET_FLAG_INVULNERABLE,
-	                                FIND_ANY_ORDER,
-	                                false)
-
-		for k,v in pairs(found_2) do
-			if v:HasModifier("modifier_monolith_slow_area_ally") then
-				print("FOUND A UNIT WITH PREREQUISITES")
-				local ab = v:FindAbilityByName("aether_disrupt")
-				ab:SetLevel(keys.ability:GetLevel())
-				ab:OnSpellStart()
-			end
-		end
-
-	end
-end
-
-function monolith(keys)
-	local caster = keys.caster
-	local target = caster:GetCursorPosition()
-
-	local time = keys.time
-
-	local found = FindUnitsInRadius( caster:GetTeamNumber(),
-	                              caster:GetAbsOrigin(),
-	                              nil,
-	                                FIND_UNITS_EVERYWHERE,
-	                                DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-	                                DOTA_UNIT_TARGET_ALL,
-	                                DOTA_UNIT_TARGET_FLAG_INVULNERABLE,
-	                                FIND_ANY_ORDER,
-	                                false)
-
-	for k,v in pairs(found) do
-		if v:HasModifier("modifier_monolith_slow_area_ally") then
-			v:ForceKill(true)
-			v:Destroy()
-		end
-	end
-
-	local unit = FastDummy(target+Vector(0,0,60),caster:GetTeam(),time,350)
-
-	unit:SetOwner(caster)
-
-	caster:EmitSound("Hero_Wisp.Spirits.Cast")
-
-	local p = ParticleManager:CreateParticle("particles/units/heroes/hero_aether/aether_monolith.vpcf", PATTACH_ABSORIGIN, unit) --[[Returns:int
-	Creates a new particle effect
-	]]
-
-	ParticleManager:SetParticleControl(p, 0, unit:GetAbsOrigin()+Vector(0,0,250)) --[[Returns:void
-	Set the control point data for a control on a particle effect
-	]]
-
-	local p2 = ParticleManager:CreateParticle("particles/units/heroes/hero_aether/aether_monolith_start.vpcf", PATTACH_ABSORIGIN, unit) --[[Returns:int
-	Creates a new particle effect
-	]]
-
-	ParticleManager:SetParticleControl(p2, 0, unit:GetAbsOrigin()+Vector(0,0,250)) --[[Returns:void
-	Set the control point data for a control on a particle effect
-	]]
-
-	keys.ability:ApplyDataDrivenModifier(caster, unit, "modifier_monolith_slow_area_ally", {}) --[[Returns:void
-	No Description Set
-	]]
-
-	keys.ability:ApplyDataDrivenModifier(caster, unit, "modifier_monolith_slow_area_enemy", {}) --[[Returns:void
-	No Description Set
-	]]
-
-	unit:AddAbility("aether_disrupt")
-
-	unit:FindAbilityByName("aether_disrupt"):SetLevel(caster:FindAbilityByName("aether_disrupt"):GetLevel()+1)
 
 end
 

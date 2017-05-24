@@ -9,7 +9,7 @@ function item_magic_wand_datadriven_on_spell_start(keys)
     
     local amount_to_restore = keys.ability:GetCurrentCharges() * keys.RestorePerCharge
     keys.caster:Heal(amount_to_restore, keys.caster)
-    keys.caster:GiveMana(amount_to_restore)
+    keys.caster:GiveMana(amount_to_restore/2)
     
     for i=0, 5, 1 do
         local current_item = keys.caster:GetItemInSlot(i)

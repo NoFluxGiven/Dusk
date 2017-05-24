@@ -1,6 +1,6 @@
 vassal_self_destruct = class({})
 
-LinkLuaModifier("modifier_self_destruct","lua/modifiers/modifier_self_destruct",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_self_destruct","lua/abilities/vassal_self_destruct",LUA_MODIFIER_MOTION_NONE)
 
 function vassal_self_destruct:OnSpellStart()
 	local caster = self:GetCaster()
@@ -69,4 +69,14 @@ function vassal_self_destruct:OnChannelFinish( interrupt )
 
 	self:GetCaster():Kill(self, self:GetCaster())
 
+end
+
+-- Modifiers
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+modifier_self_destruct = class({})
+
+function modifier_self_destruct:GetEffectName()
+	return "particles/units/heroes/hero_summoner/self_destruct_charge.vpcf"
 end

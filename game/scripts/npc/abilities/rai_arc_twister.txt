@@ -1,0 +1,65 @@
+//=====================================================================================================
+// RAI: Arc Twister
+//=====================================================================================================
+"rai_arc_twister"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/rai_arc_twister"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AnimationPlaybackRate"			"2.5"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	"AbilityTextureName"			"rai_arc_twister"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"775"
+	"AbilityCastPoint"				"0.1"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"9 8 7 6"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"40 50 60 70"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"50 80 110 140"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"delay"							"0.15"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_bahamut/bahamut_ambience.vpcf"
+		"particle" "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/bahamut_fulmination_model.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_2.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_3.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/desolation_cast.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+		}
+	
+	"Modifiers"
+		{
+		}
+}

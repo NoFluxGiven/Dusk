@@ -131,6 +131,8 @@ function micronebulaDamage(keys)
 	local caster = keys.caster
 	local target = keys.target
 
+	local radius = keys.radius
+
 	if target.micronebula_damage ~= nil then 
 		local tdmg = target.micronebula_total_damage
 		local int = 0.1
@@ -141,7 +143,7 @@ function micronebulaDamage(keys)
 		local found = FindUnitsInRadius( caster:GetTeamNumber(),
 	              target:GetAbsOrigin(),
 	              nil,
-	                325,
+	                radius,
 	                DOTA_UNIT_TARGET_TEAM_ENEMY,
 	                DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
 	                DOTA_UNIT_TARGET_FLAG_NONE,

@@ -2,7 +2,18 @@ Changelog:
 
 To Do:
 
-None.
+- Add Defense Mode to list of game modes:
+Defense Mode supports up to 5 players on the same team (radiant) defending against ever increasing threats.
+
+- Add Deathmatch Mode:
+Players get much more gold over time and level up quickly as they get kills. Focused on 1v1, 2v2 and 3v3 combat.
+Takes place on a different map with some different rules, such as capturable points.
+Item purchases are normal, but observer wards cannot be purchased (sentries can).
+Game ends with the enemy losing 50 Respawn Charges.
+Each time a point is captured that team loses 10 Respawn Charges.
+
+- Bots:
+Waiting on Valve to add Bot API Support in the Custom Game Scripting API.
 
 Current Bugs and Issues:
 
@@ -11,6 +22,209 @@ None.
 Balance Changes:
 
 None.
+
+Version 1.98
+
+BUILDINGS
+============
+
+- Towers now have 10% less Health.
+- Ancients now have 20% less Health.
+- Towers deal 10% more damage.
+- Frenzy now lasts 5s (was 4s).
+- Frenzy now destroys the tower when it ends.
+- Frenzy now activates when the tower hits 0 Health
+- Giga Graviton now deals 25% of enemy creeps' Health (was 55%).
+- Giga Graviton now stuns creeps for 0.75s.
+- Giga Graviton no longer affects Heroes.
+- Giga Graviton now activates every 3s (was 4s).
+- Giga Graviton radius increased to 2250 (was 1250).
+- Giga Graviton now activates only after Last Resort (below 10% Health).
+- While Last Resort is active, Giga Graviton activates every 1s instead.
+
+HEROES
+=========
+
+ALROTH
+- Intelligence gain reduced to 2.7 (was 3.1).
+- Base Strength reduced to 23 (was 25).
+- Strength gain reduced to 2.0 (was 2.2).
+- Base Armor reduced to 0 (was 2).
+- Shatter Slow reduced to 12% (was 15%).
+- Shatter duration reduced to 6s (was 7s).
+- Shatter attack damage to bonus Magical damage reduced to 0.65x (was 0.4/0.6/0.8/1.0x).
+- Shatter Magic Resistance Reduction reduced to 12/18/24/30% (was 10/20/30/40%).
+- Energy Burst damage reduced to 100/140/180/220 (was 100/150/200/250).
+- Energy Burst cooldown reduced to 10/8/6/4s (was 11/9/7/5s).
+- Energy Burst Mana cost reduced to 60/70/80/90 (was 100).
+- Solcharge cooldown increased to 65s (was 40s).
+- Solcharge radius reduced to 300 (was 350).
+- Solcharge inner radius reduced to 150 (was 175).
+- Solcharge damage reduced to 225/275/325 (Was 150/275/400).
+
+ALEXANDER
+- Radiant radius increased to 400 (was 325).
+- Radiant regen now is based off Max Health (was a flat amount).
+- Radiant regen is now 3.0/4.25/5.50/6.75% per second.
+- Radiant duration increased to 8s (was 6s).
+- Radiant miss chance reduced to 40% (was 60%).
+- Radiant cooldown increased to 40s (was 25s).
+- Godfall no longer has an Aghanim's Upgrade.
+- Godfall now restores Health equal to the damage dealt if the target is a Hero.
+- Elandra's Blessing cooldown increased to 23s (was 20s).
+- Elandra's Blessing damage reflect reduced to 30/40/50/60% (was 50/75/100/125%).
+- Elandra's Blessing duration increased to 12s (was 10s).
+- Elandra's Blessing Armor bonus increased to 4/8/12/16 (was 3/6/9/12).
+- Elandra's Blessing bonus damage increased to 16/32/48/64 (was 15/30/45/60).
+- Elandra's Blessing is now purgable.
+
+ARTIFICER
+- Unmaking now deals Magical damage.
+- Unmaking tick damage increased to 3.25/4.50/5.75/7.00% (was 3.00/3.75/4.50/5.25%).
+- Unmaking base damage increased to 20/30/40/50 (was 10/20/30/40).
+- Unmaking Mana cost is now 60 at all levels (was 40/50/60/70).
+- Replica Aghanim's Scepter Illusion Incoming Damage increased to 300% (was 200%).
+- Replica Aghanim's Scepter Illusion Duration is now 10/15/20s (was 20/32/48s).
+- Reshape now reduces incoming damage by 65% (was 50%).
+- Base Strength reduced to 15 (was 16).
+- Base Intelligence reduced to 24 (was 30).
+- Intelligence gain reduced to 2.4 (was 3.00).
+- Base Attack Time increased to 1.75s (was 1.65s).
+
+ASTAROTH
+- Pain Curse now deals 15/30/45/60 damage when proccing.
+- Pain Curse now lasts 8s at all levels (was 6/8/10/12s).
+- Pain Curse internal cooldown reduced to 0.60s (was 0.70s).
+- Pain Curse slow duration increased to 0.80s (was 0.75s).
+- Erase damage increased to 30/50/70 (was 15/30/45).
+- Erase Mana damage increased to 15/30/45 (was 10/20/30).
+- Erase current HP damage reduced to 2.5/3.0/3.5% (was 3/4/5%).
+- Erase current Mana damage reduced to 2/3/4% (was 2/4/6%).
+- Black Insignia's buff now grants 10/20/30/40 bonus Pure damage on each attack.
+- Black Insignia buff attacks now have a sound and particle effect to distinguish them.
+- Black Insignia cooldown increased to 10s (was 7s).
+- Black Insignia attack speed bonus increased to 40/80/120/160 (was 25/50/75/100).
+
+BAAL
+- Base Strength increased to 24 (was 23).
+- Strength gain reduced to 1.9 (was 2.0).
+- Base Agility increased to 16 (was 11).
+- Agility gain increased to 2.4 (was 1.4).
+- Base damage increased to 23 - 35 (was 20 - 25).
+- Base Attack Time increased to 1.55 (was 1.5).
+- Base Turn rate reduced to 0.7 (was 1.0).
+- Compress has been reworked:
+Can now only target allies. Allies targeted by Compress are invulnerable, invisible, and untargetable.
+Lasts up to 10/12/14/16s, or until reactivated to release them. Releases them in a random location within 125 units of Baal.
+- Spatial Rift slow increased to 40/60/80/100% (was 30/40/50/60%).
+- Spatial Rift slow now gradually decreases as the buff times out.
+- Spatial Rift Port Out now disjoints projectiles.r
+- Cleaned up Baal's skill UI. Both Compress and Spatial Rift are now replaced by their sub-abilities when cast.
+
+BLOODWARRIOR
+- Grapple now roots instead of stunning enemies.
+- Grapple drain increased to 2/4/6/8% (was 1/3/5/7%).
+- Grapple creep drain reduced to 1/2/3/4% (was 2/3/4/5%).
+- Grapple duration increased to 2.0/2.5/3.0/3.5s (was 2.5s).
+- Grapple marked drain increased to 3/6/9/12% (was 3/5/7/9%).
+- Feast no longer resets the death timer on the Bloodfiend.
+- Feast no longer has a Mana cost.
+- Feast cast range increased to 250 (was 125).
+- Berserk bonus attack speed increased to 340 (was 145).
+- Bloodfiend death timer increased to 50	s (was 25s).
+- Bloodfiend now has an innate 30 Health Regen.
+- Bloodfiend mana regen increased to 10 (was 2).
+- Bloodfiend base movespeed increased to 340 (was 320).
+- Bloodfiend damage reduction during revival reduced to 35% (was 50%).
+
+VOIDWALKER
+- Voidal Flare can now only target enemies.
+- Extraplanar Pact no longer reduces Health and Mana.
+- Extraplanar Pact cooldown increased to 36s (was 36/34/32/30s).
+- Extraplanar Pact has been reworked:
+Now grants a bonus 10/20/30/40 to the target's main attribute, and a bonus 5/10/15/20 to all other attributes for 12.25s.
+
+BAHAMUT
+- Reckoning Aura radius increased to 800 (was 475).
+- Reckoning Aura can be activated to increase its effects by 50% for 6s. While on cooldown, its effects are not applied. There is a visible particle effect when activated.
+- Reckoning Aura now has a 60/55/50/45s cooldown.
+- Reckoning Aura damage increase is now 8/12/16/20% (was 5/10/15/20%).
+
+LIGHTNING
+- Lightning Dagger now bounces to random targets within a 400 radius 3/4/5/6 times.
+- Lightning Dagger damage reduced to 50/60/70/80 (was 40/80/120/160).
+- Lightning Dagger slow duration increased to 0.75s (was 0.5s).
+- Overload Mana cost reduced to 40/50/60/70 (was 50/60/70/80).
+- Thunder Wave has been reworked:
+BOLTBLAST
+Lightning places a charged payload of electricity nearby. After a short delay, it explodes, damaging and slowing nearby enemies.
+
+LYSANDER
+- Base Movespeed reduced to 310 (was 315).
+- Turn rate reduced to 0.7 (was 1.0).
+- Phantom Dreadnought now works with multiple successive casts.
+- Grapeshot damage mult reduced to 0.80x (was 0.70/0.95/1.20/1.35).
+- Grapeshot critical damage mult reduced to 1.50x (was 1.75/2.00/2.25/2.50).
+- Grapeshot base damage bonus increased to 40/60/80/100 (was 30/40/50/60).
+- Grapeshot now includes the base damage bonus in its multiplication.
+- Grapeshot cooldown increased to 6s (was 10/8/6/4s).
+- Grapeshot stun is now 0.6s, including crit stun.
+- Grapeshot no longer resets its cooldown when it crits.
+- Grapeshot now halves its cooldown when it crits, and refunds its mana cost.
+- Grapeshot Mana cost reduced to 40/45/50/55 (was 50).
+- Grapeshot critical chance increased to 25% (was 15%).
+- Grapeshot can no longer target buildings.
+- Captain's Compass duration reduced to 8/10/12/14s.
+- Captain's Compass movespeed bonus increased to 30/40/50/60%.
+- Captain's Compass now increases movespeed in a linear fashion as Lysander approaches the unit.
+- Captain's Compass now reveals through fog (but does not reveal the area around them).
+- Captain's Compass can no longer target non-Hero units.
+- Lysander's Scepter Upgrade has been reworked:
+Grapeshot now has a chance to activate on a nearby enemy when he attacks. These shots never stun, and can Crit as normal.
+
+NEITH
+- Base Attack Time increased to 1.8 (was 1.6).
+- Strength Gain reduced to 2.2 (was 2.4).
+- Base Strength increased to 26 (was 22).
+- Agility Gain reduced to 1.6 (was 2.0).
+- Base Attack Damage increased to 22 - 35 (was 22 - 26).
+- Monsoon's modifier now increases damage stolen on refresh (if you hit them again with it, it will refresh the duration AND grant more bonus damage, while reducing their damage further).
+- Monsoon's cast range display updated to be accurate to the spell's range.
+- Monsoon radius increased to 275 (was 250).
+- Base Agility increased to 20 (was 17).
+- Turnrate reduced to 0.8 (was 1).
+
+NU
+- Micronebula damage percentage reduced to 10/20/30/40% (was 20/30/40/50%).
+- Micronebula duration reduced to 4s (was 12s).
+- Micronebula cooldown reduced to 20s (was 40/35/30/25s).
+- Warpstar stun reduced to 1.25s (was 1.50/2.00/2.50s).
+
+WAR
+- FIGHT ME!! cast point increased to 0.5s (was 0.4s).
+- FIGHT ME!! now deals a multiplier of the total attack damage of all affected units as Magical damage,	 including the caster. The multiplier is 100/125/150%.
+- FIGHT ME!! duration increased to 2.75/3.25/4.00s (was 2.0/2.5/3.0s).
+- Units affected by FIGHT ME!! cannot take damage for the duration (they still take damage from the end of the duration).
+- FIGHT ME!! no longer affects Magic Immune units.
+- Earthbreaker mana cost increased to 55/65/75/85 (was 50).
+- Earthbreaker cooldown increased to 14/12/10/8s (was 10s).
+- Base Strength increased to 30 (was 25).
+- Strength gain reduced to 2.9 (was 3.5).
+- Movement speed reduced to 290 (was 295).
+- Bloodlust mana cost increased to 45/60/75/90 (was 50).
+- Bloodlust no longer silences.
+- Bloodlust now reduces its remaining duration by 1s for each attack landed by the affected enemies.
+- Bloodlust no longer affects allies.
+- Bloodlust duration is now 12.0s (was 3.0/4.0/5.0/6.0s).
+- Bloodlust can now be purged.
+
+ITEMS
+========
+
+SOUL VIAL
+- Restores only half as much Mana as Health.
+- Restore per charge reduced to 8 (was 10).
+- Cost increased to 525 (was 475).
 
 Version 1.97
 

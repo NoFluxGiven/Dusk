@@ -26,7 +26,7 @@
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackRate"				"1.65"
+	"AttackRate"				"1.75"
 	"AttackRange"				"425"
 	"AttackDamageMin"			"22"										// Damage range min.
 	"AttackDamageMax"			"29"										// Damage range max.
@@ -34,10 +34,10 @@
 	"ProjectileSpeed"            "1200"
 
 	"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-	"AttributeBaseStrength"		"16"										// Base strength
+	"AttributeBaseStrength"		"15"										// Base strength
 	"AttributeStrengthGain"		"1.5"										// Strength bonus per level.
-	"AttributeBaseIntelligence"	"30"										// Base intelligence
-	"AttributeIntelligenceGain"	"2.75"										// Intelligence bonus per level.
+	"AttributeBaseIntelligence"	"24"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.40"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"19"										// Base agility
 	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
 
@@ -58,4 +58,56 @@
 	"StatusManaRegen"			"0"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"1000"									// Range of vision at night time.
+
+	"Talents"
+	{
+	    "1" {
+		        "left"
+		        {      
+		            "name" "special_bonus_artificer_attack_range"
+		            "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "110"		
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_artificer_damage"
+		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "35"
+		        }
+	   		}
+	    "2" {
+		        "left"
+		        {      
+		            "name" "special_bonus_artificer_mregen"
+		            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "6"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_artificer_unmaking" // +30 Unmaking Damage
+		            "v" "30"
+		        }
+	    	}
+	    "3" {
+		        "left"
+		        {      
+		            "name" "special_bonus_artificer_reshape"
+		            "v" "1"
+		        }
+		        "right"
+		        {
+		            "name" "special_bonus_artificer_movespeed"
+		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "40"
+		        }
+	    	}
+	    "4" {
+		        "left"
+		        {      
+		            "name" "special_bonus_artificer_attack_speed"
+		            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "75"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_artificer_unmaking2" // +6% Unmaking HP damage
+		            "v" "6"
+		        }
+	    	}
+	}
 }

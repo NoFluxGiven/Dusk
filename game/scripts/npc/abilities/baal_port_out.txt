@@ -5,9 +5,10 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/baal_port_out"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"baal_port_out"
 	"MaxLevel"						"1"
@@ -43,24 +44,6 @@
 	"precache"
 		{
 		}
-
-	"OnUpgrade"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/baal_abilities.lua"
-			"Function"		"port_activated"
-		}
-	}
-		
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/baal_abilities.lua"
-			"Function"		"port"
-		}
-	}
 	
 	"Modifiers"
 		{

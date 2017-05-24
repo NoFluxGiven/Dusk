@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/astaroth_erase"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -43,22 +44,22 @@
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"hp_damage"						"15 30 45"
+			"hp_damage"						"30 50 70"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"mana_damage"					"10 20 30"
+			"mana_damage"					"15 30 45"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"current_hp_damage"				"3 4 5"
+			"current_hp_damage"				"2.5 3 3.5"
 		}
 	"05"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"current_mana_damage"			"2 4 6"
+			"current_mana_damage"			"2 3 4"
 		}
 	}
 	
@@ -68,65 +69,8 @@
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
 		"soundfile" "soundevents\hero_astaroth.vsndevts"
 		}
-		
-	"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_astaroth_erase_effects"
-				"Target" 		"TARGET"
-			}
-		}
 	
 	"Modifiers"
 		{
-			"modifier_astaroth_erase_effects"
-			{
-				"Duration"			"%duration"
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-
-				"EffectName" "particles/units/heroes/hero_astaroth/astaroth_erase_unit_target.vpcf"
-				"EffectAttachType"	"follow_origin"
-
-				"OnCreated"
-				{
-					"FireSound"
-					{
-						"EffectName"	"Astaroth.Erase"
-						"Target" 		"TARGET"
-					}	
-				}
-
-				"ThinkInterval"  "1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/astaroth_abilities.lua"
-						"Function"		"erase"
-						"hp"			"%hp_damage"
-						"mana"			"%mana_damage"
-						"cdmgh"			"%current_hp_damage"
-						"cdmgm"			"%current_mana_damage"
-					}
-				}
-			}
-
-			"modifier_astaroth_erase_reduce_stats"
-			{
-				"Passive"			"0"
-				"Duration"			"1.4"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"Properties"
-				{
-				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%stat_damage"
-				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%stat_damage"
-				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%stat_damage"
-				}
-			}
 		}
 }

@@ -1,5 +1,5 @@
 -- This is the primary duskdota duskdota script and should be used to assist in initializing your game mode
-DUSKDOTA_VERSION = "1.00"
+DUSKDOTA_VERSION = "1.98"
 
 -- Set this to true if you want to see a complete debug output of all events/processes done by duskdota
 -- You can also change the cvar 'duskdota_spew' at any time to 1 or 0 for output/no output
@@ -61,6 +61,8 @@ require('internal/events')
 require('events')
 
 require('talents/talents')
+
+require('addon_init')
 
 
 -- This is a detailed example of many of the containers.lua possibilities, but only activates if you use the provided "playground" map
@@ -532,9 +534,31 @@ function duskDota:OnHeroInGame(hero)
   DebugPrint("[DUSKDOTA] Hero spawned in game for first time -- " .. hero:GetUnitName())
 
   Talents.OnUnitCreate(hero)
+  local prefix = "npc_dota_hero_"
 
-  if hero:GetUnitName() == "npc_dota_hero_rubick" then
-      CosmeticLib:ReplaceDefault(hero,"npc_dota_hero_rubick")
+  -- Replace the following heroes with default sets, usually due to colour changes
+
+  local defaultList = {
+    "rubick",
+    "ember_spirit",
+    "dragon_knight"
+  }
+
+  for k,v in pairs(defaultList) do
+    local name = prefix..v
+
+    if hero:GetUnitName() == name then
+      CosmeticLib:ReplaceDefault(hero, name)
+    end
+  end
+
+  -- if hero:GetUnitName() == "npc_dota_hero_rubick" then
+  --     CosmeticLib:ReplaceDefault(hero,"npc_dota_hero_rubick")
+  -- end
+
+  if hero:GetUnitName() == "npc_dota_hero_dragon_knight" then 
+    CosmeticLib:RemoveFromSlot(hero, "weapon")
+    CosmeticLib:ReplaceWithSlotName( hero, "weapon", 4125 )
   end
 
   if hero:GetUnitName() == "npc_dota_hero_terrorblade" then
@@ -688,15 +712,31 @@ function duskDota:OnGameInProgress()
   for k,v in pairs(towers) do
     Timers:CreateTimer(0.1,
     function()
-      v:SetMaxHealth(v:GetMaxHealth()*1.25)
-      v:SetHealth(v:GetMaxHealth())
+      local max_health = v:GetMaxHealth()*0.90
+      v:SetBaseMaxHealth(max_health)
+      v:SetMaxHealth(max_health)
+      v:SetHealth(max_health)
+      local damage_min = v:GetBaseDamageMin()*1.10
+      local damage_max = v:GetBaseDamageMax()*1.10
+      v:SetBaseDamageMin(damage_min) --[[Returns:void
+      Sets the minimum base damage.
+      ]]
+      v:SetBaseDamageMax(damage_max) --[[Returns:void
+      Sets the minimum base damage.
+      ]]
     end)
     local ab = v:AddAbility("tower_frenzy")
     ab:SetLevel(1)
   end
 
   for k,v in pairs(forts) do
-
+    Timers:CreateTimer(0.1,
+    function()
+      local max_health = v:GetMaxHealth()*0.80
+      v:SetBaseMaxHealth(max_health)
+      v:SetMaxHealth(max_health)
+      v:SetHealth(max_health)
+    end)
   end
 
   Timers:CreateTimer(1200,function()
@@ -817,12 +857,25 @@ function duskDota:FilterExecuteOrder( filterTable )
   --   print("Order: "..k.." "..tostring(v))
   -- end
 
-  DebugPrintTable(filterTable)
+  --DebugPrintTable(filterTable)
   local order_type = filterTable["order_type"]
   local user = filterTable["issuer_player_id_const"]
+  local player = PlayerResource:GetPlayer(user) --[[Returns:handle
+  No Description Set
+  ]]
   local target = EntIndexToHScript(filterTable["entindex_target"])
   local hero = PlayerResource:GetSelectedHeroEntity(user)
   local ability = nil
+  if filterTable["endindex_ability"] then
+    ability = EntIndexToHScript(filterTable["entindex_ability"])
+  end
+
+  -- BOTS
+
+  -- if user:IsFakeClient() then -- are they a bot?
+  --   print(order_type)
+  --   return false
+  -- end
 
   if order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION then
     if hero then
@@ -1191,6 +1244,10 @@ function duskDota:FilterTakeDamage( filterTable )
     ParticleManager:CreateParticle("particles/units/heroes/hero_war/fight_me_life_gain.vpcf", PATTACH_ABSORIGIN_FOLLOW, defender) --[[Returns:int
     Creates a new particle effect
     ]]
+    return false
+  end
+
+  if defender:HasModifier("modifier_fight_me") then
     return false
   end
 

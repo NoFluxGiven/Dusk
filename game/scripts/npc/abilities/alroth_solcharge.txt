@@ -22,7 +22,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"40"
+	"AbilityCooldown"				"65"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,12 +39,12 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"250 325 400"
+			"damage"					"225 275 325"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"radius"					"350"
+			"radius"					"300"
 		}
 	}
 	
@@ -101,7 +101,7 @@
 						"Target"
 						{
 							"Center"  	"TARGET"
-							"Radius" 	"175"
+							"Radius" 	"150"
 							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 						}

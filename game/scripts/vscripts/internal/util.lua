@@ -1,3 +1,5 @@
+MAXIMUM_ATTACK_SPEED = 600
+
 print("[UTIL] Loading KV files...")
 contributors = LoadKeyValues("scripts/kv/contributors.kv") --[[Returns:table
 Creates a ''table'' from the specified keyvalues text file
@@ -207,6 +209,7 @@ function CheckClass(input, class)
       [2] = "npc_dota_tower",
       [3] = "npc_dota_fort",
       [4] = "npc_dota_barracks",
+      [5] = "npc_dota_healer"
     }
   end
   if type(class) == "table" then
@@ -276,12 +279,13 @@ end
 -- Deals damage to the target, with the attacker as source, damageAmount as damage, damageType as type, and damageFlags as flags.
 -- passing a table as the target will deal damage to all entities found within the table
 -- must be called from Lua
-function DealDamage(target,attacker,damageAmount,damageType,damageFlags,ability)
+function DealDamage(target,attacker,damageAmount,damageType,ability,damageFlags)
   local target = target
   local attacker = attacker or target -- if nil we assume we're dealing self damage
   local dmg = damageAmount
   local dtype = damageType
   local flags = damageFlags or DOTA_DAMAGE_FLAG_NONE
+  local ability = ability or nil
   -- Damage Flags are:
   -- DOTA_DAMAGE_FLAG_BYPASSES_BLOCK
   -- DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY
@@ -308,7 +312,8 @@ function DealDamage(target,attacker,damageAmount,damageType,damageFlags,ability)
           attacker = attacker,
           damage = dmg,
           damage_type = dtype,
-          damage_flags = flags
+          damage_flags = flags,
+          ability = ability
         })
       end
     end
@@ -322,7 +327,8 @@ function DealDamage(target,attacker,damageAmount,damageType,damageFlags,ability)
     attacker = attacker,
     damage = dmg,
     damage_type = dtype,
-    damage_flags = flags
+    damage_flags = flags,
+    ability = ability
   })
 end
 
@@ -891,16 +897,76 @@ function StopCaster(keys)
   keys.caster:Stop()
 end
 
-function FindEnemies(caster,point,radius)
+function shuffleTable( t )
+    assert( t, "shuffleTable() expected a table, got nil" )
+    local iterations = #t
+    local j
+    
+    for i = iterations, 2, -1 do
+        j = RandomInt(1,i)
+        t[i], t[j] = t[j], t[i]
+    end
+end
+
+-- Find entities in a radius from point with caster. Team, targets, flags and find order are optional.
+
+function FindEntities(caster,point,radius,team,targets,flags,find_order)
+  local team = team or DOTA_UNIT_TARGET_TEAM_BOTH
+  local targets = targets or DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP
+  local flags = flags or 0
+  local find_order = find_order or FIND_CLOSEST
+  return FindUnitsInRadius( caster:GetTeamNumber(),
+                            point,
+                            nil,
+                            radius,
+                            team,
+                            targets,
+                            flags,
+                            find_order,
+                            false)
+end
+
+function FindEnemies(caster,point,radius,targets)
+  local targets = targets or DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP
   return FindUnitsInRadius( caster:GetTeamNumber(),
                             point,
                             nil,
                             radius,
                             DOTA_UNIT_TARGET_TEAM_ENEMY,
-                            DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
+                            targets,
                             DOTA_UNIT_TARGET_FLAG_NONE,
                             FIND_CLOSEST,
                             false)
+end
+
+function FindAllies(caster,point,radius,targets)
+  local targets = targets or DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP
+  return FindUnitsInRadius( caster:GetTeamNumber(),
+                            point,
+                            nil,
+                            radius,
+                            DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+                            targets,
+                            DOTA_UNIT_TARGET_FLAG_NONE,
+                            FIND_CLOSEST,
+                            false)
+end
+
+-- Returns a table of enemies, with their position in the table randomised
+function FindEnemiesRandom(caster,point,radius,targets)
+  local targets = targets or DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP
+  local en = FindUnitsInRadius( caster:GetTeamNumber(),
+                            point,
+                            nil,
+                            radius,
+                            DOTA_UNIT_TARGET_TEAM_ENEMY,
+                            targets,
+                            DOTA_UNIT_TARGET_FLAG_NONE,
+                            FIND_ANY_ORDER,
+                            false)
+
+  shuffleTable(en)
+  return en
 end
 
 function EmitSoundForAll(soundString)
@@ -927,4 +993,53 @@ function Link(modifier_name)
   -- links a Lua modifier
 
   LinkLuaModifier(modifier_name,"lua/modifiers/"..modifier_name,LUA_MODIFIER_MOTION_NONE)
+end
+
+function EntityHasTalent(entity,talent_string)
+  talent_string = "special_"..talent_string
+  -- for i=0,15 do
+  --   local ab = entity:FindAbilityByIndex(i)
+  --   local name = "-"
+  --   if ab then name = ab:GetName() end
+  --   print(name)
+  -- end
+  if not entity then return nil end
+  print("Searching for talent: "..talent_string)
+  if entity:HasAbility(talent_string) then
+    local ab = entity:FindAbilityByName(talent_string)
+    if ab then
+      if ab:GetLevel() > 0 then print("yes") return true else print("no") return false end
+    end
+  end
+  print("does not exist")
+  return nil
+end
+
+-- Simulates attack speed cap removal to a single unit through BAT manipulation
+function IncreaseAttackSpeedCap(unit, new_cap)
+
+  -- Fetch original BAT if necessary
+  if not unit.current_modified_bat then
+    unit.current_modified_bat = unit:GetBaseAttackTime()
+  end
+
+  print(unit.current_modified_bat)
+
+  -- Get current attack speed, limited to new_cap
+  local current_as = math.min(unit:GetAttackSpeed() * 100, new_cap)
+
+  -- Should we reduce BAT?
+  if current_as > MAXIMUM_ATTACK_SPEED then
+    local new_bat = MAXIMUM_ATTACK_SPEED / current_as * unit.current_modified_bat
+    unit:SetBaseAttackTime(new_bat)
+    print(new_bat)
+  end
+end
+
+-- Returns a unit's attack speed cap
+function RevertAttackSpeedCap( unit )
+
+  -- Return to original BAT
+  unit:SetBaseAttackTime(unit.current_modified_bat)
+
 end

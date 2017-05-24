@@ -54,4 +54,56 @@
 	"StatusManaRegen"			"0"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+	"Talents"
+	{
+	    "1" {
+		        "left"
+		        {      
+		            "name" "special_bonus_astaroth_attack_speed"
+		            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "20"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_astaroth_armor"
+		            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "4"
+		        }
+	   		}
+	    "2" {
+		        "left"
+		        {      
+		            "name" "special_bonus_astaroth_damage"
+		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "35"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_astaroth_overwhelm"
+		            "v" "80"
+		        }
+	    	}
+	    "3" {
+		        "left"
+		        {      
+		            "name" "special_bonus_astaroth_movespeed"
+		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "50"
+		        }
+		        "right"
+		        {
+		            "name" "special_bonus_astaroth_pain_curse"
+		            "v" "0.4"
+		        }
+	    	}
+	    "4" {
+		        "left"
+		        {      
+		            "name" "special_bonus_astaroth_black_insignia"
+		            "v" "400"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_astaroth_erase"
+		            "v" "15"
+		        }
+	    	}
+	}
 }

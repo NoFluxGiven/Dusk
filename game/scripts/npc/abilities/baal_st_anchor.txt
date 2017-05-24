@@ -5,7 +5,8 @@
 	{
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/baal_st_anchor"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -66,45 +67,9 @@
 
 	"OnSpellStart"
 	{
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_st_anchor"
-			"Target" 		"TARGET"
-		}
 	}
 
 	"Modifiers"
 	{
-		"modifier_st_anchor"
-		{
-			"Passive"			"0"
-			"IsHidden"			"1"
-			"IsDebuff"			"1"
-			"Duration"			"%duration"
-
-			"OnCreated"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/baal_abilities.lua"
-					"Function"		"st_anchor_start"
-					"duration"		"%duration"
-					"radius"		"%radius"
-				}
-			}	
-		
-			"ThinkInterval"  "0.1"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/baal_abilities.lua"
-					"Function"		"st_anchor"
-					"radius"		"%radius"
-					"stun"			"%stun"
-					"damage"		"%AbilityDamage"
-				}
-			}
-		}
 	}
 }

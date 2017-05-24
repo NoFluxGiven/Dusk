@@ -50,7 +50,12 @@
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_reduction" 	"15 30 45 60"
+			"hp_regen" 				"3 6 9 12"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"mana_regen" 			"2.0 4.0 6.0 8.0"
 		}
 	}
 
@@ -90,6 +95,12 @@
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 				"Aura_ApplyToCaster" "0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%hp_regen"
+				    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "%mana_regen"
+				}
 			}
 
 			"modifier_harsh_sun_aura_creep"

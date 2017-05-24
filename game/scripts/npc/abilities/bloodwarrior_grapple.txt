@@ -19,7 +19,7 @@
     
     // Time     
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityChannelTime"            "2.5"
+    "AbilityChannelTime"            "2.0 2.5 3.0 3.5"
     "AbilityCooldown"               "16.0"
 
     // Damage.
@@ -37,22 +37,22 @@
         "01"
         {
             "var_type"          "FIELD_FLOAT"
-            "channel_time"      "2.5"
+            "channel_time"      "2.0 2.5 3.0 3.5"
         }
         "02"
         {
             "var_type"          "FIELD_FLOAT"
-            "drain"             "1 3 5 7"
+            "drain"             "2 4 6 8"
         }
         "03"
         {
             "var_type"          "FIELD_FLOAT"
-            "creep_drain"       "2 3 4 5"
+            "creep_drain"       "1 2 3 4"
         }
         "04"
         {
             "var_type"          "FIELD_FLOAT"
-            "marked_drain"      "3 5 7 9"
+            "marked_drain"      "3 6 9 12"
         }
     }
 
@@ -94,8 +94,6 @@
             "StatusEffectName"      "particles/status_fx/status_effect_shaman_shackle.vpcf"        
             "StatusEffectPriority"  "10"
 
-            "OverrideAnimation"     "ACT_DOTA_DISABLED"
-
             "OnCreated"
             {
                 "FireSound"
@@ -129,7 +127,7 @@
         
             "States"
             {
-                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_ROOTED"        "MODIFIER_STATE_VALUE_ENABLED"
             }
         }
     }

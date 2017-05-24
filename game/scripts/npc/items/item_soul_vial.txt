@@ -18,7 +18,7 @@
     
     // Item Info
     //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"                      "475"
+    "ItemCost"                      "525"
     "ItemShopTags"                  "regen_health;regen_mana;boost_health;boost_mana;damage"
     "ItemQuality"                   "component"
     "ItemAliases"                   "soul vial"
@@ -45,7 +45,7 @@
         "03"
         {
             "var_type"              "FIELD_INTEGER"
-            "restore_per_charge"    "10"
+            "restore_per_charge"    "8"
         }
     }
     

@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/neith_inspire"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"	
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"neith_inspire"
@@ -58,70 +59,5 @@
 	
 	"Modifiers"
 		{
-			"modifier_inspire_attack_damage1"
-			{
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"Duration"			"%duration"
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "5"
-				}
-			}
-			"modifier_inspire_attack_damage2"
-			{
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"Duration"			"%duration"
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "8"
-				}
-			}
-			"modifier_inspire_attack_damage3"
-			{
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"Duration"			"%duration"
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "11"
-				}
-			}
-			"modifier_inspire_attack_damage4"
-			{
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"Duration"			"%duration"
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "14"
-				}
-			}
-			"modifier_inspire_attack_damage_creep"
-			{
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"Duration"			"%duration"
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%attack_damage_creep"
-				}
-			}
 		}
 }

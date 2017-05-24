@@ -23,7 +23,7 @@ function CheckBloodfiend(keys)
 			v:SetControllableByPlayer(player, true)
 			--v:SetOwner(caster)
 			v:CreatureLevelUp(lvl-1+aghs_bonus)
-			v:AddNewModifier(caster, nil, "modifier_kill", {Duration=25}) --[[Returns:void
+			v:AddNewModifier(caster, nil, "modifier_kill", {Duration=50}) --[[Returns:void
 			No Description Set
 			]]
 			v:EmitSound("Hero_LifeStealer.Consume") --[[Returns:void
@@ -121,8 +121,8 @@ function reviveBloodfiend(keys) -- run by the Blood Fiend
 
 				if caster:HasScepter() then d = 1 end
 
-				caster:SetHealth(caster:GetMaxHealth()/d)
-				caster:SetMana(caster:GetMaxMana()/d)
+				caster:SetHealth(math.floor(caster:GetMaxHealth()/d))
+				caster:SetMana(math.floor(caster:GetMaxMana()/d))
 				caster:RemoveModifierByName("modifier_blood_curse_hide") --[[Returns:void
 				Removes a modifier
 				]]
@@ -170,9 +170,6 @@ function feastKill(keys)
 	caster.ignoreKill = true
 	target:Kill(keys.ability,caster)
 	caster.ignoreKill = false
-	caster:AddNewModifier(caster, nil, "modifier_kill", {Duration=25}) --[[Returns:void
-	No Description Set
-	]]
 	caster:SetHealth(caster:GetMaxHealth())
 	caster:SetMana(caster:GetMaxMana())
 end

@@ -1,7 +1,7 @@
 gemini_extraplanar_pact = class({})
 
-LinkLuaModifier("modifier_extraplanar_pact_oog","lua/modifiers/modifier_extraplanar_pact_oog",LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_extraplanar_pact","lua/modifiers/modifier_extraplanar_pact",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_extraplanar_pact_oog","lua/abilities/gemini_extraplanar_pact",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_extraplanar_pact","lua/abilities/gemini_extraplanar_pact",LUA_MODIFIER_MOTION_NONE)
 
 function gemini_extraplanar_pact:OnSpellStart()
 	local mod = "modifier_extraplanar_pact_oog"
@@ -17,9 +17,6 @@ function gemini_extraplanar_pact:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 
-	local remove_health = hp_mana * target:GetHealth()
-	local remove_mana = hp_mana * target:GetMana()
-
 	target:AddNewModifier(caster, self, mod, {Duration = oog_dur}) --[[Returns:void
 	No Description Set
 	]]
@@ -30,16 +27,11 @@ function gemini_extraplanar_pact:OnSpellStart()
 
 		target:AddNoDraw()
 
-		target:ModifyHealth(target:GetHealth()-remove_health, self, false, 0) --[[Returns:void
-		Sets the health to a specific value, with optional flags or inflictors.
-		]]
-		target:ReduceMana(remove_mana) --[[Returns:void
-		Remove mana from this unit, this can be used for involuntary mana loss, not for mana that is spent.
-		]]
-
 		target:AddNewModifier(caster, self, mod2, {Duration = dur}) --[[Returns:void
 		No Description Set
 		]]
+
+		target:CalculateStatBonus()
 
 	end)
 
@@ -53,4 +45,82 @@ function gemini_extraplanar_pact:OnSpellStart()
 		ParticleManager:DestroyParticle(p,false)
 		target:RemoveNoDraw()
 	end)
+end
+
+-- Modifiers
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+modifier_extraplanar_pact = class({})
+
+function modifier_extraplanar_pact:DeclareFunctions()
+	local func = {
+		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+		MODIFIER_PROPERTY_STATS_AGILITY_BONUS
+	}
+	return func
+end
+
+function modifier_extraplanar_pact:GetEffectName()
+	local part = "particles/units/heroes/hero_gemini/gemini_extraplanar_pact_unit.vpcf"
+
+	return part
+end
+
+function modifier_extraplanar_pact:GetModifierBonusStats_Strength()
+	local amt_main = self:GetAbility():GetSpecialValueFor("bonus_main_stat") --[[Returns:table
+	No Description Set
+	]]
+	local amt_lesser = self:GetAbility():GetSpecialValueFor("bonus_secondary")
+	if self:GetParent():GetPrimaryAttribute() == 0 then
+		return amt_main
+	end
+	return amt_lesser
+end
+
+function modifier_extraplanar_pact:GetModifierBonusStats_Agility()
+	local amt_main = self:GetAbility():GetSpecialValueFor("bonus_main_stat") --[[Returns:table
+	No Description Set
+	]]
+	local amt_lesser = self:GetAbility():GetSpecialValueFor("bonus_secondary")
+	if self:GetParent():GetPrimaryAttribute() == 1 then
+		return amt_main
+	end
+	return amt_lesser
+end
+
+function modifier_extraplanar_pact:GetModifierBonusStats_Intellect()
+	local amt_main = self:GetAbility():GetSpecialValueFor("bonus_main_stat") --[[Returns:table
+	No Description Set
+	]]
+	local amt_lesser = self:GetAbility():GetSpecialValueFor("bonus_secondary")
+	if self:GetParent():GetPrimaryAttribute() == 2 then
+		return amt_main
+	end
+	return amt_lesser
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+modifier_extraplanar_pact_oog = class({})
+
+function modifier_extraplanar_pact_oog:DeclareFunctions()
+	local func = {
+
+	}
+	
+	return func
+end
+
+function modifier_extraplanar_pact_oog:CheckState()
+	local state = {
+		[MODIFIER_STATE_STUNNED] = true,
+		[MODIFIER_STATE_INVULNERABLE] = true,
+		[MODIFIER_STATE_OUT_OF_GAME] = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
+		[MODIFIER_STATE_UNSELECTABLE] = true
+	}
+
+	return state
 end

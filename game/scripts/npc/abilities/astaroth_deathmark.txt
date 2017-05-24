@@ -2,7 +2,8 @@
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "BaseClass"             "ability_datadriven"
+    "BaseClass"             "ability_lua"
+    "ScriptFile"            "lua/abilities/astaroth_deathmark.lua"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HEROES"
@@ -15,7 +16,7 @@
 
     // Time     
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"               "7"
+    "AbilityCooldown"               "9"
     
     // Special
     //-------------------------------------------------------------------------------------------------------------
@@ -44,12 +45,17 @@
         "05"
         {
             "var_type"              "FIELD_INTEGER"
-            "attack_speed_bonus"    "30 60 80 120"
+            "attack_speed_bonus"    "40 80 120 160"
         }
         "06"
         {
             "var_type"              "FIELD_FLOAT"
             "bonus_duration"        "5"
+        }
+        "07"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"          "10 20 30 40"
         }
     }
 
@@ -61,69 +67,8 @@
         "soundfile" "soundevents\hero_astaroth.vsndevts"
     }
 
-    "OnSpellStart"
-    {
-        "RunScript"
-        {
-            "ScriptFile"    "internal/util.lua"
-            "Function"        "UnitLoc"
-        }
-    }
-
     "Modifiers"
     {
-        "modifier_deathmark"
-        {
-            "Passive"           "1"
-            "IsHidden"          "1"
-            "IsBuff"            "1"
-            "OnAttackLanded"
-            // "%attack_damage" is set to the damage value after mitigation
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/astaroth_abilities.lua"
-                    "Function"        "deathmark"
-                    "hits"         "%hits"
-                    "stun"         "%stun"
-                    "removal"      "%removal"
-                }
-            }
-        }
-
-        "modifier_astaroth_marks"
-        {
-            "Passive"            "0"
-            "IsHidden"            "0"
-            "IsDebuff"            "1"
-
-            "OnDestroy"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/astaroth_abilities.lua"
-                    "Function"        "removeParticle"
-                }
-            }
-        }
-
-        "modifier_deathmark_bonus"
-        {
-            "Passive"            "0"
-            "IsHidden"            "0"
-            "IsDebuff"            "0"
-            "Duration"            "%bonus_duration"
-        
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed_bonus"
-            }
-
-            "States"
-            {
-                "MODIFIER_STATE_CANNOT_MISS"        "MODIFIER_STATE_VALUE_ENABLED"
-            }
-        }
 
     }
 

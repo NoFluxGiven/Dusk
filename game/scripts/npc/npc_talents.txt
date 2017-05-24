@@ -10,14 +10,14 @@
 	        "1" {
 	            "left"
 	            {      
-	                "name" "All Stats +3 (1)"
+	                "name" "stat_bonus_1"
 	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
 	            }
 	            "right"
 	            {       
-	                "name" "All Stats +3 (1)"
+	                "name" "stat_bonus_1"
 	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
@@ -26,14 +26,14 @@
 	        "2" {
 	            "left"
 	            {      
-	                "name" "All Stats +3 (2)"
+	                "name" "stat_bonus_2"
 	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
 	            }
 	            "right"
 	            {       
-	                "name" "All Stats +3 (2)"
+	                "name" "stat_bonus_2"
 	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
@@ -42,14 +42,14 @@
 	        "3" {
 	            "left"
 	            {      
-	                "name" "All Stats +3 (3)"
+	                "name" "stat_bonus_3"
 	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
 	            }
 	            "right"
 	            {       
-	                "name" "All Stats +3 (3)"
+	                "name" "stat_bonus_3"
 	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
@@ -58,14 +58,14 @@
 	        "4" {
 	            "left"
 	            {      
-	                "name" "All Stats +3 (4)"
+	                "name" "stat_bonus_4"
 	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
 	            }
 	            "right"
 	            {       
-	                "name" "All Stats +3 (4)"
+	                "name" "stat_bonus_4"
 	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "3"
 	                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "3"
@@ -81,49 +81,49 @@
 	        "1" {
 	            "left"
 	            {      
-	                "name" "+20 Movement Speed"
+	                "name" "bonus_aether_ms"
 	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "10"
 	            }
 	            "right"
 	            {       
-	                "name" "+15 Damage"
-	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "15"
+	                "name" "bonus_aether_dmg"
+	                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "35"
 	            }
 	        }
 	        "2" {
 	            "left"
 	            {      
-	                "name" "+6 Strength"
+	                "name" "bonus_aether_str"
 	                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "6"
 	            }
 	            "right"
 	            {       
-	                "name" "+4 Mana Regen"
+	                "name" "bonus_aether_mreg"
 	                "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "4"
 	            }
 	        }
 	        "3" {
 	            "left"
 	            {      
-	                "name" "+60 Disrupt Damage"
-	                "Ability" "special_bonus_aether_disrupt"
+	                "name" "bonus_aether_disrupt"
+	                "v" "-3"
 	            }
 	            "right"
-	            {       
-	                "name" "-1.0s Teleport Delay"
-	                "Ability" "special_bonus_aether_teleport"
+	            {
+	                "name" "bonus_aether_teleport"
+	                "v" "875"
 	            }
 	        }
 	        "4" {
 	            "left"
 	            {      
-	                "name" "+20 Monolith Regen"
-	                "Ability" "special_bonus_aether_monolith"
+	                "name" "bonus_aether_monolith"
+	                "v" "30"
 	            }
 	            "right"
 	            {       
-	                "name" "-60s Reality Shift Cooldown"
-	                "Ability" "special_bonus_aether_reality_shift"
+	                "name" "bonus_aether_reality_shift"
+	                "v" "-60"
 	            }
 	        }
 	    }

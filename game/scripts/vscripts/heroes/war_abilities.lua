@@ -42,7 +42,9 @@ function fight_me_force_attack(keys)
 		Orders:IssueAttackOrder(target,caster)
 	else
 		local mod = target:FindModifierByName("modifier_fight_me")
-		mod:Destroy()
+		if mod then
+			mod:Destroy()
+		end
 	end
 	target:SetForceAttackTarget(target)
 end

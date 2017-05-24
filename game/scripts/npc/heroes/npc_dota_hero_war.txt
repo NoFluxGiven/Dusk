@@ -36,8 +36,8 @@
 	"AttackDamageMax"			"40"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"25"										// Base strength
-	"AttributeStrengthGain"		"3.5"										// Strength bonus per level.
+	"AttributeBaseStrength"		"30"										// Base strength
+	"AttributeStrengthGain"		"2.9"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"11"										// Base intelligence
 	"AttributeIntelligenceGain"	"1.0"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"19"										// Base agility
@@ -51,7 +51,7 @@
 	//"RingRadius"				"70"
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"295"									// Speed.
+	"MovementSpeed"				"290"									// Speed.
 	"MovementTurnRate"			"1.0"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
@@ -60,4 +60,56 @@
 	"StatusManaRegen"			"0"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+	"Talents"
+	{
+	    "1" {
+		        "left"
+		        {      
+		            "name" "special_bonus_war_movespeed"
+		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "20"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_war_mana_regen"
+		            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "3"
+		        }
+	   		}
+	    "2" {
+		        "left"
+		        {      
+		            "name" "special_bonus_war_earthbreaker" // +75 Earthbreaker Damage
+		            "v" "75"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_war_armor"
+		            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "8"
+		        }
+	    	}
+	    "3" {
+		        "left"
+		        {      
+		            "name" "special_bonus_war_strength"
+		            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "20"
+		        }
+		        "right"
+		        {
+		            "name" "special_bonus_war_attack_speed"
+		            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "40"
+		        }
+	    	}
+	    "4" {
+		        "left"
+		        {      
+		            "name" "special_bonus_war_bloodlust" // +125 Bloodlust DPS
+		           	"v" "65"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_war_health_regen"
+		            "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "45"
+		        }
+	    	}
+	}
 }

@@ -1083,15 +1083,15 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
-		"MovementSpeed"				"320"		// Speed.
+		"MovementSpeed"				"340"		// Speed.
 		"MovementTurnRate"			"1.4"		// Turning rate.
 	
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"200"		// Base health.
-		"StatusHealthRegen"			"4"			// Health regeneration rate.
+		"StatusHealthRegen"			"30"			// Health regeneration rate.
 		"StatusMana"				"150"		// Base mana.
-		"StatusManaRegen"			"2"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"10"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------

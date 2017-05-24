@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/alexander_godfall"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 	"AbilityChannelTime"			"1"
@@ -61,80 +62,8 @@
 		"soundfile" "soundevents\hero_alexander.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
 		}
-
-	"OnSpellStart"
-	{
-		"AttachEffect"
-			{
-				"EffectName"        "particles/units/heroes/hero_alexander/godfall_start.vpcf"
-				"EffectAttachType"  "follow_customorigin"
-				"Target"            "CASTER"
-				"ControlPointEntities"
-	            {
-	                "CASTER" "attach_hitloc"
-	            }
-			}
-		"FireSound"
-		{
-			"EffectName"	"Alexander.Godfall.Charge"
-			"Target" 		"CASTER"
-		}
-	}
-		
-	"OnChannelSucceeded"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_alexander_godfall"
-				"Target" 		"CASTER"
-			}
-		}
 	
 	"Modifiers"
 		{
-			"modifier_alexander_godfall"
-			{
-				"Duration" "%duration"
-				"IsHidden" "0"
-				"IsPurgable" "0"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/alexander_abilities.lua"
-						"Function"		"GodfallSound"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/alexander_abilities.lua"
-						"Function"		"GodfallSoundStop"
-					}
-				}
-
-				"EffectName"			"particles/units/heroes/hero_alexander/godfall_charged.vpcf"
-				"EffectAttachType"		"follow_origin"
-
-				"States"
-				{
-					"MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-
-				"OnAttackLanded"
-				// "%attack_damage" is set to the damage value before mitigation
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/alexander_abilities.lua"
-						"Function"		"Godfall"
-						"mult"			"%damage"
-						"scepter_mult"	"%scepter_mult"
-					}
-				}
-			}
 		}
 }

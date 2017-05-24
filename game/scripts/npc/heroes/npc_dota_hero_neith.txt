@@ -23,17 +23,17 @@
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackRate"				"1.6"
+	"AttackRate"				"1.8"
 	"AttackDamageMin"			"22"										// Damage range min.
-	"AttackDamageMax"			"26"										// Damage range max.
+	"AttackDamageMax"			"35"										// Damage range max.
 
 	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"22"										// Base strength
-	"AttributeStrengthGain"		"2.3"										// Strength bonus per level.
-	"AttributeBaseIntelligence"	"16"										// Base intelligence
+	"AttributeBaseStrength"		"26"										// Base strength
+	"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"16"									// Base intelligence
 	"AttributeIntelligenceGain"	"1.5"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"17"										// Base agility
-	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
+	"AttributeBaseAgility"		"21"										// Base agility
+	"AttributeAgilityGain"		"1.6"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.
@@ -43,8 +43,8 @@
 	//"RingRadius"				"70"
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"305"									// Speed.
-	"MovementTurnRate"			"1.0"									// Turning rate.
+	"MovementSpeed"				"300"									// Speed.
+	"MovementTurnRate"			"0.8"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
 	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
@@ -52,4 +52,56 @@
 	"StatusManaRegen"			"0"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+	"Talents"
+	{
+	    "1" {
+		        "left"
+		        {      
+		            "name" "special_bonus_neith_strength"
+		            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "7"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_neith_attack_speed"
+		            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "15"
+		        }
+	   		}
+	    "2" {
+		        "left"
+		        {      
+		            "name" "special_bonus_neith_movespeed"
+		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "35"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_neith_decisive_strike"
+		            "v" "0"
+		        }
+	    	}
+	    "3" {
+		        "left"
+		        {      
+		            "name" "special_bonus_neith_inspire"
+		            "v" "4"
+		        }
+		        "right"
+		        {
+		            "name" "special_bonus_neith_monsoon"
+		            "v" "30"
+		        }
+	    	}
+	    "4" {
+		        "left"
+		        {      
+		            "name" "special_bonus_neith_rally"
+		            "v" "25"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_neith_evasion"
+		            "MODIFIER_PROPERTY_EVASION_CONSTANT" "25"
+		        }
+	    	}
+	}
 }

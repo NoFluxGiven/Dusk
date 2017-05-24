@@ -24,7 +24,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"36 34 32 30"
+	"AbilityCooldown"				"36"
 
 	// Damage.
 	//-------------------------------------------------------------------------------------------------------------
@@ -41,57 +41,22 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_dmg"				"8 16 24 32" // pct
+			"bonus_main_stat"		"10 20 30 40" // pct
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_pdmg"			"10 20 30 40"
+			"bonus_secondary"		"5 10 15 20"
 		}
 		"03"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_movespeed"		"25"
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"12.25"
 		}
 		"04"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_attack_speed"	"15 30 45 60"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_spell_damage"	"10 15 20 25"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"6 9 12 15"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_regen"			"20" // mana and health
-		}
-		"08"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_mres"			"20 25 30 35"
-		}
-		"09"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"10.25"
-		}
-		"10"
-		{
 			"var_type"				"FIELD_FLOAT"
 			"out_of_game_duration"	"2.25"
-		}
-		"11"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health_and_mana_loss"	"20"
 		}
 	}
 

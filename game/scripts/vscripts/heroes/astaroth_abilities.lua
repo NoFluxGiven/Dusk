@@ -117,9 +117,12 @@ function deathmark(keys)
 	ParticleManager:SetParticleControl(target.deathmark_particle, 1, Vector(mod:GetStackCount(),0,0))
 
 	if mod:GetStackCount() >= hits then
-		keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_deathmark_bonus", {}) --[[Returns:void
+		local mod_name = "modifier_deathmark_bonus"
+		if caster:HasTalent("special_bonus_astaroth_black_insignia") then mod_name = "modifier_deathmark_talent_bonus" end
+		keys.ability:ApplyDataDrivenModifier(caster, caster, mod_name, {}) --[[Returns:void
 		No Description Set
 		]]
+
 		mod:Destroy()
 		if target:IsHero() then keys.ability:StartCooldown(cooldown) end
 		target:ModifyHealth(hp*mult, keys.ability, false, -1) --[[Returns:void
@@ -134,6 +137,16 @@ function deathmark(keys)
 		ParticleManager:SetParticleControlEnt(p, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetCenter(), true)
 		if target.deathmark_particle then ParticleManager:DestroyParticle(target.deathmark_particle,true) target.deathmark_particle = nil end
 	end
+end
+
+function deathmark_aspd(keys)
+	local unit = keys.attacker or keys.unit
+	IncreaseAttackSpeedCap(unit,10000)
+end
+
+function deathmark_aspd_reset(keys)
+	local unit = keys.target
+	RevertAttackSpeedCap(unit)
 end
 
 function removeParticle(keys)
@@ -186,7 +199,7 @@ function erase(keys)
 	local extra_dmg = chp_dmg*target:GetHealth()
 	local extra_drain = cmp_dmg*target:GetMana()
 
-	keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_astaroth_erase_reduce_stats", {})
+	-- keys.ability:ApplyDataDrivenModifier(caster, target, "modifier_astaroth_erase_reduce_stats", {})
 
 	--local modifier = target:FindModifierByName("modifier_astaroth_erase_reduce_stats")
 

@@ -5,11 +5,13 @@
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "BaseClass"             "ability_datadriven"
+    //"BaseClass"             "ability_lua"
+    //"ScriptFile"            "lua/abilities/artificer_unmaking.lua"
+    "BaseClass"               "ability_datadriven"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-    "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityTextureName"            "artificer_unmaking"
 
@@ -37,7 +39,7 @@
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"               "40 50 60 70"
+    "AbilityManaCost"               "60"
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
@@ -51,12 +53,12 @@
         "02"
         {
             "var_type"                      "FIELD_FLOAT"
-            "damage"                        "3.00 3.75 4.50 5.25" // Percent of Current Health per second
+            "damage"                        "3.25 4.50 5.75 7.00" // Percent of Current Health per second
         }
         "03"
         {
             "var_type"                      "FIELD_INTEGER"
-            "base_damage"                   "10 20 30 40"
+            "base_damage"                   "20 30 40 50"
         }
     }
 
@@ -102,11 +104,11 @@
                     "Target"        "TARGET"
                 }
 
-                "Damage"
+                "RunScript"
                 {
-                    "Target"        "TARGET"
-                    "Type"          "DAMAGE_TYPE_PURE"
-                    "Damage"        "%base_damage"
+                    "ScriptFile"    "heroes/artificer_abilities.lua"
+                    "Function"        "unmakingHit"
+                    "damage"        "%base_damage"
                 }
             }
         }

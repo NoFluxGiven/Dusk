@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/alexander_elandras_blessing"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -19,7 +20,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"20"
+	"AbilityCooldown"				"23"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -32,73 +33,41 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"15 30 45 60"
+			"bonus_damage"			"16 32 48 64"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"3 6 9 12"
+			"bonus_armor"			"4 8 12 16"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"10.0"
+			"duration"				"12.0"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"reflect_damage"		"50 75 100 125" // when attacked, deals Magical damage equal to this percentage of their main stat
+			"reflect_damage"		"30 40 50 60" // when attacked, deals Magical damage equal to this percentage of their main stat
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"reflect_damage_spell"	"120 160 200 240" // when targeted with a Spell, deals Magical damage equal to this percentage of their main stat
 		}
 	}
 
 	"precache"
 	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
 		"particle"			"particles/units/heroes/hero_set/set_harsh_climate.vpcf"
 		"particle"			"particles/units/heroes/hero_alexander/greater_vitality.vpcf"
 		"particle"			"particles/units/heroes/hero_alexander/greater_vitality_damage.vpcf"
 	}
-
-	"OnSpellStart"
-	{
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_elandras_blessing"
-			"Target" 		"TARGET"
-		}
-	}
 	
 	"Modifiers"
 		{
-			"modifier_elandras_blessing"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"IsPurgable"		"1"
-				"Duration"			"%duration"
-
-				"EffectName" "particles/units/heroes/hero_alexander/greater_vitality.vpcf"
-				"EffectAttachType" "follow_overhead"
-
-				"OnAttacked"
-				// "%attack_damage" is set to the damage value after mitigation
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/alexander_abilities.lua"
-						"Function"		"elandras_blessing"
-						"damage"		"%reflect_damage"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
-				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
-				}
-			}
-
 
 		}
 }

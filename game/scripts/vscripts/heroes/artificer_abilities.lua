@@ -1,5 +1,3 @@
-LinkLuaModifier("modifier_reshape_lua", "heroes/modifiers/modifier_reshape_lua.lua", LUA_MODIFIER_MOTION_NONE)
-
 function replica(event)
 	print("Conjure Image")
 	local caster = event.caster
@@ -137,7 +135,7 @@ function naturalise2(keys)
                         false)
 
 	for k,v in pairs(enemies) do
-		Timers:CreateTimer(k*0.2,function()
+		Timers:CreateTimer(k*0.15,function()
 			ParticleManager:CreateParticle("particles/units/heroes/hero_artificer/naturalise.vpcf", PATTACH_ABSORIGIN_FOLLOW, v) --[[Returns:int
 			Creates a new particle effect
 			]]
@@ -171,8 +169,6 @@ function reshape(keys)
 	local ability_level = ability:GetLevel() - 1
 	local target = keys.target
 
-	
-
 	local duration = ability:GetLevelSpecialValueFor("duration", ability_level)
 
 	disablePropsOnUnit(target)
@@ -191,17 +187,46 @@ function unmakingTick(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local damage = keys.damage / 100
+	-- if EntityHasTalent(caster,"bonus_artificer_unmaking2") then
+	-- 	damage = damage+(6/100)
+	-- 	print("EXTRA DAMAGE")
+	-- end
+
+	local damage_type = DAMAGE_TYPE_MAGICAL
+	if caster:HasTalent("special_bonus_artificer_unmaking2") then
+		damage_type = DAMAGE_TYPE_PURE
+	end
 
 	local thp = target:GetHealth()
 
 	local damage = math.ceil(damage*thp)
 
-	DealDamage(target,caster,damage,DAMAGE_TYPE_PURE)
+	DealDamage(target,caster,damage,damage_type)
 	PopupSpecDamage(target,damage)
 
 	target:EmitSound("Hero_Treant.LeechSeed.Tick") --[[Returns:void
 	 
 	]]
+end
+
+
+function unmakingHit(keys)
+	local caster = keys.caster
+	local target = keys.target
+
+	local damage = keys.damage
+
+	local damage_type = DAMAGE_TYPE_MAGICAL
+
+	if caster:HasTalent("special_bonus_artificer_unmaking") then
+		damage = damage+30
+	end
+
+	if caster:HasTalent("special_bonus_artificer_unmaking2") then
+		damage_type = DAMAGE_TYPE_PURE
+	end
+
+	DealDamage(target,caster,damage,damage_type)
 end
 
 function replicaAghs(keys)

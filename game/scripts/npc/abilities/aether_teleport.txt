@@ -2,7 +2,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/aether_teleport"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -38,46 +39,5 @@
 		"particle"							"particles/units/heroes/hero_wisp/wisp_relocate_marker.vpcf"
 		"particle"							"particles/units/heroes/hero_wisp/wisp_relocate_channel.vpcf"
 		"particle"							"particles/units/heroes/hero_wisp/wisp_relocate_teleport.vpcf"
-	}
-
-	"OnAbilityPhaseStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/aether_abilities.lua"
-			"Function"		"teleport_start_range_check"
-		}
-	}
-	
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/aether_abilities.lua"
-			"Function"		"teleport_start"
-			"delay"			"%delay"
-		}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_teleport_start_up"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"0"
-
-			"EffectName"		"particles/units/heroes/hero_wisp/wisp_relocate_channel.vpcf"
-			"EffectAttachType"	"attach_overhead"
-
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/aether_abilities.lua"
-					"Function"		"teleport_end"
-				}
-			}
-		}
 	}
 }

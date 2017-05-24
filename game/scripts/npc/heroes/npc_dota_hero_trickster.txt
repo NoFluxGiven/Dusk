@@ -4,7 +4,7 @@
 	"override_hero"			"npc_dota_hero_meepo"
 	"Ability1"				"trickster_surprise" // fires a damaging bolt at the target that stuns and disarms them.  When the effect wears off, it passes to a new nearby enemy Hero.  Can pass an infinite amount of times.
 	"Ability2"				"trickster_disappearing_act" // causes the target ally or enemy to disappear in a puff of smoke.  Disabled and invulnerable for the duration.  Reappears at a random location 800 - 1000 units away when this effect wears off.  Trickster sees an effect where they are going to reappear.
-	"Ability3"				"trickster_jam_magic" // silences enemies that enter an area around the Trickster.  Enemies recently affected cannot be silenced again
+	"Ability3"				"trickster_jam_magic" // silences enemies that enter an area around the Trickster.  Enemies recently affected cannot be silenced again.
 	"Ability4"				"trickster_encore" // places a curse on the target that prevents them from casting any spells other than the last spell they cast for a large period of time
 	"Ability5"				""
 	"Ability6"				""

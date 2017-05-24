@@ -1,15 +1,23 @@
 function d_waves(keys)
 	local caster = keys.caster
-	local radius = 1250
-	if caster:GetHealthPercent() < 33 then
+	local radius = 2250
+	local trigger = 35
+
+	if caster:HasModifier("modifier_last_resort_invulnerability_building") then
+		trigger = 10
+	elseif caster:GetHealthPercent() < 10 then
+		trigger = 30
+	end
+
+	if caster:GetHealthPercent() < 10 then
 		if caster:HasModifier("modifier_defensive_wave_warning") ~= true then
 			keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_defensive_wave_warning", {}) --[[Returns:void
 			No Description Set
 			]]
 		end
 		local mod = caster:FindModifierByName("modifier_defensive_wave_warning")
-		caster:SetCustomHealthLabel("Giga Graviton in "..tostring(4-mod:GetStackCount()/10),128,0,0)
-		if mod:GetStackCount() >= 40 then
+		caster:SetCustomHealthLabel("Giga Graviton in "..tostring((trigger/10)-mod:GetStackCount()/10),128,0,0)
+		if mod:GetStackCount() >= trigger then
 			local enemy_found = FindUnitsInRadius( caster:GetTeamNumber(),
 	                              caster:GetCenter(),
 	                              nil,
@@ -19,20 +27,20 @@ function d_waves(keys)
 	                                DOTA_UNIT_TARGET_FLAG_NONE,
 	                                FIND_CLOSEST,
 	                                false)
-			local enemy_hero_found = FindUnitsInRadius( caster:GetTeamNumber(),
-	                              caster:GetCenter(),
-	                              nil,
-	                                radius,
-	                                DOTA_UNIT_TARGET_TEAM_ENEMY,
-	                                DOTA_UNIT_TARGET_HERO,
-	                                DOTA_UNIT_TARGET_FLAG_NONE,
-	                                FIND_CLOSEST,
-	                                false)
+			-- local enemy_hero_found = FindUnitsInRadius( caster:GetTeamNumber(),
+	  --                             caster:GetCenter(),
+	  --                             nil,
+	  --                               radius,
+	  --                               DOTA_UNIT_TARGET_TEAM_ENEMY,
+	  --                               DOTA_UNIT_TARGET_HERO,
+	  --                               DOTA_UNIT_TARGET_FLAG_NONE,
+	  --                               FIND_CLOSEST,
+	  --                               false)
 			for k,v in pairs(enemy_found) do
 				local hp = v:GetMaxHealth()
-				local dmg = hp*0.55
-				local time = k*0.25
-				local rand = RandomFloat(0, 0.25)
+				local dmg = hp*0.255
+				local time = k*0.15
+				local rand = RandomFloat(-0.02, 0.02)
 				Timers:CreateTimer(rand+time,function()
 					DealDamage(v,caster,dmg,DAMAGE_TYPE_PURE)
 					local p = ParticleManager:CreateParticle("particles/econ/items/luna/luna_lucent_ti5/luna_eclipse_impact_moonfall.vpcf", PATTACH_ABSORIGIN_FOLLOW, v) --[[Returns:int
@@ -59,6 +67,9 @@ function d_waves(keys)
 					]]
 
 					v:EmitSound("Hero_Luna.LucentBeam.Target")
+					v:AddNewModifier(caster, nil, "modifier_stunned", {Duration=0.75}) --[[Returns:void
+					No Description Set
+					]]
 				end)
 			end
 			-- local n = 7
@@ -67,42 +78,42 @@ function d_waves(keys)
 			-- 	caster:SetCustomHealthLabel(n,255,255,255)
 			-- 	return 1
 			-- end)
-			for k,v in pairs(enemy_hero_found) do
-				local hp = v:GetMaxHealth()
-				local dmg = hp*0.09
-				local time = (k-1)*0.25
-				local rand = RandomFloat(0, 0.25)
-				if dmg >= v:GetHealth() then
-					dmg = v:GetHealth() - 1
-				end
-				Timers:CreateTimer(rand+time,function()
-					DealDamage(v,caster,dmg,DAMAGE_TYPE_PURE)
-					local p = ParticleManager:CreateParticle("particles/econ/items/luna/luna_lucent_ti5/luna_eclipse_impact_moonfall.vpcf", PATTACH_ABSORIGIN_FOLLOW, v) --[[Returns:int
-					Creates a new particle effect
-					]]
+			-- for k,v in pairs(enemy_hero_found) do
+			-- 	local hp = v:GetMaxHealth()
+			-- 	local dmg = hp*0.09
+			-- 	local time = (k-1)*0.25
+			-- 	local rand = RandomFloat(0, 0.25)
+			-- 	if dmg >= v:GetHealth() then
+			-- 		dmg = v:GetHealth() - 1
+			-- 	end
+			-- 	Timers:CreateTimer(rand+time,function()
+			-- 		DealDamage(v,caster,dmg,DAMAGE_TYPE_PURE)
+			-- 		local p = ParticleManager:CreateParticle("particles/econ/items/luna/luna_lucent_ti5/luna_eclipse_impact_moonfall.vpcf", PATTACH_ABSORIGIN_FOLLOW, v) --[[Returns:int
+			-- 		Creates a new particle effect
+			-- 		]]
 
-					ParticleManager:SetParticleControlEnt(p, 0, caster, PATTACH_POINT_FOLLOW, "attach_origin", caster:GetAbsOrigin(), true) --[[Returns:void
-					No Description Set
-					]]
-					ParticleManager:SetParticleControlEnt(p, 1, v, PATTACH_POINT_FOLLOW, "attach_origin", v:GetAbsOrigin(), true) --[[Returns:void
-					No Description Set
-					]]
-					ParticleManager:SetParticleControlEnt(p, 2, v, PATTACH_POINT_FOLLOW, "attach_origin", v:GetAbsOrigin(), true) --[[Returns:void
-					No Description Set
-					]]
-					ParticleManager:SetParticleControlEnt(p, 3, v, PATTACH_POINT_FOLLOW, "attach_origin", v:GetAbsOrigin(), true) --[[Returns:void
-					No Description Set
-					]]
-					ParticleManager:SetParticleControlEnt(p, 4, v, PATTACH_POINT_FOLLOW, "attach_origin", v:GetAbsOrigin(), true) --[[Returns:void
-					No Description Set
-					]]
-					ParticleManager:SetParticleControlEnt(p, 5, v, PATTACH_POINT_FOLLOW, "attach_origin", v:GetAbsOrigin(), true) --[[Returns:void
-					No Description Set
-					]]
+			-- 		ParticleManager:SetParticleControlEnt(p, 0, caster, PATTACH_POINT_FOLLOW, "attach_origin", caster:GetAbsOrigin(), true) --[[Returns:void
+			-- 		No Description Set
+			-- 		]]
+			-- 		ParticleManager:SetParticleControlEnt(p, 1, v, PATTACH_POINT_FOLLOW, "attach_origin", v:GetAbsOrigin(), true) --[[Returns:void
+			-- 		No Description Set
+			-- 		]]
+			-- 		ParticleManager:SetParticleControlEnt(p, 2, v, PATTACH_POINT_FOLLOW, "attach_origin", v:GetAbsOrigin(), true) --[[Returns:void
+			-- 		No Description Set
+			-- 		]]
+			-- 		ParticleManager:SetParticleControlEnt(p, 3, v, PATTACH_POINT_FOLLOW, "attach_origin", v:GetAbsOrigin(), true) --[[Returns:void
+			-- 		No Description Set
+			-- 		]]
+			-- 		ParticleManager:SetParticleControlEnt(p, 4, v, PATTACH_POINT_FOLLOW, "attach_origin", v:GetAbsOrigin(), true) --[[Returns:void
+			-- 		No Description Set
+			-- 		]]
+			-- 		ParticleManager:SetParticleControlEnt(p, 5, v, PATTACH_POINT_FOLLOW, "attach_origin", v:GetAbsOrigin(), true) --[[Returns:void
+			-- 		No Description Set
+			-- 		]]
 
-					v:EmitSound("Hero_Luna.LucentBeam.Target")
-				end)
-			end
+			-- 		v:EmitSound("Hero_Luna.LucentBeam.Target")
+			-- 	end)
+			-- end
 			mod:SetStackCount(0)
 		end
 		mod:IncrementStackCount()
@@ -178,7 +189,8 @@ end
 
 function frenzy(keys)
 	local caster = keys.caster
-	if caster:GetHealthPercent() < 35 and caster:GetHealthPercent() > 26 then
+	local attacker = keys.attacker
+	if caster:GetHealthPercent() < 15 and caster:GetHealthPercent() > 5 then
 		if caster.show_warning == nil or caster.show_warning == false then
 			ParticleManager:CreateParticle("particles/units/building/msg_frenzy_warning.vpcf", PATTACH_OVERHEAD_FOLLOW, caster) --[[Returns:int
 			Creates a new particle effect
@@ -187,16 +199,42 @@ function frenzy(keys)
 		end
 	end
 
-	if caster:GetHealthPercent() < 25 then
+	if caster:GetHealthPercent() < 1 then
 		if keys.ability:IsCooldownReady() then
 			keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_frenzy_bonus_effects", {}) --[[Returns:void
 			No Description Set
 			]]
 			keys.ability:StartCooldown(keys.ability:GetCooldown(keys.ability:GetLevel()))
+			caster.frenzy_starter = attacker
 		end
 	end
 
-	if caster:GetHealthPercent() < 26 then caster:SetCustomHealthLabel("",0,0,0) end
+	if caster:GetHealthPercent() > 1 then caster:SetCustomHealthLabel("",0,0,0) end
+	if caster:GetHealthPercent() < 10 and caster:GetHealthPercent() > 1 then caster:SetCustomHealthLabel("Warning!",128,128,0) end
 	if caster:HasModifier("modifier_frenzy_bonus_effects") then caster:SetCustomHealthLabel("FRENZIED!",255,0,0) end
-	if caster:GetHealthPercent() < 40 and caster:GetHealthPercent() > 26 then caster:SetCustomHealthLabel("Warning!",128,128,0) end
+end
+
+function frenzyEnd(keys)
+	local caster = keys.caster
+	caster:RemoveModifierByName("modifier_frenzy") --[[Returns:void
+	Removes a modifier
+	]]
+	caster:RemoveAbility("tower_frenzy")
+	if caster.frenzy_starter then
+		caster:Kill(nil, caster.frenzy_starter) --[[Returns:void
+		Kills this NPC, with the params Ability and Attacker
+		]]
+	end
+	-- local damage_min = caster:GetBaseDamageMin()*0.75
+ --    local damage_max = caster:GetBaseDamageMax()*0.75
+ --    caster:SetBaseDamageMin(damage_min) --[[Returns:void
+ --    Sets the minimum base damage.
+ --    ]]
+ --    caster:SetBaseDamageMax(damage_max) --[[Returns:void
+ --    Sets the minimum base damage.
+ --    ]]
+ --    local armor = caster:GetPhysicalArmorBaseValue()*0.50
+ --    caster:SetPhysicalArmorBaseValue(armor) --[[Returns:void
+ --    Sets base physical armor value.
+ --    ]]
 end

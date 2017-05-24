@@ -16,7 +16,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"250"
+	"AbilityCastRange"				"350"
 	"AbilityCastPoint"				"0.0"
 	
 	// Time
@@ -34,12 +34,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"magic_res"				"7 14 21 28"
+			"magic_res"				"5 10 15 20"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"10 20 30 40"
+			"damage"				"8 16 24 32"
 		}
 		"03"
 		{
@@ -53,13 +53,13 @@
 		}
 		"05"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"magic_res_reduction"	"-7 -14 -21 -28"
+			"var_type"				"FIELD_FLOAT"
+			"magic_res_reduction"	"-2.5 -5 -7.5 -10"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"damage_per_tick"		"3 5 8 10"
+			"damage_per_tick"		"2 4 6 8"
 		}
 	}
 

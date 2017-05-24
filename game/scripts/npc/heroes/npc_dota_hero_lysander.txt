@@ -43,8 +43,8 @@
 	//"RingRadius"				"70"
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"315"									// Speed.
-	"MovementTurnRate"			"1.0"									// Turning rate.
+	"MovementSpeed"				"310"									// Speed.
+	"MovementTurnRate"			"0.7"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
 	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
@@ -52,4 +52,56 @@
 	"StatusManaRegen"			"0"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+	"Talents"
+	{
+	    "1" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lysander_armor"
+		            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "4"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_lysander_mana"
+		            "MODIFIER_PROPERTY_MANA_BONUS" "175"
+		        }
+	   		}
+	    "2" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lysander_adventurous_gale"
+		            "v" "100"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_lysander_damage"
+		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "50"
+		        }
+	    	}
+	    "3" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lysander_movespeed"
+		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "45"
+		        }
+		        "right"
+		        {
+		            "name" "special_bonus_lysander_cooldown"
+		            "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING" "15"
+		        }
+	    	}	
+	    "4" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lysander_health"
+		            "MODIFIER_PROPERTY_HEALTH_BONUS" "575"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_lysander_grapeshot"
+		            "v" "0.75"
+		        }
+	    	}	
+	}
 }

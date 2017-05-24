@@ -173,8 +173,6 @@ function captains_compass_check_distance(keys)
 		caster:RemoveModifierByName("modifier_bloodseeker_thirst")
 	end
 
-
-
 	caster.lastcheck = caster:GetRangeToUnit(target)
 end
 

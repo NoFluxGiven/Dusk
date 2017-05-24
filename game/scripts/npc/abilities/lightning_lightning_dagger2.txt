@@ -7,24 +7,23 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AnimationPlaybackRate"			"2.5"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"lightning_lightning_dagger"
 	
 		// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
-	"AbilityCastRange"				"675"
-	"AbilityCooldown"				"2.5"
+	"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+	"AbilityCastRange"				"875"
+	"AbilityCooldown"				"1"
 	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"35 40 45 50"	
+	"AbilityManaCost"				"40 45 50 55"
 	
 	// Damage.
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"40 70 100 130"
+	"AbilityDamage"					"25"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -33,7 +32,27 @@
 		"01"
 		{
 			"var_type"								"FIELD_FLOAT"
-			"duration"								"0.5"
+			"duration"								"0.15 0.30 0.45 0.60"
+		}
+		"02"
+		{
+			"var_type"								"FIELD_FLOAT"
+			"mark_damage"							"20 40 60 80"
+		}
+		"03"
+		{
+			"var_type"								"FIELD_INTEGER"
+			"mark_slow"								"-100"
+		}
+		"04"
+		{
+			"var_type"								"FIELD_FLOAT"
+			"mark_slow_duration"					"0.75"
+		}
+		"05"
+		{
+			"var_type"								"FIELD_INTEGER"
+			"mark_aoe"								"250"
 		}
 	}
 	
@@ -43,10 +62,9 @@
 	{
 		"soundfile"							"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
 		"soundfile"							"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
-		"particle"							"particles/units/heroes/hero_lightning/lightning_dagger_arcana.vpcf"
+		"particle"							"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/phantom_assassin_stifling_dagger_arcana.vpcf"
 		"particle"							"particles/units/heroes/hero_lightning/lightning_dagger_mark_main.vpcf"
 		"particle" 							"particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf"
-		"particle"							"particles/units/heroes/hero_zuus/zuus_arc_lightning_impact.vpcf"
 	}
 	
 	"OnSpellStart"
@@ -54,11 +72,11 @@
 		"TrackingProjectile"
 		{
 			"Target"           "TARGET"
-		    "EffectName"       "particles/units/heroes/hero_lightning/lightning_dagger_arcana.vpcf"
+		    "EffectName"       "particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/phantom_assassin_stifling_dagger_arcana.vpcf"
 		    "Dodgeable"        "1"
 		    "ProvidesVision"   "1"
 		    "VisionRadius"     "300"
-		    "MoveSpeed"        "2000"
+		    "MoveSpeed"        "1500"
 		    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
 		}
 
@@ -71,13 +89,7 @@
 		"RunScript"
 		{
 			"ScriptFile"	"heroes/lightning_abilities.lua"
-			"Function"		"Spark"
-		}
-		
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/lightning_abilities.lua"
-			"Function"		"LightningDagger"
+			"Function"		"blinding_speed_increase_stack"
 		}
 
 	}
@@ -94,7 +106,7 @@
 				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 			}
-			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Type"			"DAMAGE_TYPE_PURE"
 			"Damage"		"%AbilityDamage"
 		}
 
@@ -115,6 +127,12 @@
 			"Target"			"TARGET"
 		}
 
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/lightning_abilities.lua"
+			"Function"		"LightningDagger"
+		}
+
 	}
 	
 	"Modifiers"
@@ -124,38 +142,63 @@
 			"IsDebuff"	"1"
 			"Duration"	"%duration"
 
-			"OnCreated"
-			{
-				"AttachEffect"
-				{
-					"EffectName"        "particles/units/heroes/hero_zuus/zuus_arc_lightning_impact.vpcf"
-					"EffectAttachType"  "follow_origin"
-					"Target"
-					{
-						"Center"  	"TARGET"
-						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-						"Flags"     "DOTA_UNIT_TARGET_FLAG_DEAD"
-					}
-				}
-				"FireSound"
-				{
-					"EffectName"		"Hero_Zuus.StaticField"
-					"Target"
-					{
-						"Center"  	"TARGET"
-						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-						"Flags"     "DOTA_UNIT_TARGET_FLAG_DEAD"
-					}
-				}
-			}
-
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"-100"
 			}
 		}
 
+		"modifier_lightning_dagger_mark_slow"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%mark_slow_duration"
+
+			"OnCreated"
+			{
+			"FireEffect"
+			{
+				"Target"				"TARGET"
+				"EffectName"			"particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf"
+				"EffectAttachType"		"start_at_origin"
+			}
+			"FireSound"
+			{
+				"Target"				"TARGET"
+				"EffectName"			"Hero_StormSpirit.Overload"
+			}
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Type"			"DAMAGE_TYPE_MAGICAL"
+				"Damage"		"%mark_damage"
+			}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%mark_slow"
+			}
+		}
+
+		"modifier_lightning_dagger_mark"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"Duration"			"5"
+		
+			"EffectName"		"particles/units/heroes/hero_lightning/lightning_dagger_mark_main.vpcf"
+			"EffectAttachType"	"follow_overhead"
+
+			"OnAttacked"
+			// "%attack_damage" is set to the damage value after mitigation
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/lightning_abilities.lua"
+					"Function"		"lightningDaggerMarkOnAttack"
+				}
+			}
+		}
 	}
 }

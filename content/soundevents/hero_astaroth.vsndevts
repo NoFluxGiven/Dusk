@@ -208,6 +208,36 @@
 
 }
 
+"Astaroth.BuffHit"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/black_insignia_buff_hit.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "2.25"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 "Astaroth.Overwhelm.Start"
 {
     "operator_stacks"
@@ -229,7 +259,7 @@
                     }
                     "volume"
                     {
-                        "value" "1.25"
+                        "value" "2.75"
                     }
                 }
             }
@@ -260,7 +290,7 @@
                     }
                     "volume"
                     {
-                        "value" "1.25"
+                        "value" "2.25"
                     }
                 }
             }

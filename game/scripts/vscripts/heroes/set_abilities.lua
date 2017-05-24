@@ -465,6 +465,10 @@ end
 function ReduceCooldowns(keys)
 	local caster = keys.caster
 
+	-- deprecated
+
+	if 0 = 0 then return end
+
 	print("REDUCING COOLDOWNS")
 
 	if not caster:HasModifier("modifier_harsh_sun_aura") then return end

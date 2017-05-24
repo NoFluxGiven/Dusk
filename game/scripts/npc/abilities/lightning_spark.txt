@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/lightning_spark"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -48,6 +49,11 @@
 			"var_type"					"FIELD_INTEGER"
 			"slow"						"-5 -10 -15"
 		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"slow_duration"				"0.8 1.2 1.6"
+		}
 	}
 	
 	"precache"
@@ -59,17 +65,5 @@
 	
 	"Modifiers"
 		{
-			"modifier_spark_slow"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-				"Duration"			"1"
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				}
-			}
 		}
 }

@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/artificer_replica"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -62,30 +63,32 @@
 			"var_type"						"FIELD_INTEGER"
 			"illusion_incoming_tooltip"		"100" // percentage total
 		}
+	"06"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"scepter_illusion_duration"		"10 15 20" // percentage total
+		}
+	"07"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"scepter_illusion_damage"		"-50" // percentage total
+		}
+	"08"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"scepter_illusion_incoming"		"200" // percentage total
+		}
+	"09"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"scepter_radius"				"1000" // percentage total
+		}
 	}
 	
 	"precache"
 		{
 		"particle" "particles/units/heroes/hero_artificer/replica.vpcf"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
-		}
-
-	"OnUpgrade"
-	{
-		"LevelUpAbility"
-		{
-			"Target" 		"CASTER"
-			"AbilityName"	"artificer_replica_aghanims"
-		}
-	}
-		
-	"OnSpellStart"
-		{
-			"RunScript"
-				{
-					"ScriptFile"	"heroes/artificer_abilities.lua"
-					"Function"		"replica"
-				}	
 		}
 	
 	"Modifiers"

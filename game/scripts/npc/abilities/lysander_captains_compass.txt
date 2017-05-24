@@ -5,10 +5,11 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/lysander_captains_compass"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 	"FightRecapLevel"				"1"
 	"AnimationPlaybackRate"			"0.5"
@@ -16,7 +17,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"3000"
+	"AbilityCastRange"				"1700"
 	"AbilityCastPoint"				"0.5"
 	
 	// Time		
@@ -34,7 +35,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"15"
+			"duration"				"8 10 12 14"
 		}
 		"02"
 		{
@@ -44,12 +45,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"20"
+			"damage"				"10"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"movespeed_caster"		"25 30 35 40"
+			"movespeed"				"20 25 30 35"
 		}
 		
 	}
@@ -59,90 +60,9 @@
 		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
 		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
 		"particle"					"particles/units/heroes/hero_lysander/captains_compass.vpcf"
-
-
-	}
-
-	"OnSpellStart"
-	{
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_lysander_captains_compass"
-			"Target" 		"TARGET"
-		}
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_lysander_captains_compass_user"
-			"Target" 		"CASTER"
-		}
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/lysander_abilities.lua"
-			"Function"		"captains_compass"
-		}
 	}
 
 	"Modifiers"
 	{
-		"modifier_lysander_captains_compass"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-			"Duration"			"%duration"
-	
-			"EffectName"		"particles/units/heroes/hero_lysander/captains_compass.vpcf"
-			"EffectAttachType"	"follow_origin"
-
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/lysander_abilities.lua"
-					"Function"		"captains_compasscleanup"
-				}
-			}
-
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%damage"
-			}
-	
-			"States"
-			{
-				"MODIFIER_STATE_PROVIDES_VISION"		"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_INVISIBLE"				"MODIFIER_STATE_VALUE_DISABLED"
-			}
-		}
-
-		"modifier_lysander_captains_compass_user"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsBuff"			"1"
-			"IsDebuff"			"0"
-		
-			"ThinkInterval"  "0.1"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/lysander_abilities.lua"
-					"Function"		"captains_compass_check_distance"
-				}
-			}
-		}
-
-		"modifier_lysander_captains_compass_speed"
-		{
-			"Passive"			"0"
-			"IsHidden"			"1"
-			"IsDebuff"			"0"
-		
-			"Properties"
-			{
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movespeed_caster"
-			}
-		}
 	}
 }

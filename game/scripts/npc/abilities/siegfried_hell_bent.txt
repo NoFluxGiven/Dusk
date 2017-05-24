@@ -1,0 +1,56 @@
+"siegfried_hell_bent"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_lua"
+    "ScriptFile"            "lua/abilities/siegfried_hell_bent"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HEROES"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityTextureName"            "astaroth_deathmark"
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "0"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "0"
+    
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "duration"              "15 30 60 120"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "armor_reduction"       "0.5"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bonus_damage"          "5"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+        "particle"  "particles/units/heroes/hero_astaroth/astaroth_black_insignia.vpcf"
+        "particle"  "particles/units/heroes/hero_astaroth/astaroth_black_insignia_strike.vpcf"
+        "soundfile" "soundevents\hero_astaroth.vsndevts"
+    }
+
+    "Modifiers"
+    {
+    }
+
+
+}
+

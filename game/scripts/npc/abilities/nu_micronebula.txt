@@ -23,7 +23,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"40 35 30 25"
+	"AbilityCooldown"				"20"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,12 +40,17 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"duration"						"12"
+			"duration"						"4"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"dmg"							"20 30 40 50" // percent of damage taken over the effect's duration
+			"dmg"							"10 20 30 40" // percent of damage taken over the effect's duration
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"aoe"							"240"
 		}
 	}
 	
@@ -146,6 +151,7 @@
 					{
 						"ScriptFile"	"heroes/nu_abilities.lua"
 						"Function"		"micronebulaDamage"
+						"radius"		"%aoe"
 					}
 				}
 

@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/baal_spatial_rift"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -54,7 +55,7 @@
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"slow"							"-30 -40 -50 -60"
+			"slow"							"-40 -60 -80 -100"
 		}
 	"05"
 		{
@@ -71,80 +72,8 @@
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
 
 		}
-
-	"OnUpgrade"
-	{
-		"LevelUpAbility"
-		{
-			"Target" 		"CASTER"
-			"AbilityName"	"baal_port_out"
-		}
-	}
-
-	"OnSpellStart"
-	{
-		"RunScript"
-			{
-				"ScriptFile"	"heroes/baal_abilities.lua"
-				"Function"		"spatial_rift_start"
-				"duration"		"%duration"
-				"radius"		"%radius"
-			}
-	}
-		
-	"OnChannelSucceeded"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/baal_abilities.lua"
-			"Function"		"spatial_rift"
-			"duration"		"%duration"
-			"radius"		"%radius"
-		}
-	}
-
-	"OnChannelInterrupted"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/baal_abilities.lua"
-			"Function"		"spatial_riftend"
-		}
-	}
 	
 	"Modifiers"
 		{
-
-			"modifier_spatial_rift_slow"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-				"Duration"			"%slow_duration"
-
-				"OnCreated"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%damage"
-					}
-				}
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				}
-			}
-
-			"modifier_spatial_rift_show"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-			
-				"Duration"			"%duration"
-			}
 		}
 }

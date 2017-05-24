@@ -31,10 +31,11 @@ function Talents.ApplyTalent(unit, talentName, talentTable)
     CustomNetTables:SetTableValue("talent_manager", "server_to_lua_talent_properties_" ..  desiredModifierName, modifierTable)
     LinkLuaModifier(desiredModifierName, "talents/modifier_queue/modifier_talents_" .. Talents.currTalentFile .. ".lua", LUA_MODIFIER_MOTION_NONE)
 
-    unit:AddNewModifier(unit, Talents.application_item, desiredModifierName, {})
+    local mod = unit:AddNewModifier(unit, Talents.application_item, desiredModifierName, {})
+
+    print(mod:GetStackCount().." STACKS!")
     Talents.unitData[unit].learnedTalents[talentName] = true
     if talentTable.Ability then
-        print("Add Ability : " .. talentTable.Ability)
         if unit:HasAbility(talentTable.Ability) then
             unit:FindAbilityByName(talentTable.Ability):UpgradeAbility(true)
         else
@@ -46,7 +47,7 @@ function Talents.ApplyTalent(unit, talentName, talentTable)
             for i=0,17 do
                 local abil = unit:GetAbilityByIndex(i)
                 if abil then
-                    print(abil:GetAbilityName())
+                    print("TALENTS1199 "..abil:GetAbilityName())
                 end
             end
         end)
@@ -88,7 +89,8 @@ function Talents.OnLearnTalent(playerId, keys)
     local y = x[""..talentRow]
     y.selected = talentName
 
-
+    print("TALENT LEARNED: "..talentName.." | "..talentData.name)
+    
     CustomNetTables:SetTableValue("talent_manager", "unit_talent_data_" .. unit:GetEntityIndex(), {levels = Talents.unitData[unit].kv["TalentLevels"] or Talents.talentsKV.DefaultTalentLevels or "10 15 20 25", data = Talents.unitData[unit].kv["Talents"]})
     Talents.ApplyTalent(unit, talentData.name, talentData)
 

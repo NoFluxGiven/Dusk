@@ -8,7 +8,7 @@
 		"Ability2"				"aether_disrupt" 
 		"Ability3"				"aether_monolith"
 		"Ability4"				"aether_reality_shift"
-		"Ability5"				"talent_attributes"
+		"Ability5"				""
 		"Ability6"				"talent_attributes"
 		"Ability7"				"talent_attributes"
 		"Ability8"				"talent_attributes"
@@ -20,7 +20,8 @@
 		"Ability14"				"talent_attributes"
 		"Ability15"				"talent_attributes"
 		"Ability16"				"talent_attributes"
-		"Ability16"				"talent_attributes"
+		"Ability17"				"talent_attributes"
+		"Ability18"				"talent_attributes"
 	
 		"ArmorPhysical"				"0"									// Physical protection.
 		"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -55,6 +56,58 @@
 		"StatusManaRegen"			"0"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"1000"									// Range of vision at night time.
+	
+		"Talents"
+		{
+		    "1" {
+			        "left"
+			        {      
+			            "name" "special_bonus_aether_ms"
+			            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "10"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_aether_dmg"
+			            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "35"
+			        }
+		   		}
+		    "2" {
+			        "left"
+			        {      
+			            "name" "special_bonus_aether_str"
+			            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "6"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_aether_mreg"
+			            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "4"
+			        }
+		    	}
+		    "3" {
+			        "left"
+			        {      
+			            "name" "special_bonus_aether_disrupt"
+			            "v" "+80"
+			        }
+			        "right"
+			        {
+			            "name" "special_bonus_aether_teleport"
+			            "v" "875"
+			        }
+		    	}
+		    "4" {
+			        "left"
+			        {      
+			            "name" "special_bonus_aether_monolith"
+			            "v" "30"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_aether_reality_shift"
+			            "v" "-60"
+			        }
+		    	}
+		}
 	}
 	"npc_dota_hero_alexander"
 	{
@@ -112,6 +165,59 @@
 		"StatusManaRegen"			"0"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	
+		"Talents"
+		{
+		    "1" {
+			        "left"
+			        {      
+			            "name" "special_bonus_alexander_mana_regen"
+			            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "2"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_alexander_atk_dmg"
+			            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "20"
+			        }
+		   		}
+		    "2" {
+			        "left"
+			        {      
+			            "name" "special_bonus_alexander_str"
+			            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "10"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_alexander_elandras_blessing" // +30 bonus damage on Elandra's Blessing
+			            "v" "+30"
+			        }
+		    	}
+		    "3" {
+			        "left"
+			        {      
+			        	"name" "special_bonus_alexander_soulseal" // +15% Slow
+			            "v" "+15"
+			        }
+			        "right"
+			        {
+			            "name" "special_bonus_alexander_atk_spd"
+			            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "40"
+			        }
+		    	}
+		    "4" {
+			        "left"
+			        {      
+			            "name" "special_bonus_alexander_radiant" // x2 Regen
+			            "v" "1"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_alexander_godfall" // Makes Soulseal affect enemies in an AoE.
+			            //"350 AoE Soulseal"
+			            "v" "350"
+			        }
+		    	}
+		}
 	}
 	"npc_dota_hero_alroth"
 	{
@@ -136,7 +242,7 @@
 		"Ability15"				""
 		"Ability16"				"attribute_bonus"
 	
-		"ArmorPhysical"				"2"									// Physical protection.
+		"ArmorPhysical"				"0"									// Physical protection.
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -148,10 +254,10 @@
 		"AttackDamageMax"			"36"										// Damage range max.
 	
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"25"										// Base strength
-		"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
+		"AttributeBaseStrength"		"23"										// Base strength
+		"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
 		"AttributeBaseIntelligence"	"25"										// Base Intelligence
-		"AttributeIntelligenceGain"	"3.1"										// Intelligence bonus per level.
+		"AttributeIntelligenceGain"	"2.7"										// Intelligence bonus per level.
 		"AttributeBaseAgility"		"12"										// Base agility
 		"AttributeAgilityGain"		"1.4"										// Agility bonus per level.
 	
@@ -172,6 +278,11 @@
 		"StatusManaRegen"			"0"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	
+		"Talents"
+		{
+		   
+		}
 	}
 	"npc_dota_hero_ancient_apparition_barebones"
 	{
@@ -318,7 +429,7 @@
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackRate"				"1.65"
+		"AttackRate"				"1.75"
 		"AttackRange"				"425"
 		"AttackDamageMin"			"22"										// Damage range min.
 		"AttackDamageMax"			"29"										// Damage range max.
@@ -326,10 +437,10 @@
 		"ProjectileSpeed"            "1200"
 	
 		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"16"										// Base strength
+		"AttributeBaseStrength"		"15"										// Base strength
 		"AttributeStrengthGain"		"1.5"										// Strength bonus per level.
-		"AttributeBaseIntelligence"	"30"										// Base intelligence
-		"AttributeIntelligenceGain"	"2.75"										// Intelligence bonus per level.
+		"AttributeBaseIntelligence"	"24"										// Base intelligence
+		"AttributeIntelligenceGain"	"2.40"										// Intelligence bonus per level.
 		"AttributeBaseAgility"		"19"										// Base agility
 		"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
 	
@@ -350,6 +461,58 @@
 		"StatusManaRegen"			"0"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"1000"									// Range of vision at night time.
+	
+		"Talents"
+		{
+		    "1" {
+			        "left"
+			        {      
+			            "name" "special_bonus_artificer_attack_range"
+			            "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "110"		
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_artificer_damage"
+			            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "35"
+			        }
+		   		}
+		    "2" {
+			        "left"
+			        {      
+			            "name" "special_bonus_artificer_mregen"
+			            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "6"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_artificer_unmaking" // +30 Unmaking Damage
+			            "v" "30"
+			        }
+		    	}
+		    "3" {
+			        "left"
+			        {      
+			            "name" "special_bonus_artificer_reshape"
+			            "v" "1"
+			        }
+			        "right"
+			        {
+			            "name" "special_bonus_artificer_movespeed"
+			            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "40"
+			        }
+		    	}
+		    "4" {
+			        "left"
+			        {      
+			            "name" "special_bonus_artificer_attack_speed"
+			            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "75"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_artificer_unmaking2" // +6% Unmaking HP damage
+			            "v" "6"
+			        }
+		    	}
+		}
 	}
 	"npc_dota_hero_astaroth"
 	{
@@ -407,6 +570,58 @@
 		"StatusManaRegen"			"0"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	
+		"Talents"
+		{
+		    "1" {
+			        "left"
+			        {      
+			            "name" "special_bonus_astaroth_attack_speed"
+			            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "20"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_astaroth_armor"
+			            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "4"
+			        }
+		   		}
+		    "2" {
+			        "left"
+			        {      
+			            "name" "special_bonus_astaroth_damage"
+			            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "35"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_astaroth_overwhelm"
+			            "v" "80"
+			        }
+		    	}
+		    "3" {
+			        "left"
+			        {      
+			            "name" "special_bonus_astaroth_movespeed"
+			            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "50"
+			        }
+			        "right"
+			        {
+			            "name" "special_bonus_astaroth_pain_curse"
+			            "v" "0.4"
+			        }
+		    	}
+		    "4" {
+			        "left"
+			        {      
+			            "name" "special_bonus_astaroth_black_insignia"
+			            "v" "400"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_astaroth_erase"
+			            "v" "15"
+			        }
+		    	}
+		}
 	}
 	"npc_dota_hero_baal"
 	{
@@ -414,10 +629,10 @@
 		"override_hero"			"npc_dota_hero_arc_warden"
 		"Ability1"				"baal_st_anchor" // Anchors the target enemy to a location.  When they move too far away from their location, they are stunned, take damage, and teleported to it.
 		"Ability2"				"baal_spatial_rift" // After a 1 second channel time, creates a rift at the target location that deals damage and slows drastically.  The rift lasts for 6s.
-		"Ability3"				"baal_compress" // Compresses the target unit, turning them into a carriable orb.  The orb can be thrown by casting the ability again, and deals damage in an AoE
+		"Ability3"				"baal_port_out" // Instantly teleports Baal and any Axial Seals to the active Rift, consuming it.
+		"Ability4"				"baal_compress" // Compresses the target unit, turning them into a carriable orb.  The orb can be thrown by casting the ability again, and deals damage in an AoE
 		// upon landing.  If Baal does not throw the orb before the timer reaches zero, it explodes, damaging him and stunning him.  Enemy Heroes grabbed can be thrown only half the distance.
 		// lasts 3.5s max.
-		"Ability4"				"baal_port_out" // Instantly teleports Baal and any Axial Seals to the active Rift, consuming it.
 		"Ability5"				"baal_fire" // Fires the compressed target at a point.
 		"Ability6"				"baal_superposition2" // Baal enters a state of instability for a short time, becoming untargetable and immune to Physical damage.  Enemies can still see
 		// his location.  Disjoints projectiles on use.  Gives phased movement to Baal.	
@@ -437,17 +652,17 @@
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackRange"				"450"
-		"AttackRate"				"1.5"
-		"AttackDamageMin"			"20"										// Damage range min.
-		"AttackDamageMax"			"26"										// Damage range max.
+		"AttackRate"				"1.55"
+		"AttackDamageMin"			"23"										// Damage range min.
+		"AttackDamageMax"			"35"										// Damage range max.
 	
 		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"22"										// Base strength
-		"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
+		"AttributeBaseStrength"		"23"										// Base strength
+		"AttributeStrengthGain"		"1.9"										// Strength bonus per level.
 		"AttributeBaseIntelligence"	"24"										// Base intelligence
 		"AttributeIntelligenceGain"	"2.5"										// Intelligence bonus per level.
-		"AttributeBaseAgility"		"11"										// Base agility
-		"AttributeAgilityGain"		"1.4"										// Agility bonus per level.
+		"AttributeBaseAgility"		"16"										// Base agility
+		"AttributeAgilityGain"		"2.4"										// Agility bonus per level.
 	
 		//"BountyXP"					"0"									// Experience earn.
 		//"BountyGoldMin"				"0"										// Gold earned min.
@@ -458,7 +673,7 @@
 	
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"300"									// Speed.
-		"MovementTurnRate"			"1.0"									// Turning rate.
+		"MovementTurnRate"			"0.7"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
 		"StatusHealthRegen"			"0"									// Health regeneration rate.
@@ -466,6 +681,58 @@
 		"StatusManaRegen"			"0"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	
+		"Talents"
+		{
+		    "1" {
+			        "left"
+			        {      
+			            "name" "special_bonus_baal_magic_res"
+			            "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "15"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_baal_mana_regen"
+			            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "2"
+			        }
+		   		}
+		    "2" {
+			        "left"
+			        {      
+			            "name" "special_bonus_baal_movespeed"
+			            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "30"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_baal_attack_speed"
+			            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "35"
+			        }
+		    	}
+		    "3" {
+			        "left"
+			        {      
+			            "name" "special_bonus_baal_spatial_rift"
+			            "v" "100"
+			        }
+			        "right"
+			        {
+			            "name" "special_bonus_baal_damage"
+			            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "60"
+			        }
+		    	}
+		    "4" {
+			        "left"
+			        {      
+			            "name" "special_bonus_baal_superposition"
+			            "v" "4"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_baal_st_anchor"
+			            "v" "8"
+			        }
+		    	}
+		}
 	}
 	"npc_dota_hero_bahamut"
 	{
@@ -522,6 +789,58 @@
 		"StatusManaRegen"			"0"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	
+		"Talents"
+		{
+		    "1" {
+			        "left"
+			        {      
+			            "name" "special_bonus_bahamut_attack_range"
+			            "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "75"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_bahamut_damage"
+			            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "25"
+			        }
+		   		}
+		    "2" {
+			        "left"
+			        {      
+			            "name" "special_bonus_bahamut_agility"
+			            "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "20"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_bahamut_health" // 
+			            "MODIFIER_PROPERTY_HEALTH_BONUS" "250"
+			        }
+		    	}
+		    "3" {
+			        "left"
+			        {      
+			        	"name" "special_bonus_bahamut_mega_flare" // +40% Mega Flare Damage
+			            "v" "40"
+			        }
+			        "right"
+			        {
+			            "name" "special_bonus_bahamut_attack_speed"
+			            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "65"
+			        }
+		    	}
+		    "4" {
+			        "left"
+			        {      
+			            "name" "special_bonus_bahamut_desolation" // +7s Desolation Duration
+			            "v" "7"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_bahamut_fulmination" // x2 Fulmination Max Stacks
+			            "v" "2"
+			        }
+		    	}
+		}
 	}
 	"npc_dota_hero_bloodwarrior"
 	{
@@ -1459,8 +1778,8 @@
 	{
 		"AbilityLayout" 		"4"
 		"override_hero"			"npc_dota_hero_phantom_assassin"
-		"Ability1"				"lightning_lightning_dagger2"
-		"Ability2"				"lightning_thunder_wave"
+		"Ability1"				"lightning_lightning_dagger"
+		"Ability2"				"lightning_boltblast"
 		"Ability3"				"lightning_overload"
 		"Ability4"				"lightning_spark"
 		"Ability5"				""
@@ -1511,6 +1830,136 @@
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 		"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
+	
+		"Talents"
+		{
+		    "1" {
+			        "left"
+			        {      
+			            "name" "special_bonus_lightning_health"
+			            "MODIFIER_PROPERTY_HEALTH_BONUS" "200"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_lightning_spell_amp"
+			            "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE" "4"
+			        }
+		   		}
+		    "2" {
+			        "left"
+			        {      
+			            "name" "special_bonus_lightning_damage"
+			            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "35"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_lightning_spark"
+			            "v" "8"
+			        }
+		    	}
+		    "3" {
+			        "left"
+			        {      
+			            "name" "special_bonus_lightning_boltblast"
+			            "v" "75"
+			        }
+			        "right"
+			        {
+			            "name" "special_bonus_lightning_movespeed"
+			            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "50"
+			        }
+		    	}
+		    "4" {
+			        "left"
+			        {      
+			            "name" "special_bonus_lightning_lightning_dagger"
+			            "v" "6"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_lightning_overload"
+			            "v" "115"
+			        }
+		    	}
+		}
+	}
+	"npc_dota_hero_lupin"
+	{
+		"AbilityLayout" 		"4"
+		"override_hero"			"npc_dota_hero_riki"
+		"Ability1"				"lupin_darting_shadow" // Lupin dashes towards the target enemy, dealing some Magical damage to enemies on the way. When he arrives
+		// he deals critical damage to the enemy.
+		// Dashes with a range of 700.
+		// Deals 65/95/125/155 damage to units passed through.
+		// Each unit passed through grants 20/25/30/35 damage to Lupin for 6s.
+		// Creeps always grant 15.
+		// The main target is struck by an attack immediately upon arrival. The attack is a 175% critical strike, preserving all procs and UAMs.
+		// Darting Shadow's damage refreshes the Daze duration on Dazed units.
+		"Ability2"				"lupin_flashbang" // Lupin throws down a flash grenade that severely limits enemies' abilities to fight. Within a 350 radius, all enemies are
+		// dazed for 0.80/1.60/2.40/3.20s. Dazed enemies are stunned until they take damage.
+		"Ability3"				"lupin_quickdraw" // Lupin quickly draws and fires his gun at a target. This ability has 3 charges. Each shot on the same target has compounding effects. The charges come back at a rate of
+		// 1 every 12s.
+	
+		// The first shot deals damage and slows by 8/12/16/20% for 2s.
+		// The second shot deals damage, extends the slow duration by 2s, and slows attack speed by 20/40/60/80.
+		// The third shot deals damage, 30/40/50/60 bonus damage, and stuns the target for 0.75/1.00/1.25/1.50s.
+	
+		// All shots have a base damage of 40/50/60/70. This means the total base damage of all three shots is 120/150/180/210. Including bonus damage, the total damage is 150/200/240/280.
+		// All shots simulate an attack that deals 0 damage, in that they apply attack effects.
+		// Shots deal Physical damage.
+	
+		// Lupin's level 25 doubles the damage of all shots. This means the total damage of all three shots, including bonus damage, would be: 300/380/460/540 damage.
+	
+		"Ability4"				"lupin_ephemera" // Instantly places a buff on all allied Heroes and their controlled units. After a 0.4s delay, they become invisible for 8s, moving 10/20/30% faster
+		// and dealing 50/75/100 bonus damage on their next attack out of invisibility. If all affected Heroes attack the same enemy out of invisibility, it stuns them for 1.5s.
+		"Ability5"				""
+		"Ability6"				"talent_attributes"
+		"Ability7"				"talent_attributes"
+		"Ability8"				"talent_attributes"
+		"Ability9"				"talent_attributes"
+		"Ability10"				"talent_attributes"
+		"Ability11"				"talent_attributes"
+		"Ability12"				"talent_attributes"
+		"Ability13"				"talent_attributes"
+		"Ability14"				"talent_attributes"
+		"Ability15"				"talent_attributes"
+		"Ability16"				"talent_attributes"
+		"Ability17"				"talent_attributes"
+		"Ability18"				"talent_attributes"
+	
+		"ArmorPhysical"				"0"									// Physical protection.
+		"MagicalResistance"				"25"									// Magical protection (percentage).
+	
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackRate"				"1.6"
+		"AttackDamageMin"			"28"										// Damage range min.
+		"AttackDamageMax"			"29"										// Damage range max.
+	
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"14"										// Base strength
+		"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
+		"AttributeBaseIntelligence"	"20"										// Base intelligence
+		"AttributeIntelligenceGain"	"2.3"										// Intelligence bonus per level.
+		"AttributeBaseAgility"		"16"										// Base agility
+		"AttributeAgilityGain"		"1.5"										// Agility bonus per level.
+	
+		//"BountyXP"					"0"									// Experience earn.
+		//"BountyGoldMin"				"0"										// Gold earned min.
+		//"BountyGoldMax"				"0"										// Gold earned max.
+	
+		//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		//"RingRadius"				"70"
+	
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"325"									// Speed.
+		"MovementTurnRate"			"0.8"									// Turning rate.
+	
+		//"StatusHealth"			"981"									// Base health.
+		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		//"StatusMana"				"387"										// Base mana.
+		"StatusManaRegen"			"0"									// Mana regeneration rate.
+	
+		"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 	}
 	"npc_dota_hero_lust"
 	{
@@ -1616,8 +2065,8 @@
 		//"RingRadius"				"70"
 	
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"315"									// Speed.
-		"MovementTurnRate"			"1.0"									// Turning rate.
+		"MovementSpeed"				"310"									// Speed.
+		"MovementTurnRate"			"0.7"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
 		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
@@ -1625,6 +2074,58 @@
 		"StatusManaRegen"			"0"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	
+		"Talents"
+		{
+		    "1" {
+			        "left"
+			        {      
+			            "name" "special_bonus_lysander_armor"
+			            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "4"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_lysander_mana"
+			            "MODIFIER_PROPERTY_MANA_BONUS" "175"
+			        }
+		   		}
+		    "2" {
+			        "left"
+			        {      
+			            "name" "special_bonus_lysander_adventurous_gale"
+			            "v" "100"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_lysander_damage"
+			            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "50"
+			        }
+		    	}
+		    "3" {
+			        "left"
+			        {      
+			            "name" "special_bonus_lysander_movespeed"
+			            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "45"
+			        }
+			        "right"
+			        {
+			            "name" "special_bonus_lysander_cooldown"
+			            "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING" "15"
+			        }
+		    	}	
+		    "4" {
+			        "left"
+			        {      
+			            "name" "special_bonus_lysander_health"
+			            "MODIFIER_PROPERTY_HEALTH_BONUS" "575"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_lysander_grapeshot"
+			            "v" "0.75"
+			        }
+		    	}	
+		}
 	}
 	"npc_dota_hero_mana_knight"
 	{
@@ -1768,17 +2269,17 @@
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackRate"				"1.6"
+		"AttackRate"				"1.8"
 		"AttackDamageMin"			"22"										// Damage range min.
-		"AttackDamageMax"			"26"										// Damage range max.
+		"AttackDamageMax"			"35"										// Damage range max.
 	
 		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"22"										// Base strength
-		"AttributeStrengthGain"		"2.3"										// Strength bonus per level.
-		"AttributeBaseIntelligence"	"16"										// Base intelligence
+		"AttributeBaseStrength"		"26"										// Base strength
+		"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
+		"AttributeBaseIntelligence"	"16"									// Base intelligence
 		"AttributeIntelligenceGain"	"1.5"										// Intelligence bonus per level.
-		"AttributeBaseAgility"		"17"										// Base agility
-		"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
+		"AttributeBaseAgility"		"21"										// Base agility
+		"AttributeAgilityGain"		"1.6"										// Agility bonus per level.
 	
 		//"BountyXP"					"0"									// Experience earn.
 		//"BountyGoldMin"				"0"										// Gold earned min.
@@ -1788,8 +2289,8 @@
 		//"RingRadius"				"70"
 	
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"305"									// Speed.
-		"MovementTurnRate"			"1.0"									// Turning rate.
+		"MovementSpeed"				"300"									// Speed.
+		"MovementTurnRate"			"0.8"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
 		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
@@ -1797,6 +2298,58 @@
 		"StatusManaRegen"			"0"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	
+		"Talents"
+		{
+		    "1" {
+			        "left"
+			        {      
+			            "name" "special_bonus_neith_strength"
+			            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "7"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_neith_attack_speed"
+			            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "15"
+			        }
+		   		}
+		    "2" {
+			        "left"
+			        {      
+			            "name" "special_bonus_neith_movespeed"
+			            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "35"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_neith_decisive_strike"
+			            "v" "0"
+			        }
+		    	}
+		    "3" {
+			        "left"
+			        {      
+			            "name" "special_bonus_neith_inspire"
+			            "v" "4"
+			        }
+			        "right"
+			        {
+			            "name" "special_bonus_neith_monsoon"
+			            "v" "30"
+			        }
+		    	}
+		    "4" {
+			        "left"
+			        {      
+			            "name" "special_bonus_neith_rally"
+			            "v" "25"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_neith_evasion"
+			            "MODIFIER_PROPERTY_EVASION_CONSTANT" "25"
+			        }
+		    	}
+		}
 	}
 	"npc_dota_hero_nu"
 	{
@@ -2236,6 +2789,147 @@
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
+	"npc_dota_hero_rai"
+	{
+		"AbilityLayout" 		"4"
+		"override_hero"			"npc_dota_hero_ember_spirit"
+		"Ability1"				"rai_amplify" // Rai ramps up his electrical potential, the air around him
+		// crackling with energy.
+		// Deals 30/40/50/60 damage per second over 4s in a 400 radius.
+		// At the end of the duration, zaps up to 3 random nearby targets within 400 range for 100/150/200/250 damage.
+		// 12s cooldown.
+		"Ability2"				"rai_arc_twister" // Creates a sphere of electrical energy at the target point,
+		// charging over a short period.
+		// Activating the sub-ability causes the sphere to explode, dealing damage based on the time charged.
+		// If the sphere is charged for the maximum time, it stuns.
+		// Deals a minimum damage of 50/100/150/200.
+		// Deals a maximum damage of 110/220/330/440.
+		// 275 AoE.
+		// Charges for up to 2.5s.
+		// Upon maximum charge, stuns for 1s.
+	
+		// Rai transforms into a bolt of lightning, and attempts to arc his way towards the target Hero or creep.
+		// Rai will jump to the nearest unit within 400 units, and continue to jump until he reaches the target.
+		// Each jump deals 50/75/100/125 damage and increases the end damage by 25/40/55/70.
+		// Deals 80/100/120/140 damage plus the bonus damage accumulated.
+	
+		// Rai transforms into a bolt of lightning, dashing towards the target location and arriving nearly instantly.
+		// Deals 40/80/120/160 damage to enemies in a line between the start and end locations.
+		// Arrives 0.2s after dealing damage. Instant cast.
+	
+		"Ability3"				"rai_static_blade" // Rai's blades unleash a blast of static electricity,
+		// slowing and damaging the target struck.
+		// Each time Rai casts a Spell,
+		// he gains static charges that increase the damage and slow Static Blade
+		// inflicts.
+		// Deals 30/40/50/60 damage, and slows by 4/8/12/16% per charge.
+		// Max 6.
+		"Ability4"				"rai_thunder_roar" // Rai summons myriad bolts to strike nearby enemies,
+		// dealing massive damage.
+		// Summons 24 bolts over 1.2s within a 400 radius.
+		// Each bolt strikes a random location within that radius, dealing 60/80/100 damage.
+		// Casting Thunder Roar grants Rai a Static Blade charge 6 times over its duration (every 0.2s).
+		// 80/75/70s cooldown.
+		"Ability5"				""
+		"Ability6"				""
+		"Ability7"				""
+		"Ability8"				""
+		"Ability9"				""
+		"Ability10"				""
+		"Ability11"				""
+		"Ability12"				""
+		"Ability13"				""
+		"Ability14"				""
+		"Ability15"				""
+		"Ability16"				"attribute_bonus"
+	
+		"ArmorPhysical"				"4"									// Physical protection.
+		"MagicalResistance"				"25"									// Magical protection (percentage).
+	
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackRange"				"150"
+		"AttackRate"				"1.6"
+		"AttackDamageMin"			"25"										// Damage range min.
+		"AttackDamageMax"			"35"										// Damage range max.
+	
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"13"										// Base strength
+		"AttributeStrengthGain"		"1.6"										// Strength bonus per level.
+		"AttributeBaseIntelligence"	"19"										// Base intelligence
+		"AttributeIntelligenceGain"	"2.2"										// Intelligence bonus per level.
+		"AttributeBaseAgility"		"23"										// Base agility
+		"AttributeAgilityGain"		"2.5"										// Agility bonus per level.
+	
+		//"BountyXP"					"0"									// Experience earn.
+		//"BountyGoldMin"				"0"										// Gold earned min.
+		//"BountyGoldMax"				"0"										// Gold earned max.
+	
+		//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		//"RingRadius"				"70"
+	
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"300"									// Speed.
+		"MovementTurnRate"			"0.6"									// Turning rate.
+	
+		//"StatusHealth"			"981"									// Base health.
+		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		//"StatusMana"				"387"										// Base mana.
+		"StatusManaRegen"			"0"									// Mana regeneration rate.
+	
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	
+		"Talents"
+		{
+		    "1" {
+			        "left"
+			        {      
+			            "name" "special_bonus_rai_movespeed"
+			            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "15"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_rai_health"
+			            "MODIFIER_PROPERTY_HEALTH_BONUS" "175"
+			        }
+		   		}
+		    "2" {
+			        "left"
+			        {      
+			            "name" "special_bonus_rai_damage"
+			            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "40"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_rai_spell_amp" // 
+			            "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE" "8"
+			        }
+		    	}
+		    "3" {
+			        "left"
+			        {      
+			        	"name" "special_bonus_rai_amplify" // +80 Amplify Bolt Damage
+			            "v" "80"
+			        }
+			        "right"
+			        {
+			            "name" "special_bonus_rai_cooldown"
+			            "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING" "12"
+			        }
+		    	}
+		    "4" {
+			        "left"
+			        {      
+			            "name" "special_bonus_rai_arc_twister" // -4s Arc Twister Cooldown
+			            "v" "4"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_rai_static_blade" // +4 Max Static Blade Charges
+			            "v" "4"
+			        }
+		    	}
+		}
+	}
 	"npc_dota_hero_reus"
 	{
 		"AbilityLayout" 		"4"
@@ -2407,12 +3101,27 @@
 	{
 		"AbilityLayout" 		"4"
 		"override_hero"			"npc_dota_hero_sven"
-		"Ability1"				"siegfried_shockwave" // Siegfried slashes, creating a shockwave that travels with speed through enemies.  Cuts through trees.
-		"Ability2"				"siegfried_battlecry" // Siegfried roars to empower his allies, dealing moderate Pure damage to nearby enemies and healing allies.
-		"Ability3"				"siegfried_bide" // Siegfried gains a large amount of bonus Armor, and extra movespeed.  As he takes damage, he gains an increasing bonus to his next attack.
-		// When he strikes, the attack will cleave and deal the bonus damage to the main target, but he will lose the buff immediately.
-		"Ability4"				"siegfried_heaven_sent" // Siegfried channels for 2.5s, targeting an ally.  After the channel duration, he appears at their location in a flash of light,
-		// dealing Pure damage to nearby enemies and healing the ally based on how much health the ally had.  For a short time after arrival, Siegfried gains bonus movespeed and attack damage.
+		"Ability1"				"siegfried_shield_slam"
+			// Siegfried charges in the target direction, slamming into the first Hero he hits, stunning them and dealing Physical damage.
+			// Stuns for 1.6/2.0/2.4/2.8s, and deals 100/160/220/280 Physical damage.
+			// Creeps passed through take the Physical damage, but are not stunned.
+	
+	
+		"Ability2"				"siegfried_battlecry"
+			// Siegfried roars to empower his allies, slowing nearby enemies.
+			// Enemies are slowed by 5/10/15/20% for 6s.
+			// Allies gain +5/10/15/20% movespeed for 6s, and they regain Mana and Health equal to 15% of the damage they deal against units for the duration. Creeps only restore 5%.
+			// 600 AoE.
+	
+		"Ability3"				"siegfried_hell_bent"
+			// With each strike, Siegfried removes his opponent's very will to defend themselves, infusing his blade's edge with their rushing blood.
+			// Each time Siegfried strikes, he steals Armor from the target, converting it to damage.
+			// Steals 0.5 Armor per hit, and grants +5 Bonus Damage per stack. Lasts 15/30/60/120s.
+	
+		"Ability4"				"siegfried_heaven_sent"
+			// Siegfried channels for 2.5s, targeting an ally globally.  After the channel duration, he appears at their location in a flash of light,
+			// dealing Pure damage to nearby enemies and healing the ally.
+			// Heals 200/400/600 Health, and deals 200/300/400 Pure damage in a 275 AoE.
 		"Ability5"				""
 		"Ability6"				""
 		"Ability7"				""
@@ -2430,9 +3139,9 @@
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackRate"				"1.6"
-		"AttackDamageMin"			"45"										// Damage range min.
-		"AttackDamageMax"			"60"										// Damage range max.
+		"AttackRate"				"1.7"
+		"AttackDamageMin"			"40"										// Damage range min.
+		"AttackDamageMax"			"50"										// Damage range max.
 	
 		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		"23"										// Base strength
@@ -2702,7 +3411,7 @@
 		"override_hero"			"npc_dota_hero_meepo"
 		"Ability1"				"trickster_surprise" // fires a damaging bolt at the target that stuns and disarms them.  When the effect wears off, it passes to a new nearby enemy Hero.  Can pass an infinite amount of times.
 		"Ability2"				"trickster_disappearing_act" // causes the target ally or enemy to disappear in a puff of smoke.  Disabled and invulnerable for the duration.  Reappears at a random location 800 - 1000 units away when this effect wears off.  Trickster sees an effect where they are going to reappear.
-		"Ability3"				"trickster_jam_magic" // silences enemies that enter an area around the Trickster.  Enemies recently affected cannot be silenced again
+		"Ability3"				"trickster_jam_magic" // silences enemies that enter an area around the Trickster.  Enemies recently affected cannot be silenced again.
 		"Ability4"				"trickster_encore" // places a curse on the target that prevents them from casting any spells other than the last spell they cast for a large period of time
 		"Ability5"				""
 		"Ability6"				""
@@ -2790,8 +3499,8 @@
 		"AttackDamageMax"			"40"										// Damage range max.
 	
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"25"										// Base strength
-		"AttributeStrengthGain"		"3.5"										// Strength bonus per level.
+		"AttributeBaseStrength"		"30"										// Base strength
+		"AttributeStrengthGain"		"2.9"										// Strength bonus per level.
 		"AttributeBaseIntelligence"	"11"										// Base intelligence
 		"AttributeIntelligenceGain"	"1.0"										// Intelligence bonus per level.
 		"AttributeBaseAgility"		"19"										// Base agility
@@ -2805,7 +3514,7 @@
 		//"RingRadius"				"70"
 	
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"295"									// Speed.
+		"MovementSpeed"				"290"									// Speed.
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
@@ -2814,5 +3523,114 @@
 		"StatusManaRegen"			"0"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	
+		"Talents"
+		{
+		    "1" {
+			        "left"
+			        {      
+			            "name" "special_bonus_war_movespeed"
+			            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "20"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_war_mana_regen"
+			            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "3"
+			        }
+		   		}
+		    "2" {
+			        "left"
+			        {      
+			            "name" "special_bonus_war_earthbreaker" // +75 Earthbreaker Damage
+			            "v" "75"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_war_armor"
+			            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "8"
+			        }
+		    	}
+		    "3" {
+			        "left"
+			        {      
+			            "name" "special_bonus_war_strength"
+			            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "20"
+			        }
+			        "right"
+			        {
+			            "name" "special_bonus_war_attack_speed"
+			            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "40"
+			        }
+		    	}
+		    "4" {
+			        "left"
+			        {      
+			            "name" "special_bonus_war_bloodlust" // +125 Bloodlust DPS
+			           	"v" "65"
+			        }
+			        "right"
+			        {       
+			            "name" "special_bonus_war_health_regen"
+			            "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "45"
+			        }
+		    	}
+		}
+	}
+	"npc_dota_hero_wight"
+	{
+		"AbilityLayout" 		"4"
+		"override_hero"			"npc_dota_hero_ancient_apparition"
+		"Ability1"				"wight_flit" 
+		"Ability2"				"" 
+		"Ability3"				"aether_monolith"
+		"Ability4"				""
+		"Ability5"				""
+		"Ability6"				"talent_attributes"
+		"Ability7"				"talent_attributes"
+		"Ability8"				"talent_attributes"
+		"Ability9"				"talent_attributes"
+		"Ability10"				"talent_attributes"
+		"Ability11"				"talent_attributes"
+		"Ability12"				"talent_attributes"
+		"Ability13"				"talent_attributes"
+		"Ability14"				"talent_attributes"
+		"Ability15"				"talent_attributes"
+		"Ability16"				"talent_attributes"
+		"Ability17"				"talent_attributes"
+		"Ability18"				"talent_attributes"
+	
+		"ArmorPhysical"				"0"									// Physical protection.
+		"MagicalResistance"				"25"									// Magical protection (percentage).
+	
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackRate"				"1.6"
+		"AttackDamageMin"			"28"										// Damage range min.
+		"AttackDamageMax"			"29"										// Damage range max.
+	
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"14"										// Base strength
+		"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
+		"AttributeBaseIntelligence"	"20"										// Base intelligence
+		"AttributeIntelligenceGain"	"2.3"										// Intelligence bonus per level.
+		"AttributeBaseAgility"		"16"										// Base agility
+		"AttributeAgilityGain"		"1.5"										// Agility bonus per level.
+	
+		//"BountyXP"					"0"									// Experience earn.
+		//"BountyGoldMin"				"0"										// Gold earned min.
+		//"BountyGoldMax"				"0"										// Gold earned max.
+	
+		//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		//"RingRadius"				"70"
+	
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"325"									// Speed.
+		"MovementTurnRate"			"0.8"									// Turning rate.
+	
+		//"StatusHealth"			"981"									// Base health.
+		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		//"StatusMana"				"387"										// Base mana.
+		"StatusManaRegen"			"0"									// Mana regeneration rate.
+	
+		"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 	}
 }

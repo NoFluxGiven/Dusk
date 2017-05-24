@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/alexander_soulseal"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -55,59 +56,8 @@
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
 		"soundfile" "soundevents\hero_alexander.vsndevts"
 		}
-		
-	"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_alexander_soulseal_silence"
-				"Target" 		"TARGET"
-			}
-			"FireSound"
-			{
-				"EffectName"	"Alexander.Soulseal"
-				"Target" 		"TARGET"
-			}
-		}
 	
 	"Modifiers"
 		{
-			"modifier_alexander_soulseal_silence"
-			{
-				"Duration" "%duration"
-				"IsHidden" "0"
-				"IsPurgable" "1"
-				"IsDebuff"	"1"
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target"				"TARGET"
-						"EffectName"			"particles/generic_gameplay/generic_silenced.vpcf"
-						"EffectAttachType"		"follow_overhead"
-					}
-					"AttachEffect"
-					{
-						"EffectName"        "particles/units/heroes/hero_alexander/soulseal.vpcf"
-						"EffectAttachType"  "follow_customorigin"
-						"Target"            "TARGET"
-						"ControlPointEntities"
-			            {
-			                "TARGET" "attach_hitloc"
-			            }
-					}
-				}
-
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_PASSIVES_DISABLED" "MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
 		}
 }

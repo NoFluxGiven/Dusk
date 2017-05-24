@@ -1,0 +1,86 @@
+//=====================================================================================================
+// RAI: Static Blade
+//=====================================================================================================
+"rai_static_blade"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/rai_static_blade"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AbilityTextureName"			"rai_static_blade"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_per_stack"				"16 24 32 40"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow_per_stack"				"7 9 11 13"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"45"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"slow_duration"					"1.5"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"max_stack"						"6"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"dot_per_stack"					"3 6 9 12"
+		}
+		"07"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"threshold"						"215"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_bahamut/bahamut_ambience.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+		}
+	
+	"Modifiers"
+		{
+		}
+}

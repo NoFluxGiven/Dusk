@@ -21,7 +21,7 @@
 	"Ability15"				""
 	"Ability16"				"attribute_bonus"
 
-	"ArmorPhysical"				"2"									// Physical protection.
+	"ArmorPhysical"				"0"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -33,10 +33,10 @@
 	"AttackDamageMax"			"36"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"25"										// Base strength
-	"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
+	"AttributeBaseStrength"		"23"										// Base strength
+	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"25"										// Base Intelligence
-	"AttributeIntelligenceGain"	"3.1"										// Intelligence bonus per level.
+	"AttributeIntelligenceGain"	"2.7"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"12"										// Base agility
 	"AttributeAgilityGain"		"1.4"										// Agility bonus per level.
 
@@ -57,4 +57,9 @@
 	"StatusManaRegen"			"0"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+	"Talents"
+	{
+	   
+	}
 }

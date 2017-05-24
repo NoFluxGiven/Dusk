@@ -51,7 +51,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"stun"						"1.5 2.0 2.5"
+			"stun"						"1.25"
 		}
 		"04"
 		{

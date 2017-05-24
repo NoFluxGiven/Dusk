@@ -43,7 +43,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"duration"					"4"
+			"duration"					"5"
 		}
 		"02"
 		{
@@ -67,7 +67,6 @@
 				"IsHidden"			"0"
 				"IsDebuff"			"0"
 			
-				"ThinkInterval"  "0.03"
 				"OnTakeDamage"
 				{
 					"RunScript"
@@ -75,6 +74,11 @@
 						"ScriptFile"	"buildings/ancient_abilities.lua"
 						"Function"		"frenzy"
 					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MIN_HEALTH" "1"
 				}
 			}
 			"modifier_frenzy_bonus_effects"
@@ -127,6 +131,11 @@
 					{
 						"ScriptFile"	"internal/util.lua"
 						"Function"		"resetLabel"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"buildings/ancient_abilities.lua"
+						"Function"		"frenzyEnd"
 					}
 				}
 				

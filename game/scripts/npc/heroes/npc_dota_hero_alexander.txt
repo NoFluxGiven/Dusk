@@ -54,4 +54,57 @@
 	"StatusManaRegen"			"0"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+	"Talents"
+	{
+	    "1" {
+		        "left"
+		        {      
+		            "name" "special_bonus_alexander_mana_regen"
+		            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "2"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_alexander_atk_dmg"
+		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "20"
+		        }
+	   		}
+	    "2" {
+		        "left"
+		        {      
+		            "name" "special_bonus_alexander_str"
+		            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "10"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_alexander_elandras_blessing" // +30 bonus damage on Elandra's Blessing
+		            "v" "+30"
+		        }
+	    	}
+	    "3" {
+		        "left"
+		        {      
+		        	"name" "special_bonus_alexander_soulseal" // +15% Slow
+		            "v" "+15"
+		        }
+		        "right"
+		        {
+		            "name" "special_bonus_alexander_atk_spd"
+		            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "40"
+		        }
+	    	}
+	    "4" {
+		        "left"
+		        {      
+		            "name" "special_bonus_alexander_radiant" // x2 Regen
+		            "v" "1"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_alexander_godfall" // Makes Soulseal affect enemies in an AoE.
+		            //"350 AoE Soulseal"
+		            "v" "350"
+		        }
+	    	}
+	}
 }

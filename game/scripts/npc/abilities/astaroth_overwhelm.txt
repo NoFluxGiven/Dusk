@@ -5,16 +5,18 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/astaroth_overwhelm"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AoERadius"						"%radius"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityTextureName"			"astaroth_overwhelm"
-
+	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"450"
@@ -57,68 +59,8 @@
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
 		"soundfile" "soundevents\hero_astaroth.vsndevts"
 		}
-		
-	"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"EffectName"	"Astaroth.Overwhelm.Start"
-				"Target" 		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_astaroth_overwhelm_charged"
-				"Target"		"TARGET"
-			}
-		}
 	
 	"Modifiers"
 		{
-			"modifier_astaroth_overwhelm_charged"
-			{
-				"Duration"			"%duration"
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"        "particles/units/heroes/hero_astaroth/le_overwhelm.vpcf"
-						"EffectAttachType"  "follow_customorigin"
-						"Target"            "TARGET"
-						"ControlPointEntities"
-						{
-							"TARGET"	"attach_hitloc"
-						}
-					}
-				}
-
-				"OnDestroy"
-				{
-					"Damage"
-					{
-						"Target"
-						{
-							"Center"  	"TARGET"
-							"Radius" 	"%radius"
-							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-						}
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%AbilityDamage"
-					}
-					"FireSound"
-					{
-						"EffectName"	"Astaroth.Overwhelm.End"
-						"Target" 		"TARGET"
-					}
-				}
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				}
-			}
 		}
 }

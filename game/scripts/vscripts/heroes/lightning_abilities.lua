@@ -218,38 +218,38 @@ function lightningDaggerMarkOnAttack(keys)
 end
 
 function Spark(keys)
-	local caster = keys.caster
+	-- local caster = keys.caster
 
-	local spark = caster:FindAbilityByName("lightning_spark") --[[Returns:handle
-	Retrieve an ability by name from the unit.
-	]]
+	-- local spark = caster:FindAbilityByName("lightning_spark") --[[Returns:handle
+	-- Retrieve an ability by name from the unit.
+	-- ]]
 
-	if caster:PassivesDisabled() then return end
+	-- if caster:PassivesDisabled() then return end
 
-	if spark:GetLevel() <= 0 then return end
+	-- if spark:GetLevel() <= 0 then return end
 
-	local damage = spark:GetLevelSpecialValueFor("bonus_damage", spark:GetLevel())
-	local radius = spark:GetLevelSpecialValueFor("radius", spark:GetLevel())
+	-- local damage = spark:GetLevelSpecialValueFor("bonus_damage", spark:GetLevel())
+	-- local radius = spark:GetLevelSpecialValueFor("radius", spark:GetLevel())
 
-	local enemy = FindUnitsInRadius( caster:GetTeamNumber(),
-      caster:GetCenter(),
-      nil,
-        radius,
-        DOTA_UNIT_TARGET_TEAM_ENEMY,
-        DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
-        DOTA_UNIT_TARGET_FLAG_NONE,
-        FIND_CLOSEST,
-        false)
+	-- local enemy = FindUnitsInRadius( caster:GetTeamNumber(),
+ --      caster:GetCenter(),
+ --      nil,
+ --        radius,
+ --        DOTA_UNIT_TARGET_TEAM_ENEMY,
+ --        DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
+ --        DOTA_UNIT_TARGET_FLAG_NONE,
+ --        FIND_CLOSEST,
+ --        false)
 
-	caster:EmitSound("Hero_Zuus.StaticField")
+	-- caster:EmitSound("Hero_Zuus.StaticField")
 
-	for k,v in pairs(enemy) do
+	-- for k,v in pairs(enemy) do
 
-		DealDamage(v,caster,damage,DAMAGE_TYPE_MAGICAL)
-		ParticleManager:CreateParticle("particles/units/heroes/hero_lightning/spark.vpcf", PATTACH_ABSORIGIN_FOLLOW, v)
-		spark:ApplyDataDrivenModifier(caster, v, "modifier_spark_slow", {}) --[[Returns:void
-		No Description Set
-		]]
+	-- 	DealDamage(v,caster,damage,DAMAGE_TYPE_MAGICAL)
+	-- 	ParticleManager:CreateParticle("particles/units/heroes/hero_lightning/spark.vpcf", PATTACH_ABSORIGIN_FOLLOW, v)
+	-- 	spark:ApplyDataDrivenModifier(caster, v, "modifier_spark_slow", {}) --[[Returns:void
+	-- 	No Description Set
+	-- 	]]
 
-	end
+	-- end
 end

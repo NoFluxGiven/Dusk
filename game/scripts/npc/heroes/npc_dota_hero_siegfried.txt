@@ -2,12 +2,27 @@
 {
 	"AbilityLayout" 		"4"
 	"override_hero"			"npc_dota_hero_sven"
-	"Ability1"				"siegfried_shockwave" // Siegfried slashes, creating a shockwave that travels with speed through enemies.  Cuts through trees.
-	"Ability2"				"siegfried_battlecry" // Siegfried roars to empower his allies, dealing moderate Pure damage to nearby enemies and healing allies.
-	"Ability3"				"siegfried_bide" // Siegfried gains a large amount of bonus Armor, and extra movespeed.  As he takes damage, he gains an increasing bonus to his next attack.
-	// When he strikes, the attack will cleave and deal the bonus damage to the main target, but he will lose the buff immediately.
-	"Ability4"				"siegfried_heaven_sent" // Siegfried channels for 2.5s, targeting an ally.  After the channel duration, he appears at their location in a flash of light,
-	// dealing Pure damage to nearby enemies and healing the ally based on how much health the ally had.  For a short time after arrival, Siegfried gains bonus movespeed and attack damage.
+	"Ability1"				"siegfried_shield_slam"
+		// Siegfried charges in the target direction, slamming into the first Hero he hits, stunning them and dealing Physical damage.
+		// Stuns for 1.6/2.0/2.4/2.8s, and deals 100/160/220/280 Physical damage.
+		// Creeps passed through take the Physical damage, but are not stunned.
+
+
+	"Ability2"				"siegfried_battlecry"
+		// Siegfried roars to empower his allies, slowing nearby enemies.
+		// Enemies are slowed by 5/10/15/20% for 6s.
+		// Allies gain +5/10/15/20% movespeed for 6s, and they regain Mana and Health equal to 15% of the damage they deal against units for the duration. Creeps only restore 5%.
+		// 600 AoE.
+
+	"Ability3"				"siegfried_hell_bent"
+		// With each strike, Siegfried removes his opponent's very will to defend themselves, infusing his blade's edge with their rushing blood.
+		// Each time Siegfried strikes, he steals Armor from the target, converting it to damage.
+		// Steals 0.5 Armor per hit, and grants +5 Bonus Damage per stack. Lasts 15/30/60/120s.
+
+	"Ability4"				"siegfried_heaven_sent"
+		// Siegfried channels for 2.5s, targeting an ally globally.  After the channel duration, he appears at their location in a flash of light,
+		// dealing Pure damage to nearby enemies and healing the ally.
+		// Heals 200/400/600 Health, and deals 200/300/400 Pure damage in a 275 AoE.
 	"Ability5"				""
 	"Ability6"				""
 	"Ability7"				""
@@ -25,9 +40,9 @@
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackRate"				"1.6"
-	"AttackDamageMin"			"45"										// Damage range min.
-	"AttackDamageMax"			"60"										// Damage range max.
+	"AttackRate"				"1.7"
+	"AttackDamageMin"			"40"										// Damage range min.
+	"AttackDamageMax"			"50"										// Damage range max.
 
 	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
 	"AttributeBaseStrength"		"23"										// Base strength

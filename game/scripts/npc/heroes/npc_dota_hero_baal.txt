@@ -4,10 +4,10 @@
 	"override_hero"			"npc_dota_hero_arc_warden"
 	"Ability1"				"baal_st_anchor" // Anchors the target enemy to a location.  When they move too far away from their location, they are stunned, take damage, and teleported to it.
 	"Ability2"				"baal_spatial_rift" // After a 1 second channel time, creates a rift at the target location that deals damage and slows drastically.  The rift lasts for 6s.
-	"Ability3"				"baal_compress" // Compresses the target unit, turning them into a carriable orb.  The orb can be thrown by casting the ability again, and deals damage in an AoE
+	"Ability3"				"baal_port_out" // Instantly teleports Baal and any Axial Seals to the active Rift, consuming it.
+	"Ability4"				"baal_compress" // Compresses the target unit, turning them into a carriable orb.  The orb can be thrown by casting the ability again, and deals damage in an AoE
 	// upon landing.  If Baal does not throw the orb before the timer reaches zero, it explodes, damaging him and stunning him.  Enemy Heroes grabbed can be thrown only half the distance.
 	// lasts 3.5s max.
-	"Ability4"				"baal_port_out" // Instantly teleports Baal and any Axial Seals to the active Rift, consuming it.
 	"Ability5"				"baal_fire" // Fires the compressed target at a point.
 	"Ability6"				"baal_superposition2" // Baal enters a state of instability for a short time, becoming untargetable and immune to Physical damage.  Enemies can still see
 	// his location.  Disjoints projectiles on use.  Gives phased movement to Baal.	
@@ -27,17 +27,17 @@
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackRange"				"450"
-	"AttackRate"				"1.5"
-	"AttackDamageMin"			"20"										// Damage range min.
-	"AttackDamageMax"			"26"										// Damage range max.
+	"AttackRate"				"1.55"
+	"AttackDamageMin"			"23"										// Damage range min.
+	"AttackDamageMax"			"35"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-	"AttributeBaseStrength"		"22"										// Base strength
-	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
+	"AttributeBaseStrength"		"23"										// Base strength
+	"AttributeStrengthGain"		"1.9"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"24"										// Base intelligence
 	"AttributeIntelligenceGain"	"2.5"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"11"										// Base agility
-	"AttributeAgilityGain"		"1.4"										// Agility bonus per level.
+	"AttributeBaseAgility"		"16"										// Base agility
+	"AttributeAgilityGain"		"2.4"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.
@@ -48,7 +48,7 @@
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 	"MovementSpeed"				"300"									// Speed.
-	"MovementTurnRate"			"1.0"									// Turning rate.
+	"MovementTurnRate"			"0.7"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
 	"StatusHealthRegen"			"0"									// Health regeneration rate.
@@ -56,4 +56,56 @@
 	"StatusManaRegen"			"0"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+	"Talents"
+	{
+	    "1" {
+		        "left"
+		        {      
+		            "name" "special_bonus_baal_magic_res"
+		            "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "15"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_baal_mana_regen"
+		            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "2"
+		        }
+	   		}
+	    "2" {
+		        "left"
+		        {      
+		            "name" "special_bonus_baal_movespeed"
+		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "30"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_baal_attack_speed"
+		            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "35"
+		        }
+	    	}
+	    "3" {
+		        "left"
+		        {      
+		            "name" "special_bonus_baal_spatial_rift"
+		            "v" "100"
+		        }
+		        "right"
+		        {
+		            "name" "special_bonus_baal_damage"
+		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "60"
+		        }
+	    	}
+	    "4" {
+		        "left"
+		        {      
+		            "name" "special_bonus_baal_superposition"
+		            "v" "4"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_baal_st_anchor"
+		            "v" "8"
+		        }
+	    	}
+	}
 }

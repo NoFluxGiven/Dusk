@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/astaroth_pain_curse"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -38,12 +39,12 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"duration"						"11"
+			"duration"						"8"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"10 20 30 40"
+			"damage"						"15 30 45 60"
 		}
 	"03"
 		{
@@ -53,12 +54,12 @@
 	"04"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"slow_duration"					"0.75"
+			"slow_duration"					"0.80"
 		}
 	"05"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"cooldown"						"0.45"
+			"cooldown"						"0.60"
 		}
 	}
 	
@@ -69,79 +70,8 @@
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
 		"soundfile" "soundevents\hero_astaroth.vsndevts"
 		}
-		
-	"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_astaroth_pain_curse"
-				"Target" 		"TARGET"
-			}
-		}
 	
 	"Modifiers"
 		{
-			"modifier_astaroth_pain_curse"
-			{
-				"Duration"			"%duration"
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-
-				"OnTakeDamage"
-				// "%attack_damage" is set to the damage value after mitigation
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_astaroth_pain_curse_slow"
-						"Target" 		"UNIT"
-						"Duration"		"%slow_duration"
-					}
-				}
-			
-				"EffectName" "particles/units/heroes/hero_astaroth/astaroth_pain_transferral.vpcf"
-				"EffectAttachType" "attach_origin"
-			}
-
-			"modifier_astaroth_pain_curse_slow"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-
-				"EffectName" "particles/units/heroes/hero_astaroth/astaroth_pain_transferral_slow.vpcf"
-				"EffectAttachType" "attach_origin"
-
-				"OnDestroy"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_astaroth_pain_curse_cooldown"
-						"Target" 		"TARGET"
-					}
-				}
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
-				}
-			}
-			"modifier_astaroth_pain_curse_cooldown"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-				"Duration"			"%cooldown"
-			
-				"ThinkInterval"  "0.03"
-				"OnIntervalThink"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_astaroth_pain_curse_slow"
-						"Target" 		"TARGET"
-					}
-				}
-			}
 		}
 }

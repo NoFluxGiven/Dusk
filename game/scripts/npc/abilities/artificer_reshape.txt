@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/artificer_reshape"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -39,7 +40,12 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"2 3 4 5" // percentage total
+			"duration"						"2.0 2.75 3.50 4.25" // percentage total
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_reduction"				"65" // percentage total
 		}
 	}
 	
@@ -49,63 +55,8 @@
 		"particle" "particles/units/heroes/hero_artificer/reshape_unit.vpcf"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
 		}
-		
-	"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/artificer_abilities.lua"
-				"Function"		"reshape"
-				"duration"		"%duration"
-			}
-			"FireEffect"
-			{
-				"EffectName"        "particles/units/heroes/hero_artificer/reshape.vpcf"
-				"EffectAttachType"  "follow_origin"
-				"Target"            "TARGET"
-			}
-			"FireSound"
-			{
-				"EffectName"	"Hero_EarthSpirit.Petrify"
-				"Target" 		"TARGET"
-			}
-		}
 	
 	"Modifiers"
 		{
-			"modifier_reshape_particle_fx"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-				"IsPurgable"		"1"
-				"IsStunDebuff"		"0"
-				//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
-			
-				"EffectName"		"particles/units/heroes/hero_artificer/reshape_unit.vpcf"
-				"EffectAttachType"	"follow_origin"
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"internal/util.lua"
-						"Function"		"KVEnableProps"
-					}
-				}
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"internal/util.lua"
-						"Function"		"KVEnableProps"
-					}
-				}
-
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "-50"
-				}
-			}
 		}
 }

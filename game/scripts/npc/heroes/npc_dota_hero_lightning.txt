@@ -2,8 +2,8 @@
 {
 	"AbilityLayout" 		"4"
 	"override_hero"			"npc_dota_hero_phantom_assassin"
-	"Ability1"				"lightning_lightning_dagger2"
-	"Ability2"				"lightning_thunder_wave"
+	"Ability1"				"lightning_lightning_dagger"
+	"Ability2"				"lightning_boltblast"
 	"Ability3"				"lightning_overload"
 	"Ability4"				"lightning_spark"
 	"Ability5"				""
@@ -54,4 +54,56 @@
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
+
+	"Talents"
+	{
+	    "1" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lightning_health"
+		            "MODIFIER_PROPERTY_HEALTH_BONUS" "200"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_lightning_spell_amp"
+		            "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE" "4"
+		        }
+	   		}
+	    "2" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lightning_damage"
+		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "35"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_lightning_spark"
+		            "v" "8"
+		        }
+	    	}
+	    "3" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lightning_boltblast"
+		            "v" "75"
+		        }
+		        "right"
+		        {
+		            "name" "special_bonus_lightning_movespeed"
+		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "50"
+		        }
+	    	}
+	    "4" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lightning_lightning_dagger"
+		            "v" "6"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_lightning_overload"
+		            "v" "115"
+		        }
+	    	}
+	}
 }

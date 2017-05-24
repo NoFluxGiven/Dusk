@@ -38,22 +38,22 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"damage_mult"				"0.4 0.6 0.8 1.0"
+			"damage_mult"				"0.65"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"					"7"
+			"duration"					"6"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"mres_reduction"			"-10 -20 -30 -40"
+			"mres_reduction"			"-12 -18 -24 -30"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"-15"
+			"slow"						"-12"
 		}
 	}
 	

@@ -1,4 +1,4 @@
-//=====================================================================================================
+	//=====================================================================================================
 // PTOMELY: Astralise
 //=====================================================================================================
 "ptomely_astralise"
@@ -77,11 +77,11 @@
 	
 	"precache"
 		{
-		"particle" "particles\units\heroes\hero_ptomely\astralise_unit_buff.vpcf"
-		"particle" "particles\units\heroes\hero_ptomely\astralise_ghost.vpcf"
-		"particle" "particles\units\heroes\hero_ptomely\astralise_pulse.vpcf"
-		"particle" "particles\units\heroes\hero_ancient_apparition\ancient_apparition_cold_feet_frozen.vpcf"
-		"soundfile" "soundevents\hero_ptomely.vsndevts"
+		"particle" "particles/units/heroes/hero_ptomely/astralise_unit_buff.vpcf"
+		"particle" "particles/units/heroes/hero_ptomely/astralise_ghost.vpcf"
+		"particle" "particles/units/heroes/hero_ptomely/astralise_pulse.vpcf"
+		"particle" "particles/units/heroes/hero_ancient_apparition/ancient_apparition_cold_feet_frozen.vpcf"
+		"soundfile" "soundevents/hero_ptomely.vsndevts"
 		}
 		
 	"OnSpellStart"
