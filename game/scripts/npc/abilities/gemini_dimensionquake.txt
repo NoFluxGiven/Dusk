@@ -1,0 +1,59 @@
+//=====================================================================================================
+// GEMINI: Dimensionquake
+//=====================================================================================================
+"gemini_dimensionquake"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/gemini_dimensionquake"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"gemini_dimensionquake"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"200"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	//"AbilityDamage"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"300"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"450"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"175 290 415"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"stun"					"3.00 4.00 5.00"
+		}
+	}
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_gemini/dimensionquake.vpcf"
+		"soundfile"	"soundevents/hero_gemini.vsndevts"
+	}
+}

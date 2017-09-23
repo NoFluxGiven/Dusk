@@ -2,61 +2,53 @@
 {
 	"AbilityLayout" 		"4"
 	"override_hero"			"npc_dota_hero_riki"
-	"Ability1"				"lupin_darting_shadow" // Lupin dashes towards the target enemy, dealing some Magical damage to enemies on the way. When he arrives
-	// he deals critical damage to the enemy.
-	// Dashes with a range of 700.
-	// Deals 65/95/125/155 damage to units passed through.
-	// Each unit passed through grants 20/25/30/35 damage to Lupin for 6s.
-	// Creeps always grant 15.
-	// The main target is struck by an attack immediately upon arrival. The attack is a 175% critical strike, preserving all procs and UAMs.
-	// Darting Shadow's damage refreshes the Daze duration on Dazed units.
-	"Ability2"				"lupin_flashbang" // Lupin throws down a flash grenade that severely limits enemies' abilities to fight. Within a 350 radius, all enemies are
-	// dazed for 0.80/1.60/2.40/3.20s. Dazed enemies are stunned until they take damage.
-	"Ability3"				"lupin_quickdraw" // Lupin quickly draws and fires his gun at a target. This ability has 3 charges. Each shot on the same target has compounding effects. The charges come back at a rate of
-	// 1 every 12s.
-
-	// The first shot deals damage and slows by 8/12/16/20% for 2s.
-	// The second shot deals damage, extends the slow duration by 2s, and slows attack speed by 20/40/60/80.
-	// The third shot deals damage, 30/40/50/60 bonus damage, and stuns the target for 0.75/1.00/1.25/1.50s.
-
-	// All shots have a base damage of 40/50/60/70. This means the total base damage of all three shots is 120/150/180/210. Including bonus damage, the total damage is 150/200/240/280.
-	// All shots simulate an attack that deals 0 damage, in that they apply attack effects.
-	// Shots deal Physical damage.
-
-	// Lupin's level 25 doubles the damage of all shots. This means the total damage of all three shots, including bonus damage, would be: 300/380/460/540 damage.
-
-	"Ability4"				"lupin_ephemera" // Instantly places a buff on all allied Heroes and their controlled units. After a 0.4s delay, they become invisible for 8s, moving 10/20/30% faster
-	// and dealing 50/75/100 bonus damage on their next attack out of invisibility. If all affected Heroes attack the same enemy out of invisibility, it stuns them for 1.5s.
+	"Ability1"				"lupin_beneath_the_mask" // Lupin's first strike against a target Silences them.
+	// Deals 30/60/90/120 bonus Magical damage and Silences the target for 2/3/4/5s.
+	// Slows by 15/20/25/30% for the Silence duration.
+	// 10s cooldown.
+	// Does not proc against non-Hero units.
+	"Ability2"				"lupin_flashbang" // Lupin throws down a flash grenade that severely limits enemies' abilities to fight.
+	// Within a 400 radius, all enemies are dazed
+	// for 1.50/2.25/3.00/3.75s. Dazed enemies are stunned, but awaken when they take damage.
+	// Deals 100 damage.
+	"Ability3"				"lupin_finisher" // Fires a shot at the target that deals Magical damage and slows.
+	// Deals 60/120/180/240 damage, and slows by 150% for 0.75s.
+	// Deals 40/80/120/160 bonus damage to units that are Stunned or Dazed.
+	// 0.1s cast time.
+	// 16/14/12/10s cooldown.
+	"Ability4"				"lupin_last_surprise" // Lupin becomes invulnerable and instantly teleports
+	// to the target location. Enemies between the two locations are struck with an attack that deals critical damage, and are Dazed for 2/2.5/3.0s.
+	// Deals 175/200/225% damage.
+	// 500/600/700 range.
 	"Ability5"				""
-	"Ability6"				"talent_attributes"
-	"Ability7"				"talent_attributes"
-	"Ability8"				"talent_attributes"
-	"Ability9"				"talent_attributes"
-	"Ability10"				"talent_attributes"
-	"Ability11"				"talent_attributes"
-	"Ability12"				"talent_attributes"
-	"Ability13"				"talent_attributes"
-	"Ability14"				"talent_attributes"
-	"Ability15"				"talent_attributes"
-	"Ability16"				"talent_attributes"
-	"Ability17"				"talent_attributes"
-	"Ability18"				"talent_attributes"
+	"Ability6"				""
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				"special_bonus_attack_damage_25"
+	"Ability11"				"special_bonus_lupin_1"
+	"Ability12"				"special_bonus_lupin_2"
+	"Ability13"				"special_bonus_lupin_3"
+	"Ability14"				"special_bonus_attack_speed_60"
+	"Ability15"				"special_bonus_lupin_4"
+	"Ability16"				"special_bonus_lupin_5"
+	"Ability17"				"special_bonus_lupin_6"
 
 	"ArmorPhysical"				"0"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
-	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackRate"				"1.6"
-	"AttackDamageMin"			"28"										// Damage range min.
-	"AttackDamageMax"			"29"										// Damage range max.
+	"AttackDamageMin"			"31"										// Damage range min.
+	"AttackDamageMax"			"38"										// Damage range max.
 
-	"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 	"AttributeBaseStrength"		"14"										// Base strength
 	"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"20"										// Base intelligence
-	"AttributeIntelligenceGain"	"2.3"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"16"										// Base agility
-	"AttributeAgilityGain"		"1.5"										// Agility bonus per level.
+	"AttributeIntelligenceGain"	"2.1"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"15"										// Base agility
+	"AttributeAgilityGain"		"1.6"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.

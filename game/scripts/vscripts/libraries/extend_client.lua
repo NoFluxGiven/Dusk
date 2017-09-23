@@ -11,7 +11,7 @@ function C_DOTA_BaseNPC:GetTalentValue2(talent_number)
 	-- Talent number must be 1 to 8 
 end
 
-function C_DOTABaseAbility:FetchTalent(handle,suffix)
+function C_DOTABaseAbility:FetchTalentDep(handle,suffix)
 	local handle = handle or self:GetCaster()
 	local suffix = suffix or ""
 	suffix = "" .. suffix -- convert to string
@@ -24,7 +24,7 @@ function C_DOTABaseAbility:FetchTalent(handle,suffix)
 	local talent_string = "special_bonus_"..ability_name
 	local interim = "_talent_"
 
-	local str = unit_name .. interim .. talent_string
+	local str = unit_name .. interim .. talent_string .. suffix
 
 	local gotIt = handle:HasModifier(str)
 
@@ -71,4 +71,17 @@ function C_DOTABaseAbility:FetchTalent(handle,suffix)
 	else
 		return nil
 	end
+end
+
+function C_DOTA_BaseNPC:FetchTalent(talent_name,val) -- returns the value attached to the Talent if it is learned, nil if not
+  local ei = self:entindex()
+  local t = CustomNetTables:GetTableValue("learned_abilities", tostring(ei))
+
+  local v = nil
+
+  if t then
+  	v = t[talent_name]
+  end
+
+  return v
 end

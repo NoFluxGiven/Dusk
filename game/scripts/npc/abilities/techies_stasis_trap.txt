@@ -73,49 +73,7 @@
 		}
 	}
 
-	"OnSpellStart"
-	{
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_kamikaze"
-			"Target" 		"CASTER"
-			"Duration"		"%duration"
-		}
-		"FireSound"
-		{
-			"EffectName"	"hero_Crystal.freezingField.explosion"
-			"Target" 		"CASTER"
-		}
-	}
-
 	"Modifiers"
 	{
-		"modifier_kamikaze"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-		
-			"EffectName"		"particles/units/heroes/hero_gob_squad/kamikaze_unit.vpcf"
-			"EffectAttachType"	"follow_origin"
-
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/gob_squad_abilities"
-					"Function"		"kamikaze"
-					"radius"		"%radius"
-					"health_damage"	"%health_damage"
-					"damage"		"%AbilityDamage"
-					"total"			"%total"
-				}
-			}	
-		
-			"Properties"
-			{
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movespeed_bonus" 
-			}
-		}
 	}
 }

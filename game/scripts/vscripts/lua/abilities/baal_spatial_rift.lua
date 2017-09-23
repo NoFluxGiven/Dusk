@@ -9,7 +9,7 @@ function baal_spatial_rift:OnSpellStart()
 	local radius = self:GetSpecialValueFor("radius")
 	local duration = self:GetSpecialValueFor("duration")
 
-	caster.spatial_rift_unit = FastDummy(point+Vector(0,0,150),caster:GetTeam(),duration+1.5,radius)
+	caster.spatial_rift_unit = FastDummy(point+Vector(0,0,150),caster:GetTeam(),duration+0.80,radius)
 
 	caster.spatial_rift_start_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_baal/baal_spatial_rift_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster.spatial_rift_unit)
 end
@@ -25,8 +25,13 @@ function baal_spatial_rift:OnChannelFinish(interrupted)
 		local point = self:GetCursorPosition()
 		local radius = self:GetSpecialValueFor("radius")
 		local duration = self:GetSpecialValueFor("duration")
-		local slow_duration = self:GetSpecialValueFor("slow_duration")
-		local damage = self:GetSpecialValueFor("damage")
+
+		local t_slow_duration_bonus = self:GetCaster():FetchTalent("special_bonus_baal_3") or 0
+		local slow_duration = self:GetSpecialValueFor("slow_duration") + t_slow_duration_bonus
+		
+		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_baal_1") or 0
+		local damage = self:GetSpecialValueFor("damage") + t_damage_bonus
+
 		local ability = caster:FindAbilityByName("baal_port_out")
 
 		local bonus = 0
@@ -101,7 +106,7 @@ end
 
 function modifier_spatial_rift_slow:GetModifierMoveSpeedBonus_Percentage()
 	local pct = self:GetRemainingTime()/self:GetDuration()
-	print(pct..", "..self:GetDuration()..", "..self:GetRemainingTime())
+	ToolsPrint(pct..", "..self:GetDuration()..", "..self:GetRemainingTime())
 	return self:GetAbility():GetSpecialValueFor("slow")*pct --[[Returns:table
 	No Description Set
 	]]

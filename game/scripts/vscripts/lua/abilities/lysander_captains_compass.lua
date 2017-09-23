@@ -8,11 +8,17 @@ function lysander_captains_compass:OnSpellStart()
 	local t = self:GetCursorTarget()
 	local duration = self:GetSpecialValueFor("duration")
 
+	if t:TriggerSpellAbsorb(self) then return end
+	t:TriggerSpellReflect(self)
+
 	local mod = self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_captains_compass_buff", {Duration=duration}) --[[Returns:void
 	No Description Set
 	]]
 
 	local tmod = t:AddNewModifier(self:GetCaster(), self, "modifier_captains_compass", {Duration=duration}) --[[Returns:void
+	No Description Set
+	]]
+	t:AddNewModifier(self:GetCaster(), self, "modifier_truesight", {Duration=duration}) --[[Returns:void
 	No Description Set
 	]]
 end
@@ -30,8 +36,8 @@ end
 -- function modifier_captains_compass_buff:GetModifierMoveSpeedBonus_Percentage()
 -- 	local movespeed = self:GetAbility():GetSpecialValueFor("movespeed")
 -- 	local t = nil
--- 	if self.linkedModifier then t = self.linkedModifier:GetParent() else print("No linked modifier") return end
--- 	if not t then print("t not found") return end
+-- 	if self.linkedModifier then t = self.linkedModifier:GetParent() else ToolsPrint("No linked modifier") return end
+-- 	if not t then ToolsPrint("t not found") return end
 
 -- 	local tloc = t:GetAbsOrigin()
 -- 	local tx = tloc["x"]
@@ -87,7 +93,7 @@ function modifier_captains_compass_buff:GetModifierMoveSpeedBonus_Percentage()
 
 			if f < 0 then f = 0 end
 
-			print(f)
+			ToolsPrint(f)
 
 			self:SetStackCount(f)
 		end

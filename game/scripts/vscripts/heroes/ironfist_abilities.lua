@@ -177,7 +177,7 @@ function ironfist_focus_increase(event)
     ab[2]:SetHidden(true)
     ab[3]:SetHidden(true)
     
-    print("NUMBER IS "..i)
+    ToolsPrint("NUMBER IS "..i)
     
     ab[1]:SetLevel(event.ability:GetLevel())
     ab[2]:SetLevel(event.ability:GetLevel())
@@ -236,5 +236,5 @@ function ironfist_focus_level_sync(event)
   local caster = event.caster
   local upgrade = event.ability
   local lvl = upgrade:GetLevel()
-  print("LEVEL OF ABILITY IS "..lvl)
+  ToolsPrint("LEVEL OF ABILITY IS "..lvl)
 end

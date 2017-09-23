@@ -37,7 +37,7 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"225"
+			"damage"						"175"
 		}
 		"02"
 		{
@@ -48,6 +48,7 @@
 		{
 			"var_type"						"FIELD_INTEGER"
 			"bolts"							"4 6 8"
+			"LinkedSpecialBonus"			"special_bonus_rai_5"
 		}
 		"04"
 		{

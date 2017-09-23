@@ -1,0 +1,27 @@
+//=================================================================================================================
+// Astaroth Talent 4: +30 Black Insignia Damage
+//=================================================================================================================
+"special_bonus_astaroth_4"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"special_bonus_unique_centaur_2"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"LinkedAbility"
+	{
+		"01" "astaroth_deathmark"
+	}
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"value" "30"
+		}
+	}
+}

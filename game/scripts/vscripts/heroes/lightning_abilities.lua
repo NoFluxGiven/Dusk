@@ -42,7 +42,7 @@ function generate_thunder(keys)
 	local count = 0
 	local vector = caster:GetAbsOrigin() + RandomVector(150)
 
-	print("[GENERATE_THUNDER]")
+	ToolsPrint("[GENERATE_THUNDER]")
 
 	if caster.stop == false then
 
@@ -118,14 +118,14 @@ function check_pos(keys)
 	if caster.lastpos == nil then caster.lastpos = pos else caster.lastpos = caster.lastpos end
 
 	if pos == caster.lastpos then
-		print("[CHECK_POS] ADDING COUNT")
+		ToolsPrint("[CHECK_POS] ADDING COUNT")
 		caster.poscount = caster.poscount+1
 	else
 		caster.poscount = 0
 	end
 
 	if caster.poscount > 10 then
-		print("[CHECK_POS] REMOVING MODIFIER")
+		ToolsPrint("[CHECK_POS] REMOVING MODIFIER")
 		caster:RemoveModifierByName("modifier_blinding_speed_active") --[[Returns:void
 		Removes a modifier
 		]]

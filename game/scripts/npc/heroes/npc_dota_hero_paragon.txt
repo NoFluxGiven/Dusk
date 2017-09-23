@@ -6,18 +6,14 @@
 	"Ability2"				"paragon_tranquility_seal" 
 	"Ability3"				"paragon_divine_armour"
 	"Ability4"				"paragon_smite"
-	"Ability5"				""
-	"Ability6"				""
-	"Ability7"				""
-	"Ability8"				""
-	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_paragon_1"
+	"Ability11"				"special_bonus_paragon_2"
+	"Ability12"				"special_bonus_cooldown_reduction_12"
+	"Ability13"				"special_bonus_paragon_3"
+	"Ability14"				"special_bonus_paragon_4"
+	"Ability15"				"special_bonus_paragon_5"
+	"Ability16"				"special_bonus_paragon_6"
+	"Ability17"				"special_bonus_paragon_7"
 
 	"ArmorPhysical"				"2"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -25,10 +21,10 @@
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackRate"				"1.8"
 	"AttackDamageMin"			"24"										// Damage range min.
-	"AttackDamageMax"			"30"										// Damage range max.
+	"AttackDamageMax"			"45"										// Damage range max.
 
 	//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"25"										// Base strength
+	"AttributeBaseStrength"		"22"										// Base strength
 	"AttributeStrengthGain"		"2.3"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"21"										// Base intelligence
 	"AttributeIntelligenceGain"	"1.9"										// Intelligence bonus per level.
@@ -43,8 +39,8 @@
 	//"RingRadius"				"70"
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"300"									// Speed.
-	"MovementTurnRate"			"1.0"						// Turning rate.
+	"MovementSpeed"				"295"									// Speed.
+	"MovementTurnRate"			"0.6"						// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
 	"StatusHealthRegen"			"0.0"									// Health regeneration rate.

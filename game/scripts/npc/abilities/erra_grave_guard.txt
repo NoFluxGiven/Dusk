@@ -2,7 +2,8 @@
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "BaseClass"             "ability_datadriven"
+    "BaseClass"             "ability_lua"
+    "ScriptFile"            "lua/abilities/erra_grave_guard"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
@@ -17,11 +18,11 @@
 
     // Time     
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"               "60"
+    "AbilityCooldown"               "100 80 60 40"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"               "100"
+    "AbilityManaCost"               "175"
 
     // Stats
     //-------------------------------------------------------------------------------------------------------------
@@ -41,12 +42,14 @@
         {
             "var_type"              "FIELD_INTEGER"
             "hp_recovery"           "60 80 100 120"
+            "LinkedSpecialBonus"    "special_bonus_erra_3"
         }
 
         "03"    
         {
             "var_type"              "FIELD_INTEGER"
             "mp_recovery"           "15 30 45 60"
+            "LinkedSpecialBonus"    "special_bonus_erra_3"
         }
         "04"
         {
@@ -64,38 +67,5 @@
 
     "Modifiers"
     {
-        "modifier_erra_grave_guard"
-        {
-            "Passive"            "1"
-            "IsHidden"            "1"
-            "IsDebuff"            "0"
-        
-            "OnTakeDamage"
-            // "%attack_damage" is set to the damage value after mitigation
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/erra_abilities.lua"
-                    "Function"      "GraveGuard"
-                    "threshold"     "%threshold"
-                }
-            }
-        }
-        "modifier_erra_grave_guard_recovery"
-        {
-            "Passive"            "0"
-            "IsHidden"            "0"
-            "IsDebuff"            "0"
-            "Duration"            "%duration"
-
-            "EffectName" "particles/units/heroes/hero_erra/grave_guard_unit.vpcf"
-            "EffectAttachType" "attach_origin"
-
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%hp_recovery"
-                "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "%mp_recovery"
-            }
-        }
     }
 }

@@ -71,7 +71,7 @@ function aether_disrupt:OnSpellStart()
 
 		for k,v in pairs(found_2) do
 			if v:HasModifier("modifier_monolith_slow_area") then
-				-- print("FOUND A UNIT WITH PREREQUISITES")
+				-- ToolsPrint("FOUND A UNIT WITH PREREQUISITES")
 				local ab = v:FindAbilityByName("aether_disrupt")
 				ab:SetLevel(self:GetLevel())
 				ab:OnSpellStart()

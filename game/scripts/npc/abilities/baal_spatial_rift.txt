@@ -12,13 +12,13 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 	"AnimationPlaybackRate"			"0.95"
-	"AbilityChannelTime"			"1.5"
+	"AbilityChannelTime"			"0.75"
 	"AbilityTextureName"			"baal_spatial_rift"
 	"AoERadius"						"230"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1715"
+	"AbilityCastRange"				"800 1000 1200 1400"
 	"AbilityCastPoint"				"0.0"
 	
 	// Time		
@@ -45,7 +45,8 @@
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"80 160 240 320"
+			"damage"						"50 125 200 275"
+			"LinkedSpecialBonus"			"special_bonus_baal_1"
 		}
 	"03"
 		{
@@ -59,8 +60,9 @@
 		}
 	"05"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"slow_duration"					"4"
+			"var_type"						"FIELD_FLOAT"
+			"slow_duration"					"2.5"
+			"LinkedSpecialBonus"			"special_bonus_baal_3"
 		}
 	}
 	

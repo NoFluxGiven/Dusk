@@ -247,7 +247,7 @@ function axial_seal(keys)
 			Creates a DOTA unit by its dota_npc_units.txt name ( szUnitName, vLocation, bFindClearSpace, hNPCOwner, hUnitOwner, iTeamNumber )
 			]]
 
-			print("npc_dota_unit_axial_"..keys.ability:GetLevel().." "..n:GetUnitName())
+			ToolsPrint("npc_dota_unit_axial_"..keys.ability:GetLevel().." "..n:GetUnitName())
 
 			--n:AddNoDraw()
 

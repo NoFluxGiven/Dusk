@@ -176,18 +176,14 @@ function modifier_monolith_speed_unit:GetModifierMoveSpeedBonus_Percentage()
 end
 
 function modifier_monolith_speed_unit:GetModifierConstantManaRegen()
-	local t = self:GetAbility():GetCaster():GetHasTalent("special_bonus_aether_monolith")
-	local bonus = 0
-	if t then bonus = 30 end
-	return self:GetAbility():GetSpecialValueFor("monolith_manaregen")+bonus
+	local t_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_aether_4") or 0
+	return self:GetAbility():GetSpecialValueFor("monolith_manaregen")+t_bonus
 	
 end
 
 function modifier_monolith_speed_unit:GetModifierConstantHealthRegen()
-	local t = self:GetAbility():GetCaster():GetHasTalent("special_bonus_aether_monolith")
-	local bonus = 0
-	if t then bonus = 30 end
-	return self:GetAbility():GetSpecialValueFor("monolith_healthregen")+bonus
+	local t_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_aether_4") or 0
+	return self:GetAbility():GetSpecialValueFor("monolith_healthregen")+t_bonus
 end
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -236,20 +232,12 @@ function modifier_monolith_slow_unit:GetModifierMovespeedBonus_Percentage()
 end
 
 function modifier_monolith_slow_unit:GetModifierConstantManaRegen()
-	local t = self:GetAbility():GetCaster():GetLearnedTalent("bonus_aether_monolith")
-	local bonus = 0
-	if t then
-		bonus = t:GetSpecialValueFor("value")
-	end
-	return -(self:GetAbility():GetSpecialValueFor("monolith_manaregen")+bonus)
+	local t_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_aether_4") or 0
+	return -(self:GetAbility():GetSpecialValueFor("monolith_manaregen")+t_bonus)
 	
 end
 
 function modifier_monolith_slow_unit:GetModifierConstantHealthRegen()
-	local t = self:GetAbility():GetCaster():GetLearnedTalent("bonus_aether_monolith")
-	local bonus = 0
-	if t then
-		bonus = t:GetSpecialValueFor("value")
-	end
-	return -(self:GetAbility():GetSpecialValueFor("monolith_healthregen")+bonus)
+	local t_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_aether_4") or 0
+	return -(self:GetAbility():GetSpecialValueFor("monolith_healthregen")+t_bonus)
 end

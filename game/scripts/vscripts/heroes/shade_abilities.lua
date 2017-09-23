@@ -62,7 +62,7 @@ function shade_isolation(event)
   end)
   EmitSoundOn("Hero_BountyHunter.Jinada",target)
 
-  print("damage "..dmg)
+  ToolsPrint("damage "..dmg)
   local dmgTable = {
     attacker = caster,
     victim = target,

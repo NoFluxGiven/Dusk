@@ -45,7 +45,7 @@ function RealmBlister( keys )
 end
 
 function ChronosphereAura( keys )
-print("==AURA IS ACTIVE==")
+ToolsPrint("==AURA IS ACTIVE==")
   local caster = keys.caster
   local target = keys.target
   local ability = keys.ability
@@ -61,7 +61,7 @@ end
 
 --DEPRECATED
 -- function gemini_shemi_dmg_block(event)
---   print("==DAMAGE BLOCK==")
+--   ToolsPrint("==DAMAGE BLOCK==")
 --   local caster = event.caster
 --   local target = event.unit
 --   local attacker = event.attacker
@@ -140,7 +140,7 @@ function unstable_rift(event)
   local caster_pnt = caster:GetCursorPosition()
   local duration = event.duration or 14
   
-  print("UNSTABLE RIFT IS RUNNING")
+  ToolsPrint("UNSTABLE RIFT IS RUNNING")
   
   local open = FastDummy(caster_pos, caster:GetTeam(), duration+1, 500)
   local close = FastDummy(caster_pnt, caster:GetTeam(), duration+1, 500)
@@ -168,8 +168,8 @@ function unstable_rift(event)
   event.ability:ApplyDataDrivenModifier(caster,open,"gemini_unstable_rift_mod",{})
   event.ability:ApplyDataDrivenModifier(caster,close,"gemini_unstable_rift_mod",{})
   
-  if open:HasModifier("gemini_unstable_rift_mod") then print("HAS THE CORRECT MODIFIER!") end
-  if close:HasModifier("gemini_unstable_rift_mod") then print("HAS THE CORRECT MODIFIER!") end
+  if open:HasModifier("gemini_unstable_rift_mod") then ToolsPrint("HAS THE CORRECT MODIFIER!") end
+  if close:HasModifier("gemini_unstable_rift_mod") then ToolsPrint("HAS THE CORRECT MODIFIER!") end
 end
 
 function gemini_unstable_rift_transport(event)

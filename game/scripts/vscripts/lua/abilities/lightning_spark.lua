@@ -63,6 +63,6 @@ function modifier_spark_slow:DeclareFunctions()
 end
 
 function modifier_spark_slow:GetModifierMoveSpeedBonus_Percentage()
-	local bonus = self:GetAbility():FetchTalent() or 0
-	return self:GetAbility():GetSpecialValueFor("slow")-bonus
+	local bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_lightning_4") or 0
+	return self:GetAbility():GetSpecialValueFor("slow")+bonus
 end

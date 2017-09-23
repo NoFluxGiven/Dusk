@@ -1,0 +1,66 @@
+//=====================================================================================================
+// IRONFIST: Reversal
+//=====================================================================================================
+"ironfist_lightning_strike"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/ironfist_lightning_strike"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityTextureName"			"ironfist_lightning_strike"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"175"
+	"AbilityCastPoint"				"0.1"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"16 14 12 10"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"60"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"attacks"						"4"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"bat"							"0.5"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_attack_speed"			"50 100 150 200"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"4"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_ironfist/lightning_strike.vpcf"
+		"soundfile" "soundevents/hero_ironfist.vsndevts"
+		}
+	
+	"Modifiers"
+		{
+		}
+}

@@ -5,16 +5,17 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/ironfist_gale_stance"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	//"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"MaxLevel"						"1"
 	"AbilityTextureName"			"ironfist_gale_stance"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"0"
-	"AbilityCastPoint"				"0.4"
+	"AbilityCastPoint"				"0.0"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -24,10 +25,6 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"0"
 	
-	// Damage
-	//-------------------------------------------------------------------------------------------------------------
-	//"AbilityDamage"					"50 100 150 200"
-	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityModifierSupportValue"	"0.0"	// All about the damage
@@ -36,67 +33,14 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"movespeed"						"3 5 7 9"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"attkspeed"						"7 14 21 28"
-		}
 	}
 	
 	"precache"
 		{
-		"particle" "particles/units/heroes/hero_centaur/centaur_warstomp.vpcf"
-		"particle" "particles/units/heroes/hero_ironfist/ironfist_gale_hands.vpcf"
-		"soundfile" "soundevents\hero_phantom.vsndevts"
-		}
-
-	"OnUpgrade"
-	{
-		"RemoveModifier"
-		{
-			"ModifierName"	"ironfist_gale_stance_mod"
-			"Target" 		"CASTER"
-		}
-		"RemoveModifier"
-		{
-			"ModifierName"	"ironfist_stonewall_stance_mod"
-			"Target" 		"CASTER"
-		}
-		"ApplyModifier"
-		{
-			"ModifierName"	"ironfist_gale_stance_mod"
-			"Target" 		"CASTER"
-		}
-	}
-		
-	"OnSpellStart"
-		{
-		"RunScript"
-			{
-			"ScriptFile" "heroes/ironfist_abilities.lua"
-			"Function" "ironfist_switchup"
-			}
+		"particle" "particles/units/heroes/hero_ironfist/enter_gale_stance.vpcf"
 		}
 	
 	"Modifiers"
 		{
-		"ironfist_gale_stance_mod"
-			{
-			"Passive" "1"
-
-			"EffectName" "particles/units/heroes/hero_ironfist/ironfist_gale_hands.vpcf"
-			"EffectAttachType" "attach_origin"
-
-			"Properties"
-				{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movespeed"
-				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attkspeed"
-				}
-			}
 		}
 }

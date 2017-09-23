@@ -5,9 +5,10 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/shade_isolation"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
@@ -18,16 +19,16 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"125"
-	"AbilityCastPoint"				"0.55"
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.35"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"50"
+	"AbilityCooldown"				"95"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"100"
+	"AbilityManaCost"				"175 250 325"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,33 +40,23 @@
 	{
 		"01"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"basedamage"				"250 360 470"
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"4 5 6"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"decrease_unit"				"25"
+			"damage"					"125 175 225"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"silence_duration"			"5"
+			"damage_reduction"			"50"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"isolation_bonus"			"12 16 20"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"vision"					"80"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"check_radius"				"400"
+			"radius"					"750"
 		}
 	}
 	
@@ -73,58 +64,11 @@
 		{
 		"soundfile" "soundevents/hero_shade.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
-		"particle" "particles\units\heroes\hero_night_stalker\nightstalker_ulti.vpcf"
+		"particle" "particles/status_fx/status_effect_medusa_stone_gaze.vpcf"
+		"particle" "particles/status_fx/status_effect_medusa_stone_gaze_backup.vpcf"
 		"particle" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf"
 		"particle" "particles/units/heroes/hero_shade/isolation_debuff.vpcf"
 		"particle" "particles/units/heroes/hero_shade/precast_isolation.vpcf"
 		"particle" "particles\items_fx\ethereal_blade.vpcf"
-		}
-
-	"OnAbilityPhaseStart"
-	{
-		"FireEffect"
-		{
-			"EffectName"        "particles/units/heroes/hero_shade/precast_isolation.vpcf"
-			"EffectAttachType"  "follow_origin"
-			"Target"            "CASTER"
-		}
-	}
-		
-	"OnSpellStart"
-		{
-		"RunScript"
-			{
-			"ScriptFile" "heroes/shade_abilities.lua"
-			"Function" "shade_isolation"
-			"dmg" "%basedamage"
-			"decrease" "%decrease_unit"
-			"isolation_bonus" "%isolation_bonus"
-			"duration" "%silence_duration"
-			"radius" "%check_radius"
-			}
-		"FireEffect"
-			{
-				"EffectName"	"particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf"
-				"EffectAttachType"	"attach_hitloc"
-				"Target"		"TARGET"
-			}
-		}
-		
-	"Modifiers"
-		{
-			"modifier_isolation"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-
-				"EffectName" "particles/units/heroes/hero_shade/isolation_debuff.vpcf"
-				"EffectAttachType" "attach_origin"
-			
-				"States"
-				{
-					"MODIFIER_STATE_BLIND"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
 		}
 }

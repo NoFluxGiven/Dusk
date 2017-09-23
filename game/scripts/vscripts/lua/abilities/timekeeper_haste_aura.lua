@@ -88,7 +88,8 @@ function modifier_haste_aura_effect:GetModifierMoveSpeedBonus_Percentage()
 end
 
 function modifier_haste_aura_effect:GetModifierAttackSpeedBonus_Constant()
-	local bonus = self:GetAbility():GetSpecialValueFor("speed_boost") --[[Returns:table
+	local t_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_timekeeper_3") or 0
+	local bonus = self:GetAbility():GetSpecialValueFor("attackspeed_boost") + t_bonus --[[Returns:table
 	No Description Set
 	]]
 	return bonus
@@ -96,26 +97,33 @@ end
 
 function modifier_haste_aura_effect:OnAbilityExecuted( params )
 	if not self:GetAbility():IsCooldownReady() then return end
-	local reduction = self:GetAbility():GetSpecialValueFor("cooldown_reduction")/100 --[[Returns:table
-	No Description Set
-	]]
+	local t_reduction_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_timekeeper_4") or 0
+	local reduction = (self:GetAbility():GetSpecialValueFor("cooldown_reduction")+t_reduction_bonus)/100
 	local chance = self:GetAbility():GetSpecialValueFor("chance")
 
-	-- print(params.unit:GetName())
+	-- ToolsPrint(params.unit:GetName())
 
-	-- print(self:GetParent():GetName())
+	-- ToolsPrint(self:GetParent():GetName())
 
 	if params.unit ~= self:GetParent() then return end
 	if params.unit:HasModifier("modifier_haste_aura_effect_act") then return end
 	if params.ability:GetName() == "timekeeper_haste_aura" then return end
 
+	if params.ability:GetAbilityType() then
+
+		if params.ability:GetAbilityType() == 1 then
+			reduction = reduction * 0.5
+		end
+
+	end
+
 	local ab = params.ability
 
-	-- print(ab:GetName())
+	-- ToolsPrint(ab:GetName())
 
 	local r = RandomInt(1, 100)
 
-	-- print(r)
+	-- ToolsPrint(r)
 
 	if r < chance then
 		local mult = 1 - reduction
@@ -123,7 +131,7 @@ function modifier_haste_aura_effect:OnAbilityExecuted( params )
 			local cd = ab:GetCooldownTimeRemaining()
 			ab:EndCooldown()
 			ab:StartCooldown(cd*mult)
-			print(cd*mult.." orig cooldown: "..cd)
+			ToolsPrint(cd*mult.." orig cooldown: "..cd)
 		end)
 
 		ParticleManager:CreateParticle("particles/units/heroes/hero_timekeeper/haste_aura_proc.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent()) --[[Returns:int
@@ -157,6 +165,10 @@ function modifier_haste_aura_effect_act:OnAbilityExecuted( params )
 
 	reduction = reduction * 2
 
+	if params.ability:GetAbilityType() == 1 then
+		reduction = reduction * 0.5
+	end
+
 	if params.unit ~= self:GetParent() then return end
 
 	local ab = params.ability
@@ -166,7 +178,7 @@ function modifier_haste_aura_effect_act:OnAbilityExecuted( params )
 		local cd = ab:GetCooldownTimeRemaining()
 		ab:EndCooldown()
 		ab:StartCooldown(cd*mult)
-		-- print(cd*mult.." orig cooldown: "..cd)
+		-- ToolsPrint(cd*mult.." orig cooldown: "..cd)
 	end)
 
 	ParticleManager:CreateParticle("particles/units/heroes/hero_timekeeper/haste_aura_proc.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent()) --[[Returns:int

@@ -11,13 +11,14 @@
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_attack_range_75" //
+	"Ability11"				"special_bonus_attack_damage_25" //
+	"Ability12"				"special_bonus_bahamut_1" // +25 Desolation DPS
+	"Ability13"				"special_bonus_bahamut_2" // Fulmination Stacks -1 Armor
+	"Ability14"				"special_bonus_bahamut_3" // +50% Mega Flare Damage
+	"Ability15"				"special_bonus_evasion_15" // 
+	"Ability16"				"special_bonus_bahamut_4" // Desolation Applies Fulmination Stacks Per Tick in AoE
+	"Ability17"				"special_bonus_agility_25" // 
 
 	"ArmorPhysical"				"2"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -54,55 +55,4 @@
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 
-	"Talents"
-	{
-	    "1" {
-		        "left"
-		        {      
-		            "name" "special_bonus_bahamut_attack_range"
-		            "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "75"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_bahamut_damage"
-		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "25"
-		        }
-	   		}
-	    "2" {
-		        "left"
-		        {      
-		            "name" "special_bonus_bahamut_agility"
-		            "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "20"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_bahamut_health" // 
-		            "MODIFIER_PROPERTY_HEALTH_BONUS" "250"
-		        }
-	    	}
-	    "3" {
-		        "left"
-		        {      
-		        	"name" "special_bonus_bahamut_mega_flare" // +40% Mega Flare Damage
-		            "v" "40"
-		        }
-		        "right"
-		        {
-		            "name" "special_bonus_bahamut_attack_speed"
-		            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "65"
-		        }
-	    	}
-	    "4" {
-		        "left"
-		        {      
-		            "name" "special_bonus_bahamut_desolation" // +7s Desolation Duration
-		            "v" "7"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_bahamut_fulmination" // x2 Fulmination Max Stacks
-		            "v" "2"
-		        }
-	    	}
-	}
 }

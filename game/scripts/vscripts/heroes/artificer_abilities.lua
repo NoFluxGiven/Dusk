@@ -1,5 +1,5 @@
 function replica(event)
-	print("Conjure Image")
+	ToolsPrint("Conjure Image")
 	local caster = event.caster
 	local target = event.target or event.unit
 	local player = caster:GetPlayerID()
@@ -189,7 +189,7 @@ function unmakingTick(keys)
 	local damage = keys.damage / 100
 	-- if EntityHasTalent(caster,"bonus_artificer_unmaking2") then
 	-- 	damage = damage+(6/100)
-	-- 	print("EXTRA DAMAGE")
+	-- 	ToolsPrint("EXTRA DAMAGE")
 	-- end
 
 	local damage_type = DAMAGE_TYPE_MAGICAL

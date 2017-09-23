@@ -424,7 +424,7 @@ function aabts_end(keys)
 
 	local found_warrior = Entities:FindAllByName("npc_dota_creature")
 
-	print("Found "..#found_archer+#found_warrior.." entries.")
+	ToolsPrint("Found "..#found_archer+#found_warrior.." entries.")
 
 	for k,v in pairs(found_archer) do
 		if v:HasModifier("modifier_aabts_check") then
@@ -467,9 +467,9 @@ function ReduceCooldowns(keys)
 
 	-- deprecated
 
-	if 0 = 0 then return end
+	if 0 == 0 then return end
 
-	print("REDUCING COOLDOWNS")
+	ToolsPrint("REDUCING COOLDOWNS")
 
 	if not caster:HasModifier("modifier_harsh_sun_aura") then return end
 
@@ -479,7 +479,7 @@ function ReduceCooldowns(keys)
 
 	local reduction = 1 - math.abs((ab:GetLevelSpecialValueFor("cooldown_reduction", level)/100))
 
-	print("Reduction is: "..reduction)
+	ToolsPrint("Reduction is: "..reduction)
 
 	local cooldown = keys.ability:GetCooldownTimeRemaining()
 	keys.ability:EndCooldown()

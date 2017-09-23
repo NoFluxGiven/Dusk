@@ -5,14 +5,15 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/elena_devotion"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"elena_devotion"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"550"
+	"AbilityCastRange"				"700"
 	"AbilityCastPoint"				"0"
 	
 	// Time		
@@ -34,93 +35,24 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"armor"							"2 3 4 5"
+			"hp_regen"						"5 10 15 20"
 		}
 	"02"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"650"
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"4.0"
 		}
 	"03"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"mr"							"10 15 20 25"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"en_armor"						"-2 -3 -4 -5"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"en_mr"							"-5 -10 -15 -20"
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"700"
 		}
 	}
 	
 	"precache"
 		{
-		"particle" "particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_explode.vpcf"
+		"particle" "particles/units/heroes/hero_elena/devotion_aura.vpcf"
 		"particle" "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
-		"soundfile" "soundevents\hero_phantom.vsndevts"
-		}
-	
-	"Modifiers"
-		{
-			"elena_devotion_mod_aura_ally"
-			{
-				"IsBuff" "1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%mr"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor"
-				}
-			}
-			"elena_devotion_mod_aura_enemy"
-			{
-				"IsDebuff" "1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%en_mr"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%en_armor"
-				}
-			}
-			"elena_devotion_mod_aura_hidden"
-			{
-				"Passive" "1"
-				"IsHidden" "1"
-				"IsBuff" "1"
-				"Aura"          	"elena_devotion_mod_aura_enemy"
-				"Aura_Radius"   	"%radius"
-				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
-				"Aura_ApplyToCaster" "0"
-			}
-			"elena_devotion_mod_aura_hidden2"
-			{
-				"Passive" "1"
-				"IsHidden" "1"
-				"IsBuff" "1"
-				"Aura"          	"elena_devotion_mod_aura_ally"
-				"Aura_Radius"   	"%radius"
-				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
-				"Aura_ApplyToCaster" "1"
-			}
-			"elena_devotion_mod_remover"
-			{
-				"IsHidden" "1"
-				"Duration" "1"
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"elena_devotion_mod_aura"
-						"Target" 		"TARGET"
-					}
-				}
-			}
+		"soundfile" "soundevents/hero_elena.vsndevts"
 		}
 }

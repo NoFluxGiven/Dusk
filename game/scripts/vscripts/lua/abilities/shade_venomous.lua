@@ -32,9 +32,11 @@ end
 
 function modifier_venomous_lua:OnIntervalThink()
 	if IsServer() then
-		local agh_interval = 8
+		local agh_interval = 14
 		local dot = self:GetAbility():GetSpecialValueFor("damage")
 		local dmg = dot
+		local tbonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_shade_2")
+		if tbonus then dmg = dmg + tbonus end
 		local dtype = self:GetAbility():GetAbilityDamageType()
 		if self:GetCaster():HasScepter() then
 			local time_elapsed = GameRules:GetGameTime() - self.start_time
@@ -42,7 +44,7 @@ function modifier_venomous_lua:OnIntervalThink()
 			local limit = 200
 			if dmg > limit then dmg = limit end
 		end
-		DealDamage(self:GetParent(),self:GetCaster(),dmg,dtype)
+		self:GetAbility():InflictDamage(self:GetParent(),self:GetCaster(),dmg,dtype,DOTA_DAMAGE_FLAG_BYPASSES_BLOCK)
 	end
 end
 
@@ -67,7 +69,8 @@ function modifier_venomous_lua:GetModifierAttackSpeedBonus_Constant()
 end
 
 function modifier_venomous_lua:GetModifierPhysicalArmorBonus()
-	return self:GetAbility():GetSpecialValueFor("armor_reduction")
+	local t_armor_reduction = self:GetAbility():GetCaster():FetchTalent("special_bonus_shade_5") or 0
+	return self:GetAbility():GetSpecialValueFor("armor_reduction")-t_armor_reduction
 end
 
 function modifier_venomous_lua:GetEffectName()

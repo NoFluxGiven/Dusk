@@ -3,7 +3,7 @@ function Shatter(keys)
 	local target = keys.target
 
 	local attackdamage = caster:GetAttackDamage()
-	print(attackdamage.." DAMAGE")
+	ToolsPrint(attackdamage.." DAMAGE")
 	local mult = keys.mult
 
 	local damage = attackdamage * mult

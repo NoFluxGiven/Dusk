@@ -1,4 +1,4 @@
-"Dusk.shadeIsolation"
+"Shade.Isolation"
 {
     "operator_stacks"
     {
@@ -36,6 +36,128 @@
                     "pitch_max"
                     {
                         "value"     "1.000000"
+                    }
+                    "chan_type"
+                    {
+                        "value"     "6"
+                    }
+                    "memory_type"
+                    {
+                        "value"     "0"
+                    }
+                    "soundlevel_min"
+                    {
+                        "value"     "100.000000"
+                    }
+                    "soundlevel_max"
+                    {
+                        "value"     "100.000000"
+                    }
+                }
+            }
+        }
+    }
+}
+
+"Shade.DarkHunger"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "speakers_spatialize"
+            {
+                "input_radius"  "900"
+            }
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "src1_2d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/dark_hunger_proc_small.vsnd"
+                        }
+                    }
+                    "volume_min"
+                    {
+                        "value"     "1.000000"
+                    }
+                    "volume_max"
+                    {
+                        "value"     "1.000000"
+                    }
+                    "pitch_min"
+                    {
+                        "value"     "0.500000"
+                    }
+                    "pitch_max"
+                    {
+                        "value"     "1.500000"
+                    }
+                    "chan_type"
+                    {
+                        "value"     "6"
+                    }
+                    "memory_type"
+                    {
+                        "value"     "0"
+                    }
+                    "soundlevel_min"
+                    {
+                        "value"     "100.000000"
+                    }
+                    "soundlevel_max"
+                    {
+                        "value"     "100.000000"
+                    }
+                }
+            }
+        }
+    }
+}
+
+"Shade.DarkHunger.Hero"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "speakers_spatialize"
+            {
+                "input_radius"  "900"
+            }
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "src1_2d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/dark_hunger_proc.vsnd"
+                        }
+                    }
+                    "volume_min"
+                    {
+                        "value"     "1.000000"
+                    }
+                    "volume_max"
+                    {
+                        "value"     "1.000000"
+                    }
+                    "pitch_min"
+                    {
+                        "value"     "0.500000"
+                    }
+                    "pitch_max"
+                    {
+                        "value"     "1.500000"
                     }
                     "chan_type"
                     {

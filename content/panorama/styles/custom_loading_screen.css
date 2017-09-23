@@ -26,7 +26,7 @@
   vertical-align: bottom;
   margin-bottom: 150px;
   margin-left: 120px;
-  background: #F00000;
+  background-color: #000000;
   border: 1px solid white;
   width: 700px;
   height: 200px;
@@ -39,7 +39,7 @@
   margin-bottom: 0px;
   margin-left: 5px;
   margin-top: 5px;
-  vertical-align: left;
+  vertical-align: top;
   font-size: 17px;
   color: #cccccc;
 }
@@ -47,7 +47,7 @@
 #AddonTitle
 {
   margin-bottom: -15px;
-  vertical-align: right;
+  vertical-align: top;
   font-size: 20px;
   color: #cccccc;
   text-shadow: 2px 2px 2px #000000;

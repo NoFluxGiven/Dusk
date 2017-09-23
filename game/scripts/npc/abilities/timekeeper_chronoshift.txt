@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/timekeeper_chronoshift"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -17,12 +18,12 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"550 775 1000"
+	"AbilityCastRange"				"550"
 	"AbilityCastPoint"				"0.8"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"90 80 70"
+	"AbilityCooldown"				"115 100 85"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,12 +40,12 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"time"							"8 12 16"
+			"time"							"8 9 10"
 		}
 		"02"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"scepter_time"					"20 30 40"
+			"var_type"						"FIELD_FLOAT"
+			"delay"							"3.00 2.50 2.00"
 		}
 	}
 	
@@ -56,52 +57,4 @@
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts"
 		}
-		
-	"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/timekeeper_abilities.lua"
-				"Function"		"chronoshift"
-				"time"			"%time"
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/timekeeper_abilities.lua"
-				"Function"		"chronoshift_swap_abilities"
-			}
-		}
-
-	"Modifiers"
-	{
-
-		"modifier_chronoshift"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"0"
-			"Duration"			"%time"
-
-			"EffectName" 		"particles/units/heroes/hero_timekeeper/timekeeper_chronoshift_unit.vpcf"
-			"EffectAttachType"	"attach_origin"
-		}
-
-		"modifier_chronoshift_caster"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"0"
-			"Duration"			"%time"
-
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/timekeeper_abilities.lua"
-					"Function"		"chronoshift_swap_abilities"
-				}
-			}
-		}
-
-	}
 }

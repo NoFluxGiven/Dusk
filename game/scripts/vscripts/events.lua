@@ -227,10 +227,33 @@ end
 -- A player leveled up an ability
 function duskDota:OnPlayerLearnedAbility( keys)
   DebugPrint('[DUSKDOTA] OnPlayerLearnedAbility')
-  DebugPrintTable(keys)
+  PrintTable(keys)
+
+  local talent = keys.abilityname
+  local playerid = keys.player-1
+  local player = PlayerResource:GetPlayer(playerid)
+  local hero = player:GetAssignedHero()
+  local ei = hero:entindex()
+
+  local t = CustomNetTables:GetTableValue("learned_abilities",tostring(ei))
+
+  local temp = {}
+
+  if t then temp = t end
+
+  temp[talent] = FetchTalentValue(talent) or 0
+
+  CustomNetTables:SetTableValue("learned_abilities",tostring(ei),temp)
+
+  print("For ent index "..ei.." ("..hero:GetName().."), added ability:")
+  print(talent)
+  print("Currently learned abilities for entity index "..ei..":")
+  for k,v in pairs(temp) do
+    print("  "..k.." : "..v)
+  end
 
   --[[local player = EntIndexToHScript(keys.player)
-  local abilityname = keys.abilityname
+  local abilityname = keys.abilityName
 
   local hero = PlayerResource:GetSelectedHeroEntity(player:GetPlayerID())
 

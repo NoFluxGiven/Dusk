@@ -1,0 +1,80 @@
+//=====================================================================================================
+// BAAL: Spatial Rift
+//=====================================================================================================
+"bloodwarrior_blood_rain"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/bloodwarrior_blood_rain"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AnimationPlaybackRate"			"0.95"
+	"AbilityTextureName"			"bloodwarrior_blood_rain"
+	"AoERadius"						"%radius"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"28"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100 120 140 160"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"6"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"rain_duration"					"4.00"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"350"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"20 30 40 50"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow"							"15"
+		}
+	"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"lifesteal"						"20 30 40 50"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_bloodwarrior/blood_rain.vpcf"
+		"soundfile" "soundevents/hero_bloodwarrior.vsndevts"
+
+		}
+	
+	"Modifiers"
+		{
+		}
+}

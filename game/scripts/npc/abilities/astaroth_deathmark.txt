@@ -16,7 +16,7 @@
 
     // Time     
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"               "9"
+    "AbilityCooldown"               "10 9 8 7"
     
     // Special
     //-------------------------------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@
         "02"
         {
             "var_type"              "FIELD_FLOAT"
-            "stun"                  "0.50 1.00 1.50 2.00"
+            "stun"                  "0.75"
         }
         "03"
         {
@@ -45,17 +45,17 @@
         "05"
         {
             "var_type"              "FIELD_INTEGER"
-            "attack_speed_bonus"    "40 80 120 160"
+            "attack_speed_bonus"    "40 60 80 100"
         }
         "06"
         {
             "var_type"              "FIELD_FLOAT"
-            "bonus_duration"        "5"
+            "bonus_duration"        "4"
         }
         "07"
         {
             "var_type"              "FIELD_INTEGER"
-            "bonus_damage"          "10 20 30 40"
+            "bonus_damage"          "15 20 25 30"
         }
     }
 

@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/paragon_smite"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -38,17 +39,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"250 325 475"
+			"damage"				"200 300 400"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"scepter_damage"		"300 430 560"
+			"scepter_damage"		"300 400 500"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"scepter_damage_bonus"		"75 150 225"
+			"scepter_damage_bonus"		"100 175 250"
 		}
 		"04"
 		{
@@ -65,21 +66,6 @@
 		"particle"  "particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf"
 		"particle"  "particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf"
 		"particle"  "particles/units/heroes/hero_bounty_hunter/bounty_hunter_windwalk.vpcf"
-
-	}
-
-	"OnSpellStart"
-	{
-
-		"RunScript"
-		{
-			"ScriptFile" "heroes/paragon_abilities.lua"
-			"Function" "paragon_smite2"
-			"damage" "%damage"
-			"scepter_damage" "%scepter_damage"
-			"scepter_damage_bonus" "%scepter_damage_bonus"
-			"residual_damage" "%residual_damage"
-		}
 
 	}
 }

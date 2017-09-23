@@ -6,9 +6,8 @@ function lightning_overload:OnSpellStart()
 	local c = self:GetCaster()
 	local radius = self:GetSpecialValueFor("radius")
 	local duration = self:GetSpecialValueFor("duration")
-	local damage = self:GetSpecialValueFor("damage")
-	local bonus = self:FetchTalent()
-	if bonus then damage = damage+bonus end
+	local bonus = c:FetchTalent("special_bonus_lightning_2") or 0
+	local damage = self:GetSpecialValueFor("damage") + bonus
 	local dtype = self:GetAbilityDamageType()
 
 	local p = ParticleManager:CreateParticle("particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf", PATTACH_POINT_FOLLOW, c) --[[Returns:int

@@ -77,7 +77,7 @@ function tek_mosquito_acquire_target(keys)
 	for k,v in pairs(enemy) do
 		
 		if CheckTable(caster.temp_targets,v) == nil then -- if this unit is not in the target table, target it
-			print("FOUND UNIT")
+			ToolsPrint("FOUND UNIT")
 			local p = ParticleManager:CreateParticle("particles/units/heroes/hero_tek/targeting_reticule.vpcf", PATTACH_ROOTBONE_FOLLOW, v) --[[Returns:int
 			Creates a new particle effect
 			]]
@@ -85,14 +85,14 @@ function tek_mosquito_acquire_target(keys)
 			table.insert(caster.temp_targets,v)
 			if #caster.temp_targets >= #enemy then
 				for k,v in pairs(caster.temp_targets) do
-					print("INSERTING "..k.." INTO TABLE")
+					ToolsPrint("INSERTING "..k.." INTO TABLE")
 					table.insert(caster.mosquito_targets,v)
 				end
 				caster.temp_targets = {}
 			end
 			break
 		end
-		print("UNIT ALREADY IN TABLE")
+		ToolsPrint("UNIT ALREADY IN TABLE")
 		-- if #target_table > #caster.mosquito_targets then
 		-- 	target_table = {}
 		-- end
@@ -103,14 +103,14 @@ end
 function tek_fire_mosquito_missiles(keys)
 	local caster = keys.caster
 
-	if caster.mosquito_targets == nil then print("NIL TABLE") return end
+	if caster.mosquito_targets == nil then ToolsPrint("NIL TABLE") return end
 
 	for k,v in pairs(caster.temp_targets) do -- capture the remaining targets
-		print("INSERTING "..k.." INTO TABLE")
+		ToolsPrint("INSERTING "..k.." INTO TABLE")
 		table.insert(caster.mosquito_targets,v)
 	end
 
-	print("TARGETS: "..#caster.mosquito_targets)
+	ToolsPrint("TARGETS: "..#caster.mosquito_targets)
 
 	for k,v in pairs(caster.mosquito_targets) do
 		Timers:CreateTimer(k*0.15,function()
@@ -160,7 +160,7 @@ function swap_abilities(keys)
 	local caster = keys.caster
 	local swap = keys.swap
 
-	print("SWAPPING ABILITIES")
+	ToolsPrint("SWAPPING ABILITIES")
 
 	local abilities = {
 		caster:FindAbilityByName("tek_skycrack"),
@@ -266,7 +266,7 @@ function tek_selfdestruct(keys) -- creates the particle effects
                             false)
 
 	for k,v in pairs(enemy) do
-		print("FOUND UNIT!")
+		ToolsPrint("FOUND UNIT!")
 		DealDamage(v,caster,damage,DAMAGE_TYPE_PHYSICAL)
 	end
 	DealDamage(caster,caster,damage,DAMAGE_TYPE_PHYSICAL)
@@ -296,7 +296,7 @@ function aamines_start(keys)
 			modifier:Destroy()
 			keys.ability.ignoreFire = false
 		else
-			print("Resetting cooldown and refunding Mana cost.")
+			ToolsPrint("Resetting cooldown and refunding Mana cost.")
 			keys.ability:EndCooldown()
 			keys.ability:RefundManaCost()
 		end
@@ -365,7 +365,7 @@ function aamines_place_target(keys, position)
 
 	table.insert(ability.aamines_units,unit)
 
-	print("Added "..unit:GetName().." to ability.aamines_units @ "..#ability.aamines_units-1)
+	ToolsPrint("Added "..unit:GetName().." to ability.aamines_units @ "..#ability.aamines_units-1)
 
 	ParticleManager:CreateParticleForTeam("particles/units/heroes/hero_tek/aamines_target.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit,caster:GetTeam()) --[[Returns:int
 	Creates a new particle effect
@@ -391,22 +391,22 @@ function aamines_fire(keys)
 		keys.ability:ApplyDataDrivenModifier(caster, v, "modifier_tek_aamines_explode", {Duration=landdelay+landtime+interval_time+delay}) --[[Returns:void
 			No Description Set
 			]]
-		print(interval_time)
+		ToolsPrint(interval_time)
 		Timers:CreateTimer(interval_time,function()
 			ParticleManager:CreateParticle("particles/units/heroes/hero_tek/aamines_fire.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 			caster:EmitSound("Hero_Rattletrap.Rocket_Flare.Fire") --[[Returns:void
 			 
 			]]
-			print("Firing...")
+			ToolsPrint("Firing...")
 		end)
 		Timers:CreateTimer(landtime+interval_time,function()
-			print("Landing...")
+			ToolsPrint("Landing...")
 			ParticleManager:CreateParticle("particles/units/heroes/hero_tek/aamines_land.vpcf", PATTACH_ABSORIGIN_FOLLOW, v) --[[Returns:int
 			Creates a new particle effect
 			]]
 		end)
 		Timers:CreateTimer(landdelay+landtime+interval_time,function()
-			print("Sticking...")
+			ToolsPrint("Sticking...")
 			v.stick_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_tek/aamines_stick.vpcf", PATTACH_ABSORIGIN_FOLLOW, v) --[[Returns:int
 			Creates a new particle effect
 			]]
@@ -431,7 +431,7 @@ function aamines_explode(keys)
 
 	ParticleManager:DestroyParticle(caster.stick_particle,true)
 
-	print("EXPLODING!")
+	ToolsPrint("EXPLODING!")
 
 	caster:EmitSound("Hero_StormSpirit.StaticRemnantExplode") --[[Returns:void
 			 
@@ -493,7 +493,7 @@ function playTargetingSound(emitter)
 	local sound = "Tek.MosquitoMissiles.Acquire"..tostring(r)
 
 	if emitter then
-		print("Emitting "..sound.." on "..emitter:GetName())
+		ToolsPrint("Emitting "..sound.." on "..emitter:GetName())
 		emitter:EmitSound(sound)
 	end
 end
@@ -509,7 +509,7 @@ function microarray_start(keys)
 	No Description Set
 	]]
 
-	print("Begin range is "..distance)
+	ToolsPrint("Begin range is "..distance)
 
 	local speed = 4000 -- the speed with which we travel to the target location.
 
@@ -541,7 +541,7 @@ function microarray_start(keys)
 		distance = caster:GetRangeToUnit(unit) --[[Returns:float
 		No Description Set
 		]]
-		print("Range is "..distance)
+		ToolsPrint("Range is "..distance)
 		travel_time = distance/speed
 
 		caster.ma_distance_travelled = 0

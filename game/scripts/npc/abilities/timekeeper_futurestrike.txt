@@ -5,12 +5,13 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/timekeeper_futurestrike"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"timekeeper_echo"
 
@@ -38,12 +39,12 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"min_delay"						"4"
+			"min_delay"						"3"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"max_delay"						"20"
+			"max_delay"						"12"
 		}
 	"03"
 		{
@@ -53,7 +54,7 @@
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"max_damage"					"110 225 375 525"
+			"max_damage"					"125 230 335 440"
 		}
 	}
 	
@@ -61,37 +62,5 @@
 		{
 		"particle" "particles/units/heroes/hero_timekeeper/timekeeper_futurestrike.vpcf"
 		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
-		}
-		
-	"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/timekeeper_abilities.lua"
-				"Function"		"futurestrike"
-				"min_delay"		"%min_delay"
-				"max_delay"		"%max_delay"
-				"min_damage"	"%min_damage"
-				"max_damage"	"%max_damage"
-			}
-		}
-	
-	"Modifiers"
-		{
-			"modifier_futurestrike"
-			{
-				"IsHidden" "0"
-				"IsPurgable" "0"
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-				"IsDebuff"	"1"
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/timekeeper_abilities.lua"
-						"Function"		"futurestrike_end"
-					}
-				}
-			}
 		}
 }

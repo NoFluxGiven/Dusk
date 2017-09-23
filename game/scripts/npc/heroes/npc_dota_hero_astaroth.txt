@@ -13,13 +13,14 @@
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_agility_10" //
+	"Ability11"				"special_bonus_mp_regen_3" //
+	"Ability12"				"special_bonus_astaroth_1" // +30 Pain Curse Damage
+	"Ability13"				"special_bonus_astaroth_2" // +1s Black Insignia Duration
+	"Ability14"				"special_bonus_attack_speed_40"
+	"Ability15"				"special_bonus_lifesteal_15" //
+	"Ability16"				"special_bonus_astaroth_3" // Overwhelm No Cooldown
+	"Ability17"				"special_bonus_astaroth_4" // +30 Black Insignia Damage
 
 	"ArmorPhysical"				"3"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -55,55 +56,4 @@
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 
-	"Talents"
-	{
-	    "1" {
-		        "left"
-		        {      
-		            "name" "special_bonus_astaroth_attack_speed"
-		            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "20"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_astaroth_armor"
-		            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "4"
-		        }
-	   		}
-	    "2" {
-		        "left"
-		        {      
-		            "name" "special_bonus_astaroth_damage"
-		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "35"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_astaroth_overwhelm"
-		            "v" "80"
-		        }
-	    	}
-	    "3" {
-		        "left"
-		        {      
-		            "name" "special_bonus_astaroth_movespeed"
-		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "50"
-		        }
-		        "right"
-		        {
-		            "name" "special_bonus_astaroth_pain_curse"
-		            "v" "0.4"
-		        }
-	    	}
-	    "4" {
-		        "left"
-		        {      
-		            "name" "special_bonus_astaroth_black_insignia"
-		            "v" "400"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_astaroth_erase"
-		            "v" "15"
-		        }
-	    	}
-	}
 }

@@ -114,7 +114,7 @@ function phantom_nightmare(event)
   local radius = event.radius
   
   local attack_damage = event.damage
-  print("ATTACK'S DAMAGE: "..attack_damage)
+  ToolsPrint("ATTACK'S DAMAGE: "..attack_damage)
 
   local stack_damage = event.damage_per_stack/100
   
@@ -144,9 +144,9 @@ function phantom_nightmare(event)
 
       local damage = unit_pct*attack_damage
 
-      print("CLEAVE DAMAGE ON "..v:GetName()..": "..damage)
-      print("PERCENTAGE CLEAVE "..unit_pct)
-      print("STACKS: "..mod:GetStackCount())
+      ToolsPrint("CLEAVE DAMAGE ON "..v:GetName()..": "..damage)
+      ToolsPrint("PERCENTAGE CLEAVE "..unit_pct)
+      ToolsPrint("STACKS: "..mod:GetStackCount())
 
       local damage_table = {
       victim = v,
@@ -186,7 +186,7 @@ function phantom_crit(event)
       ability = event.ability
       } 
       ApplyDamage(damage_table)
-  print("Dealt "..dmg)
+  ToolsPrint("Dealt "..dmg)
 end
 
 function phantom_nightmare_attack(keys)

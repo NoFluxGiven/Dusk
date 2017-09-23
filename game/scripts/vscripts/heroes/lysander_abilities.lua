@@ -53,7 +53,7 @@ function grapeshot(keys)
 		stun = stun*0.5
 	end
 
-	print("CRIT: "..r.." with guaranteed crit as "..tostring(guaranteed_crit).." and multiplying damage by "..crit_mult.." ("..crit_mult*ad..") and stunning for "..crit_stun)
+	ToolsPrint("CRIT: "..r.." with guaranteed crit as "..tostring(guaranteed_crit).." and multiplying damage by "..crit_mult.." ("..crit_mult*ad..") and stunning for "..crit_stun)
 
 	caster:EmitSound("Hero_Kunkka.InverseBayonet")
 

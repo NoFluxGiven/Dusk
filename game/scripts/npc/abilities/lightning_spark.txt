@@ -48,6 +48,7 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"slow"						"-5 -10 -15"
+			"LinkedSpecialBonus"		"special_bonus_lightning_4"
 		}
 		"04"
 		{

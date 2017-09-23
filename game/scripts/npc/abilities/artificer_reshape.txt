@@ -23,7 +23,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"20" // rescaled from 38
+	"AbilityCooldown"				"30" // rescaled from 38
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,12 +40,52 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"2.0 2.75 3.50 4.25" // percentage total
+			"duration"						"3.0 4.0 5.0 6.0" // percentage total
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage_reduction"				"65" // percentage total
+			"radius"						"775"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"siren_movespeed_slow"			"15 20 25 30" // percentage total
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"siren_attackspeed_slow"		"30 60 90 120" // percentage total
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"serpent_damage_reduction"		"20 40 60 80" // flat reduction
+		}
+	"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"serpent_spell_reduction"		"15 20 25 30"
+		}
+	"07"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"abyssal_one_armor_reduction"	"2 4 6 8"
+		}
+	"08"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"abyssal_one_magic_res_reduction" "20 25 30 35"
+		}
+	"09"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"monk_neg_health_regen" 		"15 30 45 60"
+		}
+	"10"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"monk_neg_mana_regen" 			"10 15 20 25"
 		}
 	}
 	

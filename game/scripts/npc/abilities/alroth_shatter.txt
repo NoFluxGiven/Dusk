@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/alroth_shatter"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -38,7 +39,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"damage_mult"				"0.65"
+			"damage_mult"				"0.50 0.60 0.70 0.80"
 		}
 		"02"
 		{
@@ -53,7 +54,12 @@
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"-12"
+			"slow"						"-12 -16 -20 -24"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"mana_burn"					"2.0"
 		}
 	}
 	
@@ -63,76 +69,5 @@
 		"particle" "particles/units/heroes/hero_alroth/shatter_hit_target_enemy.vpcf"
 		"particle" "particles/units/heroes/hero_alroth/shatter_enemy.vpcf"
 		"soundfile"	"soundevents/hero_alroth.vsndevts"
-		}
-	
-	"Modifiers"
-		{
-			"modifier_alroth_shatter_passive"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-				"ThinkInterval"  "1.0"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/alroth_abilities.lua"
-						"Function"		"ShatterCheck"
-					}
-				}
-			
-				"OnAttackLanded"
-				// "%attack_damage" is set to the damage value before mitigation
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/alroth_abilities.lua"
-						"Function"		"Shatter"
-						"mult"			"%damage_mult"
-					}
-				}
-			}
-			"modifier_alroth_shatter"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-				"IsPurgable"		"1"
-				"Duration"			"%duration"
-			
-				"EffectName"		"particles/units/heroes/hero_alroth/shatter_enemy.vpcf"
-				"EffectAttachType"	"follow_origin"
-
-				"OnCreated"
-				{
-					"FireEffect"
-					{
-						"EffectName"        "particles/units/heroes/hero_alroth/shatter_hit_target_enemy.vpcf"
-						"EffectAttachType"  "follow_customorigin"
-						"Target"            "TARGET"
-						"ControlPointEntities"
-						{
-							"TARGET"	"attach_hitloc"
-						}
-					}
-				}	
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%mres_reduction"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				}
-			}
-
-			"modifier_alroth_shatter_user"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"EffectName"		"particles/units/heroes/hero_alroth/shatter_user.vpcf"
-				"EffectAttachType"	"follow_origin"
-			}
 		}
 }

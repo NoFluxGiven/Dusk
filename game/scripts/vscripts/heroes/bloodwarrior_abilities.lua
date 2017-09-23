@@ -8,7 +8,7 @@ function CheckBloodfiend(keys)
 	if keys.ability:IsCooldownReady() ~= true then return end
 	if caster.summonBloodFiend ~= nil and caster.summonBloodFiend == true then
 		if caster.hasBeenSummoned == false or caster.hasBeenSummoned == nil then
-			print("Summoning bloodfiend!")
+			ToolsPrint("Summoning bloodfiend!")
 			ParticleManager:CreateParticle("particles/units/heroes/hero_bloodwarrior/blood_curse_activate.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster) --[[Returns:int
 			Creates a new particle effect
 			]]
@@ -72,7 +72,7 @@ function deadBloodfiend(keys) -- run by the Blood Fiend
 	caster:RemoveModifierByName("modifier_blood_curse_hide") --[[Returns:void
 	Removes a modifier
 	]]
-	print("Bloodfiend has died...")
+	ToolsPrint("Bloodfiend has died...")
 	caster:RemoveNoDraw()
 	PlayerResource:SetDefaultSelectionEntity(player,-1)
 	caster:Kill(keys.ability, attacker)
@@ -185,7 +185,7 @@ function grapple(keys)
 	if target:IsHero() ~= true then dmg = keys.creepdmg end
 	if target:HasModifier("modifier_bloodmark") then dmg = keys.markeddmg end
 
-	print(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z)
+	ToolsPrint(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z)
 
 	dmg = dmg/100
 

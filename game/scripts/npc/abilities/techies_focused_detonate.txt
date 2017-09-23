@@ -45,66 +45,9 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"300"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"10"
-		}
-	}
-
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/gob_squad_abilities.lua"
-			"Function"		"clearance_sale_start"
-			"duration"		"%duration"
-		}
 	}
 
 	"Modifiers"
 	{
-		"modifier_clearance_sale_throw"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"0"
-
-			"ThinkInterval"  "0.45"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/gob_squad_abilities.lua"
-					"Function"		"clearance_sale"
-					"radius"		"%radius"
-					"damage"		"%AbilityDamage"
-				}
-			}
-		}
-		"modifier_clearance_sale_throw_aghs"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"0"
-			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
-
-			"ThinkInterval"  "0.30"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/gob_squad_abilities.lua"
-					"Function"		"clearance_sale"
-					"radius"		"%radius"
-					"damage"		"%AbilityDamage"
-				}
-			}
-		}
 	}
 }

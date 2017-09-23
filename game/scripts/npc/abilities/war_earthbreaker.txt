@@ -48,6 +48,7 @@
         {
             "var_type"              "FIELD_INTEGER"
             "radius"                "325"
+            "LinkedSpecialBonus"    "special_bonus_war_4"
         }
 
         "03"

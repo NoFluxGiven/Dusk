@@ -68,10 +68,8 @@ function modifier_bloodlust:OnCreated(kv)
 	self:StartIntervalThink(1.0)
 	if IsServer() then
 		self:SetStackCount(math.floor(kv.stacks))
-		self.damage = self:GetAbility():GetSpecialValueFor("dot")
-		if self:GetAbility():GetCaster():GetHasTalent("special_bonus_war_bloodlust") then
-			self.damage = self.damage + 65
-		end
+		local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_war_3") or 0
+		self.damage = self:GetAbility():GetSpecialValueFor("dot") + t_damage_bonus
 	end
 end
 

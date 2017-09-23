@@ -104,7 +104,7 @@ function CDOTA_BaseNPC:GetDamageBeforeReductions(damageAmount,damageType)
 	if dtype == DAMAGE_TYPE_PHYSICAL then
 		reduction_amount = 1 - 0.06 * armor / (1 + 0.06 * armor)
 	elseif dtype == DAMAGE_TYPE_MAGICAL then
-		reduction_amount = magic_res -- /100?
+		reduction_amount = 1-magic_res -- /100?
 	else
 		return damage
 	end
@@ -192,6 +192,8 @@ function CDOTABaseAbility:InflictDamage(target,attacker,damage,damage_type,flags
 	    ability = self
   	})
 
+  	if not self then return end
+
   	print("INFLICT: ","ABILITY: "..self:GetName(),"DAMAGE/TYPE: "..damage.." / "..damage_type)
   	if flags ~= 0 then
   		print("FLAGS: "..flags)
@@ -199,7 +201,7 @@ function CDOTABaseAbility:InflictDamage(target,attacker,damage,damage_type,flags
 
 end
 
-function CDOTABaseAbility:FetchTalent(handle,suffix)
+function CDOTABaseAbility:FetchTalentDep(handle,suffix)
 	local handle = handle or self:GetCaster()
 	local suffix = suffix or ""
 	suffix = "" .. suffix -- convert to string
@@ -212,7 +214,7 @@ function CDOTABaseAbility:FetchTalent(handle,suffix)
 	local talent_string = "special_bonus_"..ability_name
 	local interim = "_talent_"
 
-	local str = unit_name .. interim .. talent_string
+	local str = unit_name .. interim .. talent_string .. suffix
 
 	local gotIt = handle:HasModifier(str)
 
@@ -260,4 +262,26 @@ function CDOTABaseAbility:FetchTalent(handle,suffix)
 	else
 		return nil
 	end
+end
+
+function CDOTA_Buff:WasPurged()
+	-- call this function in OnDestroy() to determine if the modifier was purged or not
+	local rt = self:GetRemainingTime()
+	if rt > 0 then
+		return true
+	end
+	return false
+end
+
+function CDOTA_BaseNPC:FetchTalent(talent_name,val) -- returns the value attached to the Talent if it is learned, nil if not
+  local ei = self:entindex()
+  local t = CustomNetTables:GetTableValue("learned_abilities", tostring(ei))
+
+  local v = nil
+
+  if t then
+  	v = t[talent_name]
+  end
+
+  return v
 end

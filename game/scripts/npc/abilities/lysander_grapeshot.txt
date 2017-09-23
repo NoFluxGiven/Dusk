@@ -54,6 +54,7 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"crit"					"25"
+			"LinkedSpecialBonus"	"special_bonus_lysander_2"
 		}
 		"05"
 		{

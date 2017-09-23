@@ -10,6 +10,9 @@ function artificer_naturalise:OnSpellStart()
 
 	local duration = self:GetSpecialValueFor("duration")
 
+	if target:TriggerSpellAbsorb(self) then return end
+	target:TriggerSpellReflect(self)
+
 	self:ApplyNaturalise(target,duration)
 
 	target:EmitSound("Hero_Treant.LeechSeed.Target")

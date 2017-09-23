@@ -56,7 +56,7 @@
         "04"
         {
             "var_type"              "FIELD_INTEGER"
-            "mult"                  "100 125 150"
+            "mult"                  "100"
         }
     }
 

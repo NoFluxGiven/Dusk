@@ -5,21 +5,20 @@
 	"Ability1"				"baal_st_anchor" // Anchors the target enemy to a location.  When they move too far away from their location, they are stunned, take damage, and teleported to it.
 	"Ability2"				"baal_spatial_rift" // After a 1 second channel time, creates a rift at the target location that deals damage and slows drastically.  The rift lasts for 6s.
 	"Ability3"				"baal_port_out" // Instantly teleports Baal and any Axial Seals to the active Rift, consuming it.
-	"Ability4"				"baal_compress" // Compresses the target unit, turning them into a carriable orb.  The orb can be thrown by casting the ability again, and deals damage in an AoE
-	// upon landing.  If Baal does not throw the orb before the timer reaches zero, it explodes, damaging him and stunning him.  Enemy Heroes grabbed can be thrown only half the distance.
-	// lasts 3.5s max.
+	"Ability4"				"baal_compression_sphere" // Creates a hemispherical area wherein Baal's allies can move freely, but his enemies are slowed the longer they remain within it. Slows movespeed, attack speed and turnrate.
 	"Ability5"				"baal_fire" // Fires the compressed target at a point.
 	"Ability6"				"baal_superposition2" // Baal enters a state of instability for a short time, becoming untargetable and immune to Physical damage.  Enemies can still see
 	// his location.  Disjoints projectiles on use.  Gives phased movement to Baal.	
 	"Ability8"				"" // Passive.  Upon spawning, the enemy's Ancient explodes, and you win the game.
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_baal_1" // +75 Spatial Rift Damage
+	"Ability11"				"special_bonus_baal_2" // -150 Spatiotemporal Anchor Radius
+	"Ability12"				"special_bonus_baal_3" // +2s Spatial Rift Slow
+	"Ability13"				"special_bonus_baal_4" // +20% Superposition Movespeed
+	"Ability14"				"special_bonus_cast_range_250"
+	"Ability15"				"special_bonus_baal_5" // Compression Sphere 65 DPS
+	"Ability16"				"special_bonus_baal_6" // Superposition Grants Free Pathing
+	"Ability17"				"special_bonus_attack_speed_100"
 	
 
 	"ArmorPhysical"				"0"									// Physical protection.
@@ -57,55 +56,4 @@
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 
-	"Talents"
-	{
-	    "1" {
-		        "left"
-		        {      
-		            "name" "special_bonus_baal_magic_res"
-		            "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "15"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_baal_mana_regen"
-		            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "2"
-		        }
-	   		}
-	    "2" {
-		        "left"
-		        {      
-		            "name" "special_bonus_baal_movespeed"
-		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "30"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_baal_attack_speed"
-		            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "35"
-		        }
-	    	}
-	    "3" {
-		        "left"
-		        {      
-		            "name" "special_bonus_baal_spatial_rift"
-		            "v" "100"
-		        }
-		        "right"
-		        {
-		            "name" "special_bonus_baal_damage"
-		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "60"
-		        }
-	    	}
-	    "4" {
-		        "left"
-		        {      
-		            "name" "special_bonus_baal_superposition"
-		            "v" "4"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_baal_st_anchor"
-		            "v" "8"
-		        }
-	    	}
-	}
 }

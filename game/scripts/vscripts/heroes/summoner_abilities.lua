@@ -39,7 +39,7 @@ function summon_vassal(keys)
 		[6] = 30,
 		[7] = 160
 	}
-	print("KILLING VASSAL #1")
+	ToolsPrint("KILLING VASSAL #1")
 	
 	if caster.vassals ~= nil then
 
@@ -133,7 +133,7 @@ function summon_vassal(keys)
 		--v:MoveToPositionAggressive(v:GetAbsOrigin())
 
 		if hero_target then
-			print("targeting hero")
+			ToolsPrint("targeting hero")
 			Orders:IssueAttackOrder(v,hero_target)
 			v:SetForceAttackTarget(hero_target) --[[Returns:void
 			No Description Set
@@ -142,7 +142,7 @@ function summon_vassal(keys)
 			No Description Set
 			]]
 		elseif building_target then
-			print("targeting building")
+			ToolsPrint("targeting building")
 			Orders:IssueAttackOrder(v,building_target)
 			v:SetForceAttackTarget(hero_target) --[[Returns:void
 			No Description Set
@@ -151,7 +151,7 @@ function summon_vassal(keys)
 			No Description Set
 			]]
 		elseif other_target then
-			print("targeting other")
+			ToolsPrint("targeting other")
 			Orders:IssueAttackOrder(v,other_target)
 			v:SetForceAttackTarget(hero_target) --[[Returns:void
 			No Description Set

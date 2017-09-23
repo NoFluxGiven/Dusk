@@ -1,0 +1,84 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+			m_flStartAlpha = 0.0
+		},
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_nCP1 = 3
+			m_vecCP1Pos = [ 0.0, 0.0, 550.0 ]
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, -900.0 ]
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_hTexture = resource:"materials/particle/particle_cone_variamt_gradient_1.vtex"
+			m_nOrientationType = 1
+			m_flSourceAlphaValueToMapToZero = 0.567
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMax = 1.0
+			m_vecDistanceBias = [ 1.0, 1.0, 0.0 ]
+			m_vecDistanceBiasAbs = [ 0.0, 0.0, 1.0 ]
+			m_nControlPointNumber = 3
+			m_nScaleCP = 1
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 113, 42, 42, 255 ]
+			m_ColorMax = [ 74, 40, 40, 255 ]
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 25.0
+			m_flRadiusMax = 35.0
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+		},
+	]
+	m_flConstantRadius = 14.9645
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_bloodwarrior/blood_rain_mist.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_bloodwarrior/blood_rain_ripples.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_bloodwarrior/blood_rain_glyph.vpcf"
+		},
+	]
+}

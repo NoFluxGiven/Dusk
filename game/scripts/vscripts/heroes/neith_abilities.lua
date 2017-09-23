@@ -10,7 +10,7 @@ function Inspire(keys)
 
 	if caster:PassivesDisabled() then return end
 
-	print("Inspire")
+	ToolsPrint("Inspire")
 
 	local found = FindUnitsInRadius( caster:GetTeamNumber(),
                           caster:GetCenter(),

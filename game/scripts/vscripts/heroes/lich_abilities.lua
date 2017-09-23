@@ -6,7 +6,7 @@ function lich_winters_requiem(event)
   local radius = event.radius
   local point = RandomVector(RandomInt(125,radius))
   local final_vec = caster_vec+point
-  print("EXPLOSION!!")
+  ToolsPrint("EXPLOSION!!")
   local particle  = ParticleManager:CreateParticle("particles/units/heroes/hero_lich/lich_frost_nova.vpcf", PATTACH_ABSORIGIN, caster)
   ParticleManager:SetParticleControl(particle,0,final_vec)
   ParticleManager:SetParticleControl(particle,1,final_vec)

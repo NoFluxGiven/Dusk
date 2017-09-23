@@ -80,7 +80,7 @@ function raigeki(keys)
 end
 
 function genso(event)
-	print("Conjure Image")
+	ToolsPrint("Conjure Image")
 	local caster = event.caster
 	local target = event.target
 	local player = caster:GetPlayerID()
@@ -266,7 +266,22 @@ function zanmato_init( keys )
 						ability:ApplyDataDrivenModifier( caster, caster, modifierCreepName, {} )
 					end
 					
-					caster:PerformAttack( target, true, true, true, false, false )
+					caster:PerformAttack( target,
+						true,
+						true,
+						true,
+						false,
+						false,
+						false,
+						true
+						)
+					-- bool bUseCastAttackOrb,
+					-- bool bProcessProcs,
+					-- bool bSkipCooldown,
+					-- bool bIgnoreInvis,
+					-- bool bUseProjectile,
+					-- bool bFakeAttack,
+					-- bool bNeverMiss
 					
 					-- Slash particles
 					local slashFxIndex = ParticleManager:CreateParticle( particleSlashName, PATTACH_ABSORIGIN_FOLLOW, target )

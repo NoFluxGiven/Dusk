@@ -11,13 +11,14 @@
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_exp_boost_25"
+	"Ability11"				"special_bonus_mp_175"
+	"Ability12"				"special_bonus_timekeeper_1" // +1s Dilation Duration
+	"Ability13"				"special_bonus_timekeeper_2" // +150 Futurestrike Max Damage
+	"Ability14"				"special_bonus_cast_range_150"
+	"Ability15"				"special_bonus_timekeeper_3" // +32 Haste Aura Attackspeed
+	"Ability16"				"special_bonus_timekeeper_4" // 8% Haste Aura Cooldown Reduction
+	"Ability17"				"special_bonus_timekeeper_5" // -10s Futurestrike Cooldown
 
 	"ArmorPhysical"				"2"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).

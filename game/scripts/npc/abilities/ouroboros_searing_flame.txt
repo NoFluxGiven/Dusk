@@ -2,7 +2,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/ouroboros_searing_flame"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"				   
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
@@ -24,19 +25,17 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"450"
-	"AbilityCastPoint"				"0.40"
+	"AbilityCastPoint"				"0.30"
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"4"
-	
-	// Damage.
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"60 100 140 200"
+	"AbilityCooldown"				"2.5"
+
+	"HasScepterUpgrade"				"1"
 	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"40 50 60 70"
+	"AbilityManaCost"				"65"
 	
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
@@ -65,67 +64,34 @@
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"slow"					"-25"
+			"slow"					"25"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow_duration"			"1.40 1.80 2.20 2.60"
+			"slow_duration"			"1.00 1.20 1.40 1.60"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"80 110 140 170"
+			"LinkedSpecialBonus"	"special_bonus_ouroboros_3"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"scepter_slow"			"80"	
+		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"scepter_dot"			"15 30 45 60"
+		}
+		"10"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"scepter_dot_duration"	"5.0"
 		}
 				
-	}
-	
-	"OnSpellStart"
-	{
-		"LinearProjectile"
-		{
-			"Target" "POINT"
-			"EffectName" "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-			"MoveSpeed" "%speed"
-			"StartRadius" "%start_radius"
-			"StartPosition" "attach_attack1"
-			"EndRadius" "%end_radius"
-			"FixedDistance" "%range"
-			"TargetTeams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"TargetTypes" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNITY_TARGET_MECHANICAL"
-			"TargetFlags" "DOTA_UNIT_TARGET_FLAG_NONE"
-			"HasFrontalCone" "1"
-			"ProvidesVision" "0"
-		}
-		"FireSound"
-		{
-			"EffectName" "Hero_DragonKnight.BreathFire"
-			"Target" "CASTER"
-		}
-	}
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit" "0"
-		"Damage"
-		{
-			"Target" "TARGET"
-			"Type" "DAMAGE_TYPE_MAGICAL"
-			"Damage" "%AbilityDamage"
-		}
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_ouroboros_searing_flame_slow"
-			"Target" 		"TARGET"
-		}
-	}
-	"Modifiers"
-	{
-		"modifier_ouroboros_searing_flame_slow"
-		{
-			"Duration"			"%slow_duration"
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-	
-			"Properties"
-			{
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-			}
-		}
 	}
 }

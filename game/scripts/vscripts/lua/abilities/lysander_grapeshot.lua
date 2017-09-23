@@ -6,6 +6,9 @@ function lysander_grapeshot:OnSpellStart()
 	local c = self:GetCaster()
 	local t = self:GetCursorTarget()
 
+	if t:TriggerSpellAbsorb(self) then return end
+	t:TriggerSpellReflect(self)
+
 	if t then
 
 		local base_dmg = self:GetSpecialValueFor("base_damage")
@@ -25,7 +28,7 @@ function lysander_grapeshot:OnSpellStart()
 
 		local cc_mult = self:GetSpecialValueFor("captains_compass_increase")/100
 
-		local bonus = self:FetchTalent() or 0
+		local bonus = c:FetchTalent("special_bonus_lysander_2") or 0
 
 		local r = RandomInt(1,100)
 		local crit = self:GetSpecialValueFor("crit") + bonus

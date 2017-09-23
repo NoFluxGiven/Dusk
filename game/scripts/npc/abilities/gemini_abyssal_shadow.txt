@@ -1,0 +1,58 @@
+//=====================================================================================================
+// GEMiNi: abyssal_shadow
+//=====================================================================================================
+"gemini_abyssal_shadow"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/gemini_abyssal_shadow"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"gemini_abyssal_shadow"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.3"
+	
+	// Time
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"100 90 80"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"level"					"1 2 3"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"16"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"10 15 20"
+		}
+	}
+
+	"precache"
+	{
+		"particle"	"particles/units/heroes/hero_gemini/abyssal_shadow_summon.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+	}
+}

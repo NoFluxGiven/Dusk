@@ -439,6 +439,101 @@
 			//----------------------------------------------------------------
 			"HasInventory"				"1"
 		}
+	"npc_dota_unit_abyssal_shadow"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models\heroes\shadow_fiend\shadow_fiend.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"                     "Hero_Nevermore"
+		"GameSoundsFile"               "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				"0.65"
+		"ConsideredHero"			"0"
+		"IsAncient"					"1"
+		"CanBeDominated"			"0"
+		"UnitLabel"					"abyssal_shadow"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"				"abyssal_shadow_void_strikes"
+		// Attacks from the Shadow deal bonus Pure damage and reduce Armor and Magic Resistance.
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"50"		// Damage range max.
+		"AttackRate"				"0.7"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
+		"AttackRange"				"700"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/econ/items/shadow_fiend/sf_desolation/sf_base_attack_desolation.vpcf"			// Particle system model for projectile.
+		"ProjectileSpeed"			"1150"			// Speed of projectile.	   
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"215"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.
+		"MovementTurnRate"			"0.5"		// Turning rate.
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"100"		// Base health.
+		"StatusHealthRegen"			"999"			// Health regeneration rate.
+		"StatusMana"				"100"		// Base mana.
+		"StatusManaRegen"			"999"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"700"		// Range of vision during day light.
+		"VisionNighttimeRange"		"700"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO" 
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		//Inventory
+		"HasInventory"				"0"
+		
+		"AutoAttacksByDefault"		"1"
+	
+		"Creature"
+		{
+			"HPGain"                    "0"
+			"DamageGain"                "50"
+			"ArmorGain"                 "0"
+			"MagicResistGain"           "0"
+			"MoveSpeedGain"             "0"
+			"BountyGain"                "0"
+			"XPGain"                    "0"
+	
+			"AttachWearables"
+			{
+			    "Wearable1" { "ItemDef" "387" }
+			    "Wearable2" { "ItemDef" "486" }
+			    "Wearable3" { "ItemDef" "488" }
+			    "Wearable3" { "ItemDef" "509" }
+			}
+		}
+	}	
 	"npc_dota_unit_avatar_dark"
 	{										
 		// General
@@ -1481,6 +1576,112 @@
 			"MoveSpeedGain"             "0"
 			"BountyGain"                "0"
 			"XPGain"                    "0"
+		}
+	}	
+	"npc_dota_unit_ice_wyrm"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models\heroes\winterwyvern\winterwyvern.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"                     "Hero_WinterWyvern"
+		"GameSoundsFile"               "soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				"1.60"
+		"ConsideredHero"			"0"
+		"IsAncient"					"1"
+		"CanBeDominated"			"0"
+		"UnitLabel"					"ice_wyrm"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"				"ice_wyrm_glacial_impact"
+		// After a short delay, a huge pillar of ice pierces the ground, dealing damage and stunning enemies
+		// caught in the radius.
+		// Deals 160/220/280 damage.
+		// Stuns for 1.0/1.5/2.0s.
+		"Ability2"				"ice_wyrm_winters_breath"
+		// The ice Wyrm's attacks create cold vortices around their target, dealing splash damage and
+		// damage over time.
+		// Deals 30/50/70 damage in a 250 AoE and applies a DoT that deals 25 DPS for 6s.
+		"Ability3"				"ice_wyrm_frostfall"
+		// The ice Wyrm exudes an aura of extreme cold, damaging nearby enemies
+		// based on their current HP.
+		// Deals 5/6/7% of their current HP as damage every 2s.
+		// 900 radius.
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"2"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"20"		// Damage range min.
+		"AttackDamageMax"			"30"		// Damage range max.
+		"AttackRate"				"1.4"		// Speed of attack.
+		"AttackAnimationPoint"		"0.2"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
+		"AttackRange"				"700"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_winter_wyvern/winter_wyvern_arctic_attack.vpcf"			// Particle system model for projectile.
+		"ProjectileSpeed"			"1150"			// Speed of projectile.	   
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"215"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"200"		// Experience earn.
+		"BountyGoldMin"				"150"		// Gold earned min.
+		"BountyGoldMax"				"150"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"400"		// Speed.
+		"MovementTurnRate"			"0.5"		// Turning rate.
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"900"		// Base health.
+		"StatusHealthRegen"			"10"			// Health regeneration rate.
+		"StatusMana"				"400"		// Base mana.
+		"StatusManaRegen"			"20"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		//Inventory
+		"HasInventory"				"0"
+		
+		"AutoAttacksByDefault"		"1"
+	
+		"Creature"
+		{
+			"HPGain"                    "50"
+			"DamageGain"                "2"
+			"ArmorGain"                 "0.40"
+			"MagicResistGain"           "1"
+			"MoveSpeedGain"             "0"
+			"BountyGain"                "0"
+			"XPGain"                    "0"
+	
+			"AttachWearables"
+			{
+			    "Wearable1" { "ItemDef" "551" }
+			    "Wearable2" { "ItemDef" "552" }
+			    "Wearable3" { "ItemDef" "553" }
+			}
 		}
 	}	
 	//------------------------------------------------------------------------------------

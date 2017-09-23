@@ -8,11 +8,12 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/lightning_boltblast"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILTIY_BEHAVIOR_DIRECTIONAL"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILTIY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_AOE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 	"AbilityTextureName"			"lightning_boltblast"
+	"AoERadius"						"315"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
@@ -21,7 +22,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"7.5"
+	"AbilityCooldown"				"8"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -38,12 +39,12 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"explosion_delay"			"0.8"
+			"explosion_delay"			"1.0"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"explosion_damage"			"110 155 200 245"
+			"explosion_damage"			"120 180 240 300"
 		}
 		"03"
 		{
@@ -63,7 +64,7 @@
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"radius"					"350"
+			"radius"					"315"
 		}
 	}
 	

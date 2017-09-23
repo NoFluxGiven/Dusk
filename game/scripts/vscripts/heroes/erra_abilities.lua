@@ -56,7 +56,7 @@ function MorbidBlade(keys)
 end
 
 function ToDust(keys)
-	print("TO DUST")
+	ToolsPrint("TO DUST")
 	local caster = keys.caster
 
 	local damage = keys.dmg/100
@@ -67,7 +67,7 @@ function ToDust(keys)
 
 	if radius == 0 then radius = 875 end
 
-	print("RADIUS: "..radius)
+	ToolsPrint("RADIUS: "..radius)
 
 	local enemy_found = FindUnitsInRadius( caster:GetTeamNumber(),
                   caster:GetCenter(),
@@ -92,7 +92,7 @@ function ToDust(keys)
 	local total_damage_bonus = 0
 
 	for k,v in pairs(enemy_found) do
-		print(v:GetUnitName())
+		ToolsPrint(v:GetUnitName())
 		total_damage_bonus = total_damage_bonus + v:GetHealthDeficit() * damage
 		ParticleManager:CreateParticle("particles/units/heroes/hero_erra/to_dust_affected_unit.vpcf", PATTACH_ABSORIGIN_FOLLOW, v) --[[Returns:int
 		Creates a new particle effect
@@ -100,7 +100,7 @@ function ToDust(keys)
 	end
 
 	for k,v in pairs(enemy_creep) do
-		print(v:GetUnitName())
+		ToolsPrint(v:GetUnitName())
 		total_damage_bonus = total_damage_bonus + v:GetHealthDeficit() * creep_damage
 		ParticleManager:CreateParticle("particles/units/heroes/hero_erra/to_dust_affected_unit.vpcf", PATTACH_ABSORIGIN_FOLLOW, v) --[[Returns:int
 		Creates a new particle effect
@@ -109,7 +109,7 @@ function ToDust(keys)
 
 	total_damage_bonus = math.floor(total_damage_bonus)
 
-	print(total_damage_bonus)
+	ToolsPrint(total_damage_bonus)
 
 	if total_damage_bonus > 0 then
 		caster:EmitSound("Erra.ToDust")

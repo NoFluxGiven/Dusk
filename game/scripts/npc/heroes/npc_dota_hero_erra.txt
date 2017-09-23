@@ -15,13 +15,14 @@
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_attack_speed_25" //
+	"Ability11"				"special_bonus_erra_1" // +60 Morbid Blade Damage
+	"Ability12"				"special_bonus_erra_2" // +4s To Dust Duration
+	"Ability13"				"special_bonus_hp_225" // 
+	"Ability14"				"special_bonus_erra_3" // +100 Grave Guard Regen
+	"Ability15"				"special_bonus_erra_4" // Deathtouch 40% Slow
+	"Ability16"				"special_bonus_erra_5" // 1200 Radius Ally Grave Guard
+	"Ability17"				"special_bonus_cooldown_reduction_20" // 
 
 	"ArmorPhysical"				"2"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).

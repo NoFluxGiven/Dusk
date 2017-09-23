@@ -63,7 +63,7 @@ function fight_me_gather_damage(keys)
 	-- if attacker and caster then
 	-- 	if caster.fight_me_damage then
 	-- 		caster.fight_me_damage = caster.fight_me_damage+(attack_damage*damage)
-	-- 		print("Added "..(attack_damage*damage).." for a total of "..caster.fight_me_damage)
+	-- 		ToolsPrint("Added "..(attack_damage*damage).." for a total of "..caster.fight_me_damage)
 	-- 	else
 	-- 		caster.fight_me_damage = attack_damage*damage
 	-- 	end

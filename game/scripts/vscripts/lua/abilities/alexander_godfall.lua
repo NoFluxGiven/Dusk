@@ -68,7 +68,9 @@ function modifier_godfall:OnAttackLanded(params)
 
 		local damage = attacker:GetAverageTrueAttackDamage(attacker)
 
-		local m = self:GetAbility():GetSpecialValueFor("damage")/100
+		local t_multiplier_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_alexander_3") or 0
+
+		local m = (self:GetAbility():GetSpecialValueFor("damage")+t_multiplier_bonus) / 100
 
 		damage = damage * m
 
@@ -95,19 +97,6 @@ function modifier_godfall:OnAttackLanded(params)
 		target:EmitSound("Alexander.Godfall")
 
 		if target:IsRealHero() then attacker:Heal(damage, caster) end
-
-		if caster:GetHasTalent("special_bonus_alexander_godfall") then
-			local enemies = FindEnemies(caster,target:GetAbsOrigin(),350)
-			for k,v in pairs(enemies) do
-				local ability = caster:FindAbilityByName("alexander_soulseal") --[[Returns:handle
-				Retrieve an ability by name from the unit.
-				]]
-				caster:SetCursorCastTarget(v) --[[Returns:void
-				No Description Set
-				]]
-				ability:OnSpellStart()
-			end
-		end
 
 		self:Destroy()
 	end

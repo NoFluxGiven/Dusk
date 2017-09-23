@@ -2,22 +2,39 @@
 {
 	"AbilityLayout" 		"4"
 	"override_hero"			"npc_dota_hero_vengefulspirit"
-	"Ability1"				"elena_convoke" 
-	"Ability2"				"elena_meditation" 
-	"Ability3"				"elena_devotion"
-	"Ability4"				"elena_diverge_new"
+	"Ability1"				"elena_guardian_bubble" // Forms a bubble around the target ally,
+	// causing damage they take to not exceed a cap (before reductions).
+	// Prevents damage from exceeding 100.
+	// After 3 damage instances, the bubble dissipates.
+	// Lasts a maximum of 8s.
+	"Ability2"				"elena_starlight" // A targeting line appears. After a short delay, she fires a
+	// beam of energy that deals damage to any targets in the way, and heals any allies hit.
+	// Gains 20 bonus damage/bonus heal for each Hero hit on either team.
+	// The heal amount is a percentage of the damage amount.
+	// Delay is 0.75s, damage/heal 140/200/260/320.
+	// Large range, low cooldown.
+	"Ability3"				"elena_devotion" // Elena grants bonus regeneration to nearby allies whenever
+	// she casts a Spell.
+	// In a 700 radius, grants 5/10/15/20 regeneration for 3s.
+	// The regeneration stacks fully, and refreshes the buff duration when applied.
+	"Ability4"				"elena_bladebreaker" // Elena enchants nearby enemies' weapons with a powerful hex.
+	// When they make an attack, they take 50+40/60/80% of their attack damage as Pure damage,
+	// and are disarmed for 1.3s.
+	// If the target is disarmed, the debuff pauses.
+	// Lasts 5s.
 	"Ability5"				""
 	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_mp_regen_2"
+	"Ability11"				"special_bonus_hp_200"
+	"Ability12"				"special_bonus_elena_1" // Devotion Stacks Grant 6 Armor
+	"Ability13"				"special_bonus_elena_2" // Devotion Stacks Grant 20% Magic Res
+	"Ability14"				"special_bonus_elena_3" // +120 Starlight Damage/Heal
+	"Ability15"				"special_bonus_elena_4" // +2 Guardian Bubble Instances
+	"Ability16"				"special_bonus_elena_5" // +40 Starlight Damage Per Hero
+	"Ability17"				"special_bonus_elena_6" // +60% Bladebreaker Attack Damage
 
 	"ArmorPhysical"				"1"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).

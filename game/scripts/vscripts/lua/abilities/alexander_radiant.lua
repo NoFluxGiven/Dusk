@@ -10,9 +10,33 @@ function alexander_radiant:OnSpellStart()
 	No Description Set
 	]]
 
+	local t_damage = self:GetCaster():FetchTalent("special_bonus_alexander_2")
+
+	if t_damage then
+		local radius = self:GetSpecialValueFor("radius")
+
+		local e = FindEnemies(caster,caster:GetAbsOrigin(),radius)
+
+		local p = CreateParticleHitloc(caster,"particles/units/heroes/hero_alexander/radiant_damage.vpcf")
+
+		ParticleManager:SetParticleControl(p, 1, Vector(radius,0,0))
+
+		-- Sound
+
+		for k,v in pairs(e) do
+			self:InflictDamage(v,caster,t_damage,DAMAGE_TYPE_MAGICAL)
+		end
+	end
+
 	caster:AddNewModifier(caster, self, "modifier_radiant", {Duration = duration}) --[[Returns:void
 	No Description Set
 	]]
+
+	local t_affects_allies = self:GetCaster():FetchTalent("special_bonus_alexander_4")
+
+	if t_affects_allies then
+		caster:AddNewModifier(caster, self, "modifier_radiant_allies", {Duration = duration})
+	end
 end
 
 -- Modifiers
@@ -53,7 +77,7 @@ end
 
 function modifier_radiant:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT
+		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE
 	}
 	return funcs
 end
@@ -66,10 +90,8 @@ function modifier_radiant:OnCreated( kv )
 
 end
 
-function modifier_radiant:GetModifierConstantHealthRegen()
-	local bonus = 1
-	if self:GetAbility():GetCaster():GetHasTalent("special_bonus_alexander_radiant") then bonus = 2 end
-	return self:GetParent():GetMaxHealth()*( (self:GetAbility():GetSpecialValueFor("regen")*bonus)/100 )
+function modifier_radiant:GetModifierHealthRegenPercentage()
+	return self:GetAbility():GetSpecialValueFor("regen")
 end
 
 function modifier_radiant:GetEffectName()
@@ -93,4 +115,53 @@ function modifier_radiant_aura:GetModifierMiss_Percentage()
 	return self:GetAbility():GetSpecialValueFor("miss") --[[Returns:table
 	No Description Set
 	]]
+end
+
+modifier_radiant_allies = class({})
+
+function modifier_radiant_allies:IsAura()
+	return true
+end
+
+function modifier_radiant_allies:GetAuraRadius()
+	return self:GetAbility():GetSpecialValueFor("radius") --[[Returns:table
+	No Description Set
+	]]
+end
+
+function modifier_radiant_allies:GetAuraDuration()
+	return 0.1
+end
+
+function modifier_radiant_allies:GetAuraSearchFlags()
+	return 0
+end
+
+function modifier_radiant_allies:GetAuraSearchTeam()
+	return DOTA_UNIT_TARGET_TEAM_FRIENDLY
+end
+
+function modifier_radiant_allies:GetAuraSearchType()
+	return DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
+end
+
+function modifier_radiant_allies:GetModifierAura()
+	return "modifier_radiant_allies_aura"
+end
+
+function modifier_radiant_allies:IsHidden()
+	return true
+end
+
+modifier_radiant_allies_aura = class({})
+
+function modifier_radiant_allies_aura:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE
+	}
+	return funcs
+end
+
+function modifier_radiant_allies_aura:GetModifierHealthRegenPercentage()
+	return self:GetAbility():GetSpecialValueFor("regen")*0.5
 end

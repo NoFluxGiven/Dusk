@@ -2,26 +2,23 @@
 {
 	"AbilityLayout" 		"4"
 	"override_hero"			"npc_dota_hero_techies"
-	//"Ability1"				"gob_squad_kamikaze" // Gob Squad charges at the target location with great speed. Colliding with an enemy unit will cause them to explode,
-	// dealing 150/225/300/375 damage in a 300 AoE, with bonus damage equivalent to 15% of their current Health. Gob Squad loses 40% of their current Health upon exploding, and stuns all
-	// affected units (including themselves) for 1s.
-	//"Ability2"				"gob_squad_rocket_blast" // Gob Squad fires a rocket at the target location. Deals damage and knocks enemies away from the centre. Gob Squad is also affected
-	// by the knockback, but doubly so. The rocket deals 75/150/225/300 damage, and deals half damage to Gob Squad.
-	//"Ability3"				"gob_squad_whoops" // Upon death, the Gob Squad explodes, dealing Magical damage in a small area. Deals 150/225/300/375 damage in a 300 AoE.
-	//"Ability4"				"gob_squad_clearance_sale" // The Gob Squad offloads all of their unused explosives, throwing bombs at random nearby locations for 10s. The bombs deal
-	// 140/200/260 damage each in a 200 AoE, and explode upon landing. They throw one bomb every 0.75s.
-	//"Ability5"			""
+	"Ability1"				"gob_squad_rocket_blast"
+	"Ability2"				"gob_squad_kamikaze"	
+	"Ability3"				"gob_squad_whoops"
+	"Ability4"				"gob_squad_clearance_sale"
+	"Ability5"				""
 	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_spell_amplify_6" // 
+	"Ability11"				"special_bonus_magic_resistance_15" // 
+	"Ability12"				"special_bonus_intelligence_30" // 
+	"Ability13"				"special_bonus_cooldown_reduction_12" // 
+	"Ability14"				"special_bonus_gob_squad_1" // +100 Rocket Blast Damage
+	"Ability15"				"special_bonus_gob_squad_2" // +50% Kamikaze Damage/Charge Time
+	"Ability16"				"special_bonus_gob_squad_3" // Creates 4 Bombs on Spell Cast
+	"Ability17"				"special_bonus_gob_squad_4" // Ride the Rocket Blast!
 
 	"ArmorPhysical"				"2"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -49,7 +46,7 @@
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 	"MovementSpeed"				"285"									// Speed.
-	"MovementTurnRate"			"1.0"									// Turning rate.
+	"MovementTurnRate"			"0.6"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
 	"StatusHealthRegen"			"0"									// Health regeneration rate.
@@ -57,4 +54,56 @@
 	"StatusManaRegen"			"0"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+	"Talents"
+	{
+	    "1" {
+		        "left"
+		        {      
+		            "name" "special_bonus_gob_squad_damage"
+		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "40"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_gob_squad_mana_regen"
+		            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "2"
+		        }
+	   		}
+	    "2" {
+		        "left"
+		        {      
+		            "name" "special_bonus_gob_squad_mana"
+		            "MODIFIER_PROPERTY_MANA_BONUS" "375"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_gob_squad_exp"
+		            "MODIFIER_PROPERTY_EXP_RATE_BOOST" "60"
+		        }
+	    	}
+	    "3" {
+		        "left"
+		        {      
+		            "name" "special_bonus_gob_squad_rocket_blast"
+		            "v" "50"
+		        }
+		        "right"
+		        {
+		            "name" "special_bonus_gob_squad_kamikaze"
+		            "v" "40"
+		        }
+	    	}
+	    "4" {
+		        "left"
+		        {      
+		            "name" "special_bonus_gob_squad_bat"
+		            "MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT" "1.25"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_gob_squad_whoops"
+		            "v" "2"
+		        }
+	    	}
+	}
 }

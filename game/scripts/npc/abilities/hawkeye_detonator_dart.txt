@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/hawkeye_detonator_dart"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -19,7 +20,7 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"650"
-	"AbilityCastPoint"				"0.4"
+	"AbilityCastPoint"				"0.2"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -45,7 +46,7 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"ticks"						"6"
+			"ticks"						"5"
 		}
 		"03"
 		{
@@ -55,7 +56,7 @@
 		"04"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"tick_time"					"1.00 0.80 0.60"
+			"tick_time"					"1.00"
 		}
 		"05"
 		{
@@ -73,87 +74,8 @@
 		"soundfile" "soundevents\game_sounds_heroes\game_sounds_gyrocopter.vsndevts"
 		"soundfile" "soundevents\hero_tek.vsndevts"
 		}
-		
-	"OnSpellStart"
-		{
-		"TrackingProjectile"
-			{
-			"Target" "TARGET"
-			"EffectName" "particles\units\heroes\hero_hawkeye\det_dart_tag.vpcf"
-			"Dodgeable" "0"
-			"ProvidesVision" "0"
-			"VisionRadius" "0"
-			"MoveSpeed" "2300"
-			"SourceAttachment" "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
-			}
-		}
-	"OnProjectileHitUnit"
-		{
-		"ApplyModifier"
-			{
-			"Target" "TARGET"
-			"ModifierName" "modifier_detonator_dart"
-			}
-		"Damage"
-		{
-			"Target"		"TARGET"
-			"Type"			"DAMAGE_TYPE_MAGICAL"
-			"Damage"		"%initial_damage"
-		}
-		}
 	
 	"Modifiers"
 		{
-			"modifier_detonator_dart"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"EffectName"		"particles/units/heroes/hero_hawkeye/detonator_dart.vpcf"
-				"EffectAttachType"	"follow_origin"
-
-				"ThinkInterval" "%tick_time"
-
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hawkeye_abilities.lua"
-						"Function"		"DetonateTick"
-						"damage"		"%damage"
-						"radius"		"%radius"
-					}
-				}
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hawkeye_abilities.lua"
-						"Function"		"DetonateCountdown"
-						"ticks"			"%ticks"
-					}
-				}
-
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hawkeye_abilities.lua"
-						"Function"		"DetonateTick"
-						"damage"		"%damage"
-						"radius"		"%radius"
-						"explode"		"1"
-					}
-				}
-			}
-			"modifier_detonator_dart_cooldown"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-				"Duration"			"0.06"
-			}
 		}
 }

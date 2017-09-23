@@ -6,7 +6,11 @@ function aether_teleport:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 
-	local delay = self:GetSpecialValueFor("delay")
+	local t_delay_bonus = caster:FetchTalent("special_bonus_aether_2") or 0
+
+	local delay_change = 1-(t_delay_bonus/100)
+
+	local delay = self:GetSpecialValueFor("delay") * delay_change
 
 	local casterpos = caster:GetAbsOrigin()
 
@@ -25,7 +29,7 @@ function aether_teleport:OnSpellStart()
 
 		target = nil
 
-		print("Target is now nil.")
+		ToolsPrint("Target is now nil.")
 
 		for k,v in pairs(found) do
 			if v:HasModifier("modifier_monolith_slow_area") then
@@ -52,14 +56,12 @@ function aether_teleport:OnSpellStart()
 	caster:EmitSound("Hero_Wisp.Relocate")
 end
 
-function aether_teleport:GetCastRange()
-	local cast_range = self.BaseClass.GetCastRange(self, self:GetCaster():GetAbsOrigin(), self:GetCursorTarget())
-	if self:GetCaster():GetHasTalent("special_bonus_aether_teleport") then
-		return cast_range + 875
-	else
-		return cast_range
-	end
-end
+-- function aether_teleport:GetCastRange()
+-- 	local cast_range = self.BaseClass.GetCastRange(self, self:GetCaster():GetAbsOrigin(), self:GetCursorTarget())
+-- 	-- local t_cast_range_bonus = self:GetCaster():FetchTalent("special_bonus_aether_3") or 0
+
+-- 	return cast_range -- + t_cast_range_bonus
+-- end
 
 -- Modifiers
 
@@ -99,17 +101,20 @@ function modifier_teleport_start_up:OnDestroy()
 	Creates a new particle effect
 	]]
 
-	if IsServer() then target:EmitSound("Hero_Wisp.TeleportIn") end
+	if IsServer() then
+		target:EmitSound("Hero_Wisp.TeleportIn")
 
-	ParticleManager:SetParticleControl(p, 0, target.teleport_position) --[[Returns:void
-	Set the control point data for a control on a particle effect
-	]]
+		ParticleManager:SetParticleControl(p, 0, target.teleport_position) --[[Returns:void
+		Set the control point data for a control on a particle effect
+		]]
 
-	ParticleManager:SetParticleControl(p2, 0, target:GetAbsOrigin()) --[[Returns:void
-	Set the control point data for a control on a particle effect
-	]]
+		ParticleManager:SetParticleControl(p2, 0, target:GetAbsOrigin()) --[[Returns:void
+		Set the control point data for a control on a particle effect
+		]]
 
-	FindClearSpaceForUnit(target, target.teleport_position, true)
+		FindClearSpaceForUnit(target, target.teleport_position, true)
+
+	end
 
 	if IsServer() then target:EmitSound("Hero_Wisp.TeleportIn") end
 end

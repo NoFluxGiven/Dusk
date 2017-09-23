@@ -26,7 +26,7 @@ function modifier_hell_bent:OnAttackLanded(params)
 		No Description Set
 		]]
 		local target = params.target or params.unit
-		if not target:IsHero() then print("Not a Hero.") return end
+		if not target:IsHero() then ToolsPrint("Not a Hero.") return end
 		target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_hell_bent_steal", {Duration=duration}) --[[Returns:void
 		No Description Set
 		]]

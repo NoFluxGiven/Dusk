@@ -9,7 +9,7 @@ function antimatter_mines(keys)
 
 	local amount = keys.amount or 20
 
-	print("SUMMONING MINES")
+	ToolsPrint("SUMMONING MINES")
 
 	caster:EmitSound("Hero_TemplarAssassin.Trap.Trigger") --[[Returns:void
 	 
@@ -111,7 +111,7 @@ function TrackDamage(keys)
 		end
 		target.micronebula_damage = target.micronebula_damage+(dmg*mult)
 		target.micronebula_total_damage = target.micronebula_damage
-		print("MICRO: "..target.micronebula_total_damage)
+		ToolsPrint("MICRO: "..target.micronebula_total_damage)
 	end
 end
 

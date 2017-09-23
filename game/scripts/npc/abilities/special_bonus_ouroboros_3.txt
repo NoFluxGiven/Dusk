@@ -1,0 +1,27 @@
+//=================================================================================================================
+// Ouroboros Talent 3: +75 Searing Flame Damage
+//=================================================================================================================
+"special_bonus_ouroboros_3"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"special_bonus_unique_centaur_2"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"LinkedAbility"
+	{
+		"01" "ouroboros_searing_flame"
+	}
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"value" "75"
+		}
+	}
+}

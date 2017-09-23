@@ -38,6 +38,7 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"damage"					"50 80 110 140"
+			"LinkedSpecialBonus"		"special_bonus_lightning_2"
 		}
 		"02"
 		{

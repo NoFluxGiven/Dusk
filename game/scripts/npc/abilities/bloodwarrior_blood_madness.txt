@@ -1,0 +1,89 @@
+//=====================================================================================================
+// BAAL: Spatial Rift
+//=====================================================================================================
+"bloodwarrior_blood_madness"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/bloodwarrior_blood_madness"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AnimationPlaybackRate"			"0.95"
+	"AbilityTextureName"			"bloodwarrior_blood_madness"
+	"AoERadius"						"%radius"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"90 75 60"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"6"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"health_removal"				"25"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_damage"					"30 60 90"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_attack_speed"			"80 100 120"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_movespeed"				"20 30 40"
+		}
+	"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_lifesteal"				"50"
+		}
+	"07"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"bonus_duration"				"3 4 5"
+		}
+	"08"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"lifesteal_increase"			"25"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_bloodwarrior/blood_madness.vpcf"
+		//"soundfile" "soundevents/hero_bloodwarrior.vsndevts"
+
+		}
+	
+	"Modifiers"
+		{
+		}
+}

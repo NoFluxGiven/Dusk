@@ -9,6 +9,9 @@ function bahamut_reckoning_aura:OnSpellStart()
 	local duration = self:GetSpecialValueFor("duration")
 	local target = self:GetCursorTarget()
 
+	if target:TriggerSpellAbsorb(self) then return end
+	target:TriggerSpellReflect(self)
+
 	target:AddNewModifier(self:GetCaster(), self, "modifier_reckoning_aura_power_up", {Duration=duration}) --[[Returns:void
 	No Description Set
 	]]

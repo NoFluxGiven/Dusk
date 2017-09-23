@@ -44,13 +44,14 @@
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_spell_amplify_5"
+	"Ability11"				"special_bonus_strength_9"
+	"Ability12"				"special_bonus_rai_1"
+	"Ability13"				"special_bonus_rai_2"
+	"Ability14"				"special_bonus_rai_3"
+	"Ability15"				"special_bonus_rai_4"
+	"Ability16"				"special_bonus_rai_5"
+	"Ability17"				"special_bonus_rai_6"
 
 	"ArmorPhysical"				"4"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -86,56 +87,4 @@
 	"StatusManaRegen"			"0"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
-
-	"Talents"
-	{
-	    "1" {
-		        "left"
-		        {      
-		            "name" "special_bonus_rai_movespeed"
-		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "15"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_rai_health"
-		            "MODIFIER_PROPERTY_HEALTH_BONUS" "175"
-		        }
-	   		}
-	    "2" {
-		        "left"
-		        {      
-		            "name" "special_bonus_rai_damage"
-		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "40"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_rai_spell_amp" // 
-		            "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE" "8"
-		        }
-	    	}
-	    "3" {
-		        "left"
-		        {      
-		        	"name" "special_bonus_rai_amplify" // +80 Amplify Bolt Damage
-		            "v" "80"
-		        }
-		        "right"
-		        {
-		            "name" "special_bonus_rai_cooldown"
-		            "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING" "12"
-		        }
-	    	}
-	    "4" {
-		        "left"
-		        {      
-		            "name" "special_bonus_rai_arc_twister" // -4s Arc Twister Cooldown
-		            "v" "4"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_rai_static_blade" // +4 Max Static Blade Charges
-		            "v" "4"
-		        }
-	    	}
-	}
 }

@@ -1,0 +1,45 @@
+//=====================================================================================================
+// GEMINI: Planar Trickery Activate
+//=====================================================================================================
+"gemini_planar_trickery_activate"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/gemini_planar_trickery_activate"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"gemini_planar_trickery_activate"
+	"MaxLevel"						"1"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.2"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"1"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	//"AbilityDamage"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	}
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_gemini/planar_trickery_rune.vpcf"
+		"particle"  "particles/units/heroes/hero_gemini/planar_trickery_activate.vpcf"
+		"soundfile"	"soundevents/hero_gemini.vsndevts"
+	}
+}

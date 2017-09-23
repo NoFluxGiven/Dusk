@@ -50,7 +50,7 @@ function modifier_static_blade:OnAttackLanded(params)
 end
 
 -- function modifier_static_blade:OnAbilityFullyCast(params)
--- 	print("ABILITY CAST")
+-- 	ToolsPrint("ABILITY CAST")
 -- 	if self:GetParent() == params.unit then
 -- 		if params.ability:IsItem() == false then
 -- 			if params.ability:IsToggle() == false then
@@ -87,7 +87,7 @@ end
 function modifier_static_blade:GainCharges()
 	local max = 6
 	local bonus = 0
-	if self:GetAbility():GetCaster():GetHasTalent("special_bonus_rai_static_blade") then bonus = 2 end
+	if self:GetAbility():GetCaster():FetchTalent("special_bonus_rai_1") then bonus = 1 end
 	max = max + bonus
 	if self:GetStackCount()+1 <= max then
 		self:IncrementStackCount()

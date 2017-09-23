@@ -20,6 +20,7 @@
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"75"
+	"HasScepterUpgrade"				"1"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -49,11 +50,13 @@
 		{
 			"var_type"										"FIELD_FLOAT"
 			"monolith_manaregen"							"1 2 3 4"
+			"LinkedSpecialBonus"							"special_bonus_aether_4"
 		}
 		"06"
 		{
 			"var_type"										"FIELD_FLOAT"
 			"monolith_healthregen"							"2 4 6 8"
+			"LinkedSpecialBonus"							"special_bonus_aether_4"
 		}
 		"07"
 		{

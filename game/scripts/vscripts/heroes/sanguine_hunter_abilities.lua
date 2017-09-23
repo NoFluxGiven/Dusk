@@ -213,13 +213,13 @@ function sadistic_dmg(keys)
 
 	local amt = math.ceil(dmg*regen)
 
-	print("REGEN IS "..amt)
+	ToolsPrint("REGEN IS "..amt)
 
 	if target == attacker then return end
 
 	local s = caster:GetModifierStackCount("modifier_sadistic_regen",caster)
 
-	print("STACKS ARE "..s)
+	ToolsPrint("STACKS ARE "..s)
 
 	if caster.sadistic_table == nil then caster.sadistic_table = {} end
 

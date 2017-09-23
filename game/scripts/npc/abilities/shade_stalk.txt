@@ -1,0 +1,79 @@
+//=====================================================================================================
+// SHADE: Isolation
+//=====================================================================================================
+"shade_stalk"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/shade_stalk"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityTextureName"			"shade_stalk"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"900"
+	"AbilityCastPoint"				"0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30 24 18 12"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"110"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"proc_damage"				"30 40 50 60"
+			"LinkedSpecialBonus"		"special_bonus_shade_6"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"movespeed_bonus"			"20 30 40 50"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"slow"						"25"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"4.5"
+			"LinkedSpecialBonus"		"special_bonus_shade_1"
+		}
+	}
+	
+	"precache"
+		{
+		"soundfile" "soundevents/hero_shade.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
+		"particle" "particles\units\heroes\hero_night_stalker\nightstalker_ulti.vpcf"
+		"particle" "particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf"
+		"particle" "particles/units/heroes/hero_shade/stalk.vpcf"
+		"particle" "particles/units/heroes/hero_shade/stalk_unit.vpcf"
+		"particle" "particles/units/heroes/hero_shade/stalk_attack.vpcf"
+		"particle" "particles/units/heroes/hero_shade/isolation_debuff.vpcf"
+		"particle" "particles/units/heroes/hero_shade/precast_isolation.vpcf"
+		"particle" "particles\items_fx\ethereal_blade.vpcf"
+		}
+}

@@ -6,6 +6,9 @@ function baal_compress:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 
+	if target:TriggerSpellAbsorb(self) then return end
+	target:TriggerSpellReflect(self)
+
 	local duration = self:GetSpecialValueFor("duration")
 
 	local ab1 = self
@@ -63,6 +66,10 @@ function baal_compress:OnSpellStart()
 end
 
 function baal_compress:CastFilterResultTarget( hTarget )
+	if self:GetCaster():GetTeam() ~= hTarget:GetTeam() then
+		return UF_FAIL_CUSTOM
+	end
+
 	if self:GetCaster() == hTarget then
 		return UF_FAIL_CUSTOM
 	end
@@ -71,6 +78,10 @@ function baal_compress:CastFilterResultTarget( hTarget )
 end
  
 function baal_compress:GetCustomCastErrorTarget( hTarget )
+	if self:GetCaster():GetTeam() ~= hTarget:GetTeam() then
+		return "#dota_hud_error_cant_cast_on_enemies"
+	end
+
 	if self:GetCaster() == hTarget then
 		return "#dota_hud_error_cant_cast_on_self"
 	end

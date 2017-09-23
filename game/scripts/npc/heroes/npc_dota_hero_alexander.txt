@@ -13,16 +13,17 @@
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_hp_regen_4" // 
+	"Ability11"				"special_bonus_alexander_1" // +7 Elandra's Blessing Armor
+	"Ability12"				"special_bonus_movement_speed_25" //
+	"Ability13"				"special_bonus_alexander_2" // Radiant Deals 225 Magical Damage
+	"Ability14"				"special_bonus_attack_damage_50" // 
+	"Ability15"				"special_bonus_alexander_3" // +40% Godfall Damage
+	"Ability16"				"special_bonus_alexander_4" // Radiant Heals Nearby Allies (50%)
+	"Ability17"				"special_bonus_strength_25" //
 
 	"ArmorPhysical"				"3"									// Physical protection.
-	"MagicalResistance"				"20"									// Magical protection (percentage).
+	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackRate"				"1.6"
@@ -55,56 +56,4 @@
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 
-	"Talents"
-	{
-	    "1" {
-		        "left"
-		        {      
-		            "name" "special_bonus_alexander_mana_regen"
-		            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "2"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_alexander_atk_dmg"
-		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "20"
-		        }
-	   		}
-	    "2" {
-		        "left"
-		        {      
-		            "name" "special_bonus_alexander_str"
-		            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "10"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_alexander_elandras_blessing" // +30 bonus damage on Elandra's Blessing
-		            "v" "+30"
-		        }
-	    	}
-	    "3" {
-		        "left"
-		        {      
-		        	"name" "special_bonus_alexander_soulseal" // +15% Slow
-		            "v" "+15"
-		        }
-		        "right"
-		        {
-		            "name" "special_bonus_alexander_atk_spd"
-		            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "40"
-		        }
-	    	}
-	    "4" {
-		        "left"
-		        {      
-		            "name" "special_bonus_alexander_radiant" // x2 Regen
-		            "v" "1"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_alexander_godfall" // Makes Soulseal affect enemies in an AoE.
-		            //"350 AoE Soulseal"
-		            "v" "350"
-		        }
-	    	}
-	}
 }

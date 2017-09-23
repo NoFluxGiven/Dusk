@@ -192,7 +192,7 @@ end
 function reverse(keys)
 	local caster = keys.caster
 	local target = keys.target
-	print("healing")
+	ToolsPrint("healing")
 	if target.damage_table then
 		for k,v in pairs(target.damage_table) do
 			if IsValidEntity(v.target) then

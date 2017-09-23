@@ -6,7 +6,12 @@ function baal_st_anchor:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	local duration = self:GetSpecialValueFor("duration")
-	local radius = self:GetSpecialValueFor("radius")
+
+	local t_radius_bonus = self:GetCaster():FetchTalent("special_bonus_baal_2") or 0
+	local radius = self:GetSpecialValueFor("radius") + t_radius_bonus
+
+	if target:TriggerSpellAbsorb(self) then return end
+	target:TriggerSpellReflect(self)
 
 	local bonus = 0
 
@@ -46,9 +51,12 @@ end
 function modifier_st_anchor:OnIntervalThink()
 	local caster = self:GetCaster()
 	local target = self:GetParent()
-	local radius = self:GetAbility():GetSpecialValueFor("radius")
+
+	local t_radius_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_baal_2") or 0
+	local radius = self:GetAbility():GetSpecialValueFor("radius") + t_radius_bonus
+	
 	local stun = self:GetAbility():GetSpecialValueFor("stun")
-	local damage = self:GetAbility():GetAbilityDamage()
+	local damage = self:GetAbility():GetAbilityDamage() or self:GetAbility():GetSpecialValueFor("damage")
 
 	if not IsValidEntity(target.st_anchor_unit) then return end
 
@@ -68,8 +76,8 @@ function modifier_st_anchor:OnIntervalThink()
 			Place a unit somewhere not already occupied.
 			]]
 			ParticleManager:CreateParticle("particles/units/heroes/hero_baal/baal_st_anchor_target.vpcf",PATTACH_ABSORIGIN_FOLLOW,target)
+			target.st_anchor_unit:Destroy()
 		end)
 		--target:RemoveModifierByName("modifier_st_anchor")
-		--target.st_anchor_unit:ForceKill(true)
 	end
 end

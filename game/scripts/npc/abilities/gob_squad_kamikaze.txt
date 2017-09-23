@@ -2,7 +2,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/gob_squad_kamikaze"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -36,7 +37,7 @@
 
 	// Damage.
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"80 160 240 320"
+	"AbilityDamage"					"150 200 250 300"
 	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -54,74 +55,36 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"4"
+			"duration"				"3"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"movespeed_bonus"		"60"
+			"movespeed_bonus"		"15 20 25 30"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"health_damage"			"40"
+			"health_damage"			"50"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"total"					"100"
+			"total"					"50"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"reduction"				"-35"
 		}
-	}
-
-	"OnSpellStart"
-	{
-		"ApplyModifier"
+		"07"
 		{
-			"ModifierName"	"modifier_kamikaze"
-			"Target" 		"CASTER"
-			"Duration"		"%duration"
-		}
-		"FireSound"
-		{
-			"EffectName"	"hero_Crystal.freezingField.explosion"
-			"Target" 		"CASTER"
+			"var_type"				"FIELD_FLOAT"
+			"stun"					"1.4"
 		}
 	}
 
 	"Modifiers"
 	{
-		"modifier_kamikaze"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-		
-			"EffectName"		"particles/units/heroes/hero_gob_squad/kamikaze_unit.vpcf"
-			"EffectAttachType"	"follow_origin"
-
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/gob_squad_abilities"
-					"Function"		"kamikaze"
-					"radius"		"%radius"
-					"health_damage"	"%health_damage"
-					"damage"		"%AbilityDamage"
-					"total"			"%total"
-				}
-			}	
-		
-			"Properties"
-			{
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movespeed_bonus"
-			    "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%reduction"
-			}	
-		}
 	}
 }

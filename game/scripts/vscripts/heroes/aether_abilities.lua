@@ -21,7 +21,7 @@ function teleport_start(keys)
 
 		target = nil
 
-		print("Target is now nil.")
+		ToolsPrint("Target is now nil.")
 
 		for k,v in pairs(found) do
 			if v:HasModifier("modifier_monolith_slow_area") then
@@ -140,9 +140,9 @@ function reality_shift(keys)
 		-- end
 
 		for k,v in pairs(found) do
-			print("====================")
-			print("UNIT: "..v:GetUnitName())
-			print("KEY: "..k.."/"..#found)
+			ToolsPrint("====================")
+			ToolsPrint("UNIT: "..v:GetUnitName())
+			ToolsPrint("KEY: "..k.."/"..#found)
 			if v ~= unit and v:GetUnitName() ~= "npc_dummy_unit" then
 				v:Interrupt()
 				if v:GetTeam() ~= caster:GetTeam() then
@@ -155,13 +155,13 @@ function reality_shift(keys)
 				No Description Set
 				]]
 				if v:HasModifier(m) then
-					print(m.." was applied to "..v:GetName()..".")
+					ToolsPrint(m.." was applied to "..v:GetName()..".")
 				end
 				if v:HasModifier(m2) then
-					print(m2.." was applied to "..v:GetName()..".")
+					ToolsPrint(m2.." was applied to "..v:GetName()..".")
 				end
 				v:AddNoDraw()
-				print("NoDraw applied to "..v:GetName()..".")
+				ToolsPrint("NoDraw applied to "..v:GetName()..".")
 			end
 		end
 
@@ -176,7 +176,7 @@ function Show(keys)
 	local caster = keys.caster
 	local target = keys.target
 
-	print("C: "..caster:GetName().." T: "..target:GetName())
+	ToolsPrint("C: "..caster:GetName().." T: "..target:GetName())
 
 	local dmg = keys.damage
 	local stun = keys.stun
@@ -200,7 +200,7 @@ function Show(keys)
 
 	-- 	for k,v in pairs(found_2) do
 	-- 		if v:HasModifier("modifier_monolith_slow_area_ally") then
-	-- 			print("FOUND A UNIT WITH PREREQUISITES")
+	-- 			ToolsPrint("FOUND A UNIT WITH PREREQUISITES")
 	-- 			p = v:GetAbsOrigin()
 	-- 		end
 	-- 	end
@@ -251,7 +251,7 @@ function Show(keys)
 	end
 
 	Timers:CreateTimer(delay,function()
-		print("Removing NoDraw for "..target:GetName()..".")
+		ToolsPrint("Removing NoDraw for "..target:GetName()..".")
 		ParticleManager:DestroyParticle(p,false)
 		target:RemoveNoDraw()
 	end)

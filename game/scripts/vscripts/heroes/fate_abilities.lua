@@ -26,10 +26,10 @@ function DisplaceHeal(keys)
 
 	local mult = 1+(keys.mult/100)
 
-	print((target:GetHealth()-target.displace_health)*mult)
+	ToolsPrint((target:GetHealth()-target.displace_health)*mult)
 
 	Timers:CreateTimer(0.03,function()
-		print((target:GetHealth()-target.displace_health)*mult)
+		ToolsPrint((target:GetHealth()-target.displace_health)*mult)
 		target.displace_heal = target.displace_heal+((target:GetHealth()-target.displace_health)*mult)
 		if target.displace_health then
 			target:SetHealth(target.displace_health)
@@ -66,7 +66,7 @@ function DisplaceDamage(keys)
 		DealDamage(target,target.displace_attacker,damage_per_tick,DAMAGE_TYPE_PURE)
 	end
 
-	print("Healing for "..heal_per_tick)
+	ToolsPrint("Healing for "..heal_per_tick)
 
 	target:Heal(heal_per_tick, caster)
 end
@@ -75,11 +75,11 @@ function DisplaceEnd(keys)
 	local caster = keys.caster
 	local target = keys.target
 
-	print("DMG "..target.displace_damage)
+	ToolsPrint("DMG "..target.displace_damage)
 
-	print("HEAL "..target.displace_heal)
+	ToolsPrint("HEAL "..target.displace_heal)
 
-	print("HEALTH "..target.displace_health)
+	ToolsPrint("HEALTH "..target.displace_health)
 
 	target.displace_damage = 0
 	target.displace_heal = 0
@@ -155,14 +155,14 @@ function DoomsayerStart(keys)
 
 	local timer = keys.timer
 
-	print("LOLOLOLOLOLOLOLOLOLOLOLOLOL")
+	ToolsPrint("LOLOLOLOLOLOLOLOLOLOLOLOLOL")
 
 	local timer_str = tostring(timer)
 
 	if #timer_str == 1 then timer_str = "00"..timer_str end
 	if #timer_str == 2 then timer_str = "0"..timer_str end
 
-	print(timer_str)
+	ToolsPrint(timer_str)
 
 	local tt = {}
 
@@ -204,7 +204,7 @@ function DoomsayerStart(keys)
 		if #timer_str == 1 then timer_str = "00"..timer_str end
 		if #timer_str == 2 then timer_str = "0"..timer_str end
 
-		print(timer_str)
+		ToolsPrint(timer_str)
 
 		local tt = {}
 
@@ -252,10 +252,10 @@ function DoomsayerEnd(keys)
 		target:Kill(keys.ability, caster) --[[Returns:void
 		Kills this NPC, with the params Ability and Attacker
 		]]
-		print("RESPAWN TIME IS "..target:GetRespawnTime())
-		print("PERCENTAGE IS "..respawn_time_percentage)
+		ToolsPrint("RESPAWN TIME IS "..target:GetRespawnTime())
+		ToolsPrint("PERCENTAGE IS "..respawn_time_percentage)
 		target:SetTimeUntilRespawn(target:GetRespawnTime() * respawn_time_percentage)
-		print("RESPAWN TIME SHOULD BE "..target:GetRespawnTime()*respawn_time_percentage)
+		ToolsPrint("RESPAWN TIME SHOULD BE "..target:GetRespawnTime()*respawn_time_percentage)
 	end
 
 	ParticleManager:DestroyParticle(target.doomsayer_count,false)

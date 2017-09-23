@@ -1,4 +1,6 @@
 
+--LinkLuaModifier("modifier_name","lua/abilities/ability_name",LUA_MODIFIER_MOTION_NONE)
+
 -- Credits To DoctorGester
 modifierFunctions = {
     MODIFIER_EVENT_ON_ABILITY_END_CHANNEL = "OnAbilityEndChannel",

@@ -6,6 +6,9 @@ function alexander_soulseal:OnSpellStart()
 	local target = self:GetCursorTarget()
 	local caster = self:GetCaster()
 
+	if target:TriggerSpellAbsorb(self) then return end
+	-- target:TriggerSpellReflect(self)
+
 	local duration = self:GetSpecialValueFor("duration") --[[Returns:table
 	No Description Set
 	]]

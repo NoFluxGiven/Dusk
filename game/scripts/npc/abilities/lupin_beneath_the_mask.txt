@@ -1,0 +1,63 @@
+//=====================================================================================================
+// LUPIN: Beneath the Mask
+//=====================================================================================================
+"lupin_beneath_the_mask"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/lupin_beneath_the_mask"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilityTextureName"			"lupin_beneath_the_mask"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"9"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"40 80 120 160"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"slow"						"15 20 25 30"
+			"LinkedSpecialBonus"		"special_bonus_lupin_1"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"2 3 4 5"
+			"LinkedSpecialBonus"		"special_bonus_lupin_6"
+		}
+	}
+	
+	"precache"
+		{
+		"soundfile" "soundevents/hero_lupin.vsndevts"
+		"particle" "particles/units/heroes/hero_lupin/beneath_the_mask_hit.vpcf"
+		}
+}

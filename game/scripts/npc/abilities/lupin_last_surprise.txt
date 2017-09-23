@@ -1,0 +1,74 @@
+//=====================================================================================================
+// LUPIN: Last Surprise
+//=====================================================================================================
+"lupin_last_surprise"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/lupin_last_surprise"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"lupin_last_surprise"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"775"
+	"AbilityCastPoint"				"0.2"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"28 20 12"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"75"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"delay"						"0.15"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"range"						"750"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_steal"				"30 50 70"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"5"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"900"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_lupin/ephemera.vpcf"
+		"particle" "particles/units/heroes/hero_lupin/ephemera_unit.vpcf"
+		"particle" "particles/units/heroes/hero_lupin/last_surprise_slash.vpcf"
+		"particle" "particles/units/heroes/hero_lupin/last_surprise_absorb.vpcf"
+		"particle" "particles/units/heroes/hero_lupin/last_surprise_unit.vpcf"
+		}
+}

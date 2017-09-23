@@ -11,13 +11,14 @@
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_hp_175" //
+	"Ability11"				"special_bonus_movement_speed_10" //
+	"Ability12"				"special_bonus_hp_regen_5" //
+	"Ability13"				"special_bonus_mp_225" //
+	"Ability14"				"special_bonus_magic_resistance_15"
+	"Ability15"				"special_bonus_lysander_1" // +75 Phantom Fleet Damage
+	"Ability16"				"special_bonus_attack_damage_75" //
+	"Ability17"				"special_bonus_lysander_2" // +30% Grapeshot Crit Chance
 
 	"ArmorPhysical"				"4"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -52,56 +53,4 @@
 	"StatusManaRegen"			"0"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
-
-	"Talents"
-	{
-	    "1" {
-		        "left"
-		        {      
-		            "name" "special_bonus_lysander_armor"
-		            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "4"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_lysander_mana"
-		            "MODIFIER_PROPERTY_MANA_BONUS" "175"
-		        }
-	   		}
-	    "2" {
-		        "left"
-		        {      
-		            "name" "special_bonus_lysander_adventurous_gale"
-		            "v" "100"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_lysander_damage"
-		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "50"
-		        }
-	    	}
-	    "3" {
-		        "left"
-		        {      
-		            "name" "special_bonus_lysander_movespeed"
-		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "45"
-		        }
-		        "right"
-		        {
-		            "name" "special_bonus_lysander_cooldown"
-		            "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING" "15"
-		        }
-	    	}	
-	    "4" {
-		        "left"
-		        {      
-		            "name" "special_bonus_lysander_health"
-		            "MODIFIER_PROPERTY_HEALTH_BONUS" "575"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_lysander_grapeshot"
-		            "v" "0.75"
-		        }
-	    	}	
-	}
 }

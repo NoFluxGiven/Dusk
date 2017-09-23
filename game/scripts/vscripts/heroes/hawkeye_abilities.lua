@@ -9,9 +9,9 @@ function hawkeye_double_tap(event)
   -- -- distance = 16000
   -- -- speed = 4500
   -- -- if event.ability:HasAttribute("AbilityCastRange") then
-  -- --   print("FOUND ATTRIBUTE!!!!!!!!")
+  -- --   ToolsPrint("FOUND ATTRIBUTE!!!!!!!!")
   -- --   local f = event.ability:Attribute_GetIntValue("AbilityCastRange",0)
-  -- --   print("ATTRIBUTE IS "..f)
+  -- --   ToolsPrint("ATTRIBUTE IS "..f)
   -- -- end
   -- end
   local point = caster_pos+direction*distance
@@ -104,17 +104,17 @@ function hawkeye_double_tap_2_check(event)
   local n = 0
   PrintTable(caster.hitlist)
   for k,v in pairs(caster.hitlist) do
-    print("======CHECKING ENTRY======")
-    print("======"..k.."======")
+    ToolsPrint("======CHECKING ENTRY======")
+    ToolsPrint("======"..k.."======")
     if IsValidEntity(v) then
       if v:IsAlive() then
         n = k
-        print("======TARGET "..k.." IS VALID======")
+        ToolsPrint("======TARGET "..k.." IS VALID======")
         break
       end
     end
   end
-  print("target is "..n)
+  ToolsPrint("target is "..n)
   
   if n == 0 then caster:EmitSound("Hawkeye.Doh") caster:RemoveModifierByName("hawkeye_double_tap_second_shot_effect_mod") return end
   if caster.hitlist[n]:IsRealHero() and caster.hitlist[n]:GetHealth() <= dmg then caster:EmitSound("Hawkeye.Yes") end
@@ -138,17 +138,17 @@ function hawkeye_double_tap_2(event)
   if caster.double_tap_target == nil then return end
 --  PrintTable(caster.hitlist)
 --  for k,v in pairs(caster.hitlist) do
---    print("======CHECKING ENTRY======")
---    print("======"..k.."======")
+--    ToolsPrint("======CHECKING ENTRY======")
+--    ToolsPrint("======"..k.."======")
 --    if IsValidEntity(v) then
 --      if v:IsAlive() then
 --        n = k
---        print("======TARGET "..k.." IS VALID======")
+--        ToolsPrint("======TARGET "..k.." IS VALID======")
 --        break
 --      end
 --    end
 --  end
---  print("target is "..n)
+--  ToolsPrint("target is "..n)
 --  
 --  local target = caster.hitlist[n]
   local target = caster.double_tap_target
@@ -204,7 +204,7 @@ function hawkeye_double_tap_hit(event)
   
   local damage = caster:GetAverageTrueAttackDamage(caster)*mult+basedmg
   
-  print("DAMAGE IS AT "..damage.." AND BASE DAMAGE IS AT "..caster:GetAverageTrueAttackDamage(caster))
+  ToolsPrint("DAMAGE IS AT "..damage.." AND BASE DAMAGE IS AT "..caster:GetAverageTrueAttackDamage(caster))
 --  local damage = target_hp*0.5
   local dmgTable = {
     attacker = caster,
@@ -230,7 +230,7 @@ function hawkeye_double_tap_hit_2(event)
   
   local damage = caster:GetAverageTrueAttackDamage(caster)*mult+basedmg
   
-  print("DAMAGE IS AT "..damage.." AND BASE ATTACK DAMAGE IS AT "..caster:GetAverageTrueAttackDamage(caster).." AND MULTIPLIER IS AT "..mult.." AND BONUS DAMAGE IS "..basedmg)
+  ToolsPrint("DAMAGE IS AT "..damage.." AND BASE ATTACK DAMAGE IS AT "..caster:GetAverageTrueAttackDamage(caster).." AND MULTIPLIER IS AT "..mult.." AND BONUS DAMAGE IS "..basedmg)
 --  local damage = target_hp*0.5
   local dmgTable = {
     attacker = caster,
@@ -247,7 +247,7 @@ function hawkeye_double_tap_end(event)
   local caster = event.caster
   local target = event.target
   
-  print("END")
+  ToolsPrint("END")
   
   target:ForceKill(true)
 end
@@ -359,7 +359,7 @@ function DetonateTick(keys)
   local radius = keys.radius
   local forceExplode = keys.explode == 1
 
-  print(radius)
+  ToolsPrint(radius)
 
   local mod = target:FindModifierByName("modifier_detonator_dart")
 

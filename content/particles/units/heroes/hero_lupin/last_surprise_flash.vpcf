@@ -1,0 +1,86 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+		},
+		{
+			_class = "C_OP_MaintainSequentialPath"
+			m_bUseParticleCount = true
+			m_PathParams = 
+			{
+				m_nEndControlPointNumber = 1
+			}
+			m_fMaxDistance = 250.0
+			m_flCohesionStrength = 0.3
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 7.0
+			m_flEndScale = 5.0
+		},
+		{
+			_class = "C_OP_BasicMovement"
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_hTexture = resource:"materials/particle/glyphs/glyph4_2.vtex"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateSequentialPath"
+			m_flNumToAssign = 15.0
+			m_PathParams = 
+			{
+				m_nEndControlPointNumber = 1
+			}
+			m_fMaxDistance = 250.0
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 72, 61, 139, 255 ]
+			m_ColorMax = [ 70, 130, 180, 255 ]
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.1
+			m_fLifetimeMax = 0.2
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 63
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmissionDuration = 0.25
+		},
+	]
+}

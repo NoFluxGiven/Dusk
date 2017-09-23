@@ -1,0 +1,59 @@
+"ironfist_dragon_fist"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_lua"
+    "ScriptFile"            "lua/abilities/ironfist_dragon_fist"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AnimationPlaybackRate"         "1.0"
+    "AbilityCastAnimation"          "ACT_DOTA_ATTACK"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "ironfist_dragon_fist"
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "150"
+    "AbilityCastPoint"              "0.4"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "28 24 20 16"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "100"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "damage"                "125 200 275 350"
+        }
+        
+        "02"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "stun"                  "1.0 1.4 1.8 2.2"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/hero_erra.vsndevts"
+        "particle"  "particles/units/heroes/hero_ironfist/ironfist_dragon_fist.vpcf"
+        "particle"  "particles/units/heroes/hero_ironfist/ironfist_dragon_fist_caster.vpcf"
+        "particle"  "particles/units/heroes/hero_ironfist/ironfist_dragon_fist_target.vpcf"
+    }
+
+    "Modifiers"
+    {
+    }
+}

@@ -1,0 +1,27 @@
+//=================================================================================================================
+// Alexander Talent 1: +7 Elandra's Blessing Armor
+//=================================================================================================================
+"special_bonus_alexander_1"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"special_bonus_unique_centaur_2"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"LinkedAbility"
+	{
+		"01" "alexander_elandras_blessing"
+	}
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"value" "7"
+		}
+	}
+}

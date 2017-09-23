@@ -6,10 +6,15 @@ function bahamut_mega_flare:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorPosition()
 
+  local t_damage_bonus = caster:FetchTalent("special_bonus_bahamut_3") or 0
+
 	local r = self:GetSpecialValueFor("radius_inner")
 	local dmg = self:GetSpecialValueFor("damage_inner")
 	local r2 = self:GetSpecialValueFor("radius_outer")
 	local dmg2 = self:GetSpecialValueFor("damage_outer")
+
+  dmg = dmg * (1+t_damage_bonus/100)
+  dmg2 = dmg2 * (1+t_damage_bonus/100)
 
 	if self:GetCaster():GetHasTalent("special_bonus_bahamut_mega_flare") then dmg = dmg*1.4 dmg2 = dmg2*1.4 end
 

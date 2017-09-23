@@ -7,16 +7,11 @@ function war_earthbreaker:OnSpellStart()
 	local point = caster:GetAbsOrigin()+caster:GetForwardVector()*150
 
 	local damage = self:GetAbilityDamage()
-	local radius = self:GetSpecialValueFor("radius") --[[Returns:table
-	No Description Set
-	]]
-	local bonus = 0
-	if caster:GetHasTalent("special_bonus_war_earthbreaker") then
-		bonus = 85
-	end
-	local stun = self:GetSpecialValueFor("stun") --[[Returns:table
-	No Description Set
-	]]
+
+	local t_radius_bonus = caster:FetchTalent("special_bonus_war_4") or 0
+
+	local radius = self:GetSpecialValueFor("radius") + t_radius_bonus
+	local stun = self:GetSpecialValueFor("stun")
 
 	local unit = FastDummy(point,caster:GetTeam(),2,0)
 
@@ -36,7 +31,7 @@ function war_earthbreaker:OnSpellStart()
 
 	for k,v in pairs(enemy_found) do
 		if not v:IsMagicImmune() then
-			DealDamage(v,caster,damage+bonus,DAMAGE_TYPE_PHYSICAL)
+			DealDamage(v,caster,damage,DAMAGE_TYPE_PHYSICAL)
 			v:AddNewModifier(caster, nil, "modifier_stunned", {Duration=stun}) --[[Returns:void
 			No Description Set
 			]]

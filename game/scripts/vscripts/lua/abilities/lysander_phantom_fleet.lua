@@ -19,7 +19,9 @@ if IsServer() then
 
 		local duration = self:GetSpecialValueFor("duration")
 
-		local damage = self:GetSpecialValueFor("damage")
+		local t_damage_bonus = caster:FetchTalent("special_bonus_lysander_1") or 0
+
+		local damage = self:GetSpecialValueFor("damage") + t_damage_bonus
 		local speed = self:GetSpecialValueFor("speed")
 		local min_int = self:GetSpecialValueFor("minimum_interval")
 		local max_int = self:GetSpecialValueFor("maximum_interval")

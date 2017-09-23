@@ -1,4 +1,9 @@
 
+function GetAddTalentHotkey()
+{
+	return $("#Settings").FindChildTraverse("AdvancedColumn0").Children()[0].Children()[3].FindChildTraverse("value").text.toLowerCase();
+}
+
 var levels = [10,15,20,25];
 var isTalentTooltipVisible = false;
 var wasTitleChanged = false;
@@ -46,6 +51,7 @@ function SetText(arrOfRows)
 
 function SetLevels(lvlArr)
 { 
+	$.Msg("Set Levels", lvlArr);
 	levels = lvlArr;
 	 var x = $.GetContextPanel().GetParent().GetParent().GetParent()
 	x = x.FindChildTraverse('HUDElements')
@@ -155,6 +161,24 @@ function CleanBranch(branchTier)
 	right_new.SetPanelEvent('onmouseover', function(){OnLabelHover(right_label_new)});
 	right_new.SetPanelEvent('onmouseout', function(){OnLabelDehover(right_label_new)});
 	right_new.SetPanelEvent('onactivate', function(){OnLabelClicked(false)});
+}
+
+function ChooseBranchCurrentTier(isLeft)
+{
+	for(var i in rows)
+	{
+		var row = rows[i];
+		if(levels[i-1] <= lvl)
+		{
+			if(row.selected == "none")
+			{
+				ChooseBranch(i, isLeft);
+				return true;
+			}
+		}else{
+			return false;
+		}
+	}
 }
 
 function ChooseBranch(branchTier,isLeft)
@@ -300,10 +324,11 @@ function SetTalentTooltipVisible(visible)
 	if(!Entities.IsControllableByPlayer(Players.GetLocalPlayerPortraitUnit(), Game.GetLocalPlayerID())) return;
 	$.DispatchEvent("DOTAHUDToggleStatBranchVisibility");
 	if(Sanitized) return;
-	var x = $.GetContextPanel().GetParent().GetParent().GetParent()
+	var x = $.GetContextPanel().GetParent().GetParent().GetParent() 
 	x = x.FindChildTraverse('StatBranchDrawer')
 	x = x.FindChildTraverse('statbranchdialog')
 	visible = x.BHasClass("ShowStatBranch");
+	if(visible) $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("statbranchdialog").SetFocus(); 	
 	//if(x.BHasClass("ShowStatBranch")){
 	//	$.Msg("Invis- Don't calculate")
 //		return;
@@ -311,6 +336,10 @@ function SetTalentTooltipVisible(visible)
 	
 	//$.DispatchEvent("DOTAHUDToggleStatBranchVisibility");
 	x = x.FindChildTraverse('DOTAStatBranch');
+	if(!visible && isTalentTooltipVisible)
+	{
+		
+	}
 	isTalentTooltipVisible = visible;
 	
 	//Set the current branch visible
@@ -377,6 +406,7 @@ function SetSanitized(bool)
 				}
 			}
 			//reset the level tree
+			$.Msg("Sanitize!");
 			SetLevels([10,15,20,25])
 			
 			//null the opacity on the rows
@@ -427,6 +457,7 @@ function SetSanitized(bool)
  
 function ChangeToSelected()
 {
+			$.Msg("Change selected");
 	SetSanitized(false);
 	LastSelectedUnit = Players.GetLocalPlayerPortraitUnit();
 	var table = CustomNetTables.GetTableValue("talent_manager", "unit_talent_data_" + LastSelectedUnit); 
@@ -480,6 +511,8 @@ function InitCustomClickHandlers()
 	CleanBranch(4);
 	SetLevels([8,16,24,32]);
 	
+	//Test
+	
 	function TalentTreeShow()
 	{
 		
@@ -490,6 +523,7 @@ function InitCustomClickHandlers()
 	x = x.FindChildTraverse('lower_hud')
 	x = x.FindChildTraverse('center_with_stats')
 	x = x.FindChildTraverse('center_block') 
+	
 	
 	x.FindChildTraverse('StatBranch').SetPanelEvent('onactivate', function(){});
 	
@@ -539,43 +573,65 @@ function InitCustomClickHandlers()
 		var table = CustomNetTables.GetTableValue("talent_manager", "unit_talent_data_" + Players.GetLocalPlayerPortraitUnit())
 		if(LastSelectedUnit !== Players.GetLocalPlayerPortraitUnit() && table)
 		{
-			ChangeToSelected();
+			ChangeToSelected(); 
+		        LastSelectedUnit = Players.GetLocalPlayerPortraitUnit();
 		}
 		SetSanitized(table == undefined);
+		
+		
+		var x = $.GetContextPanel().GetParent().GetParent().GetParent() 
+		x = x.FindChildTraverse('StatBranchDrawer')
+		x = x.FindChildTraverse('statbranchdialog')
+		var visible = x.BHasClass("ShowStatBranch");
+		if(visible != isTalentTooltipVisible)
+		{
+			if(visible)
+			{
+				$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("statbranchdialog").SetFocus(); 
+			}else{
+				$.DispatchEvent("DropInputFocus",$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("statbranchdialog"));
+			}
+			
+			isTalentTooltipVisible = visible;
+		}
+		if(visible) $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("statbranchdialog").SetFocus(); 	
+		
 		$.Schedule(0.03, TalentTreeTitlePeriodic);
-	}
+	} 
 	TalentTreeTitlePeriodic();
 	
-	/*
-	 var x = $.GetContextPanel().GetParent().GetParent().GetParent();
-	x = x.FindChildTraverse('HUDElements')
-	x = x.FindChildTraverse('StatBranchDrawer')
-	x = x.FindChildTraverse('statbranchdialog')
-	x = x.FindChildTraverse('DOTAStatBranch')
-	x = x.FindChildTraverse('StatBranchColumn')
 	
-	var new_ = $.CreatePanel('Panel', x, 'UpgradeOption5');
-	x.MoveChildBefore(new_, x.Children()[0]);
-	
-	new_.SetHasClass('BranchPair', true);
-	new_.SetHasClass('LeftRightFlow', true); 
-	
-	var new2 = $.CreatePanel('Panel', x, 'GASDFD');
-	new2.style.width = "200px";
-	new2.style.height = "200px";
-	new2.style.backgroundColor = "red";*/
-	
-	
-	//SetBranchActive(1, true);
-
-	//Todo: Have to go through the entire talent tree and set thosemouse events too
-	
-	
-	
+	 //BHasKeyFocus
 }
 InitCustomClickHandlers();
 
+function InitKeybinds()
+{
+	var statDialog = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("statbranchdialog");
+	$.RegisterKeyBind(statDialog, 'key_1', function()
+	{
+		ChooseBranchCurrentTier(true);
+	});
 
+	$.RegisterKeyBind(statDialog, 'key_2', function()
+	{
+		ChooseBranchCurrentTier(false);
+	});
+	
+	$.RegisterKeyBind(statDialog, 'key_' + GetAddTalentHotkey(), function()
+	{
+		SetTalentTooltipVisible(!isTalentTooltipVisible);
+	});
+    Game.CreateCustomKeyBind(GetAddTalentHotkey(), "OnShowTalentTree");
+	
+	Game.AddCommand( "OnShowTalentTree", function() {
+		if(CanSkillAnyTalent()){
+			SetTalentTooltipVisible(!isTalentTooltipVisible);
+		}
+	}, "", 0 );
+}
+
+$.Schedule(2, InitKeybinds); 
 /* Events */
 function OnTalentLabelClicked(panel)
 {

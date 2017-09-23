@@ -1,0 +1,27 @@
+//=================================================================================================================
+// Ouroboros Talent 2: +10% Diffusion Absorb
+//=================================================================================================================
+"special_bonus_ouroboros_2"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"special_bonus_unique_centaur_2"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"LinkedAbility"
+	{
+		"01" "ouroboros_diffusion"
+	}
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"value" "10"
+		}
+	}
+}

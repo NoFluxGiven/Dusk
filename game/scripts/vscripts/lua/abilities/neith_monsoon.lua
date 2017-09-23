@@ -6,7 +6,8 @@ LinkLuaModifier("modifier_monsoon_user","lua/abilities/neith_monsoon",LUA_MODIFI
 function neith_monsoon:OnSpellStart()
 	local c = self:GetCaster()
 	local radius = self:GetSpecialValueFor("shock_radius")
-	local attack_steal = self:GetSpecialValueFor("attack_steal")
+	local t_attack_steal_bonus = c:FetchTalent("special_bonus_neith_4") or 0
+	local attack_steal = self:GetSpecialValueFor("attack_steal") + t_attack_steal_bonus
 	local duration = self:GetSpecialValueFor("duration")
 	local damage = self:GetAbilityDamage()
 	local dtype = self:GetAbilityDamageType()

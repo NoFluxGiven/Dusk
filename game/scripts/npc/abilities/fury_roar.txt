@@ -1,0 +1,73 @@
+//=====================================================================================================
+// FURY: Roar
+//=====================================================================================================
+"fury_roar"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/fury_roar"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"fury_roar"
+
+	"AbilityCastPoint"				"0.3"
+
+	"AbilityCastRange"				"600"
+
+	"AbilityCooldown"				"12"
+	"AbilityManaCost"				"60 70 80 90"
+			
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"75 125 175 225"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"range"							"600"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"5.25"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_movespeed"				"1 2 3 4"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_attackspeed"				"5 10 15 20"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_damage"					"4 6 8 10"
+		}
+		"07"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow"							"12 16 20 24"
+			"LinkedSpecialBonus"			"special_bonus_fury_1"
+		}
+
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"							"soundevents/hero_fury.vsndevts"
+		"particle"							"particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
+		"particle"							"particles/units/heroes/hero_ursa/ursa_fury_swipes_debuff.vpcf"
+	}
+}

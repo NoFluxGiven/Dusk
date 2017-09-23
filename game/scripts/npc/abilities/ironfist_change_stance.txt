@@ -1,0 +1,50 @@
+//=====================================================================================================
+// IRONFIST: Change Stance
+//=====================================================================================================
+"ironfist_change_stance"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/ironfist_change_stance"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel"						"1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityTextureName"			"ironfist_change_stance"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"5"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	"HasScepterUpgrade"				"1"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_ironfist/enter_dragon_stance.vpcf"
+		"particle" "particles/units/heroes/hero_ironfist/enter_gale_stance.vpcf"
+		"particle" "particles/units/heroes/hero_ironfist/enter_stonewall_stance.vpcf"
+		}
+	
+	"Modifiers"
+		{
+		}
+}

@@ -2,7 +2,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/gob_squad_clearance_sale"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -88,84 +89,7 @@
 		}
 	}
 
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/gob_squad_abilities.lua"
-			"Function"		"clearance_sale_start"
-			"duration"		"%duration"
-		}
-	}
-
 	"Modifiers"
 	{
-		"modifier_clearance_sale_throw"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"0"
-			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
-
-			"ThinkInterval"  "%interval"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/gob_squad_abilities.lua"
-					"Function"		"clearance_sale"
-					"radius"		"%radius"
-					"damage"		"%AbilityDamage"
-				}
-			}
-		}
-		"modifier_clearance_sale_throw_aghs"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"0"
-			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
-
-			"ThinkInterval"  "%interval_scepter"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/gob_squad_abilities.lua"
-					"Function"		"clearance_sale"
-					"radius"		"%radius"
-					"damage"		"%AbilityDamage"
-				}
-			}
-		}
-		"modifier_clearance_sale_throw_end"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"0"
-
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/gob_squad_abilities.lua"
-					"Function"		"clearance_sale_aghs_end"
-					"radius"		"%scepter_end_bomb_radius"
-					"damage"		"%scepter_end_bomb_damage"
-				}
-			}
-		}
-		"modifier_clearance_sale_slow"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-		
-			"Properties"
-			{
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-			}
-		}
 	}
 }

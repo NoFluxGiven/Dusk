@@ -39,12 +39,13 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"60 110 160 210"
+			"damage"						"60 80 100 120"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
 			"dps"							"10 20 30 40"
+			"LinkedSpecialBonus"			"special_bonus_bahamut_1"
 		}
 	"03"
 		{

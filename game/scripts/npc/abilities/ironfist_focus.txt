@@ -1,0 +1,101 @@
+"ironfist_focus"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_lua"
+    "ScriptFile"            "lua/abilities/ironfist_focus"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "AbilityTextureName"            "ironfist_focus"
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "0"
+    "AbilityCastPoint"              "0.0"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "0"
+    "HasScepterUpgrade"             "1"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "0"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "interval"              "1.50"
+        }
+        
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "reduction"             "3 6 9 12"
+        }
+
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "max_stack"             "4"
+        }
+
+        "04"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "dragon_damage"         "6 12 18 24"
+        }
+
+        "05"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "stonewall_armor"       "2 3 4 5"
+        }
+
+        "06"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "stonewall_regen"       "1 2 3 4"
+        }
+
+        "07"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "gale_movespeed"        "2 3 4 5"
+        }
+
+        "08"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "gale_evasion"          "4 6 8 10"
+        }
+
+        "09"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "scepter_max_stack"     "5"
+        }
+
+        "10"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "scepter_interval"      "1.00"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/hero_erra.vsndevts"
+        "particle"  "particles/units/heroes/hero_ironfist/ironfist_dragon_fist.vpcf"
+        "particle"  "particles/units/heroes/hero_ironfist/ironfist_dragon_fist_caster.vpcf"
+        "particle"  "particles/units/heroes/hero_ironfist/ironfist_dragon_fist_target.vpcf"
+    }
+
+    "Modifiers"
+    {
+    }
+}

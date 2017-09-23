@@ -6,6 +6,9 @@ function astaroth_erase:OnSpellStart()
 	local target = self:GetCursorTarget()
 	local caster = self:GetCaster()
 
+	if target:TriggerSpellAbsorb(self) then return end
+	target:TriggerSpellReflect(self)
+
 	local duration = self:GetSpecialValueFor("duration") --[[Returns:table
 	No Description Set
 	]]
@@ -15,9 +18,7 @@ function astaroth_erase:OnSpellStart()
 	local chp_damage = self:GetSpecialValueFor("current_hp_damage")
 	local cmana_damage = self:GetSpecialValueFor("current_mana_damage")
 
-	local tick_time = 1.0
-
-	if self:GetCaster():GetHasTalent("special_bonus_astaroth_erase") then tick_time = tick_time * 0.5 end
+	local tick_time = 0.25
 
 	target:AddNewModifier(caster, self, "modifier_erase", {Duration = duration, hp_dmg = hp_damage, mana_dmg = mana_damage, chp_dmg = chp_damage, cmana_dmg = cmana_damage, tick_time = tick_time})--[[Returns:void	
 	No Description Set
@@ -46,6 +47,8 @@ function modifier_erase:OnCreated( kv )
 		self.mana_damage = kv.mana_dmg
 		self.cmana_damage = kv.cmana_dmg / 100
 
+		self.tick_time = kv.tick_time
+
 		self:GetParent():EmitSound("Astaroth.Erase")
 
 		self:StartIntervalThink(kv.tick_time)
@@ -57,8 +60,8 @@ end
 function modifier_erase:OnIntervalThink()
 	if IsServer() then
 		local target = self:GetParent()
-		local damage = self.hp_damage + (target:GetHealth() * self.chp_damage)
-		local mdamage = self.mana_damage + (target:GetMana() * self.cmana_damage)
+		local damage = (self.hp_damage + (target:GetHealth() * self.chp_damage)) * self.tick_time
+		local mdamage = (self.mana_damage + (target:GetMana() * self.cmana_damage)) * self.tick_time
 
 		DealDamage(target,self:GetAbility():GetCaster(),damage,DAMAGE_TYPE_MAGICAL)
 		target:ReduceMana(mdamage)
@@ -75,7 +78,7 @@ end
 
 function modifier_erase:OnModifierAdded(params)
 	PrintTable(params)
-	print("MODIFIER ADDED")
+	ToolsPrint("MODIFIER ADDED")
 end
 
 function modifier_erase:GetEffectName()

@@ -1,0 +1,75 @@
+//=====================================================================================================
+// BAAL: Spatial Rift
+//=====================================================================================================
+"bloodwarrior_soul_claw"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/bloodwarrior_soul_claw"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AnimationPlaybackRate"			"0.95"
+	"AbilityTextureName"			"bloodwarrior_soul_claw"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"4"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"ministun_duration"				"0.30"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"hp_percent"					"6 8 10 12"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"chance"						"25"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"internal_cooldown"				"0.25"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_bloodwarrior/soul_claw.vpcf"
+		//"soundfile" "soundevents/hero_bloodwarrior.vsndevts"
+
+		}
+	
+	"Modifiers"
+		{
+		}
+}

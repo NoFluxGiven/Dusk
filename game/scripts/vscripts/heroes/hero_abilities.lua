@@ -27,7 +27,7 @@ function OnePunch(keys)
 	Get a random ''int'' within a range
 	]]
 
-	print(r)
+	ToolsPrint(r)
 
 	if caster:HasScepter() then
 		k = "modifier_one_punch_knockback_s"

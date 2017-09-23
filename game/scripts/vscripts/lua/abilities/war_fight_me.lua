@@ -31,6 +31,11 @@ function war_fight_me:OnSpellStart()
 		if not v:IsMagicImmune() then
 			v:AddNewModifier(caster, self, mod, {Duration=duration-0.1})
 			local atk_dmg = v:GetAverageTrueAttackDamage(v)
+
+			if not v:IsRealHero() then
+				atk_dmg = atk_dmg * 0.33
+			end
+			
 			caster.fight_me_damage = caster.fight_me_damage + atk_dmg
 		end
 	end

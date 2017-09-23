@@ -95,6 +95,8 @@ function Precache( context )
     PrecacheUnitByNameSync("npc_dota_unit_tesla_coil",context)
     PrecacheUnitByNameSync("npc_dota_unit_sand_puppet_warrior",context)
     PrecacheUnitByNameSync("npc_dota_unit_sand_puppet_archer",context)
+    PrecacheUnitByNameSync("npc_dota_unit_ice_wyrm",context)
+    PrecacheUnitByNameSync("npc_dota_unit_abyssal_shadow",context)
     PrecacheUnitByNameSync("npc_dota_unit_axial_1",context)
 
 end

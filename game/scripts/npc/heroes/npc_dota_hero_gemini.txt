@@ -3,21 +3,39 @@
 	"AbilityLayout" 		"4"
 	"override_hero"			"npc_dota_hero_rubick"
 	"Ability1"				"gemini_voidal_flare"
-	"Ability2"				"gemini_unstable_rift"
-	"Ability3"				"gemini_extraplanar_pact"
-	"Ability4"				"gemini_abyssal_vortex"
-	"Ability5"				"" //Automatically levelled to 1 when the character is picked.
+	// The Voidwalker fires a flare of dark energy at the target, damaging and stunning them.
+	// Each time he targets the same enemy, the damage and stun time doubles, up to a maximum.
+	"Ability2"				"gemini_extraplanar_pact"
+	// Encases the target in a protective bubble, pulling them into another plane.
+	// They are invulnerable and out of game whilst within it, and gain a large amount of bonus
+	// mana and health regen.
+	"Ability3"				"gemini_planar_trickery"
+	// Creates a rune upon the ground beneath the Voidwalker. Recasting this Spell instantly
+	// transports him to the Rune and places the Spell on cooldown. Disjoints projectiles.
+	"Ability4"				"gemini_planar_trickery_activate"
+	// 
+	"Ability5"				"gemini_abyssal_shadow"
+	// The Voidwalker is stalked by a being from a plane he visited long ago.
+	// The being assists him in battle, striking his enemies with powerful attacks.
+	// Each level placed in this ability increases the level of the Shadow and its subabilities.
+	// The Shadow will always attack what the Voidwalker is currently targeting for attacks.
+	// The Shadow has two abilities:
+	// Void Strikes
+	// Each attack the Shadow makes deals bonus Pure damage and reduces the target's Armor and Magic Res.
+	// Vortices
+	// The Shadow's attacks have a small chance to slow enemies in an AoE.
 	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_all_stats_7"
+	"Ability11"				"special_bonus_intelligence_12"
+	"Ability12"				"special_bonus_gemini_1"
+	"Ability13"				"special_bonus_magic_resistance_30"
+	"Ability14"				"special_bonus_gemini_2"
+	"Ability15"				"special_bonus_gemini_3"
+	"Ability16"				"special_bonus_gemini_4"
+	"Ability17"				"special_bonus_cooldown_reduction_25"
 
 	"ArmorPhysical"				"0"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -31,12 +49,12 @@
 	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
 	"AttributeBaseStrength"		"15"										// Base strength
 	"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
-	"AttributeBaseIntelligence"	"19"										// Base intelligence
+	"AttributeBaseIntelligence"	"26"										// Base intelligence
 	"AttributeIntelligenceGain"	"2.5"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"7"										// Base agility
 	"AttributeAgilityGain"		"0.6"										// Agility bonus per level.
 
-	//"BountyXP"					"0"							`		// Experience earn.
+	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.
 	//"BountyGoldMax"				"0"										// Gold earned max.
 
@@ -54,3 +72,4 @@
 
 	"VisionNighttimeRange"		"950"									// Range of vision at night time.
 }
+

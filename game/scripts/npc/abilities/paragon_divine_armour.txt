@@ -16,12 +16,12 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"350"
+	"AbilityCastRange"				"450"
 	"AbilityCastPoint"				"0.0"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"0.5"
+	"AbilityCooldown"				"10.0 9.0 8.0 7.0"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -34,27 +34,28 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"				"350"
+			"radius"				"450"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_heal"			"4 5 6 7"
+			"damage_heal"			"6 8 10 12"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"threshold"				"200"
+			"threshold"				"250"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_reduction"		"-4 -8 -12 -16"
+			"damage_reduction"		"-20 -30 -40 -50"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"damage_block_duration"	"4"
+			"damage_block_duration"	"2.5"
+			"LinkedSpecialBonus"	"special_bonus_paragon_2"
 		}
 	}
 

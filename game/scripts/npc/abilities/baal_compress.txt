@@ -55,7 +55,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"8.00 10.00 12.00 14.00"
+			"duration"				"4.00 5.00 6.00 7.00"
 		}
 	}
 

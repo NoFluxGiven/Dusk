@@ -1,0 +1,89 @@
+//=====================================================================================================
+// SHARD_MAGUS: Icicle_barrage
+//=====================================================================================================
+"shard_magus_icicle_barrage"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/shard_magus_icicle_barrage"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AoERadius"						"%radius"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"shard_magus_icicle_barrage"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"290"
+	"AbilityCastPoint"				"0.5"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"10"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100 130 160 190"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"4.0"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"icicles"					"16 24 32 40"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"20"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"75"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"range"						"1400" // total
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"scepter_slow"				"3"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"scepter_slow_duration"		"2.0"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"scepter_damage"			"30"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_shard_magus/icicle.vpcf"
+		"particle" "particles/units/heroes/hero_shard_magus/icicle_hit.vpcf"
+		"particle" "particles/units/heroes/hero_shard_magus/barrage_portal.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"
+		}
+}

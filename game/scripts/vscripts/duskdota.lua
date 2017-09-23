@@ -12,6 +12,8 @@ HEX_COLOR_PURPLE = "#39316d"
 HEX_COLOR_RED = "#992E2E"
 HEX_COLOR_GOLD = "#FFD700"
 
+--TALENT_DATA = LoadKeyValues("scripts/kv/talents.kv")
+
 if duskDota == nil then
     DebugPrint( '[DUSKDOTA] creating duskdota game mode' )
     _G.duskDota = class({})
@@ -60,9 +62,11 @@ require('internal/events')
 -- events.lua is where you can specify the actions to be taken when any event occurs and is one of the core duskdota files.
 require('events')
 
-require('talents/talents')
+--require('talents/talents')
 
 require('addon_init')
+
+PrintTable(TALENTS)
 
 
 -- This is a detailed example of many of the containers.lua possibilities, but only activates if you use the provided "playground" map
@@ -533,7 +537,7 @@ end
 function duskDota:OnHeroInGame(hero)
   DebugPrint("[DUSKDOTA] Hero spawned in game for first time -- " .. hero:GetUnitName())
 
-  Talents.OnUnitCreate(hero)
+  -- Talents.OnUnitCreate(hero)
   local prefix = "npc_dota_hero_"
 
   -- Replace the following heroes with default sets, usually due to colour changes
@@ -544,6 +548,86 @@ function duskDota:OnHeroInGame(hero)
     "dragon_knight"
   }
 
+  -- local convertList = {
+  --   "wisp" = "aether",
+  --   "dragon_knight" = "alexander",
+  --   "doom" = "alroth",
+  --   "lone_druid" = "artificer",
+  --   "arc_warden" = "baal",
+  --   "terrorblade" = "bahamut",
+  --   "bloodseeker" = "bloodwarrior",
+  --   "vengeful_spirit" = "elena",
+  --   "necrolyte" = "erra",
+  --   "oracle" = "fate",
+  --   "ursa" = "fury",
+  --   "rubick" = "gemini",
+  --   "techies" = "gob_squad",
+  --   "sniper" = "hawkeye",
+  --   "tusk" = "hero",
+  --   "nightstalker" = "horror",
+  --   "dark_seer" = "ironfist",
+  --   "lich" = "lich",
+  --   "phantom_assassin" = "lightning",
+  --   "kunkka" = "lysander",
+  --   "chaos_knight" = "mana_knight",
+  --   "juggernaut" = "mifune",
+  --   "legion_commander" = "neith",
+  --   "enigma" = "nu",
+  --   "abaddon" = "odin",
+  --   "jakiro" = "ouroboros",
+  --   "omniknight" = "paragon",
+  --   "spectre" = "phantom",
+  --   "leshrac" = "ptomely",
+  --   "ember_spirit" = "rai",
+  --   "elder_titan" = "reus",
+  --   "sand_king" = "set",
+  --   "bounty_hunter" = "shade",
+  --   "rattletrap" = "summoner",
+  --   "tinker" = "tek",
+  --   "keeper_of_the_light" = "timekeeper",
+  --   "axe" = "war"
+  -- }
+
+  -- local full_name = hero:GetUnitName()
+
+  -- local name = string.replace(name,prefix,"")
+
+  -- local duskname = prefix..convertList[name]
+
+  -- local talents = TALENT_DATA[duskname]
+
+  -- Populate Talents:
+
+  -- for i=10,17 do
+  --   local talentability = hero:GetAbilityByIndex(i)
+  --   RemoveAbility(talentability:GetName())
+
+  --   local t = talents[i-9]
+  --   local tt = AddAbility(t)
+  --   tt:SetAbilityIndex(i)
+  -- end
+
+  -- Create Talent Data
+
+  -- for i=0,17 do
+  --   local talentability = hero:GetAbilityByIndex(i)
+
+  --   if talentability then
+  --     local talentname = talentability:GetName()
+  --     if string.find(talentname,"special_bonus") then
+  --       TALENT_DATA[talentname] = {}
+
+  --       StoreSpecialKeyValues(TALENT_DATA[talentname],talentability)
+
+  --       for k,v in pairs(TALENT_DATA[talentname]) do
+  --         CustomNetTables:SetTableValue("TALENTS",talentname,TALENT_DATA[talentname])
+  --       end
+  --     end
+  --   end
+  -- end
+
+  -- PrintTable(TALENT_DATA)
+
   for k,v in pairs(defaultList) do
     local name = prefix..v
 
@@ -551,6 +635,8 @@ function duskDota:OnHeroInGame(hero)
       CosmeticLib:ReplaceDefault(hero, name)
     end
   end
+
+
 
   -- if hero:GetUnitName() == "npc_dota_hero_rubick" then
   --     CosmeticLib:ReplaceDefault(hero,"npc_dota_hero_rubick")
@@ -597,18 +683,23 @@ function duskDota:OnHeroInGame(hero)
   end
 
   if hero:GetUnitName() == "npc_dota_hero_techies" then
-    Timers:CreateTimer(0.06, function()
-      hero:RemoveAbility("techies_land_mines")
-      hero:RemoveAbility("techies_stasis_trap")
-      hero:RemoveAbility("techies_suicide")
-      hero:RemoveAbility("techies_focused_detonate")
-      hero:RemoveAbility("techies_minefield_sign")
-      hero:RemoveAbility("techies_remote_mines")
-      hero:AddAbility("gob_squad_rocket_blast")
-      hero:AddAbility("gob_squad_kamikaze")
-      hero:AddAbility("gob_squad_whoops")
-      hero:AddAbility("gob_squad_clearance_sale")
-    end)
+    -- Timers:CreateTimer(0.06, function()
+      -- hero:RemoveAbility("techies_land_mines")
+      -- hero:RemoveAbility("techies_stasis_trap")
+      -- hero:RemoveAbility("techies_suicide")
+      -- hero:RemoveAbility("techies_focused_detonate")
+      -- hero:RemoveAbility("techies_minefield_sign")
+      -- hero:RemoveAbility("techies_remote_mines")
+      -- hero:AddAbility("gob_squad_rocket_blast")
+      -- hero:AddAbility("gob_squad_kamikaze")
+      -- hero:AddAbility("gob_squad_whoops")
+      -- hero:AddAbility("gob_squad_clearance_sale")
+      -- hero:RemoveModfierByName("modifier_whoops")
+    -- end)
+  end
+
+  if hero:GetUnitName() == "npc_dota_hero_dark_seer" then
+    hero:FindAbilityByName("ironfist_change_stance"):SetLevel(1)
   end
 
   Timers:CreateTimer(0.06,function()-- check if illusion
@@ -1059,7 +1150,7 @@ function duskDota:FilterTakeDamage( filterTable )
   if IsValidEntity(attacker) then
 
     -- TRANQUIL SEAL
-    if attacker:HasModifier("paragon_tranquil_seal_mod_ally") or defender:HasModifier("paragon_tranquil_seal_mod_ally") or attacker:HasModifier("paragon_tranquil_seal_mod_enemy") or defender:HasModifier("paragon_tranquil_seal_mod_enemy") then
+    if attacker:HasModifier("modifier_tranquility_seal") or defender:HasModifier("modifier_tranquility_seal") then
       return false
     end
 
@@ -1237,9 +1328,12 @@ function duskDota:FilterTakeDamage( filterTable )
 
   if attacker:HasModifier("modifier_fight_me") and defender:HasModifier("modifier_fight_me_regen") then
     if damage > 0 then
-      defender:Heal(damage, defender) --[[Returns:void
-      Heal this unit.
-      ]]
+      local mod = defender:FindModifierByName("modifier_fight_me_regen")
+
+      local t_mana_restore_bonus = mod:GetAbility():GetCaster():FetchTalent("special_bonus_war_1") or 0
+      local dmg_before_reductions = defender:GetDamageBeforeReductions(damage,dtype)
+      defender:Heal(dmg_before_reductions, defender)
+      defender:GiveMana(dmg_before_reductions*t_mana_restore_bonus/100)
     end
     ParticleManager:CreateParticle("particles/units/heroes/hero_war/fight_me_life_gain.vpcf", PATTACH_ABSORIGIN_FOLLOW, defender) --[[Returns:int
     Creates a new particle effect
@@ -1249,6 +1343,60 @@ function duskDota:FilterTakeDamage( filterTable )
 
   if defender:HasModifier("modifier_fight_me") then
     return false
+  end
+
+  -- DIFFUSION
+
+  if defender:HasModifier("modifier_diffusion") then
+    if not defender:PassivesDisabled() then
+      if dtype == DAMAGE_TYPE_MAGICAL then
+        local mod = defender:FindModifierByName("modifier_diffusion")
+        if mod then
+          local ab = mod:GetAbility()
+          if ab and ab:IsCooldownReady() then
+            local t_magic_absorb_bonus = defender:FetchTalent("special_bonus_ouroboros_2") or 0
+            local magic_absorb = 1-((ab:GetSpecialValueFor("magic_absorb")/100)+(t_magic_absorb_bonus/100))
+
+            ToolsPrint("REDUCING TO "..magic_absorb)
+            ToolsPrint("DAMAGE: "..damage)
+
+            local dmg_before_reductions = defender:GetDamageBeforeReductions(damage,dtype)
+
+            ToolsPrint("DAMAGE BEFORE REDUCTIONS: "..dmg_before_reductions)
+            ToolsPrint("DAMAGE AFTER DIFFUSION REDUCTION: "..dmg_before_reductions*magic_absorb)
+
+            filterTable["damage"] = filterTable["damage"] * magic_absorb
+
+            mod:ApplyDiffusionStacks(dmg_before_reductions*(1-magic_absorb))
+
+            return true
+          end
+        end
+      end
+
+    end
+  end
+
+  -- GUARDIAN BUBBLE
+  if defender:HasModifier("modifier_guardian_bubble") then
+    local mod = defender:FindModifierByName("modifier_guardian_bubble")
+    if mod then
+      local ab = mod:GetAbility()
+      if ab then
+        local damage_threshold = ab:GetSpecialValueFor("incoming_damage_cap")
+        local damage_min = ab:GetSpecialValueFor("incoming_damage_min")
+
+        if damage > damage_threshold then
+          filterTable["damage"] = damage_threshold
+        end
+
+        if damage < damage_min then
+          return false
+        end
+
+        return true
+      end
+    end
   end
 
 

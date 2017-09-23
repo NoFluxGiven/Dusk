@@ -1,0 +1,139 @@
+"npc_dota_hero_shard_magus"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_crystal_maiden"
+	"Ability1"				"shard_magus_cryst_whorl" // Creates a small area where chilling winds
+	// blow,  dealing damage over time, then slowing, then freezing units caught in it.
+	// After a 1.0s delay:
+	// Deals 50/125/200/275 damage over 1.5s, then slows by 20/25/30/35% for 2.0s, and then
+	// stuns for 1.00/1.50/2.00/2.50s.
+	// 275 radius.
+	// All units hit by the initial radius are fully affected; they do not have to remain in the area.
+	// Is purgable.
+	// Stacks fully.
+	"Ability2"				"shard_magus_icicle_barrage" // Creates a portal before the Shard Magus.
+	// Icicles spew forth from it with slightly random trajectories, dealing damage and applying a slow.
+	// Each icicle deals 30 damage and has a 30% chance to ministun the target.
+	// Fires 8/12/16/20 icicles over 3s.
+	// The slow lasts for 2s.
+	// Ministuns for 0.3s.
+	// Icicles are destroyed upon collision with a target.
+	// Total possible damage is 240/360/480/600.
+	//"Ability3"				"ice_wyrm_frostfall"
+	"Ability3"				"shard_magus_iceheart"
+	// The Shard Magus' heart is pierced with ice, a necessary curse to access the higher tiers of 
+	// frost magic. This burden may also be a blessing, however, as her heart reacts to her spellcasting,
+	// unleashing blasts of icy energy to assail her foes whenever she casts a Spell or uses an item,
+	// damaging them, slowing their attack speed, and slowing their turn rate.
+	// Items that do not cost mana do not activate this ability.
+	// Has a short cooldown.
+	// The gust always occurs in the direction she is facing.
+	// Deals 60/90/120/150 damage.
+	// Applies a 30/45/60/75 attack speed slow and a 60% turnrate slow for 3s.
+	// 1s cooldown.
+	"Ability4"				"shard_magus_wyrm_rites"
+	// An ancient incantation summons an ice Wyrm, a creature of great strength.
+	// The ice Wyrm has 3 abilities, lasts 25s, and has a large attack range.
+	// Every level placed in this ability increases its level by 10, raising its
+	// Health, damage, Armor and Magic Resistance.
+	// 160/140/120s cooldown.
+
+	// need to do modifier tooltips
+	
+	"Ability10"				"special_bonus_mp_regen_2"
+	"Ability11"				"special_bonus_movement_speed_10"
+	"Ability12"				"special_bonus_shard_magus_1"
+	"Ability13"				"special_bonus_shard_magus_2"
+	"Ability14"				"special_bonus_intelligence_20"
+	"Ability15"				"special_bonus_shard_magus_3"
+	"Ability16"				"special_bonus_shard_magus_4"
+	"Ability17"				"special_bonus_shard_magus_5"
+
+	"ArmorPhysical"				"2"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"450"
+	"AttackRate"				"1.6"
+	"AttackDamageMin"			"21"										// Damage range min.
+	"AttackDamageMax"			"23"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"17"										// Base strength
+	"AttributeStrengthGain"		"1.3"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"23"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.6"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"14"										// Base agility
+	"AttributeAgilityGain"		"1.6"										// Agility bonus per level.	
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"290"									// Speed.
+	"MovementTurnRate"			"0.7"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
+
+	"Talents"
+	{
+	    "1" {
+		        "left"
+		        {      
+		            "name" "special_bonus_shard_magus_health"
+		            "MODIFIER_PROPERTY_HEALTH_BONUS" "200"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_shard_magus_spell_amp"
+		            "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE" "4"
+		        }
+	   		}
+	    "2" {
+		        "left"
+		        {      
+		            "name" "special_bonus_shard_magus_damage"
+		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "35"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_shard_magus_spark"
+		            "v" "8"
+		        }
+	    	}
+	    "3" {
+		        "left"
+		        {      
+		            "name" "special_bonus_shard_magus_boltblast"
+		            "v" "45"
+		        }
+		        "right"
+		        {
+		            "name" "special_bonus_shard_magus_movespeed"
+		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "50"
+		        }
+	    	}
+	    "4" {
+		        "left"
+		        {      
+		            "name" "special_bonus_shard_magus_shard_magus_dagger"
+		            "v" "6"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_shard_magus_overload"
+		            "v" "115"
+		        }
+	    	}
+	}
+}

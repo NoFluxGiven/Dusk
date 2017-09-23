@@ -18,6 +18,10 @@ function modifier_thunder_roar:OnCreated()
 		local bolts = self:GetAbility():GetSpecialValueFor("bolts")
 		local duration = self:GetAbility():GetSpecialValueFor("duration")
 
+		local t_bolts_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_rai_5") or 0
+
+		bolts = bolts+t_bolts_bonus
+
 		local amt = duration/bolts
 
 		local n = 0
@@ -64,13 +68,13 @@ function modifier_thunder_roar:OnIntervalThink()
 
 		local t = FindEnemiesRandom(self:GetParent(),loc,radius)
 
-		print(#t)
+		ToolsPrint(#t)
 
 		for k,vv in pairs(t) do
 			if vv then
-				print(k..": "..vv:GetName())
+				ToolsPrint(k..": "..vv:GetName())
 			else
-				print(k..": NIL")
+				ToolsPrint(k..": NIL")
 			end
 		end
 

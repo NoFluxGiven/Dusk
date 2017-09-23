@@ -45,6 +45,64 @@ BUILDINGS
 HEROES
 =========
 
+ODIN and ARTIFICER have been disabled due to a game breaking attachment error. They will be featured in the following patches.
+
+IRONFIST has been reworked
+- Now has 3 Stances: Dragon Stance, Stonewall Stance, Gale Stance
+- Focus is now a regular ability:
+=FOCUS=
+Grants a stack for every 2s where Ironfist does not attack or use Spells.
+Each Stack confers different bonuses for each Stance:
+Dragon Stance grants bonus damage per stack.
+Stonewall Stance grants Armor and Health regen per stack.
+Gale Stance grants movespeed and evasion per stack.
+Casting a Spell or attacking a unit consumes all the stacks.
+Regardless of what Stance he is in, a Spell cast will have its cooldown reduced based on the amount of Stacks he has.
+- Ultimate is now Change Stance.
+- Ironfist now learns his Ultimate, Change Stance, at Levels 4, 10 and 16.
+- The following new abilities have been added:
+=DRAGON FIST (Dragon Stance)=
+Strikes the target enemy in melee range with the fist of the Dragon, dealing extreme Physical damage and stunning them.
+=BOULDER THROW (Stonewall Stance)=
+Tosses the targeted enemy in melee range behind Ironfist, stunning them and damaging them when they land.
+=LIGHTNING STRIKE (Gale Stance)=
+Grants Ironfist 3 attacks where he strikes extremely fast: his BAT is reduced and attack speed is increased.
+- Typhoon damage reduced to 60/80/100/120 (was 100/120/140/160).
+- Typhoon slow duration increased to 1.0/1.40/1.80/2.20s (Was 1.00s).
+- Typhoon damage is now Magical (was Physical).
+- Typhoon dash duration reduced to 0.3s (was 0.4s).
+- Typhoon now deals its damage and applies the slow instantly to everything in Ironfist's path halfway through its duration.
+- Typhoon range is now 600 at all levels (was 400/500/600/700).
+- Quake damage increased to 60/80/100/120 (was 40/60/80/100).
+- Quake interval between blasts is now 0.35s (was 0.25s).
+- Quake base radius is now 175 (was 200). This increases per instance, so 175 > 350 > 525 range.
+- Quake now only stuns if three or more instances hit the target.
+- Quake origin is now at where Ironfist cast it (it used to follow him).
+- Reversal now deals damage based off the average attack damage of the attacker.
+- Reversal damage increased to 125/175/225/275%.
+- Reversal now has 40/50/60/70 base damage.
+- Reversal damage reduction increased to 50% (was 15/20/25/30%).
+- Reversal regular timing increased to 1.0s (was 0.6s).
+- Reversal no longer has a perfect timing.
+- Reversal no longer stuns magic immune attackers.
+- Reveral stun increased to 0.8s (was 0.4s).
+- Reversal now has a cast point of 0.1s (was immediate).
+- Reversal now has a 75 Mana cost.
+- Reversal cooldown increased to 12s (was 4s).
+
+ELENA has been reworked:
+- Removed Convoke.
+- Removed Diverge.
+- Removed Grave Guard.
+- Added GUARDIAN BUBBLE:
+Surrounds the allied Hero in a protective bubble that blocks 3 damage instances. Each time it blocks an instance it heals the Hero for 20/40/60/80 HP.
+- Added STARLIGHT:
+Elena creates a targeting line. After a short delay, a blast of energy releases in a line, dealing damage to enemies and healing allies. Deals additional damage/heals more for each Hero caught in the blast, friend or foe.
+- Reworked DEVOTION AURA:
+Now called Devotion. When Elena casts a Spell, she and nearby allies gain bonus Health regen for a short time.
+- Added BLADEBREAKER:
+Elena curses nearby enemies' weaponry to turn against them, causing them to take 50/75/100 Pure damage plus bonus Pure damage based on 45/60/75% of their attack damage, and become Disarmed for 1.3s. Lasts 5s. While Disarmed, the debuff pauses.
+
 ALROTH
 - Intelligence gain reduced to 2.7 (was 3.1).
 - Base Strength reduced to 23 (was 25).
@@ -85,7 +143,19 @@ ARTIFICER
 - Unmaking Mana cost is now 60 at all levels (was 40/50/60/70).
 - Replica Aghanim's Scepter Illusion Incoming Damage increased to 300% (was 200%).
 - Replica Aghanim's Scepter Illusion Duration is now 10/15/20s (was 20/32/48s).
-- Reshape now reduces incoming damage by 65% (was 50%).
+- Reshape now makes the target invulnerable and untargetable.
+- Reshape cooldown increased to 30s (was 20s).
+- Reshape duration increased to 3.0/4.0/5.0/6.0s (was 2.0/2.5/3.0/3.5s).
+- Reshape duration is now doubled when targeting creeps and non-Hero units.
+- Reshape now transforms the target into one of four Totem Statues, granting different negative effects to nearby enemies within 775 units. They are as follows:
+SIREN STATUE
+Slows movespeed and attack speed.
+ABYSSAL ONE STATUE
+Reduces Armor and Magic Resistance.
+SERPENT STATUE
+Reduces attack damage and outgoing spell damage.
+MONK STATUE
+Applies negative Health and Mana Regen.
 - Base Strength reduced to 15 (was 16).
 - Base Intelligence reduced to 24 (was 30).
 - Intelligence gain reduced to 2.4 (was 3.00).
@@ -96,14 +166,19 @@ ASTAROTH
 - Pain Curse now lasts 8s at all levels (was 6/8/10/12s).
 - Pain Curse internal cooldown reduced to 0.60s (was 0.70s).
 - Pain Curse slow duration increased to 0.80s (was 0.75s).
-- Erase damage increased to 30/50/70 (was 15/30/45).
-- Erase Mana damage increased to 15/30/45 (was 10/20/30).
-- Erase current HP damage reduced to 2.5/3.0/3.5% (was 3/4/5%).
-- Erase current Mana damage reduced to 2/3/4% (was 2/4/6%).
-- Black Insignia's buff now grants 10/20/30/40 bonus Pure damage on each attack.
+- Erase damage reduced to 20 (was 15/30/45).
+- Erase Mana removal reduced to 10 (was 20/30/40).
+- Erase current HP damage increased to 4.5/6.0/7.5% (was 3/4/5%).
+- Erase current Mana damage reduced to 3/5/7% (was 2/4/6%).
+- Erase duration increased to 15s (was 10s). Damage has increased accordingly.
+- Erase now deals its damage every 0.25s instead of every 1s. The total damage remains.
+- Black Insignia's buff now grants 15/20/25/30 bonus Pure damage on each attack.
+- Black Insignia stun duration is now 0.75s.
+- Black Insignia bonus duration is now 4s (was 5s).
 - Black Insignia buff attacks now have a sound and particle effect to distinguish them.
-- Black Insignia cooldown increased to 10s (was 7s).
-- Black Insignia attack speed bonus increased to 40/80/120/160 (was 25/50/75/100).
+- Black Insignia cooldown increased to 10/9/8/7s (was 7s).
+- Black Insignia attack speed bonus increased to 40/60/80/100 (was 25/50/75/100).
+- Overwhelm no longer stacks on the same target; recasting only refreshes the duration.
 
 BAAL
 - Base Strength increased to 24 (was 23).
@@ -114,28 +189,30 @@ BAAL
 - Base Attack Time increased to 1.55 (was 1.5).
 - Base Turn rate reduced to 0.7 (was 1.0).
 - Compress has been reworked:
-Can now only target allies. Allies targeted by Compress are invulnerable, invisible, and untargetable.
-Lasts up to 10/12/14/16s, or until reactivated to release them. Releases them in a random location within 125 units of Baal.
+Compression Sphere
+Creates an area where enemies are gradually slowed.
 - Spatial Rift slow increased to 40/60/80/100% (was 30/40/50/60%).
 - Spatial Rift slow now gradually decreases as the buff times out.
-- Spatial Rift Port Out now disjoints projectiles.r
-- Cleaned up Baal's skill UI. Both Compress and Spatial Rift are now replaced by their sub-abilities when cast.
+- Spatial Rift channel time reduced to 0.75s (was 1.5s).
+- Spatial Rift slow duration reduced to 3s (was 4s).
+- Spatial Rift damage reduced to 50/125/200/275 (was 100/175/250/325).
+- Spatial Rift Port Out now disjoints projectiles.
+- Spatiotemporal Anchor duration reduced to 6s (was 8s).
+- Superposition cooldown increased to 110/100/90s (was 70s).
+- Superposition mana cost reduced to 125 (was 200).
+- Superposition duration is now 6s (was 6/7/8s).
+- Superposition bonus movespeed is now 10/20/30% (was 32%).
+- Superposition now has a 1s fade time when recovering from stuns.
 
-BLOODWARRIOR
-- Grapple now roots instead of stunning enemies.
-- Grapple drain increased to 2/4/6/8% (was 1/3/5/7%).
-- Grapple creep drain reduced to 1/2/3/4% (was 2/3/4/5%).
-- Grapple duration increased to 2.0/2.5/3.0/3.5s (was 2.5s).
-- Grapple marked drain increased to 3/6/9/12% (was 3/5/7/9%).
-- Feast no longer resets the death timer on the Bloodfiend.
-- Feast no longer has a Mana cost.
-- Feast cast range increased to 250 (was 125).
-- Berserk bonus attack speed increased to 340 (was 145).
-- Bloodfiend death timer increased to 50	s (was 25s).
-- Bloodfiend now has an innate 30 Health Regen.
-- Bloodfiend mana regen increased to 10 (was 2).
-- Bloodfiend base movespeed increased to 340 (was 320).
-- Bloodfiend damage reduction during revival reduced to 35% (was 50%).
+BAHAMUT
+- Fulmination stacks no longer detonate when purged.
+- Fulmination duration increased to 4s (was 3s).
+- Desolation damage reduced to 60/80/100/120 (was 60/110/160/210).
+- Casting Desolation on a target instantly detonates Fulmination stacks.
+
+GOB SQUAD
+- Rocket Blast now deals damage to buildings with the explosion AoE (previously, it only dealt damage to buildings when hitting them directly).
+- Rocket Blast building damage reduced to 0.20x (was 0.25x).
 
 VOIDWALKER
 - Voidal Flare can now only target enemies.
@@ -150,6 +227,26 @@ BAHAMUT
 - Reckoning Aura now has a 60/55/50/45s cooldown.
 - Reckoning Aura damage increase is now 8/12/16/20% (was 5/10/15/20%).
 
+ERRA
+- Morbid Blade missing Health Lifesteal reduced to 4/6/8/10% (was 4/8/12/16%).
+- Grave Guard cooldown increased to 120/100/80/60s (was 60s).
+- Grave Guard Mana cost increased to 175 (was 100).
+- Deathtouch damage over time is now negative Health regen.
+- Deathtouch negative health regen duration increased to 12s (was 8s).
+
+FURY
+- Rend no longer grants bonus damage per hit.
+- Rend now reduces the target's Max Health per stack. Lasts 6s.
+- Switching targets with Rend no longer removes the buff from other targets.
+- Bloodsport slow removed (was 2%).
+- Bloodsport damage increased to 3/6/9/12 (was 2/4/6/8).
+- Bloodsport is now purgable.
+- Bloodsport duration reduced to 6s.
+- Rampage renamed to Berserk.
+- Berserk's on death component removed.
+- While Berserk is active, each strike from Fury applies an extra stack of Rend and Bloodsport.
+- Berserk cooldown reduced to 40/35/30s.
+
 LIGHTNING
 - Lightning Dagger now bounces to random targets within a 400 radius 3/4/5/6 times.
 - Lightning Dagger damage reduced to 50/60/70/80 (was 40/80/120/160).
@@ -158,6 +255,28 @@ LIGHTNING
 - Thunder Wave has been reworked:
 BOLTBLAST
 Lightning places a charged payload of electricity nearby. After a short delay, it explodes, damaging and slowing nearby enemies.
+
+HAWKEYE
+- Reduced base attack range to 535 (was 635).
+- Increased Base Attack Time to 1.7 (was 1.6).	
+- Single Tap reworked:
+SNIPE
+Hawkeye focuses, gaining true strike, bonus attack range, bonus damage and vision of attacked targets for a number of attacks, but his movement slows to a crawl.
+Grants 200/400/600/800 bonus attack range, and 12/24/36/48 bonus damage for 4 attacks.
+Reduces movespeed to 175.
+Each attack grants 1.75s of vision through Fog of War of the target.
+Lasts 20s.
+- Rapidfire's cast range is now always equal to Hawkeye's attack range. (Aether Lens does not increase its range).
+- Rapidfire now fires a shot every 0.12s, making all four shots fire after 0.48s (was 0.15s, so over a 0.60s duration).
+- Rapidfire now prevents autoattacking while firing.
+- Detonator Dart now persists through death.
+- Hit 'n' Run cast point reduced to 0.2s (was 0.4s).
+- Hit 'n' Run damage increased to 15/30/45/60.
+- Hit 'n' Run jump distance reduced to 600 (was 700).
+- Hit 'n' Run Shrapnel lasts 4s (was 8s).
+- Hit 'n' Run now deals initial damage when cast. It deals 60/100/140/180 damage.
+- Hit 'n' Run now slows in bursts every time it deals damage. The slow lasts 0.5s.
+- Updated Hit 'n' Run's particle effect to reflect the new behaviour.
 
 LYSANDER
 - Base Movespeed reduced to 310 (was 315).
@@ -182,6 +301,86 @@ LYSANDER
 - Lysander's Scepter Upgrade has been reworked:
 Grapeshot now has a chance to activate on a nearby enemy when he attacks. These shots never stun, and can Crit as normal.
 
+MIFUNE
+- Base Strength increased to 20 (was 16).
+- Strength gain increased to 1.8 (was 1.6).
+- Base Agility reduced to 22 (was 35).
+- Agility gain reduced to 2.3 (was 2.8).
+- Base damage increased to 26 - 35 (was 19 - 22; starting damage is 52).
+- Base attack time increased to 1.5 (was 1.4).
+- Base Armor increased to 1 (was 0).
+- Oiuchi reworked.
+BUSHIDO
+Mifune's years of intense training and incredible focus allow him reap more benefits from Agility, becoming more agile and dangerous. Mifune gains bonus Agility equal to a percentage of his Agility upon activation, and a small amount of percentage bonus damage.
+Grants 30/45/60/75% bonus Agility and 10/15/20/25% bonus damage for 8s.
+
+RAI
+- Arc Twister mana cost increased to 75 (was 40/50/60/70).
+- Arc Twister cast point increased to 0.15s (was 0.1s).
+- Amplify mana cost rescaled to 80/100/120/140 (was 90/95/100/105).
+- Thunder Roar damage reduced to 175 (was 225).
+- Static Blade damage per stack reduced to 8/16/24/32 (was 16/24/32/40).
+
+ODIN
+- Sleipnir's Veil slow duration increased to 2.5s (was 1s).
+
+OUROBOROS
+- Searing Flame damage reduced to 80/110/140/170 (was 60/100/140/200).
+- Searing Flame cooldown reduced to 2.5s (was 4s).
+- Searing Flame cast point reduced to 0.3s (was 0.4s).
+- Searing Flame slow duration reduced to 1.00/1.20/1.40/1.60s (was 1.40/1.80/2.20/2.60s).
+- Nexus damage reduced to 140/200/260/320 (was 300/400/500).
+- Nexus cooldown reduced to 30/24/18/12s (was 40/30/20s).
+- Nexus delay reduced to 0.7s (was 1.0s).
+- Nexus is no longer an Ultimate.
+- Removed Dragon's Wing.
+- Removed Dissipation.
+- Added Diffusion:
+Ouroboros absorbs a portion of Magical damage levelled against him, converting it to Spell Amp.
+- Added a new Ultimate: Dualcast:
+When toggled on, Ouroboros casts Spells he uses twice in quick succession, with a Mana cost multiplier.
+Works with items, but the Mana cost multiplier is higher.
+
+PARAGON
+- Base Strength reduced to 22 (was 25).
+- Base Turnrate reduced to 0.6 (was 1.0).
+- Base damage increased to 24 - 45 (was 24 - 30).
+- Base movespeed reduced to 295 (was 300).
+- Cleanse primary Heal 100/160/220/280 (was 60/120/180/240).
+- Cleanse Secondary Heal no longer affects Primary Heal targets.
+- Cleanse Secondary Heal reduced to 75/100/125/150 (was 75/125/175/225).
+- Cleanse cast range reduced to 550 (was 800).
+- Tranquil Seal duration reduced to 4s (was 3/4/5/6s).
+- Tranquil Seal cast range rescaled to 300/600/900/1200 (was 700).
+- Tranquil Seal cooldown reduced to 28/24/20/16s (was 28s).
+- Tranquil Seal can no longer target Buildings.
+- Divine Armour cooldown increased to 10/9/8/7s (was 0.5s).
+- Divine Armour Max Health damage increased to 6/8/10/12% (was 4/5/6/7%).
+- Divine Armour Damage Reduction increased to 20/30/40/50% (was 4/8/12/16%).
+- Divine Armour Damage Reduction duration reduced to 2.5s (was 4s).
+- Divine Armour radius increased to 450 (was 350).
+- Divine Armour Threshold increased to 250 (was 200).
+- Smite damage reduced to 200/300/400 (was 250/325/475).
+- Smite Scepter Damage reduced to 300/400/500 (was 300/430/560).
+- Smite Scepter Damage Bonus increased to 100/175/250 (was 75/150/225).
+
+PHANTOM
+- Base Strength reduced to 19 (was 20).
+- Strength gain increased to 2.2 (was 2.0).
+- Base Movespeed reduced to 285 (was 290).
+- Base Turnrate reduced to 0.5 (was 0.7).
+- Nightmare Stack duration reduced to 5s (was 6s).
+- Nightmare radius reduced to 475 (was 500).
+
+TIMEKEEPER
+- Chronoshift duration reduced to 8/9/10s (was 8/10/12s).
+- Chronoshift End now has a delay of 3.00/2.50/2.00s.
+- Chronoshift End now has a visual effect to indicate it has been activated to the opposing team.
+- Futurestrike's damage type is now Magical (was Pure).
+- Futurestrike maximum damage reduced to 125/230/335/440 (was 110/235/375/550).
+- Futurestrike minimum delay reduced to 3s (was 4s).
+- Futurestrike maximum delay reduced to 12s (was 20s).
+
 NEITH
 - Base Attack Time increased to 1.8 (was 1.6).
 - Strength Gain reduced to 2.2 (was 2.4).
@@ -200,12 +399,25 @@ NU
 - Micronebula cooldown reduced to 20s (was 40/35/30/25s).
 - Warpstar stun reduced to 1.25s (was 1.50/2.00/2.50s).
 
+VOIDWALKER
+- Voidal Flare now deals base damage plus bonus damage for each time it's been cast successively on a target.
+- Voidal Flare no longer purges buffs from targets.
+- Voidal Flare cast range increased to 750 (was 600).
+- Extraplanar Pact now grants Health and Mana regen instead.
+- Unstable Rift has been reworked:
+PLANAR TRICKERY
+Creates a portal under the feet of the target Hero. At any point, the Voidwalker can jump to it, consuming it in the process. If he dies, the portal disappears instantly.
+- Abyssal Vortex has been reworked:
+ABYSSAL SHADOW
+Summons a shadow creature from a distant plane to aid Voidwalker in battle. The creature attacks at high speed, dealing base damage plus bonus damage per hit on the same target. It is uncontrollable, invulnerable and untargetable. Expires after 16 seconds.
+
 WAR
 - FIGHT ME!! cast point increased to 0.5s (was 0.4s).
 - FIGHT ME!! now deals a multiplier of the total attack damage of all affected units as Magical damage,	 including the caster. The multiplier is 100/125/150%.
 - FIGHT ME!! duration increased to 2.75/3.25/4.00s (was 2.0/2.5/3.0s).
 - Units affected by FIGHT ME!! cannot take damage for the duration (they still take damage from the end of the duration).
 - FIGHT ME!! no longer affects Magic Immune units.
+- FIGHT ME!! affected units now heal War for their attack damage prior to Armor and Magic Resistance reduction.
 - Earthbreaker mana cost increased to 55/65/75/85 (was 50).
 - Earthbreaker cooldown increased to 14/12/10/8s (was 10s).
 - Base Strength increased to 30 (was 25).
@@ -220,6 +432,11 @@ WAR
 
 ITEMS
 ========
+
+GENERAL CHANGES
+- Moved Purging Dust, Ironblood Potion and Rage Potion to the Secret Shop.
+- Linken's Sphere has been added back in.
+- Magic Wand and Magic Stick are both now available.
 
 SOUL VIAL
 - Restores only half as much Mana as Health.

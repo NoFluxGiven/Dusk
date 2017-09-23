@@ -1,21 +1,20 @@
 baal_superposition2 = class({})
 
 LinkLuaModifier("modifier_superposition","lua/abilities/baal_superposition2",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_superposition_reveal","lua/abilities/baal_superposition2",LUA_MODIFIER_MOTION_NONE)
 
 function baal_superposition2:OnSpellStart()
 	local caster = self:GetCaster()
 	local duration = self:GetSpecialValueFor("duration")
 
-	local bonus = 0
-	if caster:GetHasTalent("special_bonus_baal_superposition") then
-		bonus = 4
-	end
-
-	duration = duration + bonus
+	duration = duration
 
 	caster:AddNewModifier(caster, self, "modifier_superposition", {Duration = duration}) --[[Returns:void
 	No Description Set
 	]]
+
+	caster:EmitSound("Baal.Otherworld.Enter")
+	caster:EmitSound("Baal.Otherworld")
 
 	self:ParticleEffect()
 end
@@ -43,6 +42,9 @@ function modifier_superposition:OnCreated()
 		No Description Set
 		]]
 
+		caster:EmitSound("Baal.Otherworld.Enter")
+		caster:EmitSound("Baal.Otherworld")
+
 		caster.otherworld_particle = ParticleManager:CreateParticleForPlayer("particles/units/heroes/hero_baal/baal_otherworld_screen_effect.vpcf", PATTACH_ABSORIGIN, caster, player) --[[Returns:int
 		Creates a new particle effect that only plays for the specified player
 		]]
@@ -50,10 +52,17 @@ function modifier_superposition:OnCreated()
 end
 
 function modifier_superposition:OnDestroy()
-	local caster = self:GetAbility():GetCaster()
+	if IsServer() then
+		local caster = self:GetAbility():GetCaster()
 
-	self:GetAbility():ParticleEffect()
-	ParticleManager:DestroyParticle(caster.otherworld_particle,false)
+		self:GetAbility():ParticleEffect()
+		if caster.otherworld_particle then 
+			ParticleManager:DestroyParticle(caster.otherworld_particle,false)
+		end
+
+		caster:EmitSound("Baal.Otherworld.Exit")
+		caster:StopSound("Baal.Otherworld")
+	end
 end
 
 function modifier_superposition:CheckState()
@@ -61,11 +70,23 @@ function modifier_superposition:CheckState()
 		[MODIFIER_STATE_INVISIBLE] = true,
 		[MODIFIER_STATE_TRUESIGHT_IMMUNE] = true,
 		[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
-		[MODIFIER_STATE_ATTACK_IMMUNE] = true
+		[MODIFIER_STATE_ATTACK_IMMUNE] = true,
+		[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = false
 	}
+
+	local t_free_pathing = self:GetAbility():GetCaster():FetchTalent("special_bonus_baal_6")
+
 	if self:GetAbility():GetCaster():IsStunned() then
+		self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_superposition_reveal", {Duration=1}) --[[Returns:void
+		No Description Set
+		]]
+	end
+	if self:GetParent():HasModifier("modifier_superposition_reveal") then
 		states[MODIFIER_STATE_INVISIBLE] = false
 		states[MODIFIER_STATE_TRUESIGHT_IMMUNE] = false
+	end
+	if t_free_pathing then
+		states[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true
 	end
 	return states
 end
@@ -99,5 +120,12 @@ function modifier_superposition:GetAbsoluteNoDamagePhysical()
 end
 
 function modifier_superposition:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor("bonus_ms")
+	local t_movespeed_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_baal_4") or 0
+	return self:GetAbility():GetSpecialValueFor("bonus_ms") + t_movespeed_bonus
+end
+
+modifier_superposition_reveal = class({})
+
+function modifier_superposition_reveal:IsHidden()
+	return true
 end

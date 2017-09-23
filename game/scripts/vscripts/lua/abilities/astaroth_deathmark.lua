@@ -26,7 +26,10 @@ function modifier_astaroth_deathmark:OnAttackLanded(params)
 	local attacker = params.attacker
 	local target = params.target or params.unit
 	local dur = self:GetAbility():GetSpecialValueFor("duration")
-	local buff_dur = self:GetAbility():GetSpecialValueFor("bonus_duration")
+
+	local t_dur_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_astaroth_2") or 0
+
+	local buff_dur = self:GetAbility():GetSpecialValueFor("bonus_duration") + t_dur_bonus
 	local stack = self:GetAbility():GetSpecialValueFor("hits")
 	local stun = self:GetAbility():GetSpecialValueFor("stun")
 	local base_cooldown = self:GetAbility().BaseClass.GetCooldown(self:GetAbility(), self:GetAbility():GetLevel())
@@ -96,28 +99,13 @@ end
 
 function modifier_astaroth_deathmark_buff:GetModifierAttackSpeedBonus_Constant()
 	local bonus = self:GetAbility():GetSpecialValueFor("attack_speed_bonus")
-	if IsServer() then
-		if self:GetAbility():GetCaster():GetHasTalent("special_bonus_astaroth_black_insignia") then
-			bonus = bonus + 250
-		end
-	end
 	return bonus
 end
 
 function modifier_astaroth_deathmark_buff:GetModifierProcAttack_BonusDamage_Pure()
 	local r = self:GetAbility():GetSpecialValueFor("bonus_damage")
-	if r == 0 then r = self:GetAbility():GetLevel()*10 + 10 end
-	return r
-end
-
-function modifier_astaroth_deathmark_buff:OnAttackStart(params)
-	if IsServer() then
-		if self:GetAbility():GetCaster():GetHasTalent("special_bonus_astaroth_black_insignia") then
-			if params.attacker == self:GetParent() then
-				IncreaseAttackSpeedCap(self:GetParent(),10000)
-			end
-		end
-	end
+	local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_astaroth_4") or 0
+	return r + t_damage_bonus
 end
 
 function modifier_astaroth_deathmark_buff:OnAttackLanded(params)
@@ -129,14 +117,6 @@ function modifier_astaroth_deathmark_buff:OnAttackLanded(params)
 			Creates a new particle effect
 			]]
 			ParticleManager:SetParticleControlEnt(p, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetCenter(), true)
-		end
-	end
-end
-
-function modifier_astaroth_deathmark_buff:OnDestroy()
-	if IsServer() then
-		if self:GetAbility():GetCaster():GetHasTalent("special_bonus_astaroth_black_insignia") then
-			RevertAttackSpeedCap(self:GetParent())
 		end
 	end
 end

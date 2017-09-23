@@ -1,0 +1,179 @@
+"Ironfist.LightningStrike"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/lightning_strike.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Ironfist.DragonFist.StartUp"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/dragon_fist_start_up.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "2.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Ironfist.DragonFist.Strike"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/dragon_fist_strike.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "2.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Ironfist.GaleStance"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/gale_stance.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.75"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Ironfist.StonewallStance"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/stonewall_stance.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.75"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Ironfist.DragonStance"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/dragon_stance.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.75"
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -210,18 +210,18 @@ function divergeCheck(keys)
 	local target = keys.unit
 	local dmg = keys.dmg
 	local rd = 1-math.abs(keys.reduction/100)
-	print("[divergeCheck] reduction is "..rd)
+	ToolsPrint("[divergeCheck] reduction is "..rd)
 	local return_damage = keys.return_damage
 
 	local dmg_before_rd = (1/rd) * dmg -- damage before reduction takes place
 
-	print("[divergeCheck] damage is "..dmg_before_rd.." with "..dmg.." being multiplied by "..(1/rd))
+	ToolsPrint("[divergeCheck] damage is "..dmg_before_rd.." with "..dmg.." being multiplied by "..(1/rd))
 	
 	if unit.divergeDamage == nil then unit.divergeDamage = 0 else unit.divergeDamage = unit.divergeDamage end
 
 	unit.divergeDamage = unit.divergeDamage+dmg_before_rd
 
-	print("[DIVERGE] Damage is at "..unit.divergeDamage)
+	ToolsPrint("[DIVERGE] Damage is at "..unit.divergeDamage)
 end
 
 function divergeCheckforCaster(keys)

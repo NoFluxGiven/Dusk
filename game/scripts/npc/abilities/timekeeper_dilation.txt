@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/timekeeper_dilation"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -78,93 +79,5 @@
 		"particle" "particles/units/heroes/hero_timekeeper/timekeeper_dilation.vpcf"
 		"particle" "particles/generic_gameplay/generic_silenced.vpcf"
 		"soundfile" "soundevents\hero_phantom.vsndevts"
-		}
-		
-	"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/timekeeper_abilities.lua"
-				"Function"		"dilation"
-				"cooldown_increase"	 "%cooldown_increase"
-			}
-		}
-	
-	"Modifiers"
-		{
-			"modifier_dilation_slow"
-			{
-				"Duration" "%duration"
-				"Attributes" "MODIFIER_ATTRIBUTE_PERMANENT"
-				"IsHidden" "0"
-				"IsPurgable" "1"
-				"EffectName" "particles/units/heroes/hero_timekeeper/timekeeper_dilation.vpcf"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow"
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				    "MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE" "%slow"
-				}
-				"OnCreated"
-				{
-					"FireSound"
-					{
-						"EffectName"	"Timekeeper.Dilation"
-						"Target" 		"TARGET"
-					}
-				}
-				"ThinkInterval"  "0.03"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/timekeeper_abilities.lua"
-						"Function"		"dilation_cooldown"
-					}
-				}
-			}
-			"modifier_dilation_haste"
-			{
-				"Duration" "%duration"
-				"Attributes" "MODIFIER_ATTRIBUTE_PERMANENT"
-				"IsHidden" "0"
-				"IsPurgable" "0"
-				"EffectName" "particles/units/heroes/hero_timekeeper/timekeeper_dilation.vpcf"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%speed"
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%speed"
-				    "MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE" "%speed"
-				}
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/timekeeper_abilities.lua"
-						"Function"		"change_respawn"
-						"respawn_change" "%respawn_increase"
-					}
-				}
-			}
-			"modifier_dilation_silence"
-			{
-				"Duration" "%duration"
-				"IsHidden" "1"
-				"IsPurgable" "0"
-				"IsDebuff"	"1"
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target"				"TARGET"
-						"EffectName"			"particles/generic_gameplay/generic_silenced.vpcf"
-						"EffectAttachType"		"follow_overhead"
-					}
-				}
-				"States"
-				{
-					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
 		}
 }

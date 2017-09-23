@@ -84,6 +84,10 @@ function modifier_divine_armour_lua:OnTakeDamage( keys )
 	local block_duration = self:GetAbility():GetSpecialValueFor("damage_block_duration")
 	local caster = self:GetParent()
 
+	local tbonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_2")
+
+	if tbonus then block_duration = block_duration+tbonus end
+
 	local close = threshold - (threshold / 3)
 
 	if self.arm_dmg_taken then
@@ -128,7 +132,7 @@ function modifier_divine_armour_lua:OnTakeDamage( keys )
 		for k,v in pairs(enemy_found) do
 			if not v:IsMagicImmune() then
 				local fdmg = v:GetMaxHealth() * mdmg
-				DealDamage(v,caster,fdmg,DAMAGE_TYPE_PURE)
+				self:GetAbility():InflictDamage(v,caster,fdmg,DAMAGE_TYPE_PURE)
 			end
 		end
 

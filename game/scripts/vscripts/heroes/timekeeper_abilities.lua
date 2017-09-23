@@ -52,7 +52,7 @@ function change_respawn(keys)
 
 	if not target:IsRealHero() then return end
 
-	print("[Dilation] Respawn time constant is "..respawn)
+	ToolsPrint("[Dilation] Respawn time constant is "..respawn)
 
 
 
@@ -68,7 +68,7 @@ function chaos_wave2(keys)
 	local instances = time/interval
 	local radius_per_instance = radius/instances
 
-	print("Instances: "..instances.." radius: "..radius_per_instance)
+	ToolsPrint("Instances: "..instances.." radius: "..radius_per_instance)
 
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_timekeeper/timekeeper_chaos_wave.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster) --[[Returns:int
 	Creates a new particle effect
@@ -321,7 +321,7 @@ function chronoshift(keys)
 	local time = keys.time
 	local target = keys.target
 
-	print(caster:GetAbsOrigin(),caster:GetForwardVector())
+	ToolsPrint(caster:GetAbsOrigin(),caster:GetForwardVector())
 
 	caster:EmitSound("Hero_FacelessVoid.TimeWalk") --[[Returns:void
 		Play named sound for all players
@@ -385,7 +385,7 @@ end
 function chronoshift_swap_abilities(keys)
 	local caster = keys.caster
 
-	print("SWAPPING!")
+	ToolsPrint("SWAPPING!")
 
 	local ab1 = caster:FindAbilityByName("timekeeper_chronoshift") --[[Returns:handle
 	Retrieve an ability by name from the unit.
@@ -395,13 +395,13 @@ function chronoshift_swap_abilities(keys)
 	]]
 
 	if ab1:IsHidden() then
-		print("Chronoshift hidden, Chronoshift End shown")
+		ToolsPrint("Chronoshift hidden, Chronoshift End shown")
 		ab1:SetHidden(false) --[[Returns:void
 		No Description Set
 		]]
 		ab2:SetHidden(true)
 	else
-		print("Chronoshift shown, Chronoshift End hide")
+		ToolsPrint("Chronoshift shown, Chronoshift End hide")
 		ab1:SetHidden(true)
 		ab2:SetHidden(false)
 		ab2:SetLevel(1)
@@ -455,11 +455,11 @@ function parallels_check_and_cast(keys)
                             FIND_CLOSEST,
                             false)
 		for k,v in pairs(found) do
-			print("Start loop")
+			ToolsPrint("Start loop")
 			if v ~= target then
 				caster.parallels_cast = true
 				caster:SetCursorCastTarget(v)
-				print("Firing the spell!")
+				ToolsPrint("Firing the spell!")
 				ability:OnSpellStart()
 				Timers:CreateTimer(0.06,function() caster.parallels_cast = false end)
 			end
@@ -512,7 +512,7 @@ function futurestrike(keys)
 
 
 
-	print(t["end_time"])
+	ToolsPrint(t["end_time"])
 
 	target:EmitSound("Timekeeper.Futurestrike")
 
@@ -530,7 +530,7 @@ function futurestrike_end(keys)
 	local t = target.futurestrike_table
 	local time = math.floor(GameRules:GetGameTime())
 
-	print(time)
+	ToolsPrint(time)
 
 	local damage = 0
 	local particle = -1
@@ -567,7 +567,7 @@ function futurestrike_end(keys)
 		Timers:CreateTimer(0.06,function()
 			if not target:HasModifier("modifier_futurestrike") then
 				-- clear the table
-				print("CLEARING TABLE")
+				ToolsPrint("CLEARING TABLE")
 				target.futurestrike_table = nil
 				for k,v in pairs(t) do
 					ParticleManager:DestroyParticle(v["particle"],false)

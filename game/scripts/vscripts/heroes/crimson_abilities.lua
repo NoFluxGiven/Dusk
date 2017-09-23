@@ -113,9 +113,9 @@ function crimson_red_rituals_dmg(event)
   
   target:SetModifierStackCount("crimson_red_rituals_stun_check",event.ability,stack+damage)
   
-  print("STACKS ARE "..stack)
+  ToolsPrint("STACKS ARE "..stack)
   
-  if stack >= threshold then print("PROC!!!") print("STUN DURATION IS "..stunduration) target:AddNewModifier(caster,nil,"modifier_stunned",{Duration=stunduration}) target:SetModifierStackCount("crimson_red_rituals_stun_check",event.ability,0) return end
+  if stack >= threshold then ToolsPrint("PROC!!!") ToolsPrint("STUN DURATION IS "..stunduration) target:AddNewModifier(caster,nil,"modifier_stunned",{Duration=stunduration}) target:SetModifierStackCount("crimson_red_rituals_stun_check",event.ability,0) return end
   
 end
 

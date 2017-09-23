@@ -1,0 +1,73 @@
+//=====================================================================================================
+// HAWKEYE: Snipe
+//=====================================================================================================
+"hawkeye_snipe"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/hawkeye_snipe"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityTextureName"			"sniper_assassinate"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1400"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"45"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"65"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attacks"					"4"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_range_bonus"		"200 400 600 800"
+			"LinkedSpecialBonus"		"special_bonus_hawkeye_2"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_bonus"				"10 15 20 25"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"movespeed"					"175"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"20"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles\item_fx\desolator_projectile.vpcf"
+		"particle" "particles\units\heroes\hero_ancient_apparition\ancient_apparition_cold_feet_frozen.vpcf"
+		"soundfile" "soundevents\game_sounds_heroes\game_sounds_tusk.vsndevts"
+		}
+	
+	"Modifiers"
+		{
+		}
+}

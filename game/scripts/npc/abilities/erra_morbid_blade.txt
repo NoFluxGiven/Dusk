@@ -2,7 +2,8 @@
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "BaseClass"             "ability_datadriven"
+    "BaseClass"             "ability_lua"
+    "ScriptFile"            "lua/abilities/erra_morbid_blade"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
@@ -52,7 +53,7 @@
         "03"
         {
             "var_type"              "FIELD_INTEGER"
-            "lifesteal"             "4 8 12 16"
+            "lifesteal"             "4 6 8 10"
         }
     }
 
@@ -60,19 +61,6 @@
     {
         "soundfile" "soundevents/hero_erra.vsndevts"
         "particle"  "particles/units/heroes/hero_erra/morbid_blade.vpcf"
-    }
-
-    "OnSpellStart"
-    {
-        "RunScript"
-        {
-            "ScriptFile"    "heroes/erra_abilities.lua"
-            "Function"        "MorbidBlade"
-            "dmg"           "%AbilityDamage"
-            "radius"        "%radius"
-            "threshold"     "%pure_threshold"
-            "lifesteal"     "%lifesteal"
-        }
     }
 
     "Modifiers"

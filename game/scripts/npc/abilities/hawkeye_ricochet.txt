@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/hawkeye_ricochet"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -41,11 +42,12 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"hits"						"4"
+			"LinkedSpecialBonus"		"special_bonus_hawkeye_2"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_reduction"			"-80 -75 -70 -65"
+			"damage_reduction"			"-80 -72 -64 -56"
 		}
 	}
 	
@@ -55,42 +57,8 @@
 		"particle" "particles\units\heroes\hero_ancient_apparition\ancient_apparition_cold_feet_frozen.vpcf"
 		"soundfile" "soundevents\game_sounds_heroes\game_sounds_tusk.vsndevts"
 		}
-		
-	"OnSpellStart"
-		{
-		"RunScript"
-			{
-			"ScriptFile" "heroes/hawkeye_abilities.lua"
-			"Function" "hawkeye_rapid_fire"
-			"hits" "%hits"
-			}
-		}
 	
 	"Modifiers"
 		{
-		"hawkeye_ricochet_mod"
-			{
-			}
-		"modifier_rapidfire_damage_reduction"
-		{
-			"Passive"			"0"
-			"IsHidden"			"1"
-			"IsDebuff"			"0"
-		
-			"Properties"
-			{
-			    "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%damage_reduction"
-			}
-
-			"States"
-			{
-				"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
-			}
-		}
-		"hawkeye_ricochet_no_bounce"
-			{
-			"IsHidden" "1"
-			"Duration" "1"
-			}
 		}
 }

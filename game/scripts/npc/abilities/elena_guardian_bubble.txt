@@ -1,0 +1,67 @@
+//=====================================================================================================
+// ELENA: Tranquility Seal
+//=====================================================================================================
+"elena_guardian_bubble"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/elena_guardian_bubble"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"elena_guardian_bubble"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"650"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"24 20 16 12"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"90"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"8"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"block"					"1 2 3 4"
+			"LinkedSpecialBonus"	"special_bonus_elena_4"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"incoming_damage_cap"	"100"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"incoming_damage_min"	"15 30 45 60"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+		"particle"			"particles/units/heroes/hero_elena/guardian_bubble.vpcf"
+		"particle"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_silence.vpcf"
+	}
+	
+	"Modifiers"
+		{
+		}
+}

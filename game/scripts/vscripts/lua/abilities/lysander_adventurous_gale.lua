@@ -273,16 +273,6 @@ function modifier_adventurous_gale_push:OnIntervalThink()
 		local target = self:GetParent()
 		local caster = self:GetAbility():GetCaster()
 
-		local doDmg = self:GetAbility():FetchTalent()
-
-		if doDmg then
-
-			if doDmg > 0 then
-				self:GetAbility():InflictDamage(target,caster,doDmg*0.03,DAMAGE_TYPE_MAGICAL)
-			end
-
-		end
-
 		-- local direction = caster.aw_direction
 		-- local distance = caster.aw_distance
 

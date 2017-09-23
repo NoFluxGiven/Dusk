@@ -2,9 +2,19 @@ astaroth_overwhelm = class({})
 
 LinkLuaModifier("modifier_overwhelm","lua/abilities/astaroth_overwhelm",LUA_MODIFIER_MOTION_NONE)
 
+function astaroth_overwhelm:GetCooldown(level)
+	local base_cooldown = self.BaseClass.GetCooldown(self, level)
+	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_astaroth_3") 
+	if t_cooldown_reduction then return 0 end
+	return base_cooldown
+end
+
 function astaroth_overwhelm:OnSpellStart()
 	local target = self:GetCursorTarget()
 	local caster = self:GetCaster()
+
+	if target:TriggerSpellAbsorb(self) then return end
+	-- target:TriggerSpellReflect(self)
 
 	local duration = self:GetSpecialValueFor("duration") --[[Returns:table
 	No Description Set
@@ -26,7 +36,7 @@ end
 modifier_overwhelm = class({})
 
 function modifier_overwhelm:GetAttributes()
-	return MODIFIER_ATTRIBUTE_PERMANENT+MODIFIER_ATTRIBUTE_MULTIPLE
+	return MODIFIER_ATTRIBUTE_PERMANENT
 end
 
 function modifier_overwhelm:OnCreated( kv )

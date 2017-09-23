@@ -37,17 +37,17 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"10 20 30 40"
+			"damage"						"12 20 28 36"
 		}
 		"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"time"							"3"
+			"time"							"4"
 		}
 		"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"increase"						"12.5"
+			"increase"						"7"
 		}
 		"04"
 		{

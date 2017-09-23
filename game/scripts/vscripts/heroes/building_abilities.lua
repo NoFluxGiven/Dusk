@@ -2,7 +2,7 @@ function SetHealth(keys)
 	local caster = keys.target
 	local hp = keys.hp
 
-	print(caster:GetName())
+	ToolsPrint(caster:GetName())
 
 	if caster:HasModifier("modifier_invulnerable") then
 		caster:RemoveModifierByName("modifier_invulnerable")
@@ -13,7 +13,7 @@ function SetHealth(keys)
 
 	local fh = ch+hp
 
-	print(fh.." HP")
+	ToolsPrint(fh.." HP")
 
 	caster:SetMaxHealth(fh)
 	caster:SetHealth(fh)

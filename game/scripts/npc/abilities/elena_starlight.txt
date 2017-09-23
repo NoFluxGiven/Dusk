@@ -1,0 +1,74 @@
+//=====================================================================================================
+// ELENA: Starlight
+//=====================================================================================================
+"elena_starlight"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/elena_starlight"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"elena_starlight"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1200"
+	"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"24 20 16 12"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"130 150 170 190"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"140 200 260 320"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heal_percentage"		"65"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"delay"					"0.75"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"range"					"1200"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_bonus"			"20" // per Hero hit on either team
+		}
+	}
+
+	"precache"
+	{
+		"soundfile" 		"soundevents/hero_elena.vsndevts"
+		"particle"			"particles/units/heroes/hero_elena/starlight.vpcf"
+		"particle"			"particles/units/heroes/hero_elena/starlight_target_line.vpcf"
+		"particle"			"particles/units/heroes/hero_elena/starlight_hit_ally.vpcf"
+		"particle"			"particles/units/heroes/hero_elena/starlight_hit_enemy.vpcf"
+		"particle"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_silence.vpcf"
+	}
+	
+	"Modifiers"
+		{
+		}
+}

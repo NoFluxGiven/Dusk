@@ -98,4 +98,10 @@
 		},
 	]
 	m_flConstantLifespan = 0.75
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_lupin/ephemera_smoke.vpcf"
+		},
+	]
 }

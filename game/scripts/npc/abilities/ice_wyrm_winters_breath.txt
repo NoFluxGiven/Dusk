@@ -1,0 +1,63 @@
+//=====================================================================================================
+// ICE_WYRM: winters_breath
+//=====================================================================================================
+"ice_wyrm_winters_breath"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/ice_wyrm_winters_breath"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"ice_wyrm_winters_breath"
+	"MaxLevel"						"3"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"300"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"30 50 70"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_over_time"		"25"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"6.0"
+		}
+	}
+
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_shard_magus/winters_breath.vpcf"
+		"particle"			"particles/items2_fx/radiance.vpcf"
+	}
+}

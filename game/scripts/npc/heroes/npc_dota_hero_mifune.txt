@@ -3,8 +3,15 @@
 	"AbilityLayout" 		"4"
 	"override_hero"			"npc_dota_hero_juggernaut"
 	"Ability1"				"mifune_raigeki" 
-	"Ability2"				"mifune_oiuchi" 
+	"Ability2"				"mifune_bushido" // Mifune's years of intense training and incredible focus
+	// allow him reap more benefits from his stats, becoming more agile and dangerous.
+	// Upon activation:
+	// Increases his Agility by a percentage amount,
+	// and grants him a percentage attack damage boost.
+	// Lasts 6s.
 	"Ability3"				"mifune_genso"
+	// The targeted enemy is nearly instantly assailed by multiple Illusions of Mifune.
+	// The illusions cannot be controlled, can move over terrain, and instantly die when their target dies.
 	"Ability4"				"mifune_zanmato"
 	"Ability5"				"mifune_zanmato_scepter"
 	"Ability6"				""
@@ -19,22 +26,22 @@
 	"Ability15"				""
 	"Ability16"				"attribute_bonus"
 
-	"ArmorPhysical"				"0"									// Physical protection.
+	"ArmorPhysical"				"1"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackRange"				"150"
-	"AttackRate"				"1.4"
-	"AttackDamageMin"			"19"										// Damage range min.
-	"AttackDamageMax"			"22"										// Damage range max.
+	"AttackRate"				"1.5"
+	"AttackDamageMin"			"26"										// Damage range min.
+	"AttackDamageMax"			"35"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
-	"AttributeBaseStrength"		"16"										// Base strength
-	"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
+	"AttributeBaseStrength"		"20"										// Base strength
+	"AttributeStrengthGain"		"1.8"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"16"										// Base intelligence
 	"AttributeIntelligenceGain"	"1.5"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"35"										// Base agility
-	"AttributeAgilityGain"		"2.8"										// Agility bonus per level.
+	"AttributeBaseAgility"		"22"										// Base agility
+	"AttributeAgilityGain"		"2.3"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.

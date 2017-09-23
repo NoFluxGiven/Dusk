@@ -220,7 +220,7 @@ function expunge(keys)
 		amt = mp*pct + bonus_mp*bonus_pct + base
 	end
 
-	print(amt..", ".."Aghs: "..bonus_mp*bonus_pct.." Mana")
+	ToolsPrint(amt..", ".."Aghs: "..bonus_mp*bonus_pct.." Mana")
 
 	local radius = keys.radius
 

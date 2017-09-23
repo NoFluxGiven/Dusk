@@ -9,10 +9,11 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/paragon_cleanse"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_BUILDING"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 	"AoERadius"						"310"
@@ -21,7 +22,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"800"
+	"AbilityCastRange"				"550"
 	"AbilityCastPoint"				"0.452 0.452 0.452 0.452"
 	
 	// Time		
@@ -39,7 +40,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"heal"					"60 120 180 240"
+			"heal"					"100 160 220 280"
 		}
 		"02"
 		{
@@ -49,7 +50,13 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"secondary"				"75 125 175 225"
+			"secondary"				"75 100 125 150"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heal_amp"				"0"
+			"LinkedSpecialBonus"	"special_bonus_paragon_1"
 		}
 	}
 
@@ -62,63 +69,4 @@
 
 	}
 
-	"OnSpellStart"
-	{
-		"FireSound"
-		{
-			"EffectName"	"Hero_Omniknight.Purification"
-			"Target"		"TARGET"
-		}
-
-		"FireEffect"
-		{
-			"Target"			"TARGET"
-			"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
-			"EffectAttachType"	"follow_origin"
-			"ControlPoints"
-			{
-				"00"	"0 0 0"
-				"01"	"%radius %radius %radius"
-			}
-		}
-		
-		"FireEffect"
-		{
-			"Target"			"TARGET"
-			"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
-			"EffectAttachType"	"follow_origin"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile" "heroes/paragon_abilities.lua"
-			"Function" "paragon_cleanse"
-		}
-
-		"ActOnTargets"
-		{
-			"Target"
-			{
-				"Center"  			"TARGET"
-				"Radius"			"%radius"
-				"Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			}
-
-			"Action"
-			{
-				"Heal"
-				{
-					"Target" 		"TARGET"
-					"HealAmount"	"%secondary"
-				}
-				"FireEffect"
-				{
-					"Target"			"TARGET"
-					"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf"
-					"EffectAttachType"	"follow_origin"
-				}
-			}
-		}
-	}
 }

@@ -9,6 +9,8 @@ function astaroth_pain_curse:OnSpellStart()
 	local duration = self:GetSpecialValueFor("duration") --[[Returns:table
 	No Description Set
 	]]
+	if target:TriggerSpellAbsorb(self) then return end
+	target:TriggerSpellReflect(self)
 
 	target:AddNewModifier(self:GetCaster(), self, "modifier_astaroth_pain_curse", {Duration=duration}) --[[Returns:void
 	No Description Set
@@ -35,11 +37,13 @@ end
 function modifier_astaroth_pain_curse:OnTakeDamage(params)
 	if IsServer() then
 		if params.unit ~= self:GetParent() then return end
-		if params.damage < 10 then return end
+		if params.damage < 1 then return end
 		local duration = self:GetAbility():GetSpecialValueFor("slow_duration")
 		local cooldown = self:GetAbility():GetSpecialValueFor("cooldown")
 
-		local damage = self:GetAbility():GetSpecialValueFor("damage")
+		local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_astaroth_1") or 0
+
+		local damage = self:GetAbility():GetSpecialValueFor("damage") + t_damage_bonus
 
 		if not self:GetParent():HasModifier("modifier_astaroth_pain_curse_grace") then
 			self:GetParent():AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_astaroth_pain_curse_debuff", {Duration=duration}) --[[Returns:void

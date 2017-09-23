@@ -2,28 +2,42 @@
 {
 	"AbilityLayout" 		"4"
 	"override_hero"			"npc_dota_hero_bounty_hunter"
-	"Ability1"				"shade_smoke_bomb" 
-	"Ability2"				"shade_shadowbreak" 
+	"Ability1"				"shade_stalk"
+	// Shade targets an enemy, becoming invisible, gaining vision of them, moving faster, and slowing them.
+	// Attacking the enemy out of invisibility deals Pure, Physical and Magical damage.
+	"Ability2"				"shade_dark_hunger"
+	// When an enemy Hero dies near Shade, he recovers Health,
+	// and purges debuffs.
+	// Recovers 100/150/200/250 Health, and purges debuffs with a strong dispel.
+	// 1200 radius.
 	"Ability3"				"shade_venomous"
 	"Ability4"				"shade_isolation"
+	// Shade curses the target unit, damaging them, and causing them to emit a shockwave of energy
+	// that petrifies all allies it hits.
+	// The targeted unit has reduced Spell and attack damage for the duration of this Spell.
+	// Deals 100/200/300 Magical damage.
+	// The shockwave travels outwards to a 900 radius over 0.25s.
+	// Petrified units are invulnerable and untargetable, but are stunned and command restricted.
+	// Lasts 4/5/6s.
 	"Ability5"				""
 	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_shade_1"
+	"Ability11"				"special_bonus_movement_speed_15"
+	"Ability12"				"special_bonus_shade_2"
+	"Ability13"				"special_bonus_shade_3"
+	"Ability14"				"special_bonus_lifesteal_20"
+	"Ability15"				"special_bonus_shade_4"
+	"Ability16"				"special_bonus_shade_5"
+	"Ability17"				"special_bonus_shade_6"
 
 	"ArmorPhysical"				"0"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackRange"				"125"
+	"AttackRange"				"150"
 	"AttackRate"				"1.7"
 	"AttackDamageMin"			"25"										// Damage range min.
 	"AttackDamageMax"			"27"										// Damage range max.
@@ -33,8 +47,8 @@
 	"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"16"										// Base intelligence
 	"AttributeIntelligenceGain"	"1.7"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"27"										// Base agility
-	"AttributeAgilityGain"		"2.8"										// Agility bonus per level.
+	"AttributeBaseAgility"		"25"										// Base agility
+	"AttributeAgilityGain"		"2.6"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.
@@ -44,11 +58,11 @@
 	//"RingRadius"				"70"
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"315"									// Speed.
+	"MovementSpeed"				"310"									// Speed.
 	"MovementTurnRate"			"1.0"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"2.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
 	"StatusManaRegen"			"0"									// Mana regeneration rate.
 

@@ -7,11 +7,9 @@ function lightning_boltblast:OnSpellStart()
 	local c = self:GetCaster()
 	local point = self:GetCursorPosition()+Vector(0,0,100)
 
-	local bonus = self:FetchTalent() or 0
+	local bonus = c:FetchTalent("special_bonus_lightning_3") or 0
 
-	if bonus ~= 0 then bonus = bonus / 100 end
-
-	local delay = self:GetSpecialValueFor("explosion_delay")*(1+bonus)
+	local delay = self:GetSpecialValueFor("explosion_delay")*(1+bonus/100)
 
 	CreateModifierThinker( c, self, "modifier_boltblast", {Duration=delay}, point, c:GetTeamNumber(), false )
 end
@@ -33,13 +31,14 @@ if IsServer() then
 	end
 
 	function modifier_boltblast:OnDestroy()
-		local bonus = self:GetAbility():FetchTalent() or 0
-		if bonus ~= 0 then bonus = bonus / 100 end
 
-		local damage = self:GetAbility():GetSpecialValueFor("explosion_damage")*(1+bonus) --[[Returns:table
+		local c = self:GetAbility():GetCaster()
+
+		local t_damage_bonus = c:FetchTalent("special_bonus_lightning_3") or 0
+
+		local damage = self:GetAbility():GetSpecialValueFor("explosion_damage")*(1+t_damage_bonus/100) --[[Returns:table
 		No Description Set
 		]]
-		local c = self:GetAbility():GetCaster()
 
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 		local slow_duration = self:GetAbility():GetSpecialValueFor("slow_duration")

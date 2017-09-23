@@ -13,17 +13,18 @@
 	// He cannot die from attacks during the duration of this Ultimate.
 	// Magic Immune enemies are unaffected.
 	// Lasts 3/4/5s.
-	"Ability5"				"" // 
-	"Ability6"				"" // 
-	"Ability8"				"" // 
+	"Ability5"				""
+	"Ability6"				""
+	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_war_1" // FIGHT ME!! Gains 40% Mana From Attacks
+	"Ability11"				"special_bonus_exp_boost_20" //
+	"Ability12"				"special_bonus_war_2" // +25 Berserker Aura Damage/Attack Speed
+	"Ability13"				"special_bonus_magic_resistance_15" //
+	"Ability14"				"special_bonus_attack_damage_60"
+	"Ability15"				"special_bonus_war_3" // +35 Bloodlust DPS
+	"Ability16"				"special_bonus_hp_350" //
+	"Ability17"				"special_bonus_war_4" // +200 Earthbreaker Radius
 	
 
 	"ArmorPhysical"				"2"									// Physical protection.
@@ -60,56 +61,4 @@
 	"StatusManaRegen"			"0"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
-
-	"Talents"
-	{
-	    "1" {
-		        "left"
-		        {      
-		            "name" "special_bonus_war_movespeed"
-		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "20"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_war_mana_regen"
-		            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "3"
-		        }
-	   		}
-	    "2" {
-		        "left"
-		        {      
-		            "name" "special_bonus_war_earthbreaker" // +75 Earthbreaker Damage
-		            "v" "75"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_war_armor"
-		            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "8"
-		        }
-	    	}
-	    "3" {
-		        "left"
-		        {      
-		            "name" "special_bonus_war_strength"
-		            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "20"
-		        }
-		        "right"
-		        {
-		            "name" "special_bonus_war_attack_speed"
-		            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "40"
-		        }
-	    	}
-	    "4" {
-		        "left"
-		        {      
-		            "name" "special_bonus_war_bloodlust" // +125 Bloodlust DPS
-		           	"v" "65"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_war_health_regen"
-		            "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "45"
-		        }
-	    	}
-	}
 }

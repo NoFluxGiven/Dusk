@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/timekeeper_chronoshift_end"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -40,20 +41,16 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"time"							"8 12 16"
+			"time"							"8 9 10"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"delay"							"2.00 1.75 1.50"
 		}
 	}
 	
 	"precache"
 		{
-		}
-		
-	"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/timekeeper_abilities.lua"
-				"Function"		"chronoshift_end"
-			}
 		}
 }

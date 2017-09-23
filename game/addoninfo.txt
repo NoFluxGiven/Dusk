@@ -1,11 +1,15 @@
 "AddonInfo"
 {
   "TeamCount" "2"
-  "maps"      "dota"
+  "maps"      "dota green"
   "IsPlayable"  "1"
   "dota"
   {
           "MaxPlayers"                    "10"
+  }
+  "green"
+  {
+			"MaxPlayers"				   "10"
   }
 "playground"
 {

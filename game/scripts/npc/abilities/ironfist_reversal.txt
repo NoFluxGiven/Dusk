@@ -5,28 +5,25 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/ironfist_reversal"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityTextureName"			"ironfist_reversal"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"175"
-	"AbilityCastPoint"				"0.0"
+	"AbilityCastPoint"				"0.1"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"6"
+	"AbilityCooldown"				"10"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"0"
-	
-	// Damage
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"40 80 120 160"
+	"AbilityManaCost"				"60"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,22 +36,42 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"perfect_reflect"				"0.15"
+			"counter_time"					"1.0"
 		}
 	"02"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"reflect"						"0.60"
+			"var_type"						"FIELD_INTEGER"
+			"reduction"						"50"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"perfect_bonus"					"40 80 120 160"
+			"damage"						"125 175 225 275"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"perfect_stun"					"0.50 0.75 1.00 1.25"
+			"stun"							"0.8"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"perfect_time"					"0"
+		}
+	"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"perfect_damage"				"150 200 250 300"
+		}
+	"07"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"perfect_stun"					"0.75 1.00 1.25 1.50"
+		}
+	"08"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"base_damage"					"40 50 60 70"
 		}
 	}
 	
@@ -68,137 +85,8 @@
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
 		}
-		
-	"OnSpellStart"
-		{
-		"ApplyModifier"
-			{
-			"ModifierName" "ironfist_counter_onhit_mod"
-			"Target" "CASTER"
-			}
-		"ApplyModifier"
-			{
-			"ModifierName" "modifier_perfect_reflect"
-			"Target" "CASTER"
-			}
-		}
 	
 	"Modifiers"
 		{
-		"ironfist_counter_onhit_mod"
-			{
-			"Duration" "%reflect"
-			"IsHidden" "1"
-
-			"OnCreated"
-			{
-				"AttachEffect"
-				{
-					"EffectName"        "particles/units/heroes/hero_ironfist/counter.vpcf"
-					"EffectAttachType"  "follow_origin"
-					"Target"            "TARGET"
-				}
-				"FireSound"
-				{
-					"EffectName"	"Hero_Sven.WarCry"
-					"Target" 		"TARGET"
-				}
-			}
-
-			"OnAttacked"
-				{
-				"Damage"
-					{
-					"Target"
-					{
-						"Center"  	"ATTACKER"
-						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					}
-					"Damage" "%AbilityDamage"
-					"Type" "DAMAGE_TYPE_MAGICAL"
-					}
-				"AttachEffect"
-				{
-					"EffectName"        "particles/units/heroes/hero_ironfist/counter_enemy.vpcf"
-					"EffectAttachType"  "follow_origin"
-					"Target"
-					{
-						"Center"  	"ATTACKER"
-						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					}
-				}
-				"FireSound"
-				{
-					"EffectName"	"Hero_Axe.CounterHelix"
-					"Target"
-					{
-						"Center"  	"ATTACKER"
-						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					}
-				}
-				}
-			}
-		"modifier_perfect_reflect"
-		{
-			"Passive"			"0"
-			"IsHidden"			"1"
-			"IsDebuff"			"0"
-			"Duration"			"%perfect_reflect"
-		
-			"OnAttacked"
-			// "%attack_damage" is set to the damage value after mitigation
-			{
-				"Damage"
-				{
-					"Target"
-					{
-						"Center"  	"ATTACKER"
-						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					}
-					"Type"			"DAMAGE_TYPE_PURE"
-					"Damage"		"%perfect_bonus"
-				}
-				"Stun"
-				{
-					"Duration"   "%perfect_stun"
-					"Target"
-					{
-						"Center"  	"ATTACKER"
-						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					}
-				}
-				"AttachEffect"
-				{
-					"EffectName"        "particles/units/heroes/hero_ironfist/counter_enemy_perfect.vpcf"
-					"EffectAttachType"  "follow_origin"
-					"Target"
-					{
-						"Center"  	"ATTACKER"
-						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					}
-				}
-				"FireSound"
-				{
-					"EffectName"	"Hero_Silencer.LastWord.Damage"
-					"Target"
-					{
-						"Center"  	"ATTACKER"
-						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					}
-				}
-			}
-
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL" "1"
-			}
-		}
 		}
 }

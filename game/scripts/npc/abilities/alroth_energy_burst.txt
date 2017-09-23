@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/alroth_energy_burst"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -50,67 +51,5 @@
 	"precache"
 		{
 		"particle" "particles/units/heroes/hero_alroth/blast.vpcf"
-		}
-
-	"OnSpellStart"
-	{
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_alroth_burst_min"
-			"Target" 		"CASTER"
-			"Duration"		"0.2"
-		}
-		"FireSound"
-		{
-			"EffectName"	"Alroth.EnergyBurst"
-			"Target" 		"CASTER"
-		}
-		"Damage"
-		{
-			"Target"
-			{
-				"Center"  	"CASTER"
-				"Radius" 	"%radius"
-				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			}
-			"Type"			"DAMAGE_TYPE_MAGICAL"
-			"Damage"		"%damage"
-		}
-		"Damage"
-		{
-			"Target"		"CASTER"
-			"Type"			"DAMAGE_TYPE_MAGICAL"
-			"Damage"		"%damage / 2"
-		}
-		"FireEffect"
-		{
-			"EffectName"        "particles/units/heroes/hero_alroth/blast.vpcf"
-			"EffectAttachType"  "follow_customorigin"
-			"Target"            "CASTER"
-			"ControlPoints"
-			{
-				"01"	"%radius 0 0"
-			}
-			"ControlPointEntities"
-			{
-				"CASTER"	"attach_hitloc"
-			}
-		}
-	}
-	
-	"Modifiers"
-		{
-			"modifier_alroth_burst_min"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MIN_HEALTH" "1"
-				}
-			}
 		}
 }

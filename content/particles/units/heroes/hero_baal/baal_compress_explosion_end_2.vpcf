@@ -14,11 +14,12 @@
 		{
 			_class = "C_OP_InterpolateRadius"
 			m_flStartScale = 5.0
-			m_flEndScale = 25.0
+			m_flEndScale = 15.0
 			m_flBias = 0.9
 		},
 		{
 			_class = "C_OP_PositionLock"
+			m_bDisableOperator = true
 		},
 	]
 	m_Renderers = 
@@ -48,6 +49,11 @@
 			_class = "C_INIT_RandomAlpha"
 			m_nAlphaMin = 145
 			m_nAlphaMax = 188
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 150.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 150.0 ]
 		},
 	]
 	m_Emitters = 

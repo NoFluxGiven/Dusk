@@ -6,7 +6,7 @@ function lightning_lightning_dagger:OnSpellStart()
 	local c = self:GetCaster()
 	local t = self:GetCursorTarget()
 	local s = 2000
-	local bonus = self:FetchTalent() or 0
+	local bonus = c:FetchTalent("special_bonus_lightning_1") or 0
 	local bounces = self:GetSpecialValueFor("bounces")+bonus
 
 	c:EmitSound("Hero_PhantomAssassin.Dagger.Cast")
@@ -51,6 +51,9 @@ end
 
 function lightning_lightning_dagger:OnProjectileHit_ExtraData(target,location,extradata)
 	if not target then return end
+
+	if target:TriggerSpellAbsorb(self) then return end
+	target:TriggerSpellReflect(self)
 
 	local damage = self:GetAbilityDamage()
 	local jump_radius = 600

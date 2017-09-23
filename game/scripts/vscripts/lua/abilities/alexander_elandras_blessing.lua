@@ -32,17 +32,14 @@ end
 
 function modifier_elandras_blessing:GetModifierPreAttack_BonusDamage()
 	if IsServer() then
-		local bonus = 0
-		if self:GetAbility():GetCaster():GetHasTalent("special_bonus_alexander_elandras_blessing") then
-			bonus = 30
-		end
-		return self:GetAbility():GetSpecialValueFor("bonus_damage") + bonus
+		return self:GetAbility():GetSpecialValueFor("bonus_damage")
 	end
 	return self:GetAbility():GetSpecialValueFor("bonus_damage")
 end
 
 function modifier_elandras_blessing:GetModifierPhysicalArmorBonus()
-	return self:GetAbility():GetSpecialValueFor("bonus_armor")
+	local t_armor_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_alexander_1") or 0
+	return self:GetAbility():GetSpecialValueFor("bonus_armor") + t_armor_bonus
 end
 
 function modifier_elandras_blessing:OnAttacked(params)

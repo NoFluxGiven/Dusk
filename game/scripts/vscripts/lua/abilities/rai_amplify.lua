@@ -36,6 +36,10 @@ function modifier_amplify:OnIntervalThink()
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 		local damage = self:GetAbility():GetSpecialValueFor("damage")
 
+		local t_dps = self:GetAbility():GetCaster():FetchTalent("special_bonus_rai_2") or 0
+
+		damage = damage + t_dps
+
 		local t = FindEnemies(self:GetParent(),self:GetParent():GetAbsOrigin(),radius)
 
 		for k,v in pairs(t) do
@@ -52,9 +56,9 @@ function modifier_amplify:OnDestroy()
 		local bonus = 0
 		local etargets = self:GetAbility():GetSpecialValueFor("targets")
 
-		if self:GetAbility():GetCaster():GetHasTalent("special_bonus_rai_amplify") then bonus = 80 end
+		local t_target_bonus = FetchTalent("special_bonus_rai_4") or 0
 
-		edamage = edamage+bonus
+		etargets = etargets + t_target_bonus
 
 		local t = FindEnemies(self:GetParent(),self:GetParent():GetAbsOrigin(),radius)
 
@@ -62,7 +66,7 @@ function modifier_amplify:OnDestroy()
 
 		if etargets > tsize then etargets = tsize end
 
-		print(tsize)
+		ToolsPrint(tsize)
 
 		local tfin = {}
 
@@ -73,7 +77,7 @@ function modifier_amplify:OnDestroy()
 			table.remove(t,r)
 		end
 
-		print("Targets: "..#tfin.."/"..tsize.."(Max "..etargets.." Targets)")
+		ToolsPrint("Targets: "..#tfin.."/"..tsize.."(Max "..etargets.." Targets)")
 
 		local a = self:GetAbility()
 		local d = self:GetAbility():GetSpecialValueFor("slow_duration")

@@ -5,11 +5,25 @@ function paragon_cleanse(event)
   local tteam = target:GetTeam()
   local dmg = event.ability:GetLevelSpecialValueFor("heal",event.ability:GetLevel()-1)
 
+  local tbonus = FetchTalent("special_bonus_paragon_1")
+
+  local tcheck = FetchTalent("special_bonus_paragon_3")
+
+  if tcheck then
+    if target ~= caster and target:GetTeam() == caster:GetTeam() then
+      caster:SetCursorCastTarget(caster) --[[Returns:void
+      No Description Set
+      ]]
+      local ab = event.ability
+      ab:OnSpellStart()
+    end
+  end
+
+  if tbonus then dmg = dmg + tbonus end
   
-  
-  print("[Ability: Paragon Cleanse]")
+  ToolsPrint("[Ability: Paragon Cleanse]")
   if cteam == tteam then
-  print("Heal.")
+  ToolsPrint("Heal.")
     target:Heal(dmg,caster)
     return
   end
@@ -21,7 +35,7 @@ function paragon_cleanse(event)
     damage_type = DAMAGE_TYPE_PURE,
     ability = event.ability
   }
-  print("Harm.")
+  ToolsPrint("Harm.")
   ApplyDamage(dmgTable)
 end
 
@@ -79,14 +93,14 @@ function paragon_smite(event)
     target = duskDota.lastRadiantKill.attacker
   end
   
-  if target == nil or not IsValidEntity(target) then print("Invalid target.") event.ability:EndCooldown() event.ability:RefundManaCost() return end
+  if target == nil or not IsValidEntity(target) then ToolsPrint("Invalid target.") event.ability:EndCooldown() event.ability:RefundManaCost() return end
   local targetmod = target:GetAbsOrigin()+Vector(0,0,800)
   local unit = FastDummy(target:GetAbsOrigin(),caster:GetTeam(),2,750)
   local boltparticle  = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf", PATTACH_ABSORIGIN, unit)
   ParticleManager:SetParticleControl(boltparticle,0,target:GetCenter())
   ParticleManager:SetParticleControl(boltparticle,1,targetmod)
   EmitGlobalSound("Hero_Zuus.GodsWrath")
-  if not target:IsAlive() then print("Target is dead already") return end
+  if not target:IsAlive() then ToolsPrint("Target is dead already") return end
 
   ScreenShake(target:GetCenter(), 500, 2, 0.3, 70000, 0, true)
   
@@ -166,9 +180,9 @@ end
   
 --   local damage = event.dmg
   
---   print("====[PARAGON GUARDIAN] Running now.")
+--   ToolsPrint("====[PARAGON GUARDIAN] Running now.")
   
---   if caster == target then print("Units are the same!") return end
+--   if caster == target then ToolsPrint("Units are the same!") return end
 --   if caster:HasModifier("paragon_tranquil_seal_mod") or attacker:HasModifier("paragon_tranquil_seal_mod") then return end
   
 --   if damage >= hp then

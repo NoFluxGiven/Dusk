@@ -55,9 +55,9 @@ function aether_reality_shift:OnSpellStart()
 		-- end
 
 		for k,v in pairs(found) do
-			print("====================")
-			print("UNIT: "..v:GetUnitName())
-			print("KEY: "..k.."/"..#found)
+			ToolsPrint("====================")
+			ToolsPrint("UNIT: "..v:GetUnitName())
+			ToolsPrint("KEY: "..k.."/"..#found)
 			if v ~= unit and v:GetUnitName() ~= "npc_dummy_unit" then
 				v:Interrupt()
 				if v:GetTeam() ~= caster:GetTeam() then
@@ -70,13 +70,13 @@ function aether_reality_shift:OnSpellStart()
 				No Description Set
 				]]
 				if v:HasModifier(m) then
-					print(m.." was applied to "..v:GetName()..".")
+					ToolsPrint(m.." was applied to "..v:GetName()..".")
 				end
 				if v:HasModifier(m2) then
-					print(m2.." was applied to "..v:GetName()..".")
+					ToolsPrint(m2.." was applied to "..v:GetName()..".")
 				end
 				v:AddNoDraw()
-				print("NoDraw applied to "..v:GetName()..".")
+				ToolsPrint("NoDraw applied to "..v:GetName()..".")
 			end
 		end
 	end)
@@ -84,12 +84,8 @@ end
 
 function aether_reality_shift:GetCooldown()
 	local base_cooldown = self.BaseClass.GetCooldown(self, self:GetLevel())
-	if not self:GetCaster():GetHasTalent("special_bonus_aether_reality_shift") then
-		return base_cooldown
-	else
-		return base_cooldown - 60
-	end
-	return base_cooldown - 60
+	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_aether_3") or 0
+	return base_cooldown - t_cooldown_reduction
 end
 
 -- Modifiers
@@ -135,7 +131,7 @@ function modifier_reality_shift_show:OnDestroy()
 		local caster = self:GetAbility():GetCaster()
 		local target = self:GetParent()
 
-		print("C: "..caster:GetName().." T: "..target:GetName())
+		ToolsPrint("C: "..caster:GetName().." T: "..target:GetName())
 
 		local dmg = self:GetAbility():GetSpecialValueFor("damage")
 		local stun = self:GetAbility():GetSpecialValueFor("stun")
@@ -159,7 +155,7 @@ function modifier_reality_shift_show:OnDestroy()
 
 		-- 	for k,v in pairs(found_2) do
 		-- 		if v:HasModifier("modifier_monolith_slow_area_ally") then
-		-- 			print("FOUND A UNIT WITH PREREQUISITES")
+		-- 			ToolsPrint("FOUND A UNIT WITH PREREQUISITES")
 		-- 			p = v:GetAbsOrigin()
 		-- 		end
 		-- 	end
@@ -210,7 +206,7 @@ function modifier_reality_shift_show:OnDestroy()
 		end
 
 		Timers:CreateTimer(delay,function()
-			print("Removing NoDraw for "..target:GetName()..".")
+			ToolsPrint("Removing NoDraw for "..target:GetName()..".")
 			ParticleManager:DestroyParticle(p,false)
 			target:RemoveNoDraw()
 		end)

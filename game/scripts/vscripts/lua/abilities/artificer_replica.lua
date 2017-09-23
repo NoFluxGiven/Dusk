@@ -4,6 +4,11 @@ LinkLuaModifier("modifier_replica_aghs_aura","lua/abilities/artificer_replica",L
 LinkLuaModifier("modifier_replica_aghs_aura_effect","lua/abilities/artificer_replica",LUA_MODIFIER_MOTION_NONE)
 
 function artificer_replica:OnSpellStart()
+
+	local target = self:GetCursorTarget()
+
+	if target:TriggerSpellAbsorb(self) then return end
+	target:TriggerSpellReflect(self)
 	
 	self:_GenerateReplica(nil)
 
@@ -14,7 +19,7 @@ function artificer_replica:GetIntrinsicModifierName()
 end
 
 function artificer_replica:_GenerateReplica(aghs_unit)
-	print("Conjure Image")
+	ToolsPrint("Conjure Image")
 	local aghs = self:GetCaster():HasScepter()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
@@ -43,9 +48,6 @@ function artificer_replica:_GenerateReplica(aghs_unit)
 	if target:IsIllusion() then target:ForceKill() return end
 
 	-- handle_UnitOwner needs to be nil, else it will crash the game.
-	local illusion = CreateUnitByName(unit_name, origin, true, caster, nil, caster:GetTeamNumber())
-	illusion:SetPlayerID(caster:GetPlayerID())
-	illusion:SetControllableByPlayer(player, true)
 
 	illusion:EmitSound("Hero_Terrorblade.Reflection")
 

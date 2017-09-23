@@ -82,7 +82,7 @@ function fury_bloodsport_lifesteal_exception(caster, target, dmg) -- applies lif
   
   local heal = dmg*(lifesteal*(stacks+1))
   
-  print("STEALING "..heal.." LIFE FROM TG EXCEPTION VERSION")
+  ToolsPrint("STEALING "..heal.." LIFE FROM TG EXCEPTION VERSION")
   
   caster:Heal(heal,caster)
   
@@ -114,7 +114,7 @@ function fury_bloodsport_lifesteal(event)
   
   local heal = damage*(lifesteal*(stacks))
   
-  print("STEALING "..heal.." LIFE FROM TG")
+  ToolsPrint("STEALING "..heal.." LIFE FROM TG")
   
   caster:Heal(heal,caster)
   
@@ -222,7 +222,7 @@ function Terashock(keys)
 
   local radius = keys.radius or 320
 
-  print("TERASHOCK")
+  ToolsPrint("TERASHOCK")
 
   local h = 0
   local c = 0
@@ -239,16 +239,16 @@ function Terashock(keys)
 
   for k,v in pairs(enemy_found) do
     if v:IsRealHero() then
-      print("FOUND A HERO")
+      ToolsPrint("FOUND A HERO")
       h = h+1
     else
-      print("FOUND A CREEP")
+      ToolsPrint("FOUND A CREEP")
       c = c+1
     end
   end
 
-  print(h.." HEROESES")
-  print(c.." CREEPS")
+  ToolsPrint(h.." HEROESES")
+  ToolsPrint(c.." CREEPS")
 
   if h > 0 then
     local ab = keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_terashock_attack_speed_hero", {})

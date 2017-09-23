@@ -32,6 +32,13 @@ end
 
 modifier_fulmination_stack = class({})
 
+function modifier_fulmination_stack:DeclareFunctions()
+	local func = {
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
+	}
+	return func
+end
+
 function modifier_fulmination_stack:OnCreated(kv)	
 	self:SetStackCount(1)
 end
@@ -39,8 +46,6 @@ end
 function modifier_fulmination_stack:OnRefresh(kv)
 	if IsServer() then
 		local max_stacks = self:GetAbility():GetSpecialValueFor("max_stacks")
-
-		if self:GetAbility():GetCaster():GetHasTalent("special_bonus_bahamut_fulmination") then max_stacks = max_stacks*2 end
 
 		if self:GetStackCount() < 1 then
 			self:SetStackCount(1)
@@ -52,6 +57,7 @@ end
 
 function modifier_fulmination_stack:OnDestroy()
 	if IsServer() then
+		if self:WasPurged() then return end
 		local stack = self:GetStackCount()
 		if stack > 0 then
 			local mult = self:GetAbility():GetSpecialValueFor("increase")
@@ -78,6 +84,11 @@ function modifier_fulmination_stack:OnDestroy()
 			end
 		end
 	end
+end
+
+function modifier_fulmination_stack:GetModifierPhysicalArmorBonus()
+	local t_armor_reduction = self:GetAbility():GetCaster():FetchTalent("special_bonus_bahamut_2") or 0
+	return -t_armor_reduction
 end
 
 function modifier_fulmination_stack:GetEffectName()

@@ -2,7 +2,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/gob_squad_rocket_blast"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
@@ -62,7 +63,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"speed"					"1050"
+			"speed"					"1200"
 		}
 		"05"
 		{
@@ -85,97 +86,8 @@
 			"projectile_speed"		"1000"
 		}
 	}
-	
-	"OnSpellStart"
-	{
-		"LinearProjectile"
-		{
-		    "Target"      	 "POINT"
-			"EffectName"	 "particles/units/heroes/hero_gob_squad/rocket_blast.vpcf"
-			"MoveSpeed"		 "%projectile_speed"
-			"StartRadius"	 "%start_radius"
-			"StartPosition"  "attach_attack1"
-			"EndRadius"      "%end_radius"
-			"HasFrontalCone" "0"
-			"FixedDistance"  "%range"
-			"TargetTeams"	 "DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"TargetTypes"	 "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BUILDING"
-			"TargetFlags"	 "DOTA_UNIT_TARGET_FLAG_NONE"				
-		    "ProvidesVision" "1"
-		    "VisionRadius" 	 "250"
-		}
-		"FireSound"
-		{
-			"EffectName" "Hero_Tinker.Heat-Seeking_Missile_Dud"
-			"Target" "CASTER"
-		}
-	}
-
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit" "1"
-		"Damage"
-		{
-			"Target"
-			{
-				"Center"  	"TARGET"
-				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types" 	"DOTA_UNIT_TARGET_BUILDING"
-			}
-			"Type"			"DAMAGE_TYPE_PURE"
-			"Damage"		"%AbilityDamage/4"
-		}
-		"CreateThinker"
-		{
-			"ModifierName"	"modifier_rocket_blast"
-			"Target" 		"TARGET"
-		}
-	}
 
 	"Modifiers"
 	{
-		"modifier_rocket_blast"
-		{
-			"Passive"			"0"
-			"IsHidden"			"1"
-			"IsDebuff"			"0"
-		
-			"OnCreated"
-			{
-				"Damage"
-				{
-					"Target"
-					{
-						"Center"  	"TARGET"
-						"Radius" 	"%radius"
-						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					}
-					"Type" "DAMAGE_TYPE_MAGICAL"
-					"Damage" "%AbilityDamage"
-				}
-				"FireEffect"
-				{
-					"EffectName"        "particles/units/heroes/hero_gob_squad/rocket_blast_explosion.vpcf"
-					"EffectAttachType"  "follow_origin"
-					"Target"            "TARGET"
-					"ControlPoints"
-					{
-						"01"	"%radius 0 0"
-						"02"	"0 0 0"
-					}
-				}
-				"FireSound"
-				{
-					"EffectName"	"Hero_Techies.Suicide"
-					"Target" 		"TARGET"
-				}
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/gob_squad_abilities.lua"
-					"Function"		"rocket_blast"
-				}
-			}
-		}
 	}
 }

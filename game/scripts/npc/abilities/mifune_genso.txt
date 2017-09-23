@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/mifune_genso"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -16,16 +17,16 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"675"
+	"AbilityCastRange"				"275"
 	"AbilityCastPoint"				"0.0"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"8 6 4 2"
+	"AbilityCooldown"				"16"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"40"
+	"AbilityManaCost"				"90 110 130 150"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -43,17 +44,27 @@
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusion_incoming"				"300" // percentage total
+			"illusion_incoming"				"400" // percentage total
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusion_duration"				"6"
+			"illusion_duration"				"5"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
 			"illusion_tooltip"				"25" // percentage total
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"illusion_bonus_movespeed"		"25"
+		}
+	"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"illusions"						"2 3 4 5"
 		}
 	}
 	
@@ -63,65 +74,9 @@
 		"particle" "particles/status_fx/status_effect_terrorblade_reflection.vpcf"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
 		}
-
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/mifune_abilities.lua"
-			"Function"		"genso"
-			"outgoing"		"%illusion_damage"
-			"incoming"		"%illusion_incoming"
-		}
-	}
 	
 	"Modifiers"
 		{
-			"modifier_genso_illusion"
-			{
-				"IsHidden" "1"
-				"StatusEffectName"		"particles/status_fx/status_effect_terrorblade_reflection.vpcf"
-				"StatusEffectPriority"	"100"
-
-				"EffectName" "particles/units/heroes/hero_mifune/mifune_illusion.vpcf"
-				"EffectAttachType" "attach_origin"
-
-				"ThinkInterval"  "0.1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/mifune_abilities.lua"
-						"Function"		"genso_illusion"
-					}
-				}
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "15"
-				}
-				"States"
-				{
-					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-				"IsPurgable"		"0"
-				"IsBuff"			"1"
-				"IsDebuff"			"0"
-				"IsStunDebuff"		"0"
-				//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions
-			}
-
-			"modifier_genso_illusion_speed_boost"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-				"Duration"			"1"
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "100"
-				}
-			}
 		}
 
 }

@@ -1,0 +1,50 @@
+//=====================================================================================================
+// FURY: Berserk
+//=====================================================================================================
+"fury_berserk"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/fury_berserk"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilityTextureName"			"fury_rampage"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+	"AbilityCooldown"				"60 50 40"
+	"AbilityManaCost"				"0"
+			
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_attackspeed"				"150 200 250"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"4.5 5.0 5.5"
+			"LinkedSpecialBonus"			"special_bonus_fury_4"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_stacks"					"1"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"						"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
+		"particle"						"particles/status_fx/status_effect_overpower.vpcf"
+		"particle"						"particles/units/heroes/hero_ursa/ursa_overpower_buff.vpcf"
+		"particle"						"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
+	}
+}

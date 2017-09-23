@@ -30,6 +30,12 @@ function DebugPrint(...)
   end
 end
 
+function ToolsPrint(...)
+  if IsInToolsMode() then
+    print(...)
+  end
+end
+
 function DebugPrintTable(...)
   local spew = Convars:GetInt('duskdota_spew') or -1
   if spew == -1 and DUSKDOTA_DEBUG_SPEW then
@@ -1042,4 +1048,59 @@ function RevertAttackSpeedCap( unit )
   -- Return to original BAT
   unit:SetBaseAttackTime(unit.current_modified_bat)
 
+end
+
+function ParticleAttachPoint(index,handle,attach_point_name,    control_point,attach_type,origin)
+  local control_point = control_point or 0
+  local attach_type = attach_type or PATTACH_POINT_FOLLOW
+  local origin = origin or handle:GetCenter()
+  ParticleManager:SetParticleControlEnt(
+    index,
+    control_point,
+    handle,
+    attach_type,
+    attach_point_name,
+    origin,
+    true)
+end
+
+function StoreSpecialKeyValues(object,ability)
+  if not ability then ability = object end
+  for k,v in pairs(ability:GetAbilityKeyValues().AbilitySpecial) do
+    for K,V in pairs(v) do
+      if K ~= "var_type" and K ~= "LinkedSpecialBonus" then
+        object[tostring(K)] = V
+      end
+    end
+  end
+end
+
+function FetchTalentValue(talent_name,val) -- grabs the value of the Talent or nil if not found
+  local val = val or "value"
+
+  if TALENTS[talent_name] == nil then return nil end
+
+  local v = TALENTS[talent_name][val]
+  if v then return v else return 0 end -- since if the talent entry exists, and values dont, it's probably a boolean
+
+  return nil
+end
+
+function CreateParticleHitloc(handle,particle_name)
+  local p = ParticleManager:CreateParticle(particle_name, PATTACH_POINT_FOLLOW, handle) --[[Returns:int
+  Creates a new particle effect
+  ]]
+  ParticleManager:SetParticleControlEnt(p,0,handle,PATTACH_POINT_FOLLOW,"attach_hitloc",handle:GetCenter(),true)
+  return p
+end
+
+function GenericParticle(handle,type)
+  local types = {
+    ["LIFESTEAL"] = "particles/generic_gameplay/generic_lifesteal.vpcf",
+  }
+  if types.type and handle then
+    ParticleManager:CreateParticle(types.type, PATTACH_ABSORIGIN_FOLLOW, handle) --[[Returns:int
+    Creates a new particle effect
+    ]]
+  end
 end

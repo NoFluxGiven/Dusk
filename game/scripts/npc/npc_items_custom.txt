@@ -139,7 +139,7 @@
 		"06"
 		{
 			"var_type"							"FIELD_INTEGER"
-			"cooldown_reduc"					"45"
+			"cooldown_reduc"					"36"
 		}
 	}
 	

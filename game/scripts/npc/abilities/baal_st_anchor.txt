@@ -52,6 +52,7 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"radius"				"750"
+			"LinkedSpecialBonus"	"special_bonus_baal_2"
 		}
 		"02"
 		{
@@ -61,7 +62,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"8"
+			"duration"				"6"
 		}
 	}
 

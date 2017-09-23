@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/alroth_raze"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AoERadius"						"%radius"
@@ -26,7 +27,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"170"
+	"AbilityManaCost"				"130 140 150 160"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,7 +40,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_per_second"			"50 60 70 80"
+			"damage_per_second"			"50 70 90 110"
 		}
 		"02"
 		{
@@ -56,93 +57,5 @@
 	"precache"
 		{
 		"particle" "particles/units/heroes/hero_alroth/raze.vpcf"
-		}
-	
-	"OnSpellStart"
-		{
-			"CreateThinker"
-			{
-				"ModifierName"	"modifier_alroth_raze_think"
-				"Target" 		"POINT"
-			}
-		}
-	
-	"Modifiers"
-		{
-			"modifier_alroth_raze_think"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"Duration"			"%duration+0.25"
-				"Aura"          	"modifier_alroth_raze_aura"
-				"Aura_Radius"   	"%radius"
-				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
-				"Aura_ApplyToCaster" "1"
-			
-				"OnCreated"
-				{
-					"FireSound"
-					{
-						"EffectName"	"Alroth.Raze"
-						"Target" 		"TARGET"
-					}
-					"Damage"
-					{
-						"Target"
-						{
-							"Center"  	"TARGET"
-							"Radius" 	"%radius"
-							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-						}
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%damage_per_second"
-					}
-					"AttachEffect"
-					{
-						"EffectName"        "particles/units/heroes/hero_alroth/raze.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"Target"            "TARGET"
-
-						"ControlPoints"
-						{
-							"00"	"0 0 0"
-							"01"	"%radius 0 0"
-							"02"	"%duration 0 0"
-						}
-					}
-				}
-			}
-			"modifier_alroth_raze_aura"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"ThinkInterval"  "1.0"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%damage_per_second"
-					}
-				}
-			}
-			"modifier_alroth_raze_slow"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"Duration"			"%slow_duration"
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
-				}
-			}
 		}
 }

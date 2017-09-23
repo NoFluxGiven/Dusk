@@ -76,7 +76,7 @@ end
   holdout).
 ]]
 function GameMode:PostLoadPrecache()
-  print("[BAREBONES] Performing Post-Load precache")    
+  ToolsPrint("[BAREBONES] Performing Post-Load precache")    
   --PrecacheItemByNameAsync("item_example_item", function(...) end)
   --PrecacheItemByNameAsync("example_ability", function(...) end)
 
@@ -90,7 +90,7 @@ end
   It can be used to initialize state that isn't initializeable in InitGameMode() but needs to be done before everyone loads in.
 ]]
 function GameMode:OnFirstPlayerLoaded()
-  print("[BAREBONES] First Player has loaded")
+  ToolsPrint("[BAREBONES] First Player has loaded")
   GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap(GameMode,"FilterExecuteOrder"), self )
   GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode,"FilterTakeDamage"), self )
   GameRules:GetGameModeEntity():SetAbilityTuningValueFilter(Dynamic_Wrap(GameMode,"FilterAbility"), self )
@@ -102,7 +102,7 @@ function GameMode:OnFirstPlayerLoaded()
 
   local buildings = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, Vector(0,0,0), nil, 20000, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
 
-  print("BUILDINGS BEING THING STUFF")
+  ToolsPrint("BUILDINGS BEING THING STUFF")
 
   -- for _,building in pairs(buildings) do
   --     local building_name = building:GetName()
@@ -130,7 +130,7 @@ end
   It can be used to initialize non-hero player state or adjust the hero selection (i.e. force random etc)
 ]]
 function GameMode:OnAllPlayersLoaded()
-  print("[BAREBONES] All Players have loaded into the game")
+  ToolsPrint("[BAREBONES] All Players have loaded into the game")
 end
 
 --[[
@@ -141,7 +141,7 @@ end
   The hero parameter is the hero entity that just spawned in
 ]]
 function GameMode:OnHeroInGame(hero)
-  print("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
+  ToolsPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
 
   --[[ Multiteam configuration, currently unfinished
 
@@ -150,7 +150,7 @@ function GameMode:OnHeroInGame(hero)
   if playerID > 3 then
     team = "team2"
   end
-  print("setting " .. playerID .. " to team: " .. team)
+  ToolsPrint("setting " .. playerID .. " to team: " .. team)
   MultiTeam:SetPlayerTeam(playerID, team)]]
 
   -- This line for example will set the starting gold of every hero to 500 unreliable gold
@@ -189,7 +189,7 @@ end
   is useful for starting any game logic timers/thinkers, beginning the first round, etc.
 ]]
 function GameMode:OnGameInProgress()
-  print("[BAREBONES] The game has officially begun")
+  ToolsPrint("[BAREBONES] The game has officially begun")
   
   Timers:CreateTimer(60*45,
   function()
@@ -198,11 +198,11 @@ function GameMode:OnGameInProgress()
 
   Timers:CreateTimer(30, -- Start this timer 30 game-time seconds later
   function()
-    print("This function is called 30 seconds after the game begins, and every 30 seconds thereafter")
+    ToolsPrint("This function is called 30 seconds after the game begins, and every 30 seconds thereafter")
     return 30.0 -- Rerun this timer every 30 game-time seconds 
   end)
   --DEPRECATED
-  -- print('[BAREBONES] Adding the damage check ability to all buildings')
+  -- ToolsPrint('[BAREBONES] Adding the damage check ability to all buildings')
   -- local bt = Entities:FindAllByClassname("npc_dota_building")
   -- local bt2 = Entities:FindAllByClassname("npc_dota_tower")
   -- local bt3 = Entities:FindAllByClassname("npc_dota_fort")
@@ -214,13 +214,13 @@ function GameMode:OnGameInProgress()
   --   v:AddAbility("main_damage")
   --   v:FindAbilityByName("main_damage"):SetLevel(1)
   --   v:FindAbilityByName("main_damage"):SetHidden(true)
-  --   print("[BAREBONES] Added damage check ability to "..v:GetName())
+  --   ToolsPrint("[BAREBONES] Added damage check ability to "..v:GetName())
   -- end
 end
 
 function GameMode:FilterExecuteOrder( filterTable )
   -- for k,v in pairs( filterTable ) do
-  --   print("Order: "..k.." "..tostring(v))
+  --   ToolsPrint("Order: "..k.." "..tostring(v))
   -- end
   local order_type = filterTable["order_type"]
   local user = filterTable["issuer_player_id_const"]
@@ -288,7 +288,7 @@ function GameMode:FilterExecuteOrder( filterTable )
   or order_type == DOTA_UNIT_ORDER_CAST_TARGET_TREE then
     if filterTable["entindex_ability"] > 0 then
       ability = EntIndexToHScript(filterTable["entindex_ability"])
-      print("ABILITY IS "..ability:GetName())
+      ToolsPrint("ABILITY IS "..ability:GetName())
     end
 
     if ability then
@@ -296,16 +296,16 @@ function GameMode:FilterExecuteOrder( filterTable )
       -- ENCORE
       if hero:HasModifier("modifier_trickster_encore") then
         if hero.last_ability_used then
-          print("last ability used is not nil")
-          print("last ability was "..hero.last_ability_used:GetName().." and used ability was "..ability:GetName())
+          ToolsPrint("last ability used is not nil")
+          ToolsPrint("last ability was "..hero.last_ability_used:GetName().." and used ability was "..ability:GetName())
           if ability ~= hero.last_ability_used then
             return false
           end
         end
       end
     hero.last_ability_used = ability
-    print("ABILITY SET TO "..ability:GetName().." LOL")
-    print("LE DEBUG CHECK: "..hero.last_ability_used:GetName())
+    ToolsPrint("ABILITY SET TO "..ability:GetName().." LOL")
+    ToolsPrint("LE DEBUG CHECK: "..hero.last_ability_used:GetName())
     end
   end
   return true
@@ -313,7 +313,7 @@ end
 
 function GameMode:FilterTakeDamage( filterTable )
   -- for k,v in pairs( filterTable ) do
-  --   print("Damage: "..k.." "..tostring(v))
+  --   ToolsPrint("Damage: "..k.." "..tostring(v))
   -- end
   
   local attacker = EntIndexToHScript(filterTable["entindex_attacker_const"])
@@ -342,13 +342,13 @@ function GameMode:FilterTakeDamage( filterTable )
     local ab = guardian:FindAbilityByName("paragon_guardian")
 
     local reduction = 1-(ab:GetLevelSpecialValueFor("reduction", ab:GetLevel()-1) / 100)
-    print("GUARDIAN: "..reduction)
+    ToolsPrint("GUARDIAN: "..reduction)
 
     -- filterTable["damage"] = damage*reduction
     -- filterTable["entindex_victim_const"] = guardian:entindex()
     -- filterTable["damagetype_const"] = DAMAGE_TYPE_MAGICAL
     DealDamageThroughMagicImmunity(guardian,attacker,damage*reduction,DAMAGE_TYPE_PURE)
-    print("GUARDIAN: "..guardian:entindex())
+    ToolsPrint("GUARDIAN: "..guardian:entindex())
     return false
   end
 
@@ -419,7 +419,7 @@ end
 
 function GameMode:FilterAbility( filterTable )
   -- for k,v in pairs( filterTable ) do
-  --   print("Ability: "..k.." "..tostring(v)) 
+  --   ToolsPrint("Ability: "..k.." "..tostring(v)) 
   -- end
 
   -- filterTable["value"] = filterTable["value"]*5
@@ -430,7 +430,7 @@ end
 
 function GameMode:FilterGold( filterTable )
   -- for k,v in pairs( filterTable ) do
-  --   print("Gold: "..k.." "..tostring(v)) 
+  --   ToolsPrint("Gold: "..k.." "..tostring(v)) 
   -- end
 
   return true
@@ -438,7 +438,7 @@ end
 
 function GameMode:FilterExperience( filterTable )
   -- for k,v in pairs( filterTable ) do
-  --   print("Experience: "..k.." "..tostring(v)) 
+  --   ToolsPrint("Experience: "..k.." "..tostring(v)) 
   -- end
 
   return true
@@ -446,7 +446,7 @@ end
 
 function GameMode:FilterRuneSpawn( filterTable )
   -- for k,v in pairs( filterTable ) do
-  --   print("Rune: "..k.." "..tostring(v)) 
+  --   ToolsPrint("Rune: "..k.." "..tostring(v)) 
   -- end
 
   return true
@@ -455,7 +455,7 @@ end
 
 -- Cleanup a player when they leave
 function GameMode:OnDisconnect(keys)
-  print('[BAREBONES] Player Disconnected ' .. tostring(keys.userid))
+  ToolsPrint('[BAREBONES] Player Disconnected ' .. tostring(keys.userid))
   PrintTable(keys)
 
   local name = keys.name
@@ -466,7 +466,7 @@ function GameMode:OnDisconnect(keys)
 end
 -- The overall game state has changed
 function GameMode:OnGameRulesStateChange(keys)
-  print("[BAREBONES] GameRules State Changed")
+  ToolsPrint("[BAREBONES] GameRules State Changed")
   PrintTable(keys)
 
   local newState = GameRules:State_Get()
@@ -498,7 +498,7 @@ end
 
 -- An NPC has spawned somewhere in game.  This includes heroes
 function GameMode:OnNPCSpawned(keys)
-  -- print("[BAREBONES] NPC Spawned")
+  -- ToolsPrint("[BAREBONES] NPC Spawned")
   -- PrintTable(keys)
   local npc = EntIndexToHScript(keys.entindex)
 
@@ -514,7 +514,7 @@ end
 -- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive
 -- operations here
 function GameMode:OnEntityHurt(keys)
---  print("[BAREBONES] Entity Hurt")
+--  ToolsPrint("[BAREBONES] Entity Hurt")
 --  PrintTable(keys)
   local entCause = EntIndexToHScript(keys.entindex_attacker)
   local entVictim = EntIndexToHScript(keys.entindex_killed)
@@ -565,7 +565,7 @@ end
 
 -- An ability was used by a player
 function GameMode:OnAbilityUsed(keys)
-  print('[BAREBONES] AbilityUsed')
+  ToolsPrint('[BAREBONES] AbilityUsed')
   PrintTable(keys)
 
   local player = EntIndexToHScript(keys.PlayerID+1)
@@ -578,7 +578,7 @@ function GameMode:OnAbilityUsed(keys)
   -- if hero then
   --   --[BEGIN] CRIMSON: Blood Sorcery
   --   if hero:HasModifier("crimson_blood_sorcery_mod") then
-  --   print("====[CRIMSON: Blood Sorcery]"..abilityname)
+  --   ToolsPrint("====[CRIMSON: Blood Sorcery]"..abilityname)
   --     local ab = hero:FindAbilityByName(abilityname)
   --     if ab == nil then -- it's probably an item
   --       for i=0,5 do
@@ -594,7 +594,7 @@ function GameMode:OnAbilityUsed(keys)
   --       end
   --     end
   --     local reduc = (hero:FindAbilityByName("crimson_blood_sorcery"):GetLevelSpecialValueFor("reduction",hero:FindAbilityByName("crimson_blood_sorcery"):GetLevel()-1)/100)
-  --     print("====[CRIMSON: Blood Sorcery] "..reduc)
+  --     ToolsPrint("====[CRIMSON: Blood Sorcery] "..reduc)
   --     local cost = ab:GetManaCost(ab:GetLevel()-1)
   --     local damage = cost*reduc
   --     local remaining = cost-(damage*(1-reduc))
@@ -611,7 +611,7 @@ end
 
 -- A non-player entity (necro-book, chen creep, etc) used an ability
 function GameMode:OnNonPlayerUsedAbility(keys)
-  print('[BAREBONES] OnNonPlayerUsedAbility')
+  ToolsPrint('[BAREBONES] OnNonPlayerUsedAbility')
   PrintTable(keys)
 
   local abilityname=  keys.abilityname
@@ -619,7 +619,7 @@ end
 
 -- A player changed their name
 function GameMode:OnPlayerChangedName(keys)
-  print('[BAREBONES] OnPlayerChangedName')
+  ToolsPrint('[BAREBONES] OnPlayerChangedName')
   PrintTable(keys)
 
   local newName = keys.newname
@@ -712,7 +712,7 @@ function GameMode:OnPlayerPickHero(keys)
   local heroClass = keys.hero
   local heroEntity = EntIndexToHScript(keys.heroindex)
   local player = EntIndexToHScript(keys.player)
---  print('[BAREBONES] Adding the damage check ability to newly picked hero')
+--  ToolsPrint('[BAREBONES] Adding the damage check ability to newly picked hero')
 --  heroEntity:AddAbility("main_damage")
 --  heroEntity:FindAbilityByName("main_damage"):SetLevel(1)
 end
@@ -730,7 +730,7 @@ end
 
 -- An entity died
 function GameMode:OnEntityKilled( keys )
-  -- print( '[BAREBONES] OnEntityKilled Called' )
+  -- ToolsPrint( '[BAREBONES] OnEntityKilled Called' )
   -- PrintTable( keys )
   
   -- The Unit that was Killed
@@ -752,7 +752,7 @@ function GameMode:OnEntityKilled( keys )
 
 
   if killedUnit:IsRealHero() then 
-    print( '[BAREBONES] OnEntityKilled Called' )
+    ToolsPrint( '[BAREBONES] OnEntityKilled Called' )
     PrintTable( keys )
     print ("KILLEDKILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
     if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS then
@@ -791,7 +791,7 @@ end
 -- It can be used to pre-initialize any values/tables that will be needed later
 function GameMode:InitGameMode()
   GameMode = self
-  print('[BAREBONES] Starting to load Barebones gamemode...')
+  ToolsPrint('[BAREBONES] Starting to load Barebones gamemode...')
 
   -- Setup rules
   GameRules:SetHeroRespawnEnabled( ENABLE_HERO_RESPAWN )
@@ -809,7 +809,7 @@ function GameMode:InitGameMode()
   GameRules:SetHeroMinimapIconScale( MINIMAP_ICON_SIZE )
   GameRules:SetCreepMinimapIconScale( MINIMAP_CREEP_ICON_SIZE )
   GameRules:SetRuneMinimapIconScale( MINIMAP_RUNE_ICON_SIZE )
-  print('[BAREBONES] GameRules set')
+  ToolsPrint('[BAREBONES] GameRules set')
 
   InitLogFile( "log/barebones.txt","")
 
@@ -879,8 +879,8 @@ Convars:RegisterCommand( "spawn_debugbear", function()
     Timers:CreateTimer(.04, function()
         db:SetControllableByPlayer(hero:GetPlayerID(), true)
     end)
-    print("PLAYER IDS: BEAR OWNER: "..db:GetPlayerOwnerID().." PLAYER'S ID: "..player:GetPlayerID())
-    print("TEAMS: BEAR: "..db:GetTeam().." PLAYER: "..hero:GetTeam())
+    ToolsPrint("PLAYER IDS: BEAR OWNER: "..db:GetPlayerOwnerID().." PLAYER'S ID: "..player:GetPlayerID())
+    ToolsPrint("TEAMS: BEAR: "..db:GetTeam().." PLAYER: "..hero:GetTeam())
   end, "Immediately spawns the debugbear.", 0)
   
   -- Fill server with fake clients
@@ -947,7 +947,7 @@ Convars:RegisterCommand( "spawn_debugbear", function()
 
   self.bSeenWaitForPlayers = false
 
-  print('[BAREBONES] Done loading Barebones gamemode!\n\n')
+  ToolsPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
 end
 
 mode = nil
@@ -994,7 +994,7 @@ end
 -- This function is called 1 to 2 times as the player connects initially but before they 
 -- have completely connected
 function GameMode:PlayerConnect(keys)
-  print('[BAREBONES] PlayerConnect')
+  ToolsPrint('[BAREBONES] PlayerConnect')
   PrintTable(keys)
   
   if keys.bot == 1 then
@@ -1031,7 +1031,7 @@ end
 
 -- This is an example console command
 function GameMode:ExampleConsoleCommand()
-  print( '******* Example Console Command ***************' )
+  ToolsPrint( '******* Example Console Command ***************' )
   local cmdPlayer = Convars:GetCommandClient()
   if cmdPlayer then
     local playerID = cmdPlayer:GetPlayerID()
@@ -1041,7 +1041,7 @@ function GameMode:ExampleConsoleCommand()
     end
   end
 
-  print( '*********************************************' )
+  ToolsPrint( '*********************************************' )
 end
 
 --require('eventtest')
