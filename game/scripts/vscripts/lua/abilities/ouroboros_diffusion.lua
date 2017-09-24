@@ -12,14 +12,10 @@ modifier_diffusion = class({})
 
 function modifier_diffusion:ApplyDiffusionStacks(damage)
 	if self:GetParent():PassivesDisabled() then return end
-	print("DIFFUSION: "..damage.." damage")
 	local amt = self:GetAbility():GetSpecialValueFor("per")
 	local dmg = damage
 	local total = math.floor(dmg)
-	print("STACKS: "..total)
-	local duration = self:GetAbility():GetSpecialValueFor("spell_amp_duration")
-
-	if total <= 0 then return end
+	local duration = self:GetAbility():GetSpecialValueFor("duration")
 
 	self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_diffusion_stack", {Duration=duration, stack=total})
 	self:SetDuration(duration,true)
@@ -39,7 +35,8 @@ if IsServer() then
 		local mod = self:GetParent():FindModifierByName("modifier_diffusion_stack")
 		if mod then
 			local stack = mod:GetStackCount()
-			local total = math.floor(stack * self:GetAbility():GetSpecialValueFor("spell_amp")/100)
+			local amt = self:GetAbility():GetSpecialValueFor("per")
+			local total = math.floor( stack/amt )
 
 			self:SetStackCount(total)
 		else
@@ -49,6 +46,39 @@ if IsServer() then
 
 	end
 
+end
+
+function modifier_diffusion:DeclareFunctions()
+	local func = {
+		MODIFIER_EVENT_ON_TAKEDAMAGE
+	}
+	return func
+end
+
+function modifier_diffusion:OnTakeDamage(params)
+	local unit = params.unit or params.target
+
+	if unit == self:GetParent() then
+		local dtype = params.damage_type
+
+		if dtype == DAMAGE_TYPE_MAGICAL then
+			local stack = self:GetStackCount()
+			local max = self:GetAbility():GetSpecialValueFor("max_stacks")
+			local per = self:GetAbility():GetSpecialValueFor("per")
+
+			local current = stack * per
+
+			local max_damage = (max * per) - current
+
+			local damage = params.damage
+
+			if damage > max_damage then damage = max_damage end
+
+			if damage < 0 then damage = 0 end
+
+			self:ApplyDiffusionStacks(damage)
+		end
+	end
 end
 
 function modifier_diffusion:IsHidden()
@@ -62,32 +92,32 @@ modifier_diffusion_stack = class({})
 
 function modifier_diffusion_stack:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-		MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL,
-		MODIFIER_EVENT_ON_ATTACK_LANDED
+		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT
 	}
 	return funcs
 end
 
-function modifier_diffusion_stack:GetModifierSpellAmplify_Percentage()
-	if self:GetParent():PassivesDisabled() then return end
-	return self:GetAbility():GetSpecialValueFor("spell_amp") * (self:GetStackCount()/100)
+function modifier_diffusion_stack:GetModifierMagicalResistanceBonus()
+	local amt = self:GetAbility():GetSpecialValueFor("per")
+	local bonus = self:GetAbility():GetSpecialValueFor("magic_res")
+
+	return (self:GetStackCount() / amt) * bonus
 end
 
-function modifier_diffusion_stack:GetModifierProcAttack_BonusDamage_Magical()
+function modifier_diffusion_stack:GetModifierConstantManaRegen()
+	local amt = self:GetAbility():GetSpecialValueFor("per")
+	local bonus = self:GetAbility():GetSpecialValueFor("mana_regen")
+
+	return (self:GetStackCount() / amt) * bonus
 end
 
-function modifier_diffusion_stack:OnAttackLanded(params)
-	if params.attacker == self:GetParent() then
-		if params.target:IsBuilding() then return end
-		if self:GetParent():PassivesDisabled() then return end
-		local damage = math.floor(self:GetAbility():GetSpecialValueFor("bonus_magical_damage") * (self:GetStackCount()/100))
-		self:GetAbility():InflictDamage(self:GetParent(), params.target, damage, DAMAGE_TYPE_MAGICAL)
-		local p = ParticleManager:CreateParticle("particles/units/heroes/hero_ouroboros/diffusion_attacks.vpcf", PATTACH_CUSTOMORIGIN_FOLLOW, self:GetParent()) --[[Returns:int
-		Creates a new particle effect
-		]]
-		ParticleManager:SetParticleControlEnt(p,0,params.target,PATTACH_POINT_FOLLOW,"attach_hitloc",params.target:GetCenter(),true)
-	end
+function modifier_diffusion_stack:GetModifierConstantHealthRegen()
+	local amt = self:GetAbility():GetSpecialValueFor("per")
+	local bonus = self:GetAbility():GetSpecialValueFor("health_regen")
+
+	return (self:GetStackCount() / amt) * bonus
 end
 
 if IsServer() then

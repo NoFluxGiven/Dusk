@@ -2360,7 +2360,7 @@
 	
 		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		"24"										// Base strength
-		"AttributeStrengthGain"		"2.9"										// Strength bonus per level.
+		"AttributeStrengthGain"		"2.6"										// Strength bonus per level.
 		"AttributeBaseIntelligence"	"19"										// Base intelligence
 		"AttributeIntelligenceGain"	"2.3"										// Intelligence bonus per level.
 		"AttributeBaseAgility"		"10"										// Base agility

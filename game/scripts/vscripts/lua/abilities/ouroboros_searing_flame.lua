@@ -46,7 +46,7 @@ end
 
 function ouroboros_searing_flame:GetCastRange()
 	local cast_range = self.BaseClass.GetCastRange(self, self:GetCaster():GetAbsOrigin(), self:GetCaster())
-	local t_cast_range_bonus = FetchTalent("special_bonus_ouroboros_5") or 0
+	local t_cast_range_bonus = self:GetCaster():FetchTalent("special_bonus_ouroboros_5") or 0
 	return cast_range + t_cast_range_bonus
 end
 

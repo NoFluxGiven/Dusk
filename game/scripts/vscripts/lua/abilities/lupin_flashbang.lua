@@ -9,7 +9,7 @@ function lupin_flashbang:OnSpellStart()
 	local radius = self:GetSpecialValueFor("radius")
 	local duration = self:GetSpecialValueFor("duration")
 
-	local t_damage_bonus = FetchTalent("special_bonus_lupin_2") or 0
+	local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_lupin_2") or 0
 
 	damage = damage+t_damage_bonus
 

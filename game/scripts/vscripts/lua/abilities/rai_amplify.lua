@@ -56,7 +56,7 @@ function modifier_amplify:OnDestroy()
 		local bonus = 0
 		local etargets = self:GetAbility():GetSpecialValueFor("targets")
 
-		local t_target_bonus = FetchTalent("special_bonus_rai_4") or 0
+		local t_target_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_rai_4") or 0
 
 		etargets = etargets + t_target_bonus
 

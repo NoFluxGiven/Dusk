@@ -59,10 +59,13 @@ function modifier_berserker_aura_buff:GetModifierPreAttack_BonusDamage()
 	No Description Set
 	]]
 
+	local hppct = target:GetHealthPercent()/100
 
-	-- local atk = self:GetSpecialValueFor("max_bonus_attack_speed")
+	local baseline = 0.25
 
-	local pct = 1-target:GetHealthPercent()/100
+	local pct = ( (1 / baseline) - (hppct / baseline) ) * 0.33
+
+	if pct > 1.00 then pct = 1.00 end
 
 	local fdmg = dmg*pct
 	if fdmg >= 1 then fdmg = math.ceil(fdmg) else fdmg = 0 end
@@ -82,7 +85,13 @@ function modifier_berserker_aura_buff:GetModifierAttackSpeedBonus_Constant()
 
 	local atk = self:GetAbility():GetSpecialValueFor("max_bonus_attack_speed") + t_atk_bonus
 
-	local pct = 1-target:GetHealthPercent()/100
+	local hppct = target:GetHealthPercent()/100
+
+	local baseline = 0.25
+
+	local pct = ( (1 / baseline) - (hppct / baseline) ) * 0.33
+
+	if pct > 1.00 then pct = 1.00 end
 
 	-- local fdmg = math.floor(dmg*pct)
 	local fatk = atk*pct

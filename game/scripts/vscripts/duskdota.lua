@@ -1347,35 +1347,35 @@ function duskDota:FilterTakeDamage( filterTable )
 
   -- DIFFUSION
 
-  if defender:HasModifier("modifier_diffusion") then
-    if not defender:PassivesDisabled() then
-      if dtype == DAMAGE_TYPE_MAGICAL then
-        local mod = defender:FindModifierByName("modifier_diffusion")
-        if mod then
-          local ab = mod:GetAbility()
-          if ab and ab:IsCooldownReady() then
-            local t_magic_absorb_bonus = defender:FetchTalent("special_bonus_ouroboros_2") or 0
-            local magic_absorb = 1-((ab:GetSpecialValueFor("magic_absorb")/100)+(t_magic_absorb_bonus/100))
+  -- if defender:HasModifier("modifier_diffusion") then
+  --   if not defender:PassivesDisabled() then
+  --     if dtype == DAMAGE_TYPE_MAGICAL then
+  --       local mod = defender:FindModifierByName("modifier_diffusion")
+  --       if mod then
+  --         local ab = mod:GetAbility()
+  --         if ab and ab:IsCooldownReady() then
+  --           local t_magic_absorb_bonus = defender:FetchTalent("special_bonus_ouroboros_2") or 0
+  --           local magic_absorb = 1-((ab:GetSpecialValueFor("magic_absorb")/100)+(t_magic_absorb_bonus/100))
 
-            ToolsPrint("REDUCING TO "..magic_absorb)
-            ToolsPrint("DAMAGE: "..damage)
+  --           ToolsPrint("REDUCING TO "..magic_absorb)
+  --           ToolsPrint("DAMAGE: "..damage)
 
-            local dmg_before_reductions = defender:GetDamageBeforeReductions(damage,dtype)
+  --           local dmg_before_reductions = defender:GetDamageBeforeReductions(damage,dtype)
 
-            ToolsPrint("DAMAGE BEFORE REDUCTIONS: "..dmg_before_reductions)
-            ToolsPrint("DAMAGE AFTER DIFFUSION REDUCTION: "..dmg_before_reductions*magic_absorb)
+  --           ToolsPrint("DAMAGE BEFORE REDUCTIONS: "..dmg_before_reductions)
+  --           ToolsPrint("DAMAGE AFTER DIFFUSION REDUCTION: "..dmg_before_reductions*magic_absorb)
 
-            filterTable["damage"] = filterTable["damage"] * magic_absorb
+  --           filterTable["damage"] = filterTable["damage"] * magic_absorb
 
-            mod:ApplyDiffusionStacks(dmg_before_reductions*(1-magic_absorb))
+  --           mod:ApplyDiffusionStacks(dmg_before_reductions*(1-magic_absorb))
 
-            return true
-          end
-        end
-      end
+  --           return true
+  --         end
+  --       end
+  --     end
 
-    end
-  end
+  --   end
+  -- end
 
   -- GUARDIAN BUBBLE
   if defender:HasModifier("modifier_guardian_bubble") then

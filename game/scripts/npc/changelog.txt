@@ -412,6 +412,9 @@ ABYSSAL SHADOW
 Summons a shadow creature from a distant plane to aid Voidwalker in battle. The creature attacks at high speed, dealing base damage plus bonus damage per hit on the same target. It is uncontrollable, invulnerable and untargetable. Expires after 16 seconds.
 
 WAR
+- Base Strength increased to 30 (was 25).
+- Strength gain reduced to 2.9 (was 3.5).
+- Movement speed reduced to 290 (was 295).
 - FIGHT ME!! cast point increased to 0.5s (was 0.4s).
 - FIGHT ME!! now deals a multiplier of the total attack damage of all affected units as Magical damage,	 including the caster. The multiplier is 100/125/150%.
 - FIGHT ME!! duration increased to 2.75/3.25/4.00s (was 2.0/2.5/3.0s).
@@ -420,9 +423,7 @@ WAR
 - FIGHT ME!! affected units now heal War for their attack damage prior to Armor and Magic Resistance reduction.
 - Earthbreaker mana cost increased to 55/65/75/85 (was 50).
 - Earthbreaker cooldown increased to 14/12/10/8s (was 10s).
-- Base Strength increased to 30 (was 25).
-- Strength gain reduced to 2.9 (was 3.5).
-- Movement speed reduced to 290 (was 295).
+- Berserker Aura attack speed and damage now reach their maximum values at 25% HP instead of 0% HP.
 - Bloodlust mana cost increased to 45/60/75/90 (was 50).
 - Bloodlust no longer silences.
 - Bloodlust now reduces its remaining duration by 1s for each attack landed by the affected enemies.

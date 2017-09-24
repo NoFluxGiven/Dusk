@@ -12,7 +12,7 @@ MODE_STUN = 2
 
 function shard_magus_cryst_whorl:GetCooldown()
 	local base_cooldown = self.BaseClass.GetCooldown(self, self:GetLevel())
-	local t_cd_reduc = FetchTalent("special_bonus_shard_magus_4") or 0
+	local t_cd_reduc = self:GetCaster():FetchTalent("special_bonus_shard_magus_4") or 0
 	return base_cooldown - t_cd_reduc
 end
 
@@ -21,7 +21,7 @@ function shard_magus_cryst_whorl:OnSpellStart()
 	local radius = self:GetSpecialValueFor("radius")
 	local t = self:GetCursorPosition()
 
-	local t_damage_bonus = FetchTalent("special_bonus_shard_magus_1") or 0
+	local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_shard_magus_1") or 0
 
 	local damage = self:GetSpecialValueFor("initial_damage") + t_damage_bonus
 

@@ -34,28 +34,33 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"magic_absorb"			"16 24 32 40"
+			"var_type"				"FIELD_FLOAT"
+			"magic_res"				"6" // per 100 points of damage absorbed
 		}
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"spell_amp"				"2 4 6 8" // per 100 points of damage absorbed
+			"mana_regen"			"2 3 4 5" // per 100 points of damage absorbed
 		}
 		"03"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"per"					"25"
+			"var_type"				"FIELD_FLOAT"
+			"health_regen"			"2 3 4 5" // per 100 points of damage absorbed
 		}
 		"04"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"spell_amp_duration"	"10"
+			"var_type"				"FIELD_INTEGER"
+			"per"					"100"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"bonus_magical_damage"	"16 20 24 28" // per 100 points of damage absorbed
+			"duration"				"10"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"max_stacks"			"2 4 6 8"
 		}
 	}
 

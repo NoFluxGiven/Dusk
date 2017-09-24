@@ -127,5 +127,5 @@ function modifier_cleanse_heal_amp:DeclareFunctions()
 end
 
 function modifier_cleanse_heal_amp:GetModifierHealAmplify_Percentage()
-  return FetchTalent("special_bonus_paragon_1") * self:GetStackCount()
+  return self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_1") * self:GetStackCount()
 end

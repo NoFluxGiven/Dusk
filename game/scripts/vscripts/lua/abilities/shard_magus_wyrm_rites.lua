@@ -7,7 +7,7 @@ function shard_magus_wyrm_rites:OnSpellStart()
 	local delay = self:GetSpecialValueFor("delay")
 	local duration = self:GetSpecialValueFor("duration")
 
-	local t_lvl_bonus = FetchTalent("special_bonus_shard_magus_5")
+	local t_lvl_bonus = self:GetCaster():FetchTalent("special_bonus_shard_magus_5")
 
 	local lvl = self:GetSpecialValueFor("level")
 	local radius = self:GetSpecialValueFor("radius")
