@@ -1,6 +1,8 @@
-function purge(keys)
-	local caster = keys.caster
-	local target = keys.target
+item_purging_dust = class({})
+
+function item_purging_dust:OnSpellStart()
+	local caster = self:GetCaster()
+	local target = self:GetCaster()
 
 	-- if caster:GetTeam() == target:GetTeam() then
 
@@ -12,21 +14,19 @@ function purge(keys)
 
 	-- end
 
-	keys.ability:SetCurrentCharges(keys.ability:GetCurrentCharges()-1) --[[Returns:void
+	self:SetCurrentCharges(self:GetCurrentCharges()-1) --[[Returns:void
 	Set the number of charges on this item
 	]]
 
-	keys.ability:StartCooldown(keys.ability:GetCooldown(keys.ability:GetLevel()))
+	self:StartCooldown(self:GetCooldown(self:GetLevel()))
 
 	ParticleManager:CreateParticle("particles/items/purging_dust.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster) --[[Returns:int
 	Creates a new particle effect
 	]]
 
-	caster:EmitSound("PurgingDust") --[[Returns:void
-	 
-	]]
+	caster:EmitSound("PurgingDust")
 
-	if keys.ability:GetCurrentCharges() <= 0 then
-		keys.ability:RemoveSelf()
+	if self:GetCurrentCharges() <= 0 then
+		self:RemoveSelf()
 	end
 end

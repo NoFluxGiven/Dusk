@@ -39,7 +39,7 @@ if IsServer() then
 
 	function modifier_bladebreaker:OnIntervalThink()
 		if self:GetParent():IsDisarmed() then
-			self:SetDuration(self:GetDuration()+0.1,true)
+			self:SetDuration(self:GetRemainingTime()+0.1,true)
 		end
 	end
 

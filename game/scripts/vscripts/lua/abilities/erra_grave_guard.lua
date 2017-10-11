@@ -7,11 +7,8 @@ LinkLuaModifier("modifier_grave_guard_aura","lua/abilities/erra_grave_guard",LUA
 LinkLuaModifier("modifier_grave_guard_talent_cooldown","lua/abilities/erra_grave_guard",LUA_MODIFIER_MOTION_NONE)
 
 function erra_grave_guard:GetIntrinsicModifierName()
-	local t_aura = self:GetCaster():FetchTalent("special_bonus_erra_5")
 
-	if t_aura then return "modifier_grave_guard_aura" end
-
-	return "modifier_grave_guard"
+	return "modifier_grave_guard_aura"
 end
 
 modifier_grave_guard = class({})
@@ -87,16 +84,11 @@ end
 modifier_grave_guard_aura = class({})
 
 function modifier_grave_guard_aura:IsAura()
-	if IsServer() then
-		if self:GetAbility():IsCooldownReady() then
-			return true
-		end
-		return false
-	end
+	return true
 end
 
 function modifier_grave_guard_aura:GetAuraRadius()
-	return self:GetAbility():GetCaster():FetchTalent("special_bonus_erra_5")
+	return self:GetAbility():GetCaster():FetchTalent("special_bonus_erra_5") or 1
 end
 
 function modifier_grave_guard_aura:GetAuraSearchFlags()
@@ -126,6 +118,10 @@ function modifier_grave_guard_talent_cooldown:GetAttributes()
 end
 
 modifier_grave_guard_recovery = class({})
+
+function modifier_grave_guard_recovery:GetEffectName()
+	return "particles/units/heroes/hero_erra/grave_guard_unit.vpcf"
+end
 
 function modifier_grave_guard_recovery:DeclareFunctions()
 	local funcs = {

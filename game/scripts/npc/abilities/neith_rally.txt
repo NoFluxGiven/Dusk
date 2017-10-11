@@ -22,7 +22,7 @@
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"60"
+	"AbilityCooldown"				"90"
 	"HasScepterUpgrade"				"1"
 
 	// Cost
@@ -41,17 +41,17 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_increase_creep" 	"8 12 16"
+			"damage_increase_creep" 	"4 8 12"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"attack_speed_increase"		"60 80 100"
+			"attack_speed_increase"		"30 60 90"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_movespeed"			"15"
+			"bonus_movespeed"			"10"
 		}
 		// Extra variables
 		"05"

@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/tek_skycrack"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -17,10 +18,8 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"550"
+	"AbilityCastRange"				"600"
 	"AbilityCastPoint"				"0.2"
-	
-	"AbilityDamage" 				"60 140 180 240"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -29,6 +28,8 @@
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"50 75 100 125"
+
+	"HasScepterUpgrade"				"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -41,7 +42,8 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"0"
+			"damage"					"80 120 160 200"
+			"LinkedSpecialBonus"		"special_bonus_tek_1"
 		}
 		"02"
 		{
@@ -51,12 +53,22 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"length"					"550"
+			"range"						"600"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"-20 -30 -40 -50"
+			"slow"						"20 30 40 50"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"scepter_cooldown"			"2.0"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"scepter_burn"				"40"
 		}
 	}
 	
@@ -65,47 +77,5 @@
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
 			"particle"					"particles/units/heroes/hero_tek/skycrack.vpcf"
 			"particle"					"particles/units/heroes/hero_tek/skycrack_eff.vpcf"
-		}
-		
-	"OnSpellStart"
-		{
-		"RunScript"
-			{
-			"ScriptFile" "heroes/tek_abilities.lua"
-			"Function" "tek_skycrack"
-			"length" "%length"
-			}
-		}
-
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit"	"0"
-		"Damage"
-		{
-			"Target"		"TARGET"
-			"Type"			"DAMAGE_TYPE_MAGICAL"
-			"Damage"		"%AbilityDamage"
-		}
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_tek_skycrack_enemy"
-			"Target" 		"TARGET"
-			"Duration"		"%duration"
-		}
-	}
-	
-	"Modifiers"
-		{
-			"modifier_tek_skycrack_enemy"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				}
-			}
 		}
 }

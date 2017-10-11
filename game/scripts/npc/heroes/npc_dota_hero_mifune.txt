@@ -13,18 +13,19 @@
 	// The targeted enemy is nearly instantly assailed by multiple Illusions of Mifune.
 	// The illusions cannot be controlled, can move over terrain, and instantly die when their target dies.
 	"Ability4"				"mifune_zanmato"
-	"Ability5"				"mifune_zanmato_scepter"
+	"Ability5"				""
 	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_all_stats_4" // 
+	"Ability11"				"special_bonus_attack_damage_12" // 
+	"Ability12"				"special_bonus_lifesteal_10" //
+	"Ability13"				"special_bonus_mifune_1" // +75 Raigeki Damage
+	"Ability14"				"special_bonus_mifune_2" // Bushido +15% Movespeed
+	"Ability15"				"special_bonus_evasion_15" // 
+	"Ability16"				"special_bonus_mifune_3" // +2 Genso Illusions
+	"Ability17"				"special_bonus_agility_25" //
 
 	"ArmorPhysical"				"1"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -40,8 +41,8 @@
 	"AttributeStrengthGain"		"1.8"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"16"										// Base intelligence
 	"AttributeIntelligenceGain"	"1.5"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"22"										// Base agility
-	"AttributeAgilityGain"		"2.3"										// Agility bonus per level.
+	"AttributeBaseAgility"		"26"										// Base agility
+	"AttributeAgilityGain"		"2.7"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.

@@ -9,6 +9,8 @@ function lupin_finisher:OnSpellStart()
 	local damage = self:GetSpecialValueFor("damage")
 	local bonus_damage = self:GetSpecialValueFor("bonus_damage")
 
+	local stun = self:GetSpecialValueFor("stun")
+
 	local duration = self:GetSpecialValueFor("slow_duration")
 
 	local t_duration_bonus = self:GetCaster():FetchTalent("special_bonus_lupin_3") or 0
@@ -22,6 +24,9 @@ function lupin_finisher:OnSpellStart()
 		particle = "particles/units/heroes/hero_lupin/lupin_finisher_crit.vpcf"
 		sound = "Lupin.Finisher.Crit"
 		damage = damage+bonus_damage
+		target:AddNewModifier(target, nil, "modifier_stunned", {Duration=stun}) --[[Returns:void
+		No Description Set
+		]]
 	end
 
 	CreateParticleHitloc(target,particle)

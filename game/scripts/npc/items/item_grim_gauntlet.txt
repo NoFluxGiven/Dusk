@@ -2,7 +2,8 @@
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "BaseClass"                     "item_datadriven"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "lua/items/item_grim_gauntlet"
     "ID"                            "3010"  //Valve's version of this item uses the ID "123".
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -17,7 +18,7 @@
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCastPoint"              "0.0"
     "AbilityCastRange"              "475"
-    "AbilityCooldown"               "14.0"
+    "AbilityCooldown"               "20.0"
     "AbilityManaCost"               "0"
     
     // Item Info
@@ -80,47 +81,6 @@
         {
             "var_type"                  "FIELD_INTEGER"
             "slow"                      "-10"
-        }
-    }
-    
-    "OnSpellStart"
-    {
-        "RunScript"
-           {
-               "ScriptFile"    "items/item_grim_gauntlet.lua"
-               "Function"      "Capture"
-               "maxcharge"     "%maxcharge"
-               "damage"        "%damage"
-               "health_perc"   "%health_perc"
-               "mana_perc"     "%mana_perc"
-           }
-    }
-    
-    "Modifiers"
-    {
-        "modifier_grim_gauntlet_passive"
-        {
-            "Passive"            "1"
-            "IsHidden"            "1"
-            "IsDebuff"            "0"
-            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
-        
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%bonus_attack_speed"
-                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      "%bonus_damage"
-            }
-        }
-        "modifier_grim_gauntlet_slow"
-        {
-            "Passive"            "0"
-            "IsHidden"            "0"
-            "IsDebuff"            "1"
-        
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-            }
         }
     }
 }

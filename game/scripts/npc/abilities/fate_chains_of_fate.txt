@@ -5,10 +5,11 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/fate_chains_of_fate"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAGS_NOT_ANCIENTS"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
@@ -22,11 +23,11 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"2.5"
+	"AbilityCooldown"				"20"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"40"
+	"AbilityManaCost"				"95 105 115 125"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,17 +40,23 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"duration"						"22"
+			"duration"						"10"
+			"LinkedSpecialBonus"			"special_bonus_fate_2"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"dmg"							"30 35 40 45"
+			"radius"						"900"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"dmg_creep"						"17 20 23 26"
+			"damage_hero"					"15 20 25 30"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_creep"					"6 8 10 12"
 		}
 	}
 	
@@ -59,65 +66,5 @@
 		"particle" "particles/units/heroes/hero_fate/fate_chains_of_fate_buff.vpcf"
 		"particle" "particles/units/heroes/hero_fate/fate_displace_debuff.vpcf"
 		"soundfile" "soundevents\hero_fate.vsndevts"
-		}
-		
-	"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"EffectName"	"Fate.ChainsOfFate.Start"
-				"Target" 		"TARGET"
-			}
-			"FireSound"
-			{
-				"EffectName"	"Fate.ChainsOfFate.Ambience"
-				"Target" 		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_chains_of_fate"
-				"Target" 		"TARGET"
-			}
-			"FireEffect"
-			{
-				"EffectName"        "particles/units/heroes/hero_fate/fate_chains_of_fate.vpcf"
-				"EffectAttachType"  "follow_rootbone"
-				"Target"            "TARGET"
-			}
-		}
-	
-	"Modifiers"
-		{
-			"modifier_chains_of_fate"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-				"IsPurgable"		"1"
-				"Duration"			"%duration"
-			
-				"EffectName"		"particles/units/heroes/hero_fate/fate_chains_of_fate_buff.vpcf"
-				"EffectAttachType"	"follow_rootbone"
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/fate_abilities.lua"
-						"Function"		"ChainStop"
-					}
-				}
-
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/fate_abilities.lua"
-						"Function"		"ChainsOfFateDeath"
-						"damage"		"%dmg"
-						"creep_damage"	"%dmg_creep"
-					}
-				}
-			}
 		}
 }

@@ -5,9 +5,10 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/lich_absolute_zero"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -16,17 +17,16 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"0"
-	"AbilityCastPoint"				"0.5"
+	"AbilityCastRange"				"950"
+	"AbilityCastPoint"				"0.4"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"160 140 120"
-	"HasScepterUpgrade"				"1"
+	"AbilityCooldown"				"70"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"200"
+	"AbilityManaCost"				"175"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -38,38 +38,39 @@
 	{
 		"01"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"30 40 50"
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"5.00 5.75 6.5"
+			"LinkedSpecialBonus"		"special_bonus_lich_5"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"duration"					"4 5 6"
+			"radius"					"575"
 		}
 		"03"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"interval"					"1"
+			"var_type"					"FIELD_INTEGER"
+			"move_slow"					"100"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"-20 -30 -40"
+			"attack_slow"				"100"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"duration_scepter"			"6 7 8"
+			"cast_slow"					"50"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow_scepter"				"-50 -60 -70"
+			"aura_move_slow"			"20 30 40"
 		}
 		"07"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_scepter"			"50 60 70"
+			"aura_attack_slow"			"20 30 40"
 		}
 	}
 	
@@ -77,94 +78,6 @@
 		{
 		"particle" "particles/status_fx/status_effect_frost_lich.vpcf"
 		"particle" "particles\units\heroes\hero_ancient_apparition\ancient_apparition_cold_feet_frozen.vpcf"
-		"soundfile" "soundevents\game_sounds_heroes\game_sounds_tusk.vsndevts"
-		}
-		
-	"OnSpellStart"
-		{
-		"RunScript"
-			{
-			"ScriptFile" "heroes/lich_abilities.lua"
-			"Function" "lich_absolute_zero_start"
-			}
-		}
-	
-	"Modifiers"
-		{
-		"lich_absolute_zero_slow_mod"
-			{
-			"Duration" "%duration"
-			"IsDebuff" "1"
-			"IsPurgable" "1"
-			"StatusEffectName" "particles/status_fx/status_effect_frost_lich.vpcf"
-			"StatusEffectPriority" "10"
-			"ThinkInterval" "%interval"
-			"OnIntervalThink"
-				{
-				"Damage"
-					{
-					"Damage" "%damage"
-					"Target"
-						{
-						"Center" "TARGET"
-						"Types" "DOTA_UNIT_TARGET_HERO"
-						}
-					"Type" "DAMAGE_TYPE_MAGICAL"
-					}
-				"Damage"
-					{
-					"Damage" "%damage / 4"
-					"Target"
-						{
-						"Center" "TARGET"
-						"Types" "DOTA_UNIT_TARGET_BASIC"
-						}
-					"Type" "DAMAGE_TYPE_MAGICAL"
-					}
-				}
-			"Properties"
-				{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow"
-				}
-			}
-		"lich_absolute_zero_scepter_mod"
-			{
-			"Duration" "%duration_scepter"
-			"IsDebuff" "1"
-			"IsPurgable" "0"
-			"StatusEffectName" "particles/status_fx/status_effect_frost_lich.vpcf"
-			"StatusEffectPriority" "10"
-			"ThinkInterval" "%interval"
-			"OnIntervalThink"
-				{
-				"Damage"
-					{
-					"Damage" "%damage"
-					"Target"
-						{
-						"Center" "TARGET"
-						"Types" "DOTA_UNIT_TARGET_HERO"
-						}
-					"Type" "DAMAGE_TYPE_MAGICAL"
-					}
-				"Damage"
-					{
-					"Damage" "%damage / 4"
-					"Target"
-						{
-						"Center" "TARGET"
-						"Types" "DOTA_UNIT_TARGET_BASIC"
-						}
-					"Type" "DAMAGE_TYPE_MAGICAL"
-					}
-				}
-			"Properties"
-				{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_scepter"
-				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow_scepter"
-				"MODIFIER_PROPERTY_DISABLE_HEALING" "1"
-				}
-			}
+		"soundfile" "soundevents\hero_lich.vsndevts"
 		}
 }

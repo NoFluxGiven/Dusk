@@ -64,7 +64,8 @@
 	"06"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusions"						"2 3 4 5"
+			"illusions"						"1 2 3 4"
+			"LinkedSpecialBonus"			"special_bonus_mifune_3"
 		}
 	}
 	

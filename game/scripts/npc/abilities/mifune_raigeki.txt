@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/mifune_raigeki"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -39,7 +40,7 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"initial_damage"				"75 125 175 225" // percentage total
+			"initial_damage"				"80 120 160 200"
 		}
 	"02"
 		{
@@ -49,7 +50,7 @@
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"delay"							"1.75"
+			"delay"							"1.25"
 		}
 	"04"
 		{
@@ -63,9 +64,10 @@
 		}
 	"06"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"speed"							"2000"
+			"var_type"						"FIELD_FLOAT"
+			"slow_duration"					"2"
 		}
+
 	}
 	
 	"precache"
@@ -74,74 +76,6 @@
 		"particle" "particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
 		"particle" "particles/units/heroes/hero_mifune/mifune_shockwave.vpcf"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
-		}
-
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/mifune_abilities.lua"
-			"Function"		"raigeki"
-			"range"			"%range"
-			"EffectName"	"particles/units/heroes/hero_mifune/mifune_shockwave.vpcf"
-			"Target"		"POINT"
-			"delay"			"%delay"
-		}
-		"FireSound"
-		{
-			"EffectName"	"Hero_Magnataur.ShockWave.Particle"
-			"Target" 		"CASTER"
-		}
-		"LinearProjectile"
-		{
-		    "Target"      	 "POINT"
-			"EffectName"	 "particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
-			"MoveSpeed"		 "%speed"
-			"StartRadius"	 "100"
-			"StartPosition"  "attach_attack1"
-			"EndRadius"      "100"
-			"HasFrontalCone" "0"
-			"FixedDistance"  "%range"
-			"TargetTeams"	 "DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"TargetTypes"	 "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-			"TargetFlags"	 "DOTA_UNIT_TARGET_FLAG_NONE"						
-		    "ProvidesVision" "0"
-		    "VisionRadius" 	 "0"
-		}
-	}
-
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit"	"0"
-		"Damage"
-		{
-			"Target"		"TARGET"
-			"Type"			"DAMAGE_TYPE_MAGICAL"
-			"Damage"		"%initial_damage"
-		}
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_raigeki_slow"
-			"Target" 		"TARGET"
-		}
-	}
-	
-	"Modifiers"
-		{
-			"modifier_raigeki_slow"
-			{
-				"Duration" "2"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"IsPurgable"		"1"
-				"IsBuff"			"0"
-				"IsDebuff"			"1"
-				"IsStunDebuff"		"0"
-				//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
-				}
-			}
 		}
 
 }

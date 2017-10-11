@@ -18,7 +18,8 @@ function modifier_bushido:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		-- MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
-		MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE
+		MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
 		-- MODIFIER_EVENT_ON_ATTACKED
 	}
 
@@ -29,10 +30,15 @@ function modifier_bushido:GetEffectName()
 	return "particles/units/heroes/hero_mifune/bushido_unit.vpcf"
 end
 
+function modifier_bushido:GetModifierMoveSpeedBonus_Percentage()
+	local t_bonus = self:GetParent():FetchTalent("special_bonus_mifune_2") or 0
+	return t_bonus
+end
+
 if IsServer() then
 
 	function modifier_bushido:OnCreated()
-		local agi = self:GetParent():GetAgility()
+		local agi = self:GetParent():GetBaseAgility()
 		local pct = self:GetAbility():GetSpecialValueFor("percent")/100
 
 		self:SetStackCount(math.floor(agi*pct))

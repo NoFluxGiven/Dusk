@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/fate_realign"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -15,7 +16,7 @@
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"300"
+	"AbilityCastRange"				"500"
 	"AbilityCastPoint"				"0.6 0.6 0.6 0.6"
 
 	// Time		
@@ -34,12 +35,13 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"shock_radius"				"300"
+			"shock_radius"				"500"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"120 160 200 240"
+			"damage"					"90 120 150 180"
+			"LinkedSpecialBonus"			"special_bonus_fate_3"
 		}
 	}
 	
@@ -50,100 +52,5 @@
 		"soundfile"						"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
 		"particle"						"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"
 		"soundfile" "soundevents\hero_fate.vsndevts"
-	}
-	
-	"OnSpellStart"
-	{
-		"FireSound"
-		{
-			"EffectName"	"Fate.Realign"
-			"Target" 		"CASTER"
-		}
-	
-		"ActOnTargets"
-		{
-			"Target"
-			{
-				"Center"	"CASTER"
-				"Radius"	"%shock_radius"
-				"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types"		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_NONE"
-			}
-			
-			"Action"
-			{
-				"FireSound"
-				{
-					"EffectName"	"Fate.Realign.Target"
-					"Target" 		"TARGET"
-				}
-				"FireEffect"
-				{
-					"EffectName"        "particles/units/heroes/hero_fate/fate_realign.vpcf"
-					"EffectAttachType"  "follow_rootbone"
-					"Target"
-					{
-						"Center"  	"TARGET"
-						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" 	"DOTA_UNIT_TARGET_ALL"
-						"Flags"     "DOTA_UNIT_TARGET_FLAG_DEAD"
-					}
-				}
-				"Damage"
-				{
-					"Target"	"TARGET"
-					"Damage"	"%damage"
-					"Type"		"DAMAGE_TYPE_MAGICAL"
-				}
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/fate_abilities.lua"
-					"Function"		"Realign"
-				}
-			}
-		}
-
-		"ActOnTargets"
-		{
-			"Target"
-			{
-				"Center"	"CASTER"
-				"Radius"	"%shock_radius"
-				"Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Types"		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_NONE"
-			}
-			
-			"Action"
-			{
-				"Heal"
-				{
-					"Target"        "TARGET"
-					"HealAmount"	"%damage"
-				}
-				"FireEffect"
-				{
-					"EffectName"        "particles/units/heroes/hero_fate/fate_realign.vpcf"
-					"EffectAttachType"  "follow_rootbone"
-					"Target"            "TARGET"
-				}
-				"RunScript"
-				{
-					"ScriptFile"	"util.lua"
-					"Function"		"Purge"
-				}
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/fate_abilities.lua"
-					"Function"		"Realign"
-				}
-			}
-		}
-	}
-	
-	"Modifiers"
-	{
-
 	}
 }

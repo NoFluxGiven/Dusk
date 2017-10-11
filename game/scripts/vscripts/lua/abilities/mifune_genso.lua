@@ -8,7 +8,11 @@ if IsServer() then
 		local c = self:GetCaster()
 		local t = self:GetCursorTarget()
 
-		local n = self:GetSpecialValueFor("illusions")
+		if t:TriggerSpellAbsorb(self) then return end
+
+		local t_illusion_bonus = c:FetchTalent("special_bonus_mifune_3") or 0
+
+		local n = self:GetSpecialValueFor("illusions") + t_illusion_bonus
 
 		while n > 0 do
 			Timers:CreateTimer(0.10*n,function()

@@ -932,15 +932,16 @@ function FindEntities(caster,point,radius,team,targets,flags,find_order)
                             false)
 end
 
-function FindEnemies(caster,point,radius,targets)
+function FindEnemies(caster,point,radius,targets,flags)
   local targets = targets or DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP
+  local flags = flags or DOTA_UNIT_TARGET_FLAG_NONE
   return FindUnitsInRadius( caster:GetTeamNumber(),
                             point,
                             nil,
                             radius,
                             DOTA_UNIT_TARGET_TEAM_ENEMY,
                             targets,
-                            DOTA_UNIT_TARGET_FLAG_NONE,
+                            flags,
                             FIND_CLOSEST,
                             false)
 end

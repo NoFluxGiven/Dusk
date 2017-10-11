@@ -42,6 +42,28 @@ BUILDINGS
 - Giga Graviton now activates only after Last Resort (below 10% Health).
 - While Last Resort is active, Giga Graviton activates every 1s instead.
 
+ITEMS
+========
+
+GENERAL CHANGES
+- All extra shops have been removed.
+- Exalted Items have been removed.
+- Regal Sigils and Essence Items have been removed.
+- Moved Purging Dust, Ironblood Potion, Rage Potion and Arcanite Shards to the Main Shop.
+- Linken's Sphere has been added back in.
+- Magic Wand and Magic Stick are both now available.
+
+PURGING DUST
+- Restock time is now 10 minutes (was 5 minutes).
+- Charges reduced to 1 (was 2).
+
+SOUL VIAL
+- Reworked:
+Soul Vial gains charges on every last hit. Upon activation, grants bonus damage and regeneration based on the amount of charges for a short time.
+Grants 4 damage and 5 Health regen per charge. Lasts 4s.
+- Maximum charges reduced to 12.
+- Cost reduced to 400 gold.
+
 HEROES
 =========
 
@@ -210,6 +232,21 @@ BAHAMUT
 - Desolation damage reduced to 60/80/100/120 (was 60/110/160/210).
 - Casting Desolation on a target instantly detonates Fulmination stacks.
 
+FATE
+- Realign damage/heal reduced to 80/120/160/200 (was 120/160/200/240).
+- Realign radius increased to 500 (was 300).
+- Realign no longer purges Displace.
+- Reworked most of Fate's abilities:
+DISPLACE
+- Now only castable on allies.
+- Grants 30/40/50/60% damage reduction for 5s, but slows movespeed by 25/20/15/10%.
+CHAINS OF FATE
+- Now only castable on enemies.
+- Enemies afflicted by the debuff will take a portion of damage nearby units take. Heroes cause more damage. Units from either team are counted.
+DOOMSAYER => ANCESTRAL RECALL
+- Is now a unit target ability.
+- The targeted ally, after channeling for 2s, is granted bonus stats as if they were 8/14/20 levels higher, and is healed by 30/40/50% of their Health and 15/20/25% of their Mana.
+
 GOB SQUAD
 - Rocket Blast now deals damage to buildings with the explosion AoE (previously, it only dealt damage to buildings when hitting them directly).
 - Rocket Blast building damage reduced to 0.20x (was 0.25x).
@@ -278,6 +315,16 @@ Lasts 20s.
 - Hit 'n' Run now slows in bursts every time it deals damage. The slow lasts 0.5s.
 - Updated Hit 'n' Run's particle effect to reflect the new behaviour.
 
+THE LICH
+- Reworked Absolute Zero:
+ABSOLUTE ZERO
+The target enemy becomes slowed drastically, and slows their nearby allies, for a long duration.
+- Reworked Cold Aura:
+DEEP FREEZE
+The Lich's attacks ignite an icy chain reaction in any target unit they strike. Ministuns and deals bonus Magical damage.
+- Added an Aghanim's Scepter Upgrade to Traveling Frost:
+Allows the projectile to hit multiple units before stopping.
+
 LYSANDER
 - Base Movespeed reduced to 310 (was 315).
 - Turn rate reduced to 0.7 (was 1.0).
@@ -304,21 +351,22 @@ Grapeshot now has a chance to activate on a nearby enemy when he attacks. These 
 MIFUNE
 - Base Strength increased to 20 (was 16).
 - Strength gain increased to 1.8 (was 1.6).
-- Base Agility reduced to 22 (was 35).
-- Agility gain reduced to 2.3 (was 2.8).
+- Base Agility reduced to 26 (was 35).
+- Agility gain reduced to 2.7 (was 2.8).
 - Base damage increased to 26 - 35 (was 19 - 22; starting damage is 52).
 - Base attack time increased to 1.5 (was 1.4).
 - Base Armor increased to 1 (was 0).
+- Genso now summons multiple illusions of Mifune around the target for a short time.
 - Oiuchi reworked.
 BUSHIDO
-Mifune's years of intense training and incredible focus allow him reap more benefits from Agility, becoming more agile and dangerous. Mifune gains bonus Agility equal to a percentage of his Agility upon activation, and a small amount of percentage bonus damage.
+Mifune's years of intense training and incredible focus allow him reap more benefits from Agility, becoming more agile and dangerous. Mifune gains bonus Agility equal to a percentage of his Base Agility upon activation, and a small amount of percentage bonus damage.
 Grants 30/45/60/75% bonus Agility and 10/15/20/25% bonus damage for 8s.
 
 RAI
 - Arc Twister mana cost increased to 75 (was 40/50/60/70).
 - Arc Twister cast point increased to 0.15s (was 0.1s).
 - Amplify mana cost rescaled to 80/100/120/140 (was 90/95/100/105).
-- Thunder Roar damage reduced to 175 (was 225).
+- Thunder Roar damage reduced to 100 (was 225).
 - Static Blade damage per stack reduced to 8/16/24/32 (was 16/24/32/40).
 
 ODIN
@@ -386,12 +434,19 @@ NEITH
 - Strength Gain reduced to 2.2 (was 2.4).
 - Base Strength increased to 26 (was 22).
 - Agility Gain reduced to 1.6 (was 2.0).
+- Base Agility increased to 20 (was 17).
+- Turnrate reduced to 0.8 (was 1).
 - Base Attack Damage increased to 22 - 35 (was 22 - 26).
 - Monsoon's modifier now increases damage stolen on refresh (if you hit them again with it, it will refresh the duration AND grant more bonus damage, while reducing their damage further).
 - Monsoon's cast range display updated to be accurate to the spell's range.
 - Monsoon radius increased to 275 (was 250).
-- Base Agility increased to 20 (was 17).
-- Turnrate reduced to 0.8 (was 1).
+- Monsoon duration reduced to 8s (was 12s).
+- Monsoon damage steal reduced to 6/8/10/12 (was 8/10/12/14).
+- Monsoon damage bonus and reduction are now both purgable as independent instances.
+- Inspire damage reduced to 3/6/9/12 (was 5/8/11/14).
+- Rally damage bonus (creeps) reduced to 4/8/12 (was 8/12/16).
+- Rally attack speed bonus reduced to 30/60/90 (was 60/80/100).
+- Rally movement speed bonus reduced to 10% (was 15%).
 
 NU
 - Micronebula damage percentage reduced to 10/20/30/40% (was 20/30/40/50%).
@@ -430,19 +485,6 @@ WAR
 - Bloodlust no longer affects allies.
 - Bloodlust duration is now 12.0s (was 3.0/4.0/5.0/6.0s).
 - Bloodlust can now be purged.
-
-ITEMS
-========
-
-GENERAL CHANGES
-- Moved Purging Dust, Ironblood Potion and Rage Potion to the Secret Shop.
-- Linken's Sphere has been added back in.
-- Magic Wand and Magic Stick are both now available.
-
-SOUL VIAL
-- Restores only half as much Mana as Health.
-- Restore per charge reduced to 8 (was 10).
-- Cost increased to 525 (was 475).
 
 Version 1.97
 

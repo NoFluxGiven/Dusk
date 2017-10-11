@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/lich_winters_requiem"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -17,16 +18,16 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"225"
-	"AbilityCastPoint"				"0.5"
+	"AbilityCastRange"				"900"
+	"AbilityCastPoint"				"0.3"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"25"
+	"AbilityCooldown"				"22"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"200"
+	"AbilityManaCost"				"155"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,34 +40,45 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"30 40 50 60"
+			"damage"					"80 120 160 200"
+			"LinkedSpecialBonus"		"special_bonus_lich_4"
 		}
 		"02"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"duration"					"8"
+			"var_type"					"FIELD_FLOAT"
+			"delay"						"0.8"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"interval"					"0.25"
+			"interval"					"0.15"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"radius"					"325"
+			"radius"					"900"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"-15"
+			"damage_radius"				"175"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"attack_slow"				"-60"
+			"buffer"					"600"
 		}
 		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"targets"					"2 3 4 5"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"slow"						"25"
+		}
+		"09"
 		{
 			"var_type"					"FIELD_FLOAT"
 			"slow_duration"				"2.0"
@@ -77,48 +89,10 @@
 		{
 		"particle" "particles/status_fx/status_effect_frost_lich.vpcf"
 		"particle" "particles\units\heroes\hero_ancient_apparition\ancient_apparition_cold_feet_frozen.vpcf"
-		"particle" "particles/units/heroes/hero_lich/lich_frost_nova.vpcf"
-		"particle" "particles/units/heroes/hero_lich/lich_frost_nova_flash.vpcf"
+		"particle" "particles/units/heroes/hero_lich/winters_requiem.vpcf"
+		"particle" "particles/units/heroes/hero_lich/winters_requiem_target.vpcf"
 		"soundfile" "soundevents\game_sounds_heroes\game_sounds_tusk.vsndevts"
-		}
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
 		
-	"OnSpellStart"
-		{
-		"ApplyModifier"
-			{
-			"Target" "CASTER"
-			"ModifierName" "lich_winters_requiem_cast_mod"
-			}
-		}
-	
-	"Modifiers"
-		{
-		"lich_winters_requiem_slow_mod"
-			{
-			"Duration" "%slow_duration"
-			"IsDebuff" "1"
-			"StatusEffectName" "particles/status_fx/status_effect_frost_lich.vpcf"
-			"StatusEffectPriority" "10"
-			"Properties"
-				{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_slow"
-				}
-			}
-		"lich_winters_requiem_cast_mod"
-			{
-			"Duration" "%duration"
-			"ThinkInterval" "%interval"
-			"OnIntervalThink"
-				{
-				"RunScript"
-					{
-					"ScriptFile" "heroes/lich_abilities.lua"
-					"Function" "lich_winters_requiem"
-					"radius" "%radius"
-					"damage" "%damage"
-					}
-				}
-			}
 		}
 }

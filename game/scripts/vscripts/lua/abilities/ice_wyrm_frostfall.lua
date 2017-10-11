@@ -54,17 +54,6 @@ end
 
 modifier_frostfall = class({})
 
-function modifier_frostfall:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_CASTTIME_PERCENTAGE
-	}
-	return funcs
-end
-
-function modifier_frostfall:GetModifierPercentageCasttime()
-	return -50
-end
-
 function modifier_frostfall:OnCreated(kv)
 	if IsServer() then
 		self:StartIntervalThink(2.0)

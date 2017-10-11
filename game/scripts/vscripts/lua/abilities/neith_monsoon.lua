@@ -67,6 +67,10 @@ function modifier_monsoon:GetModifierPhysicalArmorBonus()
 	return self:GetAbility():GetSpecialValueFor("armor_reduction")
 end
 
+function modifier_monsoon:IsPurgable()
+	return true
+end
+
 function modifier_monsoon:IsDebuff()
 	return true
 end
@@ -98,4 +102,8 @@ end
 
 function modifier_monsoon_user:GetModifierPreAttack_BonusDamage()
 	return self:GetStackCount()
+end
+
+function modifier_monsoon_user:IsPurgable()
+	return true
 end

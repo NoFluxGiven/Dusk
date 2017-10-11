@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/lich_traveling_frost"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -21,11 +22,13 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"14"
+	"AbilityCooldown"				"16 14 12 10"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"110 130 150 170"
+	"AbilityManaCost"				"110 120 130 140"
+
+	"HasScepterUpgrade"				"1"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -38,17 +41,19 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"40 120 200 280"
+			"damage"					"80 120 160 200"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"stun"						"2 2.5 3 3.5"
+			"stun"						"1.2 1.6 2.0 2.4"
+			"LinkedSpecialBonus"		"special_bonus_lich_5"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"speed"						"1100"
+			"speed"						"900"
+			"LinkedSpecialBonus"		"special_bonus_lich_3"
 		}
 		"04"
 		{
@@ -60,6 +65,16 @@
 			"var_type"					"FIELD_INTEGER"
 			"range"						"2000"
 		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"scepter_units"				"4"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"scepter_radius"			"120"
+		}
 	}
 	
 	"precache"
@@ -67,66 +82,5 @@
 		"particle" "particles\units\heroes\hero_tusk\tusk_ice_shards_projectile.vpcf"
 		"particle" "particles\units\heroes\hero_ancient_apparition\ancient_apparition_cold_feet_frozen.vpcf"
 		"soundfile" "soundevents\game_sounds_heroes\game_sounds_tusk.vsndevts"
-		}
-		
-	"OnSpellStart"
-		{
-		"LinearProjectile"
-			{
-				"Target"      	"POINT"
-				"EffectName"  	"particles\units\heroes\hero_tusk\tusk_ice_shards_projectile.vpcf"
-				"MoveSpeed"   	"%speed"
-				"StartRadius"   "%width"
-				"StartPosition" "attach_origin"
-				"EndRadius"     "%width"
-				"FixedDistance" "%range"
-				"TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-				"TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
-				"HasFrontalCone"    "0"
-				"ProvidesVision"	"1"
-				"VisionRadius"	"500"
-			}
-		"FireSound"
-			{
-			"EffectName" "Hero_Tusk.IceShards.Cast"
-			"Target" "CASTER"
-			}
-		}
-	"OnProjectileHitUnit"
-		{
-		"Damage"
-			{
-			"Damage" "%damage"
-			"Target" "TARGET"
-			"Type" "DAMAGE_TYPE_MAGICAL"
-			}
-		"ApplyModifier"	
-			{
-			"Target" "TARGET"
-			"ModifierName" "lich_traveling_frost_mod"
-			}
-		"FireSound"
-			{
-			"EffectName" "Hero_Tusk.IceShards"
-			"Target" "TARGET"
-			}
-		"DeleteOnHit" "1"
-		}
-	
-	"Modifiers"
-		{
-		"lich_traveling_frost_mod"
-			{
-			"Duration" "%stun"
-			"IsDebuff" "1"
-			"IsPurgable" "1"
-			"EffectName" "particles\units\heroes\hero_ancient_apparition\ancient_apparition_cold_feet_frozen.vpcf"
-			"States"
-				{
-				"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_FROZEN" "MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
 		}
 }

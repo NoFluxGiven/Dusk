@@ -155,7 +155,6 @@ function modifier_last_surprise:CheckState()
 		[MODIFIER_STATE_INVULNERABLE] = true,
 		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
 		[MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES] = true,
-		[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
 		[MODIFIER_STATE_DISARMED] = true
 	}
 	return state

@@ -113,7 +113,7 @@ function tek_fire_mosquito_missiles(keys)
 	ToolsPrint("TARGETS: "..#caster.mosquito_targets)
 
 	for k,v in pairs(caster.mosquito_targets) do
-		Timers:CreateTimer(k*0.15,function()
+		Timers:CreateTimer(k*(0.20-(keys.ability:GetLevel()-1)*0.05),function()
 			if IsValidEntity(v) then
 				caster:EmitSound("Hero_Leshrac.Pulse_Nova_Strike")
 				local info = 

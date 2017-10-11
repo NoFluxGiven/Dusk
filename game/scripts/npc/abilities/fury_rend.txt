@@ -29,7 +29,7 @@
 		"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"max_hp_removal_per_stack"		"12 24 36 48"
+			"max_hp_removal_per_stack"		"8 16 24 32"
 			"LinkedSpecialBonus"			"special_bonus_fury_2"
 		}
 	}

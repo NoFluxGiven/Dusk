@@ -44,19 +44,19 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"attack_steal"				"8 10 12 14"
+			"attack_steal"				"6 8 10 12"
 			"LinkedSpecialBonus"		"special_bonus_neith_4"
 		}
 		// Extra variables
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"					"12"
+			"duration"					"8"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"armor_reduction"			"0"
+			"armor_reduction"			"2"
 		}
 		"05"
 		{

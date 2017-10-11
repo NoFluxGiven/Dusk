@@ -1,0 +1,344 @@
+-- DEPRECATED SHOP UNITS
+
+  -- Shop Oddities
+
+  -- oItems,oPrices,oStocks = CreateShop({
+  --     -- {"item_arcanite_shards"},
+  --     {"item_pendulum_fragment"},
+  --     -- {"item_rage_potion"},
+  --     -- {"item_ironblood_potion"}
+  --     --{"item_glowing_jewel",1800}
+  --   })
+
+  -- -- Radiant Fountain: [   VScript              ]: Vector 0000000002256860 [-7422.263184 -6588.763672 512.000000] Vector 0000000002256890 [0.910255 -0.414048 -0.000000]
+
+  -- ob_shop_rad = CreateUnitByName("npc_dummy_blank", Vector(-7422,-6588,512), false, nil, nil, DOTA_TEAM_GOODGUYS)
+  -- ob_shop_rad:AddNewModifier(ob_shop_rad, nil, "modifier_shopkeeper", {})
+  -- ob_shop_rad:RemoveModifierByName("dummy_unit")
+  -- ob_shop_rad:SetModel("models/items/courier/blotto_and_stick/blotto.vmdl")
+  -- ob_shop_rad:SetOriginalModel("models/items/courier/blotto_and_stick/blotto.vmdl")
+  -- ob_shop_rad:SetUnitName("Ob")
+  -- ob_shop_rad:StartGesture(ACT_DOTA_IDLE)
+  -- ob_shop_rad:SetForwardVector(Vector(0.91,-0.41,0))
+  -- ob_shop_rad:SetModelScale(1.25)
+
+  -- ParticleManager:CreateParticle("particles/world/shop_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, ob_shop_rad) --[[Returns:int
+  --       Creates a new particle effect
+  --       ]]
+
+  -- radOShop = Containers:CreateShop({
+  --   layout =      {4,4,4},
+  --   skins =       {},
+  --   headerText =  "Ob's Oddities",
+  --   pids =        {},
+  --   position =    "entity", --"1000px 300px 0px",
+  --   entity =      ob_shop_rad,
+  --   items =       oItems,
+  --   prices =      oPrices,
+  --   stocks =      oStocks,
+  --   closeOnOrder= true,
+  --   range =       350,
+  --   --OnCloseClickedJS = "ExampleCloseClicked",
+  --   OnSelect  =   function(playerID, container, selected)
+  --     print("Selected", selected:GetUnitName())
+  --     if not PlayerResource:GetSelectedHeroEntity(playerID):IsStunned() then
+  --       container:Open(playerID)
+  --     end
+  --   end,
+  --   OnDeselect =  function(playerID, container, deselected)
+  --     print("Deselected", deselected:GetUnitName())
+  --     container:Close(playerID)
+  --   end,
+  --   OnEntityOrder=function(playerID, container, unit, target)
+  --     print("ORDER ACTION radiant shop", playerID)
+  --     if not PlayerResource:GetSelectedHeroEntity(playerID):IsStunned() then
+  --       container:Open(playerID)
+  --     end
+  --     unit:Stop()
+  --   end,
+  -- })
+
+  -- -- Dire Fountain: [   VScript              ]: Vector 0000000002B2B550 [6520.288086 6467.559082 512.000000]  Vector 0000000002B2B580 [0.470518 -0.882390 -0.000000]
+
+  -- ob_shop_dir = CreateUnitByName("npc_dummy_blank", Vector(6520,6467,512), false, nil, nil, DOTA_TEAM_BADGUYS)
+  -- ob_shop_dir:AddNewModifier(ob_shop_dir, nil, "modifier_shopkeeper", {})
+  -- ob_shop_dir:RemoveModifierByName("dummy_unit")
+  -- ob_shop_dir:SetModel("models/items/courier/blotto_and_stick/blotto.vmdl")
+  -- ob_shop_dir:SetOriginalModel("models/items/courier/blotto_and_stick/blotto.vmdl")
+  -- ob_shop_dir:SetUnitName("Ob")
+  -- ob_shop_dir:StartGesture(ACT_DOTA_IDLE)
+  -- ob_shop_dir:SetForwardVector(Vector(0.47,-0.88,0))
+  -- ob_shop_dir:SetModelScale(1.25)
+
+  -- ParticleManager:CreateParticle("particles/world/shop_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, ob_shop_dir) --[[Returns:int
+  --       Creates a new particle effect
+  --       ]]
+
+  -- dirOShop = Containers:CreateShop({
+  --   layout =      {4,4,4},
+  --   skins =       {},
+  --   headerText =  "Ob's Oddities",
+  --   pids =        {},
+  --   position =    "entity", --"1000px 300px 0px",
+  --   entity =      ob_shop_dir,
+  --   items =       oItems,
+  --   prices =      oPrices,
+  --   stocks =      oStocks,
+  --   closeOnOrder= true,
+  --   range =       350,
+  --   --OnCloseClickedJS = "ExampleCloseClicked",
+  --   OnSelect  =   function(playerID, container, selected)
+  --     print("Selected", selected:GetUnitName())
+  --     if not PlayerResource:GetSelectedHeroEntity(playerID):IsStunned() then
+  --       container:Open(playerID)
+  --     end
+  --   end,
+  --   OnDeselect =  function(playerID, container, deselected)
+  --     print("Deselected", deselected:GetUnitName())
+  --     container:Close(playerID)
+  --   end,
+  --   OnEntityOrder=function(playerID, container, unit, target)
+  --     print("ORDER ACTION radiant shop", playerID)
+  --     if not PlayerResource:GetSelectedHeroEntity(playerID):IsStunned() then
+  --       container:Open(playerID)
+  --     end
+  --     unit:Stop()
+  --   end,
+  -- })
+
+  -- Shop Regal
+
+  -- contShopRadEnt = CreateUnitByName("npc_dummy_blank", Vector(2834,-2009,0), false, nil, nil, DOTA_TEAM_NEUTRALS)
+  -- --contShopRadEnt:RemoveAbility("dummy_unit")
+  -- contShopRadEnt:AddNewModifier(contShopRadEnt, nil, "modifier_shopkeeper", {})
+  -- contShopRadEnt:AddNewModifier(contShopRadEnt, nil, "modifier_shopkeeper_hide", {})
+  -- contShopRadEnt:RemoveModifierByName("dummy_unit")
+  -- contShopRadEnt:SetModel("models/courier/smeevil_bird/smeevil_bird.vmdl")
+  -- contShopRadEnt:SetOriginalModel("models/courier/smeevil_bird/smeevil_bird.vmdl")
+  -- contShopRadEnt:SetUnitName("The Shopkeeper")
+  -- contShopRadEnt:StartGesture(ACT_DOTA_IDLE)
+  -- contShopRadEnt:SetForwardVector(Vector(-0.71,-0.7,0))
+  -- contShopRadEnt:SetModelScale(1.75)
+
+  -- ParticleManager:CreateParticle("particles/world/shop_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, contShopRadEnt) --[[Returns:int
+  --       Creates a new particle effect
+  --       ]]
+
+  -- sItems,prices,stocks = CreateShop({
+  --   {"item_regal_sigil"},
+  --   {"item_essence_of_agility",850},
+  --   {"item_essence_of_strength",850},
+  --   {"item_essence_of_intelligence",850},
+  -- })
+
+  -- --sItems[3]:SetCurrentCharges(2)
+
+  -- contRadiantShop = Containers:CreateShop({
+  --   layout =      {1,3},
+  --   skins =       {},
+  --   headerText =  "Dark Materials",
+  --   pids =        {},
+  --   position =    "entity", --"1000px 300px 0px",
+  --   entity =      contShopRadEnt,
+  --   items =       sItems,
+  --   prices =      prices,
+  --   stocks =      stocks,
+  --   closeOnOrder= true,
+  --   range =       450,
+  --   --OnCloseClickedJS = "ExampleCloseClicked",
+  --   OnSelect  =   function(playerID, container, selected)
+  --     print("Selected", selected:GetUnitName())
+  --     if not PlayerResource:GetSelectedHeroEntity(playerID):IsStunned() then
+  --       container:Open(playerID)
+  --     end
+  --   end,
+  --   OnDeselect =  function(playerID, container, deselected)
+  --     print("Deselected", deselected:GetUnitName())
+  --     container:Close(playerID)
+  --   end,
+  --   OnEntityOrder=function(playerID, container, unit, target)
+  --     print("ORDER ACTION radiant shop", playerID)
+  --     if not PlayerResource:GetSelectedHeroEntity(playerID):IsStunned() then
+  --       container:Open(playerID)
+  --     end
+  --     unit:Stop()
+  --   end,
+  -- })
+
+  -- Shop Details
+
+  -- contShopRadEntD = CreateUnitByName("npc_dummy_blank", Vector(2975,-2096,0), false, nil, nil, DOTA_TEAM_NEUTRALS)
+  -- --contShopRadEntD:RemoveAbility("dummy_unit")
+  -- contShopRadEntD:AddNewModifier(contShopRadEntD, nil, "modifier_shopkeeper", {})
+  -- contShopRadEntD:AddNewModifier(contShopRadEntD, nil, "modifier_shopkeeper_hide", {})
+  -- contShopRadEntD:RemoveModifierByName("dummy_unit")
+  -- contShopRadEntD:SetModel("models/items/courier/bookwyrm/bookwyrm.vmdl")
+  -- contShopRadEntD:SetOriginalModel("models/items/courier/bookwyrm/bookwyrm.vmdl")
+  -- contShopRadEntD:SetUnitName("Grimoire Keeper")
+  -- contShopRadEntD:StartGesture(ACT_DOTA_IDLE)
+  -- contShopRadEntD:SetForwardVector(Vector(-0.71,-0.69,0))
+  -- contShopRadEntD:SetModelScale(1.25)
+
+  -- ParticleManager:CreateParticle("particles/world/info_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, contShopRadEntD) --[[Returns:int
+  --       Creates a new particle effect
+  --       ]]
+
+  -- SynthesisItems = CreateShop({
+  --   {"item_mjollnir"},
+  --   {"item_greater_crit"},
+  --   {"item_heart"},
+  --   {"item_sheepstick"},
+  --   {"item_hand_of_midas"},
+  --   {"item_octarine_core"},
+  --   {"item_satanic"},
+  --   {"item_mekansm"},
+  --   {"item_blink"},
+
+  --   {"item_synthesis"},
+
+  --   {"item_thunderbolt"},
+  --   {"item_fenrir"},
+  --   {"item_colossus"},
+  --   {"item_turins_scepter"},
+  --   {"item_sword_of_greed"},
+  --   {"item_charged_octarine_core"},
+  --   {"item_demonfire"},
+  --   {"item_talos"},
+  --   {"item_vagrant_dagger"}
+  -- })
+  -- SynthesisLayout = {9,1,9}
+
+  -- --sItems[3]:SetCurrentCharges(2)
+
+  -- contRadiantShopD = Containers:CreateContainer({
+  --   layout =      SynthesisLayout,
+  --   skins =       {},
+  --   headerText =  "Exalted Transformations",
+  --   pids =        {},
+  --   position =    "entity", --"1000px 300px 0px",
+  --   entity =      contShopRadEntD,
+  --   items =       SynthesisItems,
+  --   draggable =   false,
+  --   closeOnOrder= true,
+  --   range =       0,
+  --   --OnCloseClickedJS = "ExampleCloseClicked",
+  --   OnSelect  =   function(playerID, container, selected)
+  --     print("Selected", selected:GetUnitName())
+  --     if not PlayerResource:GetSelectedHeroEntity(playerID):IsStunned() then
+  --       container:Open(playerID)
+  --     end
+  --   end,
+  --   OnDeselect =  function(playerID, container, deselected)
+  --     print("Deselected", deselected:GetUnitName())
+  --     container:Close(playerID)
+  --   end,
+  --   OnEntityOrder=function(playerID, container, unit, target)
+  --     print("ORDER ACTION radiant shop", playerID)
+  --     if not PlayerResource:GetSelectedHeroEntity(playerID):IsStunned() then
+  --       container:Open(playerID)
+  --     end
+  --     unit:Stop()
+  --   end,
+  -- })
+
+  -- Shop Details
+  -- Fountain Shop 1
+  --[-7144.460449 -6151.389648 512.000000]  Vector 00000000031ACD58 [0.548053 -0.836443 -0.000000]
+
+  -- contShopRadEntRadF = CreateUnitByName("npc_dummy_blank", Vector(-7144,-6151,512), false, nil, nil, DOTA_TEAM_GOODGUYS)
+  -- --contShopRadEntRadF:RemoveAbility("dummy_unit")
+  -- contShopRadEntRadF:AddNewModifier(contShopRadEntD, nil, "modifier_shopkeeper", {})
+  -- --contShopRadEntRadF:AddNewModifier(contShopRadEntD, nil, "modifier_shopkeeper_hide", {})
+  -- contShopRadEntRadF:RemoveModifierByName("dummy_unit")
+  -- contShopRadEntRadF:SetModel("models/items/courier/bookwyrm/bookwyrm.vmdl")
+  -- contShopRadEntRadF:SetOriginalModel("models/items/courier/bookwyrm/bookwyrm.vmdl")
+  -- contShopRadEntRadF:SetUnitName("Grimoire Keeper")
+  -- contShopRadEntRadF:StartGesture(ACT_DOTA_IDLE)
+  -- contShopRadEntRadF:SetForwardVector(Vector(0.54,-0.83,0))
+  -- contShopRadEntRadF:SetModelScale(1.25)
+
+  -- ParticleManager:CreateParticle("particles/world/info_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, contShopRadEntRadF) --[[Returns:int
+  --       Creates a new particle effect
+  --       ]]
+
+  -- contRadiantShopRadF = Containers:CreateContainer({
+  --   layout =      SynthesisLayout,
+  --   skins =       {},
+  --   headerText =  "Exalted Transformations",
+  --   pids =        {},
+  --   position =    "entity", --"1000px 300px 0px",
+  --   entity =      contShopRadEntRadF,
+  --   items =       SynthesisItems,
+  --   draggable =   false,
+  --   closeOnOrder= true,
+  --   range =       0,
+  --   --OnCloseClickedJS = "ExampleCloseClicked",
+  --   OnSelect  =   function(playerID, container, selected)
+  --     print("Selected", selected:GetUnitName())
+  --     if not PlayerResource:GetSelectedHeroEntity(playerID):IsStunned() then
+  --         container:Open(playerID)
+  --     end
+  --   end,
+  --   OnDeselect =  function(playerID, container, deselected)
+  --     print("Deselected", deselected:GetUnitName())
+  --     container:Close(playerID)
+  --   end,
+  --   OnEntityOrder=function(playerID, container, unit, target)
+  --     print("ORDER ACTION radiant shop", playerID)
+  --     if not PlayerResource:GetSelectedHeroEntity(playerID):IsStunned() then
+  --       container:Open(playerID)
+  --     end
+  --     unit:Stop()
+  --   end,
+  -- })
+
+  -- Shop Details
+  -- Fountain Shop 2
+  --[7568.775391 6351.226563 512.000000] Vector 0000000002C9CC90 [-0.978313 -0.207133 -0.000000]
+
+  -- contShopRadEntDireF = CreateUnitByName("npc_dummy_blank", Vector(7568,6351,512), false, nil, nil, DOTA_TEAM_BADGUYS)  
+  -- --contShopRadEntDireF:RemoveAbility("dummy_unit")
+  -- contShopRadEntDireF:AddNewModifier(contShopRadEntD, nil, "modifier_shopkeeper", {})
+  -- --contShopRadEntDireF:AddNewModifier(contShopRadEntD, nil, "modifier_shopkeeper_hide", {})
+  -- contShopRadEntDireF:RemoveModifierByName("dummy_unit")
+  -- contShopRadEntDireF:SetModel("models/items/courier/bookwyrm/bookwyrm.vmdl")
+  -- contShopRadEntDireF:SetOriginalModel("models/items/courier/bookwyrm/bookwyrm.vmdl")
+  -- contShopRadEntDireF:SetUnitName("Grimoire Keeper")
+  -- contShopRadEntDireF:StartGesture(ACT_DOTA_IDLE)
+  -- contShopRadEntDireF:SetForwardVector(Vector(-0.97,-0.20,0))
+  -- contShopRadEntDireF:SetModelScale(1.25)
+
+  -- ParticleManager:CreateParticle("particles/world/info_icon.vpcf", PATTACH_OVERHEAD_FOLLOW, contShopRadEntDireF) --[[Returns:int
+  --       Creates a new particle effect
+  --       ]]
+
+  -- contRadiantShopDireF = Containers:CreateContainer({
+  --   layout =      SynthesisLayout,
+  --   skins =       {},
+  --   headerText =  "Exalted Transformations",
+  --   pids =        {},
+  --   position =    "entity", --"1000px 300px 0px",
+  --   entity =      contShopRadEntDireF,
+  --   items =       SynthesisItems,
+  --   draggable =   false,
+  --   closeOnOrder= true,
+  --   range =       0,
+  --   --OnCloseClickedJS = "ExampleCloseClicked",
+  --   OnSelect  =   function(playerID, container, selected)
+  --     print("Selected", selected:GetUnitName())
+  --     if not PlayerResource:GetSelectedHeroEntity(playerID):IsStunned() then
+  --         container:Open(playerID)
+  --     end
+  --   end,
+  --   OnDeselect =  function(playerID, container, deselected)
+  --     print("Deselected", deselected:GetUnitName())
+  --     container:Close(playerID)
+  --   end,
+  --   OnEntityOrder=function(playerID, container, unit, target)
+  --     print("ORDER ACTION radiant shop", playerID)
+  --     if not PlayerResource:GetSelectedHeroEntity(playerID):IsStunned() then
+  --       container:Open(playerID)
+  --     end
+  --     unit:Stop()
+  --   end,
+  -- })

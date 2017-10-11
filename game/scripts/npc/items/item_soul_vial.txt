@@ -2,7 +2,8 @@
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "BaseClass"                     "item_datadriven"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "lua/items/item_soul_vial"
     "ID"                            "3015"  //Valve's version of this item uses the ID "34".
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
     "Model"                         "models/props_gameplay/magic_wand.mdl"
@@ -18,7 +19,7 @@
     
     // Item Info
     //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"                      "525"
+    "ItemCost"                      "400"
     "ItemShopTags"                  "regen_health;regen_mana;boost_health;boost_mana;damage"
     "ItemQuality"                   "component"
     "ItemAliases"                   "soul vial"
@@ -35,110 +36,22 @@
         "01"
         {
             "var_type"              "FIELD_INTEGER"
-            "max_charges"           "20"
+            "max_charges"           "12"
         }
         "02"
         {
             "var_type"              "FIELD_INTEGER"
-            "damage_per_charge"     "1"
+            "damage_per_charge"     "4"
         }
         "03"
         {
             "var_type"              "FIELD_INTEGER"
-            "restore_per_charge"    "8"
+            "restore_per_charge"    "4"
         }
-    }
-    
-    "OnSpellStart"
-    {
-        "RunScript"
+        "04"
         {
-            "ScriptFile"            "items/item_magic_wand.lua"
-            "Function"              "item_magic_wand_datadriven_on_spell_start"
-            "RestorePerCharge"      "%restore_per_charge"
+            "var_type"              "FIELD_FLOAT"
+            "duration"              "4.5"
         }
-        "RunScript"
-        {
-            "ScriptFile"    "items/item_soul_vial.lua"
-            "Function"      "RemoveDamage"
-        }
-    }
-
-    "OnEquip"
-    {
-        "RunScript"
-        {
-            "ScriptFile"    "items/item_soul_vial.lua"
-            "Function"        "Check"
-        }
-    }
-    
-    "Modifiers"
-    {
-        "modifier_item_vial_passive"
-        {
-            "Passive"               "1"
-            "IsHidden"              "1"
-
-            "ThinkInterval"  "0.1"
-            "OnIntervalThink"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "items/item_soul_vial.lua"
-                    "Function"      "Sync"
-                }
-            }
-
-            "OnCreated"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "items/item_soul_vial.lua"
-                    "Function"      "Start"
-                }
-            }
-            
-            "OnKill"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "items/item_soul_vial.lua"
-                    "Function"      "GainCharge"
-                    "maxcharge"     "%max_charges"
-                }
-            }
-
-            "OnDeath"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "items/item_soul_vial.lua"
-                    "Function"      "LoseCharge"
-                }
-            }
-
-            "OnDestroy"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"    "items/item_soul_vial.lua"
-                    "Function"      "RemoveDamage"
-                }
-            }
-        }
-
-        "modifier_item_vial_damage"
-        {
-            "Passive"            "0"
-            "IsHidden"            "1"
-            "IsDebuff"            "0"
-        
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%damage_per_charge"
-            }
-        }
-        
     }
 }

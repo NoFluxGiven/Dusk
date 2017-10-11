@@ -2,23 +2,24 @@
 {
 	"AbilityLayout" 		"4"
 	"override_hero"			"npc_dota_hero_oracle"
-	"Ability1"				"fate_displace"
-	"Ability2"				"fate_chains_of_fate"
-	"Ability3"				"fate_realign"
-	"Ability4"				"fate_doomsayer"
+	"Ability1"				"fate_displace" // Decreases damage the target takes by 30/40/50/60% for 5s, then heals them for 125/150/175/200% of the HP they lost over the next 5s.
+	"Ability2"				"fate_chains_of_fate" // Places a powerful enchantment on the target enemy. When any unit within a large radius takes damage, the enchanted unit receives a portion of that damage as Magical.
+	"Ability3"				"fate_realign" // Fate heals nearby allies and damages nearby enemies.
+	"Ability4"				"fate_ancestral_recall" // After a 2s charge, grants the target ancient knowledge, instantly restoring a percentage of their maximum Health and Mana, purging debuffs, and giving them bonus stats as if they were 8/14/20 levels higher.
+	// Lasts 10s.
 	"Ability5"				""
 	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				"special_bonus_fate_1" //
-	"Ability11"				"special_bonus_fate_2" //
-	"Ability12"				"special_bonus_fate_3" //
-	"Ability13"				"special_bonus_fate_4" //
-	"Ability14"				"special_bonus_fate_5"
-	"Ability15"				"special_bonus_fate_6" //
-	"Ability16"				"" //
-	"Ability17"				""
+	"Ability10"				"special_bonus_movement_speed_15" // 
+	"Ability11"				"special_bonus_fate_1" // +1s Displace Duration
+	"Ability12"				"special_bonus_intelligence_8" //
+	"Ability13"				"special_bonus_fate_2" // +7s Chains of Fate Duration
+	"Ability14"				"special_bonus_attack_damage_40" // 
+	"Ability15"				"special_bonus_fate_3" // +60 Realign Damage/Heal
+	"Ability16"				"special_bonus_fate_4" // +20% Ancestral Recall Restore
+	"Ability17"				"special_bonus_spell_amplify_25" //
 
 	"ArmorPhysical"				"2"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).

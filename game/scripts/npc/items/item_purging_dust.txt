@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"item_datadriven"
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"lua/items/item_purging_dust"
 	"ID"							"3024"  //Valve's version of this item uses the ID "39".
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -31,9 +32,9 @@
 	"ItemPermanent"					"0"
 	"ItemPurchasable"				"1"
 	"ItemStockMax" 					"1" 
-	"ItemStockTime" 				"300"
+	"ItemStockTime" 				"600"
 	"ItemStockInitial" 				"1"
-	"ItemInitialCharges"			"2"
+	"ItemInitialCharges"			"1"
 
 	"precache"
 	{
@@ -47,25 +48,5 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
-	}
-	
-	"OnSpellStart"
-	{			
-		"RunScript"
-		{
-			"ScriptFile"	"items/item_purging_dust.lua"
-			"Function"		"purge"
-		}
-	}
-
-	"Modifiers"
-	{
-		"modifier_purging_dust_passive"
-		{
-			"Passive"			"1"
-			"IsHidden"			"1"
-			"IsDebuff"			"0"
-			//Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
-		}
 	}
 }

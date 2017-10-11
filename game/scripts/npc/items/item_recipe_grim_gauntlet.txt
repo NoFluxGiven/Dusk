@@ -22,6 +22,6 @@
     "ItemResult"                    "item_grim_gauntlet"
     "ItemRequirements"
     {
-        "01"                        "item_soul_vial;item_hand_of_midas"
+        "01"                        "item_soul_vial;item_gloves"
     }
 }
