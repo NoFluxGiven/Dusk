@@ -5,11 +5,11 @@ function d_waves(keys)
 
 	if caster:HasModifier("modifier_last_resort_invulnerability_building") then
 		trigger = 10
-	elseif caster:GetHealthPercent() < 10 then
+	elseif caster:GetHealthPercent() < 25 then
 		trigger = 30
 	end
 
-	if caster:GetHealthPercent() < 10 then
+	if caster:GetHealthPercent() < 25 then
 		if caster:HasModifier("modifier_defensive_wave_warning") ~= true then
 			keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_defensive_wave_warning", {}) --[[Returns:void
 			No Description Set

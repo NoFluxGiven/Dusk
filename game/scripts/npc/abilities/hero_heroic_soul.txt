@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/hero_heroic_soul"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"	
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"hero_heroic_soul"
@@ -41,6 +42,17 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"duration"				"3"
+			"LinkedSpecialBonus"	"special_bonus_hero_1"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_reduction"		"60"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"damage_reduction_duration" "0.5"
 		}
 	}
 
@@ -49,67 +61,5 @@
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
 		"particle"			"particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
 		"particle"			"particles/status_fx/status_effect_gods_strength.vpcf"
-	}
-
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/hero_abilities.lua"
-			"Function"		"HeroicSoul"
-		}
-		"FireEffect"
-		{
-			"EffectName"	"particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
-			"EffectAttachType"	"follow_origin"
-			"Target"		"CASTER"
-		}
-		"FireSound"
-		{
-			"EffectName"	"Hero_Sven.GodsStrength"
-			"Target"		"CASTER"
-		}
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_heroic_soul_bonus"
-			"Target" 		"CASTER"
-			"Duration"		"%duration"
-		}
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_heroic_soul_damage_reduction"
-			"Target" 		"CASTER"
-		}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_heroic_soul_bonus"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"0"
-	
-			"StatusEffectName"	"particles/status_fx/status_effect_gods_strength.vpcf"
-			"StatusEffectPriority"	"10"
-	
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movespeed"
-			}
-		}
-		"modifier_heroic_soul_damage_reduction"
-		{
-			"Passive"			"0"
-			"IsHidden"			"1"
-			"IsDebuff"			"0"
-			"Duration"			"0.75"
-		
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "-75"
-			}
-		}
 	}
 }

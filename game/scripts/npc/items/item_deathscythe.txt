@@ -1,0 +1,89 @@
+//=================================================================================================================
+// Deathscythe
+//=================================================================================================================
+"item_deathscythe"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"lua/items/item_deathscythe"
+	"ID"							"3036"  //Valve's version of this item uses the ID "39".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"Model"							"models/props_gameplay/clarity.mdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_deathscythe"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"              "0"
+	"AbilityCooldown"				"8"
+	"AbilityManaCost"				"0"
+	"AbilityCastRange"				"0"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"                      "5175"
+    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;hard_to_tag"
+    "ItemQuality"                   "epic"
+    "ItemAliases"                   "deathscythe"
+    "ItemRequiresCharges"           "0"
+    "ItemDisplayCharges"            "0"
+    "ItemPermanent"                 "1"
+    "ItemInitialCharges"            "0"
+	"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+	"precache"
+	{
+	
+		"particle" "particles/items/deathscythe_attack.vpcf"
+		"soundfile"	"soundevents/game_sounds_items.vsndevts"
+	
+	}
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_intelligence" "10"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_strength"	"10"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_damage"		"85"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_attack_speed" "20"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"bonus_mana_regen"	"0.85"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"percent_damage" "16" // percentage
+		}
+		"07"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"slow" 				"100" // percentage
+		}
+		"08"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"slow_duration" 	"1.75"
+		}
+	}
+}

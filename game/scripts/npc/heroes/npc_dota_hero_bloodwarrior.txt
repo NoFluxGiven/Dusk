@@ -1,7 +1,11 @@
-"npc_dota_hero_bloodwarrior"
+"npc_dota_hero_bloodseeker"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_bloodseeker"
+	//"override_hero"			"npc_dota_hero_bloodseeker"
+	"HeroSelectSoundEffect"	"Bloodwarrior.BloodMadness"
+	"Role"					"Initiator,Carry"
+	"Rolelevels"			"1,2"
+	"Complexity"			"2"
 	"Ability1"				"bloodwarrior_blood_rain" // Bloodwarrior targets an area.
 	// After a short delay, blood rains upon it, slowing and damaging enemies.
 	// Enemies affected by the Blood Rain grant Lifesteal when attacked by Bloodwarrior.
@@ -22,13 +26,14 @@
 	// Deals 4/6/8/10% of his current Health as bonus Magical damage and prevents healing for 4s.
 	// 15% chance.
 	// 2s internal cooldown.
-	"Ability4"				"bloodwarrior_blood_madness"
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"bloodwarrior_blood_madness"
 	// The Bloodwarrior consumes a small portion of his maximum Health to gain bonus movespeed, attackspeed
 	// damage, and Lifesteal for a short time.
 	// Consumes 25% of his Maximum Health pool to grant 20/40/60% movespeed, 40/80/120 attack speed,
 	// 30/60/90 damage, and 75% Lifesteal for 5s.
 	// Killing an enemy Hero adds 3/4/5s to the Duration.
-	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -54,9 +59,9 @@
 	"AttributeBaseStrength"		"22"										// Base strength
 	"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"19"										// Base intelligence
-	"AttributeIntelligenceGain"	"2.3"										// Intelligence bonus per level.
+	"AttributeIntelligenceGain"	"1.2"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"21"										// Base agility
-	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
+	"AttributeAgilityGain"		"1.9"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.
@@ -70,9 +75,9 @@
 	"MovementTurnRate"			"0.7"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	"VisionDaytimeRange"		"1800"									// Range of vision in the day time.

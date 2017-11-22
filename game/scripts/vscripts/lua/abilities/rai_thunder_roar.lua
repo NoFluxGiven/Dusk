@@ -18,9 +18,9 @@ function modifier_thunder_roar:OnCreated()
 		local bolts = self:GetAbility():GetSpecialValueFor("bolts")
 		local duration = self:GetAbility():GetSpecialValueFor("duration")
 
-		local t_bolts_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_rai_5") or 0
+		-- local t_bolts_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_rai_5") or 0
 
-		bolts = bolts+t_bolts_bonus
+		bolts = bolts
 
 		local amt = duration/bolts
 
@@ -61,6 +61,8 @@ function modifier_thunder_roar:OnIntervalThink()
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 		local damage = self:GetAbility():GetSpecialValueFor("damage")
 		local bolt_radius = self:GetAbility():GetSpecialValueFor("bolt_radius")
+		local t_stun_bonus = self:GetParent():FetchTalent("special_bonus_rai_5") or 0
+		local ministun = self:GetAbility():GetSpecialValueFor("ministun") + t_stun_bonus
 
 		if bolt_radius == 0 then bolt_radius = 225 end
 
@@ -85,6 +87,7 @@ function modifier_thunder_roar:OnIntervalThink()
 		local vloc = v:GetAbsOrigin()
 
 		self:GetAbility():InflictDamage(v,self:GetParent(),damage,DAMAGE_TYPE_MAGICAL)
+		v:AddNewModifier(self:GetParent(), nil, "modifier_stunned", {Duration=ministun})
 
 		v:EmitSound("Hero_Zuus.LightningBolt.Righteous") --[[Returns:void
 		 
@@ -94,7 +97,7 @@ function modifier_thunder_roar:OnIntervalThink()
 
 		for k,vvv in pairs(t2) do
 			if vvv ~= v then
-				self:GetAbility():InflictDamage(vvv,self:GetParent(),damage*0.4,DAMAGE_TYPE_MAGICAL)
+				self:GetAbility():InflictDamage(vvv,self:GetParent(),damage*0.5,DAMAGE_TYPE_MAGICAL)
 			end
 		end
 

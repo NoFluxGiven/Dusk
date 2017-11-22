@@ -1,15 +1,20 @@
-"npc_dota_hero_astaroth"
+"npc_dota_hero_antimage"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_antimage"
+	//"override_hero"			"npc_dota_hero_antimage"
+	"HeroSelectSoundEffect"	"Astaroth.B3"
+	"Role"					"Carry,Nuker"
+	"Rolelevels"			"3,1"
+	"Complexity"			"2"
 	"Ability1"				"astaroth_overwhelm" // The Deathgod forces energies into the target creep or hero, which causes it to explode after a short duration, dealing Magical damage to
 	// surrounding enemies.  The main target takes double the damage from this ability, unless it is a Hero, in which case it takes half damage to itself if it is an ally, and deals half
 	// damage to units around it if it's an enemy.
 	"Ability2"				"astaroth_pain_curse" // Astaroth afflicts the target enemy with a curse, causing them to take 10/20/30/40% of the damage he deals with his attacks.
 	"Ability3"				"astaroth_deathmark" // Astaroth's strikes mark the target for death.  After a number of consecutive blows, they are stunned and take bonus damage.
-	"Ability4"				"astaroth_erase" // Calling upon the power of the abyssal realm, Astaroth causes the target enemy to lose Mana over time.  If their Mana reaches 0
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"astaroth_erase" // Calling upon the power of the abyssal realm, Astaroth causes the target enemy to lose Mana over time.  If their Mana reaches 0
 	// they take massive damage and are stunned.
-	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -50,9 +55,9 @@
 	"MovementTurnRate"			"1.0"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 

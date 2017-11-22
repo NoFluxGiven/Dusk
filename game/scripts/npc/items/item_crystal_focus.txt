@@ -1,0 +1,89 @@
+//=================================================================================================================
+// Crystal Focus
+//=================================================================================================================
+"item_crystal_focus"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"lua/items/item_crystal_focus"
+	"ID"							"3035"  //Valve's version of this item uses the ID "39".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"Model"							"models/props_gameplay/clarity.mdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_crystal_focus"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"              "0"
+	"AbilityCooldown"				"120"
+	"AbilityManaCost"				"225"
+	"AbilityCastRange"				"0"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"                      "5175"
+    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;hard_to_tag"
+    "ItemQuality"                   "epic"
+    "ItemAliases"                   "crystal_focus"
+    "ItemRequiresCharges"           "0"
+    "ItemDisplayCharges"            "0"
+    "ItemPermanent"                 "1"
+    "ItemInitialCharges"            "0"
+	"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+	"precache"
+	{
+	
+		"particle" "particles/items/crystal_focus_prismancy.vpcf"
+		"soundfile"	"soundevents/game_sounds_items.vsndevts"
+	
+	}
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_intelligence" "15"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_cast_range"	"250"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_mana_total"	"200"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_spell_amp"	"10"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"bonus_mana_regen"	"2.00"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"bonus_health_regen" "4.00"
+		}
+		"07"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration" 			"14.00"
+		}
+		"08"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"mana_percentage" 	"70"
+		}
+	}
+}

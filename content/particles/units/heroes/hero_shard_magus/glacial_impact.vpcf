@@ -20,9 +20,6 @@
 	m_Operators = 
 	[
 		{
-			_class = "C_OP_FadeAndKill"
-		},
-		{
 			_class = "C_OP_BasicMovement"
 			m_fDrag = 0.4
 		},
@@ -41,6 +38,17 @@
 			m_flEndTime = 0.4
 			m_flStartScale = 0.0
 			m_flBias = 0.9
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_LerpScalar"
+			m_flOutput = 0.0
+			m_flStartTime = 0.5
+		},
+		{
+			_class = "C_OP_Decay"
 		},
 	]
 	m_Renderers = 
@@ -68,8 +76,8 @@
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 1.0
-			m_fLifetimeMax = 1.0
+			m_fLifetimeMin = 0.5
+			m_fLifetimeMax = 0.5
 		},
 		{
 			_class = "C_INIT_VelocityRandom"
@@ -93,16 +101,15 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin = [ 0.0, 0.0, -125.0 ]
-			m_OffsetMax = [ 0.0, 0.0, -250.0 ]
-			m_bDisableOperator = true
+			m_OffsetMin = [ 0.0, 0.0, 125.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 125.0 ]
 		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 4
+			m_nParticlesToEmit = 2
 		},
 	]
 	m_Children = 

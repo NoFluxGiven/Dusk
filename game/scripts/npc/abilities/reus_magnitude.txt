@@ -2,7 +2,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/reus_magnitude"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"				   
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
@@ -33,10 +34,6 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"45"
 	
-	// Damage.
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"50 60 70 80"
-	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"120"
@@ -48,17 +45,18 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"				"900"
+			"radius"				"800"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"quake_interval"		"3.00"
+			"LinkedSpecialBonus"	"special_bonus_reus_4"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"root_time"				"1.2 1.4 1.6 1.8"
+			"slow_duration"			"1.0 1.2 1.4 1.6"
 		}
 		"04"
 		{
@@ -68,110 +66,19 @@
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"move_slow"				"-40 -60 -80 -100"
+			"slow"					"70"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"attack_slow"			"-30 -60 -90 -120"
+			"damage"				"50 65 80 95"
+			"LinkedSpecialBonus"	"special_bonus_reus_1"
 		}
 		"07"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"true_duration"			"13.6 13.8 14.0 14.2"
+			"var_type"				"FIELD_INTEGER"
+			"ally_slow"				"25"
 		}
 				
-	}
-
-	"OnAbilityPhaseStart"
-	{
-		"FireSound"
-		{
-			"EffectName"	"Hero_Earthshaker.Whoosh"
-			"Target" 		"CASTER"
-		}
-	}
-	
-	"OnSpellStart"
-	{
-		"CreateThinker"
-		{
-			"ModifierName"	"modifier_magnitude"
-			"Target" 		"CASTER"
-		}
-	}
-	"Modifiers"
-	{
-		"modifier_magnitude"
-		{
-			"Passive"			"0"
-			"IsHidden"			"1"
-			"IsDebuff"			"0"
-			"Duration"			"%true_duration"
-
-			"OnCreated"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/reus_abilities.lua"
-					"Function"		"reus_magnitude_start"
-					"radius"		"%radius"
-				}
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/reus_abilities.lua"
-					"Function"		"reus_magnitude_quake_activate"
-					"radius"		"%radius"
-					"root_time"		"%root_time"
-				}
-			}	
-			"ThinkInterval"  "%quake_interval"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/reus_abilities.lua"
-					"Function"		"reus_magnitude_quake_activate"
-					"radius"		"%radius"
-					"root_time"		"%root_time"
-				}
-			}
-		
-		}
-		"modifier_magnitude_root"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-			"Duration"			"%root_time"
-		
-			"OnCreated"
-			{
-				"Damage"
-				{
-					"Target"		"TARGET"
-					"Type"			"DAMAGE_TYPE_MAGICAL"
-					"Damage"		"%AbilityDamage"
-				}
-			}
-
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_slow"
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_slow"
-			}
-		}
-		"modifier_magnitude_slow"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-			"Duration"			"%root_time"
-
-			"Properties"
-			{
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-30"
-			}
-		}
 	}
 }

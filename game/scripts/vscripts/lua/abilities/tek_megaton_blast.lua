@@ -63,16 +63,27 @@ end
 
 modifier_megaton_blast = class({})
 
+function modifier_megaton_blast:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
 function modifier_megaton_blast:OnDestroy()
 	if IsServer() then
 		local caster = self.info.Source
 		local target = self.info.Target
 
+		local max_range = 4000
+
 		ScreenShake(caster:GetAbsOrigin(), 100, 8, 0.5, 2400, 0, true)
-	  	local projectile = ProjectileManager:CreateTrackingProjectile(self.info)
-	  	caster:EmitSound("Tek.MegatonBlast.Fire")
-	  	self:GetAbility():CreateVisibilityNode(target:GetAbsOrigin(), 750, 4.0) --[[Returns:void
-	  	No Description Set
-	  	]]
+
+		-- if target:GetRangeToUnit(caster) < max_range then
+		  	local projectile = ProjectileManager:CreateTrackingProjectile(self.info)
+		  	caster:EmitSound("Tek.MegatonBlast.Fire")
+		  	self:GetAbility():CreateVisibilityNode(target:GetAbsOrigin(), 750, 4.0) --[[Returns:void
+		  	No Description Set
+		  	]]
+	  	-- else
+	  		-- caster:EmitSound("Tek.MegatonBlast.Fizzle")
+	  	-- end
   	end
 end

@@ -78,5 +78,24 @@
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_phantom/phantom_shadowstep2_bk.vpcf"
 		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_phantom/phantom_shadowstep2_dist2.vpcf"
+			m_bEndCap = true
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
 	]
 }

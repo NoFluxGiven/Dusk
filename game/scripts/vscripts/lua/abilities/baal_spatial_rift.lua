@@ -42,8 +42,7 @@ function baal_spatial_rift:OnChannelFinish(interrupted)
 
 		damage = damage+bonus
 
-		ability:SetHidden(false)
-		self:SetHidden(true)
+		caster:SwapAbilities( "baal_spatial_rift", "baal_port_out", false, true )
 
 		if caster.spatial_rift_unit == nil then self:EndCooldown() self:RefundManaCost() return end
 
@@ -86,13 +85,16 @@ function baal_spatial_rift:EndRift()
 	local caster = self:GetCaster()
 	local ability = caster:FindAbilityByName("baal_port_out")
 
-	self:SetHidden(false)
-	ability:SetHidden(true)
+	if caster.spatial_rift_unit then
 
-	if caster.spatial_rift_particle then ParticleManager:DestroyParticle(caster.spatial_rift_particle,true) end
-	if caster.spatial_rift_start_particle then ParticleManager:DestroyParticle(caster.spatial_rift_start_particle,true) end
-	if caster.spatial_rift_unit then caster.spatial_rift_unit:ForceKill(false) end
-	caster.spatial_rift_unit = nil
+		caster:SwapAbilities( "baal_spatial_rift", "baal_port_out", true, false )
+
+		if caster.spatial_rift_particle then ParticleManager:DestroyParticle(caster.spatial_rift_particle,true) end
+		if caster.spatial_rift_start_particle then ParticleManager:DestroyParticle(caster.spatial_rift_start_particle,true) end
+		if caster.spatial_rift_unit then caster.spatial_rift_unit:ForceKill(false) end
+		caster.spatial_rift_unit = nil
+
+	end
 end
 
 modifier_spatial_rift_slow = class({})

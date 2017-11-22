@@ -19,7 +19,7 @@
 			
 			"Ability1"					"backdoor_protection_in_base"			// Ability 1.
 			"Ability2"					"ancient_defensive_wave"			// Ability 2.
-			"Ability3"					"ancient_last_resort"			// Ability 3.
+			"Ability3"					""			// Ability 3.
 			"Ability4"					""			// Ability 4.
 			"Ability5"					""			// Ability 5.
 			"Ability6"					""			// Ability 6 - Extra.
@@ -163,7 +163,7 @@
 			"StatusHealth"				"1500"		// Base health.
 			"StatusHealthRegen"			"5"		// Health regeneration rate.
 			"StatusMana"				"0"			// Base mana.
-			"StatusManaRegen"			"0"			// Mana regeneration rate.
+			"StatusManaRegen"			"1"			// Mana regeneration rate.
 	
 			// Team
 			//----------------------------------------------------------------
@@ -253,7 +253,7 @@
 			"StatusHealth"				"1500"		// Base health.
 			"StatusHealthRegen"			"5"		// Health regeneration rate.
 			"StatusMana"				"0"			// Base mana.
-			"StatusManaRegen"			"0"			// Mana regeneration rate.
+			"StatusManaRegen"			"1"			// Mana regeneration rate.
 	
 			// Team
 			//----------------------------------------------------------------
@@ -288,7 +288,7 @@
 			
 			"Ability1"					"backdoor_protection_in_base"			// Ability 1.
 			"Ability2"					"ancient_defensive_wave"			// Ability 2.
-			"Ability3"					"ancient_last_resort"			// Ability 3.
+			"Ability3"					""			// Ability 3.
 			"Ability4"					""			// Ability 4.
 			"Ability5"					""			// Ability 5.
 			"Ability6"					""			// Ability 6 - Extra.
@@ -421,7 +421,7 @@
 			"StatusHealth"				"12000"		// Base health.
 			"StatusHealthRegen"			"20"		// Health regeneration rate.
 			"StatusMana"				"0"		// Base mana.
-			"StatusManaRegen"			"0"		// Mana regeneration rate.
+			"StatusManaRegen"			"1"		// Mana regeneration rate.
 	
 			// Team
 			//----------------------------------------------------------------
@@ -695,9 +695,9 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"175"		// Base health.
-		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"0"		// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"1"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -777,9 +777,9 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"240"		// Base health.
-		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"0"		// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"1"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -859,9 +859,9 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"350"		// Base health.
-		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"0"		// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"1"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -941,9 +941,9 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"450"		// Base health.
-		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"0"		// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"1"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -1023,9 +1023,9 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"325"		// Base health.
-		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"0"		// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"1"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -1105,9 +1105,9 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"1"		// Base health.
-		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"1"		// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"1"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -1279,9 +1279,9 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"6000"		// Base health.
-		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"250"		// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"1"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -1374,7 +1374,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"500"		// Base health.
-		"StatusHealthRegen"			"0.0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"200"		// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
@@ -1464,9 +1464,9 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"10000"		// Base health.
-		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"10000"		// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"1"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -1547,7 +1547,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"500"		// Base health.
-		"StatusHealthRegen"			"0.0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"200"		// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
@@ -1619,7 +1619,7 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"20"		// Damage range min.
 		"AttackDamageMax"			"30"		// Damage range max.
-		"AttackRate"				"1.4"		// Speed of attack.
+		"AttackRate"				"1.0"		// Speed of attack.
 		"AttackAnimationPoint"		"0.2"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
 		"AttackRange"				"700"		// Range within a target can be attacked.
@@ -1669,7 +1669,7 @@
 		"Creature"
 		{
 			"HPGain"                    "50"
-			"DamageGain"                "2"
+			"DamageGain"                "3"
 			"ArmorGain"                 "0.40"
 			"MagicResistGain"           "1"
 			"MoveSpeedGain"             "0"
@@ -1746,9 +1746,9 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"135"		// Base health.
-		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"100"		// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"1"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -1757,8 +1757,8 @@
 	
 		// Team
 		//----------------------------------------------------------------
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 		//Inventory
@@ -1768,11 +1768,11 @@
 	
 		"Creature"
 		{
-			"HPGain"                    "20"
-			"DamageGain"                "4"
-			"ArmorGain"                 "0.2"
+			"HPGain"                    "15"
+			"DamageGain"                "3"
+			"ArmorGain"                 "0.3"
 			"MagicResistGain"           "0"
-			"MoveSpeedGain"             "0"
+			"MoveSpeedGain"             "10"
 			"BountyGain"                "0"
 			"XPGain"                    "0"
 	
@@ -1822,12 +1822,12 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"24"		// Damage range min.
-		"AttackDamageMax"			"24"		// Damage range max.	
+		"AttackDamageMin"			"14"		// Damage range min.
+		"AttackDamageMax"			"14"		// Damage range max.	
 		"AttackRate"				"1.2"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1100"		// Range within a target can be acquired.
-		"AttackRange"				"125"		// Range within a target can be attacked.
+		"AttackRange"				"150"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_drow"			// Particle system model for projectile.
 		"ProjectileSpeed"			"800"			// Speed of projectile.
 	
@@ -1851,9 +1851,9 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"225"		// Base health.
-		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"100"		// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"1"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -1862,8 +1862,8 @@
 	
 		// Team
 		//----------------------------------------------------------------
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 		//Inventory
@@ -1873,11 +1873,11 @@
 	
 		"Creature"
 		{
-			"HPGain"                    "25"
-			"DamageGain"                "4"
+			"HPGain"                    "20"
+			"DamageGain"                "3"
 			"ArmorGain"                 "0.5"
 			"MagicResistGain"           "0"
-			"MoveSpeedGain"             "1"
+			"MoveSpeedGain"             "4"
 			"BountyGain"                "0"
 			"XPGain"                    "0"
 	
@@ -1955,7 +1955,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"500"		// Base health.
-		"StatusHealthRegen"			"0.0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"200"		// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
@@ -2047,7 +2047,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"500"		// Base health.
-		"StatusHealthRegen"			"0.0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"200"		// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
@@ -2141,7 +2141,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"160"		// Base health.
-		"StatusHealthRegen"			"0.0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"200"		// Base mana.
 		"StatusManaRegen"			"10"		// Mana regeneration rate.
 		
@@ -2510,9 +2510,9 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"1"			// Base health.
-		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"			// Mana regeneration rate.
+		"StatusManaRegen"			"1"			// Mana regeneration rate.
 	
 		// Team
 		//----------------------------------------------------------------
@@ -2692,9 +2692,9 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"1"			// Base health.
-		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"			// Mana regeneration rate.
+		"StatusManaRegen"			"1"			// Mana regeneration rate.
 	
 		// Team
 		//----------------------------------------------------------------

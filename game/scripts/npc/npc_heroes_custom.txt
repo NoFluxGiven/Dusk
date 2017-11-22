@@ -1,21 +1,28 @@
 "DOTAHeroes"
 {
-	"npc_dota_hero_aether"
+	"npc_dota_hero_wisp"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_wisp"
+		//"override_hero"			"npc_dota_hero_wisp"
+	
+		"Role"					"Escape,Nuker,Support"
+		"Rolelevels"			"2,1,2"
+		"Complexity"			"3"
+	
+		"NameAliases"			"aether"
+	
 		"Ability1"				"aether_teleport" 
 		"Ability2"				"aether_disrupt" 
 		"Ability3"				"aether_monolith"
-		"Ability4"				"aether_reality_shift"
-		"Ability5"				""
-		"Ability6"				""
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"aether_reality_shift"
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
 		"Ability10"				"special_bonus_cooldown_reduction_8" // 
-		"Ability11"				"special_bonus_hp_200" //
-		"Ability12"				"special_bonus_movement_speed_30" //
+		"Ability11"				"special_bonus_hp_200" // 
+		"Ability12"				"special_bonus_movement_speed_30" // 
 		"Ability13"				"special_bonus_aether_1" // +100 Disrupt Damage
 		"Ability14"				"special_bonus_hp_regen_25" // 
 		"Ability15"				"special_bonus_aether_2" // -50% Teleport Delay
@@ -30,7 +37,7 @@
 		"AttackDamageMin"			"28"										// Damage range min.
 		"AttackDamageMax"			"29"										// Damage range max.
 	
-		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
 		"AttributeBaseStrength"		"14"										// Base strength
 		"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
 		"AttributeBaseIntelligence"	"20"										// Base intelligence
@@ -50,25 +57,30 @@
 		"MovementTurnRate"			"0.8"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 	
 	}
-	"npc_dota_hero_alexander"
+	"npc_dota_hero_dragon_knight"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_dragon_knight"
+		//"override_hero"			"npc_dota_hero_dragon_knight"
+	
+		"HeroSelectSoundEffect"	"Alexander.Godfall"
+		"Role"					"Durable,Carry"
+		"Rolelevels"			"2,2"
+		"Complexity"			"1"
 		"Ability1"				"alexander_soulseal" // Alexander uses the Godslayer to seal away a target's soul, rendering them unable to cast spells for a short time.  Lasts 3/4/5/6s.
 		"Ability2"				"alexander_elandras_blessing" // Alexander gains bonus Armor and Health Regen as he loses health.
 		"Ability3"				"alexander_radiant" // Alexander is bathed in an unearthly light, a magick used oft by Paladins.  Causes opponents to miss attacks against him, as he rapidly
 		// recovers health over time.  Recovers 20/40/60/80 health per second for 5s, with a 15/30/45/60% miss chance to all nearby enemies in a 325 radius.
-		"Ability4"				"alexander_godfall" // The Godslayer thirsts for blood, imbued with incredible power.  After a short channel time, Alexander's next attack deals massive bonus
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"alexander_godfall" // The Godslayer thirsts for blood, imbued with incredible power.  After a short channel time, Alexander's next attack deals massive bonus
 		// Pure damage through Spell Immunity in an area around him.  The main target receives the brunt of the damage.
-		"Ability5"				""
-		"Ability6"				""
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -111,23 +123,27 @@
 		//"StatusHealth"			"981"									// Base health.
 		"StatusHealthRegen"			"2"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	
 	}
-	"npc_dota_hero_alroth"
+	"npc_dota_hero_doom_bringer"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_doom_bringer"
+		//"override_hero"			"npc_dota_hero_doom_bringer"
+		"HeroSelectSoundEffect"	"Alroth.EnergyBurst"
+		"Role"					"Nuker,Durable"
+		"Rolelevels"			"2,1"
+		"Complexity"			"2"
 		"Ability1"				"alroth_raze" // Creates a maelstrom that dissipates as quickly as it forms, dealing large Magical damage to enemies caught in it.
 		"Ability2"				"alroth_energy_burst" // Alroth damages himself to summon a blast of energy that deals damage to nearby enemies and slows.  Reduces Alroth's Armor and Magic Resistance temporarily.
 		"Ability3"				"alroth_shatter" // Grants a guaranteed critical strike to Alroth's attacks that deals bonus Magical damage and reduces their Magic Resistance temporarily.
 		//"Ability4"			"alroth_sun_burst_of_the_seven_heavens_the_five_lambs_dark_dog_turn_your_head_and_be_burned_three_headed_dragon_of_the_western_seas_evaporate_bakudo_no_san_japanesey_weeb_sun_attack_thing"
-		"Ability4"				"alroth_solwave" // With a dark incantation, Alroth gathers destructive energies into a cloak to surround himself with, dealing massive damage over time to nearby enemies. He takes half of the damage himself.
+		"Ability4"				"alroth_model_change"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"alroth_solwave" // With a dark incantation, Alroth gathers destructive energies into a cloak to surround himself with, dealing massive damage over time to nearby enemies. He takes half of the damage himself.
 		//Lasts 4s.
-		"Ability5"				"alroth_model_change"
-		"Ability6"				""
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -137,8 +153,8 @@
 		"Ability13"				"special_bonus_spell_amplify_10" // 
 		"Ability14"				"special_bonus_alroth_2" // -1s Energy Burst Cooldown
 		"Ability15"				"special_bonus_alroth_3" // Raze 3% Max HP DPS
-		"Ability16"				"special_bonus_spell_lifesteal_20" //
-		"Ability17"				"special_bonus_alroth_4" // +2s Solwave Duration
+		"Ability16"				"special_bonus_spell_lifesteal_60" //
+		"Ability17"				"special_bonus_alroth_4" // -15s Raze Cooldown
 	
 		"ArmorPhysical"				"0"									// Physical protection.
 		"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -171,9 +187,9 @@
 		"MovementTurnRate"			"0.5"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
@@ -226,7 +242,7 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		"StatusHealth"				"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		"StatusMana"				"387"										// Base mana.
 		"StatusManaRegen"			"99.96"									// Mana regeneration rate.
 	
@@ -287,9 +303,9 @@
 		"MovementTurnRate"			"0.7"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 		"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
@@ -349,25 +365,30 @@
 		"MovementTurnRate"			"0.8"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 	
 	}
-	"npc_dota_hero_astaroth"
+	"npc_dota_hero_antimage"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_antimage"
+		//"override_hero"			"npc_dota_hero_antimage"
+		"HeroSelectSoundEffect"	"Astaroth.B3"
+		"Role"					"Carry,Nuker"
+		"Rolelevels"			"3,1"
+		"Complexity"			"2"
 		"Ability1"				"astaroth_overwhelm" // The Deathgod forces energies into the target creep or hero, which causes it to explode after a short duration, dealing Magical damage to
 		// surrounding enemies.  The main target takes double the damage from this ability, unless it is a Hero, in which case it takes half damage to itself if it is an ally, and deals half
 		// damage to units around it if it's an enemy.
 		"Ability2"				"astaroth_pain_curse" // Astaroth afflicts the target enemy with a curse, causing them to take 10/20/30/40% of the damage he deals with his attacks.
 		"Ability3"				"astaroth_deathmark" // Astaroth's strikes mark the target for death.  After a number of consecutive blows, they are stunned and take bonus damage.
-		"Ability4"				"astaroth_erase" // Calling upon the power of the abyssal realm, Astaroth causes the target enemy to lose Mana over time.  If their Mana reaches 0
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"astaroth_erase" // Calling upon the power of the abyssal realm, Astaroth causes the target enemy to lose Mana over time.  If their Mana reaches 0
 		// they take massive damage and are stunned.
-		"Ability6"				""
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -408,25 +429,30 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	
 	}
-	"npc_dota_hero_baal"
+	"npc_dota_hero_arc_warden"
 	{
 		"AbilityLayout" 		"5"
-		"override_hero"			"npc_dota_hero_arc_warden"
+		//"override_hero"			"npc_dota_hero_arc_warden"
+		"HeroSelectSoundEffect"	"Baal.Otherworld.Enter"
+		"Role"					"Carry,Escape,Disabler"
+		"Rolelevels"			"2,2,1"
+		"Complexity"			"3"
 		"Ability1"				"baal_st_anchor" // Anchors the target enemy to a location.  When they move too far away from their location, they are stunned, take damage, and teleported to it.
 		"Ability2"				"baal_spatial_rift" // After a 1 second channel time, creates a rift at the target location that deals damage and slows drastically.  The rift lasts for 6s.
-		"Ability3"				"baal_port_out" // Instantly teleports Baal and any Axial Seals to the active Rift, consuming it.
-		"Ability4"				"baal_compression_sphere" // Creates a hemispherical area wherein Baal's allies can move freely, but his enemies are slowed the longer they remain within it. Slows movespeed, attack speed and turnrate.
-		"Ability5"				"baal_fire" // Fires the compressed target at a point.
+		"Ability3"				"baal_compression_sphere"
+		"Ability4"				"generic_hidden" // Instantly teleports Baal and any Axial Seals to the active Rift, consuming it.
+		"Ability5"				"generic_hidden"
 		"Ability6"				"baal_superposition2" // Baal enters a state of instability for a short time, becoming untargetable and immune to Physical damage.  Enemies can still see
 		// his location.  Disjoints projectiles on use.  Gives phased movement to Baal.	
-		"Ability8"				"" // Passive.  Upon spawning, the enemy's Ancient explodes, and you win the game.
+		"Ability7"				"baal_port_out" // Passive.  Upon spawning, the enemy's Ancient explodes, and you win the game.
+		"Ability8"				""
 		"Ability9"				""
 		"Ability10"				"special_bonus_baal_1" // +75 Spatial Rift Damage
 		"Ability11"				"special_bonus_baal_2" // -150 Spatiotemporal Anchor Radius
@@ -467,23 +493,26 @@
 		"MovementTurnRate"			"0.7"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	
 	}
-	"npc_dota_hero_bahamut"
+	"npc_dota_hero_terrorblade"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_terrorblade"
+		//"override_hero"			"npc_dota_hero_terrorblade"
+		"Role"					"Carry,Nuker"
+		"Rolelevels"			"2,2"
+		"Complexity"			"2"
 		"Ability1"				"bahamut_desolation" // Deals large damage to a target enemy, and then damage over time to close enemies.
 		"Ability2"				"bahamut_fulmination" // Each attack made by Bahamut applies a stack of Fulmination to enemies.  After he ceases attacking, the stacks detonate, dealing Magical damage based on the amount accumulated.
 		"Ability3"				"bahamut_reckoning_aura" // Bahamut amplifies damage taken by nearby enemies.
-		"Ability4"				"bahamut_mega_flare" // Bahamut charges, taking reduced damage, then unleashes a beam of incredible intensity, dealing extreme Pure damage that pierces Magic Immunity.
-		"Ability5"				"bahamut_hidden_transform"
-		"Ability6"				""
+		"Ability4"				"bahamut_hidden_transform"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"bahamut_mega_flare" // Bahamut charges, taking reduced damage, then unleashes a beam of incredible intensity, dealing extreme Pure damage that pierces Magic Immunity.
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -525,17 +554,21 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	
 	}
-	"npc_dota_hero_bloodwarrior"
+	"npc_dota_hero_bloodseeker"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_bloodseeker"
+		//"override_hero"			"npc_dota_hero_bloodseeker"
+		"HeroSelectSoundEffect"	"Bloodwarrior.BloodMadness"
+		"Role"					"Initiator,Carry"
+		"Rolelevels"			"1,2"
+		"Complexity"			"2"
 		"Ability1"				"bloodwarrior_blood_rain" // Bloodwarrior targets an area.
 		// After a short delay, blood rains upon it, slowing and damaging enemies.
 		// Enemies affected by the Blood Rain grant Lifesteal when attacked by Bloodwarrior.
@@ -556,13 +589,14 @@
 		// Deals 4/6/8/10% of his current Health as bonus Magical damage and prevents healing for 4s.
 		// 15% chance.
 		// 2s internal cooldown.
-		"Ability4"				"bloodwarrior_blood_madness"
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"bloodwarrior_blood_madness"
 		// The Bloodwarrior consumes a small portion of his maximum Health to gain bonus movespeed, attackspeed
 		// damage, and Lifesteal for a short time.
 		// Consumes 25% of his Maximum Health pool to grant 20/40/60% movespeed, 40/80/120 attack speed,
 		// 30/60/90 damage, and 75% Lifesteal for 5s.
 		// Killing an enemy Hero adds 3/4/5s to the Duration.
-		"Ability6"				""
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -588,9 +622,9 @@
 		"AttributeBaseStrength"		"22"										// Base strength
 		"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
 		"AttributeBaseIntelligence"	"19"										// Base intelligence
-		"AttributeIntelligenceGain"	"2.3"										// Intelligence bonus per level.
+		"AttributeIntelligenceGain"	"1.2"										// Intelligence bonus per level.
 		"AttributeBaseAgility"		"21"										// Base agility
-		"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
+		"AttributeAgilityGain"		"1.9"										// Agility bonus per level.
 	
 		//"BountyXP"					"0"									// Experience earn.
 		//"BountyGoldMin"				"0"										// Gold earned min.
@@ -604,9 +638,9 @@
 		"MovementTurnRate"			"0.7"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 		"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
@@ -639,7 +673,7 @@
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackRange"				"125"
+		"AttackRange"				"150"
 		"AttackRate"				"1.5"
 		"AttackDamageMin"			"27"										// Damage range min.
 		"AttackDamageMax"			"31"										// Damage range max.
@@ -664,9 +698,9 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
@@ -720,9 +754,9 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
@@ -791,16 +825,20 @@
 		"MovementTurnRate"			"0.8"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_elena"
+	"npc_dota_hero_vengefulspirit"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_vengefulspirit"
+		//"override_hero"			"npc_dota_hero_vengefulspirit"
+		"HeroSelectSoundEffect"	"Elena.Starlight"
+		"Role"					"Support,Nuker"
+		"Rolelevels"			"3,2"
+		"Complexity"			"1"
 		"Ability1"				"elena_guardian_bubble" // Forms a bubble around the target ally,
 		// causing damage they take to not exceed a cap (before reductions).
 		// Prevents damage from exceeding 100.
@@ -816,13 +854,13 @@
 		// she casts a Spell.
 		// In a 700 radius, grants 5/10/15/20 regeneration for 3s.
 		// The regeneration stacks fully, and refreshes the buff duration when applied.
-		"Ability4"				"elena_bladebreaker" // Elena enchants nearby enemies' weapons with a powerful hex.
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"elena_bladebreaker" // Elena enchants nearby enemies' weapons with a powerful hex.
 		// When they make an attack, they take 50+40/60/80% of their attack damage as Pure damage,
 		// and are disarmed for 1.3s.
 		// If the target is disarmed, the debuff pauses.
 		// Lasts 5s.
-		"Ability5"				""
-		"Ability6"				""
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -863,16 +901,20 @@
 		"MovementTurnRate"			"0.8"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 	}
-	"npc_dota_hero_erra"
+	"npc_dota_hero_necrolyte"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_necrolyte"
+		//"override_hero"			"npc_dota_hero_necrolyte"
+		"HeroSelectSoundEffect"	"Erra.MorbidBlade.Pure"
+		"Role"					"Nuker,Durable"
+		"Rolelevels"			"2,3"
+		"Complexity"			"1"
 		"Ability1"				"erra_morbid_blade" // Erra strikes a target area with the wind of the Black Tide, slicing through enemies in it. Deals Physical damage, but if any units hit
 		// are at 35% or less Health, it deals Pure damage instead, and its cooldown is halved. Erra gains Health back based on the Health missing from enemy targets. Gains 1/2/3/4% Health
 		// for each target AFTER the damage occurs.
@@ -880,9 +922,10 @@
 		// Health of enemy Heroes, and 2% of the missing Health of creeps at the time. Lasts 12s. 5 enemy Heroes with 50% Health and 650 Max Health would grant 195 damage at Max level.
 		"Ability3"				"erra_grave_guard" // Erra finds it difficult to succumb to death, thanks to a dark enchantment cast upon him many eons ago. When he would die, he
 		// becomes immune to damage for a short time and gains back 25/30/35/40% of his Max Health and Mana over 2/3/4/5s. The ability goes on cooldown after this point.
-		"Ability4"				"erra_deathtouch" // With but a touch, Erra can rip souls asunder, dealing massive Magical damage, then damage over time. Deals 460/580/700 damage immediately,
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"erra_deathtouch" // With but a touch, Erra can rip souls asunder, dealing massive Magical damage, then damage over time. Deals 460/580/700 damage immediately,
 		// then 35/40/45 damage per second for 10s.  
-		"Ability6"				""
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -924,24 +967,28 @@
 		"MovementTurnRate"			"0.5"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 		"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
 	}
-	"npc_dota_hero_fate"
+	"npc_dota_hero_oracle"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_oracle"
+		//"override_hero"			"npc_dota_hero_oracle"
+		"HeroSelectSoundEffect"	"Fate.ChainsOfFate.Start"
+		"Role"					"Support"
+		"Rolelevels"			"3"
+		"Complexity"			"3"
 		"Ability1"				"fate_displace" // Decreases damage the target takes by 30/40/50/60% for 5s, then heals them for 125/150/175/200% of the HP they lost over the next 5s.
 		"Ability2"				"fate_chains_of_fate" // Places a powerful enchantment on the target enemy. When any unit within a large radius takes damage, the enchanted unit receives a portion of that damage as Magical.
 		"Ability3"				"fate_realign" // Fate heals nearby allies and damages nearby enemies.
-		"Ability4"				"fate_ancestral_recall" // After a 2s charge, grants the target ancient knowledge, instantly restoring a percentage of their maximum Health and Mana, purging debuffs, and giving them bonus stats as if they were 8/14/20 levels higher.
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"fate_ancestral_recall" // After a 2s charge, grants the target ancient knowledge, instantly restoring a percentage of their maximum Health and Mana, purging debuffs, and giving them bonus stats as if they were 8/14/20 levels higher.
 		// Lasts 10s.
-		"Ability5"				""
-		"Ability6"				""
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -983,9 +1030,9 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 	}
@@ -1041,16 +1088,20 @@
 		"MovementTurnRate"			"0.5"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_fury"
+	"npc_dota_hero_ursa"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_ursa"
+		//"override_hero"			"npc_dota_hero_ursa"
+		"HeroSelectSoundEffect"	"Fury.Roar"
+		"Role"					"Carry"
+		"Rolelevels"			"3"
+		"Complexity"			"1"
 		"Ability1"				"fury_roar" // Fury unleashes a roar in the target direction, granting him bonus movespeed, damage and attack speed for each unit hit, and slowing and damaging the units affected.
 		// Grants per Hero:
 		// 2/3/4/5% movespeed
@@ -1063,9 +1114,9 @@
 		// Slows by 10/15/20/25% for 4s.
 		"Ability2"				"fury_rend"
 		"Ability3"				"fury_bloodsport"
-		"Ability4"				"fury_berserk"
-		"Ability5"				"" //Automatically levelled to 1 when the character is picked.
-		"Ability6"				""
+		"Ability4"				"generic_hidden" //Automatically levelled to 1 when the character is picked.
+		"Ability5"				"generic_hidden"
+		"Ability6"				"fury_berserk"
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -1107,16 +1158,20 @@
 		"MovementTurnRate"			"0.6"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"950"									// Range of vision at night time.
 	}
-	"npc_dota_hero_gemini"
+	"npc_dota_hero_rubick"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_rubick"
+		//"override_hero"			"npc_dota_hero_rubick"
+		"HeroSelectSoundEffect"	"Voidwalker.VoidalFlare"
+		"Role"					"Support,Disabler,Escape"
+		"Rolelevels"			"2,1,2"
+		"Complexity"			"3"
 		"Ability1"				"gemini_voidal_flare"
 		// The Voidwalker fires a flare of dark energy at the target, damaging and stunning them.
 		// Each time he targets the same enemy, the damage and stun time doubles, up to a maximum.
@@ -1129,7 +1184,8 @@
 		// transports him to the Rune and places the Spell on cooldown. Disjoints projectiles.
 		"Ability4"				"gemini_planar_trickery_activate"
 		// 
-		"Ability5"				"gemini_abyssal_shadow"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"gemini_abyssal_shadow"
 		// The Voidwalker is stalked by a being from a plane he visited long ago.
 		// The being assists him in battle, striking his enemies with powerful attacks.
 		// Each level placed in this ability increases the level of the Shadow and its subabilities.
@@ -1139,14 +1195,13 @@
 		// Each attack the Shadow makes deals bonus Pure damage and reduces the target's Armor and Magic Res.
 		// Vortices
 		// The Shadow's attacks have a small chance to slow enemies in an AoE.
-		"Ability6"				""
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
 		"Ability10"				"special_bonus_all_stats_7"
 		"Ability11"				"special_bonus_intelligence_12"
 		"Ability12"				"special_bonus_gemini_1"
-		"Ability13"				"special_bonus_magic_resistance_30"
+		"Ability13"				"special_bonus_magic_resistance_20"
 		"Ability14"				"special_bonus_gemini_2"
 		"Ability15"				"special_bonus_gemini_3"
 		"Ability16"				"special_bonus_gemini_4"
@@ -1181,23 +1236,28 @@
 		"MovementTurnRate"			"0.7"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"950"									// Range of vision at night time.
 	}
 	
-	"npc_dota_hero_gob_squad"
+	"npc_dota_hero_techies"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_techies"
+		//"override_hero"			"npc_dota_hero_techies"
+	
+		"Role"					"Nuker"
+		"Rolelevels"			"2"
+		"Complexity"			"1"
+		
 		"Ability1"				"gob_squad_rocket_blast"
 		"Ability2"				"gob_squad_kamikaze"	
 		"Ability3"				"gob_squad_whoops"
-		"Ability4"				"gob_squad_clearance_sale"
-		"Ability5"				""
-		"Ability6"				""
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"gob_squad_clearance_sale"
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -1239,74 +1299,25 @@
 		"MovementTurnRate"			"0.6"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
-	
-		"Talents"
-		{
-		    "1" {
-			        "left"
-			        {      
-			            "name" "special_bonus_gob_squad_damage"
-			            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "40"
-			        }
-			        "right"
-			        {       
-			            "name" "special_bonus_gob_squad_mana_regen"
-			            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "2"
-			        }
-		   		}
-		    "2" {
-			        "left"
-			        {      
-			            "name" "special_bonus_gob_squad_mana"
-			            "MODIFIER_PROPERTY_MANA_BONUS" "375"
-			        }
-			        "right"
-			        {       
-			            "name" "special_bonus_gob_squad_exp"
-			            "MODIFIER_PROPERTY_EXP_RATE_BOOST" "60"
-			        }
-		    	}
-		    "3" {
-			        "left"
-			        {      
-			            "name" "special_bonus_gob_squad_rocket_blast"
-			            "v" "50"
-			        }
-			        "right"
-			        {
-			            "name" "special_bonus_gob_squad_kamikaze"
-			            "v" "40"
-			        }
-		    	}
-		    "4" {
-			        "left"
-			        {      
-			            "name" "special_bonus_gob_squad_bat"
-			            "MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT" "1.25"
-			        }
-			        "right"
-			        {       
-			            "name" "special_bonus_gob_squad_whoops"
-			            "v" "2"
-			        }
-		    	}
-		}
 	}
-	"npc_dota_hero_hawkeye"
+	"npc_dota_hero_sniper"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_sniper"
+		//"override_hero"			"npc_dota_hero_sniper"
+		"Role"					"Carry,Escape"
+		"Rolelevels"			"2,1"
+		"Complexity"			"1"
 		"Ability1"				"hawkeye_ricochet"
 		"Ability2"				"hawkeye_snipe"
 		"Ability3"				"hawkeye_hit_n_run"
-		"Ability4"				"hawkeye_detonator_dart"
-		"Ability5"				""
-		"Ability6"				""
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"hawkeye_detonator_dart"
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -1348,9 +1359,9 @@
 		"MovementTurnRate"			"0.7"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 	
@@ -1406,42 +1417,49 @@
 		    	}
 		}
 	}
-	"npc_dota_hero_hero"
+	"npc_dota_hero_tusk"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_tusk"
+		//"override_hero"			"npc_dota_hero_tusk"
+		"HeroSelectSoundEffect"	"Hero.JusticeKick"
+		"Role"					"Escape,Nuker"
+		"Rolelevels"			"2,2"
+		"Complexity"			"1"
 		"Ability1"				"hero_justice_kick" // Hero kicks the target enemy, knocking them away and interrupting them.  Units hit on the way are damaged and slowed.
 		"Ability2"				"hero_hyper_kick"
 		"Ability3"				"hero_freedom_strike" // Hero leaps forward and slams the ground, dealing damage in an AoE.
 		"Ability4"				"hero_heroic_soul" // Hero breaks out of any purgable stun or disable and gains percentage bonus damage on his attacks and abilities for a short time.
-		"Ability5"				"hero_one_punch" // Hero winds up and strikes with an impossibly strong punch, dealing massive damage and knocking the opponent across the map.
-		"Ability6"				"" //Automatically levelled to 1 when the character is picked.
+		"Ability5"				"generic_hidden" //Automatically levelled to 1 when the character is picked.
+		"Ability6"				"hero_one_punch" // Hero winds up and strikes with an impossibly strong punch, dealing large critical damage and knocking them into the atmosphere. After a 1s delay, the unit crashes down to the ground, creating an explosion that damages and stuns enemies.	
+		// 250/275/300% Critical damage.
+		// Upon landing, deals 250/360/470 Magical damage in a 450 AoE, and stuns for 1.0/1.5/2.0s.
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
-		"Ability10"				""
-		"Ability11"				""
-		"Ability12"				""
-		"Ability13"				""
-		"Ability14"				""
-		"Ability15"				""
-		"Ability16"				"attribute_bonus"
+		"Ability10"				"special_bonus_hp_250" // 
+		"Ability11"				"special_bonus_mp_regen_2" // 
+		"Ability12"				"special_bonus_armor_7" //
+		"Ability13"				"special_bonus_attack_damage_30" // 
+		"Ability14"				"special_bonus_hero_1" // +1.25s Heroic Soul Duration
+		"Ability15"				"special_bonus_hero_2" // -2s Freedom Strike Cooldown
+		"Ability16"				"special_bonus_hero_3" // +400 Justice Kick Damage
+		"Ability17"				"special_bonus_hero_4" // +1s ONE PUNCH!! Stun
 	
-		"ArmorPhysical"				"4"									// Physical protection.
+		"ArmorPhysical"				"3"									// Physical protection.
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackRange"				"150"
-		"AttackRate"				"1.6"
+		"AttackRate"				"1.7"
 		"AttackDamageMin"			"30"										// Damage range min.
 		"AttackDamageMax"			"34"										// Damage range max.
 	
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"25"										// Base strength
-		"AttributeStrengthGain"		"2.4"										// Strength bonus per level.
-		"AttributeBaseIntelligence"	"22"										// Base intelligence
-		"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
-		"AttributeBaseAgility"		"20"										// Base agility
+		"AttributeBaseStrength"		"23"										// Base strength
+		"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
+		"AttributeBaseIntelligence"	"16"										// Base intelligence
+		"AttributeIntelligenceGain"	"1.2"										// Intelligence bonus per level.
+		"AttributeBaseAgility"		"19"										// Base agility
 		"AttributeAgilityGain"		"2.15"										// Agility bonus per level.
 	
 		//"BountyXP"					"0"							`		// Experience earn.
@@ -1456,35 +1474,39 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_horror"
+	"npc_dota_hero_night_stalker"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_night_stalker"
+		//"override_hero"			"npc_dota_hero_night_stalker"
+		"Role"					"Initiator,Escape,Disabler"
+		"Rolelevels"			"2,1,2"
+		"Complexity"			"2"
 		"Ability1"				"horror_terrify" // The targeted enemy is slowed and forced to run away from Horror for a short time, taking damage over time over the duration.
 		"Ability2"				"horror_obscure" // Creates an area around Horror where darkness quickly spills out, dealing damage instantly and blinding enemies caught for 2/3/4/5s
 		// after a 0.75s delay. Affected enemies will miss their attacks.
 		"Ability3"				"horror_paranoia" // Horror curses the target unit with insurmountable paranoia. After a 1s delay, they will begin to take damage over time for each allied
 		// unit near them. Lasts 8s. The radius for checking for allied units is 1200. Heroes grant 4/8/12/16 damage per second, creeps grant 1/2/3/4 damage per second. At the end of the
 		// duration, they take bonus damage if there is still a Hero within 1200 units, equal to 125/175/225/275 damage.
-		"Ability4"				"horror_sinister" // When activated, Horror gains vision of all enemies on the map. He may cast a subability to jump to an enemy, damaging them.
-		"Ability5"				""
-		"Ability6"				""
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"horror_sinister" // When activated, Horror gains vision of all enemies on the map. He may cast a subability to jump to an enemy, damaging them.
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
-		"Ability10"				""
-		"Ability11"				""
-		"Ability12"				""
-		"Ability13"				""
-		"Ability14"				""
-		"Ability15"				""
-		"Ability16"				"attribute_bonus"
+		"Ability10"				"special_bonus_attack_speed_20"
+		"Ability11"				"special_bonus_hp_regen_7"
+		"Ability12"				"special_bonus_horror_1" // +125 Terrify Damage
+		"Ability13"				"special_bonus_movement_speed_30"
+		"Ability14"				"special_bonus_mp_regen_10"
+		"Ability15"				"special_bonus_horror_2" // +3s Sinister Duration
+		"Ability16"				"special_bonus_horror_3" // Obscure 1.5s Stun
+		"Ability17"				"special_bonus_horror_4" // x2 Paranoia Damage
 	
 		"ArmorPhysical"				"2"									// Physical protection.
 		"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -1514,16 +1536,20 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"1200"									// Range of vision at night time.
 	}
-	"npc_dota_hero_ironfist"
+	"npc_dota_hero_dark_seer"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_dark_seer"
+		//"override_hero"			"npc_dota_hero_dark_seer"
+		"HeroSelectSoundEffect"	"Ironfist.DragonStance"
+		"Role"					"Nuker,Escape,Initiator"
+		"Rolelevels"			"2,2,2"
+		"Complexity"			"2"
 		// DRAGON STANCE
 		"Ability1"				"ironfist_dragon_fist" // Strikes the target with extreme Physical damage,
 		// stunning them.
@@ -1619,9 +1645,9 @@
 		"MovementTurnRate"			"1.6"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	
@@ -1629,20 +1655,25 @@
 	"npc_dota_hero_lich"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_lich"
-		"Ability1"				"lich_traveling_frost" // The Lich throws a blast of ice in the target direction. The first unit it collides with takes damage and is stunned.
+		//"override_hero"			"npc_dota_hero_lich"
+		"HeroSelectSoundEffect"	"Lich.AbsoluteZero"
+		
+		"Role"					"Disabler"
+		"Rolelevels"			"3"
+		"Complexity"			"2"
+		"Ability1"				"aether_teleport" // The Lich throws a blast of ice in the target direction. The first unit it collides with takes damage and is stunned.
 		// Deals 100/150/200/250 damage.
 		// Stuns for 1.4/1.6/1.8/2.0s.
 		"Ability2"				"lich_winters_requiem" // Weaving a dark spell, the Lich creates a blast of icy energy at the location of up to 3/4/5/6 random units in a large radius.
 		// Each explosion deals 75/125/175/225 damage and slows by 25% for 2s.
 		// 900 radius.
 		"Ability3"				"lich_deep_freeze" // Lich's attacks gain powerful effects over time. When not on cooldown, Lich's next attack deals 40/80/120/160 bonus Magical damage and stuns for 0.75/1.00/1.25/1.50s
-		8s cooldown.
-		"Ability4"				"lich_absolute_zero" // Drastically slows the target enemy for a large duration, and causes their nearby allies to become slowed as well.
+		// 8s cooldown.
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"lich_absolute_zero" // Drastically slows the target enemy for a large duration, and causes their nearby allies to become slowed as well.
 		// 100% movement slow, and 100 attack slow. Lasts 4.25/5.00/5.75s.
 		// Applies a 20/30/40% slow in a 400 radius around the target.
-		"Ability5"				""
-		"Ability6"				""
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -1684,22 +1715,25 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"850"									// Range of vision at night time.
 	}
-	"npc_dota_hero_lightning"
+	"npc_dota_hero_phantom_assassin"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_phantom_assassin"
+		//"override_hero"			"npc_dota_hero_phantom_assassin"
+		"Role"					"Nuker"
+		"Rolelevels"			"3"
+		"Complexity"			"1"
 		"Ability1"				"lightning_lightning_dagger"
 		"Ability2"				"lightning_boltblast"
 		"Ability3"				"lightning_overload"
-		"Ability4"				"lightning_spark"
-		"Ability5"				""
-		"Ability6"				""
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"lightning_spark"
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -1716,7 +1750,7 @@
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackRange"				"125"
+		"AttackRange"				"150"
 		"AttackRate"				"1.6"
 		"AttackDamageMin"			"21"										// Damage range min.
 		"AttackDamageMax"			"23"										// Damage range max.
@@ -1741,9 +1775,9 @@
 		"MovementTurnRate"			"0.7"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 		"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
@@ -1800,10 +1834,15 @@
 		    	}
 		}
 	}
-	"npc_dota_hero_lupin"
+	"npc_dota_hero_riki"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_riki"
+		//"override_hero"			"npc_dota_hero_riki"
+		"HeroSelectSoundEffect"	"Lupin.BeneathTheMask"
+		"NewHero"				"1"
+		"Role"					"Carry,Nuker,Initiator"
+		"Rolelevels"			"2,2,1"
+		"Complexity"			"3"
 		"Ability1"				"lupin_beneath_the_mask" // Lupin's first strike against a target Silences them.
 		// Deals 30/60/90/120 bonus Magical damage and Silences the target for 2/3/4/5s.
 		// Slows by 15/20/25/30% for the Silence duration.
@@ -1818,12 +1857,12 @@
 		// Deals 40/80/120/160 bonus damage to units that are Stunned or Dazed.
 		// 0.1s cast time.
 		// 16/14/12/10s cooldown.
-		"Ability4"				"lupin_last_surprise" // Lupin becomes invulnerable and instantly teleports
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"lupin_last_surprise" // Lupin becomes invulnerable and instantly teleports
 		// to the target location. Enemies between the two locations are struck with an attack that deals critical damage, and are Dazed for 2/2.5/3.0s.
 		// Deals 175/200/225% damage.
 		// 500/600/700 range.
-		"Ability5"				""
-		"Ability6"				""
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -1864,9 +1903,9 @@
 		"MovementTurnRate"			"0.8"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 	}
@@ -1923,16 +1962,19 @@
 		"MovementTurnRate"			"1.1"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_lysander"
+	"npc_dota_hero_kunkka"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_kunkka"
+		//"override_hero"			"npc_dota_hero_kunkka"
+		"Role"					"Nuker,Pusher,Initiator"
+		"Rolelevels"			"1,3,1"
+		"Complexity"			"2"
 		"Ability1"				"lysander_grapeshot" 
 		"Ability2"				"lysander_captains_compass" 
 		"Ability3"				"lysander_adventurous_gale"
@@ -1979,36 +2021,42 @@
 		"MovementTurnRate"			"0.7"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_mana_knight"
+	"npc_dota_hero_chaos_knight"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_chaos_knight"
-		"Ability1"				"mana_knight_infusion_bolt" // The Mana Knight unleashes a slow moving bolt of pure Magical energy, consuming a percentage of his current Mana in the process.
-		// The bolt deals damage based on the Mana consumed, and stuns for 2s.
-		"Ability2"				"mana_knight_mana_seal" // Creates an area where enemies are silenced and have their Mana slowly drained out. The lower their Mana pool is, the slower they move.
+		//"override_hero"			"npc_dota_hero_chaos_knight"
+		"HeroSelectSoundEffect"	"ManaKnight.VorpalAssault"
+		"Role"					"Carry,Disabler"
+		"Rolelevels"			"2,2"
+		"Complexity"			"2"
+		"Ability1"				"mana_knight_infusion_bolt" // The Mana Knight unleashes a bolt that stuns for 2s and deals damage based on missing Mana. Has a minimum and maximum damage.
+		"Ability2"				"mana_knight_mana_seal" // Creates an area where enemies are silenced and have their Mana slowly drained out. If their Mana pool reaches zero, they take damage, are ministunned, and are slowed for a short time.
 		// Upon reaching 0 Mana, they are stunned for 2s.
 		"Ability3"				"mana_knight_arcanum_break" // The Mana Knight's attacks have a chance to burn away the target's Magical energies, temporarily reducing their Spell damage and
 		// forcing them to lose a portion of their current Mana.
-		"Ability4"				"mana_knight_vorpal_assault" // Gives the Mana Knight 4/6/8 attacks where his attack speed is greatly increased and they burn Mana from the target. The attacks deal bonus
-		// damage based on the Mana missing from the target's Mana pool. If the target reaches
-		// zero Mana, the attacks stun and deal more bonus damage.
-		"Ability5"				""
-		"Ability6"				""
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"mana_knight_vorpal_assault" // The Mana Knight rears his steed, unleashing 5/7/9 bolts of damaging energy at the target. Each bolt deals 50 damage, Silences them, and burns 30/40/50 Mana. There is a 0.15s delay between each.
+		// Each bolt applies a 0.75s Silence that stacks cumulatively.
+		// The bolts are NOT projectiles. They hit instantly.
+		// If the target moves out of the cast range + a 500 range buffer, the bolts will not strike them.
+		// The Mana Knight is free to attack, move and cast Spells while the Spell is active.
 		"Ability8"				""
 		"Ability9"				""
-		"Ability10"				""
-		"Ability11"				""
-		"Ability12"				""
-		"Ability13"				""
-		"Ability14"				""
-		"Ability15"				""
-		"Ability16"				"attribute_bonus"
+		"Ability10"				"special_bonus_attack_speed_20" // 
+		"Ability11"				"special_bonus_mana_knight_1" // Mana Seal Silences for 3s
+		"Ability12"				"special_bonus_attack_damage_35" //
+		"Ability13"				"special_bonus_mana_knight_2" // +80 Arcanum Break Damage
+		"Ability14"				"special_bonus_hp_regen_20" // 
+		"Ability15"				"special_bonus_mana_knight_3" // +7% Mana Seal Drain
+		"Ability16"				"special_bonus_mana_knight_4" // +2.5s Infusion Bolt Stun
+		"Ability17"				"special_bonus_magic_resistance_35" //
 		
 	
 		"ArmorPhysical"				"3"										// Physical protection.
@@ -2040,16 +2088,19 @@
 		"MovementTurnRate"			"0.65"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_mifune"
+	"npc_dota_hero_juggernaut"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_juggernaut"
+		//"override_hero"			"npc_dota_hero_juggernaut"
+		"Role"					"Carry,Nuker"
+		"Rolelevels"			"3,2"
+		"Complexity"			"2"
 		"Ability1"				"mifune_raigeki" 
 		"Ability2"				"mifune_bushido" // Mifune's years of intense training and incredible focus
 		// allow him reap more benefits from his stats, becoming more agile and dangerous.
@@ -2060,9 +2111,9 @@
 		"Ability3"				"mifune_genso"
 		// The targeted enemy is nearly instantly assailed by multiple Illusions of Mifune.
 		// The illusions cannot be controlled, can move over terrain, and instantly die when their target dies.
-		"Ability4"				"mifune_zanmato"
-		"Ability5"				""
-		"Ability6"				""
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"mifune_zanmato"
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -2104,22 +2155,25 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_neith"
+	"npc_dota_hero_legion_commander"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_legion_commander"
+		//"override_hero"			"npc_dota_hero_legion_commander"
+		"Role"					"Carry,Pusher"
+		"Rolelevels"			"2,2"
+		"Complexity"			"2"
 		"Ability1"				"neith_monsoon"
 		"Ability2"				"neith_decisive_strike"
 		"Ability3"				"neith_inspire"
-		"Ability4"				"neith_rally"
-		"Ability5"				""
-		"Ability6"				""
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"neith_rally"
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -2160,9 +2214,9 @@
 		"MovementTurnRate"			"0.8"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	
@@ -2218,28 +2272,36 @@
 		    	}
 		}
 	}
-	"npc_dota_hero_nu"
+	"npc_dota_hero_enigma"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_enigma"
-		"Ability1"				"nu_antimatter_mines" // Summons a large amount of mines to a target area. The mines explode when anything in their vicinity moves, dealing Pure damage to units.
+		//"override_hero"			"npc_dota_hero_enigma"
+		"HeroSelectSoundEffect"	"Nu.Warpstar"
+		"Role"					"Disabler,Support"
+		"Rolelevels"			"2,2"
+		"Complexity"			"3"
+		"Ability1"				"nu_gravity_pulse" // Nu summons an incredible gravitational pulse, dealing 80/160/240/320 Physical damage to and slowing all enemies caught in the radius for 1/2/3/4s.
 		"Ability2"				"nu_micronebula" // Dark nebulae orbit the targeted enemy. After a short formation time, the mebulae begin to rotate around them.
 		// After a period of time, the nebulae ceases orbit, dealing large damage to the target based on the amount of damage they took during the duration over 3s.
-		"Ability3"				"nu_gravity_pulse" // Nu summons an incredible gravitational pulse, slowing all enemies caught in the radius to 50 movespeed for 1s. This overrides Haste runes,
-		// and other types of abilities that would otherwise be an absolute movement speed buff. Deals 175/250/325/400 Physical damage. Has a large cast point, and a small radius.
-		"Ability4"				"nu_warpstar" // Gathering his energies, Nu creates the impossible; a devastating cosmological entity called the Warpstar. The Warpstar destabilises the space
+		"Ability3"				"nu_flux_field" // Creates an energy field at the target point. After a 1s formation time, the field deals damage over time, and deals damage to enemy units within it whenever any one of them casts a Spell.
+		// Deals 30/60/90/120 damage when a Spell is cast in its radius.
+		// Deals 10/20/30/40 damage per second.
+		// 550 radius.
+		// 8s duration.
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"nu_warpstar" // Gathering his energies, Nu creates the impossible; a devastating cosmological entity called the Warpstar. The Warpstar destabilises the space
 		// around it, slowing enemy Heroes. After a delay time, they take a large amount of Physical, Magical and Pure damage, and are transported to Nu's position when he cast the spell.
-		"Ability5"				""
-		"Ability6"				""
 		"Ability8"				""
 		"Ability9"				""
-		"Ability10"				""
-		"Ability11"				""
-		"Ability12"				""
-		"Ability13"				""
-		"Ability14"				""
-		"Ability15"				""
-		"Ability16"				"attribute_bonus"
+		"Ability10"				"special_bonus_spell_amplify_5" // 
+		"Ability11"				"special_bonus_nu_1" // +12% Micronebula Damage
+		"Ability12"				"special_bonus_magic_resistance_12" //
+		"Ability13"				"special_bonus_intelligence_14" // 
+		"Ability14"				"special_bonus_nu_2" // +60 Flux Field DPS
+		"Ability15"				"special_bonus_cooldown_reduction_15" // 
+		"Ability16"				"special_bonus_nu_3" // +300 Gravity Pulse Damage
+		"Ability17"				"special_bonus_cast_range_400" // 
 		
 	
 		"ArmorPhysical"				"0"									// Physical protection.
@@ -2271,16 +2333,16 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_odin"
+	"npc_dota_hero_abaddon"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_abaddon"
+		//"override_hero"			"npc_dota_hero_abaddon"
 		"Ability1"				"odin_gods_eye" // With the powers of a god at his fingertips, Odin leers over a target area to grant vision and truesight for a short time.
 		"Ability2"				"odin_sleipnirs_veil" // Odin becomes invisible and moves at high speed through units, slowing them and damaging them.
 		"Ability3"				"odin_oppression" // Each strike against Odin causes the attacker to sink into despair, reducing their attack speed and attack damage.  Reduces AD by 5/10/15/20 per attack,
@@ -2330,22 +2392,26 @@
 		"MovementTurnRate"			"0.5"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_ouroboros"
+	"npc_dota_hero_jakiro"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_jakiro"
+		//"override_hero"			"npc_dota_hero_jakiro"
+		"HeroSelectSoundEffect"	"Hero_DragonKnight.BreatheFire"
+		"Role"					"Nuker"
+		"Rolelevels"			"3"
+		"Complexity"			"1"
 		"Ability1"				"ouroboros_searing_flame" // cone nuke, hits twice; first is instant damage, second is damage over time
 		"Ability2"				"ouroboros_nexus" // summons a pillar of flame at the target point that deals huge damage after a large delay
 		"Ability3"				"ouroboros_diffusion" // Absorbs a portion of Magical damage, converting it to Spell Amp. Disabled by Break.
-		"Ability4"				"ouroboros_dualcast" // while toggled on, Ouroboros' Spells cast again after a short delay, consuming more of his Mana.
-		"Ability5"				""
-		"Ability6"				""
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"ouroboros_dualcast" // while toggled on, Ouroboros' Spells cast again after a short delay, consuming more of his Mana.
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -2388,20 +2454,26 @@
 		"MovementTurnRate"			"0.5"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_paragon"
+	"npc_dota_hero_omniknight"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_omniknight"
+		//"override_hero"			"npc_dota_hero_omniknight"
+		"HeroSelectSoundEffect"	"Hero_Zuus.GodsWrath"
+		"Role"					"Support,Durable"
+		"Rolelevels"			"2,2"
+		"Complexity"			"2"
 		"Ability1"				"paragon_cleanse" 
 		"Ability2"				"paragon_tranquility_seal" 
 		"Ability3"				"paragon_divine_armour"
-		"Ability4"				"paragon_smite"
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"paragon_smite"
 		"Ability10"				"special_bonus_paragon_1"
 		"Ability11"				"special_bonus_paragon_2"
 		"Ability12"				"special_bonus_cooldown_reduction_12"
@@ -2439,49 +2511,58 @@
 		"MovementTurnRate"			"0.6"						// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 	}
-	"npc_dota_hero_phantom"
+	"npc_dota_hero_spectre"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_spectre"
-		"Ability1"				"phantom_shadowstep"
-		"Ability2"				"phantom_soul_wave"
+		//"override_hero"			"npc_dota_hero_spectre"
+		"HeroSelectSoundEffect"	"Phantom.Shadowstep.Teleport"
+		"Role"					"Carry"
+		"Rolelevels"			"3"
+		"Complexity"			"1"
+		"Ability1"				"phantom_shadowstep" // Phantom teleports to the target enemy Hero. After 6s, she returns to her original position.
+		// 1200/2400/3600/4800 range.
+		"Ability2"				"phantom_soul_wave" // Deals Magical damage around Phantom equal to a multiplier of her combined Stats.  Slows affected enemies.
+		// 400 AoE. Instant cast.
+		// Deals 1.5/2.0/2.5/3.0x her combined stats.
+		// Slows by 25% for 4s.
 		"Ability3"				"phantom_nightmare"
-		"Ability4"				"phantom_deathstrike"
-		"Ability5"				"" //Automatically levelled to 1 when the character is picked.
-		"Ability6"				""
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"phantom_deathstrike" // Phantom's attacks have a chance to cut through the target's soul, dealing bonus damage based on Health missing and reducing their damage output. The bonus damage is Physical.
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
-		"Ability10"				""
-		"Ability11"				""
-		"Ability12"				""
-		"Ability13"				""
-		"Ability14"				""
-		"Ability15"				""
-		"Ability16"				"attribute_bonus"
+		"Ability10"				"special_bonus_attack_speed_10" // 
+		"Ability11"				"special_bonus_all_stats_4" // 
+		"Ability12"				"special_bonus_strength_8" //
+		"Ability13"				"special_bonus_phantom_1" // +10% Nightmare Base Cleave
+		"Ability14"				"special_bonus_agility_16" // 
+		"Ability15"				"special_bonus_phantom_2" // +1.75s Soul Wave Slow
+		"Ability16"				"special_bonus_attack_damage_75" // 
+		"Ability17"				"special_bonus_phantom_3" // +25% Deathstrike Damage Reduction
 	
 		"ArmorPhysical"				"0"									// Physical protection.
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackRange"				"125"
+		"AttackRange"				"150"
 		"AttackRate"				"1.6"
 		"AttackDamageMin"			"20"										// Damage range min.
 		"AttackDamageMax"			"24"										// Damage range max.
 	
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"19"										// Base strength
-		"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
+		"AttributeStrengthGain"		"1.9"										// Strength bonus per level.
 		"AttributeBaseIntelligence"	"12"										// Base intelligence
-		"AttributeIntelligenceGain"	"1.4"										// Intelligence bonus per level.
-		"AttributeBaseAgility"		"23"										// Base agility
-		"AttributeAgilityGain"		"2.5"										// Agility bonus per level.
+		"AttributeIntelligenceGain"	"1.2"										// Intelligence bonus per level.
+		"AttributeBaseAgility"		"20"										// Base agility
+		"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
 	
 		//"BountyXP"					"0"									// Experience earn.
 		//"BountyGoldMin"				"0"										// Gold earned min.
@@ -2491,15 +2572,15 @@
 		//"RingRadius"				"70"
 	
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"285"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
+		"MovementSpeed"				"280"									// Speed.
+		"MovementTurnRate"			"0.4"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
-		"VisionNighttimeRange"		"1170"									// Range of vision at night time.
+		"VisionNighttimeRange"		"900"									// Range of vision at night time.
 	}
 	"npc_dota_hero_plague"
 	{
@@ -2569,18 +2650,22 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_ptomely"
+	"npc_dota_hero_leshrac"
 	{
 		"AbilityLayout" 		"4"
 		// An extremely powerful spellcaster with terrible stats and huge mana costs.
 		// Meant to rely on his two nukes, Astralise and Mirror Blade, until he can sustain his E and R.
-		"override_hero"			"npc_dota_hero_leshrac"
+		//"override_hero"			"npc_dota_hero_leshrac"
+		"HeroSelectSoundEffect"	"Ptomely.ExpungeCharge"
+		"Role"					"Initiator,Nuker,Carry"
+		"Rolelevels"			"2,2"
+		"Complexity"			"3"
 		"Ability1"				"ptomely_astralise" // Knocks the target enemy or ally out of their Physical body, dealing Magical damage to enemies.
 		// The Hero remains behind, stunned, but a ghostly orb of them appears behind them.
 		// The main Hero takes Physical damage but cannot take Magical damage.
@@ -2592,7 +2677,10 @@
 		// Each blade deals 0.40/0.50/0.60/0.70x his Intelligence. Fires 5 blades in 0.15s intervals.
 		"Ability3"				"ptomely_enthrall" // The unit targeted is enthralled, causing them to convert all Physical damage they take before reductions to Magical damage, and
 		// reducing their Magic Resistance. Reduces Magic Resistance by 20/25/30/35%. Lasts 8s. Reduces Magic Resistance by half the amount when targeting allies instead of enemies.
-		"Ability4"				"ptomely_expunge" // The target unit has its Magical energies expunged and their current Mana is drained,
+	
+		"Ability4"				"generic_hidden" // 
+		"Ability5"				"generic_hidden" // 
+		"Ability6"				"ptomely_expunge" // The target unit has its Magical energies expunged and their current Mana is drained,
 		// creating an orb of pure Mana above them and slowing them drastically.
 		// After a short delay, the orb explodes, dealing damage equivalent the amount of Mana consumed, and spreading all Mana equally between allies in the AoE.
 		// Slows by 40/60/80%.
@@ -2603,19 +2691,17 @@
 		// 0: Origin, but model attach
 		// 1: Orb position
 		// 2: Explosion size (endcap)
-	
-		"Ability5"				"" // 
-		"Ability6"				"" // 
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
-		"Ability10"				""
-		"Ability11"				""
-		"Ability12"				""
-		"Ability13"				""
-		"Ability14"				""
-		"Ability15"				""
-		"Ability16"				"attribute_bonus"
+		"Ability10"				"special_bonus_armor_5" // 
+		"Ability11"				"special_bonus_attack_damage_30" // 
+		"Ability12"				"special_bonus_movement_speed_40" // 
+		"Ability13"				"special_bonus_ptomely_1" // +10% Enthrall Magic Res Reduction
+		"Ability14"				"special_bonus_cast_range_200" // 
+		"Ability15"				"special_bonus_ptomely_2" // +2 Mirror Blades
+		"Ability16"				"special_bonus_ptomely_3" // +3s Astralise Duration
+		"Ability17"				"special_bonus_intelligence_25" // 
 	
 		"ArmorPhysical"				"1"									// Physical protection.
 		"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -2648,16 +2734,23 @@
 		"MovementTurnRate"			"0.5"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_rai"
+	"npc_dota_hero_ember_spirit"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_ember_spirit"
+		//"override_hero"			"npc_dota_hero_ember_spirit"
+		"HeroSelectSoundEffect"	"Hero_Zuus.LightningBolt"
+	
+		"NewHero"				"1"
+	
+		"Role"					"Escape,Nuker"
+		"Rolelevels"			"2,2"
+		"Complexity"			"2"
 		"Ability1"				"rai_amplify" // Rai ramps up his electrical potential, the air around him
 		// crackling with energy.
 		// Deals 30/40/50/60 damage per second over 4s in a 400 radius.
@@ -2689,14 +2782,14 @@
 		// inflicts.
 		// Deals 30/40/50/60 damage, and slows by 4/8/12/16% per charge.
 		// Max 6.
-		"Ability4"				"rai_thunder_roar" // Rai summons myriad bolts to strike nearby enemies,
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"rai_thunder_roar" // Rai summons myriad bolts to strike nearby enemies,
 		// dealing massive damage.
 		// Summons 24 bolts over 1.2s within a 400 radius.
 		// Each bolt strikes a random location within that radius, dealing 60/80/100 damage.
 		// Casting Thunder Roar grants Rai a Static Blade charge 6 times over its duration (every 0.2s).
 		// 80/75/70s cooldown.
-		"Ability5"				""
-		"Ability6"				""
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -2718,7 +2811,7 @@
 		"AttackDamageMin"			"25"										// Damage range min.
 		"AttackDamageMax"			"35"										// Damage range max.
 	
-		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
 		"AttributeBaseStrength"		"13"										// Base strength
 		"AttributeStrengthGain"		"1.6"										// Strength bonus per level.
 		"AttributeBaseIntelligence"	"19"										// Base intelligence
@@ -2738,47 +2831,63 @@
 		"MovementTurnRate"			"0.6"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_reus"
+	"npc_dota_hero_elder_titan"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_elder_titan"
-		"Ability1"				"reus_stoneblast" // The Titan tosses a heavy slab, dealing Physical damage and stunning enemies that are hit by it.
-		"Ability2"				"reus_magnitude" // The Titan creates an area that is struck by devastating tremors, throwing off the footing of his enemies to slow them plus dealing damage over time.
-		"Ability3"				"reus_stalagmite" // The Titan slams the ground to force deadly earth spikes to burst from an area in front of him.  Deals damage and stuns.  The range and radius is slightly randomised.
-		"Ability4"				"reus_ancient_arena" // The Titan roars to summon an inescapable arena of stone.  Enemies caught on the edges take massive damage and are stunned.  Neither allies nor enemies can exit the arena.
-		"Ability5"				""
-		"Ability6"				""
+		//"override_hero"			"npc_dota_hero_elder_titan"
+		"Role"					"Nuker,Disabler,Pusher"
+		"Rolelevels"			"2,3,2"
+		"Complexity"			"1"
+		"Ability1"				"reus_stoneblast"
+		// The Titan tosses a heavy slab, dealing Physical damage
+		// and stunning enemies that are hit by it.
+		"Ability2"				"reus_magnitude"
+		// The Titan creates an area that is struck by devastating tremors,
+		// throwing off the footing of his enemies to slow them plus dealing damage over time.
+		"Ability3"				"reus_gaias_fury" 
+		// The Titan's next attack stuns and unleashes a shockwave that slows around the target.
+		// The shockwave deals 50% of the damage.
+		// Deals 3/4/5/6x his Strength as damage, and stuns for 0.7/0.9/1.1/1.3s.
+		// The cleave applies a 40% slow that lasts 3s.
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"reus_ancient_arena" // 
+		// The Titan roars to summon an inescapable arena of stone.
+		// Neither allies nor enemies can exit the arena.
+		// Inside the Arena, the Titan gains 20/30/40 bonus Armor.
+		// Lasts 6/7/8s.
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
-		"Ability10"				""
-		"Ability11"				""
-		"Ability12"				""
-		"Ability13"				""
-		"Ability14"				""
-		"Ability15"				""
-		"Ability16"				"attribute_bonus"
+		"Ability10"				"special_bonus_attack_speed_30"
+		"Ability11"				"special_bonus_mp_175"
+		"Ability12"				"special_bonus_movement_speed_50" 
+		"Ability13"				"special_bonus_reus_1" // +40 Magnitude Damage
+		"Ability14"				"special_bonus_reus_2" // +0.8 Gaias Fury Stun
+		"Ability15"				"special_bonus_reus_3" // +100 Stoneblast Damage
+		"Ability16"				"special_bonus_armor_15"
+		"Ability17"				"special_bonus_reus_4" // -1.5s Magnitude Quake Interval
 	
-		"ArmorPhysical"				"6"									// Physical protection.
+		"ArmorPhysical"				"4"									// Physical protection.
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackRange"				"125"
-		"AttackRate"				"1.85"
-		"AttackDamageMin"			"40"										// Damage range min.
-		"AttackDamageMax"			"44"										// Damage range max.
+		"AttackRange"				"150"
+		"AttackRate"				"2.00"
+		"AttackDamageMin"			"50"										// Damage range min.
+		"AttackDamageMax"			"65"										// Damage range max.
 	
 		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"32"										// Base strength
+		"AttributeBaseStrength"		"27"										// Base strength
 		"AttributeStrengthGain"		"3.4"										// Strength bonus per level.
-		"AttributeBaseIntelligence"	"17"										// Base intelligence
-		"AttributeIntelligenceGain"	"1.9"										// Intelligence bonus per level.
+		"AttributeBaseIntelligence"	"19"										// Base intelligence
+		"AttributeIntelligenceGain"	"1.50"										// Intelligence bonus per level.
 		"AttributeBaseAgility"		"8"										// Base agility
 		"AttributeAgilityGain"		"0.7"										// Agility bonus per level.	
 	
@@ -2790,36 +2899,71 @@
 		//"RingRadius"				"70"
 	
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"285"									// Speed.
+		"MovementSpeed"				"270"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_set"
+	"npc_dota_hero_sand_king"
 	{
-		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_sand_king"
+		"AbilityLayout" 		"5"
+		//"override_hero"			"npc_dota_hero_sand_king"
+		"Role"					"Pusher,Durable,Nuker"
+		"Rolelevels"			"3,2,1"
+		"Complexity"			"2"
 		"Ability1"				"set_sands_of_war" 
-		"Ability2"				"set_duststorm" 
+		// Whips up two blasts of sand that converge on a location in front of Set.
+		// When they arrive, two controllable Sand Puppets appear. The Sand Puppets
+		// deal damage and are based off of Set's current level.
+		// The warrior sand puppet has a melee attack and slows enemies. They deal bonus
+		// Magical damage on each attack (does not work against Buildings).
+		// The archer sand puppet has a ranged attack and gains bonus range as Set levels.
+		"Ability2"				"set_scarab_curse"
+		// The target enemy unit is afflicted with a curse that steals their attack damage.
+		// Summons a small Scarab to spin around them.
+		// The attack damage stolen is equal to a percentage of their attack damage when
+		// the Spell was cast.
+		// The Scarab deals Physical damage over time equal to the damage stolen from them.
+		// At any point, Switch Scarab Targets can be used to transfer the debuff to another
+		// enemy unit. It will use the original stolen damage values.
 		"Ability3"				"set_harsh_sun"
-		"Ability4"				"set_an_army_beneath_the_sands"
-		"Ability5"				""
-		"Ability6"				""
+		// Set's very presence on the map harshens the weather, making it difficult for Heroes
+		// to see during the day. During daytime, causes all enemies on the map to have reduced
+		// vision, and attack more slowly.
+		// Meanwhile, Set thrives in this very weather, gaining bonus movespeed and bonus vision.
+		// Reduces enemy vision by 100/175/250/325, and attack speed by 10/15/20/25.
+		// If the enemy is a creep, reduces attack speed by 12.
+		// Set gains 20/40/60/80 movespeed and 150/300/450/600 bonus vision.
+		"Ability4"				"set_switch_scarab_targets"
+		// Moves the Scarab Curse debuff to another unit within 700 range. After 0.9s,
+		// it starts attacking again.
+		"Ability5"				"generic_hidden"
+		"Ability6"				"set_sirocco"	
+		// Creates an area around Set where enemy vision is drastically reduced to a fixed value.
+		// and they take damage over time.
+		// While inside the Sirocco, Set and any units he owns are healed for the damage
+		// over time instead.
+		// Deals 40/80/120 damage per second, spread over 0.25s intervals.
+		// Reduces enemy vision to 325.
+		// Reduces the vision of Buildings as well.
+		// 1000 radius.
+		// Lasts 10s.
 		"Ability7"				""
 		"Ability8"				""
-		"Ability9"				""
-		"Ability10"				""
-		"Ability11"				""
-		"Ability12"				""
-		"Ability13"				""
-		"Ability14"				""
-		"Ability15"				""
-		"Ability16"				"attribute_bonus"
+		"Ability0"				""
+		"Ability10"				"special_bonus_armor_7" // 
+		"Ability11"				"special_bonus_magic_resistance_15" // 
+		"Ability12"				"special_bonus_night_vision_600" // 
+		"Ability13"				"special_bonus_set_1" // +1 Sands of War Archer
+		"Ability14"				"special_bonus_cooldown_reduction_20" // 
+		"Ability15"				"special_bonus_set_2" // +25 Harsh Sun Attack Slow
+		"Ability16"				"special_bonus_set_3" // +125 Sand Puppets Attack Speed
+		"Ability17"				"special_bonus_set_4" // -0.6s Scarab Curse Interval
 	
 		"ArmorPhysical"				"5"									// Physical protection.
 		"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -2845,20 +2989,24 @@
 		//"RingRadius"				"70"
 	
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"310"									// Speed.
-		"MovementTurnRate"			"1.0"									// Turning rate.
+		"MovementSpeed"				"280"									// Speed.
+		"MovementTurnRate"			"0.4"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
-		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+		"VisionNighttimeRange"		"500"									// Range of vision at night time.
 	}
-	"npc_dota_hero_shade"
+	"npc_dota_hero_bounty_hunter"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_bounty_hunter"
+		//"override_hero"			"npc_dota_hero_bounty_hunter"
+		"HeroSelectSoundEffect"	"Shade.Isolation"
+		"Role"					"Escape,Initiator"
+		"Rolelevels"			"2,3"
+		"Complexity"			"1"
 		"Ability1"				"shade_stalk"
 		// Shade targets an enemy, becoming invisible, gaining vision of them, moving faster, and slowing them.
 		// Attacking the enemy out of invisibility deals Pure, Physical and Magical damage.
@@ -2868,7 +3016,9 @@
 		// Recovers 100/150/200/250 Health, and purges debuffs with a strong dispel.
 		// 1200 radius.
 		"Ability3"				"shade_venomous"
-		"Ability4"				"shade_isolation"
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"shade_isolation"
 		// Shade curses the target unit, damaging them, and causing them to emit a shockwave of energy
 		// that petrifies all allies it hits.
 		// The targeted unit has reduced Spell and attack damage for the duration of this Spell.
@@ -2876,8 +3026,6 @@
 		// The shockwave travels outwards to a 900 radius over 0.25s.
 		// Petrified units are invulnerable and untargetable, but are stunned and command restricted.
 		// Lasts 4/5/6s.
-		"Ability5"				""
-		"Ability6"				""
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -2919,16 +3067,23 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"1400"									// Range of vision at night time.
 	}
-	"npc_dota_hero_shard_magus"
+	"npc_dota_hero_crystal_maiden"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_crystal_maiden"
+		//"override_hero"			"npc_dota_hero_crystal_maiden"
+		"HeroSelectSoundEffect"	"ShardMagus.WyrmRites.Start"
+	
+		"NewHero"				"1"
+		
+		"Role"					"Nuker,Disabler"
+		"Rolelevels"			"3,2"
+		"Complexity"			"3"
 		"Ability1"				"shard_magus_cryst_whorl" // Creates a small area where chilling winds
 		// blow,  dealing damage over time, then slowing, then freezing units caught in it.
 		// After a 1.0s delay:
@@ -2958,14 +3113,11 @@
 		// Deals 60/90/120/150 damage.
 		// Applies a 30/45/60/75 attack speed slow and a 60% turnrate slow for 3s.
 		// 1s cooldown.
-		"Ability4"				"shard_magus_wyrm_rites"
-		// An ancient incantation summons an ice Wyrm, a creature of great strength.
-		// The ice Wyrm has 3 abilities, lasts 25s, and has a large attack range.
-		// Every level placed in this ability increases its level by 10, raising its
-		// Health, damage, Armor and Magic Resistance.
-		// 160/140/120s cooldown.
 	
-		// need to do modifier tooltips
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"shard_magus_glacial_impact"
+		// 
 		
 		"Ability10"				"special_bonus_mp_regen_2"
 		"Ability11"				"special_bonus_movement_speed_10"
@@ -3005,9 +3157,9 @@
 		"MovementTurnRate"			"0.7"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 		"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
@@ -3132,7 +3284,7 @@
 		//"StatusHealth"			"981"									// Base health.
 		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
@@ -3196,25 +3348,78 @@
 		//"StatusHealth"			"981"									// Base health.
 		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_summoner"
+	"npc_dota_hero_rattletrap"
 	{
 		"AbilityLayout" 		"5"
-		"override_hero"			"npc_dota_hero_rattletrap"
-		"Ability1"				"summoner_nanobots"
-		"Ability2"				"summoner_short_range_teleport"
-		"Ability3"				"summoner_build_tesla_coil"
-		"Ability4"				"summoner_summon_blue_vassal"
-		"Ability5"				"summoner_build_sentinel"
-		"Ability6"				""
-		"Ability7"				""
-		"Ability8"				""
-		"Ability9"				""
-		"Ability10"				""
-		"Ability11"				""
+		//"override_hero"			"npc_dota_hero_rattletrap"
+		"HeroSelectSoundEffect"	"Hero_Rattletrap.Cogs"
+		"Role"					"Pusher,Durable"
+		"Rolelevels"			"2,2"
+		"Complexity"			"3"
+		"Ability1"				"summoner_nanobots" // Deals damage, then damage over time.
+		// Reduces Armor.
+		"Ability2"				"summoner_drilldash" // Dashes in the target direction, dealing damage
+		// and slowing any enemies collided with.
+		"Ability3"				"summoner_pulsar" // Mutes and Silences all enemies in a radius.
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"summoner_assembler" // Creates an assembly drone at the location
+		// targeted. The drone can build units and possesses energy stores based on the level
+		// of this ability, and the amount of Mana Vulcan had.
+	
+		// REWORK
+	
+		//"Ability1"				"summoner_nanobots"
+	
+		// [1] Fires a cluster of nanobots at the target.
+		// They take damage over time and have their Armor reduced.
+	
+		//"Ability2"				"summoner_short_range_teleport"
+	
+		// Teleports all units around Vulcan to the target location after a short delay.
+		// Teleports marked units, not units that are around him at the end of the delay.
+	
+		//"Ability3"				"summoner_assemble"
+	
+		// Vulcan assembles a unit from the energy he has stored.
+		// Assemble does not use Mana; instead, it uses Energy, Vulcan's unique resource.
+		// Passively, Assemble grants 1 Energy every 10s, with a maximum of 6 stacks.
+		// Has a 4s cooldown.
+	
+		// The following units are available to build:
+	
+		// TESLA COILS [ 2 ]
+		// These zap nearby enemies with damaging and slowing coils of electricity.
+		// Lasts 240s.
+	
+		// PULSARS [ 2 ]
+		// These unleash waves of energy that Silence, Root and damage nearby enemies.
+		// They activate once, and then expire immediately.
+		// Lasts 120s.
+	
+		// STRIKERS [ 2 ], 2 units
+		// These are small, highly mobile units that attack at close range.
+		// Lasts 60s.
+	
+		// BOMBS [ 2 ], 2 units
+		// These are small, semi mobile units that explode.
+		// Lasts 60s.
+	
+		// SENTINELS [ 3 ]
+		// Stationary cannons that can attack nearby units.
+		// Lasts 30s.
+	
+		//"Ability4"				"summoner_upgrades"
+	
+		// Increases the efficiency of Vulcan's various subsystems, letting him generate energy
+		// more quickly, and fight better.
+		// Grants 1/2/3 bonus Energy generation, 20/40/60 bonus movespeed, and 8/16/24 bonus Armor.
+	
+		//"Ability5"				""
 		"Ability12"				""
 		"Ability13"				""
 		"Ability14"				""
@@ -3225,7 +3430,7 @@
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackRange"				"125"
+		"AttackRange"				"150"
 		"AttackRate"				"1.7"
 		"AttackDamageMin"			"24"										// Damage range min.
 		"AttackDamageMax"			"27"										// Damage range max.
@@ -3250,25 +3455,29 @@
 		"MovementTurnRate"			"0.6"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"850"									// Range of vision at night time.
 	}
-	"npc_dota_hero_tek"
+	"npc_dota_hero_tinker"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_tinker"
+		//"override_hero"			"npc_dota_hero_tinker"
+		"HeroSelectSoundEffect"	"Tek.MegatonBlast.Target"
+		"Role"					"Nuker,Disabler"
+		"Rolelevels"			"3,1"
+		"Complexity"			"2"
 		"Ability1"				"tek_skycrack" // Fires a laser directly in front of Tek that deals large damage and slows.
 		"Ability2"				"tek_mosquito_missiles" // Locks on to multiple targets within range, then fires a large amount of missiles at them.  The missiles deal small damage, but this ability can target one unit multiple times.
 		"Ability3"				"tek_megaton_blast" // After a 2s charge time, fires a blast
 		// of pure force at the target enemy. The blast deals damage and ministuns.
 		// This Spell is NOT channelled; Tek can do whatever he wants during the charge period.
 		// Deals 100/175/250/325 damage and ministuns for 0.75s.
-		"Ability4"				"tek_tesla_microarray" // Following a short delay, Tek powers up his suit, making his abilities much stronger and more deadly.  After the duration, Tek is unable to attack or cast spells for a short time.
-		"Ability5"				"" // Fires a deadly laser directly in front of Tek that deals huge damage and slows.
-		"Ability6"				"" // Locks on to multiple targets within range extremely quickly, then fires a huge amount of missiles at them.
+		"Ability4"				"generic_hidden" // Fires a deadly laser directly in front of Tek that deals huge damage and slows.
+		"Ability5"				"generic_hidden" // Locks on to multiple targets within range extremely quickly, then fires a huge amount of missiles at them.
+		"Ability6"				"tek_tesla_microarray" // Following a short delay, Tek powers up his suit, making his abilities much stronger and more deadly.  After the duration, Tek is unable to attack or cast spells for a short time.
 		"Ability7"				"" // Passive. While Tek is Powered Up, droids become impervious to damage for a short time and attack a lot faster.
 		"Ability8"				"" // Tek sacrifices his life to enter a superpowered mode, reducing his cooldowns drastically but rapidly draining his health.  Takes 20% of max health as damage per second.  Tek cannot be killed by this ability, but it will end if his health drops to 1.
 		"Ability9"				""
@@ -3316,22 +3525,26 @@
 		"MovementTurnRate"			"0.75"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_timekeeper"
+	"npc_dota_hero_keeper_of_the_light"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_keeper_of_the_light"
+		//"override_hero"			"npc_dota_hero_keeper_of_the_light"
+		"HeroSelectSoundEffect"	"Timekeeper.Futurestrike.Boom"
+		"Role"					"Support,Disabler"
+		"Rolelevels"			"2,1"
+		"Complexity"			"2"
 		"Ability1"				"timekeeper_dilation" 
 		"Ability2"				"timekeeper_futurestrike"
 		"Ability3"				"timekeeper_haste_aura"
-		"Ability4"				"timekeeper_chronoshift"
+		"Ability4"				"generic_hidden"
 		"Ability5"				"timekeeper_chronoshift_end"
-		"Ability6"				""
+		"Ability6"				"timekeeper_chronoshift"
 		"Ability7"				""
 		"Ability8"				""
 		"Ability9"				""
@@ -3373,7 +3586,7 @@
 		"MovementTurnRate"			"1.0"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
 		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
@@ -3404,7 +3617,7 @@
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackRange"				"125"
+		"AttackRange"				"150"
 		"AttackRate"				"1.65"
 		"AttackDamageMin"			"30"										// Damage range min.
 		"AttackDamageMax"			"34"										// Damage range max.
@@ -3429,29 +3642,33 @@
 		"MovementTurnRate"			"0.7"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_war"
+	"npc_dota_hero_axe"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_axe"
+		//"override_hero"			"npc_dota_hero_axe"
+		"HeroSelectSoundEffect"	"War.FightMe"
+		"Role"					"Durable,Initiator"
+		"Rolelevels"			"3,2"
+		"Complexity"			"1"
 		"Ability1"				"war_earthbreaker" // War slams the ground with his axe, dealing Physical damage in an area and dazing the enemies hit. Deals 100/150/200/250 Physical damage
 		// and stuns enemies in the 250 radius for 2s.
 		"Ability2"				"war_bloodlust" // War silences all allies and enemies in a target area for 3/4/5/6s, increasing their attack speed and attack damage by 30.
 		// The debuff is purgable.
 		"Ability3"				"war_berserker_aura" // Allies gain bonus damage and attack speed whilst near War. Grants 10/15/20/25 damage and 12 attack speed.
-		"Ability4"				"war_fight_me" // All enemies in a sizeable radius are forced to attack War, with the enemies becoming immune to damage, and War gaining a large amount of
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"war_fight_me" // All enemies in a sizeable radius are forced to attack War, with the enemies becoming immune to damage, and War gaining a large amount of
 		// bonus health regen.
 		// At the end of the duration, he unleashes a roar that deals Magical damage equivalent to the amount of damage he took from their attacks.
 		// He cannot die from attacks during the duration of this Ultimate.
 		// Magic Immune enemies are unaffected.
 		// Lasts 3/4/5s.
-		"Ability5"				""
-		"Ability6"				""
 		"Ability8"				""
 		"Ability9"				""
 		"Ability10"				"special_bonus_war_1" // FIGHT ME!! Gains 40% Mana From Attacks
@@ -3495,18 +3712,69 @@
 		//"StatusHealth"			"981"									// Base health.
 		"StatusHealthRegen"			"2"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	}
-	"npc_dota_hero_wight"
+	"npc_dota_hero_visage"
 	{
 		"AbilityLayout" 		"4"
-		"override_hero"			"npc_dota_hero_ancient_apparition"
-		"Ability1"				"wight_flit" 
-		"Ability2"				"" 
-		"Ability3"				"aether_monolith"
-		"Ability4"				""
+		//"override_hero"			"npc_dota_hero_visage"
+		"Role"					"Escape,Nuker"
+		"Rolelevels"			"2,2"
+		"Complexity"			"2"
+		"HeroSelectSoundEffect"	"Wight.Betwixt.Exit"
+		"Ability1"				"wight_betwixt"
+		// The Wight targets a nearby enemy unit, leaping towards it at high speed and becoming
+		// invulnerable. Upon arrival, the Wight damages and
+		// hides inside the target unit for up to 3s.
+		// He can then target another unit to jump to that one, or target a point to leave the unit.
+		// When exiting a unit with ground targeting he deals damage at the target location.
+		// The damage increases for each jump he made.
+		// Has a short cooldown when jumping between units.
+		// Goes on cooldown when landing at a point instead.
+	
+		// The Wight can make 3/4/5/6 unit jumps.
+		// The exit command can always be cast, regardless of whether the Wight has any jumps left.
+		// Deals 20/30/40/50 damage and heals the Wight for the same amount on entry.
+		// Deals 100 + 20/30/40/50 damage per jump made in a 350 AoE upon exiting.
+		// Has a 0.60s cooldown when jumping between units.
+		// 600 cast range.
+		// 15/14/13/12s cooldown.
+		// If Wight remains too long in a unit, they are forced out to a random location nearby
+		// as if they cast the exit ability.
+		"Ability2"				"wight_wailing_souls"
+		// Each time the Wight kills an enemy unit, he gains stacks of Wailing Souls.
+		// Casting the ability causes a spirit to appear for each stack and enter a random nearby
+		// enemy unit.
+		// Whilst inside, the unit is slowed and takes damage over time.
+		// Killing a Hero grants 10 stacks.
+		// Max 5/10/15/20 stacks.
+		// Each Spirit does 4/8/12/16 damage per second (in 0.25s intervals) and slows by 6/9/12/15%.
+		// Lasts 4s.
+		// The search radius is 700.
+		// The spirits have a travel time of 0.4s regardless of distance.
+		// They come out at intervals of 0.15s, meaning that it takes 0.75/1.5/2.25/3.00s
+		// for all spirits to come out and latch to a target.
+		// If there are no available nearby targets, the Spirits do not exit and Wight
+		// loses no stacks.
+		// The buff that releases the Spirits lasts for 5s, or until all stacks are used up.
+		// 20s cooldown.
+		"Ability3"				"wight_breakthrough"
+		// Wight gains 4 attacks at a fixed attack rate of 1.00s.
+		// If all four attacks hit one target, they are stunned.
+		// The attacks deal no damage, but proc on hit effects.
+		// The attacks reduce Armor by 5% of Wight's total attack damage.
+		// After 4 hits, stuns for 1.75/2.5/3.25/4.00s.
+		// Lasts 10s.
+		// The debuff (armor) lasts 6s.
+		"Ability4"				"wight_eye_of_the_guardian"
+		// Upon activation, Wight gains full vision of the closest enemy Hero globally.
+		// While using this ability, Wight has no vision around himself or
+		// units he owns.
+		// Reveals invisible units as well.
+		// Lasts 8s.
+		// 90/60/30s cooldown.
 		"Ability5"				""
 		"Ability6"				"talent_attributes"
 		"Ability7"				"talent_attributes"
@@ -3526,6 +3794,7 @@
 		"MagicalResistance"				"25"									// Magical protection (percentage).
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackRange"				"400"
 		"AttackRate"				"1.6"
 		"AttackDamageMin"			"28"										// Damage range min.
 		"AttackDamageMax"			"29"										// Damage range max.
@@ -3550,9 +3819,9 @@
 		"MovementTurnRate"			"0.8"									// Turning rate.
 	
 		//"StatusHealth"			"981"									// Base health.
-		"StatusHealthRegen"			"0"									// Health regeneration rate.
+		"StatusHealthRegen"			"1"									// Health regeneration rate.
 		//"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"0"									// Mana regeneration rate.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 	
 		"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 	}

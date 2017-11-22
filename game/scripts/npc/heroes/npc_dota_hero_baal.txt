@@ -1,15 +1,20 @@
-"npc_dota_hero_baal"
+"npc_dota_hero_arc_warden"
 {
 	"AbilityLayout" 		"5"
-	"override_hero"			"npc_dota_hero_arc_warden"
+	//"override_hero"			"npc_dota_hero_arc_warden"
+	"HeroSelectSoundEffect"	"Baal.Otherworld.Enter"
+	"Role"					"Carry,Escape,Disabler"
+	"Rolelevels"			"2,2,1"
+	"Complexity"			"3"
 	"Ability1"				"baal_st_anchor" // Anchors the target enemy to a location.  When they move too far away from their location, they are stunned, take damage, and teleported to it.
 	"Ability2"				"baal_spatial_rift" // After a 1 second channel time, creates a rift at the target location that deals damage and slows drastically.  The rift lasts for 6s.
-	"Ability3"				"baal_port_out" // Instantly teleports Baal and any Axial Seals to the active Rift, consuming it.
-	"Ability4"				"baal_compression_sphere" // Creates a hemispherical area wherein Baal's allies can move freely, but his enemies are slowed the longer they remain within it. Slows movespeed, attack speed and turnrate.
-	"Ability5"				"baal_fire" // Fires the compressed target at a point.
+	"Ability3"				"baal_compression_sphere"
+	"Ability4"				"generic_hidden" // Instantly teleports Baal and any Axial Seals to the active Rift, consuming it.
+	"Ability5"				"generic_hidden"
 	"Ability6"				"baal_superposition2" // Baal enters a state of instability for a short time, becoming untargetable and immune to Physical damage.  Enemies can still see
 	// his location.  Disjoints projectiles on use.  Gives phased movement to Baal.	
-	"Ability8"				"" // Passive.  Upon spawning, the enemy's Ancient explodes, and you win the game.
+	"Ability7"				"baal_port_out" // Passive.  Upon spawning, the enemy's Ancient explodes, and you win the game.
+	"Ability8"				""
 	"Ability9"				""
 	"Ability10"				"special_bonus_baal_1" // +75 Spatial Rift Damage
 	"Ability11"				"special_bonus_baal_2" // -150 Spatiotemporal Anchor Radius
@@ -50,9 +55,9 @@
 	"MovementTurnRate"			"0.7"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 

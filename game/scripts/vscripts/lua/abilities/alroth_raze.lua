@@ -3,6 +3,12 @@ alroth_raze = class({})
 LinkLuaModifier("modifier_raze_thinker","lua/abilities/alroth_raze",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_raze_aura","lua/abilities/alroth_raze",LUA_MODIFIER_MOTION_NONE)
 
+function alroth_raze:GetCooldown(level)
+	local base_cooldown = self.BaseClass.GetCooldown(self, level)
+local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_alroth_4") or 0
+	return base_cooldown - t_cooldown_reduction
+end
+
 function alroth_raze:OnSpellStart()
 	local caster = self:GetCaster()
 	local point = self:GetCursorPosition()

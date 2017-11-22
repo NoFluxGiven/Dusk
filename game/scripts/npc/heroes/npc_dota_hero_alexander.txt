@@ -1,15 +1,20 @@
-"npc_dota_hero_alexander"
+"npc_dota_hero_dragon_knight"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_dragon_knight"
+	//"override_hero"			"npc_dota_hero_dragon_knight"
+
+	"HeroSelectSoundEffect"	"Alexander.Godfall"
+	"Role"					"Durable,Carry"
+	"Rolelevels"			"2,2"
+	"Complexity"			"1"
 	"Ability1"				"alexander_soulseal" // Alexander uses the Godslayer to seal away a target's soul, rendering them unable to cast spells for a short time.  Lasts 3/4/5/6s.
 	"Ability2"				"alexander_elandras_blessing" // Alexander gains bonus Armor and Health Regen as he loses health.
 	"Ability3"				"alexander_radiant" // Alexander is bathed in an unearthly light, a magick used oft by Paladins.  Causes opponents to miss attacks against him, as he rapidly
 	// recovers health over time.  Recovers 20/40/60/80 health per second for 5s, with a 15/30/45/60% miss chance to all nearby enemies in a 325 radius.
-	"Ability4"				"alexander_godfall" // The Godslayer thirsts for blood, imbued with incredible power.  After a short channel time, Alexander's next attack deals massive bonus
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"alexander_godfall" // The Godslayer thirsts for blood, imbued with incredible power.  After a short channel time, Alexander's next attack deals massive bonus
 	// Pure damage through Spell Immunity in an area around him.  The main target receives the brunt of the damage.
-	"Ability5"				""
-	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -52,7 +57,7 @@
 	//"StatusHealth"			"981"									// Base health.
 	"StatusHealthRegen"			"2"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 

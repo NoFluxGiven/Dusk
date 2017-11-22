@@ -5,9 +5,10 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/horror_obscure"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -16,8 +17,8 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"350"
-	"AbilityCastPoint"				"0.3"
+	"AbilityCastRange"				"450"
+	"AbilityCastPoint"				"0.4"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -56,6 +57,11 @@
 		}
 	"04"
 		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"80 140 200 260"
+		}
+	"05"
+		{
 			"var_type"						"FIELD_FLOAT"
 			"delay"							"0.75"
 		}
@@ -67,89 +73,5 @@
 		"particle" "particles/units/heroes/hero_horror/obscure_target.vpcf"
 		"particle" "particles/generic_gameplay/generic_silenced.vpcf"
 		"soundfile" "soundevents\hero_horror.vsndevts"
-		}
-		
-	"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_obscure_delay"
-				"Target"
-				{
-					"Center"  	"CASTER"
-					"Radius" 	"%radius"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
-				"Duration"		"%duration"
-			}
-			"Damage"
-			{
-				"Target"
-				{
-					"Center"  	"CASTER"
-					"Radius" 	"%radius"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
-				"Type"			"DAMAGE_TYPE_MAGICAL"
-				"Damage"		"%AbilityDamage"
-			}
-			"FireEffect"
-			{
-				"EffectName"        "particles/units/heroes/hero_horror/obscure.vpcf"
-				"EffectAttachType"  "attach_origin"
-				"Target"            "CASTER"
-
-				"ControlPoints"
-				{
-					"01"	"%radius 0 0"
-				}
-			}
-			"FireSound"
-			{
-				"EffectName"	"Hero_Nightstalker.Void.Nihility"
-				"Target" 		"CASTER"
-			}
-		}
-	
-	"Modifiers"
-		{
-			"modifier_obscure_delay"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"1"
-				"Duration"			"%delay"
-			
-				"OnDestroy"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_obscure"
-						"Target" 		"TARGET"
-						"Duration"		"%duration"
-					}
-				}
-			}
-			"modifier_obscure"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"EffectName"		"particles/units/heroes/hero_horror/obscure_target.vpcf"
-				"EffectAttachType"	"follow_origin"
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MISS_PERCENTAGE" "%miss_chance"
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_BLIND"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
 		}
 }

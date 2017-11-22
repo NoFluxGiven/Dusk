@@ -23,24 +23,21 @@ Balance Changes:
 
 None.
 
-Version 1.98
+Version 2.00
 
 BUILDINGS
 ============
 
-- Towers now have 10% less Health.
-- Ancients now have 20% less Health.
-- Towers deal 10% more damage.
-- Frenzy now lasts 5s (was 4s).
-- Frenzy now destroys the tower when it ends.
-- Frenzy now activates when the tower hits 0 Health
+- Frenzy now lasts 2s (was 4s).
+- Frenzy now grants 600 bonus attack speed (was 300).
+- Frenzy destroys the tower when it ends.
+- Frenzy activates when the tower hits 0 Health.
 - Giga Graviton now deals 25% of enemy creeps' Health (was 55%).
 - Giga Graviton now stuns creeps for 0.75s.
 - Giga Graviton no longer affects Heroes.
 - Giga Graviton now activates every 3s (was 4s).
 - Giga Graviton radius increased to 2250 (was 1250).
-- Giga Graviton now activates only after Last Resort (below 10% Health).
-- While Last Resort is active, Giga Graviton activates every 1s instead.
+- Last Resort removed.
 
 ITEMS
 ========
@@ -50,8 +47,31 @@ GENERAL CHANGES
 - Exalted Items have been removed.
 - Regal Sigils and Essence Items have been removed.
 - Moved Purging Dust, Ironblood Potion, Rage Potion and Arcanite Shards to the Main Shop.
-- Linken's Sphere has been added back in.
+- Linken's Sphere has been added.
 - Magic Wand and Magic Stick are both now available.
+
+ADDED THE FOLLOWING NEW ITEMS:
+--------------------------------
+
+CRYSTAL FOCUS
+- Created from Kaya, Aether Lens, Magic Wand and a 700 Gold Recipe.
+- Grants the stats of all the base items.
+- Active - Prismancy: Grants a charge of Prismancy to the caster. Upon casting a non-Ultimate Spell, the charge is consumed, the Spell is refreshed, and you lose 60% of your current Mana.
+
+DEATHSCYTHE
+- Created from Sacred Relic, Echo Sabre and a 900 gold recipe.
+- Grants the stats of all constituent items, except: +85 damage.
+- Passive - Soulclaimer: Removes 16% of the target's current Health, slows by 100% for 1.75s, and purges buffs on strike, then goes on cooldown. The removal cannot be reduced, amplified or blocked.
+- 8s cooldown.
+
+HEPHAESTUS' HAMMER
+- Created from Mithril Hammer, Perserverance, Buckler and a 1000 Gold Recipe (5100 gold).
+- +20 Damage, +4 Armor, +5 Health/Mana Regen
+- Passive - Reinforce: Towers and buildings within a 1200 radius of the holder of this item gain 10 bonus Armor.
+- Active - Guardian Wall: Surrounds nearby buildings in a bubble of energy, reducing damage they take by 80%. Lasts 6s. Enemy Heroes that make an attack against Buildings affected by this ability are slowed by 50% and lose 100 attack speed for 2s. Buildings affected by Guardian Wall have its effects blocked for 30s after the buff ends.
+- 75s cooldown.
+
+CHANGED THE FOLLOWING ITEMS:
 
 PURGING DUST
 - Restock time is now 10 minutes (was 5 minutes).
@@ -117,7 +137,7 @@ ELENA has been reworked:
 - Removed Diverge.
 - Removed Grave Guard.
 - Added GUARDIAN BUBBLE:
-Surrounds the allied Hero in a protective bubble that blocks 3 damage instances. Each time it blocks an instance it heals the Hero for 20/40/60/80 HP.
+Surrounds the allied Hero in a protective bubble that blocks 25/50/75/100 damage 3/4/5/6 times. Each time it blocks damage, it deals that damage as Magical damage to the assailant.
 - Added STARLIGHT:
 Elena creates a targeting line. After a short delay, a blast of energy releases in a line, dealing damage to enemies and healing allies. Deals additional damage/heals more for each Hero caught in the blast, friend or foe.
 - Reworked DEVOTION AURA:
@@ -157,31 +177,6 @@ ALEXANDER
 - Elandra's Blessing Armor bonus increased to 4/8/12/16 (was 3/6/9/12).
 - Elandra's Blessing bonus damage increased to 16/32/48/64 (was 15/30/45/60).
 - Elandra's Blessing is now purgable.
-
-ARTIFICER
-- Unmaking now deals Magical damage.
-- Unmaking tick damage increased to 3.25/4.50/5.75/7.00% (was 3.00/3.75/4.50/5.25%).
-- Unmaking base damage increased to 20/30/40/50 (was 10/20/30/40).
-- Unmaking Mana cost is now 60 at all levels (was 40/50/60/70).
-- Replica Aghanim's Scepter Illusion Incoming Damage increased to 300% (was 200%).
-- Replica Aghanim's Scepter Illusion Duration is now 10/15/20s (was 20/32/48s).
-- Reshape now makes the target invulnerable and untargetable.
-- Reshape cooldown increased to 30s (was 20s).
-- Reshape duration increased to 3.0/4.0/5.0/6.0s (was 2.0/2.5/3.0/3.5s).
-- Reshape duration is now doubled when targeting creeps and non-Hero units.
-- Reshape now transforms the target into one of four Totem Statues, granting different negative effects to nearby enemies within 775 units. They are as follows:
-SIREN STATUE
-Slows movespeed and attack speed.
-ABYSSAL ONE STATUE
-Reduces Armor and Magic Resistance.
-SERPENT STATUE
-Reduces attack damage and outgoing spell damage.
-MONK STATUE
-Applies negative Health and Mana Regen.
-- Base Strength reduced to 15 (was 16).
-- Base Intelligence reduced to 24 (was 30).
-- Intelligence gain reduced to 2.4 (was 3.00).
-- Base Attack Time increased to 1.75s (was 1.65s).
 
 ASTAROTH
 - Pain Curse now deals 15/30/45/60 damage when proccing.
@@ -315,6 +310,10 @@ Lasts 20s.
 - Hit 'n' Run now slows in bursts every time it deals damage. The slow lasts 0.5s.
 - Updated Hit 'n' Run's particle effect to reflect the new behaviour.
 
+HERO
+- Reworked One Punch!!:
+Now deals critical damage to the target, sending them into the air. When they land a few moments later, they create an explosion that deals Magical damage and stuns in an AoE.
+
 THE LICH
 - Reworked Absolute Zero:
 ABSOLUTE ZERO
@@ -362,6 +361,10 @@ BUSHIDO
 Mifune's years of intense training and incredible focus allow him reap more benefits from Agility, becoming more agile and dangerous. Mifune gains bonus Agility equal to a percentage of his Base Agility upon activation, and a small amount of percentage bonus damage.
 Grants 30/45/60/75% bonus Agility and 10/15/20/25% bonus damage for 8s.
 
+MINDFLAYER
+- Reworked Vorpal Assault:
+Fires a number of beams of anti-magic energy at the target enemy, burning Mana, dealing damage, and cumulatively Silencing them. The number of beams increases with level.
+
 RAI
 - Arc Twister mana cost increased to 75 (was 40/50/60/70).
 - Arc Twister cast point increased to 0.15s (was 0.1s).
@@ -369,8 +372,19 @@ RAI
 - Thunder Roar damage reduced to 100 (was 225).
 - Static Blade damage per stack reduced to 8/16/24/32 (was 16/24/32/40).
 
-ODIN
-- Sleipnir's Veil slow duration increased to 2.5s (was 1s).
+SET
+- Sands of War cooldown reduced to 8s (was 16/14/12/10s).
+- Sands of War Puppet duration increased to 15s (was 12/13/14/15s).
+- Sands of War damage reduced to 40/60/80/100 (was 80/100/120/140).
+- Sands of War level multiplier is now 0.5x (was 0.45x).
+- Harsh Sun now reduces enemy vision and attack speed by 200/275/350/425 and 15/20/25/30 during the day.
+- Harsh Sun now grants Set 150/300/450/600 bonus vision and 20/40/60/80 bonus movespeed during the day.
+- Duststorm reworked:
+SCARAB CURSE
+Inflicts a curse upon the target enemy, stealing a portion of their current attack damage, and summoning a Scarab to fly around them. The Scarab deals Physical damage in short intervals based on the amount stolen. At any time, Set can transfer the curse to any enemy that is near the current target, using the subability Switch Scarab Targets.
+- An Army Beneath the Sands reworked:
+SIROCCO
+Creates an area around Set that reduces vision for enemies and deals damage over time. Set and any units he owns recover Health equal to the damage over time whilst inside the Sirocco.
 
 OUROBOROS
 - Searing Flame damage reduced to 80/110/140/170 (was 60/100/140/200).
@@ -452,6 +466,9 @@ NU
 - Micronebula damage percentage reduced to 10/20/30/40% (was 20/30/40/50%).
 - Micronebula duration reduced to 4s (was 12s).
 - Micronebula cooldown reduced to 20s (was 40/35/30/25s).
+- Antimatter Mines reworked:
+FLUX FIELD
+Creates an area that damages and ministuns all units inside it when one unit casts a Spell. Affects enemies only.
 - Warpstar stun reduced to 1.25s (was 1.50/2.00/2.50s).
 
 VOIDWALKER
@@ -485,6 +502,14 @@ WAR
 - Bloodlust no longer affects allies.
 - Bloodlust duration is now 12.0s (was 3.0/4.0/5.0/6.0s).
 - Bloodlust can now be purged.
+
+MISC
+=========
+
+- Added tooltips for (hopefully) every modifier in the game.
+- Added Lore to a lot of abilities and Heroes (this is still on-going).
+- Added Complexity ratings and Role Pips to all Heroes.
+- Changed the pick sounds for all Heroes.
 
 Version 1.97
 

@@ -1,7 +1,7 @@
-"npc_dota_hero_odin"
+"npc_dota_hero_abaddon"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_abaddon"
+	//"override_hero"			"npc_dota_hero_abaddon"
 	"Ability1"				"odin_gods_eye" // With the powers of a god at his fingertips, Odin leers over a target area to grant vision and truesight for a short time.
 	"Ability2"				"odin_sleipnirs_veil" // Odin becomes invisible and moves at high speed through units, slowing them and damaging them.
 	"Ability3"				"odin_oppression" // Each strike against Odin causes the attacker to sink into despair, reducing their attack speed and attack damage.  Reduces AD by 5/10/15/20 per attack,
@@ -51,9 +51,9 @@
 	"MovementTurnRate"			"0.5"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 }

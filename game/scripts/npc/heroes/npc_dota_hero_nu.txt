@@ -1,25 +1,33 @@
-"npc_dota_hero_nu"
+"npc_dota_hero_enigma"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_enigma"
-	"Ability1"				"nu_antimatter_mines" // Summons a large amount of mines to a target area. The mines explode when anything in their vicinity moves, dealing Pure damage to units.
+	//"override_hero"			"npc_dota_hero_enigma"
+	"HeroSelectSoundEffect"	"Nu.Warpstar"
+	"Role"					"Disabler,Support"
+	"Rolelevels"			"2,2"
+	"Complexity"			"3"
+	"Ability1"				"nu_gravity_pulse" // Nu summons an incredible gravitational pulse, dealing 80/160/240/320 Physical damage to and slowing all enemies caught in the radius for 1/2/3/4s.
 	"Ability2"				"nu_micronebula" // Dark nebulae orbit the targeted enemy. After a short formation time, the mebulae begin to rotate around them.
 	// After a period of time, the nebulae ceases orbit, dealing large damage to the target based on the amount of damage they took during the duration over 3s.
-	"Ability3"				"nu_gravity_pulse" // Nu summons an incredible gravitational pulse, slowing all enemies caught in the radius to 50 movespeed for 1s. This overrides Haste runes,
-	// and other types of abilities that would otherwise be an absolute movement speed buff. Deals 175/250/325/400 Physical damage. Has a large cast point, and a small radius.
-	"Ability4"				"nu_warpstar" // Gathering his energies, Nu creates the impossible; a devastating cosmological entity called the Warpstar. The Warpstar destabilises the space
+	"Ability3"				"nu_flux_field" // Creates an energy field at the target point. After a 1s formation time, the field deals damage over time, and deals damage to enemy units within it whenever any one of them casts a Spell.
+	// Deals 30/60/90/120 damage when a Spell is cast in its radius.
+	// Deals 10/20/30/40 damage per second.
+	// 550 radius.
+	// 8s duration.
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"nu_warpstar" // Gathering his energies, Nu creates the impossible; a devastating cosmological entity called the Warpstar. The Warpstar destabilises the space
 	// around it, slowing enemy Heroes. After a delay time, they take a large amount of Physical, Magical and Pure damage, and are transported to Nu's position when he cast the spell.
-	"Ability5"				""
-	"Ability6"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_spell_amplify_5" // 
+	"Ability11"				"special_bonus_nu_1" // +12% Micronebula Damage
+	"Ability12"				"special_bonus_magic_resistance_12" //
+	"Ability13"				"special_bonus_intelligence_14" // 
+	"Ability14"				"special_bonus_nu_2" // +60 Flux Field DPS
+	"Ability15"				"special_bonus_cooldown_reduction_15" // 
+	"Ability16"				"special_bonus_nu_3" // +300 Gravity Pulse Damage
+	"Ability17"				"special_bonus_cast_range_400" // 
 	
 
 	"ArmorPhysical"				"0"									// Physical protection.
@@ -51,9 +59,9 @@
 	"MovementTurnRate"			"1.0"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 }

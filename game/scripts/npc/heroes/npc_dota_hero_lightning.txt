@@ -1,13 +1,16 @@
-"npc_dota_hero_lightning"
+"npc_dota_hero_phantom_assassin"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_phantom_assassin"
+	//"override_hero"			"npc_dota_hero_phantom_assassin"
+	"Role"					"Nuker"
+	"Rolelevels"			"3"
+	"Complexity"			"1"
 	"Ability1"				"lightning_lightning_dagger"
 	"Ability2"				"lightning_boltblast"
 	"Ability3"				"lightning_overload"
-	"Ability4"				"lightning_spark"
-	"Ability5"				""
-	"Ability6"				""
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"lightning_spark"
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -24,7 +27,7 @@
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackRange"				"125"
+	"AttackRange"				"150"
 	"AttackRate"				"1.6"
 	"AttackDamageMin"			"21"										// Damage range min.
 	"AttackDamageMax"			"23"										// Damage range max.
@@ -49,9 +52,9 @@
 	"MovementTurnRate"			"0.7"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	"VisionDaytimeRange"		"1800"									// Range of vision in the day time.

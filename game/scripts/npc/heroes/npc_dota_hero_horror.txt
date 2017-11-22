@@ -1,26 +1,30 @@
-"npc_dota_hero_horror"
+"npc_dota_hero_night_stalker"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_night_stalker"
+	//"override_hero"			"npc_dota_hero_night_stalker"
+	"Role"					"Initiator,Escape,Disabler"
+	"Rolelevels"			"2,1,2"
+	"Complexity"			"2"
 	"Ability1"				"horror_terrify" // The targeted enemy is slowed and forced to run away from Horror for a short time, taking damage over time over the duration.
 	"Ability2"				"horror_obscure" // Creates an area around Horror where darkness quickly spills out, dealing damage instantly and blinding enemies caught for 2/3/4/5s
 	// after a 0.75s delay. Affected enemies will miss their attacks.
 	"Ability3"				"horror_paranoia" // Horror curses the target unit with insurmountable paranoia. After a 1s delay, they will begin to take damage over time for each allied
 	// unit near them. Lasts 8s. The radius for checking for allied units is 1200. Heroes grant 4/8/12/16 damage per second, creeps grant 1/2/3/4 damage per second. At the end of the
 	// duration, they take bonus damage if there is still a Hero within 1200 units, equal to 125/175/225/275 damage.
-	"Ability4"				"horror_sinister" // When activated, Horror gains vision of all enemies on the map. He may cast a subability to jump to an enemy, damaging them.
-	"Ability5"				""
-	"Ability6"				""
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"horror_sinister" // When activated, Horror gains vision of all enemies on the map. He may cast a subability to jump to an enemy, damaging them.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_attack_speed_20"
+	"Ability11"				"special_bonus_hp_regen_7"
+	"Ability12"				"special_bonus_horror_1" // +125 Terrify Damage
+	"Ability13"				"special_bonus_movement_speed_30"
+	"Ability14"				"special_bonus_mp_regen_10"
+	"Ability15"				"special_bonus_horror_2" // +3s Sinister Duration
+	"Ability16"				"special_bonus_horror_3" // Obscure 1.5s Stun
+	"Ability17"				"special_bonus_horror_4" // x2 Paranoia Damage
 
 	"ArmorPhysical"				"2"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -50,9 +54,9 @@
 	"MovementTurnRate"			"1.0"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"1200"									// Range of vision at night time.
 }

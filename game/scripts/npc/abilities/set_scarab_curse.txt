@@ -1,0 +1,72 @@
+//=====================================================================================================
+// SET: scarab_curse
+//=====================================================================================================
+"set_scarab_curse"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/set_scarab_curse"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"	
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"AbilityTextureName"			"set_scarab_curse"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"base_damage" 			"10 15 20 25"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"percent_damage_reduction" "25 35 45 55"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow" 					"15"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"interval"				"0.9"
+			"LinkedSpecialBonus"	"special_bonus_set_4"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"8"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"retarget_range"		"700"
+		}
+	}
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_set/scarab_curse_ring.vpcf"
+		"particle"  "particles/units/heroes/hero_set/scarab_curse_flash.vpcf"
+		"soundfile" "soundevents/hero_set.vsndevts"
+	}
+}

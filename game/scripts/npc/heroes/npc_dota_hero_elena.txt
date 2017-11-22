@@ -1,7 +1,11 @@
-"npc_dota_hero_elena"
+"npc_dota_hero_vengefulspirit"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_vengefulspirit"
+	//"override_hero"			"npc_dota_hero_vengefulspirit"
+	"HeroSelectSoundEffect"	"Elena.Starlight"
+	"Role"					"Support,Nuker"
+	"Rolelevels"			"3,2"
+	"Complexity"			"1"
 	"Ability1"				"elena_guardian_bubble" // Forms a bubble around the target ally,
 	// causing damage they take to not exceed a cap (before reductions).
 	// Prevents damage from exceeding 100.
@@ -17,13 +21,13 @@
 	// she casts a Spell.
 	// In a 700 radius, grants 5/10/15/20 regeneration for 3s.
 	// The regeneration stacks fully, and refreshes the buff duration when applied.
-	"Ability4"				"elena_bladebreaker" // Elena enchants nearby enemies' weapons with a powerful hex.
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"elena_bladebreaker" // Elena enchants nearby enemies' weapons with a powerful hex.
 	// When they make an attack, they take 50+40/60/80% of their attack damage as Pure damage,
 	// and are disarmed for 1.3s.
 	// If the target is disarmed, the debuff pauses.
 	// Lasts 5s.
-	"Ability5"				""
-	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -64,9 +68,9 @@
 	"MovementTurnRate"			"0.8"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 }

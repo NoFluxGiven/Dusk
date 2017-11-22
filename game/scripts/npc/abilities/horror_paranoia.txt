@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/horror_paranoia"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -16,7 +17,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1000"
+	"AbilityCastRange"				"600"
 	"AbilityCastPoint"				"0.4"
 	
 	// Time		
@@ -43,7 +44,7 @@
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"hero_damage"					"10 15 20 25"
+			"hero_damage"					"20 25 30 35"
 		}
 	"03"
 		{
@@ -53,17 +54,7 @@
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"initial_damage"				"60 80 100 120"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"end_damage"					"20 40 60 80"
-		}
-	"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"1000"
+			"radius"						"700 800 900 1000"
 		}
 	}
 	
@@ -73,61 +64,5 @@
 		"particle" "particles/units/heroes/hero_horror/paranoia_damage.vpcf"
 		"particle" "particles/generic_gameplay/generic_silenced.vpcf"
 		"soundfile" "soundevents\hero_phantom.vsndevts"
-		}
-		
-	"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_paranoia"
-				"Target" 		"TARGET"
-				"Duration"		"%duration"
-			}
-		}
-	
-	"Modifiers"
-		{
-			"modifier_paranoia"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"EffectName"		"particles/units/heroes/hero_horror/paranoia_overhead.vpcf"
-				"EffectAttachType"	"follow_overhead"
-
-				"OnCreated"
-				{
-					"FireSound"
-					{
-						"EffectName"	"Horror.Paranoia"
-						"Target" 		"TARGET"
-					}
-				}
-
-				"ThinkInterval"  "1.0"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/horror_abilities.lua"
-						"Function"		"Paranoia"
-						"radius"		"%radius"
-						"damage"		"%hero_damage"
-						"creep_damage"	"%creep_damage"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/horror_abilities.lua"
-						"Function"		"ParanoiaEnd"
-						"damage"		"%end_damage"
-						"radius"		"%radius"
-					}
-				}
-			}
 		}
 }

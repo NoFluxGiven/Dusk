@@ -39,7 +39,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"block"					"3 4 5 6"
+			"block"					"4 5 6 7"
 			"LinkedSpecialBonus"	"special_bonus_elena_4"
 		}
 		"03"
@@ -50,7 +50,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"incoming_damage_block"	"25 50 75 100"
+			"incoming_damage_block"	"15 30 45 60"
 		}
 	}
 

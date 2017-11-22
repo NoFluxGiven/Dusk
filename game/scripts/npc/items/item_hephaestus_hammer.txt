@@ -1,0 +1,116 @@
+//=================================================================================================================
+// hephaestus_hammer
+//=================================================================================================================
+"item_hephaestus_hammer"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"lua/items/item_hephaestus_hammer"
+	"ID"							"3037"  //Valve's version of this item uses the ID "39".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"Model"							"models/props_gameplay/clarity.mdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_hephaestus_hammer"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"              "0"
+	"AbilityCooldown"				"75"
+	"AbilityManaCost"				"50"
+	"AbilityCastRange"				"1200"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"                      "5175"
+    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;hard_to_tag"
+    "ItemQuality"                   "epic"
+    "ItemAliases"                   "hephaestus_hammer"
+    "ItemRequiresCharges"           "0"
+    "ItemDisplayCharges"            "0"
+    "ItemPermanent"                 "1"
+    "ItemInitialCharges"            "0"
+	"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+	"precache"
+	{
+	
+		"particle" "particles/items/hephaestus.vpcf"
+		"particle" "particles/items/hephaestus_aura.vpcf"
+		"particle" "particles/items/hephaestus_slow.vpcf"
+		"soundfile"	"soundevents/game_sounds_items.vsndevts"
+	
+	}
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"bonus_health_regen" "5.5"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"bonus_mana_regen"	"1.5"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_damage"		"20"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_armor" 		"5"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"active_damage_reduction" "80"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration" 			"6"
+		}
+		"07"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"active_move_slow" 	"50" // percentage
+		}
+		"07"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"active_att_slow"  "100"
+		}
+		"08"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"active_slow_duration" 	"2.50"
+		}
+		"09"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"active_regen_bonus" "25"
+		}
+		"10"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"active_cooldown" 	"45.0"
+		}
+		"11"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"aura_armor_bonus"  "15"
+		}
+		"12"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"aura_radius" 		"1200"
+		}
+	}
+}

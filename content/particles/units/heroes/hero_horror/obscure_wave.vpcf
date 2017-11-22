@@ -20,8 +20,7 @@
 			m_nSpinRateDegrees = 25
 		},
 		{
-			_class = "C_OP_Cull"
-			m_flCullPerc = 0.1
+			_class = "C_OP_BasicMovement"
 		},
 	]
 	m_Renderers = 
@@ -29,7 +28,7 @@
 		{
 			_class = "C_OP_RenderSprites"
 			m_flSourceAlphaValueToMapToOne = 0.352
-			m_hTexture = resource:"materials/particle/particle_glow_05.vtex"
+			m_hTexture = resource:"materials/particle/particle_cone_gradient_2.vtex"
 			m_flDepthBias = 150.0
 			m_bAdditive = true
 			m_bDisableZBuffering = true
@@ -59,6 +58,8 @@
 			_class = "C_INIT_CreateWithinSphere"
 			m_fRadiusMax = 0.75
 			m_nScaleCP = 1
+			m_vecDistanceBias = [ 1.0, 1.0, 0.0 ]
+			m_vecDistanceBiasAbs = [ 0.0, 0.0, 1.0 ]
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -79,14 +80,43 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 0.8
+			m_flRadiusMin = 0.5
 		},
 	]
 	m_Emitters = 
 	[
 		{
-			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 25
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmissionDuration = 0.5
+			m_flEmitRate = 25.0
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 1.0, 1.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_horror/obscure_wave_b.vpcf"
 		},
 	]
 }

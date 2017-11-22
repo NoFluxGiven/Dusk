@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/nu_micronebula"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -23,7 +24,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"20"
+	"AbilityCooldown"				"10"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -45,12 +46,18 @@
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"dmg"							"10 20 30 40" // percent of damage taken over the effect's duration
+			"damage"						"16 24 32 40" // percent of damage taken over the effect's duration
+			"LinkedSpecialBonus"			"special_bonus_nu_1"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"aoe"							"240"
+			"aoe"							"375"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"damage_duration"				"3"
 		}
 	}
 	
@@ -59,110 +66,5 @@
 		"particle" "particles/units/heroes/hero_nu/micronebula_full.vpcf"
 		"particle" "particles/units/heroes/hero_nu/micronebula_detonate.vpcf"
 		"soundfile" "soundevents\hero_fate.vsndevts"
-		}
-		
-	"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"EffectName"	"Fate.ChainsOfFate.Start"
-				"Target" 		"TARGET"
-			}
-			"FireSound"
-			{
-				"EffectName"	"Fate.ChainsOfFate.Ambience"
-				"Target" 		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_micronebula"
-				"Target" 		"TARGET"
-				"Duration"		"%duration"
-			}
-		}
-	
-	"Modifiers"
-		{
-			"modifier_micronebula"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"		"particles/units/heroes/hero_nu/micronebula_full.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"            "TARGET"
-					}
-				}
-
-				"OnTakeDamage"
-				// "%attack_damage" is set to the damage value after mitigation
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/nu_abilities"
-						"Function"		"TrackDamage"
-						"dmg"			"%attack_damage"
-						"mult"			"%dmg"
-					}
-				}
-				"OnDestroy"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_micronebula_dmg"
-						"Target" 		"TARGET"
-						"Duration"		"3"
-					}
-				}
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/nu_abilities.lua"
-						"Function"		"micronebulaUnitDead"
-					}
-				}
-			}
-			"modifier_micronebula_dmg"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-				"IsPurgable"		"1"
-
-				"OnCreated"
-				{
-					"FireSound"
-					{
-						"EffectName"	"Hero_TemplarAssassin.Trap"
-						"Target" 		"TARGET"
-					}
-				}
-			
-				"ThinkInterval"  "0.1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/nu_abilities.lua"
-						"Function"		"micronebulaDamage"
-						"radius"		"%aoe"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/nu_abilities.lua"
-						"Function"		"micronebulaReset"
-					}
-				}
-			}
 		}
 }

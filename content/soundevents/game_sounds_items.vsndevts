@@ -87,3 +87,243 @@
     }
 
 }
+
+"CrystalFocus.Prismancy"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/crystal_focus_start_up.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"CrystalFocus.Prismancy.Cast"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/crystal_focus_activate.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Deathscythe.Attack"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/deathscythe_strike.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"BlackRose.StartUp"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/black_rose_start_up.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"BlackRose.Target"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/black_rose.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Hephaestus"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/hephaestus_hammer_guard.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Yggdrasil.Drain.Target"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/wand_of_yggdrasil_drain.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Yggdrasil.Drain"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/wand_of_yggdrasil.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}

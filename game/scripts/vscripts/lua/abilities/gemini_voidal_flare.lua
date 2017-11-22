@@ -48,6 +48,8 @@ function gemini_voidal_flare:OnProjectileHit(t,l)
 
 		local t_purge = self:GetCaster():FetchTalent("special_bonus_gemini_3") or false
 
+		if t:IsMagicImmune() then return end
+
 		if t_purge then
 			t:Purge(false, true, false, false, false)
 		end

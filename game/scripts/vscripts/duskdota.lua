@@ -458,33 +458,33 @@ function duskDota:OnGameInProgress()
   local towers = duskDota.towers
 
   for k,v in pairs(towers) do
-    Timers:CreateTimer(0.1,
-    function()
-      local max_health = v:GetMaxHealth()*0.90
-      v:SetBaseMaxHealth(max_health)
-      v:SetMaxHealth(max_health)
-      v:SetHealth(max_health)
-      local damage_min = v:GetBaseDamageMin()*1.10
-      local damage_max = v:GetBaseDamageMax()*1.10
-      v:SetBaseDamageMin(damage_min) --[[Returns:void
-      Sets the minimum base damage.
-      ]]
-      v:SetBaseDamageMax(damage_max) --[[Returns:void
-      Sets the minimum base damage.
-      ]]
-    end)
+    -- Timers:CreateTimer(0.1,
+    -- function()
+    --   local max_health = v:GetMaxHealth()*0.90
+    --   v:SetBaseMaxHealth(max_health)
+    --   v:SetMaxHealth(max_health)
+    --   v:SetHealth(max_health)
+    --   local damage_min = v:GetBaseDamageMin()*1.10
+    --   local damage_max = v:GetBaseDamageMax()*1.10
+    --   v:SetBaseDamageMin(damage_min) --[[Returns:void
+    --   Sets the minimum base damage.
+    --   ]]
+    --   v:SetBaseDamageMax(damage_max) --[[Returns:void
+    --   Sets the minimum base damage.
+    --   ]]
+    -- end)
     local ab = v:AddAbility("tower_frenzy")
     ab:SetLevel(1)
   end
 
   for k,v in pairs(forts) do
-    Timers:CreateTimer(0.1,
-    function()
-      local max_health = v:GetMaxHealth()*0.80
-      v:SetBaseMaxHealth(max_health)
-      v:SetMaxHealth(max_health)
-      v:SetHealth(max_health)
-    end)
+    -- Timers:CreateTimer(0.1,
+    -- function()
+    --   local max_health = v:GetMaxHealth()*0.80
+    --   v:SetBaseMaxHealth(max_health)
+    --   v:SetMaxHealth(max_health)
+    --   v:SetHealth(max_health)
+    -- end)
   end
 
   -- Timers:CreateTimer(1200,function()
@@ -571,6 +571,19 @@ function duskDota:InitduskDota()
   
   self.lastRadiantKill = {}
   self.lastDireKill = {}
+
+  self.subAbilities = {
+    "baal_otherworld_exit",
+    "baal_port_out",
+    "gemini_planar_trickery_activate",
+    "hero_hyper_kick",
+    "ironfist_change_stance",
+    "ironfist_gale_stance",
+    "ironfist_stonewall_stance",
+    "ironfist_dragon_stance",
+    "switch_scarab_targets",
+    "timekeeper_chronoshift_end"
+  }
 
   self.normalItemTable = {
     "item_mjollnir",
@@ -814,15 +827,22 @@ function duskDota:FilterTakeDamage( filterTable )
   end
 
   -- ENTHRALL
-  if defender:HasModifier("modifier_enthralled") or defender:HasModifier("modifier_enthralled_ally") then
+  if defender:HasModifier("modifier_enthrall") then
     if dtype == DAMAGE_TYPE_PHYSICAL then
-      if defender:IsEthereal() then
-        print("Target is immune to the base damage, dealing none")
-      end
-      print("damage type is "..dtype.." converting to "..DAMAGE_TYPE_MAGICAL)
+
+      -- The modifier deals with the damage dealt!
+
+      -- print("FILTERTAKEDAMAGE "..GameRules:GetGameTime())
+      local mod = defender:FindModifierByName("modifier_enthrall")
+      local ab = mod:GetAbility()
+
+      -- if defender:IsEthereal() then
+      --   -- print("Target is immune to the base damage, dealing none")
+      -- end
+      -- -- print("damage type is "..dtype.." converting to "..DAMAGE_TYPE_MAGICAL)
       local damageb = defender:GetDamageBeforeReductions(damage,dtype)
-      print("Damage is "..damage..", before reduction is "..damageb)
-      DealDamage(defender,attacker,damageb,DAMAGE_TYPE_MAGICAL)
+      -- -- print("Damage is "..damage..", before reduction is "..damageb)
+      ab:InflictDamage(defender,attacker,damageb,DAMAGE_TYPE_MAGICAL)
       return false
     end
   end

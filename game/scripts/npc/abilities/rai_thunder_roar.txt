@@ -37,28 +37,33 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"100"
+			"damage"						"100 125 150"
 		}
 		"02"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"4.5"
+			"duration"						"5.5"
 		}
 		"03"
 		{
 			"var_type"						"FIELD_INTEGER"
 			"bolts"							"4 6 8"
-			"LinkedSpecialBonus"			"special_bonus_rai_5"
 		}
 		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"475"
+			"radius"						"350"
 		}
 		"05"
 		{
 			"var_type"						"FIELD_INTEGER"
 			"bolt_radius"					"300"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"ministun"						"0.3"
+			"LinkedSpecialBonus"			"special_bonus_rai_5"
 		}
 	}
 	

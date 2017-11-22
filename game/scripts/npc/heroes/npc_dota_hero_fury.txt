@@ -1,7 +1,11 @@
-"npc_dota_hero_fury"
+"npc_dota_hero_ursa"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_ursa"
+	//"override_hero"			"npc_dota_hero_ursa"
+	"HeroSelectSoundEffect"	"Fury.Roar"
+	"Role"					"Carry"
+	"Rolelevels"			"3"
+	"Complexity"			"1"
 	"Ability1"				"fury_roar" // Fury unleashes a roar in the target direction, granting him bonus movespeed, damage and attack speed for each unit hit, and slowing and damaging the units affected.
 	// Grants per Hero:
 	// 2/3/4/5% movespeed
@@ -14,9 +18,9 @@
 	// Slows by 10/15/20/25% for 4s.
 	"Ability2"				"fury_rend"
 	"Ability3"				"fury_bloodsport"
-	"Ability4"				"fury_berserk"
-	"Ability5"				"" //Automatically levelled to 1 when the character is picked.
-	"Ability6"				""
+	"Ability4"				"generic_hidden" //Automatically levelled to 1 when the character is picked.
+	"Ability5"				"generic_hidden"
+	"Ability6"				"fury_berserk"
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -58,9 +62,9 @@
 	"MovementTurnRate"			"0.6"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"950"									// Range of vision at night time.
 }

@@ -56,7 +56,8 @@ modifier_frostfall = class({})
 
 function modifier_frostfall:OnCreated(kv)
 	if IsServer() then
-		self:StartIntervalThink(2.0)
+		local interval = self:GetAbility():GetSpecialValueFor("interval")
+		self:StartIntervalThink(interval)
 		self:GetParent():EmitSound("Hero_Ancient_Apparition.IceVortex")
 	end
 end

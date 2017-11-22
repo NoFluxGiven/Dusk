@@ -1,27 +1,33 @@
-"npc_dota_hero_mana_knight"
+"npc_dota_hero_chaos_knight"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_chaos_knight"
-	"Ability1"				"mana_knight_infusion_bolt" // The Mana Knight unleashes a slow moving bolt of pure Magical energy, consuming a percentage of his current Mana in the process.
-	// The bolt deals damage based on the Mana consumed, and stuns for 2s.
-	"Ability2"				"mana_knight_mana_seal" // Creates an area where enemies are silenced and have their Mana slowly drained out. The lower their Mana pool is, the slower they move.
+	//"override_hero"			"npc_dota_hero_chaos_knight"
+	"HeroSelectSoundEffect"	"ManaKnight.VorpalAssault"
+	"Role"					"Carry,Disabler"
+	"Rolelevels"			"2,2"
+	"Complexity"			"2"
+	"Ability1"				"mana_knight_infusion_bolt" // The Mana Knight unleashes a bolt that stuns for 2s and deals damage based on missing Mana. Has a minimum and maximum damage.
+	"Ability2"				"mana_knight_mana_seal" // Creates an area where enemies are silenced and have their Mana slowly drained out. If their Mana pool reaches zero, they take damage, are ministunned, and are slowed for a short time.
 	// Upon reaching 0 Mana, they are stunned for 2s.
 	"Ability3"				"mana_knight_arcanum_break" // The Mana Knight's attacks have a chance to burn away the target's Magical energies, temporarily reducing their Spell damage and
 	// forcing them to lose a portion of their current Mana.
-	"Ability4"				"mana_knight_vorpal_assault" // Gives the Mana Knight 4/6/8 attacks where his attack speed is greatly increased and they burn Mana from the target. The attacks deal bonus
-	// damage based on the Mana missing from the target's Mana pool. If the target reaches
-	// zero Mana, the attacks stun and deal more bonus damage.
-	"Ability5"				""
-	"Ability6"				""
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"mana_knight_vorpal_assault" // The Mana Knight rears his steed, unleashing 5/7/9 bolts of damaging energy at the target. Each bolt deals 50 damage, Silences them, and burns 30/40/50 Mana. There is a 0.15s delay between each.
+	// Each bolt applies a 0.75s Silence that stacks cumulatively.
+	// The bolts are NOT projectiles. They hit instantly.
+	// If the target moves out of the cast range + a 500 range buffer, the bolts will not strike them.
+	// The Mana Knight is free to attack, move and cast Spells while the Spell is active.
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_attack_speed_20" // 
+	"Ability11"				"special_bonus_mana_knight_1" // Mana Seal Silences for 3s
+	"Ability12"				"special_bonus_attack_damage_35" //
+	"Ability13"				"special_bonus_mana_knight_2" // +80 Arcanum Break Damage
+	"Ability14"				"special_bonus_hp_regen_20" // 
+	"Ability15"				"special_bonus_mana_knight_3" // +7% Mana Seal Drain
+	"Ability16"				"special_bonus_mana_knight_4" // +2.5s Infusion Bolt Stun
+	"Ability17"				"special_bonus_magic_resistance_35" //
 	
 
 	"ArmorPhysical"				"3"										// Physical protection.
@@ -53,9 +59,9 @@
 	"MovementTurnRate"			"0.65"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 }

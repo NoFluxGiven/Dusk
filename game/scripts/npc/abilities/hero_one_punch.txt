@@ -5,26 +5,27 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/hero_one_punch"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityTextureName"			"hero_one_punch"
 	"AnimationPlaybackRate"			"0.9"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"125"
+	"AbilityCastRange"				"150"
 	"AbilityCastPoint"				"0.5"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"65"
+	"AbilityCooldown"				"90 80 70"
 	"HasScepterUpgrade"				"1"
 
 	// Cost
@@ -42,37 +43,38 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"crit"						"200 275 350"
+			"crit"						"225 250 275"
 		}
 		"02"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"knockback"					"750 1000 1250"
+			"var_type"					"FIELD_FLOAT"
+			"landing_delay"				"1.50"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"scepter_knockback"			"1750"
+			"landing_aoe"				"250"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"mega_crit_chance"			"20"
+			"landing_damage"			"240 300 360"
 		}
 		"05"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"mega_crit"					"300 375 450"
+			"var_type"					"FIELD_FLOAT"
+			"landing_stun"				"1.25 1.50 1.75"
+			"LinkedSpecialBonus"		"special_bonus_hero_4"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"scepter_mega_crit_chance"	"10"
+			"scepter_crit"				"300 325 350"
 		}
 		"07"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"scepter_mega_crit"			"575"
+			"scepter_landing_damage"	"150 175 200"
 		}
 	}
 	
@@ -84,134 +86,5 @@
 		"particle" "particles/units/heroes/hero_tusk/tusk_walruspunch_start.vpcf"
 		"particle" "particles/units/heroes/hero_hero/one_punch_mega_crit.vpcf"
 		"particle" "particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
-		}
-
-	"OnAbilityPhaseStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/hero_abilities.lua"
-			"Function"		"OnePunchAbilityPhaseStart"
-		}
-	}
-		
-	"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_abilities.lua"
-				"Function"		"OnePunch"
-				"knockback"		"%knockback"
-			}
-		}
-		
-	"Modifiers"
-		{
-			"modifier_one_punch_crit"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit"
-				}
-				"States"
-				{
-					"MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-			"modifier_one_punch_mega_crit"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%mega_crit"
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-			"modifier_one_punch_mega_crit_scepter"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%scepter_mega_crit"
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-
-			"modifier_one_punch_knockback"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"OnCreated"
-				{
-					"Knockback"
-					{
-						"Target"            "TARGET"
-						"Center" 	        "CASTER"
-						"Distance"	        "%knockback"
-						"Duration"	        "1"
-						"Height"	        "500"
-						"IsFixedDistance"	"1"
-						"ShouldStun"        "1"	
-					}
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_PROVIDES_VISION"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-
-			"modifier_one_punch_knockback_s"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"OnCreated"
-				{
-					"Knockback"
-					{
-						"Target"            "TARGET"
-						"Center" 	        "CASTER"
-						"Distance"	        "%scepter_knockback"
-						"Duration"	        "1"
-						"Height"	        "500"
-						"IsFixedDistance"	"1"
-						"ShouldStun"        "1"	
-					}
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_PROVIDES_VISION"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-			"modifier_one_punch_freedom_strike_augment"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"Duration"			"3"
-			}
 		}
 }

@@ -1,16 +1,20 @@
-"npc_dota_hero_tek"
+"npc_dota_hero_tinker"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_tinker"
+	//"override_hero"			"npc_dota_hero_tinker"
+	"HeroSelectSoundEffect"	"Tek.MegatonBlast.Target"
+	"Role"					"Nuker,Disabler"
+	"Rolelevels"			"3,1"
+	"Complexity"			"2"
 	"Ability1"				"tek_skycrack" // Fires a laser directly in front of Tek that deals large damage and slows.
 	"Ability2"				"tek_mosquito_missiles" // Locks on to multiple targets within range, then fires a large amount of missiles at them.  The missiles deal small damage, but this ability can target one unit multiple times.
 	"Ability3"				"tek_megaton_blast" // After a 2s charge time, fires a blast
 	// of pure force at the target enemy. The blast deals damage and ministuns.
 	// This Spell is NOT channelled; Tek can do whatever he wants during the charge period.
 	// Deals 100/175/250/325 damage and ministuns for 0.75s.
-	"Ability4"				"tek_tesla_microarray" // Following a short delay, Tek powers up his suit, making his abilities much stronger and more deadly.  After the duration, Tek is unable to attack or cast spells for a short time.
-	"Ability5"				"" // Fires a deadly laser directly in front of Tek that deals huge damage and slows.
-	"Ability6"				"" // Locks on to multiple targets within range extremely quickly, then fires a huge amount of missiles at them.
+	"Ability4"				"generic_hidden" // Fires a deadly laser directly in front of Tek that deals huge damage and slows.
+	"Ability5"				"generic_hidden" // Locks on to multiple targets within range extremely quickly, then fires a huge amount of missiles at them.
+	"Ability6"				"tek_tesla_microarray" // Following a short delay, Tek powers up his suit, making his abilities much stronger and more deadly.  After the duration, Tek is unable to attack or cast spells for a short time.
 	"Ability7"				"" // Passive. While Tek is Powered Up, droids become impervious to damage for a short time and attack a lot faster.
 	"Ability8"				"" // Tek sacrifices his life to enter a superpowered mode, reducing his cooldowns drastically but rapidly draining his health.  Takes 20% of max health as damage per second.  Tek cannot be killed by this ability, but it will end if his health drops to 1.
 	"Ability9"				""
@@ -58,9 +62,9 @@
 	"MovementTurnRate"			"0.75"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 }

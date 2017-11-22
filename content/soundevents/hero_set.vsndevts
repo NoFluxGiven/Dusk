@@ -1,0 +1,89 @@
+"Set.ScarabCurse"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/scarabs_curse.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Set.ScarabCurse.SwitchTarget"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/scarabs_curse_start.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Set.ScarabCurse.Damage"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/scarabs_curse_damage.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.00"
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,34 +1,24 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
-			m_Gravity =
-			[
-				0.000000,
-				0.000000,
-				-8000.000000,
-			]
+			m_Gravity = [ 0.0, 0.0, -8000.0 ]
 		},
 		{
 			_class = "C_OP_RotateVector"
 			m_nFieldOutput = 17
-			m_vecRotAxisMax =
-			[
-				2.000000,
-				2.000000,
-				2.000000,
-			]
+			m_vecRotAxisMax = [ 2.0, 2.0, 2.0 ]
 		},
 		{
 			_class = "C_OP_AlphaDecay"
 		},
 		{
 			_class = "C_OP_RampScalarLinearSimple"
-			m_Rate = -8.000000
-			m_flEndTime = 9999.000000
+			m_Rate = -8.0
+			m_flEndTime = 9999.0
 			m_nField = 16
 			m_nOpEndCapState = 1
 		},
@@ -36,11 +26,11 @@
 			_class = "C_OP_FadeInSimple"
 		},
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderModels"
-			m_ModelList =
+			m_ModelList = 
 			[
 				{
 					m_model = resource:"models/particle/earth_spirit_rockspike04.vmdl"
@@ -49,7 +39,7 @@
 			m_bOrientZ = true
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomRotation"
@@ -57,34 +47,24 @@
 		},
 		{
 			_class = "C_INIT_RingWave"
-			m_flInitialRadius = 1.000000
+			m_flInitialRadius = 1.0
 			m_bEvenDistribution = true
 			m_nOverrideCP = 2
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin =
-			[
-				0.000000,
-				0.000000,
-				2000.000000,
-			]
-			m_OffsetMax =
-			[
-				0.000000,
-				0.000000,
-				2000.000000,
-			]
+			m_OffsetMin = [ 0.0, 0.0, 2000.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 2000.0 ]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_nParticlesToEmit = 37
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_reus/reus_rockfall_ground_effect.vpcf"
@@ -93,17 +73,34 @@
 			m_ChildRef = resource:"particles/units/heroes/hero_reus/rockfall_rocks.vpcf"
 		},
 	]
-	m_Constraints =
+	m_Constraints = 
 	[
 		{
 			_class = "C_OP_PlanarConstraint"
-			m_PointOnPlane =
+			m_PointOnPlane = [ 0.0, 0.0, 125.0 ]
+		},
+	]
+	m_flConstantRadius = 3.0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
 			[
-				0.000000,
-				0.000000,
-				125.000000,
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 1.0, 1.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
 			]
 		},
 	]
-	m_flConstantRadius = 3.000000
 }

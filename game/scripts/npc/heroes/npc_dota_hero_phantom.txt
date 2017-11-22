@@ -1,40 +1,49 @@
-"npc_dota_hero_phantom"
+"npc_dota_hero_spectre"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_spectre"
-	"Ability1"				"phantom_shadowstep"
-	"Ability2"				"phantom_soul_wave"
+	//"override_hero"			"npc_dota_hero_spectre"
+	"HeroSelectSoundEffect"	"Phantom.Shadowstep.Teleport"
+	"Role"					"Carry"
+	"Rolelevels"			"3"
+	"Complexity"			"1"
+	"Ability1"				"phantom_shadowstep" // Phantom teleports to the target enemy Hero. After 6s, she returns to her original position.
+	// 1200/2400/3600/4800 range.
+	"Ability2"				"phantom_soul_wave" // Deals Magical damage around Phantom equal to a multiplier of her combined Stats.  Slows affected enemies.
+	// 400 AoE. Instant cast.
+	// Deals 1.5/2.0/2.5/3.0x her combined stats.
+	// Slows by 25% for 4s.
 	"Ability3"				"phantom_nightmare"
-	"Ability4"				"phantom_deathstrike"
-	"Ability5"				"" //Automatically levelled to 1 when the character is picked.
-	"Ability6"				""
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"phantom_deathstrike" // Phantom's attacks have a chance to cut through the target's soul, dealing bonus damage based on Health missing and reducing their damage output. The bonus damage is Physical.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_attack_speed_10" // 
+	"Ability11"				"special_bonus_all_stats_4" // 
+	"Ability12"				"special_bonus_strength_8" //
+	"Ability13"				"special_bonus_phantom_1" // +10% Nightmare Base Cleave
+	"Ability14"				"special_bonus_agility_16" // 
+	"Ability15"				"special_bonus_phantom_2" // +1.75s Soul Wave Slow
+	"Ability16"				"special_bonus_attack_damage_75" // 
+	"Ability17"				"special_bonus_phantom_3" // +25% Deathstrike Damage Reduction
 
 	"ArmorPhysical"				"0"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackRange"				"125"
+	"AttackRange"				"150"
 	"AttackRate"				"1.6"
 	"AttackDamageMin"			"20"										// Damage range min.
 	"AttackDamageMax"			"24"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 	"AttributeBaseStrength"		"19"										// Base strength
-	"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
+	"AttributeStrengthGain"		"1.9"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"12"										// Base intelligence
-	"AttributeIntelligenceGain"	"1.4"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"23"										// Base agility
-	"AttributeAgilityGain"		"2.5"										// Agility bonus per level.
+	"AttributeIntelligenceGain"	"1.2"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"20"										// Base agility
+	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.
@@ -44,13 +53,13 @@
 	//"RingRadius"				"70"
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"285"									// Speed.
-	"MovementTurnRate"			"0.5"									// Turning rate.
+	"MovementSpeed"				"280"									// Speed.
+	"MovementTurnRate"			"0.4"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
-	"VisionNighttimeRange"		"1170"									// Range of vision at night time.
+	"VisionNighttimeRange"		"900"									// Range of vision at night time.
 }

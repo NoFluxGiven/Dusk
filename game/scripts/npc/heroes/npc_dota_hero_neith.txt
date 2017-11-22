@@ -1,13 +1,16 @@
-"npc_dota_hero_neith"
+"npc_dota_hero_legion_commander"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_legion_commander"
+	//"override_hero"			"npc_dota_hero_legion_commander"
+	"Role"					"Carry,Pusher"
+	"Rolelevels"			"2,2"
+	"Complexity"			"2"
 	"Ability1"				"neith_monsoon"
 	"Ability2"				"neith_decisive_strike"
 	"Ability3"				"neith_inspire"
-	"Ability4"				"neith_rally"
-	"Ability5"				""
-	"Ability6"				""
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"neith_rally"
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -48,9 +51,9 @@
 	"MovementTurnRate"			"0.8"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 

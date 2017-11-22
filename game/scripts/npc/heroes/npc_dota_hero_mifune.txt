@@ -1,7 +1,10 @@
-"npc_dota_hero_mifune"
+"npc_dota_hero_juggernaut"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_juggernaut"
+	//"override_hero"			"npc_dota_hero_juggernaut"
+	"Role"					"Carry,Nuker"
+	"Rolelevels"			"3,2"
+	"Complexity"			"2"
 	"Ability1"				"mifune_raigeki" 
 	"Ability2"				"mifune_bushido" // Mifune's years of intense training and incredible focus
 	// allow him reap more benefits from his stats, becoming more agile and dangerous.
@@ -12,9 +15,9 @@
 	"Ability3"				"mifune_genso"
 	// The targeted enemy is nearly instantly assailed by multiple Illusions of Mifune.
 	// The illusions cannot be controlled, can move over terrain, and instantly die when their target dies.
-	"Ability4"				"mifune_zanmato"
-	"Ability5"				""
-	"Ability6"				""
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"mifune_zanmato"
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -56,9 +59,9 @@
 	"MovementTurnRate"			"1.0"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 }

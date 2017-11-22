@@ -60,9 +60,9 @@
 	// Status
 	//----------------------------------------------------------------
 	"StatusHealth"				"135"		// Base health.
-	"StatusHealthRegen"			"0"			// Health regeneration rate.
+	"StatusHealthRegen"			"1"			// Health regeneration rate.
 	"StatusMana"				"100"		// Base mana.
-	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+	"StatusManaRegen"			"1"		// Mana regeneration rate.		 
 	
 	// Vision
 	//----------------------------------------------------------------
@@ -71,8 +71,8 @@
 
 	// Team
 	//----------------------------------------------------------------
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	//Inventory
@@ -82,11 +82,11 @@
 
 	"Creature"
 	{
-		"HPGain"                    "20"
-		"DamageGain"                "4"
-		"ArmorGain"                 "0.2"
+		"HPGain"                    "15"
+		"DamageGain"                "3"
+		"ArmorGain"                 "0.3"
 		"MagicResistGain"           "0"
-		"MoveSpeedGain"             "0"
+		"MoveSpeedGain"             "10"
 		"BountyGain"                "0"
 		"XPGain"                    "0"
 

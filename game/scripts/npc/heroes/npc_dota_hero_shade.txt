@@ -1,7 +1,11 @@
-"npc_dota_hero_shade"
+"npc_dota_hero_bounty_hunter"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_bounty_hunter"
+	//"override_hero"			"npc_dota_hero_bounty_hunter"
+	"HeroSelectSoundEffect"	"Shade.Isolation"
+	"Role"					"Escape,Initiator"
+	"Rolelevels"			"2,3"
+	"Complexity"			"1"
 	"Ability1"				"shade_stalk"
 	// Shade targets an enemy, becoming invisible, gaining vision of them, moving faster, and slowing them.
 	// Attacking the enemy out of invisibility deals Pure, Physical and Magical damage.
@@ -11,7 +15,9 @@
 	// Recovers 100/150/200/250 Health, and purges debuffs with a strong dispel.
 	// 1200 radius.
 	"Ability3"				"shade_venomous"
-	"Ability4"				"shade_isolation"
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"shade_isolation"
 	// Shade curses the target unit, damaging them, and causing them to emit a shockwave of energy
 	// that petrifies all allies it hits.
 	// The targeted unit has reduced Spell and attack damage for the duration of this Spell.
@@ -19,8 +25,6 @@
 	// The shockwave travels outwards to a 900 radius over 0.25s.
 	// Petrified units are invulnerable and untargetable, but are stunned and command restricted.
 	// Lasts 4/5/6s.
-	"Ability5"				""
-	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -62,9 +66,9 @@
 	"MovementTurnRate"			"1.0"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"1400"									// Range of vision at night time.
 }

@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/ptomely_enthrall"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -38,14 +39,10 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"magic_resistance_reduction" "-20 -24 -28 -32"
+			"magic_resistance_reduction" "12 16 20 24"
+			"LinkedSpecialBonus"		 "special_bonus_ptomely_1"
 		}
 		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"magic_resistance_reduction_ally" "-20 -16 -12 -8"
-		}
-		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"duration"					"8"

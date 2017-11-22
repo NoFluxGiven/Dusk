@@ -1,0 +1,73 @@
+//
+// <key>	<value>
+// Hero		currently on/off, will be # of instances (-1 = infinite)
+//
+"whitelist"	
+{
+	"npc_dota_hero_queen_of_pain" "0" // in the works
+	"npc_dota_hero_warlock" "0" // in the works
+	"npc_dota_hero_lifestealer" "0" // in the works
+	"npc_dota_hero_sven" "0" // in the works
+	"npc_dota_hero_bristleback" "0" // in the works
+
+	//==========================================
+
+	// Full Conversion Completed (Lua+Talents):
+
+	"npc_dota_hero_ember_spirit" "1"
+	"npc_dota_hero_axe" "1"
+	"npc_dota_hero_antimage" "1"
+	"npc_dota_hero_dragon_knight" "1"
+	"npc_dota_hero_wisp" "1"
+	"npc_dota_hero_arc_warden" "1"
+	"npc_dota_hero_terrorblade" "1"
+	"npc_dota_hero_kunkka" "1"
+	"npc_dota_hero_sniper" "1"
+	"npc_dota_hero_legion_commander" "1"	
+	"npc_dota_hero_lich" "1"
+	"npc_dota_hero_omniknight" "1"
+	"npc_dota_hero_bounty_hunter" "1"
+	"npc_dota_hero_rubick" "1"
+	"npc_dota_hero_ursa" "1"
+	"npc_dota_hero_spectre" "1"
+	"npc_dota_hero_dark_seer" "1"
+	"npc_dota_hero_vengefulspirit" "1"
+	"npc_dota_hero_keeper_of_the_light" "1"
+	"npc_dota_hero_juggernaut" "1"
+	"npc_dota_hero_phantom_assassin" "1"
+	"npc_dota_hero_jakiro" "1"
+	"npc_dota_hero_tinker" "1"
+	"npc_dota_hero_elder_titan" "1"
+	"npc_dota_hero_tusk" "1"
+	"npc_dota_hero_night_stalker" "1"
+	"npc_dota_hero_bloodseeker" "1"
+	"npc_dota_hero_doom_bringer" "1"
+	"npc_dota_hero_oracle" "1"
+	"npc_dota_hero_techies" "1"
+	"npc_dota_hero_leshrac" "1"
+	"npc_dota_hero_necrolyte" "1"
+	"npc_dota_hero_chaos_knight" "1"
+	"npc_dota_hero_enigma" "1"	
+	"npc_dota_hero_riki" "1"
+	"npc_dota_hero_crystal_maiden" "1"
+	"npc_dota_hero_sand_king" "1"
+
+	// WIP Buffer:
+
+	// REQUIRES Lua Conversion+Talents:
+
+	"npc_dota_hero_rattletrap" "0"
+
+	//==========================================
+
+	"npc_dota_hero_zeus" "0" // exception
+
+	"npc_dota_hero_lion" "0" // temp disabled
+	"npc_dota_hero_alchemist" "0" // temp disabled
+	"npc_dota_hero_faceless_void" "0" // temp disabled
+	"npc_dota_hero_meepo" "0" // temp disabled
+	"npc_dota_hero_invoker" "0" // temp disabled
+
+	"npc_dota_hero_lone_druid" "0" // attachment error
+	"npc_dota_hero_abaddon" "0" // attachment error
+}	

@@ -27,6 +27,7 @@ function modifier_rend_passive:OnAttackLanded(params)
 
 	if attacker ~= self:GetParent() then return end
 	if target:IsBuilding() then return end
+	if not target:IsHero() then return end
 	-- if target:IsRoshan() then duration = rosh_duration end
 
 	if attacker:HasModifier("modifier_berserk") then stack_bonus = 1 else stack_bonus = 0 end

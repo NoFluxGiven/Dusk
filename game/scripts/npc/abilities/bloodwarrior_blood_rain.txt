@@ -58,7 +58,7 @@
 	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"slow"							"15"
+			"slow"							"6 8 10 12"
 		}
 	"06"
 		{

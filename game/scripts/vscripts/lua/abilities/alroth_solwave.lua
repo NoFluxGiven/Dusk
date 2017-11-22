@@ -6,8 +6,7 @@ function alroth_solwave:OnSpellStart()
 	if IsServer() then
 		local caster = self:GetCaster()
 
-		local t_duration_bonus = caster:FetchTalent("special_bonus_alroth_4") or 0
-		local duration = self:GetSpecialValueFor("duration") + t_duration_bonus
+		local duration = self:GetSpecialValueFor("duration")
 
 		caster:AddNewModifier(caster, self, "modifier_solwave", {Duration=duration}) --[[Returns:void
 		No Description Set

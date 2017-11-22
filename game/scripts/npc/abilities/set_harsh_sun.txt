@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/set_harsh_sun"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"	
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"set_harsh_sun"
@@ -14,6 +15,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"0"
 	"AbilityCastPoint"				"0.0"
+
+	"HasScepterUpgrade"             "1"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -30,32 +33,28 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"attack_slow"			"-6 -12 -18 -24"
+			"attack_slow"			"15 20 25 30"
+			"LinkedSpecialBonus"	"special_bonus_set_2"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_reduction"		"-8 -10 -12 -14"
+			"vision_reduction"		"200 275 350 425"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"creep_attack_slow"		"-3 -6 -9 -12"
+			"creep_attack_slow"		"12"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"creep_damage_reduction" "-4 -5 -6 -7"
+			"bonus_day_vision" 		"150 300 450 600"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"hp_regen" 				"3 6 9 12"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"mana_regen" 			"3.0 6.0 9.0 12.0"
+			"bonus_movespeed" 		"20 40 60 80"
 		}
 	}
 
@@ -64,85 +63,4 @@
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
 		"particle"			"particles/units/heroes/hero_set/set_harsh_climate.vpcf"
 	}
-	
-	"Modifiers"
-		{
-			"modifier_harsh_sun_owner"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"ThinkInterval"  "1.0"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/set_abilities.lua"
-						"Function"		"HarshClimate"
-					}
-				}
-			}
-			"modifier_harsh_sun_aura"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"Aura"          	"modifier_harsh_sun_hero"
-				"Aura_Radius"   	"99999"
-				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
-				"Aura_ApplyToCaster" "0"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%hp_regen"
-				    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "%mana_regen"
-				}
-			}
-
-			"modifier_harsh_sun_aura_creep"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"Aura"          	"modifier_harsh_sun_unit"
-				"Aura_Radius"   	"99999"
-				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
-				"Aura_ApplyToCaster" "0"
-			}
-
-			"modifier_harsh_sun_unit"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%creep_attack_slow"
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%creep_damage_reduction"
-				}
-			}
-
-			"modifier_harsh_sun_hero"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_slow"
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%damage_reduction"
-				}
-			}
-
-
-		}
 }

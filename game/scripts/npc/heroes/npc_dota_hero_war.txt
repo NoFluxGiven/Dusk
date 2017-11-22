@@ -1,20 +1,24 @@
-"npc_dota_hero_war"
+"npc_dota_hero_axe"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_axe"
+	//"override_hero"			"npc_dota_hero_axe"
+	"HeroSelectSoundEffect"	"War.FightMe"
+	"Role"					"Durable,Initiator"
+	"Rolelevels"			"3,2"
+	"Complexity"			"1"
 	"Ability1"				"war_earthbreaker" // War slams the ground with his axe, dealing Physical damage in an area and dazing the enemies hit. Deals 100/150/200/250 Physical damage
 	// and stuns enemies in the 250 radius for 2s.
 	"Ability2"				"war_bloodlust" // War silences all allies and enemies in a target area for 3/4/5/6s, increasing their attack speed and attack damage by 30.
 	// The debuff is purgable.
 	"Ability3"				"war_berserker_aura" // Allies gain bonus damage and attack speed whilst near War. Grants 10/15/20/25 damage and 12 attack speed.
-	"Ability4"				"war_fight_me" // All enemies in a sizeable radius are forced to attack War, with the enemies becoming immune to damage, and War gaining a large amount of
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"war_fight_me" // All enemies in a sizeable radius are forced to attack War, with the enemies becoming immune to damage, and War gaining a large amount of
 	// bonus health regen.
 	// At the end of the duration, he unleashes a roar that deals Magical damage equivalent to the amount of damage he took from their attacks.
 	// He cannot die from attacks during the duration of this Ultimate.
 	// Magic Immune enemies are unaffected.
 	// Lasts 3/4/5s.
-	"Ability5"				""
-	"Ability6"				""
 	"Ability8"				""
 	"Ability9"				""
 	"Ability10"				"special_bonus_war_1" // FIGHT ME!! Gains 40% Mana From Attacks
@@ -58,7 +62,7 @@
 	//"StatusHealth"			"981"									// Base health.
 	"StatusHealthRegen"			"2"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 }

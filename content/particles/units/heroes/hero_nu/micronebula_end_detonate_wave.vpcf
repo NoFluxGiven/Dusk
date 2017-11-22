@@ -35,6 +35,7 @@
 			m_bAdditive = true
 			m_flOverbrightFactor = 14.0
 			m_hTexture = resource:"materials/particle/particle_ring_wave_10.vtex"
+			m_bDisableZBuffering = true
 		},
 	]
 	m_Initializers = 
@@ -76,4 +77,19 @@
 		},
 	]
 	m_flConstantLifespan = 0.15
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
 }

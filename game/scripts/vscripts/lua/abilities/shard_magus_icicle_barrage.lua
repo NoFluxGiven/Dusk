@@ -65,7 +65,7 @@ function modifier_icicle_barrage:OnCreated()
 
 		self.dir = self:GetParent().dir
 
-		local int = duration/amt
+		local int = duration/(amt/2)
 
 		self:GetParent():AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_phased", {}) --[[Returns:void
 		No Description Set
@@ -94,41 +94,50 @@ function modifier_icicle_barrage:OnIntervalThink()
 
 		local caster = self:GetAbility():GetCaster()
 
-		local d = dir + Vector(RandomFloat(-0.12,0.12),RandomFloat(-0.12,0.12),0)
-		local speed = 2000
-		local range = self:GetAbility():GetSpecialValueFor("range")
-		local radius = self:GetAbility():GetSpecialValueFor("radius")
-
-		local start_radius,end_radius = radius,radius
-
 		local sound = "Hero_Ancient_Apparition.Attack"
 		local particle = "particles/units/heroes/hero_shard_magus/icicle.vpcf"
 
-		local data = {
-			Ability = self:GetAbility(),
-			Source = caster,
-			EffectName = particle,
-			vSpawnOrigin = self:GetParent():GetAbsOrigin()+Vector(0,0,75),
-			vVelocity = d * speed,
-			fDistance = range,
-			fStartRadius = start_radius,
-			fEndRadius = end_radius,
-			bHasFrontalCone = false,
-			iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-			iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP,
-			iUnitTargetFlags = 0,
-			bProvidesVision = false,
-			iVisionTeamNumber = caster:GetTeamNumber(),
-			iVisionRadius = 0,
-			bDrawsOnMinimap = false,
-			bVisibleToEnemies = true,
-			fExpireTime = GameRules:GetGameTime()+10,
-			bDeleteOnHit = true
-		}
+		local range = self:GetAbility():GetSpecialValueFor("range")
+		local radius = self:GetAbility():GetSpecialValueFor("radius")
 
-		caster:EmitSound(sound)
+		local speed = 2000
 
-		ProjectileManager:CreateLinearProjectile(data)
+		local start_radius,end_radius = radius,radius
+
+		local n = 0
+
+		repeat
+
+			local d = dir + Vector(RandomFloat(-0.23,0.23),RandomFloat(-0.23,0.23),0)
+
+			local data = {
+				Ability = self:GetAbility(),
+				Source = caster,
+				EffectName = particle,
+				vSpawnOrigin = self:GetParent():GetAbsOrigin()+Vector(0,0,75),
+				vVelocity = d * speed,
+				fDistance = range,
+				fStartRadius = start_radius,
+				fEndRadius = end_radius,
+				bHasFrontalCone = false,
+				iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+				iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP,
+				iUnitTargetFlags = 0,
+				bProvidesVision = false,
+				iVisionTeamNumber = caster:GetTeamNumber(),
+				iVisionRadius = 0,
+				bDrawsOnMinimap = false,
+				bVisibleToEnemies = true,
+				fExpireTime = GameRules:GetGameTime()+10,
+				bDeleteOnHit = true
+			}
+
+			caster:EmitSound(sound)
+
+			ProjectileManager:CreateLinearProjectile(data)
+
+			n = n+1
+		until n == 2
 	end
 end
 

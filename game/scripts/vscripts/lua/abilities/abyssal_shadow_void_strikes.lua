@@ -59,7 +59,9 @@ end
 
 function modifier_void_strikes_burn:OnRefresh()
 	if IsServer() then
-		self:SetStackCount(self:GetStackCount()+1)
+		if self:GetStackCount() < self:GetAbility():GetSpecialValueFor("max_stacks") then
+			self:SetStackCount(self:GetStackCount()+1)
+		end
 
 		local bonus_dmg = self:GetAbility():GetSpecialValueFor("damage") * self:GetStackCount()
 		self:GetAbility():InflictDamage(self:GetParent(),self:GetAbility():GetCaster(),bonus_dmg,DAMAGE_TYPE_MAGICAL)

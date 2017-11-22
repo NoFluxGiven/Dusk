@@ -1,7 +1,14 @@
-"npc_dota_hero_shard_magus"
+"npc_dota_hero_crystal_maiden"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_crystal_maiden"
+	//"override_hero"			"npc_dota_hero_crystal_maiden"
+	"HeroSelectSoundEffect"	"ShardMagus.WyrmRites.Start"
+
+	"NewHero"				"1"
+	
+	"Role"					"Nuker,Disabler"
+	"Rolelevels"			"3,2"
+	"Complexity"			"3"
 	"Ability1"				"shard_magus_cryst_whorl" // Creates a small area where chilling winds
 	// blow,  dealing damage over time, then slowing, then freezing units caught in it.
 	// After a 1.0s delay:
@@ -31,14 +38,11 @@
 	// Deals 60/90/120/150 damage.
 	// Applies a 30/45/60/75 attack speed slow and a 60% turnrate slow for 3s.
 	// 1s cooldown.
-	"Ability4"				"shard_magus_wyrm_rites"
-	// An ancient incantation summons an ice Wyrm, a creature of great strength.
-	// The ice Wyrm has 3 abilities, lasts 25s, and has a large attack range.
-	// Every level placed in this ability increases its level by 10, raising its
-	// Health, damage, Armor and Magic Resistance.
-	// 160/140/120s cooldown.
 
-	// need to do modifier tooltips
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"shard_magus_glacial_impact"
+	// 
 	
 	"Ability10"				"special_bonus_mp_regen_2"
 	"Ability11"				"special_bonus_movement_speed_10"
@@ -78,9 +82,9 @@
 	"MovementTurnRate"			"0.7"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	"VisionDaytimeRange"		"1800"									// Range of vision in the day time.

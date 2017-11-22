@@ -1,0 +1,68 @@
+//=====================================================================================================
+// NU: Antimatter Mines
+//=====================================================================================================
+"nu_flux_field"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/nu_flux_field"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AOERadius"						"400"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"nu_flux_field"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.5"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"150"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_over_time"			"10 20 30 40"
+			"LinkedSpecialBonus"		"special_bonus_nu_2"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_per_cast"			"30 60 90 120"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"400"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"10"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_nu/flux_field.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+		}
+}

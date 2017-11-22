@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/mana_knight_infusion_bolt"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -38,12 +39,13 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"damage"					"20 30 40 50" // percentage of the opponent's missing Mana
+			"damage"					"20 30 40 50" // percentage of the opponent's missing Mana amount
 		}
 		"02"
 		{
-			"var_type"					"FIELD_INTEGER"
+			"var_type"					"FIELD_FLOAT"
 			"stun"						"2"
+			"LinkedSpecialBonus"		"special_bonus_mana_knight_4"
 		}
 		"03"
 		{
@@ -61,43 +63,5 @@
 	"precache"
 		{
 		"particle" "particles\units\heroes\hero_mana_knight\infusion_bolt.vpcf"
-		}
-	
-	"OnSpellStart"
-		{
-
-		"FireSound"
-		{
-			"EffectName"	"Hero_ChaosKnight.ChaosBolt.Cast"
-			"Target" 		"TARGET"
-		}
-		
-		"TrackingProjectile"
-			{
-			"Target" "TARGET"
-			"EffectName" "particles\units\heroes\hero_mana_knight\infusion_bolt.vpcf"
-			"Dodgeable" "1"
-			"ProvidesVision" "0"
-			"VisionRadius" "0"
-			"MoveSpeed" "750"
-			"SourceAttachment" "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
-			}
-		}
-	
-	"OnProjectileHitUnit"
-		{
-		"DeleteOnHit" "1"
-		"RunScript"
-		{
-			"ScriptFile"	"heroes\mk_abilities.lua"
-			"Function"		"infusionBolt"
-			"damage"		"%damage"
-			"max_damage"	"%max_damage"
-			"min_damage"	"%min_damage"
-		}
-		}
-	
-	"Modifiers"
-		{
 		}
 }

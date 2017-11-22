@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/set_sands_of_war"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"	
 	"FightRecapLevel"				"1"
 	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
@@ -13,16 +14,16 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"875"
+	"AbilityCastRange"				"725"
 	"AbilityCastPoint"				"0.4"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"20"
+	"AbilityCooldown"				"8"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"80"
+	"AbilityManaCost"				"95 100 105 110"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -31,12 +32,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"60 90 120 150"
+			"damage"				"40 60 80 100"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"slow"					"-15"
+			"slow"					"25"
 		}
 		"03"
 		{
@@ -46,17 +47,27 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"4"
+			"duration"				"2"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"				"100"
+			"radius"				"150"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"time"					"6 9 12 15"
+			"time"					"16"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"range"					"700"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"mult"					"0.50"
 		}
 	}
 
@@ -65,56 +76,4 @@
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 		"particle"			"particles/units/heroes/hero_set/set_sand_wave_projectile.vpcf"
 	}
-
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/set_abilities.lua"
-			"Function"		"sandWave"
-			"distance"		"700"
-			"radius"		"%radius"
-			"duration"		"%time"
-		}
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/set_abilities.lua"
-			"Function"		"ReduceCooldowns"
-		}
-	}
-
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit"	"0"
-		"Damage"
-		{
-			"Target"		"TARGET"
-			"Type"			"DAMAGE_TYPE_MAGICAL"
-			"Damage"		"%damage"
-		}
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_sands_of_war_slow"
-			"Target" 		"TARGET"
-		}
-	}
-	
-	"Modifiers"
-		{
-			"modifier_sands_of_war_slow"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-				"Duration"			"%duration"
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				    "MODIFIER_PROPERTY_MISS_PERCENTAGE" "%miss"
-				}
-			}
-
-
-		}
 }

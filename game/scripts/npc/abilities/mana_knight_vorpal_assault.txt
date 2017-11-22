@@ -5,9 +5,10 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/mana_knight_vorpal_assault"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -16,16 +17,16 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"0"
-	"AbilityCastPoint"				"0.50"
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.25"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"75"
+	"AbilityCooldown"				"75 70 65"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"125"
+	"AbilityManaCost"				"160"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -37,28 +38,23 @@
 	{
 		"01"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"bonus_damage"				"0.10 0.15 0.20" // based on Mana missing
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"50"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"attacks"					"4"
+			"bolts"						"5 7 9"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_attackspeed"			"100"
+			"mana_burn"					"30 40 50"
 		}
 		"04"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"mana_damage"				"40 60 80"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"mana_damage_pct"			"3 4 5"
+			"var_type"					"FIELD_FLOAT"
+			"silence_duration"			"0.75"
 		}
 	}
 	
@@ -69,96 +65,6 @@
 		"soundfile" "soundevents/hero_mana_knight.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_underlord.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
-		}
-
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/mk_abilities.lua"
-			"Function"		"VorpalAssault"
-			"amount"		"%attacks"
-		}
-		"FireSound"
-		{
-			"EffectName"	"ManaKnight.VorpalAssault.Start"
-			"Target" 		"CASTER"
-		}
-	}
-	
-	"Modifiers"
-		{
-			"modifier_vorpal_assault"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-
-				"EffectName"		"particles/units/heroes/hero_mana_knight/vorpal_assault_unit_buffs.vpcf"
-				"EffectAttachType"	"attach_origin"
-			}
-			"modifier_vorpal_assault_prehit"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"OnAttackStart"
-				// "%attack_damage" is set to the damage value before mitigation
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_vorpal_assault_onhit"
-						"Target" 		"ATTACKER"
-					}
-					"FireEffect"
-					{
-						"EffectName"        "particles/units/heroes/hero_mana_knight/vorpal_assault_strike.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"Target"            "ATTACKER"
-					}
-					"FireSound"
-					{
-						"EffectName"	"Hero_Brewmaster.Brawler.Crit"
-						"Target" 		"ATTACKER"
-					}
-					"FireSound"
-					{
-						"EffectName"	"Hero_razor.lightning"
-						"Target" 		"ATTACKER"
-					}
-				}
-			}
-			"modifier_vorpal_assault_onhit"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"OnAttackLanded"
-				// "%attack_damage" is set to the damage value before mitigation
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/mk_abilities.lua"
-						"Function"		"VorpalAssaultStrike"
-						"damage"		"%bonus_damage"
-						"mana_damage"	"%mana_damage"
-						"ATTACKER"		"ATTACKER"
-					}
-				}
-			}
-			"modifier_vorpal_assault_attackspeed"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attackspeed"
-				}
-			}
 		}
 }
 

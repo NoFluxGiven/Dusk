@@ -1,18 +1,71 @@
-"npc_dota_hero_summoner"
+"npc_dota_hero_rattletrap"
 {
 	"AbilityLayout" 		"5"
-	"override_hero"			"npc_dota_hero_rattletrap"
-	"Ability1"				"summoner_nanobots"
-	"Ability2"				"summoner_short_range_teleport"
-	"Ability3"				"summoner_build_tesla_coil"
-	"Ability4"				"summoner_summon_blue_vassal"
-	"Ability5"				"summoner_build_sentinel"
-	"Ability6"				""
-	"Ability7"				""
-	"Ability8"				""
-	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
+	//"override_hero"			"npc_dota_hero_rattletrap"
+	"HeroSelectSoundEffect"	"Hero_Rattletrap.Cogs"
+	"Role"					"Pusher,Durable"
+	"Rolelevels"			"2,2"
+	"Complexity"			"3"
+	"Ability1"				"summoner_nanobots" // Deals damage, then damage over time.
+	// Reduces Armor.
+	"Ability2"				"summoner_drilldash" // Dashes in the target direction, dealing damage
+	// and slowing any enemies collided with.
+	"Ability3"				"summoner_pulsar" // Mutes and Silences all enemies in a radius.
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"summoner_assembler" // Creates an assembly drone at the location
+	// targeted. The drone can build units and possesses energy stores based on the level
+	// of this ability, and the amount of Mana Vulcan had.
+
+	// REWORK
+
+	//"Ability1"				"summoner_nanobots"
+
+	// [1] Fires a cluster of nanobots at the target.
+	// They take damage over time and have their Armor reduced.
+
+	//"Ability2"				"summoner_short_range_teleport"
+
+	// Teleports all units around Vulcan to the target location after a short delay.
+	// Teleports marked units, not units that are around him at the end of the delay.
+
+	//"Ability3"				"summoner_assemble"
+
+	// Vulcan assembles a unit from the energy he has stored.
+	// Assemble does not use Mana; instead, it uses Energy, Vulcan's unique resource.
+	// Passively, Assemble grants 1 Energy every 10s, with a maximum of 6 stacks.
+	// Has a 4s cooldown.
+
+	// The following units are available to build:
+
+	// TESLA COILS [ 2 ]
+	// These zap nearby enemies with damaging and slowing coils of electricity.
+	// Lasts 240s.
+
+	// PULSARS [ 2 ]
+	// These unleash waves of energy that Silence, Root and damage nearby enemies.
+	// They activate once, and then expire immediately.
+	// Lasts 120s.
+
+	// STRIKERS [ 2 ], 2 units
+	// These are small, highly mobile units that attack at close range.
+	// Lasts 60s.
+
+	// BOMBS [ 2 ], 2 units
+	// These are small, semi mobile units that explode.
+	// Lasts 60s.
+
+	// SENTINELS [ 3 ]
+	// Stationary cannons that can attack nearby units.
+	// Lasts 30s.
+
+	//"Ability4"				"summoner_upgrades"
+
+	// Increases the efficiency of Vulcan's various subsystems, letting him generate energy
+	// more quickly, and fight better.
+	// Grants 1/2/3 bonus Energy generation, 20/40/60 bonus movespeed, and 8/16/24 bonus Armor.
+
+	//"Ability5"				""
 	"Ability12"				""
 	"Ability13"				""
 	"Ability14"				""
@@ -23,7 +76,7 @@
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackRange"				"125"
+	"AttackRange"				"150"
 	"AttackRate"				"1.7"
 	"AttackDamageMin"			"24"										// Damage range min.
 	"AttackDamageMax"			"27"										// Damage range max.
@@ -48,9 +101,9 @@
 	"MovementTurnRate"			"0.6"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"850"									// Range of vision at night time.
 }

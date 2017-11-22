@@ -5,28 +5,30 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/phantom_soul_wave"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
-	"AoERadius"						"290"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"2"
 	"AbilityTextureName"			"phantom_soul_wave"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"750"
-	"AbilityCastPoint"				"0.7"
+	"AbilityCastRange"				"450"
+	"AbilityCastPoint"				"0.2"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"12"
+	"AbilityCooldown"				"15 14 13 12"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"60"
+	"AbilityManaCost"				"70"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,27 +41,23 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"damage"						"60 120 180 240"
+			"mult"							"1.50"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"range"							"290"
+			"radius"						"450"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"slow"							"-30"
+			"slow"							"16 22 28 34"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"stun"							"1.0"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"slow_duration"					"4.0"
+			"slow_duration"					"3.0"
+			"LinkedSpecialBonus"			"special_bonus_phantom_2"
 		}
 	}
 	
@@ -68,67 +66,5 @@
 		"particle" "particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_explode.vpcf"
 		"particle" "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
 		"soundfile" "soundevents\hero_phantom.vsndevts"
-		}
-		
-	"OnSpellStart"
-		{
-		"Damage"
-			{
-			"Target"
-				{
-				"Center" "TARGET"
-				"Radius" "%range"
-				"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-				"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-				}
-			"Damage" "%damage"
-			"Type" "DAMAGE_TYPE_MAGICAL"
-			}
-			"ApplyModifier"
-			{
-			"Target"
-				{
-				"Center" "TARGET"
-				"Radius" "%range"
-				"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-				"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-				}
-			"ModifierName" "phantom_soul_wave_slow_mod"
-			}
-			"RemoveModifier"
-			{
-				"Target" "TARGET"
-				"ModifierName" "phantom_soul_wave_slow_mod"
-			}
-			"Stun"
-			{
-				"Duration" "%stun"
-				"Target" "TARGET"
-			}
-			"FireEffect"
-			{
-				"EffectName"        "particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_explode.vpcf"
-				"EffectAttachType"  "follow_origin"
-				"Target"
-				{
-				"Center" "TARGET"
-				"Flags" "DOTA_UNIT_TARGET_FLAG_DEAD"
-				}
-			}
-		}
-	
-	"Modifiers"
-		{
-		"phantom_soul_wave_slow_mod"
-			{
-			"Duration" "%slow_duration"
-			"IsDebuff" "1"
-			"StatusEffectName" "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
-			"StatusEffectPriority" "10"
-			"Properties"
-				{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				}
-			}
 		}
 }

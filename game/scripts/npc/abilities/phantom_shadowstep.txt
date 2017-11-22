@@ -5,30 +5,27 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/phantom_shadowstep"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"phantom_shadowstep"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"0"
-	"AbilityCastPoint"				"0.0"
+	"AbilityCastPoint"				"0.1"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"25"
+	"AbilityCooldown"				"50 40 30 20"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"100"
-
-	// Dmg
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"30 40 50 60"
+	"AbilityManaCost"				"140 130 120 110"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -41,102 +38,29 @@
 		"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"4.5"
+			"duration"						"3.0 4.0 5.0 6.0"
 		}
 		"02"
 		{
+			"var_type"						"FIELD_FLOAT"
+			"delay"							"3.00"
+		}
+		"03"
+		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_movement_speed"			"15"
+			"bonus_movespeed"				"25"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_evasion"					"100"
 		}
 	}
 	
 	"precache"
 		{
-		"particle" "particles\units\heroes\hero_phantom\phantom_shadowstep.vpcf"
-		"particle" "particles\units\heroes\hero_phantom\phantom_shadowstep_startend.vpcf"
-		"soundfile" "soundevents\game_sounds_heroes\game_sounds_medusa.vsndevts"
-		}
-
-	"OnSpellStart"
-		{
-		"FireSound"
-			{
-			"EffectName" "Hero_Medusa.ManaShield.Off"
-			"Target" "CASTER"
-			}
-		"RunScript"
-			{
-			"ScriptFile" "heroes/phantom_abilities.lua"
-			"Function" "phantom_shadowstep2"
-			"duration" "%duration"
-			}
-		}
-	
-	"Modifiers"
-		{
-		"modifier_shadowstep"
-		{
-			"Passive"			"0"
-			"IsHidden"			"1"
-			"IsDebuff"			"0"
-			"Duration"			"1"
-	
-			"States"
-			{
-				"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
-			}
-		}
-
-		"modifier_shadowstep2"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"0"
-			"Duration"			"%duration"
-
-			"Aura"          	"modifier_shadowstep_slow_enemy"
-			"Aura_Radius"   	"200"
-			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
-	
-			"States"
-			{
-				"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"			"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_ATTACK_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
-			}
-			"Properties"
-			{
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movement_speed" 
-			    "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL" "1"
-			}
-		}
-		"modifier_shadowstep_slow_enemy"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-			"Duration"			"1.5"
-			"ThinkInterval"  "0.25"
-			"OnIntervalThink"
-			{
-				"Damage"
-				{
-					"Target"		"TARGET"
-					"Type"			"DAMAGE_TYPE_MAGICAL"
-					"Damage"		"%AbilityDamage/4"
-				}
-			}
-		
-			"Properties"
-			{
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-45"
-			}
-		}
+			"particle" "particles\units\heroes\hero_phantom\phantom_shadowstep.vpcf"
+			"particle" "particles\units\heroes\hero_phantom\phantom_shadowstep_startend.vpcf"
+			"soundfile" "soundevents\game_sounds_heroes\game_sounds_medusa.vsndevts"
 		}
 }

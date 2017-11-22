@@ -1,7 +1,11 @@
-"npc_dota_hero_gemini"
+"npc_dota_hero_rubick"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_rubick"
+	//"override_hero"			"npc_dota_hero_rubick"
+	"HeroSelectSoundEffect"	"Voidwalker.VoidalFlare"
+	"Role"					"Support,Disabler,Escape"
+	"Rolelevels"			"2,1,2"
+	"Complexity"			"3"
 	"Ability1"				"gemini_voidal_flare"
 	// The Voidwalker fires a flare of dark energy at the target, damaging and stunning them.
 	// Each time he targets the same enemy, the damage and stun time doubles, up to a maximum.
@@ -14,7 +18,8 @@
 	// transports him to the Rune and places the Spell on cooldown. Disjoints projectiles.
 	"Ability4"				"gemini_planar_trickery_activate"
 	// 
-	"Ability5"				"gemini_abyssal_shadow"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"gemini_abyssal_shadow"
 	// The Voidwalker is stalked by a being from a plane he visited long ago.
 	// The being assists him in battle, striking his enemies with powerful attacks.
 	// Each level placed in this ability increases the level of the Shadow and its subabilities.
@@ -24,14 +29,13 @@
 	// Each attack the Shadow makes deals bonus Pure damage and reduces the target's Armor and Magic Res.
 	// Vortices
 	// The Shadow's attacks have a small chance to slow enemies in an AoE.
-	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
 	"Ability10"				"special_bonus_all_stats_7"
 	"Ability11"				"special_bonus_intelligence_12"
 	"Ability12"				"special_bonus_gemini_1"
-	"Ability13"				"special_bonus_magic_resistance_30"
+	"Ability13"				"special_bonus_magic_resistance_20"
 	"Ability14"				"special_bonus_gemini_2"
 	"Ability15"				"special_bonus_gemini_3"
 	"Ability16"				"special_bonus_gemini_4"
@@ -66,9 +70,9 @@
 	"MovementTurnRate"			"0.7"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"950"									// Range of vision at night time.
 }

@@ -201,6 +201,30 @@ function CDOTABaseAbility:InflictDamage(target,attacker,damage,damage_type,flags
 
 end
 
+function CDOTABaseAbility:IsSubability()
+
+	local subAbilities = {
+	    "baal_otherworld_exit",
+	    "baal_port_out",
+	    "gemini_planar_trickery_activate",
+	    "hero_hyper_kick",
+	    "ironfist_change_stance",
+	    "ironfist_gale_stance",
+	    "ironfist_stonewall_stance",
+	    "ironfist_dragon_stance",
+	    "switch_scarab_targets",
+	    "timekeeper_chronoshift_end"
+  	}
+
+	local name = self:GetName()
+
+	if CheckTable(subAbilities,name) then
+		return true
+	end
+
+	return false
+end
+
 function CDOTABaseAbility:FetchTalentDep(handle,suffix)
 	local handle = handle or self:GetCaster()
 	local suffix = suffix or ""
@@ -273,6 +297,36 @@ function CDOTA_Buff:WasPurged()
 	return false
 end
 
+function CDOTA_Buff:CreateSubModifier(modifier_name,kv)
+	-- Creates a modifier linked to this modifier on the modifier's parent
+	-- Call "DestroySubModifiers" in OnDestroy event
+
+	local modifier = self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), modifier_name, kv)
+
+	if self.submodifiers then
+		table.insert(self.submodifiers,modifier)
+	else
+		self.submodifiers = {modifier}
+	end
+
+end
+
+function CDOTA_Buff:DestroySubModifiers()
+	-- Destroys all linked submodifiers for the modifier
+	
+	if self.submodifiers then
+		for k,v in pairs(self.submodifiers) do
+			if v then
+				if not v:IsNull() then
+					v:Destroy()
+				end
+			end
+		end
+
+		self.submodifiers = nil
+	end
+end
+
 function CDOTA_BaseNPC:FetchTalent(talent_name,val) -- returns the value attached to the Talent if it is learned, nil if not
   local ei = self:entindex()
   local t = CustomNetTables:GetTableValue("learned_abilities", tostring(ei))
@@ -284,4 +338,11 @@ function CDOTA_BaseNPC:FetchTalent(talent_name,val) -- returns the value attache
   end
 
   return v
+end
+
+function CDOTA_BaseNPC:IsRoshan()
+	if self:GetName() == "npc_dota_roshan" then
+		return true
+	end
+	return false
 end

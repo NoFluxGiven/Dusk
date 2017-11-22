@@ -39,7 +39,7 @@
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageMin"			"20"		// Damage range min.
 	"AttackDamageMax"			"30"		// Damage range max.
-	"AttackRate"				"1.4"		// Speed of attack.
+	"AttackRate"				"1.0"		// Speed of attack.
 	"AttackAnimationPoint"		"0.2"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
 	"AttackRange"				"700"		// Range within a target can be attacked.
@@ -89,7 +89,7 @@
 	"Creature"
 	{
 		"HPGain"                    "50"
-		"DamageGain"                "2"
+		"DamageGain"                "3"
 		"ArmorGain"                 "0.40"
 		"MagicResistGain"           "1"
 		"MoveSpeedGain"             "0"

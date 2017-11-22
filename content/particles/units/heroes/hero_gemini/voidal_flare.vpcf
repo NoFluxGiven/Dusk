@@ -41,6 +41,14 @@
 		{
 			_class = "C_OP_SpinUpdate"
 		},
+		{
+			_class = "C_OP_VectorNoise"
+			m_nFieldOutput = 0
+			m_vecOutputMin = [ -1200.0, -1200.0, -1200.0 ]
+			m_vecOutputMax = [ 1200.0, 1200.0, 1200.0 ]
+			m_bAdditive = true
+			m_bOffset = true
+		},
 	]
 	m_Initializers = 
 	[

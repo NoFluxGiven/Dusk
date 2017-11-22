@@ -1,7 +1,12 @@
-"npc_dota_hero_lupin"
+"npc_dota_hero_riki"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_riki"
+	//"override_hero"			"npc_dota_hero_riki"
+	"HeroSelectSoundEffect"	"Lupin.BeneathTheMask"
+	"NewHero"				"1"
+	"Role"					"Carry,Nuker,Initiator"
+	"Rolelevels"			"2,2,1"
+	"Complexity"			"3"
 	"Ability1"				"lupin_beneath_the_mask" // Lupin's first strike against a target Silences them.
 	// Deals 30/60/90/120 bonus Magical damage and Silences the target for 2/3/4/5s.
 	// Slows by 15/20/25/30% for the Silence duration.
@@ -16,12 +21,12 @@
 	// Deals 40/80/120/160 bonus damage to units that are Stunned or Dazed.
 	// 0.1s cast time.
 	// 16/14/12/10s cooldown.
-	"Ability4"				"lupin_last_surprise" // Lupin becomes invulnerable and instantly teleports
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"lupin_last_surprise" // Lupin becomes invulnerable and instantly teleports
 	// to the target location. Enemies between the two locations are struck with an attack that deals critical damage, and are Dazed for 2/2.5/3.0s.
 	// Deals 175/200/225% damage.
 	// 500/600/700 range.
-	"Ability5"				""
-	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -62,9 +67,9 @@
 	"MovementTurnRate"			"0.8"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 }

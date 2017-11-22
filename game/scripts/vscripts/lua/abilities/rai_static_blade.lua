@@ -2,6 +2,7 @@ rai_static_blade = class({})
 
 LinkLuaModifier("modifier_static_blade","lua/abilities/rai_static_blade",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_static_blade_slow","lua/abilities/rai_static_blade",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_static_blade_cooldown","lua/abilities/rai_static_blade",LUA_MODIFIER_MOTION_NONE)
 
 function rai_static_blade:GetIntrinsicModifierName()
 	return "modifier_static_blade"
@@ -12,6 +13,9 @@ function rai_static_blade:GetBehavior()
 end
 
 function rai_static_blade:OnToggle()
+	if not self:GetCaster():HasModifier("modifier_static_blade_cooldown") then
+		self:EndCooldown()
+	end
 	return
 end
 
@@ -34,10 +38,17 @@ function modifier_static_blade:OnAttackLanded(params)
 	if params.attacker ~= self:GetParent() then return end
 	if CheckClass(params.target,"npc_dota_building") then return end
 	if self:GetAbility():GetToggleState() == false then return end
+	if not self:GetAbility():IsCooldownReady() then return end
 	if self:GetStackCount() > 0 then
 		local duration = self:GetAbility():GetSpecialValueFor("slow_duration")
 		local damage = self:GetAbility():GetSpecialValueFor("damage_per_stack")
+
+		local cooldown = self:GetAbility():GetCooldown(self:GetAbility():GetLevel())
+
 		params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_static_blade_slow", {stacks = self:GetStackCount(), Duration = duration}) --[[Returns:void
+		No Description Set
+		]]
+		params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_static_blade_cooldown", {Duration = cooldown}) --[[Returns:void
 		No Description Set
 		]]
 		params.target:EmitSound("Hero_razor.lightning")
@@ -46,6 +57,7 @@ function modifier_static_blade:OnAttackLanded(params)
 		ParticleManager:CreateParticle("particles/units/heroes/hero_rai/static_blade_strike.vpcf", PATTACH_ABSORIGIN_FOLLOW, params.target) --[[Returns:int
 		Creates a new particle effect
 		]]
+		self:GetAbility():StartCooldown(cooldown)
 	end
 end
 
@@ -135,4 +147,10 @@ end
 
 function modifier_static_blade_slow:GetModifierMoveSpeedBonus_Percentage()
 	return -(self:GetStackCount() * self:GetAbility():GetSpecialValueFor("slow_per_stack"))
+end
+
+modifier_static_blade_cooldown = class({})
+
+function modifier_static_blade_cooldown:IsHidden()
+	return true
 end

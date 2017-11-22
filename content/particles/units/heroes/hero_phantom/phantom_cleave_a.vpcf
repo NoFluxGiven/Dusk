@@ -45,11 +45,6 @@
 			m_nFieldOutput = 12
 		},
 		{
-			_class = "C_INIT_PositionOffset"
-			m_OffsetMin = [ 0.0, 0.0, 25.0 ]
-			m_OffsetMax = [ 0.0, 0.0, 90.0 ]
-		},
-		{
 			_class = "C_INIT_RandomLifeTime"
 			m_fLifetimeMin = 0.5
 			m_fLifetimeMax = 1.0
@@ -60,6 +55,21 @@
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_nParticlesToEmit = 14
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
 		},
 	]
 }

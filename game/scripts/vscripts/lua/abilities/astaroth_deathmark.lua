@@ -38,6 +38,7 @@ function modifier_astaroth_deathmark:OnAttackLanded(params)
 	if attacker ~= self:GetParent() then return end
 	if not self:GetAbility():IsCooldownReady() then return end
 	if not target:IsHero() then return end
+	if target:IsMagicImmune() then return end
 
 	if not target.deathmark_particle then
 		target.deathmark_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_astaroth/astaroth_black_insignia.vpcf", PATTACH_POINT_FOLLOW, target)

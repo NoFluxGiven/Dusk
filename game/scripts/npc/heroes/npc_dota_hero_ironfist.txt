@@ -1,7 +1,11 @@
-"npc_dota_hero_ironfist"
+"npc_dota_hero_dark_seer"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_dark_seer"
+	//"override_hero"			"npc_dota_hero_dark_seer"
+	"HeroSelectSoundEffect"	"Ironfist.DragonStance"
+	"Role"					"Nuker,Escape,Initiator"
+	"Rolelevels"			"2,2,2"
+	"Complexity"			"2"
 	// DRAGON STANCE
 	"Ability1"				"ironfist_dragon_fist" // Strikes the target with extreme Physical damage,
 	// stunning them.
@@ -97,9 +101,9 @@
 	"MovementTurnRate"			"1.6"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 

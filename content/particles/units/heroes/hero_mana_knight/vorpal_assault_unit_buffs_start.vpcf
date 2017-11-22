@@ -48,7 +48,6 @@
 		},
 		{
 			_class = "C_INIT_CreateOnModel"
-			m_HitboxSetName = "hands"
 		},
 		{
 			_class = "C_INIT_RandomRotationSpeed"
@@ -81,6 +80,21 @@
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_mana_knight/vorpal_assault_unit_buffs_start_flash.vpcf"
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
 		},
 	]
 }

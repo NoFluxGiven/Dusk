@@ -1,38 +1,54 @@
-"npc_dota_hero_reus"
+"npc_dota_hero_elder_titan"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_elder_titan"
-	"Ability1"				"reus_stoneblast" // The Titan tosses a heavy slab, dealing Physical damage and stunning enemies that are hit by it.
-	"Ability2"				"reus_magnitude" // The Titan creates an area that is struck by devastating tremors, throwing off the footing of his enemies to slow them plus dealing damage over time.
-	"Ability3"				"reus_stalagmite" // The Titan slams the ground to force deadly earth spikes to burst from an area in front of him.  Deals damage and stuns.  The range and radius is slightly randomised.
-	"Ability4"				"reus_ancient_arena" // The Titan roars to summon an inescapable arena of stone.  Enemies caught on the edges take massive damage and are stunned.  Neither allies nor enemies can exit the arena.
-	"Ability5"				""
-	"Ability6"				""
+	//"override_hero"			"npc_dota_hero_elder_titan"
+	"Role"					"Nuker,Disabler,Pusher"
+	"Rolelevels"			"2,3,2"
+	"Complexity"			"1"
+	"Ability1"				"reus_stoneblast"
+	// The Titan tosses a heavy slab, dealing Physical damage
+	// and stunning enemies that are hit by it.
+	"Ability2"				"reus_magnitude"
+	// The Titan creates an area that is struck by devastating tremors,
+	// throwing off the footing of his enemies to slow them plus dealing damage over time.
+	"Ability3"				"reus_gaias_fury" 
+	// The Titan's next attack stuns and unleashes a shockwave that slows around the target.
+	// The shockwave deals 50% of the damage.
+	// Deals 3/4/5/6x his Strength as damage, and stuns for 0.7/0.9/1.1/1.3s.
+	// The cleave applies a 40% slow that lasts 3s.
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"reus_ancient_arena" // 
+	// The Titan roars to summon an inescapable arena of stone.
+	// Neither allies nor enemies can exit the arena.
+	// Inside the Arena, the Titan gains 20/30/40 bonus Armor.
+	// Lasts 6/7/8s.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_attack_speed_30"
+	"Ability11"				"special_bonus_mp_175"
+	"Ability12"				"special_bonus_movement_speed_50" 
+	"Ability13"				"special_bonus_reus_1" // +40 Magnitude Damage
+	"Ability14"				"special_bonus_reus_2" // +0.8 Gaias Fury Stun
+	"Ability15"				"special_bonus_reus_3" // +100 Stoneblast Damage
+	"Ability16"				"special_bonus_armor_15"
+	"Ability17"				"special_bonus_reus_4" // -1.5s Magnitude Quake Interval
 
-	"ArmorPhysical"				"6"									// Physical protection.
+	"ArmorPhysical"				"4"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackRange"				"125"
-	"AttackRate"				"1.85"
-	"AttackDamageMin"			"40"										// Damage range min.
-	"AttackDamageMax"			"44"										// Damage range max.
+	"AttackRange"				"150"
+	"AttackRate"				"2.00"
+	"AttackDamageMin"			"50"										// Damage range min.
+	"AttackDamageMax"			"65"										// Damage range max.
 
 	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"32"										// Base strength
+	"AttributeBaseStrength"		"27"										// Base strength
 	"AttributeStrengthGain"		"3.4"										// Strength bonus per level.
-	"AttributeBaseIntelligence"	"17"										// Base intelligence
-	"AttributeIntelligenceGain"	"1.9"										// Intelligence bonus per level.
+	"AttributeBaseIntelligence"	"19"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.50"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"8"										// Base agility
 	"AttributeAgilityGain"		"0.7"										// Agility bonus per level.	
 
@@ -44,13 +60,13 @@
 	//"RingRadius"				"70"
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"285"									// Speed.
+	"MovementSpeed"				"270"									// Speed.
 	"MovementTurnRate"			"0.7"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 }

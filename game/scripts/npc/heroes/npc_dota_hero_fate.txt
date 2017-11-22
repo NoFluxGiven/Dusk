@@ -1,14 +1,18 @@
-"npc_dota_hero_fate"
+"npc_dota_hero_oracle"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_oracle"
+	//"override_hero"			"npc_dota_hero_oracle"
+	"HeroSelectSoundEffect"	"Fate.ChainsOfFate.Start"
+	"Role"					"Support"
+	"Rolelevels"			"3"
+	"Complexity"			"3"
 	"Ability1"				"fate_displace" // Decreases damage the target takes by 30/40/50/60% for 5s, then heals them for 125/150/175/200% of the HP they lost over the next 5s.
 	"Ability2"				"fate_chains_of_fate" // Places a powerful enchantment on the target enemy. When any unit within a large radius takes damage, the enchanted unit receives a portion of that damage as Magical.
 	"Ability3"				"fate_realign" // Fate heals nearby allies and damages nearby enemies.
-	"Ability4"				"fate_ancestral_recall" // After a 2s charge, grants the target ancient knowledge, instantly restoring a percentage of their maximum Health and Mana, purging debuffs, and giving them bonus stats as if they were 8/14/20 levels higher.
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"fate_ancestral_recall" // After a 2s charge, grants the target ancient knowledge, instantly restoring a percentage of their maximum Health and Mana, purging debuffs, and giving them bonus stats as if they were 8/14/20 levels higher.
 	// Lasts 10s.
-	"Ability5"				""
-	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -50,9 +54,9 @@
 	"MovementTurnRate"			"1.0"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 }

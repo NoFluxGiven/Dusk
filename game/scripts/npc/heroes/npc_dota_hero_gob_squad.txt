@@ -1,13 +1,18 @@
-"npc_dota_hero_gob_squad"
+"npc_dota_hero_techies"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_techies"
+	//"override_hero"			"npc_dota_hero_techies"
+
+	"Role"					"Nuker"
+	"Rolelevels"			"2"
+	"Complexity"			"1"
+	
 	"Ability1"				"gob_squad_rocket_blast"
 	"Ability2"				"gob_squad_kamikaze"	
 	"Ability3"				"gob_squad_whoops"
-	"Ability4"				"gob_squad_clearance_sale"
-	"Ability5"				""
-	"Ability6"				""
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"gob_squad_clearance_sale"
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -49,61 +54,9 @@
 	"MovementTurnRate"			"0.6"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
-
-	"Talents"
-	{
-	    "1" {
-		        "left"
-		        {      
-		            "name" "special_bonus_gob_squad_damage"
-		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "40"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_gob_squad_mana_regen"
-		            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "2"
-		        }
-	   		}
-	    "2" {
-		        "left"
-		        {      
-		            "name" "special_bonus_gob_squad_mana"
-		            "MODIFIER_PROPERTY_MANA_BONUS" "375"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_gob_squad_exp"
-		            "MODIFIER_PROPERTY_EXP_RATE_BOOST" "60"
-		        }
-	    	}
-	    "3" {
-		        "left"
-		        {      
-		            "name" "special_bonus_gob_squad_rocket_blast"
-		            "v" "50"
-		        }
-		        "right"
-		        {
-		            "name" "special_bonus_gob_squad_kamikaze"
-		            "v" "40"
-		        }
-	    	}
-	    "4" {
-		        "left"
-		        {      
-		            "name" "special_bonus_gob_squad_bat"
-		            "MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT" "1.25"
-		        }
-		        "right"
-		        {       
-		            "name" "special_bonus_gob_squad_whoops"
-		            "v" "2"
-		        }
-	    	}
-	}
 }

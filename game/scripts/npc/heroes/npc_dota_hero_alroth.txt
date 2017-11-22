@@ -1,15 +1,19 @@
-"npc_dota_hero_alroth"
+"npc_dota_hero_doom_bringer"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_doom_bringer"
+	//"override_hero"			"npc_dota_hero_doom_bringer"
+	"HeroSelectSoundEffect"	"Alroth.EnergyBurst"
+	"Role"					"Nuker,Durable"
+	"Rolelevels"			"2,1"
+	"Complexity"			"2"
 	"Ability1"				"alroth_raze" // Creates a maelstrom that dissipates as quickly as it forms, dealing large Magical damage to enemies caught in it.
 	"Ability2"				"alroth_energy_burst" // Alroth damages himself to summon a blast of energy that deals damage to nearby enemies and slows.  Reduces Alroth's Armor and Magic Resistance temporarily.
 	"Ability3"				"alroth_shatter" // Grants a guaranteed critical strike to Alroth's attacks that deals bonus Magical damage and reduces their Magic Resistance temporarily.
 	//"Ability4"			"alroth_sun_burst_of_the_seven_heavens_the_five_lambs_dark_dog_turn_your_head_and_be_burned_three_headed_dragon_of_the_western_seas_evaporate_bakudo_no_san_japanesey_weeb_sun_attack_thing"
-	"Ability4"				"alroth_solwave" // With a dark incantation, Alroth gathers destructive energies into a cloak to surround himself with, dealing massive damage over time to nearby enemies. He takes half of the damage himself.
+	"Ability4"				"alroth_model_change"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"alroth_solwave" // With a dark incantation, Alroth gathers destructive energies into a cloak to surround himself with, dealing massive damage over time to nearby enemies. He takes half of the damage himself.
 	//Lasts 4s.
-	"Ability5"				"alroth_model_change"
-	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -19,8 +23,8 @@
 	"Ability13"				"special_bonus_spell_amplify_10" // 
 	"Ability14"				"special_bonus_alroth_2" // -1s Energy Burst Cooldown
 	"Ability15"				"special_bonus_alroth_3" // Raze 3% Max HP DPS
-	"Ability16"				"special_bonus_spell_lifesteal_20" //
-	"Ability17"				"special_bonus_alroth_4" // +2s Solwave Duration
+	"Ability16"				"special_bonus_spell_lifesteal_60" //
+	"Ability17"				"special_bonus_alroth_4" // -15s Raze Cooldown
 
 	"ArmorPhysical"				"0"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -53,9 +57,9 @@
 	"MovementTurnRate"			"0.5"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 }

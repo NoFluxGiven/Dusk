@@ -2,7 +2,8 @@
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "BaseClass"             "ability_datadriven"
+    "BaseClass"             "ability_lua"
+    "ScriptFile"            "lua/abilities/ptomely_mirror_blade"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
@@ -43,6 +44,7 @@
         {
             "var_type"              "FIELD_INTEGER"
             "blades"                "3 4 5 6"
+            "LinkedSpecialBonus"    "special_bonus_ptomely_2"
         }
 
         "03"
@@ -75,59 +77,5 @@
         "soundfile" "soundevents/hero_erra.vsndevts"
         "particle"  "particles/units/heroes/hero_ptomely/mirror_blade.vpcf"
         "particle"  "particles/units/heroes/hero_ptomely/mirror_blade_hit.vpcf"
-    }
-
-    "OnSpellStart"
-    {
-        "RunScript"
-        {
-            "ScriptFile"    "heroes/ptomely_abilities.lua"
-            "Function"      "mirror_blade"
-            "projectile_speed" "%projectile_speed"
-            "radius" "%radius"
-            "range" "%range"
-            "vision_radius" "%vision_radius"
-            "blades" "%blades"
-        }
-    }
-
-    "OnProjectileHitUnit"
-    {
-        "DeleteOnHit"    "0"
-        
-        "RunScript"
-        {
-            "ScriptFile"    "heroes/ptomely_abilities.lua"
-            "Function"      "mirror_blade_damage"
-            "dmg"           "%damage"
-        }
-
-        "FireEffect"
-        {
-            "EffectName"        "particles/units/heroes/hero_ptomely/mirror_blade_hit.vpcf"
-            "EffectAttachType"  "attach_origin"
-            "Target"            "TARGET"
-        }
-    }
-
-    "Modifiers"
-    {
-        "modifier_mirror_blade_fire"
-        {
-            "Passive"            "0"
-            "IsHidden"            "1"
-            "IsDebuff"            "0"
-            "Duration"            "0.75"
-        
-            "ThinkInterval"  "0.15"
-            "OnIntervalThink"
-            {
-            }
-
-            "States"
-            {
-                "MODIFIER_STATE_ROOTED"        "MODIFIER_STATE_VALUE_ENABLED"
-            }
-        }
     }
 }

@@ -9,14 +9,19 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
+	"LinkedAbility"
+	{
+		"01" "hero_one_punch"
+	}
+
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
 		"01"
 		{
-			"var_type" "FIELD_INTEGER"
-			"value" "0"
+			"var_type" "FIELD_FLOAT"
+			"value" "1.75"
 		}
 	}
 }

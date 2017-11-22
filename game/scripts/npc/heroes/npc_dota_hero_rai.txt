@@ -1,7 +1,14 @@
-"npc_dota_hero_rai"
+"npc_dota_hero_ember_spirit"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_ember_spirit"
+	//"override_hero"			"npc_dota_hero_ember_spirit"
+	"HeroSelectSoundEffect"	"Hero_Zuus.LightningBolt"
+
+	"NewHero"				"1"
+
+	"Role"					"Escape,Nuker"
+	"Rolelevels"			"2,2"
+	"Complexity"			"2"
 	"Ability1"				"rai_amplify" // Rai ramps up his electrical potential, the air around him
 	// crackling with energy.
 	// Deals 30/40/50/60 damage per second over 4s in a 400 radius.
@@ -33,14 +40,14 @@
 	// inflicts.
 	// Deals 30/40/50/60 damage, and slows by 4/8/12/16% per charge.
 	// Max 6.
-	"Ability4"				"rai_thunder_roar" // Rai summons myriad bolts to strike nearby enemies,
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"rai_thunder_roar" // Rai summons myriad bolts to strike nearby enemies,
 	// dealing massive damage.
 	// Summons 24 bolts over 1.2s within a 400 radius.
 	// Each bolt strikes a random location within that radius, dealing 60/80/100 damage.
 	// Casting Thunder Roar grants Rai a Static Blade charge 6 times over its duration (every 0.2s).
 	// 80/75/70s cooldown.
-	"Ability5"				""
-	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -62,7 +69,7 @@
 	"AttackDamageMin"			"25"										// Damage range min.
 	"AttackDamageMax"			"35"										// Damage range max.
 
-	"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
 	"AttributeBaseStrength"		"13"										// Base strength
 	"AttributeStrengthGain"		"1.6"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"19"										// Base intelligence
@@ -82,9 +89,9 @@
 	"MovementTurnRate"			"0.6"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 }

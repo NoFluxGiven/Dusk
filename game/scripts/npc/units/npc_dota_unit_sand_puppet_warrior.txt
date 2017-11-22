@@ -31,12 +31,12 @@
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"			"24"		// Damage range min.
-	"AttackDamageMax"			"24"		// Damage range max.	
+	"AttackDamageMin"			"14"		// Damage range min.
+	"AttackDamageMax"			"14"		// Damage range max.	
 	"AttackRate"				"1.2"		// Speed of attack.
 	"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"1100"		// Range within a target can be acquired.
-	"AttackRange"				"125"		// Range within a target can be attacked.
+	"AttackRange"				"150"		// Range within a target can be attacked.
 	"ProjectileModel"			"particles/units/heroes/hero_drow"			// Particle system model for projectile.
 	"ProjectileSpeed"			"800"			// Speed of projectile.
 
@@ -60,9 +60,9 @@
 	// Status
 	//----------------------------------------------------------------
 	"StatusHealth"				"225"		// Base health.
-	"StatusHealthRegen"			"0"			// Health regeneration rate.
+	"StatusHealthRegen"			"1"			// Health regeneration rate.
 	"StatusMana"				"100"		// Base mana.
-	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+	"StatusManaRegen"			"1"		// Mana regeneration rate.		 
 	
 	// Vision
 	//----------------------------------------------------------------
@@ -71,8 +71,8 @@
 
 	// Team
 	//----------------------------------------------------------------
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	//Inventory
@@ -82,11 +82,11 @@
 
 	"Creature"
 	{
-		"HPGain"                    "25"
-		"DamageGain"                "4"
+		"HPGain"                    "20"
+		"DamageGain"                "3"
 		"ArmorGain"                 "0.5"
 		"MagicResistGain"           "0"
-		"MoveSpeedGain"             "1"
+		"MoveSpeedGain"             "4"
 		"BountyGain"                "0"
 		"XPGain"                    "0"
 

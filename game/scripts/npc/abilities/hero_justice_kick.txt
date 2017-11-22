@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/hero_justice_kick"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -19,7 +20,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"125"
+	"AbilityCastRange"				"150"
 	"AbilityCastPoint"				"0.3"
 	
 	// Time		
@@ -42,16 +43,17 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"damage"					"90 120 150 180"
+			"LinkedSpecialBonus"		"special_bonus_hero_3"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"knockback"					"475"
+			"distance"					"475"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"-20"
+			"slow"						"-100"
 		}
 		"04"
 		{
@@ -66,74 +68,5 @@
 		"soundfile" "soundevents/hero_hero.vsndevts"
 		"particle" "particles/units/heroes/hero_hero/hero_justice_kick.vpcf"
 		"particle" "particles/units/heroes/hero_hero/one_punch_mega_crit.vpcf"
-		}
-		
-	"OnSpellStart"
-		{
-			"Knockback"
-			{
-				"Target"            "TARGET"
-				"Center" 	        "CASTER"
-				"Distance"	        "%knockback"
-				"Duration"	        "0.6"
-				"Height"	        "125"
-				"IsFixedDistance"	"1"
-				"ShouldStun"        "1"
-			}
-			"Damage"
-			{
-				"Target"		"TARGET"
-				"Type"			"DAMAGE_TYPE_MAGICAL"
-				"Damage"		"%damage"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_justice_kick_slow"
-				"Target" 		"TARGET"
-				"Duration"		"%duration"
-			}
-			"FireSound"
-			{
-				"EffectName"	"Hero.JusticeKick"
-				"Target"
-				{
-					"Center"  	"TARGET"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					"Flags"     "DOTA_UNIT_TARGET_FLAG_DEAD"
-				}
-			}
-			"FireEffect"
-			{
-				"EffectName"        "particles/units/heroes/hero_hero/hero_justice_kick.vpcf"
-				"EffectAttachType"  "follow_hitloc"
-				"Target"
-				{
-					"Center"  	"TARGET"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					"Flags"     "DOTA_UNIT_TARGET_FLAG_DEAD"
-				}
-			}
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_abilities.lua"
-				"Function"		"JusticeKickCheckOpponent"
-			}
-		}
-		
-	"Modifiers"
-		{
-			"modifier_justice_kick_slow"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				}
-			}
 		}
 }

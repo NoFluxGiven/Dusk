@@ -2,7 +2,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/reus_ancient_arena"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"				   
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -27,12 +28,12 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"875"
+	"AbilityCastRange"				"775"
 	"AbilityCastPoint"				"1.20"
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"180 160 140"
+	"AbilityCooldown"				"120 110 100"
 	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -45,131 +46,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"				"875"
+			"radius"				"775"
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"10"
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"6 7 8"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attackspeed"		"40 60 80"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_movespeed"		"15 20 25"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"40 80 120"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"15 30 45"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration_sticky"		"11"
-		}
-				
-	}
-
-	"OnAbilityPhaseStart"
-	{
-		"FireSound"
-		{
-			"EffectName"	"Hero_ElderTitan.EchoStomp.Channel"
-			"Target" 		"CASTER"
-		}
-	}
-	
-	"OnSpellStart"
-	{
-		"CreateThinker"
-		{
-			"ModifierName"	"modifier_ancient_arena"
-			"Target" 		"CASTER"
-		}
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_ancient_arena_caster"
-			"Target" 		"CASTER"
-			"Duration"		"%duration"
-		}
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/reus_abilities.lua"
-			"Function"		"reus_ancient_arena_start"
-			"duration"		"%duration"
-		}
-	}
-	"Modifiers"
-	{
-		"modifier_ancient_arena"
-		{
-			"Passive"			"0"
-			"IsHidden"			"1"
-			"IsDebuff"			"0"
-			"Duration"			"%duration"
-
-			"OnCreated"
-			{
-				"AttachEffect"
-				{
-					"EffectName"        "particles/units/heroes/hero_reus/reus_rockfall.vpcf"
-					"EffectAttachType"  "follow_origin"
-					"Target"            "TARGET"
-
-					"ControlPoints"
-					{
-						"00"	"0 0 0"
-						"02"	"%radius 0 0"
-					}
-				}
-			}
-
-			"ThinkInterval"  "0.03"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/reus_abilities.lua"
-					"Function"		"reus_ancient_arena_check"
-					"range"			"%radius"
-				}
-			}
-		
-		}
-		"modifier_ancient_arena_sticky"
-		{
-			"Passive"			"0"
-			"IsHidden"			"1"
-			"IsDebuff"			"1"
-			"Duration"			"%duration_sticky"
-		}
-		"modifier_ancient_arena_caster"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"0"
-			"IsBuff"			"1"
-
-			"StatusEffectName" 		"particles/status_fx/status_effect_earth_spirit_petrify.vpcf"
-			"StatusEffectPriority"  "10"
-		
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attackspeed"
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movespeed"
-			    "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "%bonus_damage"
-			    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
-			}
+			"bonus_strength"		"25 50 75"
 		}
 	}
 }

@@ -5,16 +5,17 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/phantom_nightmare"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityTextureName"			"phantom_nightmare"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"500"
+	"AbilityCastRange"				"400"
 	"AbilityCastPoint"				"0"
 	
 	// Time		
@@ -36,22 +37,28 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"cleave"						"10"
+			"cleave"						"15"
+			"LinkedSpecialBonus"			"special_bonus_phantom_1"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage_per_stack"				"2 4 6 8"
+			"damage_per_stack"				"3 5 7 9"
 		}
 	"03"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"5"
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"4"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"475"
+			"radius"						"400"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"max_stacks"					"5"
 		}
 	}
 	
@@ -59,33 +66,5 @@
 		{
 		"particle" "particles\units\heroes\hero_phantom\phantom_cleave.vpcf"
 		"soundfile" "soundevents\hero_phantom.vsndevts"
-		}
-	
-	"Modifiers"
-		{
-		"phantom_nightmare_attk_mod"
-		{
-		"Passive" "1"
-		"IsHidden" "1"
-		"OnAttackLanded"
-			{
-			"RunScript"
-				{
-				"ScriptFile" "heroes/phantom_abilities.lua"
-				"Function" "phantom_nightmare"
-				"damage" "%attack_damage"
-				"pct" "%cleave"
-				"damage_per_stack" "%damage_per_stack"
-				"radius" "%radius"
-				}
-			}
-		}
-		"modifier_nightmare_stacks"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-			"Duration"			"%duration"
-		}
 		}
 }

@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/mana_knight_arcanum_break"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -21,7 +22,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"0"
+	"AbilityCooldown"				"1.75"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,6 +40,7 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"bonus_damage"				"15 30 45 60"
+			"LinkedSpecialBonus"		"special_bonus_mana_knight_2"
 		}
 		"02"
 		{
@@ -48,7 +50,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"spell_damage_reduction"	"-20 -30 -40 -50"
+			"spell_damage_reduction"	"20 30 40 50"
 		}
 		"04"
 		{
@@ -66,99 +68,5 @@
 		{
 		"particle" "particles/units/heroes/hero_mana_knight/arcanum_breaker2.vpcf"
 		"soundfile"	"soundevents/hero_alroth.vsndevts"
-		}
-	
-	"Modifiers"
-		{
-			"modifier_arcanum_break_passive"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"OnAttackStart"
-				// "%attack_damage" is set to the damage value before mitigation
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_arcanum_break"
-						"Target" 		"ATTACKER"
-					}
-					"Random"
-					{
-						"Chance"			"%chance"
-						"PseudoRandom" "DOTA_PSEUDO_RANDOM_JUGG_CRIT"
-						"OnSuccess"
-						{
-							"ApplyModifier"
-							{
-								"ModifierName"	"modifier_arcanum_break"
-								"Target" 		"ATTACKER"
-							}
-							"FireEffect"
-							{
-								"EffectName"        "particles/units/heroes/hero_mana_knight/arcanum_breaker2.vpcf"
-								"EffectAttachType"  "follow_origin"
-								"Target"            "ATTACKER"
-							}
-							"FireSound"
-							{
-								"EffectName"	"Hero_ChaosKnight.ChaosStrike"
-								"Target" 		"ATTACKER"
-							}
-						}
-					}
-				}
-			}
-			"modifier_arcanum_break"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"OnAttackLanded"
-				// "%attack_damage" is set to the damage value before mitigation
-				{
-					"Damage"
-					{
-						"Target"
-						{
-							"Center"  	"TARGET"
-							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-						}
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%bonus_damage"
-					}
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/mk_abilities.lua"
-						"Function"		"ArcanumBreak"
-						"mana_removal"	"%mana_burn"
-					}
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_arcanum_break_spells"
-						"Target"
-						{
-							"Center"  	"TARGET"
-							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-						}
-						"Duration"		"%duration"
-					}
-				}
-			}
-			"modifier_arcanum_break_spells"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE" "%spell_damage_reduction" 
-				}
-			}
 		}
 }

@@ -1,0 +1,27 @@
+// Rewrite of Recipe: Linken's Sphere
+// Author: Rook
+// Date: January 29, 2015
+
+"item_recipe_hephaestus_hammer"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "item_datadriven"
+    "ID"                            "2037"  //Valve's version of this item uses the ID "122".
+    "Model"                         "models/props_gameplay/recipe.mdl"
+    "AbilityTextureName"            "item_recipe"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"                      "1000"
+    "ItemShopTags"                  ""
+    
+    // Recipe
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemRecipe"                    "1"
+    "ItemResult"                    "item_hephaestus_hammer"
+    "ItemRequirements"
+    {
+        "01"                        "item_mithril_hammer;item_pers;item_buckler"
+    }
+}

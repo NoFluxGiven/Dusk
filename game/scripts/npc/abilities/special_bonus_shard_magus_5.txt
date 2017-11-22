@@ -1,5 +1,5 @@
 //=================================================================================================================
-// Shard Magus Talent 5: +15 Ice Wyrm Levels
+// Shard Magus Talent 5: +0.2s Glacial Impact Stun
 //=================================================================================================================
 "special_bonus_shard_magus_5"
 {
@@ -8,6 +8,12 @@
 	"BaseClass"						"special_bonus_unique_centaur_2"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"LinkedAbility"
+	{
+		"01" "shard_magus_glacial_impact"
+	}
+
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	
@@ -15,8 +21,8 @@
 	{
 		"01"
 		{
-			"var_type" "FIELD_INTEGER"
-			"value" "15"
+			"var_type" "FIELD_FLOAT"
+			"value" "0.2"
 		}
 	}
 }

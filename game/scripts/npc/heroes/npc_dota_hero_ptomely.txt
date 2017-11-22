@@ -1,9 +1,13 @@
-"npc_dota_hero_ptomely"
+"npc_dota_hero_leshrac"
 {
 	"AbilityLayout" 		"4"
 	// An extremely powerful spellcaster with terrible stats and huge mana costs.
 	// Meant to rely on his two nukes, Astralise and Mirror Blade, until he can sustain his E and R.
-	"override_hero"			"npc_dota_hero_leshrac"
+	//"override_hero"			"npc_dota_hero_leshrac"
+	"HeroSelectSoundEffect"	"Ptomely.ExpungeCharge"
+	"Role"					"Initiator,Nuker,Carry"
+	"Rolelevels"			"2,2"
+	"Complexity"			"3"
 	"Ability1"				"ptomely_astralise" // Knocks the target enemy or ally out of their Physical body, dealing Magical damage to enemies.
 	// The Hero remains behind, stunned, but a ghostly orb of them appears behind them.
 	// The main Hero takes Physical damage but cannot take Magical damage.
@@ -15,7 +19,10 @@
 	// Each blade deals 0.40/0.50/0.60/0.70x his Intelligence. Fires 5 blades in 0.15s intervals.
 	"Ability3"				"ptomely_enthrall" // The unit targeted is enthralled, causing them to convert all Physical damage they take before reductions to Magical damage, and
 	// reducing their Magic Resistance. Reduces Magic Resistance by 20/25/30/35%. Lasts 8s. Reduces Magic Resistance by half the amount when targeting allies instead of enemies.
-	"Ability4"				"ptomely_expunge" // The target unit has its Magical energies expunged and their current Mana is drained,
+
+	"Ability4"				"generic_hidden" // 
+	"Ability5"				"generic_hidden" // 
+	"Ability6"				"ptomely_expunge" // The target unit has its Magical energies expunged and their current Mana is drained,
 	// creating an orb of pure Mana above them and slowing them drastically.
 	// After a short delay, the orb explodes, dealing damage equivalent the amount of Mana consumed, and spreading all Mana equally between allies in the AoE.
 	// Slows by 40/60/80%.
@@ -26,19 +33,17 @@
 	// 0: Origin, but model attach
 	// 1: Orb position
 	// 2: Explosion size (endcap)
-
-	"Ability5"				"" // 
-	"Ability6"				"" // 
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_armor_5" // 
+	"Ability11"				"special_bonus_attack_damage_30" // 
+	"Ability12"				"special_bonus_movement_speed_40" // 
+	"Ability13"				"special_bonus_ptomely_1" // +10% Enthrall Magic Res Reduction
+	"Ability14"				"special_bonus_cast_range_200" // 
+	"Ability15"				"special_bonus_ptomely_2" // +2 Mirror Blades
+	"Ability16"				"special_bonus_ptomely_3" // +3s Astralise Duration
+	"Ability17"				"special_bonus_intelligence_25" // 
 
 	"ArmorPhysical"				"1"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -71,9 +76,9 @@
 	"MovementTurnRate"			"0.5"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 }

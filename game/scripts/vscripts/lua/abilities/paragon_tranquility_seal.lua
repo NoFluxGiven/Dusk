@@ -53,9 +53,11 @@ function modifier_tranquility_seal:IsDebuff()
 end
 
 function modifier_tranquility_seal:GetModifierConstantHealthRegen()
-  if self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_3") and self:GetParent():GetTeam() == self:GetAbility():GetCaster():GetTeam() then
-    return self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_3")
-  else
-    return -self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_3")
+  if self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_3") then
+    if self:GetParent():GetTeam() == self:GetAbility():GetCaster():GetTeam() then
+      return self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_3")
+    else
+      return -self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_3")
+    end
   end
 end

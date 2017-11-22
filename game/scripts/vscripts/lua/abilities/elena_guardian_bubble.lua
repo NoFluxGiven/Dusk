@@ -68,8 +68,10 @@ if IsServer() then
 			print("DAMAGE AND BLOCK:",damage,block)
 
 			if attacker then
-				--Particle
-				self:GetAbility():InflictDamage(attacker,self:GetAbility():GetCaster(),deal,DAMAGE_TYPE_MAGICAL)
+				if not attacker:IsBuilding() then
+					--Particle
+					self:GetAbility():InflictDamage(attacker,self:GetAbility():GetCaster(),deal,DAMAGE_TYPE_MAGICAL)
+				end
 			end
 
 			CreateParticleHitloc(self:GetParent(),particle)

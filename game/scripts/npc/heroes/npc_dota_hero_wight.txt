@@ -1,11 +1,62 @@
-"npc_dota_hero_wight"
+"npc_dota_hero_visage"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_ancient_apparition"
-	"Ability1"				"wight_flit" 
-	"Ability2"				"" 
-	"Ability3"				"aether_monolith"
-	"Ability4"				""
+	//"override_hero"			"npc_dota_hero_visage"
+	"Role"					"Escape,Nuker"
+	"Rolelevels"			"2,2"
+	"Complexity"			"2"
+	"HeroSelectSoundEffect"	"Wight.Betwixt.Exit"
+	"Ability1"				"wight_betwixt"
+	// The Wight targets a nearby enemy unit, leaping towards it at high speed and becoming
+	// invulnerable. Upon arrival, the Wight damages and
+	// hides inside the target unit for up to 3s.
+	// He can then target another unit to jump to that one, or target a point to leave the unit.
+	// When exiting a unit with ground targeting he deals damage at the target location.
+	// The damage increases for each jump he made.
+	// Has a short cooldown when jumping between units.
+	// Goes on cooldown when landing at a point instead.
+
+	// The Wight can make 3/4/5/6 unit jumps.
+	// The exit command can always be cast, regardless of whether the Wight has any jumps left.
+	// Deals 20/30/40/50 damage and heals the Wight for the same amount on entry.
+	// Deals 100 + 20/30/40/50 damage per jump made in a 350 AoE upon exiting.
+	// Has a 0.60s cooldown when jumping between units.
+	// 600 cast range.
+	// 15/14/13/12s cooldown.
+	// If Wight remains too long in a unit, they are forced out to a random location nearby
+	// as if they cast the exit ability.
+	"Ability2"				"wight_wailing_souls"
+	// Each time the Wight kills an enemy unit, he gains stacks of Wailing Souls.
+	// Casting the ability causes a spirit to appear for each stack and enter a random nearby
+	// enemy unit.
+	// Whilst inside, the unit is slowed and takes damage over time.
+	// Killing a Hero grants 10 stacks.
+	// Max 5/10/15/20 stacks.
+	// Each Spirit does 4/8/12/16 damage per second (in 0.25s intervals) and slows by 6/9/12/15%.
+	// Lasts 4s.
+	// The search radius is 700.
+	// The spirits have a travel time of 0.4s regardless of distance.
+	// They come out at intervals of 0.15s, meaning that it takes 0.75/1.5/2.25/3.00s
+	// for all spirits to come out and latch to a target.
+	// If there are no available nearby targets, the Spirits do not exit and Wight
+	// loses no stacks.
+	// The buff that releases the Spirits lasts for 5s, or until all stacks are used up.
+	// 20s cooldown.
+	"Ability3"				"wight_breakthrough"
+	// Wight gains 4 attacks at a fixed attack rate of 1.00s.
+	// If all four attacks hit one target, they are stunned.
+	// The attacks deal no damage, but proc on hit effects.
+	// The attacks reduce Armor by 5% of Wight's total attack damage.
+	// After 4 hits, stuns for 1.75/2.5/3.25/4.00s.
+	// Lasts 10s.
+	// The debuff (armor) lasts 6s.
+	"Ability4"				"wight_eye_of_the_guardian"
+	// Upon activation, Wight gains full vision of the closest enemy Hero globally.
+	// While using this ability, Wight has no vision around himself or
+	// units he owns.
+	// Reveals invisible units as well.
+	// Lasts 8s.
+	// 90/60/30s cooldown.
 	"Ability5"				""
 	"Ability6"				"talent_attributes"
 	"Ability7"				"talent_attributes"
@@ -25,6 +76,7 @@
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"400"
 	"AttackRate"				"1.6"
 	"AttackDamageMin"			"28"										// Damage range min.
 	"AttackDamageMax"			"29"										// Damage range max.
@@ -49,9 +101,9 @@
 	"MovementTurnRate"			"0.8"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 }

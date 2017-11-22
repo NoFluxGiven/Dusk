@@ -1,13 +1,16 @@
-"npc_dota_hero_bahamut"
+"npc_dota_hero_terrorblade"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_terrorblade"
+	//"override_hero"			"npc_dota_hero_terrorblade"
+	"Role"					"Carry,Nuker"
+	"Rolelevels"			"2,2"
+	"Complexity"			"2"
 	"Ability1"				"bahamut_desolation" // Deals large damage to a target enemy, and then damage over time to close enemies.
 	"Ability2"				"bahamut_fulmination" // Each attack made by Bahamut applies a stack of Fulmination to enemies.  After he ceases attacking, the stacks detonate, dealing Magical damage based on the amount accumulated.
 	"Ability3"				"bahamut_reckoning_aura" // Bahamut amplifies damage taken by nearby enemies.
-	"Ability4"				"bahamut_mega_flare" // Bahamut charges, taking reduced damage, then unleashes a beam of incredible intensity, dealing extreme Pure damage that pierces Magic Immunity.
-	"Ability5"				"bahamut_hidden_transform"
-	"Ability6"				""
+	"Ability4"				"bahamut_hidden_transform"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"bahamut_mega_flare" // Bahamut charges, taking reduced damage, then unleashes a beam of incredible intensity, dealing extreme Pure damage that pierces Magic Immunity.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -49,9 +52,9 @@
 	"MovementTurnRate"			"1.0"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 

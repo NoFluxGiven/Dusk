@@ -35,7 +35,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"10 15 20"
+			"damage"				"30 35 40"
 		}
 		"02"
 		{
@@ -44,13 +44,18 @@
 		}
 		"03"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"phys_armor"			"0.5 0.75 1"
+			"var_type"				"FIELD_FLOAT"
+			"phys_armor"			"1 2 3"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"magic_res"				"2 3 4"
+			"magic_res"				"3 4 5"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"max_stacks"			"4"
 		}
 	}
 

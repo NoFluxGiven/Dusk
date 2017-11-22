@@ -41,23 +41,23 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"10.0"
+			"duration"						"8.0"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"level_bonus"					"8 14 20"
+			"level_bonus"					"7 11 15"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"heal_percent"					"30 40 50"
+			"heal_percent"					"35"
 			"LinkedSpecialBonus"			"special_bonus_fate_4"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"mana_restore_percent"			"15 20 25"
+			"mana_restore_percent"			"30"
 			"LinkedSpecialBonus"			"special_bonus_fate_4"
 		}
 	}

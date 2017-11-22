@@ -88,7 +88,7 @@ end
 
 function modifier_fulmination_stack:GetModifierPhysicalArmorBonus()
 	local t_armor_reduction = self:GetAbility():GetCaster():FetchTalent("special_bonus_bahamut_2") or 0
-	return -t_armor_reduction
+	return -t_armor_reduction * self:GetStackCount()
 end
 
 function modifier_fulmination_stack:GetEffectName()

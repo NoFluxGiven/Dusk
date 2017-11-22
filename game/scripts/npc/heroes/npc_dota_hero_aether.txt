@@ -1,19 +1,26 @@
-"npc_dota_hero_aether"
+"npc_dota_hero_wisp"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_wisp"
+	//"override_hero"			"npc_dota_hero_wisp"
+
+	"Role"					"Escape,Nuker,Support"
+	"Rolelevels"			"2,1,2"
+	"Complexity"			"3"
+
+	"NameAliases"			"aether"
+
 	"Ability1"				"aether_teleport" 
 	"Ability2"				"aether_disrupt" 
 	"Ability3"				"aether_monolith"
-	"Ability4"				"aether_reality_shift"
-	"Ability5"				""
-	"Ability6"				""
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"aether_reality_shift"
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
 	"Ability10"				"special_bonus_cooldown_reduction_8" // 
-	"Ability11"				"special_bonus_hp_200" //
-	"Ability12"				"special_bonus_movement_speed_30" //
+	"Ability11"				"special_bonus_hp_200" // 
+	"Ability12"				"special_bonus_movement_speed_30" // 
 	"Ability13"				"special_bonus_aether_1" // +100 Disrupt Damage
 	"Ability14"				"special_bonus_hp_regen_25" // 
 	"Ability15"				"special_bonus_aether_2" // -50% Teleport Delay
@@ -28,7 +35,7 @@
 	"AttackDamageMin"			"28"										// Damage range min.
 	"AttackDamageMax"			"29"										// Damage range max.
 
-	"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
 	"AttributeBaseStrength"		"14"										// Base strength
 	"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"20"										// Base intelligence
@@ -48,9 +55,9 @@
 	"MovementTurnRate"			"0.8"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 

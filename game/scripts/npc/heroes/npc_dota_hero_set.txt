@@ -1,23 +1,58 @@
-"npc_dota_hero_set"
+"npc_dota_hero_sand_king"
 {
-	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_sand_king"
+	"AbilityLayout" 		"5"
+	//"override_hero"			"npc_dota_hero_sand_king"
+	"Role"					"Pusher,Durable,Nuker"
+	"Rolelevels"			"3,2,1"
+	"Complexity"			"2"
 	"Ability1"				"set_sands_of_war" 
-	"Ability2"				"set_duststorm" 
+	// Whips up two blasts of sand that converge on a location in front of Set.
+	// When they arrive, two controllable Sand Puppets appear. The Sand Puppets
+	// deal damage and are based off of Set's current level.
+	// The warrior sand puppet has a melee attack and slows enemies. They deal bonus
+	// Magical damage on each attack (does not work against Buildings).
+	// The archer sand puppet has a ranged attack and gains bonus range as Set levels.
+	"Ability2"				"set_scarab_curse"
+	// The target enemy unit is afflicted with a curse that steals their attack damage.
+	// Summons a small Scarab to spin around them.
+	// The attack damage stolen is equal to a percentage of their attack damage when
+	// the Spell was cast.
+	// The Scarab deals Physical damage over time equal to the damage stolen from them.
+	// At any point, Switch Scarab Targets can be used to transfer the debuff to another
+	// enemy unit. It will use the original stolen damage values.
 	"Ability3"				"set_harsh_sun"
-	"Ability4"				"set_an_army_beneath_the_sands"
-	"Ability5"				""
-	"Ability6"				""
+	// Set's very presence on the map harshens the weather, making it difficult for Heroes
+	// to see during the day. During daytime, causes all enemies on the map to have reduced
+	// vision, and attack more slowly.
+	// Meanwhile, Set thrives in this very weather, gaining bonus movespeed and bonus vision.
+	// Reduces enemy vision by 100/175/250/325, and attack speed by 10/15/20/25.
+	// If the enemy is a creep, reduces attack speed by 12.
+	// Set gains 20/40/60/80 movespeed and 150/300/450/600 bonus vision.
+	"Ability4"				"set_switch_scarab_targets"
+	// Moves the Scarab Curse debuff to another unit within 700 range. After 0.9s,
+	// it starts attacking again.
+	"Ability5"				"generic_hidden"
+	"Ability6"				"set_sirocco"	
+	// Creates an area around Set where enemy vision is drastically reduced to a fixed value.
+	// and they take damage over time.
+	// While inside the Sirocco, Set and any units he owns are healed for the damage
+	// over time instead.
+	// Deals 40/80/120 damage per second, spread over 0.25s intervals.
+	// Reduces enemy vision to 325.
+	// Reduces the vision of Buildings as well.
+	// 1000 radius.
+	// Lasts 10s.
 	"Ability7"				""
 	"Ability8"				""
-	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability0"				""
+	"Ability10"				"special_bonus_armor_7" // 
+	"Ability11"				"special_bonus_magic_resistance_15" // 
+	"Ability12"				"special_bonus_night_vision_600" // 
+	"Ability13"				"special_bonus_set_1" // +1 Sands of War Archer
+	"Ability14"				"special_bonus_cooldown_reduction_20" // 
+	"Ability15"				"special_bonus_set_2" // +25 Harsh Sun Attack Slow
+	"Ability16"				"special_bonus_set_3" // +125 Sand Puppets Attack Speed
+	"Ability17"				"special_bonus_set_4" // -0.6s Scarab Curse Interval
 
 	"ArmorPhysical"				"5"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -43,13 +78,13 @@
 	//"RingRadius"				"70"
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"310"									// Speed.
-	"MovementTurnRate"			"1.0"									// Turning rate.
+	"MovementSpeed"				"280"									// Speed.
+	"MovementTurnRate"			"0.4"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
-	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	"VisionNighttimeRange"		"500"									// Range of vision at night time.
 }

@@ -36,6 +36,7 @@
 			m_hTexture = resource:"materials/particle/items/disruptor/pinfold_fx_large_ring_color_psd_7246f74b.vtex"
 			m_bAdditive = true
 			m_bDisableZBuffering = true
+			m_nOrientationType = 2
 		},
 	]
 	m_Initializers = 
@@ -51,14 +52,19 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin = [ 0.0, 0.0, 25.0 ]
-			m_OffsetMax = [ 0.0, 0.0, 90.0 ]
+			m_OffsetMin = [ 0.0, 0.0, -25.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 25.0 ]
 		},
 		{
 			_class = "C_INIT_RandomRotation"
 		},
 		{
 			_class = "C_INIT_RandomRotationSpeed"
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 1.0
+			m_fLifetimeMax = 2.0
 		},
 	]
 	m_Emitters = 
@@ -69,4 +75,19 @@
 		},
 	]
 	m_ConstantColor = [ 178, 34, 34, 255 ]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
 }

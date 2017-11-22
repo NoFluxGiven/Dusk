@@ -72,7 +72,7 @@
 	
 	"Modifiers"
 	{
-		"modifier_item_rage_potion"
+		"modifier_item_ironblood_potion"
 		{
 			"Passive"			"0"
 			"IsHidden"			"0"

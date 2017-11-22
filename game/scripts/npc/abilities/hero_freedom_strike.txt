@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/hero_freedom_strike"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -19,8 +20,6 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"475"
 	"AbilityCastPoint"				"0.15"
-	
-	"AbilityDamage" 				"110 150 190 230"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -58,6 +57,11 @@
 			"var_type"					"FIELD_INTEGER"
 			"duration"					"3"
 		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"110 150 190 230"
+		}
 	}
 	
 	"precache"
@@ -65,53 +69,5 @@
 			"particle" "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
-		}
-
-	"OnAbilityPhaseStart"
-	{
-		"FireSound"
-		{
-			"EffectName"	"Hero_EarthSpirit.PreAttack"
-			"Target" 		"CASTER"
-		}
-	}
-		
-	"OnSpellStart"
-		{
-		"RunScript"
-			{
-			"ScriptFile" "heroes/hero_abilities.lua"
-			"Function" "FreedomStrike"
-			"distance" "%charge"
-			"radius"   "%radius"
-			"damage"   "%AbilityDamage"
-			}
-		}
-	
-	"Modifiers"
-		{
-			"modifier_freedom_strike_slow"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-				"Duration"			"%duration"
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				}
-			}
-			"modifier_freedom_strike_no_input"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-			
-				"States"
-				{
-					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
 		}
 }

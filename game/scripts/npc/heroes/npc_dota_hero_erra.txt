@@ -1,7 +1,11 @@
-"npc_dota_hero_erra"
+"npc_dota_hero_necrolyte"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_necrolyte"
+	//"override_hero"			"npc_dota_hero_necrolyte"
+	"HeroSelectSoundEffect"	"Erra.MorbidBlade.Pure"
+	"Role"					"Nuker,Durable"
+	"Rolelevels"			"2,3"
+	"Complexity"			"1"
 	"Ability1"				"erra_morbid_blade" // Erra strikes a target area with the wind of the Black Tide, slicing through enemies in it. Deals Physical damage, but if any units hit
 	// are at 35% or less Health, it deals Pure damage instead, and its cooldown is halved. Erra gains Health back based on the Health missing from enemy targets. Gains 1/2/3/4% Health
 	// for each target AFTER the damage occurs.
@@ -9,9 +13,10 @@
 	// Health of enemy Heroes, and 2% of the missing Health of creeps at the time. Lasts 12s. 5 enemy Heroes with 50% Health and 650 Max Health would grant 195 damage at Max level.
 	"Ability3"				"erra_grave_guard" // Erra finds it difficult to succumb to death, thanks to a dark enchantment cast upon him many eons ago. When he would die, he
 	// becomes immune to damage for a short time and gains back 25/30/35/40% of his Max Health and Mana over 2/3/4/5s. The ability goes on cooldown after this point.
-	"Ability4"				"erra_deathtouch" // With but a touch, Erra can rip souls asunder, dealing massive Magical damage, then damage over time. Deals 460/580/700 damage immediately,
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"erra_deathtouch" // With but a touch, Erra can rip souls asunder, dealing massive Magical damage, then damage over time. Deals 460/580/700 damage immediately,
 	// then 35/40/45 damage per second for 10s.  
-	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -53,9 +58,9 @@
 	"MovementTurnRate"			"0.5"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	"VisionDaytimeRange"		"1800"									// Range of vision in the day time.

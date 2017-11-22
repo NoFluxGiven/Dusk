@@ -5,7 +5,7 @@ LinkLuaModifier("modifier_kamikaze","lua/abilities/gob_squad_kamikaze",LUA_MODIF
 function gob_squad_kamikaze:OnSpellStart()
 	local c = self:GetCaster()
 
-	local t_multiplier = caster:FetchTalent("special_bonus_gob_squad_2") or 0
+	local t_multiplier = c:FetchTalent("special_bonus_gob_squad_2") or 0
 
 	local t_multiplier = 1 + t_multiplier/100
 

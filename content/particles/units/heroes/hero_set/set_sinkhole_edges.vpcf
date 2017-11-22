@@ -1,64 +1,49 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_ConstantColor =
-	[
-		255,
-		242,
-		188,
-		30,
-	]
-	m_Operators =
+	m_ConstantColor = [ 255, 242, 188, 30 ]
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_FadeAndKill"
-			m_flEndFadeInTime = 0.100000
-			m_flStartFadeOutTime = 0.600000
-			m_flStartAlpha = 0.000000
+			m_flEndFadeInTime = 0.1
+			m_flStartFadeOutTime = 0.6
+			m_flStartAlpha = 0.0
 		},
 		{
 			_class = "C_OP_BasicMovement"
-			m_Gravity =
-			[
-				0.000000,
-				0.000000,
-				215.000000,
-			]
-			m_fDrag = 0.150000
+			m_Gravity = [ 0.0, 0.0, 215.0 ]
+			m_fDrag = 0.15
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flEndScale = 8.000000
-			m_flStartScale = 4.000000
+			m_flEndScale = 24.0
+			m_flStartScale = 4.0
 		},
 		{
 			_class = "C_OP_MovementRotateParticleAroundAxis"
-			m_flRotRate = -150.000000
+			m_flRotRate = -300.0
 		},
 		{
 			_class = "C_OP_SpinUpdate"
 		},
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
 			m_hTexture = resource:"materials/particle/smoke1/smoke1.vtex"
+			m_bDisableZBuffering = true
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
-			m_vecDistanceBias =
-			[
-				1.000000,
-				1.000000,
-				0.000000,
-			]
-			m_fSpeedMin = 400.000000
-			m_fSpeedMax = 675.000000
-			m_fRadiusMax = 0.800000
+			m_vecDistanceBias = [ 1.0, 1.0, 0.0 ]
+			m_fSpeedMin = 15.0
+			m_fSpeedMax = 400.0
+			m_fRadiusMax = 0.8
 			m_nScaleCP = 1
 		},
 		{
@@ -67,50 +52,56 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 25.000000
-			m_flRadiusMax = 50.000000
+			m_flRadiusMin = 25.0
+			m_flRadiusMax = 50.0
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin =
-			[
-				0.000000,
-				0.000000,
-				150.000000,
-			]
-			m_OffsetMax =
-			[
-				0.000000,
-				0.000000,
-				150.000000,
-			]
+			m_OffsetMin = [ 0.0, 0.0, 25.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 25.0 ]
 		},
 		{
 			_class = "C_INIT_RandomRotation"
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
-			[
-				255,
-				248,
-				194,
-				255,
-			]
-			m_ColorMax =
-			[
-				255,
-				242,
-				201,
-				255,
-			]
+			m_ColorMin = [ 255, 248, 194, 255 ]
+			m_ColorMax = [ 255, 242, 201, 255 ]
+			m_nTintBlendMode = "PARTICLEBLEND_DEFAULT"
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 23
+			m_nAlphaMax = 20
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 160.000000
+			m_flEmitRate = 80.0
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 1.0, 1.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
 		},
 	]
 }

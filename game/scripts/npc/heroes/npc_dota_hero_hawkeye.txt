@@ -1,13 +1,16 @@
-"npc_dota_hero_hawkeye"
+"npc_dota_hero_sniper"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_sniper"
+	//"override_hero"			"npc_dota_hero_sniper"
+	"Role"					"Carry,Escape"
+	"Rolelevels"			"2,1"
+	"Complexity"			"1"
 	"Ability1"				"hawkeye_ricochet"
 	"Ability2"				"hawkeye_snipe"
 	"Ability3"				"hawkeye_hit_n_run"
-	"Ability4"				"hawkeye_detonator_dart"
-	"Ability5"				""
-	"Ability6"				""
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"hawkeye_detonator_dart"
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -49,9 +52,9 @@
 	"MovementTurnRate"			"0.7"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"1000"									// Range of vision at night time.
 

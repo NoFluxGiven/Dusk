@@ -1,13 +1,17 @@
-"npc_dota_hero_ouroboros"
+"npc_dota_hero_jakiro"
 {
 	"AbilityLayout" 		"4"
-	"override_hero"			"npc_dota_hero_jakiro"
+	//"override_hero"			"npc_dota_hero_jakiro"
+	"HeroSelectSoundEffect"	"Hero_DragonKnight.BreatheFire"
+	"Role"					"Nuker"
+	"Rolelevels"			"3"
+	"Complexity"			"1"
 	"Ability1"				"ouroboros_searing_flame" // cone nuke, hits twice; first is instant damage, second is damage over time
 	"Ability2"				"ouroboros_nexus" // summons a pillar of flame at the target point that deals huge damage after a large delay
 	"Ability3"				"ouroboros_diffusion" // Absorbs a portion of Magical damage, converting it to Spell Amp. Disabled by Break.
-	"Ability4"				"ouroboros_dualcast" // while toggled on, Ouroboros' Spells cast again after a short delay, consuming more of his Mana.
-	"Ability5"				""
-	"Ability6"				""
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"ouroboros_dualcast" // while toggled on, Ouroboros' Spells cast again after a short delay, consuming more of his Mana.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -50,9 +54,9 @@
 	"MovementTurnRate"			"0.5"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"0.0"									// Health regeneration rate.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"0"									// Mana regeneration rate.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 }

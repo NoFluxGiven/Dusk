@@ -1,0 +1,82 @@
+//=================================================================================================================
+// black_rose
+//=================================================================================================================
+"item_black_rose"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"lua/items/item_black_rose"
+	"ID"							"3038"  //Valve's version of this item uses the ID "39".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"Model"							"models/props_gameplay/clarity.mdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_black_rose"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"              "0.1"
+	"AbilityCooldown"				"45"
+	"AbilityManaCost"				"50"
+	"AbilityCastRange"				"500"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"                      "1900"
+    "ItemShopTags"                  "hard_to_tag"
+    "ItemQuality"                   "epic"
+    "ItemAliases"                   "black_rose"
+    "ItemRequiresCharges"           "0"
+    "ItemDisplayCharges"            "0"
+    "ItemPermanent"                 "1"
+    "ItemInitialCharges"            "0"
+	"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+	"precache"
+	{
+	
+		"particle" "particles/items/black_rose.vpcf"
+		"particle" "particles/items/black_rose_aura.vpcf"
+		"particle" "particles/items/black_rose_slow.vpcf"
+		"soundfile"	"soundevents/game_sounds_items.vsndevts"
+	
+	}
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_damage" 		"20"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"active_delay"		"1.5"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"active_duration"	"2.25"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"active_damage_increase" "15"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage" 			"125"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"max_distance" 		"1200"
+		}
+	}
+}

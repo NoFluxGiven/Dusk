@@ -1,0 +1,79 @@
+//=================================================================================================================
+// improved_wand
+//=================================================================================================================
+"item_improved_wand"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"lua/items/item_improved_wand"
+	"ID"							"3039"  //Valve's version of this item uses the ID "39".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"Model"							"models/props_gameplay/clarity.mdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_improved_wand"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"              "0.0"
+	"AbilityCooldown"				"10"
+	"AbilityManaCost"				"25"
+	"AbilityCastRange"				"650"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"                      "1900"
+    "ItemShopTags"                  "hard_to_tag"
+    "ItemQuality"                   "epic"
+    "ItemAliases"                   "improved_wand"
+    "ItemRequiresCharges"           "1"
+    "ItemDisplayCharges"            "1"
+    "ItemPermanent"                 "1"
+    "ItemInitialCharges"            "0"
+	"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+	"precache"
+	{
+	
+		"soundfile"	"soundevents/game_sounds_items.vsndevts"
+	
+	}
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_stats" 		"6"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_health_regen" "3"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"restore_per_charge" "15"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"percent_per_charge" "0.6"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"max_charges"  		"17"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"range"  			"1200"
+		}
+	}
+}

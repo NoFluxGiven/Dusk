@@ -2,7 +2,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/reus_stoneblast"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"				   
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
@@ -29,11 +30,7 @@
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"15"
-	
-	// Damage.
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"120 160 200 240"
+	"AbilityCooldown"				"16"
 	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -46,12 +43,13 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"start_radius"			"125"
+			"damage"				"120 160 200 240"
+			"LinkedSpecialBonus"	"special_bonus_reus_3"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"end_radius"			"125"
+			"radius"				"125"
 		}
 		"03"
 		{
@@ -69,43 +67,5 @@
 			"stun"					"1.2 1.6 2.0 2.4"
 		}
 				
-	}
-	
-	"OnSpellStart"
-	{
-		"LinearProjectile"
-		{
-			"Target" "POINT"
-			"EffectName" "particles/units/heroes/hero_reus/reus_stoneblast.vpcf"
-			"MoveSpeed" "%speed"
-			"StartRadius" "%start_radius"
-			"StartPosition" "attach_attack1"
-			"EndRadius" "%end_radius"
-			"FixedDistance" "%range"
-			"TargetTeams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"TargetTypes" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNITY_TARGET_MECHANICAL"
-			"TargetFlags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-			"HasFrontalCone" "0"
-			"ProvidesVision" "0"
-		}
-		"FireSound"
-		{
-			"EffectName" "Hero_EarthSpirit.BoulderSmash.Target"
-			"Target" "CASTER"
-		}
-	}
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit" "0"
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/reus_abilities.lua"
-			"Function"		"stoneblast_hit"
-			"damage"		"%AbilityDamage"
-			"stun"			"%stun"
-		}
-	}
-	"Modifiers"
-	{
 	}
 }

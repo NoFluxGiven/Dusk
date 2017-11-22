@@ -5,7 +5,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/mana_knight_mana_seal"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AoERadius"						"%radius"
@@ -30,8 +31,6 @@
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"75 100 125 150"
-
-	"AbilityDamage"					"80 140 200 260"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -44,33 +43,45 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"mana_removal"				"4 6 8 10" // percent of Max Mana per second (0.1s intervals)
+			"mana_removal"				"4 6 8 10" // percent of Max Mana per second (0.25s intervals)
+			"LinkedSpecialBonus"		"special_bonus_mana_knight_3"
 		}
 		"02"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"slow"						"-100" // per 1 percent of Mana
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"80 140 200 260"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"					"10"
+			"slow"						"100" // per 1 percent of Mana
 		}
 		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"10"
+		}
+		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"radius"					"350"
 		}
-		"05"
+		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
 			"slow_duration"				"1.5"
 		}
-		"06"
+		"07"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"cooldown"					"4.0"
+		}
+		"08"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"mana_removal_scepter"		"6 9 12 15" // percent of Max Mana per second (0.1s intervals)
 		}
+
 	}
 	
 	"precache"
@@ -80,101 +91,5 @@
 		"particle" "particles/econ/items/silencer/silencer_ti6/silencer_last_word_dmg_ti6.vpcf"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
-		}
-	
-	"OnSpellStart"
-		{
-			"CreateThinker"
-			{
-				"ModifierName"	"modifier_mana_seal_fx"
-				"Target" 		"POINT"
-			}
-		}
-	
-	"Modifiers"
-		{
-			"modifier_mana_seal_fx"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-				"Duration"			"10"
-
-				"Aura"          	"modifier_mana_seal"
-				"Aura_Radius"   	"%radius"
-				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-				"Aura_ApplyToCaster" "0"
-
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"        "particles/units/heroes/hero_mana_knight/mana_seal.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"Target"            "TARGET"
-						"ControlPoints"
-						{
-							"01"	"%radius 0 0"
-						}
-					}
-					"FireSound"
-					{
-						"EffectName"	"Hero_Dazzle.Weave"
-						"Target" 		"TARGET"
-					}
-				}
-			}
-
-			"modifier_mana_seal"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"1"
-
-				"ThinkInterval"  "0.1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/mk_abilities.lua"
-						"Function"		"ManaSealRemoveMana"
-						"mana_removal"	"%mana_removal"
-						"damage"		"%AbilityDamage"
-						"mana_removal_scepter" "%mana_removal_scepter"
-						"slow_duration" "%slow_duration"
-					}
-				}
-			}
-
-			"modifier_mana_seal_particle" // also serves as the tooltip
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-			
-				"EffectName" "particles/units/heroes/hero_mana_knight/mana_seal_unit.vpcf"
-				"EffectAttachType" "attach_origin"
-			}
-
-			"modifier_mana_seal_slow"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"Properties"
-				{
-				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
-				}
-			}
-
-			"modifier_mana_seal_ignore_unit"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			}
 		}
 }

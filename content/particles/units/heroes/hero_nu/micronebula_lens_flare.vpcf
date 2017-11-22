@@ -6,7 +6,7 @@
 		{
 			_class = "C_OP_BasicMovement"
 			m_fDrag = 0.05
-			m_Gravity = [ 0.0, 0.0, 90.0 ]
+			m_Gravity = [ 0.0, 0.0, 25.0 ]
 		},
 		{
 			_class = "C_OP_SpinUpdate"
@@ -46,18 +46,14 @@
 			m_vecCP1Pos = [ 0.0, 0.0, 120.0 ]
 		},
 		{
-			_class = "C_OP_FadeAndKill"
-			m_flStartAlpha = 0.0
-		},
-		{
 			_class = "C_OP_InterpolateRadius"
 			m_flEndScale = 6.0
 			m_flBias = 0.2
 			m_flStartScale = 3.0
 		},
 		{
-			_class = "C_OP_EndCapTimedDecay"
-			m_flDecayTime = 0.4
+			_class = "C_OP_FadeAndKill"
+			m_flStartAlpha = 0.0
 		},
 	]
 	m_Renderers = 
@@ -108,14 +104,33 @@
 			_class = "C_INIT_RandomRotationSpeed"
 			m_flDegreesMax = 50.0
 		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.5
+			m_fLifetimeMax = 0.75
+		},
 	]
 	m_Emitters = 
 	[
 		{
-			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 40
+			_class = "C_OP_ContinuousEmitter"
 		},
 	]
 	m_flConstantRadius = 25.0
 	m_flConstantLifespan = 3.0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
 }

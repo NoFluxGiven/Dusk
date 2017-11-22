@@ -1105,3 +1105,16 @@ function GenericParticle(handle,type)
     ]]
   end
 end
+
+function WorldParticle(particle_name,position,table_cp_vectors)
+  local p = ParticleManager:CreateParticle(particle_name, PATTACH_WORLDORIGIN, nil)
+  ParticleManager:SetParticleControl(p, 0, position)
+
+  if table_cp_vectors then
+    for k,v in pairs(table_cp_vectors) do
+      ParticleManager:SetParticleControl(p, k, v)
+    end
+  end
+  
+  return p
+end
