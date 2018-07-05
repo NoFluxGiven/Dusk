@@ -25,24 +25,29 @@ function modifier_deathstrike:OnAttackStart(params)
 		local attacker = params.attacker
 		local target = params.target or params.unit
 
+		local t_threshold_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_phantom_1") or 0
+		local threshold = self:GetAbility():GetSpecialValueFor("threshold") + t_threshold_bonus
+
 		if attacker == self:GetParent() then
 			attacker:RemoveModifierByName("modifier_deathstrike_hit")
 
-			if not attacker:IsRealHero() then return end
+			if attacker:IsIllusion() then return end
 
-			if not target:IsHero() or not target:IsCreep() then return end
+			if target:IsBuilding() then return end
 
 			if not self:GetAbility():IsCooldownReady() then return end
 
-			local r = RandomInt(0, 100)
-			local chance = 100 - self:GetAbility():GetSpecialValueFor("chance")
+			if target:GetHealthPercent() > threshold then return end
 
-			if r >= chance then
+			-- local r = RandomInt(0, 100)
+			-- local chance = 100 - self:GetAbility():GetSpecialValueFor("chance")
+
+			-- if r >= chance then
 				-- attacker:EmitSound("Hero_ChaosKnight.ChaosStrike")
 				attacker:AddNewModifier(attacker, self:GetAbility(), "modifier_deathstrike_hit", {})
 
 				-- ParticleManager:CreateParticle("particles/units/heroes/hero_mana_knight/deathstrikee.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
-			end
+			-- end
 
 		end
 	end
@@ -74,11 +79,10 @@ function modifier_deathstrike_hit:OnAttackLanded(params)
 
 			local damage = pct * diff
 
-			local duration = self:GetAbility():GetSpecialValueFor("duration")
+			-- local duration = self:GetAbility():GetSpecialValueFor("duration")
 
 			if diff > 0 then
 				self:GetAbility():InflictDamage(target,attacker,damage,DAMAGE_TYPE_PHYSICAL)
-				target:AddNewModifier(attacker, self:GetAbility(), "modifier_deathstrike_debuff", {Duration=duration})
 				CreateParticleHitloc(target,"particles/units/heroes/hero_phantom/phantom_crit.vpcf")
 				target:EmitSound("Phantom.DeathstrikeCrit")
 			end

@@ -34,15 +34,15 @@
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackRange"				"475"
-	"AttackRate"				"1.6"
+	"AttackRate"				"1.65"
 	"AttackDamageMin"			"25"										// Damage range min.
 	"AttackDamageMax"			"32"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 	"AttributeBaseStrength"		"22"										// Base strength
-	"AttributeStrengthGain"		"2.1"										// Strength bonus per level.
+	"AttributeStrengthGain"		"2.9"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"14"										// Base intelligence
-	"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
+	"AttributeIntelligenceGain"	"1.7"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"15"										// Base agility
 	"AttributeAgilityGain"		"2.1"										// Agility bonus per level.
 

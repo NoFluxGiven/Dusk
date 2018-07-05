@@ -4,11 +4,13 @@
 //
 "whitelist"	
 {
-	"npc_dota_hero_queen_of_pain" "0" // in the works
-	"npc_dota_hero_warlock" "0" // in the works
-	"npc_dota_hero_lifestealer" "0" // in the works
-	"npc_dota_hero_sven" "0" // in the works
-	"npc_dota_hero_bristleback" "0" // in the works
+	"npc_dota_hero_queen_of_pain" "0" // Lust; in the works
+	"npc_dota_hero_lifestealer" "0" // Plague; in the works
+	"npc_dota_hero_bristleback" "0" // Spike; in the works
+	"npc_dota_hero_kunkka" "0" // Lysander; needs an E
+	"npc_dota_hero_warlock" "0" // Faust; in the works
+	"npc_dota_hero_lycan" "1" // Balthasar; in the works - complete: particles, design
+	"npc_dota_hero_sven" "1" // Siegfried; sounds, particles, npc_dota_hero_sand_king
 
 	//==========================================
 
@@ -21,16 +23,14 @@
 	"npc_dota_hero_wisp" "1"
 	"npc_dota_hero_arc_warden" "1"
 	"npc_dota_hero_terrorblade" "1"
-	"npc_dota_hero_kunkka" "1"
 	"npc_dota_hero_sniper" "1"
-	"npc_dota_hero_legion_commander" "1"	
+	"npc_dota_hero_legion_commander" "1"
 	"npc_dota_hero_lich" "1"
 	"npc_dota_hero_omniknight" "1"
 	"npc_dota_hero_bounty_hunter" "1"
 	"npc_dota_hero_rubick" "1"
 	"npc_dota_hero_ursa" "1"
 	"npc_dota_hero_spectre" "1"
-	"npc_dota_hero_dark_seer" "1"
 	"npc_dota_hero_vengefulspirit" "1"
 	"npc_dota_hero_keeper_of_the_light" "1"
 	"npc_dota_hero_juggernaut" "1"
@@ -51,6 +51,8 @@
 	"npc_dota_hero_riki" "1"
 	"npc_dota_hero_crystal_maiden" "1"
 	"npc_dota_hero_sand_king" "1"
+	"npc_dota_hero_shredder" "1"
+	
 
 	// WIP Buffer:
 
@@ -67,6 +69,8 @@
 	"npc_dota_hero_faceless_void" "0" // temp disabled
 	"npc_dota_hero_meepo" "0" // temp disabled
 	"npc_dota_hero_invoker" "0" // temp disabled
+
+	"npc_dota_hero_dark_seer" "0" // hotkeys completely screwed up
 
 	"npc_dota_hero_lone_druid" "0" // attachment error
 	"npc_dota_hero_abaddon" "0" // attachment error

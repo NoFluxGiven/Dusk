@@ -16,10 +16,12 @@ modifier_bushido = class({})
 
 function modifier_bushido:DeclareFunctions()
 	local funcs = {
+		MODIFIER_EVENT_ON_ATTACK_FAIL,
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		-- MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
 		MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_EVASION_CONSTANT
 		-- MODIFIER_EVENT_ON_ATTACKED
 	}
 
@@ -35,36 +37,43 @@ function modifier_bushido:GetModifierMoveSpeedBonus_Percentage()
 	return t_bonus
 end
 
+function modifier_bushido:GetModifierEvasion_Constant()
+	if self:GetParent():HasScepter() then
+		return self:GetAbility():GetSpecialValueFor("scepter_evasion")
+	end
+end
+
 if IsServer() then
 
 	function modifier_bushido:OnCreated()
-		local agi = self:GetParent():GetBaseAgility()
+		local agi = self:GetParent():GetAgility()
 		local pct = self:GetAbility():GetSpecialValueFor("percent")/100
 
 		self:SetStackCount(math.floor(agi*pct))
 	end
 
-	-- function modifier_bushido:OnAttacked(params)
-	-- 	local p = self:GetParent()
-	-- 	local a = params.attacker
-	-- 	local t = params.target
+	function modifier_bushido:OnAttackFail(params)
+		local p = self:GetParent()
+		local a = params.attacker
+		local t = params.target
 
-	-- 	if t ~= p then return end
+		if t ~= p then return end
+		if not p:HasScepter() then return end
 
-	-- 	a:EmitSound("Hero_Juggernaut.OmniSlash")
-	-- 	-- Particle
+		a:EmitSound("Hero_Juggernaut.OmniSlash")
+		-- Particle
 
-	-- 	-- p:PerformAttack(
-	-- 	-- 	a,
-	-- 	-- 	true,
-	-- 	-- 	true,
-	-- 	-- 	true,
-	-- 	-- 	false,
-	-- 	-- 	false,
-	-- 	-- 	false,
-	-- 	-- 	true
-	-- 	-- )
-	-- end
+		p:PerformAttack(
+			a,
+			true,
+			true,
+			true,
+			false,
+			false,
+			false,
+			true
+		)
+	end
 
 end
 

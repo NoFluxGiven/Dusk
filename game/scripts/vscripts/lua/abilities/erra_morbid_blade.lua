@@ -31,8 +31,9 @@ if IsServer() then
 		for k,v in pairs(enemy_found) do
 			if v:GetHealthPercent() < threshold then
 				damage_type = DAMAGE_TYPE_PURE
+				local cooldown = self:GetCooldownTimeRemaining()
 				self:EndCooldown()
-				self:StartCooldown(self:GetCooldown(self:GetLevel())*0.5)
+				self:StartCooldown(cooldown*0.5)
 				sound = "Erra.MorbidBlade.Pure"
 				particle = "particles/units/heroes/hero_erra/morbid_blade_below_threshold.vpcf"
 				break

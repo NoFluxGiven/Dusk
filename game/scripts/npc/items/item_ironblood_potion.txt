@@ -2,7 +2,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"item_datadriven"
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"lua/items/item_ironblood_potion"
 	"ID"							"3030"  //Valve's version of this item uses the ID "156".
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -19,16 +20,15 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-	"ItemCost"						"250"
-	"ItemShopTags"					"hard_to_tag"
-	"ItemQuality"					"artifact"
+	"ItemCost"						"200"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
 	"ItemAliases"					"ironblood_potion"
 	"ItemPurchasable"				"1"
 	"ItemSellable"					"1"
 	"ItemInitialCharges"            "1"
 	"ItemStackable"                 "1"
     "ItemPermanent"                 "0"
-	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 	
 	"AbilitySpecial"
 	{
@@ -45,7 +45,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"buff_duration"				"6"
+			"buff_duration"				"4.5"
 		}
 	}
 
@@ -53,41 +53,5 @@
 	{
 		"particle"  "particles/items/ironblood_potion.vpcf"
 		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
-	}
-
-	"OnSpellStart"
-	{
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_item_rage_potion"
-			"Target" 		"TARGET"
-		}
-		"FireSound"
-		{
-			"EffectName"	"Hero_Alchemist.ChemicalRage.Cast"
-			"Target" 		"TARGET"
-		}
-		"SpendCharge" {}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_item_ironblood_potion"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsBuff"			"1"
-			"IsPurgable"		"1"
-			"Duration"			"%buff_duration"
-
-			"EffectName" "particles/items/ironblood_potion.vpcf"
-			"EffectAttachType" "attach_origin"
-
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
-				"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bonus_magic_resistance"
-			}
-		}
 	}
 }

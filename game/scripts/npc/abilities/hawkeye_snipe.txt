@@ -41,7 +41,7 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"attack_range_bonus"		"200 400 600 800"
-			"LinkedSpecialBonus"		"special_bonus_hawkeye_2"
+			"LinkedSpecialBonus"		"special_bonus_hawkeye_4"
 		}
 		"03"
 		{

@@ -24,14 +24,14 @@
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
 	"ItemCost"                      "5175"
-    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;hard_to_tag"
+    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;"
     "ItemQuality"                   "epic"
     "ItemAliases"                   "hephaestus_hammer"
     "ItemRequiresCharges"           "0"
     "ItemDisplayCharges"            "0"
     "ItemPermanent"                 "1"
     "ItemInitialCharges"            "0"
-	"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 	"precache"
 	{

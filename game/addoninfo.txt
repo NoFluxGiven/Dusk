@@ -1,20 +1,12 @@
 "AddonInfo"
 {
   "TeamCount" "2"
-  "maps"      "dota green"
+  "maps"      "dota"
   "IsPlayable"  "1"
   "dota"
   {
           "MaxPlayers"                    "10"
   }
-  "green"
-  {
-			"MaxPlayers"				   "10"
-  }
-"playground"
-{
-         "MaxPlayers"                    "10"
-}
 //  "desert_duo"
 //  {
 //          "MaxPlayers"                    "10"

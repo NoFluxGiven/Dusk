@@ -20,6 +20,10 @@ function modifier_grave_guard:DeclareFunctions()
 	return funcs
 end
 
+function modifier_grave_guard:IsHidden()
+	return true
+end
+
 if IsServer() then
 
 	function modifier_grave_guard:OnTakeDamage(params)

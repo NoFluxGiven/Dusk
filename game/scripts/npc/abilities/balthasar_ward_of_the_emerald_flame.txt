@@ -1,0 +1,70 @@
+"balthasar_ward_of_the_emerald_flame"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_lua"
+    "ScriptFile"            "lua/abilities/balthasar_ward_of_the_emerald_flame"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityTextureName"            "balthasar_ward_of_the_emerald_flame"
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "500"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+    "AnimationPlaybackRate"         "0.9"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "110 100 90"
+    "AbilityManaCost"               "125"
+    "AbilityCastPoint"              "0.4"
+    
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "duration"              "10.0 12.0 14.0"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "radius"                "750"
+            "LinkedSpecialBonus"    "special_bonus_balthasar_3"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "damage"                "30 50 70"
+        }
+        "04"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "slow"                  "40 60 80"
+        }
+        "05"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "visible_slow"          "10 15 20"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/hero_balthasar.vsndevts"
+        "particle"  "particles/units/heroes/hero_balthasar/ward_of_the_emerald_flame.vpcf"
+    }
+
+    "Modifiers"
+    {
+    }
+
+
+}
+

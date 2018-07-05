@@ -27,75 +27,71 @@ modifier_guardian_bubble = class({})
 
 function modifier_guardian_bubble:DeclareFunctions()
 	local funcs = {
-		MODIFIER_EVENT_ON_TAKEDAMAGE,
-		MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK
+
 	}
 	return funcs
 end
 
-function modifier_guardian_bubble:GetModifierTotal_ConstantBlock()
-	return self:GetAbility():GetSpecialValueFor("incoming_damage_block")
-end
+function modifier_guardian_bubble:CheckState()
+	local state = {
+		[MODIFIER_STATE_STUNNED] = true,
+		[MODIFIER_STATE_FROZEN] = true
+	}
 
-function modifier_guardian_bubble:GetAbsoluteNoDamagePhysical()
-	return 1
-end
-
-function modifier_guardian_bubble:GetAbsoluteNoDamagePure()
-	return 1
+	return state
 end
 
 if IsServer() then
 
-	function modifier_guardian_bubble:OnTakeDamage(params)
-		if params.unit ~= self:GetParent() then return end
-		if not self:GetParent():HasModifier("modifier_guardian_bubble_damage_cooldown") then
-			local sound = "Hero_TemplarAssassin.Refraction.Absorb"
-			local particle = "particles/units/heroes/hero_elena/guardian_bubble_hit.vpcf"
+	-- function modifier_guardian_bubble:OnTakeDamage(params)
+	-- 	if params.unit ~= self:GetParent() then return end
+	-- 	if not self:GetParent():HasModifier("modifier_guardian_bubble_damage_cooldown") then
+	-- 		local sound = "Hero_TemplarAssassin.Refraction.Absorb"
+	-- 		local particle = "particles/units/heroes/hero_elena/guardian_bubble_hit.vpcf"
 
-			local damage = params.original_damage
+	-- 		local damage = params.original_damage
 
-			local attacker = params.attacker
+	-- 		local attacker = params.attacker
 
-			local block = self:GetAbility():GetSpecialValueFor("incoming_damage_block")
+	-- 		local block = self:GetAbility():GetSpecialValueFor("incoming_damage_block")
 
-			local deal = block
+	-- 		local deal = block
 
-			if damage < block then
-				deal = damage
-			end
+	-- 		if damage < block then
+	-- 			deal = damage
+	-- 		end
 
-			print("DAMAGE AND BLOCK:",damage,block)
+	-- 		print("DAMAGE AND BLOCK:",damage,block)
 
-			if attacker then
-				if not attacker:IsBuilding() then
-					--Particle
-					self:GetAbility():InflictDamage(attacker,self:GetAbility():GetCaster(),deal,DAMAGE_TYPE_MAGICAL)
-				end
-			end
+	-- 		if attacker then
+	-- 			if not attacker:IsBuilding() then
+	-- 				--Particle
+	-- 				self:GetAbility():InflictDamage(attacker,self:GetAbility():GetCaster(),deal,DAMAGE_TYPE_MAGICAL)
+	-- 			end
+	-- 		end
 
-			CreateParticleHitloc(self:GetParent(),particle)
-			self:GetParent():EmitSound(sound)
+	-- 		CreateParticleHitloc(self:GetParent(),particle)
+	-- 		self:GetParent():EmitSound(sound)
 
-			self:SetStackCount(self:GetStackCount()-1)
-			self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_guardian_bubble_damage_cooldown", {Duration=0.1})
-			if self:GetStackCount() <= 0 then
-				self:Destroy()
-			end
-		end
-	end
+	-- 		self:SetStackCount(self:GetStackCount()-1)
+	-- 		self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_guardian_bubble_damage_cooldown", {Duration=0.1})
+	-- 		if self:GetStackCount() <= 0 then
+	-- 			self:Destroy()
+	-- 		end
+	-- 	end
+	-- end
 
-	function modifier_guardian_bubble:OnCreated(kv)
-		if kv.stack then
-			self:SetStackCount(kv.stack)
-		end
-	end
+	-- function modifier_guardian_bubble:OnCreated(kv)
+	-- 	if kv.stack then
+	-- 		self:SetStackCount(kv.stack)
+	-- 	end
+	-- end
 
-	function modifier_guardian_bubble:OnRefresh(kv)
-		if kv.stack then
-			self:SetStackCount(kv.stack+self:GetStackCount())
-		end
-	end
+	-- function modifier_guardian_bubble:OnRefresh(kv)
+	-- 	if kv.stack then
+	-- 		self:SetStackCount(kv.stack+self:GetStackCount())
+	-- 	end
+	-- end
 
 end
 

@@ -26,15 +26,23 @@ function modifier_rend_passive:OnAttackLanded(params)
 	local rosh_duration = self:GetAbility():GetSpecialValueFor("reset_time_roshan")
 
 	if attacker ~= self:GetParent() then return end
+	if attacker:IsIllusion() then return end
 	if target:IsBuilding() then return end
 	if not target:IsHero() then return end
+	if attacker:PassivesDisabled() then return end
 	-- if target:IsRoshan() then duration = rosh_duration end
 
-	if attacker:HasModifier("modifier_berserk") then stack_bonus = 1 else stack_bonus = 0 end
+	local stack_bonus = 0
+
+	--if attacker:HasModifier("modifier_berserk") then stack_bonus = 1 else stack_bonus = 0 end
 
 	target:AddNewModifier(attacker, self:GetAbility(), "modifier_rend", {Duration=duration, stack=1+stack_bonus}) --[[Returns:void
 	No Description Set
 	]]
+end
+
+function modifier_rend_passive:IsHidden()
+	return true
 end
 
 modifier_rend = class({})

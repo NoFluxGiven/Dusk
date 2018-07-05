@@ -4,7 +4,7 @@
     //-------------------------------------------------------------------------------------------------------------
     "BaseClass"             "ability_lua"
     "ScriptFile"            "lua/abilities/erra_to_dust"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
     "AnimationPlaybackRate"         "1"
@@ -13,8 +13,8 @@
     
     // Casting
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"              "875"
-    "AbilityCastPoint"              "0.3"
+    "AbilityCastRange"              "500"
+    "AbilityCastPoint"              "0.0"
 
     // Time     
     //-------------------------------------------------------------------------------------------------------------
@@ -34,27 +34,27 @@
     {
         "01"
         {
-            "var_type"              "FIELD_INTEGER"
-            "hp_to_bonus_damage"    "4 6 8 10"
+            "var_type"              "FIELD_FLOAT"
+            "hp_to_bonus_str"       "2 2.75 3.5 4.25"
         }
         
         "02"
         {
-            "var_type"              "FIELD_INTEGER"
-            "creep_hp_to_bonus_damage" "2"
+            "var_type"              "FIELD_FLOAT"
+            "creep_hp_to_bonus_str" "0.5"
         }
 
         "03"
         {
             "var_type"              "FIELD_INTEGER"
-            "duration"              "10"
+            "duration"              "6"
             "LinkedSpecialBonus"    "special_bonus_erra_2"
         }
 
         "04"
         {
             "var_type"              "FIELD_INTEGER"
-            "radius"                "875"
+            "radius"                "500"
         }
     }
 

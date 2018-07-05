@@ -15,7 +15,8 @@ modifier_berserk = class({})
 
 function modifier_berserk:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_MIN_HEALTH
 	}
 	return funcs
 end
@@ -30,6 +31,10 @@ end
 
 function modifier_berserk:GetModifierAttackSpeedBonus_Constant()
 	return self:GetAbility():GetSpecialValueFor("bonus_attackspeed")
+end
+
+function modifier_berserk:GetMinHealth()
+	return 1
 end
 
 function modifier_berserk:CheckState()

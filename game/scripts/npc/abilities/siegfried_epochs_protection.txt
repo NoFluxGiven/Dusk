@@ -1,0 +1,46 @@
+"siegfried_epochs_protection"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_lua"
+    "ScriptFile"            "lua/abilities/siegfried_epochs_protection"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityTextureName"            "siegfried_epochs_protection"
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "0"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "AbilityCastPoint"              "0.3"
+    
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "duration"              "1.2 1.8 2.4 3.0"
+            "LinkedSpecialBonus"    "special_bonus_siegfried_4"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+        "particle"  "particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
+        "soundfile" "soundevents\hero_siegfried.vsndevts"
+    }
+
+    "Modifiers"
+    {
+    }
+
+
+}
+

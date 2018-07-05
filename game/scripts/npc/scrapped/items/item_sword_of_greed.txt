@@ -25,7 +25,7 @@
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
 	"ItemCost"						"6750"
-	"ItemShopTags"					"utility;str;hard_to_tag"
+	"ItemShopTags"					"utility;str;"
 	"ItemQuality"					"epic"
 	"ItemAliases"					"sword_of_greed;exalted"
 	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
@@ -33,7 +33,7 @@
 	"ItemSellable"					"0"
 	"ItemPurchasable"				"0"
 	"ItemShareability"				"ITEM_NOT_SHAREABLE"
-	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 	
 	"precache"
 		{

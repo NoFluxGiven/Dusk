@@ -42,13 +42,11 @@
 		{
 			"var_type"						"FIELD_INTEGER"
 			"max_bonus_attack_speed"		"20 40 60 80"
-			"LinkedSpecialBonus"			"special_bonus_war_2"
 		}
 		"03"
 		{
 			"var_type"						"FIELD_INTEGER"
 			"max_bonus_damage"				"15 30 45 60"
-			"LinkedSpecialBonus"			"special_bonus_war_2"
 		}
 		"04"
 		{

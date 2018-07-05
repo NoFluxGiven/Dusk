@@ -22,7 +22,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"9"
+	"AbilityCooldown"				"10"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -44,10 +44,15 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"15 20 25 30"
+			"slow"						"8 12 16 20"
 			"LinkedSpecialBonus"		"special_bonus_lupin_1"
 		}
 		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_speed_steal"		"30 40 50 60"
+		}
+		"04"
 		{
 			"var_type"					"FIELD_FLOAT"
 			"duration"					"2 3 4 5"

@@ -3,6 +3,9 @@ alexander_radiant = class({})
 LinkLuaModifier("modifier_radiant","lua/abilities/alexander_radiant",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_radiant_aura","lua/abilities/alexander_radiant",LUA_MODIFIER_MOTION_NONE)
 
+LinkLuaModifier("modifier_radiant_allies","lua/abilities/alexander_radiant",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_radiant_allies_aura","lua/abilities/alexander_radiant",LUA_MODIFIER_MOTION_NONE)
+
 function alexander_radiant:OnSpellStart()
 	local caster = self:GetCaster()
 

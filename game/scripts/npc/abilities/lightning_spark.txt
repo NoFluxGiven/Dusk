@@ -15,7 +15,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"%radius"
+	"AbilityCastRange"				"900"
 	"AbilityCastPoint"				"0"
 	
 	// Time		

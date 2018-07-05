@@ -1,7 +1,6 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_flConstantRadius = 15.0
 	m_controlPointConfigurations = 
 	[
 		{
@@ -58,7 +57,7 @@
 			m_ModelList = 
 			[
 				{
-					m_model = resource:"models/particle/ice_shards.vmdl"
+					m_model = resource:"models/particle/tusk_sigil.vmdl"
 				},
 			]
 			m_bIgnoreNormal = true
@@ -69,7 +68,7 @@
 		{
 			_class = "C_INIT_CreateWithinSphere"
 			m_fRadiusMin = -1.0
-			m_fRadiusMax = -1.5
+			m_fRadiusMax = -0.65
 			m_vecDistanceBias = [ 0.0, 0.0, 1.0 ]
 			m_vecDistanceBiasAbs = [ 0.0, 0.0, 1.0 ]
 			m_nScaleCP = 1
@@ -97,19 +96,31 @@
 			_class = "C_INIT_RemapCPtoScalar"
 			m_nCPInput = 1
 			m_flInputMax = 1000.0
-			m_flOutputMax = 150.0
+			m_flOutputMax = 25.0
 		},
 		{
 			_class = "C_INIT_PositionOffset"
 			m_OffsetMin = [ 0.0, 0.0, 125.0 ]
 			m_OffsetMax = [ 0.0, 0.0, 125.0 ]
 		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_flDegreesMin = 180.0
+			m_flDegreesMax = 180.0
+			m_nFieldOutput = 20
+			m_bRandomlyFlipDirection = false
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ -75.0, -75.0, 0.0 ]
+			m_OffsetMax = [ 75.0, 75.0, 0.0 ]
+		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 2
+			m_nParticlesToEmit = 4
 		},
 	]
 	m_Children = 

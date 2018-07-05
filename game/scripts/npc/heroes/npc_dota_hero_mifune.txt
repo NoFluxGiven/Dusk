@@ -44,8 +44,8 @@
 	"AttributeStrengthGain"		"1.8"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"16"										// Base intelligence
 	"AttributeIntelligenceGain"	"1.5"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"26"										// Base agility
-	"AttributeAgilityGain"		"2.7"										// Agility bonus per level.
+	"AttributeBaseAgility"		"22"										// Base agility
+	"AttributeAgilityGain"		"2.5"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.

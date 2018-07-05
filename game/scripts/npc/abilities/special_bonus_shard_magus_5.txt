@@ -9,10 +9,10 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-	"LinkedAbility"
-	{
-		"01" "shard_magus_glacial_impact"
-	}
+	//"LinkedAbility"
+	//{
+		//"01" "shard_magus_glacial_impact"
+	//}
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -22,7 +22,7 @@
 		"01"
 		{
 			"var_type" "FIELD_FLOAT"
-			"value" "0.2"
+			"value" "2"
 		}
 	}
 }

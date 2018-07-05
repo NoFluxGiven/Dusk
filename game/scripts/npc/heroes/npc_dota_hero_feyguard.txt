@@ -1,0 +1,82 @@
+"npc_dota_hero_dark_willow"
+{
+	"AbilityLayout" 		"4"
+	// The Feyguard, an automaton made to protect the Fey, is a strange Hero,
+	// possessing no stat gain whatsoever.
+	// Their abilities allow them to overcome this incredible deficit, however.
+	//"override_hero"			"npc_dota_hero_leshrac"
+	"HeroSelectSoundEffect"	"Feyguard."
+	"Role"					"Initiator,Nuker,Carry"
+	"Rolelevels"			"2,2"
+	"Complexity"			"3"
+	"Ability1"				"feyguard_consume" // 
+	// Deals 100/150/200/250 damage to the target enemy, and grants 1/1/1/2 instances
+	// of damage block to the Feyguard.
+	// Max 4 instances.
+	// 4s cooldown.
+	"Ability2"				"feyguard_relinquish" // 
+	// The Feyguard unleashes ancient energies, channeling on a target location.
+	// Upon releasing the channel, it deals damage and stuns in a radius.
+	// The radius and stun duration increases the longer she channels.
+	// Channels for up to 3.25s.
+	// Stuns for up to 1.75/2.50/3.25/4.00s.
+	// Deals up to 100/175/250/325 damage.
+	// Has a radius of up to 275/350/425/500 (starts at 225).
+	"Ability3"				"feyguard_unending" // 
+	// The Feyguard cannot be killed so long as there is an allied Hero nearby to
+	// possess.
+	// Upon taking lethal damage, the Feyguard enters any allied Hero that is within
+	// 700 units.
+	// 
+	"Ability4"				"generic_hidden" // 
+	"Ability5"				"generic_hidden" // 
+	"Ability6"				"feyguard_" // 
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				"special_bonus_armor_5" // 
+	"Ability11"				"special_bonus_attack_damage_30" // 
+	"Ability12"				"special_bonus_movement_speed_40" // 
+	"Ability13"				"special_bonus_feyguard_1" // Reduction
+	"Ability14"				"special_bonus_cast_range_200" // 
+	"Ability15"				"special_bonus_feyguard_2" // 
+	"Ability16"				"special_bonus_feyguard_3" // 
+	"Ability17"				"special_bonus_intelligence_25" // 
+
+	"ArmorPhysical"				"1"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"650"
+	"AttackAnimationPoint" 		"0.3"
+	"AttackRate"				"1.6"
+
+	"AttackDamageMin"			"40"										// Damage range min.
+	"AttackDamageMax"			"60"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"1"										// Base strength
+	"AttributeStrengthGain"		"0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"1"										// Base Intelligence
+	"AttributeIntelligenceGain"	"0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"1"										// Base agility
+	"AttributeAgilityGain"		"0"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"									// Speed.
+	"MovementTurnRate"			"0.5"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

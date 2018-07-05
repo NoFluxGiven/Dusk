@@ -1,0 +1,104 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf1:version{d47d07e6-072c-49cb-9718-5bfd8d6c3d21} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_SpinUpdate"
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+			m_flDecayTime = 0.1
+		},
+		{
+			_class = "C_OP_LerpEndCapScalar"
+			m_flOutput = 0.0
+			m_flLerpTime = 0.1
+		},
+		{
+			_class = "C_OP_SetPerChildControlPoint"
+			m_nFirstControlPoint = 3
+			m_nNumControlPoints = 2
+		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = 15
+		},
+		{
+			_class = "C_OP_SpinYaw"
+			m_nSpinRateDegrees = 15
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_RateMin = [ 0.0, 0.0, 100.0 ]
+			m_RateMax = [ 0.0, 0.0, 100.0 ]
+			m_FrequencyMin = [ 0.25, 0.25, 0.25 ]
+			m_FrequencyMax = [ 0.25, 0.25, 0.25 ]
+			m_bProportional = false
+			m_bOffset = true
+			m_flEndTime_min = 9999999.0
+			m_flEndTime_max = 9999999.0
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_ModelList = 
+			[
+				{
+					m_model = resource:"models/items/sven/arms_of_the_rogue/arms_rogue_shield_fx.vmdl"
+				},
+			]
+			m_bOrientZ = true
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomRadius"
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 54.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 54.0 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 1
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_siegfried/eon_shield_proj_glows.vpcf"
+		},
+	]
+}

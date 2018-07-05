@@ -2,7 +2,7 @@ lupin_last_surprise = class({})
 
 LinkLuaModifier("modifier_last_surprise","lua/abilities/lupin_last_surprise",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_last_surprise_damage","lua/abilities/lupin_last_surprise",LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_last_surprise_damage_steal","lua/abilities/lupin_last_surprise",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_last_surprise_damage_reduction","lua/abilities/lupin_last_surprise",LUA_MODIFIER_MOTION_NONE)
 
 -- Copies a portion of damage from nearby enemies,
 -- then after a short delay slashes a set distance in the direction
@@ -60,7 +60,9 @@ function lupin_last_surprise:OnSpellStart()
 
 		local r = 1
 		
-		caster:AddNewModifier(caster, self, "modifier_last_surprise", {Duration=delay*r})
+		caster:AddNewModifier(caster, self, "modifier_last_surprise", {Duration=delay*r+0.06})
+
+		AddFOWViewer( caster:GetTeamNumber(), caster:GetAbsOrigin(), range, 1.2, false )
 
 		for i=1,r,2 do
 
@@ -70,23 +72,25 @@ function lupin_last_surprise:OnSpellStart()
 					start_loc,
 					end_loc,
 					caster,
-					50,
+					150,
 					DOTA_UNIT_TARGET_TEAM_ENEMY,
 					DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,
 					0)
 				for k,v in pairs(fen) do
-					if v:IsHero() then
-						caster:PerformAttack( v,
-							true,
-							true,
-							true,
-							true,
-							false,
-							false,
-							true )
-						CreateParticleHitloc(v,"particles/units/heroes/hero_lupin/last_surprise_unit.vpcf")
-						n = n+1
+					if not v:IsHero() then
+						caster:AddNewModifier(caster, self, "modifier_last_surprise_damage_reduction", {Duration=0.1})
 					end
+
+					caster:PerformAttack( v,
+						true,
+						true,
+						true,
+						true,
+						false,
+						false,
+						true )
+					CreateParticleHitloc(v,"particles/units/heroes/hero_lupin/last_surprise_unit.vpcf")
+					n = n+1
 				end
 				local p = ParticleManager:CreateParticle("particles/units/heroes/hero_lupin/last_surprise_slash.vpcf",PATTACH_POINT_FOLLOW,caster)
 				ParticleManager:SetParticleControl(p, 0, start_loc+Vector(0,0,150))
@@ -107,18 +111,20 @@ function lupin_last_surprise:OnSpellStart()
 					DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,
 					0)
 				for k,v in pairs(fen) do
-					if v:IsHero() then
-						caster:PerformAttack( v,
-							true,
-							true,
-							true,
-							true,
-							false,
-							false,
-							true )
-						CreateParticleHitloc(v,"particles/units/heroes/hero_lupin/last_surprise_unit.vpcf")
-						n = n+1
+					if not v:IsHero() then
+						caster:AddNewModifier(caster, self, "modifier_last_surprise_damage_reduction", {Duration=0.1})
 					end
+
+					caster:PerformAttack( v,
+						true,
+						true,
+						true,
+						true,
+						false,
+						false,
+						true )
+					CreateParticleHitloc(v,"particles/units/heroes/hero_lupin/last_surprise_unit.vpcf")
+					n = n+1
 				end
 				local p2 = ParticleManager:CreateParticle("particles/units/heroes/hero_lupin/last_surprise_slash.vpcf",PATTACH_POINT_FOLLOW,caster)
 				ParticleManager:SetParticleControl(p2, 0, end_loc+Vector(0,0,150))
@@ -187,4 +193,21 @@ end
 
 function modifier_last_surprise_damage:GetModifierPreAttack_BonusDamage()
 	return self:GetStackCount()
+end
+
+modifier_last_surprise_damage_reduction = class({})
+
+function modifier_last_surprise_damage:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
+	}
+	return funcs
+end
+
+function modifier_last_surprise_damage_reduction:IsHidden()
+	return true
+end
+
+function modifier_last_surprise_damage:GetModifierDamageOutgoing_Percentage()
+	return -(100-self:GetAbility():GetSpecialValueFor("creep_damage"))
 end

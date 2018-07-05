@@ -15,6 +15,17 @@ function gemini_extraplanar_pact:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 
+	local health_restore = self:GetSpecialValueFor("health_regen")
+	local mana_restore = self:GetSpecialValueFor("mana_regen")
+
+	local t_regen_bonus = self:GetCaster():FetchTalent("special_bonus_gemini_2") or 0
+
+	local hp = target:GetMaxHealth()
+	local mp = target:GetMaxMana()
+
+	local hp_amt = health_restore + t_regen_bonus --* hp
+	local mp_amt = mana_restore + t_regen_bonus --* mp
+
 	target:AddNewModifier(caster, self, mod, {Duration = oog_dur}) --[[Returns:void
 	No Description Set
 	]]
@@ -28,6 +39,9 @@ function gemini_extraplanar_pact:OnSpellStart()
 		target:AddNewModifier(caster, self, mod2, {Duration = dur}) --[[Returns:void
 		No Description Set
 		]]
+
+		target:Heal(hp_amt,caster)
+		target:GiveMana(mp_amt)
 
 	end)
 
@@ -51,22 +65,22 @@ modifier_extraplanar_pact = class({})
 
 function modifier_extraplanar_pact:DeclareFunctions()
 	local func = {
-		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT
+		-- MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+		-- MODIFIER_PROPERTY_MANA_REGEN_CONSTANT
 		-- MODIFIER_PROPERTY_MAGICAL_CONSTANT_BLOCK
 	}
 	return func
 end
+	
+-- function modifier_extraplanar_pact:GetModifierConstantHealthRegen()
+-- 	local t_regen_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_gemini_2") or 0
+-- 	return self:GetAbility():GetSpecialValueFor("health_regen") + t_regen_bonus
+-- end
 
-function modifier_extraplanar_pact:GetModifierConstantHealthRegen()
-	local t_regen_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_gemini_2") or 0
-	return self:GetAbility():GetSpecialValueFor("health_regen") + t_regen_bonus
-end
-
-function modifier_extraplanar_pact:GetModifierConstantManaRegen()
-	local t_regen_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_gemini_2") or 0
-	return self:GetAbility():GetSpecialValueFor("mana_regen") + t_regen_bonus
-end
+-- function modifier_extraplanar_pact:GetModifierConstantManaRegen()
+-- 	local t_regen_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_gemini_2") or 0
+-- 	return self:GetAbility():GetSpecialValueFor("mana_regen") + t_regen_bonus
+-- end
 
 -- function modifier_extraplanar_pact:GetModifierMagical_ConstantBlock()
 	-- return self:GetAbility():GetSpecialValueFor("magic_block")
@@ -76,6 +90,10 @@ function modifier_extraplanar_pact:GetEffectName()
 	local part = "particles/units/heroes/hero_gemini/gemini_extraplanar_pact_unit.vpcf"
 
 	return part
+end
+
+function modifier_extraplanar_pact:IsHidden()
+	return true
 end
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

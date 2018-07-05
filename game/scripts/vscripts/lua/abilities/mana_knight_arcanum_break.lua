@@ -28,7 +28,7 @@ function modifier_arcanum_break:OnAttackStart(params)
 			attacker:RemoveModifierByName("modifier_arcanum_break_hit")
 
 			if not self:GetAbility():IsCooldownReady() then return end
-			if target:IsBuilding then return end
+			if target:IsBuilding() then return end
 
 			local r = RandomInt(0, 100)
 			local chance = 100 - self:GetAbility():GetSpecialValueFor("chance")

@@ -183,7 +183,7 @@ function CDOTABaseAbility:InflictDamage(target,attacker,damage,damage_type,flags
 
 	local flags = flags or 0
 
-	ApplyDamage({
+	local final_amount = ApplyDamage({
 	    victim = target,
 	    attacker = attacker,
 	    damage = damage,
@@ -194,10 +194,12 @@ function CDOTABaseAbility:InflictDamage(target,attacker,damage,damage_type,flags
 
   	if not self then return end
 
-  	print("INFLICT: ","ABILITY: "..self:GetName(),"DAMAGE/TYPE: "..damage.." / "..damage_type)
+  	print("INFLICT: ","ABILITY: "..self:GetName(),"DAMAGE/TYPE: "..damage.." / "..damage_type.." (FINAL DAMAGE: "..final_amount..")")
   	if flags ~= 0 then
   		print("FLAGS: "..flags)
   	end
+
+  	return final_amount
 
 end
 
@@ -345,4 +347,23 @@ function CDOTA_BaseNPC:IsRoshan()
 		return true
 	end
 	return false
+end
+
+function CDOTA_BaseNPC:Knockback(direction,distance,time)
+	local p = self
+
+	Physics:Unit(p)
+	p:SetPhysicsFriction(0)
+	p:PreventDI(true)
+	-- To allow going through walls / cliffs add the following:
+	p:FollowNavMesh(false)
+	p:SetAutoUnstuck(false)
+	p:SetNavCollisionType(PHYSICS_NAV_NOTHING)
+
+	p:SetPhysicsVelocity(direction * distance * (1/time))
+
+	Timers:CreateTimer(time,function()
+		p:SetPhysicsVelocity(0,0,0)
+		p:PreventDI(false)
+	end)
 end

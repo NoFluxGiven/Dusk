@@ -11,7 +11,7 @@
 
 	"LinkedAbility"
 	{
-		"01" "war_berserker_aura"
+		"01" "war_earthbreaker"
 	}
 
 	// Special
@@ -21,7 +21,7 @@
 		"01"
 		{
 			"var_type" "FIELD_INTEGER"
-			"value" "25"
+			"value" "100"
 		}
 	}
 }

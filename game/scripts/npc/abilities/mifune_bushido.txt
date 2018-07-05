@@ -21,6 +21,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"38 32 26 20"
 
+	"HasScepterUpgrade"				"1"
+
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"80"
@@ -36,7 +38,7 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"percent"						"30 45 60 75" // percentage total
+			"percent"						"15 20 25 30" // percentage total
 		}
 	"02"
 		{
@@ -52,6 +54,11 @@
 		{
 			"var_type"						"FIELD_FLOAT"
 			"duration"						"8.0"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"scepter_evasion"				"50"
 		}
 	}
 	

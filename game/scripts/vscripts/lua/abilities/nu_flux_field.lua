@@ -113,6 +113,9 @@ end
 function modifier_flux_field_aura:OnIntervalThink()
 	if IsServer() then
 		local damage = self:GetAbility():GetSpecialValueFor("damage_over_time")
+		local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_nu_2")
+
+		damage = damage + t_damage_bonus
 		self:GetAbility():InflictDamage(self:GetParent(),self:GetAbility():GetCaster(),damage,DAMAGE_TYPE_MAGICAL)
 	end
 end

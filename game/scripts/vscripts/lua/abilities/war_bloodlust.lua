@@ -47,7 +47,9 @@ function modifier_bloodlust:DeclareFunctions()
 	local func = {
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-		MODIFIER_EVENT_ON_ATTACK_LANDED
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_EVENT_ON_ATTACK_LANDED,
+		MODIFIER_EVENT_ON_DEATH
 	}
 	return func
 end
@@ -64,8 +66,20 @@ function modifier_bloodlust:GetModifierAttackSpeedBonus_Constant()
 	]]
 end
 
+function modifier_bloodlust:GetModifierMoveSpeedBonus_Percentage()
+	return -self:GetAbility():GetSpecialValueFor("slow")
+end
+
 function modifier_bloodlust:OnCreated(kv)
-	self:StartIntervalThink(1.0)
+	self:StartIntervalThink(0.75)
+	if IsServer() then
+		self:SetStackCount(math.floor(kv.stacks))
+		local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_war_3") or 0
+		self.damage = self:GetAbility():GetSpecialValueFor("dot") + t_damage_bonus
+	end
+end
+
+function modifier_bloodlust:OnRefresh(kv)
 	if IsServer() then
 		self:SetStackCount(math.floor(kv.stacks))
 		local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_war_3") or 0
@@ -76,8 +90,24 @@ end
 function modifier_bloodlust:OnIntervalThink()
 	if IsServer() then
 		local damage = self.damage
-		DealDamage(self:GetParent(),self:GetAbility():GetCaster(),damage,DAMAGE_TYPE_MAGICAL)
-		self:SetStackCount(self:GetStackCount()-1)
+		local is_creep = self:GetParent():IsCreep()
+		local is_attacking = self:GetParent():IsAttacking()
+
+		local do_tick = true
+
+		if is_attacking then
+			if is_creep then
+				do_tick = true
+			else
+				do_tick = false
+			end
+		end
+
+		if do_tick then
+			self:GetAbility():InflictDamage(self:GetParent(),self:GetAbility():GetCaster(),damage,DAMAGE_TYPE_PURE)
+			self:SetStackCount(self:GetStackCount()-1)
+		end
+
 		if self:GetStackCount() <= 0 then self:Destroy() end
 	end
 end
@@ -85,6 +115,7 @@ end
 function modifier_bloodlust:OnAttackLanded(kv)
 	-- if IsServer() then
 		if kv.attacker == self:GetParent() then
+			if kv.attacker:HasModifier("modifier_fight_me") then return end
 			if self:GetStackCount()-1 > 0 then
 				self:SetStackCount(self:GetStackCount()-1)
 			else
@@ -92,6 +123,12 @@ function modifier_bloodlust:OnAttackLanded(kv)
 			end
 		end
 	-- end
+end
+
+function modifier_bloodlust:OnDeath(params)
+	if params.attacker == self:GetParent() and params.unit:IsRealHero() or params.unit == self:GetAbility():GetCaster() then
+		self:Destroy()
+	end
 end
 
 function modifier_bloodlust:GetEffectName()

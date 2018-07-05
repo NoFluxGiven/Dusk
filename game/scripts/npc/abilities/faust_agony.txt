@@ -1,0 +1,74 @@
+//=====================================================================================================
+// FAUST: Agony
+//=====================================================================================================
+"faust_agony"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/faust_agony"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMIES"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AoERadius"						"%radius"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_FATAL_BONDS"
+	"AbilityTextureName"			"faust_agony"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"500"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"18 16 14 12"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100 120 140 160"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"6.00"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"30 60 90 120"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"initial_damage"				"60 100 140 180"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"550"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_faust/le_agony.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+		"soundfile" "soundevents\hero_faust.vsndevts"
+		}
+	
+	"Modifiers"
+		{
+		}
+}

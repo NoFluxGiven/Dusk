@@ -16,7 +16,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1200"
+	"AbilityCastRange"				"0"
 	"AbilityCastPoint"				"0"
 	
 	// Time		
@@ -38,18 +38,13 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"heal"						"80 160 240 320"
+			"heal"						"10 15 20 25"
 			"LinkedSpecialBonus"		"special_bonus_shade_3"
 		}
 		"02"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"creep_heal"				"8 16 24 32"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"1200"
+			"var_type"					"FIELD_FLOAT"
+			"creep_heal"				"2.5 3.75 5 6.25"
 		}
 	}
 	

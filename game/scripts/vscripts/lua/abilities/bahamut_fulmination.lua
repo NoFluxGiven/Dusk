@@ -30,6 +30,10 @@ function modifier_fulmination:OnAttackLanded(params)
 	end
 end
 
+function modifier_fulmination:IsHidden()
+	return true
+end
+
 modifier_fulmination_stack = class({})
 
 function modifier_fulmination_stack:DeclareFunctions()

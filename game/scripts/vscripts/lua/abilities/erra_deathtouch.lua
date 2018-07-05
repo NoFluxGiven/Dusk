@@ -16,7 +16,7 @@ function erra_deathtouch:OnSpellStart()
 
 	caster:EmitSound("Erra.Deathtouch")
 
-	self:InflictDamage(target,caster,damage,dtype)
+	--caster:FadeGesture("ACT_DOTA_CAST_ABILITY_4")
 
 	target:AddNewModifier(caster, self, "modifier_deathtouch_dot", {Duration=duration}) --[[Returns:void
 	No Description Set
@@ -35,8 +35,23 @@ function modifier_deathtouch_dot:DeclareFunctions()
 	return funcs
 end
 
-function modifier_deathtouch_dot:GetModifierConstantHealthRegen()
-	return -self:GetAbility():GetSpecialValueFor("dot_amount")
+function modifier_deathtouch_dot:OnCreated(kv)
+	if IsServer() then
+		self:StartIntervalThink(0.25)
+	end
+end
+
+function modifier_deathtouch_dot:OnIntervalThink()
+	if IsServer() then
+		local dot = self:GetAbility():GetSpecialValueFor("dot_amount") * 0.25
+		local hp_miss = (100 - self:GetParent():GetHealthPercent())/100
+
+		local mult = 1 + hp_miss
+
+		dot = dot * mult
+
+		self:GetAbility():InflictDamage(self:GetParent(),self:GetAbility():GetCaster(),dot,DAMAGE_TYPE_MAGICAL)
+	end
 end
 
 function modifier_deathtouch_dot:GetModifierMoveSpeedBonus_Percentage()

@@ -2,6 +2,7 @@ lupin_beneath_the_mask = class({})
 
 LinkLuaModifier("modifier_beneath_the_mask","lua/abilities/lupin_beneath_the_mask",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_beneath_the_mask_slow","lua/abilities/lupin_beneath_the_mask",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_beneath_the_mask_bonus","lua/abilities/lupin_beneath_the_mask",LUA_MODIFIER_MOTION_NONE)
 
 function lupin_beneath_the_mask:GetIntrinsicModifierName()
 	return "modifier_beneath_the_mask"
@@ -63,17 +64,10 @@ function modifier_beneath_the_mask:OnAttackLanded(params)
 		if not params.attacker:IsRealHero() then return end
 
 		if params.attacker == caster then
-			if self:GetAbility():IsCooldownReady() then
-				target:AddNewModifier(caster, self:GetAbility(), "modifier_beneath_the_mask_slow", {Duration=duration}) --[[Returns:void
-				No Description Set
-				]]
-				if not caster:HasModifier("modifier_last_surprise") then
-					self:GetAbility():UseResources(true, true, true) --[[Returns:void
-					No Description Set
-					]]
-				else
-					damage = damage * 0.5
-				end
+			if self:GetAbility():IsCooldownReady() and not caster:HasModifier("modifier_last_surprise") then
+				target:AddNewModifier(caster, self:GetAbility(), "modifier_beneath_the_mask_slow", {Duration=duration})
+				caster:AddNewModifier(caster, self:GetAbility(), "modifier_beneath_the_mask_bonus", {Duration=duration})
+				self:GetAbility():UseResources(true, true, true)
 				self:GetAbility():InflictDamage(target,caster,damage,DAMAGE_TYPE_PHYSICAL)
 				CreateParticleHitloc(target,"particles/units/heroes/hero_lupin/beneath_the_mask_hit.vpcf")
 				target:EmitSound("Lupin.BeneathTheMask")
@@ -86,7 +80,8 @@ modifier_beneath_the_mask_slow = class({})
 
 function modifier_beneath_the_mask_slow:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
 	}
 	return funcs
 end
@@ -101,16 +96,43 @@ end
 
 function modifier_beneath_the_mask_slow:GetModifierMoveSpeedBonus_Percentage()
 	local t_slow_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_lupin_1") or 0
-	return -(self:GetAbility():GetSpecialValueFor("slow")+t_slow_bonus)
+	local val = -(self:GetAbility():GetSpecialValueFor("slow")+t_slow_bonus)
+
+	return val
+end
+function modifier_beneath_the_mask_slow:GetModifierAttackSpeedBonus_Constant()
+	return -( self:GetAbility():GetSpecialValueFor("attack_speed_steal") )
 end
 
 function modifier_beneath_the_mask_slow:CheckState()
 	local state = {
 		[MODIFIER_STATE_SILENCED] = true
 	}
+
+	if self:GetAbility():GetCaster():FetchTalent("special_bonus_lupin_6") then
+		state[MODIFIER_STATE_MUTED] = true
+	end
 	return state
 end
 
 function modifier_beneath_the_mask_slow:IsPurgable()
 	return true
+end
+
+modifier_beneath_the_mask_bonus = class({})
+
+function modifier_beneath_the_mask_bonus:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+	}
+	return funcs
+end
+
+function modifier_beneath_the_mask_bonus:GetModifierMoveSpeedBonus_Percentage()
+	local t_slow_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_lupin_1") or 0
+	return (self:GetAbility():GetSpecialValueFor("slow")+t_slow_bonus)
+end
+function modifier_beneath_the_mask_bonus:GetModifierAttackSpeedBonus_Constant()
+	return ( self:GetAbility():GetSpecialValueFor("attack_speed_steal") )
 end

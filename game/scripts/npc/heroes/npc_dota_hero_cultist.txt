@@ -1,0 +1,91 @@
+"npc_dota_hero_invoker"
+{
+	"AbilityLayout" 		"4"
+	//"override_hero"			"npc_dota_hero_rubick"
+	"HeroSelectSoundEffect"	"Voidwalker.VoidalFlare"
+	"Role"					"Nuker,Disabler"
+	"Rolelevels"			"3,3"
+	"Complexity"			"3"
+	"Ability1"				"cultist_eldritch_grip"
+	// The Cultist roots the target and drags them towards/away from him over 1.0s,
+	// dealing damage over time as he does so.
+	// Deals the damage in 0.25s intervals.
+	// Deals 60/120/180/240 damage and drags them up to 300/350/400/450 units
+	// towards/away from him. Pushes away when they are within 275 units, otherwise
+	// pulls towards.
+	// 10s cooldown.
+	"Ability2"				"cultist_chaotic_ritual"
+	// Afflicts a curse upon a target enemy.
+	// The curse deals 20/30/40/50 damage over time over 0.5s intervals.
+	// When the enemy receives total damage that exceeds a threshold
+	// of 50% of their Health on cast, the debuff ends, they become stunned and take damage.
+	// Deals 80/120/180/240 Magical damage, and stuns them for 0.6/1.2/1.8/2.4s.
+	// Total DoT is 90/135/180/225.
+	// Lasts 4.5s.
+	// 24/20/16/12s cooldown.
+	"Ability3"				"cultist_skinscrolls"
+	// The Cultist's skin is engraved with myriad symbols, each of which react to
+	// spells cast by his enemies. Every time an enemy casts a Spell within a
+	// 1000 radius, he gains the Skinscrolls buff.
+	// He can target an enemy to fire a blast of energy at them, dealing Magical damage
+	// so long as he has the Skinscrolls buff. Removes the buff on cast.
+	// Deals 75/125/175/225 damage.
+	// Lasts 3s.
+	// 2s cooldown.
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"cultist_chaos"
+	// Swaps the positions of all nearby enemies and allies with each other,
+	// slowing enemies.
+	// Disjoints projectiles for both.
+	// The swap targets are random, but it is always an enemy for an ally.
+	// 800 radius.
+	// 100% slow for 1/1.5/2s.
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				"special_bonus_spell_amplify_6"
+	"Ability11"				"special_bonus_attack_damage_20"
+	"Ability12"				"special_bonus_mp_regen_4" 
+	"Ability13"				"special_bonus_cultist_1" // +125 Skinscrolls Radius
+	"Ability14"				"special_bonus_movement_speed_75"
+	"Ability15"				"special_bonus_cultist_2" // +200 Eldritch Grip Distance
+	"Ability16"				"special_bonus_cultist_3" // +40% Agony Damage
+	"Ability17"				"special_bonus_cultist_4" // +2s Chaotic Ritual Stun
+
+	"ArmorPhysical"				"0"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"615"
+	"AttackRate"				"1.8"
+	"AttackDamageMin"			"20"										// Damage range min.
+	"AttackDamageMax"			"40"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"15"										// Base strength
+	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"20"										// Base intelligence
+	"AttributeIntelligenceGain"	"3.0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"12"										// Base agility
+	"AttributeAgilityGain"		"1.0"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"									// Speed.
+	"MovementTurnRate"			"0.7"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"950"									// Range of vision at night time.
+}
+

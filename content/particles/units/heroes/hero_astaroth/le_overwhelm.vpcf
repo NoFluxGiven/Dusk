@@ -1,74 +1,62 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf1:version{d47d07e6-072c-49cb-9718-5bfd8d6c3d21} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_FadeAndKill"
 		},
 		{
 			_class = "C_OP_BasicMovement"
-			m_fDrag = 0.200000
+			m_fDrag = 0.2
 		},
 		{
 			_class = "C_OP_PositionLock"
 		},
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderTrails"
-			m_flMaxLength = 200.000000
-			m_flLengthFadeInTime = 0.100000
-			m_flRadiusScale = 0.500000
+			m_flMaxLength = 200.0
+			m_flLengthFadeInTime = 0.1
+			m_flRadiusScale = 0.5
 			m_hTexture = resource:"materials/materials/particle/basic_trail.vtex"
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
-			m_fRadiusMin = 190.000000
-			m_fRadiusMax = 210.000000
+			m_fRadiusMin = 190.0
+			m_fRadiusMax = 210.0
 			m_bDisableOperator = true
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
-			[
-				85,
-				0,
-				127,
-				255,
-			]
-			m_ColorMax =
-			[
-				170,
-				0,
-				255,
-				255,
-			]
+			m_ColorMin = [ 85, 0, 127, 255 ]
+			m_ColorMax = [ 170, 0, 255, 255 ]
 		},
 		{
 			_class = "C_INIT_CreateOnModel"
-			m_flHitBoxScale = 5.000000
+			m_flHitBoxScale = 5.0
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
 		},
 	]
-	m_ForceGenerators =
+	m_ForceGenerators = 
 	[
 		{
 			_class = "C_OP_AttractToControlPoint"
-			m_fForceAmount = 2500.000000
-			m_fFalloffPower = 0.000000
+			m_fForceAmount = 2500.0
+			m_fFalloffPower = 0.0
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_astaroth/le_overwhelm_orb.vpcf"
@@ -79,6 +67,21 @@
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_astaroth/le_overwhelm_explode.vpcf"
 			m_bEndCap = true
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
 		},
 	]
 }

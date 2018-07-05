@@ -13,7 +13,7 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityTextureName"			"shade_isolation"
 	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 
@@ -46,17 +46,22 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"125 175 225"
+			"damage"					"100"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"damage_reduction"			"50"
+			"damage_reduction"			"60"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"radius"					"750"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"slow"						"25"
 		}
 	}
 	

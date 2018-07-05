@@ -24,6 +24,14 @@ function lupin_finisher:OnSpellStart()
 		particle = "particles/units/heroes/hero_lupin/lupin_finisher_crit.vpcf"
 		sound = "Lupin.Finisher.Crit"
 		damage = damage+bonus_damage
+		caster:PerformAttack( target,
+							true,
+							true,
+							true,
+							true,
+							false,
+							true,
+							true )
 		target:AddNewModifier(target, nil, "modifier_stunned", {Duration=stun}) --[[Returns:void
 		No Description Set
 		]]

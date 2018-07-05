@@ -1,5 +1,5 @@
 -- This is the primary duskdota duskdota script and should be used to assist in initializing your game mode
-DUSKDOTA_VERSION = "1.98"
+DUSKDOTA_VERSION = "2.10"
 
 -- Set this to true if you want to see a complete debug output of all events/processes done by duskdota
 -- You can also change the cvar 'duskdota_spew' at any time to 1 or 0 for output/no output
@@ -136,44 +136,44 @@ function duskDota:OnFirstPlayerLoaded()
   populateSkillValues()
 
   --LinkLuaModifier("modifier_soul_vial_damage_lua","libraries/modifiers/modifier_soul_vial_damage_lua.lua",LUA_MODIFIER_MOTION_NONE)
-  LinkLuaModifier("modifier_shopkeeper_always_show","libraries/modifiers/modifier_shopkeeper_always_show.lua",LUA_MODIFIER_MOTION_NONE)
+  -- LinkLuaModifier("modifier_shopkeeper_always_show","libraries/modifiers/modifier_shopkeeper_always_show.lua",LUA_MODIFIER_MOTION_NONE)
 
-  --print("[SHOPS] Spawning shop units")
+  -- --print("[SHOPS] Spawning shop units")
 
-  --[-6935.864258 -6027.422852 512.000000]  Vector 00000000035EFAE8 [0.291898 -0.956449 -0.000000]
-  helperRadiant = CreateUnitByName("npc_dummy_hints", Vector(-6935,-6027,512), false, nil, nil, DOTA_TEAM_GOODGUYS)
-  helperRadiant:SetForwardVector(Vector(0.29,-0.95,0)) --[[Returns:void
-  Set the orientation of the entity to have this forward ''forwardVec''
-  ]]
-  helperRadiant:SetModel("models/items/courier/coco_the_courageous/coco_the_courageous.vmdl") --[[Returns:void
-  No Description Set
-  ]]
-  helperRadiant:SetOriginalModel("models/items/courier/coco_the_courageous/coco_the_courageous.vmdl")
-  helperRadiant:SetUnitName("Helper")
-  helperRadiant:StartGesture(ACT_DOTA_IDLE)
-  helperRadiant:AddNewModifier(helperRadiant, nil, "modifier_shopkeeper_always_show", {}) --[[Returns:void
-  No Description Set
-  ]]
-  local ab = helperRadiant:FindAbilityByName("hints_attack_me_not")
-  ab:SetLevel(1)
-  --[   VScript              ]: Vector 0000000002D8DF58 [6944.843750 6725.806641 512.000000]  Vector 0000000002D7FA78 [0.165808 -0.986158 -0.000000]
-  helperDire = CreateUnitByName("npc_dummy_hints", Vector(6944,6725,512), false, nil, nil, DOTA_TEAM_BADGUYS)
-  helperDire:SetForwardVector(Vector(0.16,-0.98,0)) --[[Returns:void
-  Set the orientation of the entity to have this forward ''forwardVec''
-  ]]
-  helperDire:SetModel("models/items/courier/coco_the_courageous/coco_the_courageous.vmdl") --[[Returns:void
-  No Description Set
-  ]]
-  helperDire:SetOriginalModel("models/items/courier/coco_the_courageous/coco_the_courageous.vmdl")
-  helperDire:SetUnitName("Helper")
-  helperDire:StartGesture(ACT_DOTA_IDLE)
-  helperDire:AddNewModifier(helperDire, nil, "modifier_shopkeeper_always_show", {}) --[[Returns:void
-  No Description Set
-  ]]
-  local ab = helperDire:FindAbilityByName("hints_attack_me_not")
-  ab:SetLevel(1)
+  -- --[-6935.864258 -6027.422852 512.000000]  Vector 00000000035EFAE8 [0.291898 -0.956449 -0.000000]
+  -- helperRadiant = CreateUnitByName("npc_dummy_hints", Vector(-6935,-6027,512), false, nil, nil, DOTA_TEAM_GOODGUYS)
+  -- helperRadiant:SetForwardVector(Vector(0.29,-0.95,0)) --[[Returns:void
+  -- Set the orientation of the entity to have this forward ''forwardVec''
+  -- ]]
+  -- helperRadiant:SetModel("models/items/courier/coco_the_courageous/coco_the_courageous.vmdl") --[[Returns:void
+  -- No Description Set
+  -- ]]
+  -- helperRadiant:SetOriginalModel("models/items/courier/coco_the_courageous/coco_the_courageous.vmdl")
+  -- helperRadiant:SetUnitName("Helper")
+  -- helperRadiant:StartGesture(ACT_DOTA_IDLE)
+  -- helperRadiant:AddNewModifier(helperRadiant, nil, "modifier_shopkeeper_always_show", {}) --[[Returns:void
+  -- No Description Set
+  -- ]]
+  -- local ab = helperRadiant:FindAbilityByName("hints_attack_me_not")
+  -- ab:SetLevel(1)
+  -- --[   VScript              ]: Vector 0000000002D8DF58 [6944.843750 6725.806641 512.000000]  Vector 0000000002D7FA78 [0.165808 -0.986158 -0.000000]
+  -- helperDire = CreateUnitByName("npc_dummy_hints", Vector(6944,6725,512), false, nil, nil, DOTA_TEAM_BADGUYS)
+  -- helperDire:SetForwardVector(Vector(0.16,-0.98,0)) --[[Returns:void
+  -- Set the orientation of the entity to have this forward ''forwardVec''
+  -- ]]
+  -- helperDire:SetModel("models/items/courier/coco_the_courageous/coco_the_courageous.vmdl") --[[Returns:void
+  -- No Description Set
+  -- ]]
+  -- helperDire:SetOriginalModel("models/items/courier/coco_the_courageous/coco_the_courageous.vmdl")
+  -- helperDire:SetUnitName("Helper")
+  -- helperDire:StartGesture(ACT_DOTA_IDLE)
+  -- helperDire:AddNewModifier(helperDire, nil, "modifier_shopkeeper_always_show", {}) --[[Returns:void
+  -- No Description Set
+  -- ]]
+  -- local ab = helperDire:FindAbilityByName("hints_attack_me_not")
+  -- ab:SetLevel(1)
 
-  duskDota.spawnDarkShop = false
+  -- duskDota.spawnDarkShop = false
 end
 
 --[[
@@ -359,6 +359,13 @@ function duskDota:OnHeroInGame(hero)
     hero:FindAbilityByName("ironfist_change_stance"):SetLevel(1)
   end
 
+  if hero:GetUnitName() == "npc_dota_hero_shredder" then
+    RemoveAllWearables(hero)
+    local ab = hero:FindAbilityByName("aeronaut_hidden_engine")
+
+    ab:SetLevel(1)
+  end
+
   Timers:CreateTimer(0.06,function()-- check if illusion
     if hero:IsIllusion() and hero.hero_attachments then
       print("Illusion has been created, and illusion has attachments")
@@ -520,20 +527,20 @@ function duskDota:OnGameInProgress()
   --     end
   --     return 15.0 -- Rerun this timer every 30 game-time seconds 
   --   end)
-  Timers:CreateTimer(4,
-    function()
+  -- Timers:CreateTimer(4,
+  --   function()
 
-      showHint(helperRadiant)
+  --     --showHint(helperRadiant)
       
-      showHint(helperDire)
+  --     --showHint(helperDire)
 
-      Timers:CreateTimer(10,function()
-        hideHint(helperRadiant)
-        hideHint(helperDire)
-      end)
+  --     Timers:CreateTimer(10,function()
+  --       hideHint(helperRadiant)
+  --       hideHint(helperDire)
+  --     end)
       
-      return 12.0
-    end)
+  --     return 12.0
+  --   end)
 end
 
 
@@ -692,6 +699,7 @@ function duskDota:FilterExecuteOrder( filterTable )
       end
     end
   end
+
   if order_type ==  DOTA_UNIT_ORDER_CAST_NO_TARGET -- make sure it's an ability we're using
   or order_type == DOTA_UNIT_ORDER_CAST_POSITION
   or order_type == DOTA_UNIT_ORDER_CAST_RUNE
@@ -715,14 +723,32 @@ function duskDota:FilterExecuteOrder( filterTable )
         end
       end
     hero.last_ability_used = ability
-    print("ABILITY SET TO "..ability:GetName().." LOL")
+    print("ABILITY SET TO "..ability:GetName())
     print("LE DEBUG CHECK: "..hero.last_ability_used:GetName())
     end
   end
 
-  if order_type == DOTA_UNIT_ORDER_CAST_TARGET then
+  if order_type == DOTA_UNIT_ORDER_CAST_TARGET or order_type == DOTA_UNIT_ORDER_ATTACK_TARGET then
 
   -- Unit Target Order Filters
+
+  -- NIGHTMARE
+
+    if target and hero then
+        if hero:HasModifier("modifier_nightmare") then
+          print("NIGHTMARE")
+          if target:HasModifier("modifier_nightmare_caster") then
+            print("STOPPING")
+            ParticleManager:CreateParticleForPlayer("particles/units/heroes/hero_phantom/nightmare_caster.vpcf", PATTACH_ABSORIGIN_FOLLOW, target, player)
+            return false
+          end
+        end
+
+        if target:GetTeam() == hero:GetTeam() and target:HasModifier("modifier_nightmare") then
+          ParticleManager:CreateParticleForPlayer("particles/units/heroes/hero_phantom/nightmare_caster.vpcf", PATTACH_ABSORIGIN_FOLLOW, target, player)
+          return false
+        end
+    end
 
   -- START Ptomely Spell Reflect
   -- Proof of concept, too OP
@@ -804,6 +830,7 @@ function duskDota:FilterExecuteOrder( filterTable )
     -- end
   -- END Timekeeper Echoes
   end
+
   return true
 end
 
@@ -1075,6 +1102,27 @@ function duskDota:FilterTakeDamage( filterTable )
   --     end
   --   end
   -- end
+
+  -- MALEFIC INVERSION
+
+    if defender:HasModifier("modifier_guardian_bubble") then
+      local mod = defender:FindModifierByName("modifier_guardian_bubble")
+      if mod then
+        local ab = mod:GetAbility()
+        if ab then
+          local t_healing_bonus = ab:GetCaster():FetchTalent("special_bonus_elena_6") or 0
+          local damage_to_healing = ab:GetSpecialValueFor("damage_to_healing") + t_healing_bonus
+
+          local damage = filterTable["damage"]
+
+          local heal = damage * (damage_to_healing / 100)
+
+          defender:Heal(heal, ab:GetCaster())
+
+          return false
+        end
+      end
+    end
 
 
 return true

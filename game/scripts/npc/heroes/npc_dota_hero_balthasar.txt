@@ -1,0 +1,87 @@
+"npc_dota_hero_lycan"
+{
+	"AbilityLayout" 		"4"
+	//"override_hero"			"npc_dota_hero_lycan"
+	"Role"					"Escape,Nuker"
+	"Rolelevels"			"2,2"
+	"Complexity"			"2"
+	"Model"					"models/items/lycan/ultimate/blood_moon_hunter_shapeshift_form/blood_moon_hunter_shapeshift_form.vmdl"
+	"HeroSelectSoundEffect"	"Balthasar.Something"
+
+	"Ability1"				"balthasar_firebolt"
+
+	"Ability2"				"balthasar_doomflame"
+	// Balthasar unleashes a blast of flame that sets the ground ahead of it alight.
+	// The projectile deals damage, and leaves behind fiery ground that deals damage
+	// over time.
+	// When Balthasar is moving over the ground, he moves at greater speed.
+	// Deals 60/120/180/240 damage.
+	// Travels 600/700/800/900 units with a radius of 225.
+	// Leaves behind ground that, when Balthasar moves over it, causes him to move at
+	// 600/700/800/900 movespeed. The ground also deals 20/30/40/50 damage per second in 0.25s intervals
+	// to enemies.
+	// Lasts 2.5s.	
+
+	"Ability3"				"balthasar_emerald_fang"
+	// Balthasar's attacks deal damage over time based on his attack damage.
+	// Deals 10/15/20/25% of his attack damage per second to the enemy.
+	// Lasts 3s.
+
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+
+	"Ability6"				"balthasar_ward_of_the_emerald_flame"
+	// Balthasar summons an entity that reveals invisible units in its vicinity,
+	// slows, and deals damage over time.
+	// Deals 20/40/60 damage per second, slows by 30/35/40%,
+	// and reveals invisible units in a 750 radius.
+	// Lasts 14s.
+	// 95s cooldown.
+
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				"special_bonus_spell_amplify_6" // 
+	"Ability11"				"special_bonus_magic_resistance_8" // 
+	"Ability12"				"special_bonus_balthasar_1" // +1s Emerald Fang Duration
+	"Ability13"				"special_bonus_armor_8" // 
+	"Ability14"				"special_bonus_balthasar_2" // +500 Doomflame Range
+	"Ability15"				"special_bonus_attack_damage_60" // 
+	"Ability16"				"special_bonus_balthasar_3" // +600 Ward of the Emerald Flame Radius
+	"Ability17"				"special_bonus_balthasar_4" // -12s Firebolt Cooldown
+
+	"ArmorPhysical"				"0"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRange"				"150"
+	"AttackRate"				"1.7"
+	"AttackDamageMin"			"28"										// Damage range min.
+	"AttackDamageMax"			"29"										// Damage range max.
+
+	"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+	"AttributeBaseStrength"		"23"										// Base strength
+	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"14"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.7"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"23"										// Base agility
+	"AttributeAgilityGain"		"2.5"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"315"									// Speed.
+	"MovementTurnRate"			"0.7"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"1000"									// Range of vision at night time.
+}

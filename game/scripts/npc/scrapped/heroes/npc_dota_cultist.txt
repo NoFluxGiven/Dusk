@@ -1,0 +1,106 @@
+"npc_dota_hero_invoker"
+{
+	"AbilityLayout" 		"4"
+	//"override_hero"			"npc_dota_hero_rubick"
+	"HeroSelectSoundEffect"	"Voidwalker.VoidalFlare"
+	"Role"					"Nuker,Disabler"
+	"Rolelevels"			"3,3"
+	"Complexity"			"3"
+	"Ability1"				"cultist_eldritch_grip"
+	// The Cultist roots the target and drags them towards/away from him over 1.0s,
+	// dealing damage over time as he does so.
+	// Deals the damage in 0.25s intervals.
+	// Deals 60/120/180/240 damage and drags them up to 300/350/400/450 units
+	// towards/away from him. Pushes away when they are within 275 units, otherwise
+	// pulls towards.
+	// 10s cooldown.
+	"Ability2"				"cultist_chaotic_ritual"
+	// Afflicts a curse upon a target enemy.
+	// The curse slows the enemy by
+	// 10/12/14/16%, and when they receive total damage that exceeds a threshold
+	// of 450, the debuff ends, and they become stunned and take damage.
+	// Deals 80/120/180/240 Magical damage, and stuns them for 1.2/1.8/2.2/3.0s.
+	// Lasts 4.5s.
+	// 24/20/16/12s cooldown.
+	"Ability3"				"cultist_skinscrolls"
+	// The Cultist's skin is engraved with myriad symbols, each of which react to
+	// spells cast by his enemies. Every time an enemy casts a Spell within a
+	// 1000 radius, he gains a stack.
+	// Upon activation, after a 1s delay,
+	// he unleashes a blast that deals damage and slows enemies.
+	// Deals 10/20/30/40 damage per stack and slows by 50% for 0.5s per stack,
+	// in a 400 radius.
+	// During the delay time, he is slowed by 25%.
+	// Max 8 stacks.
+	// 2.5s cooldown.
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"cultist_effigy_of_agony"
+	// Creates a doll-like copy of the target enemy. The copy 
+	// is a neutral, and can be damaged and attacked by both teams.
+	// 
+	// The target takes 40/50/60% of the damage the copy takes.
+	// (They cannot take more than the copy's Maximum Health as damage in one instance.)
+	// 
+	// If the effigy is Silenced, Broken, Muted, Disarmed, Rooted or Stunned, its target
+	// receives the same status effects for the same duration. Does not work
+	// with non-explicit effects, such as slows or DoT.
+	// (If the copy is destroyed while they are afflicted with a status effect, the effect
+	// stops immediately.)
+	// 
+	// Destroyed when it reaches 0 HP.
+	// When attacked by the effigy's target twice, it is instantly destroyed and deals no
+	// damage.
+	// Lasts 6s, has Health equal to the target's Max Health.
+	// 100s cooldown.
+	// 400/550/700 cast range.
+	// The effigy appears 150 units in front of the Cultist and is Phased for its full
+	// duration.
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				"special_bonus_spell_amplify_6"
+	"Ability11"				"special_bonus_attack_damage_20"
+	"Ability12"				"special_bonus_mp_regen_4" 
+	"Ability13"				"special_bonus_cultist_1" // +125 Skinscrolls Radius
+	"Ability14"				"special_bonus_movement_speed_75"
+	"Ability15"				"special_bonus_cultist_2" // +200 Eldritch Grip Distance
+	"Ability16"				"special_bonus_cultist_3" // +40% Agony Damage
+	"Ability17"				"special_bonus_cultist_4" // +2s Chaotic Ritual Stun
+
+	"ArmorPhysical"				"0"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"615"
+	"AttackRate"				"1.8"
+	"AttackDamageMin"			"20"										// Damage range min.
+	"AttackDamageMax"			"40"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"15"										// Base strength
+	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"20"										// Base intelligence
+	"AttributeIntelligenceGain"	"3.0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"12"										// Base agility
+	"AttributeAgilityGain"		"1.0"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"									// Speed.
+	"MovementTurnRate"			"0.7"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"950"									// Range of vision at night time.
+}
+

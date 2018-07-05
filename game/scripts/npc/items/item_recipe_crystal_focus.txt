@@ -22,6 +22,6 @@
     "ItemResult"                    "item_crystal_focus"
     "ItemRequirements"
     {
-        "01"                        "item_trident;item_aether_lens;item_magic_wand"
+        "01"                        "item_kaya;item_aether_lens;item_magic_wand"
     }
 }

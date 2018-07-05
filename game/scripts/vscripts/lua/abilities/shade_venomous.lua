@@ -104,3 +104,7 @@ function modifier_venomous_passive_lua:OnAttackLanded( params )
 	No Description Set
 	]]
 end
+
+function modifier_venomous_passive_lua:IsHidden()
+	return true
+end

@@ -32,6 +32,10 @@ function duskDota:OnNPCSpawned(keys)
   local npc = EntIndexToHScript(keys.entindex)
   local name = npc:GetUnitName()
 
+  if name == "npc_dota_hero_shredder" then
+    RemoveAllWearables(npc)
+  end
+
   -- if name == "npc_dota_goodguys_siege" or name == "npc_dota_goodguys_siege_upgraded" or name == "npc_dota_goodguys_siege_upgraded_mega" then
   --   if duskDota.siegeCounterRadiant then
   --     duskDota.siegeCounterRadiant = duskDota.siegeCounterRadiant+1

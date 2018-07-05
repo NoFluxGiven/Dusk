@@ -44,6 +44,7 @@ function phantom_shadowstep:OnSpellStart()
 			ProjectileManager:ProjectileDodge(caster)
 			ParticleManager:DestroyParticle(p,false)
 			caster:EmitSound("Phantom.Shadowstep.Teleport")
+			caster:Purge(false, true, false, false, false)	
 		end
 		track = false
 	end)
@@ -63,6 +64,14 @@ function modifier_shadowstep:DeclareFunctions()
 		MODIFIER_PROPERTY_EVASION_CONSTANT
 	}
 	return func
+end
+
+function modifier_shadowstep:CheckState()
+	local state = {
+		[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+		[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true
+	}
+	return state
 end
 
 function modifier_shadowstep:GetModifierMoveSpeedBonus_Percentage()

@@ -25,14 +25,14 @@
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
 	"ItemCost"                      "1900"
-    "ItemShopTags"                  "hard_to_tag"
+    "ItemShopTags"                  ""
     "ItemQuality"                   "epic"
     "ItemAliases"                   "wand_of_yggdrasil"
     "ItemRequiresCharges"           "0"
     "ItemDisplayCharges"            "0"
     "ItemPermanent"                 "1"
     "ItemInitialCharges"            "0"
-	"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 	"precache"
 	{
@@ -96,12 +96,12 @@
 		"10"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"hp_percent_drain"  "8"
+			"hp_percent_drain"  "7"
 		}
 		"11"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"mp_percent_drain" 	"8"
+			"mp_percent_drain" 	"7"
 		}
 		"12"
 		{

@@ -1,0 +1,58 @@
+"siegfried_heaven_sent"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_lua"
+    "ScriptFile"            "lua/abilities/siegfried_heaven_sent"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityTextureName"            "siegfried_heaven_sent"
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "0"
+
+    "AbilityCastAnimation"          "ACT_DOTA_GENERIC_CHANNEL_1"
+    "AnimationPlaybackRate"         "1.75"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "150"
+    "AbilityManaCost"               "140"
+    "AbilityCastPoint"              "0.8"
+    "HasScepterUpgrade"             "1"
+    
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "duration"              "8.75"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "scepter_health_regen"  "60 90 120"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+        "particle"  "particles/units/heroes/hero_siegfried/heaven_sent.vpcf"
+        "particle"  "particles/units/heroes/hero_siegfried/heaven_sent_teleport.vpcf"
+        "soundfile" "soundevents\hero_siegfried.vsndevts"
+    }
+
+    "Modifiers"
+    {
+    }
+
+
+}
+

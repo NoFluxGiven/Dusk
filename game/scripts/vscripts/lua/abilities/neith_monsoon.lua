@@ -3,6 +3,13 @@ neith_monsoon = class({})
 LinkLuaModifier("modifier_monsoon","lua/abilities/neith_monsoon",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_monsoon_user","lua/abilities/neith_monsoon",LUA_MODIFIER_MOTION_NONE)
 
+function neith_monsoon:GetCooldown(level)
+	local base_cooldown = self.BaseClass.GetCooldown(self, level)
+	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_neith_5") or 0
+
+	return base_cooldown - t_cooldown_reduction
+end
+
 function neith_monsoon:OnSpellStart()
 	local c = self:GetCaster()
 	local radius = self:GetSpecialValueFor("shock_radius")
@@ -12,24 +19,15 @@ function neith_monsoon:OnSpellStart()
 	local damage = self:GetAbilityDamage()
 	local dtype = self:GetAbilityDamageType()
 
-	local p = ParticleManager:CreateParticle("particles/econ/items/axe/axe_weapon_practos/axe_attack_blur_counterhelix_practos.vpcf", PATTACH_POINT_FOLLOW, c) --[[Returns:int
-	Creates a new particle effect
-	]]
-
-	c:EmitSound("Hero_LegionCommander.Courage") --[[Returns:void
-	 
-	]]
+	local p = ParticleManager:CreateParticle("particles/econ/items/axe/axe_weapon_practos/axe_attack_blur_counterhelix_practos.vpcf", PATTACH_POINT_FOLLOW, c)
+	c:EmitSound("Hero_LegionCommander.Courage")
 
 	local en = FindEnemies(c,c:GetAbsOrigin(),radius)
 
 	for k,v in pairs(en) do
 		self:InflictDamage(v,c,damage,dtype)
-		v:AddNewModifier(c, self, "modifier_monsoon", {Duration=duration, stacks=attack_steal}) --[[Returns:void
-		No Description Set
-		]]
-		c:AddNewModifier(c, self, "modifier_monsoon_user", {Duration=duration, stacks=attack_steal}) --[[Returns:void
-		No Description Set
-		]]
+		v:AddNewModifier(c, self, "modifier_monsoon", {Duration=duration, stacks=attack_steal})
+		c:AddNewModifier(c, self, "modifier_monsoon_user", {Duration=duration, stacks=attack_steal})
 	end
 end
 

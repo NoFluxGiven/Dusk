@@ -28,6 +28,10 @@ function modifier_whoops:OnDeath(kv)
 			false )
 end
 
+function modifier_whoops:IsHidden()
+	return true
+end
+
 modifier_whoops_thinker = class({})
 
 function modifier_whoops_thinker:OnCreated()

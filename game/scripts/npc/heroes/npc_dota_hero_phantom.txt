@@ -12,21 +12,21 @@
 	// 400 AoE. Instant cast.
 	// Deals 1.5/2.0/2.5/3.0x her combined stats.
 	// Slows by 25% for 4s.
-	"Ability3"				"phantom_nightmare"
+	"Ability3"				"phantom_deathstrike" 
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
-	"Ability6"				"phantom_deathstrike" // Phantom's attacks have a chance to cut through the target's soul, dealing bonus damage based on Health missing and reducing their damage output. The bonus damage is Physical.
+	"Ability6"				"phantom_nightmare" // Phantom's attacks have a chance to cut through the target's soul, dealing bonus damage based on Health missing and reducing their damage output. The bonus damage is Physical.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
 	"Ability10"				"special_bonus_attack_speed_10" // 
 	"Ability11"				"special_bonus_all_stats_4" // 
 	"Ability12"				"special_bonus_strength_8" //
-	"Ability13"				"special_bonus_phantom_1" // +10% Nightmare Base Cleave
+	"Ability13"				"special_bonus_phantom_1" // +7% Deathstrike Threshold
 	"Ability14"				"special_bonus_agility_16" // 
 	"Ability15"				"special_bonus_phantom_2" // +1.75s Soul Wave Slow
-	"Ability16"				"special_bonus_attack_damage_75" // 
-	"Ability17"				"special_bonus_phantom_3" // +25% Deathstrike Damage Reduction
+	"Ability16"				"special_bonus_attack_damage_60" // 
+	"Ability17"				"special_bonus_phantom_3" // Nightmare 300 AoE
 
 	"ArmorPhysical"				"0"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -42,7 +42,7 @@
 	"AttributeStrengthGain"		"1.9"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"12"										// Base intelligence
 	"AttributeIntelligenceGain"	"1.2"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"20"										// Base agility
+	"AttributeBaseAgility"		"30"										// Base agility
 	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
@@ -53,7 +53,7 @@
 	//"RingRadius"				"70"
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"280"									// Speed.
+	"MovementSpeed"				"275"									// Speed.
 	"MovementTurnRate"			"0.4"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.

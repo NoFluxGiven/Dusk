@@ -45,7 +45,7 @@
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius_inner"					"250"
+			"radius_inner"					"325"
 		}
 	"03"
 		{
@@ -55,12 +55,12 @@
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius_outer"					"400"
+			"radius_outer"					"550"
 		}
 	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"speed"							"360"
+			"speed"							"450"
 		}
 	}
 	

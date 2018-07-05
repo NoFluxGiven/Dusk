@@ -2,6 +2,13 @@ alexander_godfall = class({})
 
 LinkLuaModifier("modifier_godfall","lua/abilities/alexander_godfall",LUA_MODIFIER_MOTION_NONE)
 
+function alexander_godfall:GetCooldown(level)
+	local base_cooldown = self.BaseClass.GetCooldown(self, level)
+	local aghanims_cooldown = self:GetSpecialValueFor("scepter_cooldown")
+	if self:GetCaster():HasScepter() then return aghanims_cooldown end
+	return base_cooldown
+end
+
 function alexander_godfall:OnSpellStart()
 	self:GetCaster():EmitSound("Alexander.Godfall.Charge")
 	local p = "particles/units/heroes/hero_alexander/godfall_start.vpcf"
@@ -74,6 +81,8 @@ function modifier_godfall:OnAttackLanded(params)
 
 		damage = damage * m
 
+		if target:IsIllusion() then damage = damage * 5 end
+
 		local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_alexander/godfall_strike.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 		ParticleManager:SetParticleControl(particle, 0, Vector(0,0,0)) --[[Returns:void
 		Set the control point data for a control on a particle effect
@@ -97,6 +106,15 @@ function modifier_godfall:OnAttackLanded(params)
 		target:EmitSound("Alexander.Godfall")
 
 		if target:IsRealHero() then attacker:Heal(damage, caster) end
+		if caster:HasScepter() then
+			local soulseal = caster:FindAbilityByName("alexander_soulseal")
+			local scepter_radius = self:GetAbility():GetSpecialValueFor("scepter_radius")
+			local enemies = FindEnemies( caster, target:GetAbsOrigin(), scepter_radius )
+			for k,v in pairs(enemies) do
+				soulseal:SetCursorCastTarget(v)
+				soulseal:OnSpellStart()
+			end
+		end
 
 		self:Destroy()
 	end

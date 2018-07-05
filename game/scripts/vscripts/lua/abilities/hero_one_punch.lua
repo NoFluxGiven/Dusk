@@ -27,6 +27,7 @@ function hero_one_punch:OnSpellStart()
 
 	target:EmitSound("Hero_Tusk.WalrusPunch.Target")
 	target:EmitSound("Hero_Tusk.WalrusPunch.Damage")
+	target:EmitSound("Hero.OnePunch.Whistle")
 
 	ScreenShake(target:GetCenter(), 1200, 170, 0.3, 1200, 0, true)
 

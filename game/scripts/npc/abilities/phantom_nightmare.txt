@@ -7,24 +7,25 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/phantom_nightmare"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"phantom_nightmare"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"400"
-	"AbilityCastPoint"				"0"
+	"AbilityCastRange"				"1000"
+	"AbilityCastPoint"				"0.1"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"0"
+	"AbilityCooldown"				"90"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"0"
+	"AbilityManaCost"				"125"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -37,34 +38,14 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"cleave"						"15"
-			"LinkedSpecialBonus"			"special_bonus_phantom_1"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_per_stack"				"3 5 7 9"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"4"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"400"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"max_stacks"					"5"
+			"duration"						"4.5 5.75 7.0"
 		}
 	}
 	
 	"precache"
 		{
-		"particle" "particles\units\heroes\hero_phantom\phantom_cleave.vpcf"
+		"particle" "particles\units\heroes\hero_phantom\nightmare.vpcf"
+		"particle" "particles\units\heroes\hero_phantom\nightmare_unit.vpcf"
 		"soundfile" "soundevents\hero_phantom.vsndevts"
 		}
 }

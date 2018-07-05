@@ -31,7 +31,7 @@
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemDroppable"					"0"
 	"SideShop"						"0"
-	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------

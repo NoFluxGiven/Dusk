@@ -1,0 +1,98 @@
+"npc_dota_hero_shredder"
+{
+
+	// Low attack range, high damage output core.
+	// Focus on elevation; flying or not flying affects skills in a mechanical way.
+	"AbilityLayout" 		"4"
+	//"override_hero"			"npc_dota_hero_lycan"
+	"Model" 				"models/items/courier/jilling_ben_courier/jilling_ben_courier_flying.vmdl"
+	"ModelScale"			"1.200000"
+	"Role"					"Escape,Nuker,Carry"
+	"Rolelevels"			"3,2,2"
+	"Complexity"			"2"
+	"HeroSelectSoundEffect"	"Aeronaut.DashyDashy.Hit"
+	"Ability1"				"aeronaut_upwind"
+	// Creates a blast of air that launches Aeronaut and all nearby enemies upwards.
+	// Enemies that are airborne are rooted and considered flying, while the Aeronaut
+	// himself gains Flying movement, bonus movespeed, and bonus attack range.
+	// The Aeronaut's attacks deal bonus damage to other Flying enemies while in this form.
+	// Grants 200/300/400/500 bonus attack range.
+	// Deals 60/90/120/150 damage.
+	// Lasts 1.5/2.0/2.5/3.0s.
+	// 375 radius.
+	// 12/10/8/6s cooldown.
+	"Ability2"				"aeronaut_dashy_dashy"
+	// The Aeronaut dashes forward, dealing damage to the first enemy collided with,
+	// ministunning them.
+	// This ability only hits units on the same elevation.
+	// Hitting a unit affected by Upwind will instantly knock them to the ground.
+	// Hitting a unit that is grounded will knock them into the air for a short time.
+	// Dashes 450/525/600/675 units in the target direction. Any unit collided with
+	// takes damage, gets ministunned, and instantly stops the dash.
+	// Deals 50/100/150/200 Pure damage, and ministuns for 0.4s.
+	// 8/7/6/5s cooldown.
+	"Ability3"				"aeronaut_aerial_ace"
+	// While Aeronaut is Flying, he gains bonus movespeed and attack speed.
+	// Additionally, when attacking grounded targets, he slows them and deals bonus damage.
+	"Ability4"				"aeronaut_hidden_engine"
+	"Ability5"				"aeronaut_land"
+	// Aeronaut loses his Flying movement from Upwind.
+	// 0.5s cooldown.
+	"Ability6"				"aeronaut_air_raid"
+	// Strikes all units within a large radius with attacks over time.
+	// Fires an attack at every unit in the radius every 1.6/1.2/0.8s.
+	// The shots fire at each unit simultaneously.
+	// 900 radius.
+	// Lasts 8s.
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				"special_bonus_magic_resistance_12"
+	"Ability11"				"special_bonus_agility_10" // 
+	"Ability12"				"special_bonus_hp_275" // 
+	"Ability13"				"special_bonus_aeronaut_1" // +200 Dashy Dashy Knockback
+	"Ability14"				"special_bonus_aeronaut_5" // +2s Upwind Fly Duration
+	"Ability15"				"special_bonus_armor_15"
+	"Ability16"				"special_bonus_aeronaut_4" // -0.2s Air Raid Interval
+	"Ability17"				"special_bonus_aeronaut_2" // +100 Aerial Ace Attack Speed
+
+	"ArmorPhysical"				"0"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"350"
+	"AttackAnimationPoint"		"0.10000"
+	"ProjectileSpeed"			"1500"
+	"ProjectileModel"			"particles/units/heroes/hero_aeronaut/aeronaut_base_attack.vpcf"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+	"AttackRate"				"1.5"
+	"AttackDamageMin"			"28"										// Damage range min.
+	"AttackDamageMax"			"29"										// Damage range max.
+
+	"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+	"AttributeBaseStrength"		"19"										// Base strength
+	"AttributeStrengthGain"		"1.2"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"14"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"17"										// Base agility
+	"AttributeAgilityGain"		"1.2"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"295"									// Speed.
+	"MovementTurnRate"			"0.8"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"1000"									// Range of vision at night time.
+
+}

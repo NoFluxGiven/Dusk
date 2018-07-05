@@ -8,9 +8,9 @@ if IsServer() then
 	function erra_to_dust:OnSpellStart()
 		local caster = self:GetCaster()
 
-		local damage = self:GetSpecialValueFor("hp_to_bonus_damage")/100
+		local damage = self:GetSpecialValueFor("hp_to_bonus_str")/100
 
-		local creep_damage = self:GetSpecialValueFor("creep_hp_to_bonus_damage")/100
+		local creep_damage = self:GetSpecialValueFor("creep_hp_to_bonus_str")/100
 
 		local radius = self:GetSpecialValueFor("radius")
 
@@ -86,12 +86,12 @@ end
 
 function modifier_to_dust_damage:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
+		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS
 	}
 	return funcs
 end
 
-function modifier_to_dust_damage:GetModifierPreAttack_BonusDamage()
+function modifier_to_dust_damage:GetModifierBonusStats_Strength()
 	return self:GetStackCount()
 end
 

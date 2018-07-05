@@ -74,8 +74,6 @@ function modifier_stalk:OnAttackLanded(params)
 
 		if attacker == self:GetParent() then
 			if target:HasModifier("modifier_stalk_target") then
-				self:GetAbility():InflictDamage(target,attacker,damage,DAMAGE_TYPE_MAGICAL)
-				self:GetAbility():InflictDamage(target,attacker,damage,DAMAGE_TYPE_PHYSICAL)
 				self:GetAbility():InflictDamage(target,attacker,damage,DAMAGE_TYPE_PURE)
 				CreateParticleHitloc(target,"particles/units/heroes/hero_shade/stalk_attack.vpcf")
 				target:EmitSound("Hero_BountyHunter.Jinada")

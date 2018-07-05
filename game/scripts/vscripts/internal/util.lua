@@ -960,8 +960,9 @@ function FindAllies(caster,point,radius,targets)
 end
 
 -- Returns a table of enemies, with their position in the table randomised
-function FindEnemiesRandom(caster,point,radius,targets)
+function FindEnemiesRandom(caster,point,radius,targets,flags)
   local targets = targets or DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP
+  local flags = flags or DOTA_UNIT_TARGET_FLAG_NONE
   local en = FindUnitsInRadius( caster:GetTeamNumber(),
                             point,
                             nil,
@@ -1117,4 +1118,15 @@ function WorldParticle(particle_name,position,table_cp_vectors)
   end
   
   return p
+end
+
+
+function RemoveAllWearables(hero)
+  local children = hero:GetChildren()
+  
+  for k,child in pairs(children) do
+     if child:GetClassname() == "dota_item_wearable" then
+         child:RemoveSelf()
+     end
+  end
 end

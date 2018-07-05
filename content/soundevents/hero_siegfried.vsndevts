@@ -1,0 +1,150 @@
+"Siegfried.HeavenSent"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/heaven_sent.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "2.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Siegfried.HeavenSent.Return"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/heaven_sent_return.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "2.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Siegfried.EonShield.Projectile"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/eon_shield_throw.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "2.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+"Siegfried.EonShield.StartUp"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/eon_shield_start_up.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "2.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Siegfried.EonShield.Explode"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/eon_shield.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "2.00"
+                    }
+                }
+            }
+        }
+    }
+
+}

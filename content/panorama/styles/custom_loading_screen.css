@@ -1,9 +1,11 @@
-@define TotalLength: 40s;
-@define TimingFunc: linear;
+@define TotalLength: 4s;
+@define TimingFunc: ease-in-out;
 @define IterationCount: 1;
-@define AnimationDelay: 0s;
+@define AnimationDelay: 4s;
 
-.AddonLoadingRoot
+@define FadeInLength: 6s;
+
+.ClassContainer
 {
     width: 100%;
     height: 100%;
@@ -11,46 +13,14 @@
     overflow: clip;
 }
 
-#TitlePanel
-{
-  horizontal-align: left;
-  vertical-align: bottom;
-  margin-bottom: 375px;
-  margin-left: 120px;
-  flow-children: right;
+h1 {
+  font-size: 21px;
+  color: #ffd474;
 }
 
-#ScrollerPanel
-{
-  horizontal-align: left;
-  vertical-align: bottom;
-  margin-bottom: 150px;
-  margin-left: 120px;
-  background-color: #000000;
-  border: 1px solid white;
-  width: 700px;
-  height: 200px;
-  overflow: squish scroll;
-  flow-children: right;
-}
-
-#AddonChangelog
-{
-  margin-bottom: 0px;
-  margin-left: 5px;
-  margin-top: 5px;
-  vertical-align: top;
+b {
   font-size: 17px;
-  color: #cccccc;
-}
-
-#AddonTitle
-{
-  margin-bottom: -15px;
-  vertical-align: top;
-  font-size: 20px;
-  color: #cccccc;
-  text-shadow: 2px 2px 2px #000000;
+  color: #ffffff;
 }
 
 .SeqImg
@@ -58,20 +28,30 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 100% 100%;
-}	
-
-#CustomBg
-{
-
-  margin-top: 350px;
-  overflow: clip;
-  pre-transform-scale2d: 1.0;
-  animation-name: gamemode_anim;
-  animation-delay: AnimationDelay;
-  animation-duration: TotalLength;
-  animation-timing-function: TimingFunc;
-  animation-iteration-count: IterationCount;
 }
+
+.Pips
+{
+  pre-transform-scale2d: 1;
+  width: 250px;
+  height: 51px;
+}
+
+.ChangelogText
+{
+  margin-top: 55px;
+  margin-left: 50px;
+  margin-bottom: 55px;
+}
+
+.ChangelogImage
+{
+  transition: pre-transform-scale2d 0.5s ease-in-out 0.0s, saturation 0.5s ease-in-out 0.0s;
+  pre-transform-scale2d: 1;
+  saturation: 0.75;
+  border: 2px solid white;
+}
+
 
 #gamemode
 {
@@ -80,16 +60,115 @@
   
 }
 
+#version
+{
+  margin-left: 600px;
+  margin-top: 225px;
+  pre-transform-scale2d: 0.5;
+  opacity: 0.5;
+}
+
+#update
+{
+  margin-left: 370px;
+  margin-top: 320px;
+}
+
+#CustomBg
+{
+
+  margin-left: 0px;
+  margin-top: 30px;
+  overflow: clip;
+  pre-transform-scale2d: 1;
+  z-index: 1;
+  animation-name: fadein;
+  animation-delay: AnimationDelay;
+  animation-duration: TotalLength;
+  animation-timing-function: TimingFunc;
+  animation-iteration-count: IterationCount;
+}
+
+#Subtitle
+{
+  horizontal-align: left;
+  vertical-align: bottom;
+  margin-bottom: 650px;
+  margin-left: 120px;
+  flow-children: right;
+}
+
+#SubtitleText
+{
+  vertical-align: top;
+  font-size: 20px;
+  color: #cccccc;
+  text-shadow: 2px 2px 2px #000000;
+  animation-name: fadein;
+  animation-delay: AnimationDelay;
+  animation-duration: FadeInLength;
+  animation-timing-function: TimingFunc;
+  animation-iteration-count: IterationCount;
+}
+
+#Changelog
+{
+  horizontal-align: left;
+  vertical-align: bottom;
+  margin-bottom: 150px;
+  margin-left: 120px;
+  background-color: #000000;
+  border: 0px solid white;
+  saturation: 1.0;
+  width: 800px;
+  height: 500px;
+  overflow: squish scroll;
+  flow-children: down;
+  animation-name: fadein;
+  animation-delay: AnimationDelay;
+  animation-duration: TotalLength;
+  animation-timing-function: TimingFunc;
+  animation-iteration-count: IterationCount;
+}
+
+#Changes
+{
+  margin-bottom: 0px;
+  margin-left: 5px;
+  margin-top: 5px;
+  vertical-align: top;
+  font-size: 16px;
+  color: #cccccc;
+  animation-name: fadein;
+  animation-delay: AnimationDelay;
+  animation-duration: FadeInLength;
+  animation-timing-function: TimingFunc;
+  animation-iteration-count: IterationCount;
+}
+
 @keyframes 'gamemode_anim'
 {
   0%
   {
-    transform: translateX( 0px ) translateY( 0px );
-    pre-transform-scale2d: .8;
+    transform: translateX( 200px ) translateY( 0px );
+    pre-transform-scale2d: 1;
   }
 
   100%
   {
-    transform: translateX( 0px ) translateY( -200px );
+    transform: translateX( 0px ) translateY( 0px );
+  }
+}
+
+@keyframes 'fadein'
+{
+  0%
+  {
+    opacity: 0;
+
+  }
+  100%
+  {
+    opacity: 1;
   }
 }

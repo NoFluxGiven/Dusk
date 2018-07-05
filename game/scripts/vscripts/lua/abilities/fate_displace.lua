@@ -26,22 +26,25 @@ end
 
 function modifier_displace:DeclareFunctions()
 	local func = {
-		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
+		MODIFIER_PROPERTY_DISABLE_AUTOATTACK
 	}
 	return func
 end
 
-function modifier_displace:GetModifierMoveSpeedBonus_Percentage()
-	local slow = self:GetAbility():GetSpecialValueFor("slow")
-
-	return -slow
+function modifier_displace:GetDisableAutoAttack()
+	return 1
 end
 
-function modifier_displace:GetModifierIncomingDamage_Percentage()
-	local dmg = self:GetAbility():GetSpecialValueFor("damage_change")
-	
-	return -dmg
+function modifier_displace:CheckState()
+	local state = {
+		[MODIFIER_STATE_UNTARGETABLE] = true,
+		[MODIFIER_STATE_UNSELECTABLE] = true,
+		[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+		[MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES] = true,
+		[MODIFIER_STATE_ATTACK_IMMUNE] = true
+	}
+
+	return state
 end
 
 function modifier_displace:OnCreated()
@@ -51,6 +54,9 @@ function modifier_displace:OnCreated()
 		]]
 		self:GetParent():EmitSound("Fate.Displace.Start")
 		self:GetParent():EmitSound("Fate.Displace.Ambience")
+
+		ProjectileManager:ProjectileDodge(self:GetParent())
+		self:GetParent():Purge(false,true,false,true,false)
 
 		self.displace_stored_hp = self:GetParent():GetHealth()
 	end
@@ -63,6 +69,8 @@ function modifier_displace:OnRefresh()
 		]]
 		self:GetParent():EmitSound("Fate.Displace.Start")
 		self:GetParent():EmitSound("Fate.Displace.Ambience")
+
+		ProjectileManager:ProjectileDodge(self:GetParent())
 		self:GetParent():Purge(false,true,false,true,false)
 
 		self.displace_stored_hp = self:GetParent():GetHealth()

@@ -12,6 +12,7 @@ function shade_isolation:OnSpellStart()
 	local duration = self:GetSpecialValueFor("duration")
 	local radius = self:GetSpecialValueFor("radius")
 	local tcheck = self:GetCaster():FetchTalent("special_bonus_shade_4")
+	local damage = self:GetSpecialValueFor("damage")
 
 	t:AddNewModifier(c, self, "modifier_isolation", {Duration=duration})
 	if tcheck then t:AddNewModifier(c, nil, "modifier_stunned", {Duration=tcheck}) end
@@ -25,6 +26,8 @@ function shade_isolation:OnSpellStart()
 	Set the control point data for a control on a particle effect
 	]]
 	t:EmitSound("Shade.Isolation")
+
+	self:InflictDamage(t,c,damage,DAMAGE_TYPE_MAGICAL)
 
 	for k,v in pairs(found) do
 		if v ~= t then
@@ -43,9 +46,15 @@ modifier_isolation = class({})
 
 function modifier_isolation:DeclareFunctions()
 	local func = {
-		MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE
+		MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
 	}
 	return func
+end
+
+function modifier_isolation:GetModifierMoveSpeedBonus_Percentage()
+	local slow = self:GetAbility():GetSpecialValueFor("slow")
+	return -slow
 end
 
 function modifier_isolation:GetModifierTotalDamageOutgoing_Percentage()
@@ -54,29 +63,17 @@ function modifier_isolation:GetModifierTotalDamageOutgoing_Percentage()
 	return -reduc
 end
 
-function modifier_isolation:CheckState()
-	local states = {
-		[MODIFIER_STATE_SILENCED] = true
-	}
-	return states
-end
+-- function modifier_isolation:CheckState()
+-- 	local states = {
+-- 		[MODIFIER_STATE_SILENCED] = true
+-- 	}
+-- 	return states
+-- end
 
 modifier_isolation_petrify = class({})
 
-function modifier_isolation_petrify:DeclareFunctions()
-	local func = {
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
-	}
-	return func
-end
-
 function modifier_isolation_petrify:GetStatusEffectName()
 	return "particles/status_fx/status_effect_medusa_stone_gaze.vpcf"
-end
-
-function modifier_isolation_petrify:GetModifierMoveSpeedBonus_Percentage()
-	local slow = self:GetAbility():GetSpecialValueFor("slow")
-	return -slow
 end
 
 function modifier_isolation_petrify:CheckState()

@@ -16,12 +16,240 @@ Each time a point is captured that team loses 10 Respawn Charges.
 Waiting on Valve to add Bot API Support in the Custom Game Scripting API.
 
 Current Bugs and Issues:
+-------------------------------
 
-None.
+<!> URGENT - ALL NEW ITEMS POTENTIALLY CAUSING CRASHES AND HANGS
+
+<!> --------------
+All abilities that change hotkeys or become hidden/unhidden are screwed up.
+Refactor scripts to use SwapAbilities() for:
+
+IRONFIST (all)
+VOIDWALKER (Planar Trickery)
+TIMEKEEPER (Chronoshift)
+------------------
+
+IRONFIST
+- Particles for stance change are broken.
+
+LYSANDER
+<!> URGENT - Adventurous Gale crashes the game - was due for a rework anyway
+<!> URGENT - Various abilities causing crashes inconsistently. Will disable temporarily.
+
+FATE
+[MISSING SOUND] - Ancestral Recall
+
+PTOMELY
+[MISSING SOUND] - Enthrall
 
 Balance Changes:
 
 None.
+
+Version 2.14
+
+THE EMERALD INFERNO UPDATE
+
+TWO NEW HEROES:
+
+Balthasar, Wolf of the Emerald Flame and Siegfried, Knight of Purgatory
+
+BALTHASAR
+
+A bully in lane and a bully in game, Balthasar is a dangerous and terrifying Hero, capable of chasing down opponents that would normally outrun or outrange their foes. His set of abilities allow him to strike from a distance with Firebolt, create a line of burning ground that grants him extreme movespeed with Doomflame, deal a portion of his attack damage as damage over time with Emerald Fang, and slow and damage his opponents in a large area, while revealing invisible enemies, with Ward of the Emerald Flame.
+
+SIEGFRIED
+
+A dangerous foe and valuable ally, the Demonfire Knight commands respect from his enemies in battle, and his abilities feature the duality of action and consequence. With time-bending AoE slows in Eon Shield, Hell Bent granting him a frenzied onslaught of attacks, magic immunity upon spell cast with Epoch's Protection and the ability to globally assist an ally for a short time with the use of Heaven Sent, Siegfried is extremely dangerous and difficult to deal with when played correctly, but his insistence on being in the fray makes him the prime target for burst damage and disables.
+
+HEROES
+=========
+
+LYSANDER has been temporarily disabled following a number of crashes related to his abilities.
+
+FURY
+- Roar duration reduced to 4s (was 5.25s).
+- Berserk duration increased to 6s (was 4.5/5.0/5.5s).
+- Berserk cooldown increased to 80/60/40s (was 60/50/40s).
+- Berserk no longer grants bonus Rend and Bloodsport stacks.
+- Berserk now prevents Fury's Health from dropping below 1 while it's active.
+- Rend and Bloodsport no longer function on illusions.
+- Rend and Bloodsport are now disabled by Break.
+- Talent: Level 25 +4s Berserk Duration (was +3s Berserk Duration).
+
+SHADE
+- Dark Hunger now grants Health and Mana based on the damage Shade deals (from any source). 10/15/20/25% of damage is converted to Health and Mana restored. Only 1/4th effective against creeps.
+- Stalk now only deals Pure damage.
+- Stalk damage increased to 50/100/150/200.
+- Stalk cooldown reduced to 24/18/12/6s.
+- Isolation no longer Silences.
+- Isolation now applies a 25% slow.
+- Isolation now reduces damage output by 60% (was 50%).
+
+PHANTASM
+- Shadowstep cooldown increased to 60s (was 50/40/30/20s).
+- Shadowstep delay time rescaled to 4.00/3.25/2.50/1.75s (was 3.00s).
+- Shadowstep bonus movespeed increased to 30% (was 25%).
+- Shadowstep now grants Phased movement and free pathing for the duration.
+- Shadowstep now applies a Basic Dispel upon teleportation.	
+- Nightmare now also prevents the target's allies from helping them with targeted Spells and Items.
+
+WAR
+- Bloodlust duration reduced to 10 ticks (was 14 ticks).
+- Bloodlust damage reduced to 15/25/35/45 (was 12/24/36/48).
+- Bloodlust now slows by 15%.
+- Bloodlust now ticks once every 0.75s (instead of once every 1.00s).
+- Bloodlust is now removed if the affected unit kills a non-Illusion Hero, and is removed from all Heroes if War dies.
+- Bloodlust does not tick down while attacking under the effects of War's Ultimate.
+- Earthbreaker damage reduced to 75/125/175/225 (was 100/150/200/250).
+- Earthbreaker stun changed to 1.50s (was 1.00/1.35/1.70/2.05s).
+- Earthbreaker mana cost is now 75 (was 55/65/75/85).
+- Earthbreaker radius reduced to 300 (was 325).
+- Level 15 Talent changed to +100 Earthbreaker Radius (was +25 Berserker Aura AS/MS)
+- Level 20 Talent reduced to +25 Bloodlust DPS (was +35)
+- Level 25 Talent changed to -4s Earthbreaker Cooldown (was +200 Earthbreaker Radius)
+
+BUGFIXES
+===========
+
+- Fixed Alexander's Level 25 Talent not healing nearby allies.
+- Fixed Paragon's Level 25 Talent not increasing the Tranquility Seal duration.
+- Fixed Alroth's Solwave particle effect lingering past the actual duration.
+- Fixed Rage Potion and Ironblood Potion not working.
+- Fixed some missing animations for Bloodwarrior and Erra.
+
+
+Version 2.13
+
+HEROES
+=========
+
+ELENA
+- Guardian Bubble reworked => Malefic Inversion
+For 2.5s, the target ally is disabled, but all damage they receive is converted to healing (after reductions).
+
+VOIDWALKER
+- Voidal Flare has been reworked:
+No longer stuns. Deals Magical damage and slows, while Disarming and Silencing the target.
+- Extraplanar Pact now performs all of its healing and Mana restoration as the buff begins, rather than during.
+
+BUGFIXES and MISC
+====================
+
+- Fixed some incorrect tooltips.
+- Fixed a bug where Voidwalker's Extraplanar Pact would never end.
+- Added some tooltips for Talents.
+
+Version 2.12
+
+HEROES
+=========
+
+ERRA
+- Deathtouch no longer deals initial damage.
+- Deathtouch cast point is now 0.1s (was 0.4s).
+- Deathtouch DoT is no longer negative Health regen.
+- Deathtouch DoT increased to 40/80/110 (was 30/40/50). The damage increases by a percentage equal to the percentage of Health missing from the target.
+- Deathtouch DoT now ticks every 1.00s.
+
+HORROR
+- Terrify debuff duration reduced to 1.50/2.00/2.50/3.00s (was 2.00/2.75/3.50/4.25s).
+
+PHANTASM
+- Base Agility increased to 30 (was 20).
+- Base movespeed reduced to 275 (was 280).
+- Soul Wave has been reworked:
+Phantasm unleashes a wave of energy that steals life from her enemies.
+All enemies caught take Magical damage and are slowed.
+After a short 1s delay, the Soul Wave returns, healing Phantasm for 50% of the damage it dealt to affected units (after reductions and amplifications). Non-Hero units only heal for 25% of the amount.
+Deals 70/140/210/280 damage, slows by 16/22/28/34% for 3s. Total heal when hitting 5 Heroes is 175/350/525/700.
+15/14/13/12s cooldown.
+- Deathstrike has been reworked, and is now a regular ability:
+Phantasm's strikes deal bonus damage against low Health targets.
+When the target is below a threshold of 40% Health, her attacks deal 4/6/8/10% of the target's missing Health as bonus Physical damage.
+- Nightmare has been reworked, and is now an ULTIMATE:
+Phantasm inflicts a nightmare upon the target unit. That unit cannot target Phantasm with Spells, Items or Attacks for the full duration of the Nightmare.
+Lasts 5/6/7s.
+
+WAR
+- Base Intelligence increased to 16 (was 11).
+- Intelligence gain increased to 1.5 (was 1.0).
+- Base Armor reduced to 0 (was 2).
+- FIGHT ME!! now deals Pure damage.
+- FIGHT ME!! cooldown increased to 80s (was 75s).
+- FIGHT ME!! cast point reduced to 0.2s (was 0.5s).
+- Bloodlust now deals Pure damage.
+- Bloodlust cooldown increased to 20s (was 24/20/16/12s).
+- Bloodlust cast point reduced to 0.25s (was 0.4s).
+- Bloodlust duration increased to 14s (was 12s).
+- Bloodlust damage over time reduced to 16/24/32/40 (was 12/24/36/48).
+- Bloodlust no longer ticks for damage while the affected unit is attacking (it still has its tick number go down by 1 for each landed attack, and deals damage while the unit is not attacking). If the affected unit is a creep, then the behaviour is normal (it will take damage on every tick, regardless of whether it is attacking or not).
+
+BUGFIXES
+===========
+
+- Fixed Arcanum Break being broken.
+- Fixed Aeronaut's missing Talent tooltips.
+- Fixed Erra's Deathtouch ability sometimes not activating.
+
+MISC
+=======
+
+- Updated some tooltips to reflect new ability behaviour.
+- Added "Global" to some tooltips to signify that those abilities are globally targetable.
+
+Version 2.11
+
+HEROES
+=========
+
+LUPIN
+- Base movespeed reduced to 305 (was 325).
+- Last Surprise radius increased to 100 (was 50).
+- Last Surprise now hits creeps, but deals 30% of the damage.
+- Finisher now applies all UAMs and attack modifiers to the target if they are Stunned or Dazed.
+
+SHARD MAGUS
+- Glacial Impact now has a 0.1s cast point.
+- Glacial Impact now stuns and damages statically.
+
+Version 2.10
+
+HEROES
+============
+
+NEW HERO!
+
+Gundalar the AERONAUT
+Strike fear into your foes from above with the Aeronaut's incredibly mobile skillset!
+
+FATE
+- Displace no longer reduces incoming damage by a percentage amount.
+- Displace now renders the target untargetable, attack immune, grants Phased movement, and makes them not appear on the minimap for enemies. Disjoints projectiles and purges debuffs on cast.
+- Displace duration reduced to 3.0/3.5/4.0/4.5s (was 5.0s).
+
+MIFUNE
+- Bushido now has an Aghanim's Scepter Upgrade: grants bonus evasion. When an attack against Mifune misses, he immediately counterattacks.
+- Reduced Agility gain to 2.5 (was 2.7).
+- Reduced base Agility to 22 (was 25).
+- Zanmato cooldown increased to 125s (was 75s).
+- Genso cooldown increased to 25s (was 16s).
+- Genso cast range increased to 325 (was 275).
+- Raigeki slow increased to 25% (was 20%).
+- Bushido Agility bonus reduced to 15/20/25/30% (was 30/45/60/75%).
+- Bushido now grants bonus Agility based on your total Agility at cast, not just your base Agility.
+
+LUPIN
+- Beneath the Mask now reduces attack speed by 25/50/75/100.
+- Beneath the Mask now steals movespeed and attack speed, granting it to Lupin. This means Lupin gains 15/20/25/30% movespeed and 25/50/75/100 attack speed upon hitting an enemy for 5s. Does not stack with itself.
+- Beneath the Mask cooldown increased to 10s (was 9s).
+- Last Surprise no longer procs Beneath the Mask.
+- Last Surprise cooldown reduced to 15s (was 28/20/12s).
+- Talents Changed:
+Level 10: Unchanged
+Level 15: Unchanged
+Level 20: +60 Attack Speed | +1.75s Flashbang Duration (was +1s)
+Level 25: +1000 Last Surprise Range | Beneath the Mask Mutes (was +2s Duration)
 
 Version 2.00
 
@@ -57,6 +285,10 @@ CRYSTAL FOCUS
 - Created from Kaya, Aether Lens, Magic Wand and a 700 Gold Recipe.
 - Grants the stats of all the base items.
 - Active - Prismancy: Grants a charge of Prismancy to the caster. Upon casting a non-Ultimate Spell, the charge is consumed, the Spell is refreshed, and you lose 60% of your current Mana.
+
+WAND OF YGGDRASIL
+- Created from Magic Wand, Oblivion Staff, Null Talisman and 1200 Gold Recipe
+- Drains Health and Mana from the target enemy, then after a short delay gives it to you.
 
 DEATHSCYTHE
 - Created from Sacred Relic, Echo Sabre and a 900 gold recipe.
@@ -510,7 +742,7 @@ MISC
 - Added Lore to a lot of abilities and Heroes (this is still on-going).
 - Added Complexity ratings and Role Pips to all Heroes.
 - Changed the pick sounds for all Heroes.
-
+	
 Version 1.97
 
 HEROES

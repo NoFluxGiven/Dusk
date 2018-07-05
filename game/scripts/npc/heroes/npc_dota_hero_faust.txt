@@ -1,40 +1,74 @@
 "npc_dota_hero_faust"
 {
-	"AbilityLayout" 		"4"
+	"AbilityLayout" 		"5"
 	"override_hero"			"npc_dota_hero_warlock"
-	"Ability1"				"faust_shockbolt" // Zaps the target enemy with a bolt of damaging energy that eliminates a portion of their Mana and deals the same amount of damage.  Based on his Int.
-	"Ability2"				"faust_gravity_field" // Faust casts a dark spell that drastically slows enemies in the area and deals damage.  Based on his Int.
-	"Ability3"				"faust_growing_wisdom" // For every unit killed, gains Intelligence permanently.  Killing Heroes grants a much larger bonus.
-	//"Ability4"			"alroth_sun_burst_of_the_seven_heavens_the_five_lambs_dark_dog_turn_your_head_and_be_burned_three_headed_dragon_of_the_western_seas_evaporate_bakudo_no_san_japanesey_weeb_sun_attack_thing"
-	"Ability4"				"faust_equinox" // Faust twists the Ether as it passes into this plane, silencing all nearby Heroes and draining a percentage of their stats temporarily.
-	"Ability6"				""
+	"Ability1"				"faust_cease"
+	// Faust slams the ground with his staff,
+	// creating a shockwave that travels forward, causing enemies hit to become rooted and damaged.
+	// 100/150/200/250 damage.
+	// 200 radius.
+	// 800 range.
+	// Lasts 0.50/1.00/1.50/2.00s.
+	// 10/9/8/7s cooldown.
+	"Ability2"				"faust_agony"
+	// Afflicts all units in an area with agony, causing them to take damage while moving.
+	// Deals 40/60/80/100 damage per second in 0.1s intervals while they're moving.
+	// Deals 50/75/100/125 initial damage.
+	// Lasts 4/5/6/7s.
+	// 19s cooldown.
+	"Ability3"				"faust_dark_shard"
+	// Faust forces a shard of malicious energy through
+	// a weak point in the planar fabric, dealing large damage to enemies in the target area,
+	// The shard refreshes the duration of debuffs Faust has applied on affected targets.
+	// Deals 100/175/250/325 damage.
+	// 225 radius.
+	// 12s cooldown.
+	"Ability4"				"faust_planecracker"
+	// Cracks the planes in the target location, dealing damage over time and slowing after a delay.
+	// 410 AoE.
+	// 1s delay.
+	// Lasts 6s.
+	// Slows by 15/20/25/30%.
+	// Deals 40/80/120/160 damage per second.
+	// Deals damage in 0.25s ticks.
+	// 40s cooldown.		
+	"Ability5"				"generic_hidden"
+	// Faust creates a powerful barrier that knocks back nearby enemies and deals
+	// damage, alongside reducing the damage he takes for a very short time.
+	// Deals 100/125/150 Magical damage in a 250 AoE, knocking enemies back 250 units.
+	// Reduces damage by 40/50/60%.
+	// 8s cooldown.
+	"Ability6"				"faust_netherglyph"
+	// Faust places a Glyph on the ground below him.
+	// Whilst standing upon it, he gains access to more Spells, his cooldowns are reduced, and his damage output is increased.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_attack_speed_50" // 
+	"Ability11"				"special_bonus_intelligence_12" // 
+	"Ability12"				"special_bonus_faust_1" // +0.8s Cease Disarm
+	"Ability13"				"special_bonus_cast_range_125" // 
+	"Ability14"				"special_bonus_faust_2" // +125 Dark Shard
+	"Ability15"				"special_bonus_spell_lifesteal_15" // 
+	"Ability16"				"special_bonus_faust_3" // +100 Agony DPS
+	"Ability17"				"special_bonus_faust_4" // +275 Netherglyph Radius
 
 	"ArmorPhysical"				"2"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackRange"				"625"
+	"AttackRange"				"350"
 	"AttackAnimationPoint" 		"0.3"
-	"AttackRate"				"1.6"
+	"AttackRate"				"1.8"
 
-	"AttackDamageMin"			"23"										// Damage range min.
-	"AttackDamageMax"			"26"										// Damage range max.
+	"AttackDamageMin"			"30"										// Damage range min.
+	"AttackDamageMax"			"40"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-	"AttributeBaseStrength"		"8"										// Base strength
-	"AttributeStrengthGain"		"0.8"										// Strength bonus per level.
-	"AttributeBaseIntelligence"	"24"										// Base Intelligence
-	"AttributeIntelligenceGain"	"1.6"										// Intelligence bonus per level.
+	"AttributeBaseStrength"		"16"										// Base strength
+	"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"20"										// Base Intelligence
+	"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"5"										// Base agility
 	"AttributeAgilityGain"		"0.4"										// Agility bonus per level.
 

@@ -22,7 +22,6 @@ function modifier_deathscythe:DeclareFunctions()
 		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 		-- MODIFIER_PROPERTY_ALWAYS_ALLOW_ATTACK,
-		MODIFIER_EVENT_ON_ATTACK_LANDED
 	}
 	return func
 end
@@ -57,7 +56,7 @@ end
 
 function modifier_deathscythe:OnCreated(kv)
 	if IsServer() then
-		self:CreateSubModifier("modifier_deathscythe_onattack",{})
+		self:CreateSubModifier("modifier_deathscythe_onattack",{Duration=-1})
 	end
 end
 
@@ -68,6 +67,14 @@ function modifier_deathscythe:OnDestroy()
 end
 
 modifier_deathscythe_onattack = class({})
+
+function modifier_deathscythe_onattack:DeclareFunctions()
+	local func = {
+		-- MODIFIER_PROPERTY_ALWAYS_ALLOW_ATTACK,
+		MODIFIER_EVENT_ON_ATTACK_LANDED
+	}
+	return func
+end
 
 function modifier_deathscythe_onattack:OnAttackLanded(kv)
 	if IsServer() then

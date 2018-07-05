@@ -10,22 +10,19 @@
     "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
     "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
-    "AnimationPlaybackRate"         "0.5"
+    "AnimationPlaybackRate"         "1.5"
     "FightRecapLevel"               "1"
     "AbilityTextureName"            "erra_deathtouch"
     
     // Casting
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCastRange"              "150"
-    "AbilityCastPoint"              "1.0"
+    "AbilityCastPoint"              "0.1"   
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
 
     // Time     
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"               "135.0 90.0 45.0"
-
-    // Damage.
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityDamage"                 "400 560 720"
+    "AbilityCooldown"               "100.0 90.0 80.0"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -38,7 +35,7 @@
         "01"
         {
             "var_type"              "FIELD_INTEGER"
-            "dot_amount"            "50 70 90"
+            "dot_amount"            "50 80 110"
         }
         
         "02"

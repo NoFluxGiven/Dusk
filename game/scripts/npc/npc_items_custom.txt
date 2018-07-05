@@ -88,7 +88,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"lua/items/item_black_rose"
-		"ID"							"3038"  //Valve's version of this item uses the ID "39".
+		"ID"							"501"  //Valve's version of this item uses the ID "39".
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -106,19 +106,18 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"                      "1900"
-	    "ItemShopTags"                  "hard_to_tag"
-	    "ItemQuality"                   "epic"
+	    "ItemShopTags"                  "damage"
+	    "ItemQuality"                   "rare"
 	    "ItemAliases"                   "black_rose"
 	    "ItemRequiresCharges"           "0"
 	    "ItemDisplayCharges"            "0"
 	    "ItemPermanent"                 "1"
-	    "ItemInitialCharges"            "0"
-		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	    //"ItemInitialCharges"            "0"
 	
 		"precache"
 		{
 		
-			"particle" "particles/items/black_rose.vpcf"
+			"particle" "particles/items/black_rose.vpcf"	
 			"particle" "particles/items/black_rose_aura.vpcf"
 			"particle" "particles/items/black_rose_slow.vpcf"
 			"soundfile"	"soundevents/game_sounds_items.vsndevts"
@@ -187,14 +186,14 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"                      "5175"
-	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;hard_to_tag"
+	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int"
 	    "ItemQuality"                   "epic"
 	    "ItemAliases"                   "crystal_focus"
 	    "ItemRequiresCharges"           "0"
 	    "ItemDisplayCharges"            "0"
 	    "ItemPermanent"                 "1"
 	    "ItemInitialCharges"            "0"
-		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 	
 		"precache"
 		{
@@ -276,14 +275,14 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"                      "5175"
-	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;hard_to_tag"
+	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;"
 	    "ItemQuality"                   "epic"
 	    "ItemAliases"                   "deathscythe"
 	    "ItemRequiresCharges"           "0"
 	    "ItemDisplayCharges"            "0"
 	    "ItemPermanent"                 "1"
 	    "ItemInitialCharges"            "0"
-		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 	
 		"precache"
 		{
@@ -365,14 +364,14 @@
 	    // Item Info
 	    //-------------------------------------------------------------------------------------------------------------
 	    "ItemCost"                      "5175"
-	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;hard_to_tag"
+	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;"
 	    "ItemQuality"                   "epic"
 	    "ItemAliases"                   "ls;linken's sphere"
 	    "ItemRequiresCharges"           "0"
 	    "ItemDisplayCharges"            "1"
 	    "ItemPermanent"                 "1"
 	    "ItemInitialCharges"            "0"
-	    "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	    "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 	
 	    "precache"
 	    {
@@ -451,14 +450,14 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"                      "5175"
-	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;hard_to_tag"
+	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;"
 	    "ItemQuality"                   "epic"
 	    "ItemAliases"                   "hephaestus_hammer"
 	    "ItemRequiresCharges"           "0"
 	    "ItemDisplayCharges"            "0"
 	    "ItemPermanent"                 "1"
 	    "ItemInitialCharges"            "0"
-		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 	
 		"precache"
 		{
@@ -545,7 +544,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua/items/item_ironblood_potion"
 		"ID"							"3030"  //Valve's version of this item uses the ID "156".
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -562,16 +562,15 @@
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"250"
-		"ItemShopTags"					"hard_to_tag"
-		"ItemQuality"					"artifact"
+		"ItemCost"						"200"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
 		"ItemAliases"					"ironblood_potion"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"ItemInitialCharges"            "1"
 		"ItemStackable"                 "1"
 	    "ItemPermanent"                 "0"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"AbilitySpecial"
 		{
@@ -588,7 +587,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"buff_duration"				"6"
+				"buff_duration"				"4.5"
 			}
 		}
 	
@@ -596,42 +595,6 @@
 		{
 			"particle"  "particles/items/ironblood_potion.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
-		}
-	
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_item_rage_potion"
-				"Target" 		"TARGET"
-			}
-			"FireSound"
-			{
-				"EffectName"	"Hero_Alchemist.ChemicalRage.Cast"
-				"Target" 		"TARGET"
-			}
-			"SpendCharge" {}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_item_ironblood_potion"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsBuff"			"1"
-				"IsPurgable"		"1"
-				"Duration"			"%buff_duration"
-	
-				"EffectName" "particles/items/ironblood_potion.vpcf"
-				"EffectAttachType" "attach_origin"
-	
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
-					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bonus_magic_resistance"
-				}
-			}
 		}
 	}
 	//=================================================================================================================
@@ -690,8 +653,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"3029"  //Valve's version of this item uses the ID "156".
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua/items/item_rage_potion"
+		"ID"							"500"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -708,15 +672,12 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"200"
-		"ItemShopTags"					"hard_to_tag"
-		"ItemQuality"					"artifact"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
 		"ItemAliases"					"rage_potion"
-		"ItemPurchasable"				"1"
-		"ItemSellable"					"1"
-		"ItemInitialCharges"            "1"
-		"ItemStackable"                 "1"
-	    "ItemPermanent"                 "0"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
 		
 		"AbilitySpecial"
 		{
@@ -728,12 +689,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"40"
+				"bonus_attack_speed"		"30"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"buff_duration"				"6"
+				"buff_duration"				"4.5"
 			}
 		}
 	
@@ -742,41 +703,9 @@
 			"particle"  "particles/items/rage_potion.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
 		}
-	
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_item_rage_potion"
-				"Target" 		"TARGET"
-			}
-			"FireSound"
-			{
-				"EffectName"	"Hero_Alchemist.ChemicalRage.Cast"
-				"Target" 		"TARGET"
-			}
-			"SpendCharge" {}
-		}
 		
 		"Modifiers"
 		{
-			"modifier_item_rage_potion"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsBuff"			"1"
-				"IsPurgable"		"1"
-				"Duration"			"%buff_duration"
-	
-				"EffectName" "particles/items/rage_potion.vpcf"
-				"EffectAttachType" "attach_origin"
-	
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
-				}
-			}
 		}
 	}
 	"item_reaving_stone"
@@ -799,12 +728,12 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"475"
-		"ItemShopTags"					"hard_to_tag"
+		"ItemShopTags"					""
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"reaving_stone"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		
 		"AbilitySpecial"
 		{
@@ -871,7 +800,7 @@
 	    "ItemResult"                    "item_crystal_focus"
 	    "ItemRequirements"
 	    {
-	        "01"                        "item_trident;item_aether_lens;item_magic_wand"
+	        "01"                        "item_kaya;item_aether_lens;item_magic_wand"
 	    }
 	}
 	// Rewrite of Recipe: Linken's Sphere
@@ -883,7 +812,7 @@
 	    // General
 	    //-------------------------------------------------------------------------------------------------------------
 	    "BaseClass"                     "item_datadriven"
-	    "ID"                            "2035"  //Valve's version of this item uses the ID "122".
+	    "ID"                            "2036"  //Valve's version of this item uses the ID "122".
 	    "Model"                         "models/props_gameplay/recipe.mdl"
 	    "AbilityTextureName"            "item_recipe"
 	    
@@ -959,6 +888,33 @@
 	// Author: Rook
 	// Date: January 29, 2015
 	
+	"item_recipe_seers_lantern"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "item_datadriven"
+	    "ID"                            "2041"  //Valve's version of this item uses the ID "122".
+	    "Model"                         "models/props_gameplay/recipe.mdl"
+	    "AbilityTextureName"            "item_recipe"
+	    
+	    // Item Info
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemCost"                      "0"
+	    "ItemShopTags"                  ""
+	    
+	    // Recipe
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemRecipe"                    "1"
+	    "ItemResult"                    "item_seers_lantern"
+	    "ItemRequirements"
+	    {
+	        "01"                        "item_ghost;item_arcanite_shards;item_void_stone"
+	    }
+	}
+	// Rewrite of Recipe: Linken's Sphere
+	// Author: Rook
+	// Date: January 29, 2015
+	
 	"item_recipe_wand_of_yggdrasil"
 	{
 	    // General
@@ -981,6 +937,105 @@
 	    {
 	        "01"                        "item_magic_wand;item_oblivion_staff;item_null_talisman"
 	    }
+	}
+	//=================================================================================================================
+	// Seer's Lantern
+	//=================================================================================================================
+	"item_seers_lantern"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua/items/item_seers_lantern"
+		"ID"							"3041"  //Valve's version of this item uses the ID "39".
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"Model"							"models/props_gameplay/clarity.mdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_seers_lantern"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"75"
+		"AbilityCastRange"				"500"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"                      "5175"
+	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;"
+	    "ItemQuality"                   "epic"
+	    "ItemAliases"                   "seers_lantern"
+	    "ItemRequiresCharges"           "0"
+	    "ItemDisplayCharges"            "0"
+	    "ItemPermanent"                 "1"
+	    "ItemInitialCharges"            "0"
+		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+		"precache"
+		{
+		
+			"particle" "particles/items/seers_lantern.vpcf"
+			"soundfile"	"soundevents/game_sounds_items.vsndevts"
+		
+		}
+	
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_str" 		"8"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_int"			"8"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_agi"			"8"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"10"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana_regen"	"1.00"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration" 			"4.00"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"true_sight_duration" "4.00"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius" 			"500"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow" 				"25"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"magic_res_reduction" "20"
+			}
+		}
 	}
 	"item_soul_vial"
 	{
@@ -1066,14 +1121,14 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"                      "1900"
-	    "ItemShopTags"                  "hard_to_tag"
+	    "ItemShopTags"                  ""
 	    "ItemQuality"                   "epic"
 	    "ItemAliases"                   "wand_of_yggdrasil"
 	    "ItemRequiresCharges"           "0"
 	    "ItemDisplayCharges"            "0"
 	    "ItemPermanent"                 "1"
 	    "ItemInitialCharges"            "0"
-		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 	
 		"precache"
 		{
@@ -1137,12 +1192,12 @@
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"hp_percent_drain"  "8"
+				"hp_percent_drain"  "7"
 			}
 			"11"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"mp_percent_drain" 	"8"
+				"mp_percent_drain" 	"7"
 			}
 			"12"
 			{

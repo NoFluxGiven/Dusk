@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"item_lua"
 	"ScriptFile"					"lua/items/item_black_rose"
-	"ID"							"3038"  //Valve's version of this item uses the ID "39".
+	"ID"							"501"  //Valve's version of this item uses the ID "39".
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -25,19 +25,18 @@
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
 	"ItemCost"                      "1900"
-    "ItemShopTags"                  "hard_to_tag"
-    "ItemQuality"                   "epic"
+    "ItemShopTags"                  "damage"
+    "ItemQuality"                   "rare"
     "ItemAliases"                   "black_rose"
     "ItemRequiresCharges"           "0"
     "ItemDisplayCharges"            "0"
     "ItemPermanent"                 "1"
-    "ItemInitialCharges"            "0"
-	"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+    //"ItemInitialCharges"            "0"
 
 	"precache"
 	{
 	
-		"particle" "particles/items/black_rose.vpcf"
+		"particle" "particles/items/black_rose.vpcf"	
 		"particle" "particles/items/black_rose_aura.vpcf"
 		"particle" "particles/items/black_rose_slow.vpcf"
 		"soundfile"	"soundevents/game_sounds_items.vsndevts"

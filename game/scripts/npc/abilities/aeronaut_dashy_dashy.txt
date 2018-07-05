@@ -1,0 +1,78 @@
+//=====================================================================================================
+// aeronaut: dashy_dashy
+//=====================================================================================================
+"aeronaut_dashy_dashy"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/aeronaut_dashy_dashy"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityTextureName"			"aeronaut_dashy_dashy"
+	"AbilityCastAnimation"			"ACT_DOTA_IDLE_RARE"
+	"AnimationPlaybackRate"			"1.75"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"500 550 600 650"
+	"AbilityCastPoint"				"0.20"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"6"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"90"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_aeronaut/dashy_dashy_trail_waow.vpcf"
+		"particle"  "particles/units/heroes/hero_aeronaut/dashy_dashy_hit.vpcf"
+		"soundfile" "soundevents/hero_aeronaut.vsndevts"
+	}
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"50 100 150 200"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"80"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"stun"						"0.75"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"knockback"					"250"
+			"LinkedSpecialBonus"		"special_bonus_aeronaut_1"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"distance"					"500 550 600 650"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_aeronaut/blast.vpcf"
+		}
+}

@@ -1,0 +1,73 @@
+//=====================================================================================================
+// aeronaut: Upwind
+//=====================================================================================================
+"aeronaut_upwind"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/aeronaut_upwind"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityTextureName"			"aeronaut_upwind"
+	"AbilityCastAnimation"			"ACT_DOTA_RUN"
+	"AnimationPlaybackRate"			"2.8"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"325"
+	"AbilityCastPoint"				"0.35"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"15 14 13 12"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"35 50 65 80"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"50 100 150 200"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"325"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"1.00 1.50 2.00 2.5"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_attack_range"		"175 250 325 400"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"bonus_duration"			"1.75 2.00 2.25 2.50"
+			"LinkedSpecialBonus"		"special_bonus_aeronaut_5"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_aeronaut/blast.vpcf"
+		}
+}

@@ -1,0 +1,85 @@
+"siegfried_eon_shield"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_lua"
+    "ScriptFile"            "lua/abilities/siegfried_eon_shield"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityTextureName"            "siegfried_eon_shield"
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "1400"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "15"
+    "AbilityManaCost"               "90 95 100 105"
+    "AbilityCastPoint"              "0.3"
+    
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "duration"              "3.0 3.25 3.50 3.75"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "speed"                 "900"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "radius"                "400"
+            "LinkedSpecialBonus"    "special_bonus_siegfried_2"
+        }
+        "04"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "proj_radius"           "140"
+        }
+        "05"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "proj_damage"           "80 100 120 140"
+        }
+        "06"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "area_damage"           "100 150 200 250"
+        }
+        "07"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "delay"                 "1.20"
+        }
+        "08"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "slow"                  "20 35 50 65"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+        "particle"  "particles/units/heroes/hero_siegfried/eon_shield.vpcf"
+        "particle"  "particles/units/heroes/hero_siegfried/eon_shield_slow.vpcf"
+        "particle"  "particles/units/heroes/hero_siegfried/eon_shield_start_up.vpcf"
+        "soundfile" "soundevents\hero_astaroth.vsndevts"
+    }
+
+    "Modifiers"
+    {
+    }
+
+
+}
+

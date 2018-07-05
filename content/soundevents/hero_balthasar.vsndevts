@@ -1,0 +1,149 @@
+"Balthasar.Firebolt"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/firebolt.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.30"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Balthasar.Firebolt.Target"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/firebolt_target.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.30"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Balthasar.Doomflame.Projectile"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/doomflame_proj.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.30"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Balthasar.Doomflame.Ground"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/doomflame_path.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.30"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Balthasar.Ward.Ambience"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/ward_of_the_emerald_flame.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.30"
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -26,12 +26,12 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"750"
+	"AbilityCastRange"				"575"
 	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"8"
+	"AbilityCooldown"				"14"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -44,33 +44,18 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"50 100 150 200"
+			"damage"				"75 150 225 300"
+			"LinkedSpecialBonus"	"special_bonus_gemini_1"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"stun"					"0.50 0.60 0.70 0.80" // per use on the same target
+			"duration"				"2.50 3.25 4.00 4.75"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_mult"				"4" // the number of times it can apply
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_bonus"			"40"
-			"LinkedSpecialBonus"	"special_bonus_gemini_1"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"stun_bonus"			"0.15 0.30 0.45 0.60"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"20"
+			"slow"					"35"
 		}
 	}
 }

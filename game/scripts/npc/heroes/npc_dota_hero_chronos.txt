@@ -2,13 +2,15 @@
 {
 	"AbilityLayout" 		"4"
 	"override_hero"			"npc_dota_hero_faceless_void"
-	"Ability1"				"chronos_warp" // Teleports to the target location, then returns to the location where this ability was casted after a short time.  Slows and damages at both locations
-	// on both leaving and returning.
-	"Ability2"				"chronos_future_sight" // Gives Chronos and nearby allies precognitive abilities for a short time, granting a chance to avoid sources of damage completely.
-	"Ability3"				"chronos_sync" // At Chronos' feet is the Timepiece, a powerful fundamental that dictates his strength.  When the hand is facing 12,
-	// he gains bonus attack speed and damage, and when it's facing 6, he gains bonus movespeed, Armor and Magic Resistance.
-	"Ability4"				"chronos_continuum_crystal" // Chronos summons a crystalline structure that envelops the target unit.  The unit is disabled for the duration and emits an aura
-	// that drastically slows enemies, and deals damage over time.  The main target is invulnerable and recovers a percentage of their health and mana over the duration.
+	"Ability1"				"chronos_continuum_crystal" // Envelops the target enemy
+	// in crystal, rendering them stunned for 2.00/2.75/3.50/4.25s, but only Chronos can damage them.
+	"Ability2"				"chronos_" // 
+	"Ability3"				"chronos_" // 
+	"Ability4"				"chronos_time_splicer" // When Chronos strikes an enemy, he strikes one other
+	// enemy in a 700/800/900 radius. Has a 2/1/0s cooldown.
+	// Cannot hit the same enemy Chronos is attacking.
+	// Selects the enemy randomly.
+	// The attack retains all UAMs and attack modifiers.
 	"Ability5"				""
 	"Ability6"				""
 	"Ability7"				""

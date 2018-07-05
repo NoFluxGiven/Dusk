@@ -91,12 +91,18 @@ function modifier_fight_me:OnDestroy()
 	end
 end
 
+function modifier_fight_me:IsPurgable()
+	return false
+end
+
 modifier_fight_me_regen = class({})
 
 function modifier_fight_me_regen:OnDestroy()
 	if IsServer() then
 		local caster = self:GetAbility():GetCaster()
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
+
+		local base_damage = self:GetAbility():GetSpecialValueFor("base_damage")
 
 		if caster.fight_me_damage then
 			local all = FindEnemies(caster,caster:GetAbsOrigin(),99999)
@@ -118,16 +124,20 @@ function modifier_fight_me_regen:OnDestroy()
 
 			local dmg = caster.fight_me_damage
 			local mult = self:GetAbility():GetSpecialValueFor("mult")/100
-			dmg = dmg*mult
+			dmg = dmg*mult + base_damage
 
 			ParticleManager:SetParticleControl(p, 1, Vector(radius,0,0)) --[[Returns:void
 			Set the control point data for a control on a particle effect
 			]]
 			for k,v in pairs(enemy_found) do
-				DealDamage(v,caster,dmg,DAMAGE_TYPE_MAGICAL)
+				self:GetAbility():InflictDamage(v,caster,dmg,DAMAGE_TYPE_PURE)
 			end
 
 			caster.fight_me_damage = 0
 		end
 	end
+end
+
+function modifier_fight_me_regen:IsPurgable()
+	return false
 end

@@ -2,13 +2,19 @@ war_earthbreaker = class({})
 
 -- LinkLuaModifier("modifier_earthbreaker","lua/abilities/war_earthbreaker",LUA_MODIFIER_MOTION_NONE)
 
+function war_earthbreaker:GetCooldown(level)
+	local base_cooldown = self.BaseClass.GetCooldown(self, level)
+	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_war_4") or 0
+	return base_cooldown - t_cooldown_reduction
+end
+
 function war_earthbreaker:OnSpellStart()
 	local caster = self:GetCaster()
 	local point = caster:GetAbsOrigin()+caster:GetForwardVector()*150
 
 	local damage = self:GetAbilityDamage()
 
-	local t_radius_bonus = caster:FetchTalent("special_bonus_war_4") or 0
+	local t_radius_bonus = caster:FetchTalent("special_bonus_war_2") or 0
 
 	local radius = self:GetSpecialValueFor("radius") + t_radius_bonus
 	local stun = self:GetSpecialValueFor("stun")

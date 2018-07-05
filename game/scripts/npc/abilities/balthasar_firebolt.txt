@@ -1,0 +1,66 @@
+//=====================================================================================================
+// BALTHASAR: Voidal Flare
+//=====================================================================================================
+"balthasar_firebolt"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"lua/abilities/balthasar_firebolt"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1.5"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"balthasar_firebolt"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/hero_balthasar.vsndevts"
+		"particle"			"particles/units/heroes/hero_balthasar/will_o_wisp_base_attack.vpcf"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"575"
+	"AbilityCastPoint"				"0.2"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"14.00 13.00 12.00 11.00"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"70 80 90 100"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"base_damage"			"60 120 180 240"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"3"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"dot"					"10 20 30 40"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"projectiles"			"1"
+		}
+	}
+}

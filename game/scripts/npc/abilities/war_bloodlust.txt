@@ -6,10 +6,10 @@
     "ScriptFile"            "lua/abilities/war_bloodlust"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityCastAnimation"          "ACT_DOTA_OVERRIDE_ABILITY_2"
-    "AnimationPlaybackRate"         "0.75"
+    "AnimationPlaybackRate"         "1.50"
     "FightRecapLevel"               "1"
     "AbilityTextureName"            "war_bloodlust"
     "AoERadius"                     "275"
@@ -17,11 +17,11 @@
     // Casting
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCastRange"              "425"
-    "AbilityCastPoint"              "0.4"
+    "AbilityCastPoint"              "0.25"
 
     // Time     
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"               "24 20 16 12"
+    "AbilityCooldown"               "20"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -55,15 +55,21 @@
 
         "04"
         {
-            "var_type"              "FIELD_INTEGER"
-            "duration"              "12"
+            "var_type"              "FIELD_FLOAT"
+            "duration"              "10.0"
         }
 
         "05"
         {
             "var_type"              "FIELD_INTEGER"
-            "dot"                   "12 24 36 48"
+            "dot"                   "15 25 35 45"
             "LinkedSpecialBonus"    "special_bonus_war_3"
+        }
+
+        "06"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "slow"                  "15"
         }
     }
 

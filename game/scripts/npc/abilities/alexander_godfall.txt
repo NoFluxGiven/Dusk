@@ -20,7 +20,6 @@
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"70"
-
 	"HasScepterUpgrade"				"1"
 
 	// Cost
@@ -49,7 +48,12 @@
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"scepter_mult"					"75"
+			"scepter_radius"				"325"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"scepter_cooldown"				"24"
 		}
 	}
 	

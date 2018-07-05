@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/phantom_deathstrike"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -36,24 +36,13 @@
 	{
 	"01"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"3.0"
+			"var_type"						"FIELD_INTEGER"
+			"bonus_damage"					"4 6 8 10"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"12 16 20"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_reduction"				"30 40 50"
-			"LinkedSpecialBonus"			"special_bonus_phantom_3"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"chance"						"25"
+			"threshold"						"40"
 		}
 	}
 	

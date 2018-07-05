@@ -41,7 +41,7 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"mult"							"1.50"
+			"delay"							"0.50"
 		}
 	"02"
 		{
@@ -58,6 +58,16 @@
 			"var_type"						"FIELD_FLOAT"
 			"slow_duration"					"3.0"
 			"LinkedSpecialBonus"			"special_bonus_phantom_2"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"70 140 210 280"
+		}
+	"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"mult"							"50"
 		}
 	}
 	

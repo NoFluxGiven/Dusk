@@ -23,7 +23,7 @@
 "ItemQuality"					"epic"
 "ItemAliases"					"regal_sigil;exalted"
 "ItemPurchasable"				"0"
-"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 // Special	
 //-------------------------------------------------------------------------------------------------------------

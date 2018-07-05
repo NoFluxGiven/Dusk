@@ -1,0 +1,63 @@
+//=====================================================================================================
+// FAUST: Forbidden_knowledge
+//=====================================================================================================
+"faust_forbidden_knowledge"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/faust_forbidden_knowledge"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"faust_forbidden_knowledge"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"cooldown_reduction"			"8 10 12"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"max_stacks"					"5"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"6.0"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_faust/le_forbidden_knowledge.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+		"soundfile" "soundevents\hero_faust.vsndevts"
+		}
+	
+	"Modifiers"
+		{
+		}
+}

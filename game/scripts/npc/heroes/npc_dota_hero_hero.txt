@@ -7,9 +7,9 @@
 	"Rolelevels"			"2,2"
 	"Complexity"			"1"
 	"Ability1"				"hero_justice_kick" // Hero kicks the target enemy, knocking them away and interrupting them.  Units hit on the way are damaged and slowed.
-	"Ability2"				"hero_hyper_kick"
-	"Ability3"				"hero_freedom_strike" // Hero leaps forward and slams the ground, dealing damage in an AoE.
-	"Ability4"				"hero_heroic_soul" // Hero breaks out of any purgable stun or disable and gains percentage bonus damage on his attacks and abilities for a short time.
+	"Ability2"				"hero_freedom_strike" // Hero leaps forward and slams the ground, dealing damage in an AoE.
+	"Ability3"				"hero_heroic_soul" // Hero breaks out of any purgable stun or disable and gains percentage bonus damage on his attacks and abilities for a short time.
+	"Ability4"				"generic_hidden" //Automatically levelled to 1 when the character is picked.
 	"Ability5"				"generic_hidden" //Automatically levelled to 1 when the character is picked.
 	"Ability6"				"hero_one_punch" // Hero winds up and strikes with an impossibly strong punch, dealing large critical damage and knocking them into the atmosphere. After a 1s delay, the unit crashes down to the ground, creating an explosion that damages and stuns enemies.	
 	// 250/275/300% Critical damage.

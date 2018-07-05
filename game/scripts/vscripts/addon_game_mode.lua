@@ -43,6 +43,7 @@ function Precache( context )
     PrecacheResource("model", "models/props_structures/statue_mystical001.vmdl", context)
     PrecacheResource("model","models/creeps/lane_creeps/creep_radiant_hulk/creep_radiant_ancient_hulk.vmdl",context)
     PrecacheResource("model","models/creeps/lane_creeps/creep_dire_hulk/creep_dire_ancient_hulk.vmdl",context)
+    PrecacheResource("model","models/items/courier/jilling_ben_courier/jilling_ben_courier_flying.vmdl",context)
     
     
     PrecacheModel("models/heroes/viper/viper.vmdl", context)
@@ -108,6 +109,7 @@ function Precache( context )
     PrecacheItemByNameSync("item_deathscythe", context)
     PrecacheItemByNameSync("item_hephaestus_hammer", context)
     PrecacheItemByNameSync("item_black_rose", context)
+    PrecacheItemByNameSync("item_seers_lantern", context)
 
     -- Entire heroes (sound effects/voice/models/particles) can be precached with PrecacheUnitByNameSync
     -- Custom units from npc_units_custom.txt can also have all of their abilities and precache{} blocks precached in this way

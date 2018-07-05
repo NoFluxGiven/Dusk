@@ -37,6 +37,10 @@ function modifier_void_strikes:OnAttackLanded(params)
 	end
 end
 
+function modifier_void_strikes:IsHidden()
+	return true
+end
+
 modifier_void_strikes_burn = class({})
 
 function modifier_void_strikes_burn:DeclareFunctions()

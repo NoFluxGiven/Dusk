@@ -6,71 +6,45 @@
 	"Role"					"Nuker,Escape,Initiator"
 	"Rolelevels"			"2,2,2"
 	"Complexity"			"2"
-	// DRAGON STANCE
-	"Ability1"				"ironfist_dragon_fist" // Strikes the target with extreme Physical damage,
-	// stunning them.
-	// Deals 125/200/275/350 damage.
-	// Stuns for 1.0/1.4/1.8/2.2s.
-	// 28s cooldown.
-	"Ability2"				"ironfist_reversal" // Ironfist can immediately counterattack by timing his
-	// Reversal correctly, dealing Magical damage and mini-stunning the target.
-	// Deals 50/80/110/140 Magical damage.
-	// Ministuns for 0.4s.
-	// If timing is perfect (within 0.15s) the stun lasts 1.0/1.2/1.4/1.6s.
-
-	"Ability3"				"ironfist_quake"// Slams the ground to create a shockwave that travels out, damaging
-	// enemies thrice.
-	// Each ring deals 60/70/80/90 Magical damage.
-	// 12/10/8/6s cooldown.
-
-	// STONEWALL STANCE
-	"Ability4"				"ironfist_boulder_throw"// Tosses the target enemy behind Ironfist. When they land, they
-	// take Physical damage.
-	// Tosses them 375/475/575/675 units behind Ironfist, dealing 50/100/150/200 damage.
-	"Ability5"				"ironfist_lightning_strike" // Ironfist hits impossibly fast for 3 attacks.
-	// Reduces BAT to 0.8/0.7/0.6/0.5 for 3 attacks.
-	// Lasts 4s.
-	// 12/11/10/9s cooldown.
-
-	// GALE STANCE
-	"Ability6"				"ironfist_typhoon" // Ironfist dashes forth, damaging and slowing enemies hit.
-	// Deals 50/100/150/200 Magical damage.
-	// Slows by 15/20/25/30% for 2s.
-	// 6s cooldown.
-	"Ability7"				"ironfist_focus" // When Ironfist does not attack or cast Spells for more than
-	// a period of time, he gains Focus stacks. Each stack reduces the cooldown of his next Spell cast,
-	// or increases the damage of his next attack.
-	// Focus has different effects depending on what form he is in.
-	// Switching Stances, attacking, or casting a Spell removes Focus stacks.
-	// He gains a stack for every 3s he doesn't attack or cast Spells.
-	// Max 4 stacks.
-	
-	// FOR ALL STANCES
-	// Each stack grants 4/8/12/16% cooldown reduction on his next Spell, excluding Change Stance.
 
 	// DRAGON STANCE
-	// Grants a bonus 8/16/24/32 damage on his next attack.
+
+	"Ability1"				"ironfist_dragon_fist"
+	"Ability2"				"ironfist_reversal"
+
+	// FOCUS
+
+	"Ability3"				"ironfist_focus"
+
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+
+	"Ability6"				"ironfist_change_stance"
 
 	// STONEWALL STANCE
-	// Each stack grants 2/3/4/5 Armor and 2/4/6/8% Magic Resistance.
-	
-	// GALE STANCE
-	// Each stack grants 8/12/16/20% Evasion and 4/8/12/16% movespeed.
 
-	"Ability8"				"ironfist_dragon_stance"
-	"Ability9"				"ironfist_gale_stance"
-	"Ability10"				"ironfist_stonewall_stance"
-	"Ability11"				"ironfist_change_stance" // Replaces Q, W and E with Dragon Stance, Gale Stance,
-	// and Stonewall Stance, respectively. Stances do not grant bonuses, only their abilities do.
-	// 10/8/6s cooldown.
-	"Ability12"				"special_bonus_armor_4" //
-	"Ability13"				"special_bonus_strength_8" //
-	"Ability14"				"special_bonus_cooldown_reduction_8" //
-	"Ability15"				"special_bonus_attack_damage_40" //
-	"Ability16"				"special_bonus_cast_range_75" //
-	"Ability17"				"special_bonus_magic_resistance_20" //
-	"Ability18"				"special_bonus_hp_300"
-	"Ability19"				"special_bonus_all_stats_10"
+	"Ability7"				"ironfist_quake"
+	"Ability8"				"ironfist_boulder_throw"
+
+	// GALE STANCE
+
+	"Ability9"				"ironfist_lightning_strike"
+	"Ability10"				"ironfist_typhoon"
+
+	// STANCES
+
+	"Ability11"				"ironfist_dragon_stance"
+	"Ability12"				"ironfist_gale_stance"
+	"Ability13"				"ironfist_stonewall_stance"
+
+	"Ability14"				"special_bonus_armor_4" //
+	"Ability15"				"special_bonus_strength_8" //
+	"Ability16"				"special_bonus_cooldown_reduction_8" //
+	"Ability17"				"special_bonus_attack_damage_40" //
+	"Ability18"				"special_bonus_cast_range_75" //
+	"Ability19"				"special_bonus_magic_resistance_20" //
+	"Ability20"				"special_bonus_hp_300"
+	"Ability21"				"special_bonus_all_stats_10"
 
 	"ArmorPhysical"				"0"									// Physical protection.
 	"MagicalResistance"				"25"							// Magical protection (percentage).

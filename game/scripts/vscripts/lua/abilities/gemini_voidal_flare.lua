@@ -31,7 +31,7 @@ function gemini_voidal_flare:OnSpellStart()
 	  iUnitTargetType = DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_BASIC,
 	  fExpireTime = GameRules:GetGameTime() + 10.0,
 	  bDeleteOnHit = true,
-	  iMoveSpeed = 1700,
+	  iMoveSpeed = 1225,
 	  bProvidesVision = false,
 	  iVisionRadius = 0,
 	  iVisionTeamNumber = c:GetTeamNumber(),
@@ -40,6 +40,39 @@ function gemini_voidal_flare:OnSpellStart()
   
   	local projectile = ProjectileManager:CreateTrackingProjectile(info)
 end
+
+-- function gemini_voidal_flare:OnProjectileHit(t,l)
+-- 	if t then
+-- 		local duration = self:GetSpecialValueFor("duration")
+-- 		local modifier = t:FindModifierByName("modifier_voidal_flare")
+
+-- 		local t_purge = self:GetCaster():FetchTalent("special_bonus_gemini_3") or false
+
+-- 		if t:IsMagicImmune() then return end
+
+-- 		if t_purge then
+-- 			t:Purge(false, true, false, false, false)
+-- 		end
+
+-- 		local stack = 1
+
+-- 		t:AddNewModifier(self:GetCaster(), self, "modifier_voidal_flare", {Duration=duration, stack=1})
+-- 		-- will set the stack to 1 if creating, or add when refreshing
+
+-- 		if modifier then
+-- 			stack = modifier:GetStackCount()
+-- 		end
+
+-- 		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_gemini_1") or 0
+-- 		local damage_bonus = self:GetSpecialValueFor("damage_bonus") + t_damage_bonus
+-- 		local damage = self:GetSpecialValueFor("damage") + damage_bonus * (stack-1)
+-- 		local stun = self:GetSpecialValueFor("stun") + self:GetSpecialValueFor("stun_bonus") * (stack-1)
+
+-- 		self:InflictDamage(t,self:GetCaster(),damage,DAMAGE_TYPE_MAGICAL)
+
+-- 		t:EmitSound("Voidwalker.VoidalFlare.Hit")
+-- 	end
+-- end
 
 function gemini_voidal_flare:OnProjectileHit(t,l)
 	if t then
@@ -54,8 +87,6 @@ function gemini_voidal_flare:OnProjectileHit(t,l)
 			t:Purge(false, true, false, false, false)
 		end
 
-		local stack = 1
-
 		t:AddNewModifier(self:GetCaster(), self, "modifier_voidal_flare", {Duration=duration, stack=1})
 		-- will set the stack to 1 if creating, or add when refreshing
 
@@ -64,35 +95,32 @@ function gemini_voidal_flare:OnProjectileHit(t,l)
 		end
 
 		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_gemini_1") or 0
-		local damage_bonus = self:GetSpecialValueFor("damage_bonus") + t_damage_bonus
-		local damage = self:GetSpecialValueFor("damage") + damage_bonus * (stack-1)
-		local stun = self:GetSpecialValueFor("stun") + self:GetSpecialValueFor("stun_bonus") * (stack-1)
+		local damage_bonus = self:GetSpecialValueFor("damage") + t_damage_bonus
 
-		self:InflictDamage(t,self:GetCaster(),damage,DAMAGE_TYPE_MAGICAL)
+		self:InflictDamage(t,self:GetCaster(),damage_bonus,DAMAGE_TYPE_MAGICAL)
 
-		t:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {Duration=stun})
 		t:EmitSound("Voidwalker.VoidalFlare.Hit")
 	end
 end
 
 modifier_voidal_flare = class({})
 
-function modifier_voidal_flare:OnCreated(kv)
-	if IsServer() then
-		local stack = kv.stack
-
-		self:SetStackCount(kv.stack)
-	end
+function modifier_voidal_flare:DeclareFunctions()
+	local func = {
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
+	}
+	return func
 end
 
-function modifier_voidal_flare:OnRefresh(kv)
-	if IsServer() then
-		local stack = kv.stack
+function modifier_voidal_flare:CheckState()
+	local state = {
+		[MODIFIER_STATE_DISARMED] = true,
+		[MODIFIER_STATE_SILENCED] = true
+	}
 
-		local max = self:GetAbility():GetSpecialValueFor("max_mult")
+	return state
+end
 
-		if self:GetStackCount() + stack > max then return end
-
-		self:SetStackCount(self:GetStackCount()+kv.stack)
-	end
+function modifier_voidal_flare:GetModifierMoveSpeedBonus_Percentage()
+	return -self:GetAbility():GetSpecialValueFor("slow")
 end

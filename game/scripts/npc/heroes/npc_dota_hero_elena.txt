@@ -36,9 +36,9 @@
 	"Ability12"				"special_bonus_elena_1" // Devotion Stacks Grant 6 Armor
 	"Ability13"				"special_bonus_elena_2" // Devotion Stacks Grant 20% Magic Res
 	"Ability14"				"special_bonus_elena_3" // +120 Starlight Damage/Heal
-	"Ability15"				"special_bonus_elena_4" // +2 Guardian Bubble Instances
+	"Ability15"				"special_bonus_elena_4" // +20% Bladebreaker Attack Damage
 	"Ability16"				"special_bonus_elena_5" // +40 Starlight Damage Per Hero
-	"Ability17"				"special_bonus_elena_6" // +60% Bladebreaker Attack Damage
+	"Ability17"				"special_bonus_elena_6" // +200% Malefic Inversion Heal
 
 	"ArmorPhysical"				"1"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).

@@ -1,17 +1,38 @@
 <root> 
   <styles>
-    <include src="file://{resources}/styles/custom_loading_screen.css" />
+   <include src="file://{resources}/styles/custom_loading_screen.css" />
 	 <include src="s2r://panorama/styles/dotastyles.vcss_c" />
   </styles>
-  <Panel class="AddonLoadingRoot">
+  <Panel class="ClassContainer">
+
     <Panel id="CustomBg" >
       <Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/loading_screen/gamemode.png" />
+      <Image id="version" class="SeqImg" src="file://{images}/custom_game/loading_screen/version.png" />
+      <Image id="update" class="SeqImg" src="file://{images}/custom_game/loading_screen/update.png" />
     </Panel>
-    <Panel id="TitlePanel"> 
-      <Label id="AddonTitle" text="game_version" html="true"/>
+
+    <!--<Panel id="Subtitle"> 
+      <Label id="SubtitleText" text="game_version" html="true"/>
+    </Panel>-->
+
+  	<Panel id="Changelog"> 
+        <Panel id="HeroAdditions">
+          <Image class="Pips" src="file://{images}/custom_game/pip_green.png"/>
+          <Label hittest = "true" id="HeroAdditionsText" class="ChangelogText" text="new_hero_changelog" html="true"/>
+        </Panel>
+        <Panel id="HeroChanges">
+          <Image class="Pips" src="file://{images}/custom_game/pip_red.png"/>
+          <Label hittest = "true" id="HeroChangesText" class="ChangelogText" text="hero_changelog" html="true"/>
+        </Panel>
+        <Panel id="ItemChanges">
+          <Image class="Pips" src="file://{images}/custom_game/pip_blue.png"/>
+          <Label hittest = "true" id="ItemChangesText" class="ChangelogText" text="item_changelog" html="true"/>
+        </Panel>
+        <Panel id="MiscChanges">
+          <Image class="Pips" src="file://{images}/custom_game/pip_yellow.png"/>
+          <Label hittest = "true" id="MiscChangesText" class="ChangelogText" text="misc_changelog" html="true"/>
+        </Panel>
     </Panel>
-	  <Panel id="ScrollerPanel"> 
-      <Label hittest = "true" id="AddonChangelog" text="game_version_scroller" html="true"/>
-    </Panel>
+
   </Panel>
 </root>

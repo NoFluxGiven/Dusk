@@ -17,12 +17,12 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"275"
+	"AbilityCastRange"				"325"
 	"AbilityCastPoint"				"0.0"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"16"
+	"AbilityCooldown"				"25"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,7 +39,7 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusion_damage"				"-75" // percentage total
+			"illusion_damage"				"-80" // percentage total
 		}
 	"02"
 		{
@@ -54,7 +54,7 @@
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusion_tooltip"				"25" // percentage total
+			"illusion_tooltip"				"20" // percentage total
 		}
 	"05"
 		{

@@ -18,12 +18,12 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"750"
+	"AbilityCastRange"				"875"
 	"AbilityCastPoint"				"0.1"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"120"
+	"AbilityCooldown"				"75"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,33 +40,18 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"delay"						"0.80"
+			"stun_duration"				"0.8 1.0 1.2"
+			"LinkedSpecialBonus"		"special_bonus_shard_magus_5"
 		}
 		"02"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"stun_duration"				"0.2 0.3 0.4"
-			"LinkedSpecialBonus"		"special_bonus_shard_magus_5"
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"275 400 525"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"base_damage"				"100 150 200"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"60 80 100"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"400 500 600"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"impact_radius"				"290"
+			"radius"					"275 300 325"
 		}
 	}
 	

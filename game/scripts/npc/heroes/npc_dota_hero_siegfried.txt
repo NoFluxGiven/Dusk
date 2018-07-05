@@ -2,47 +2,59 @@
 {
 	"AbilityLayout" 		"4"
 	"override_hero"			"npc_dota_hero_sven"
-	"Ability1"				"siegfried_shield_slam"
-		// Siegfried charges in the target direction, slamming into the first Hero he hits, stunning them and dealing Physical damage.
-		// Stuns for 1.6/2.0/2.4/2.8s, and deals 100/160/220/280 Physical damage.
-		// Creeps passed through take the Physical damage, but are not stunned.
+	"Ability1"				"siegfried_eon_shield"
+		// Siegfried throws his ancient shield at a target point, dealing
+		// damage to, and ministunning, enemies hit on the way.
+		// When it reaches the target, it creates an area that freezes enemies in time after a short delay, dealing more damage.
+		// Deals 70/140/210/280 Magical damage and stuns for 0.8/1.2/1.6/2.0s.
+		// Ministuns for 0.4s on hit units.
+		// 2s delay, 400 radius.
 
+	"Ability2"				"siegfried_hell_bent"
+		// The Knight of Purgatory may use the hellfire and holy fire forged into his soul
+		// to enter a state of rage, forcing him to attack the target enemy for 5.40s.
+		// While in this form, he takes halved Physical damage,
+		// gains movespeed and attack speed, and bonus damage on his attacks.
+		// Gains +30% movespeed.
+		// +80/120/160/200 attack speed and each attack hits with such force that it ministuns
+		// for 0.10s.
 
-	"Ability2"				"siegfried_battlecry"
-		// Siegfried roars to empower his allies, slowing nearby enemies.
-		// Enemies are slowed by 5/10/15/20% for 6s.
-		// Allies gain +5/10/15/20% movespeed for 6s, and they regain Mana and Health equal to 15% of the damage they deal against units for the duration. Creeps only restore 5%.
-		// 600 AoE.
-
-	"Ability3"				"siegfried_hell_bent"
-		// With each strike, Siegfried removes his opponent's very will to defend themselves, infusing his blade's edge with their rushing blood.
-		// Each time Siegfried strikes, he steals Armor from the target, converting it to damage.
-		// Steals 0.5 Armor per hit, and grants +5 Bonus Damage per stack. Lasts 15/30/60/120s.
-
-	"Ability4"				"siegfried_heaven_sent"
-		// Siegfried channels for 2.5s, targeting an ally globally.  After the channel duration, he appears at their location in a flash of light,
-		// dealing Pure damage to nearby enemies and healing the ally.
-		// Heals 200/400/600 Health, and deals 200/300/400 Pure damage in a 275 AoE.
-	"Ability5"				""
-	"Ability6"				""
+	"Ability3"				"siegfried_epochs_protection"
+		// Whenever Siegfried casts a Spell he becomes Magic Immune for a short time.
+		// The Magic Immunity does not apply a Dispel.
+		// Lasts 1.2/1.8/2.4/3.0s.
+		
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"siegfried_heaven_sent"
+	// Siegfried targets an ally within a large range.
+		// That ally is instantly placed into a
+		// protective bubble, unable to perform actions, but invulnerable, and
+		// Siegfried appears at their location.
+		// Lasts 4.5/5.25/6.00s.
+		// 2000/3000/4000 cast range.
+		// After the duration ends, they both are returned to the positions they were
+		// when the Spell was cast.
+		// 225/200/175s cooldown.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_hp_200" // 
+	"Ability11"				"special_bonus_lifesteal_10" // 
+	"Ability12"				"special_bonus_strength_20" // 
+	"Ability13"				"special_bonus_attack_damage_40" // 
+	"Ability14"				"special_bonus_siegfried_1" // Epoch's Protection Basic Dispel
+	"Ability15"				"special_bonus_siegfried_2" // +100 Eon Shield Radius
+	"Ability16"				"special_bonus_siegfried_3" // +150 Hell Bent Attack Speed
+	"Ability17"				"special_bonus_siegfried_4" // +2s Epoch's Protection
 
 	"ArmorPhysical"				"4"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackRate"				"1.7"
-	"AttackDamageMin"			"40"										// Damage range min.
-	"AttackDamageMax"			"50"										// Damage range max.
+	"AttackRate"				"1.8"
+	"AttackDamageMin"			"30"										// Damage range min.
+	"AttackDamageMax"			"40"										// Damage range max.
 
 	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
 	"AttributeBaseStrength"		"23"										// Base strength
@@ -60,7 +72,7 @@
 	//"RingRadius"				"70"
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"295"									// Speed.
+	"MovementSpeed"				"285"									// Speed.
 	"MovementTurnRate"			"0.7"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.

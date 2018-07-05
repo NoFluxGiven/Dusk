@@ -145,3 +145,7 @@ end
 function modifier_genso_illusion:GetModifierMoveSpeedBonus_Percentage()
 	return self:GetAbility():GetSpecialValueFor("illusion_bonus_movespeed")
 end
+
+function modifier_genso_illusion:IsHidden()
+	return true
+end

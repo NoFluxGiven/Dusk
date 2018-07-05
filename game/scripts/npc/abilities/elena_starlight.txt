@@ -35,6 +35,7 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"damage"				"140 200 260 320"
+			"LinkedSpecialBonus"	"special_bonus_elena_3"
 		}
 		"02"
 		{
@@ -55,6 +56,7 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"damage_bonus"			"20" // per Hero hit on either team
+			"LinkedSpecialBonus"	"special_bonus_elena_5"
 		}
 	}
 

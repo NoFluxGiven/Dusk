@@ -7,21 +7,21 @@
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
     "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityCastAnimation"          "ACT_DOTA_OVERRIDE_ABILITY_1"
-    "AnimationPlaybackRate"         "0.50"
+    "AnimationPlaybackRate"         "0.60"
     "FightRecapLevel"               "1"
     "AbilityTextureName"            "war_fight_me"
     
     // Casting
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCastRange"              "325"
-    "AbilityCastPoint"              "0.5"
+    "AbilityCastPoint"              "0.4"
 
     // Time     
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"               "75"
+    "AbilityCooldown"               "80"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@
         "02"
         {
             "var_type"              "FIELD_INTEGER"
-            "radius"                "325"
+            "radius"                "375"
         }
 
         "03"
@@ -56,7 +56,13 @@
         "04"
         {
             "var_type"              "FIELD_INTEGER"
-            "mult"                  "100"
+            "mult"                  "50"
+        }
+
+        "05"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "base_damage"           "60 120 180"
         }
     }
 

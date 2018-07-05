@@ -9,11 +9,6 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-	"LinkedAbility"
-	{
-		"01" "war_earthbreaker"
-	}
-
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -21,7 +16,7 @@
 		"01"
 		{
 			"var_type" "FIELD_INTEGER"
-			"value" "200"
+			"value" "4"
 		}
 	}
 }

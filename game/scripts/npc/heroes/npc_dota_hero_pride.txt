@@ -1,0 +1,80 @@
+"npc_dota_hero_phantom_lancer"
+{
+	"AbilityLayout" 		"4"
+	//"override_hero"			"npc_dota_hero_necrolyte"
+	"HeroSelectSoundEffect"	"Pride.Something"
+	"Role"					"Nuker,Durable"
+	"Rolelevels"			"2,3"
+	"Complexity"			"1"
+	"Ability1"				"pride_elyats_bellow" // Pride stabs his spear into the ground.
+	// After a short delay, a blast of energy appears at the target location dealing damage.
+	// Enemies affected are afflicted with a debuff that causes Pride's attacks to
+	// deal bonus damage.
+	// After a 1s delay, deals 100/150/200/250 damage in a 325 AoE.
+	// Each attack deals 20/30/40/50 bonus Magical damage.
+	// Lasts 6s.
+	// 6s cooldown, 0.5s cast point.
+	"Ability2"				"pride_merciless" // Pride can instantly deal damage to,
+	// and jump to, the last unit he dealt damage to with his attacks.
+	// Deals 40/80/120/160 damage and slows for 25% for 2s.
+	// 5s cooldown.
+	// Must be cast within 5s of attacking a target (applies a debuff).
+	"Ability3"				"pride_lionheart" // Pride's Strength increases
+	// with each strike he makes.
+	// Creeps increase his Strength by 1, while Heroes increase it by 1/2/3/4.
+	// Lasts 20s.
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"pride_echospear" // Pride targets an enemy Hero within
+	// a large range. Whenever he attacks, that Hero is attacked as well. If the main target
+	// of his attacks is the same unit, this doesn't work.
+	// Lasts 5s.
+	// 90/60/30s cooldown.
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				"special_bonus_attack_speed_25" //
+	"Ability11"				"special_bonus_pride_1" // +60 Morbid Blade Damage
+	"Ability12"				"special_bonus_pride_2" // +4s To Dust Duration
+	"Ability13"				"special_bonus_hp_225" // 
+	"Ability14"				"special_bonus_pride_3" // +100 Grave Guard Regen
+	"Ability15"				"special_bonus_pride_4" // Deathtouch 40% Slow
+	"Ability16"				"special_bonus_pride_5" // 1200 Radius Ally Grave Guard
+	"Ability17"				"special_bonus_cooldown_reduction_20" // 
+
+	"ArmorPhysical"				"2"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRange"				"175"
+	"AttackRate"				"1.70"
+	"AttackDamageMin"			"25"										// Damage range min.
+	"AttackDamageMax"			"32"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"30"										// Base strength
+	"AttributeStrengthGain"		"2.5"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"12"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.4"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"26"										// Base agility
+	"AttributeAgilityGain"		"2.9"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"305"									// Speed.
+	"MovementTurnRate"			"0.5"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
+}

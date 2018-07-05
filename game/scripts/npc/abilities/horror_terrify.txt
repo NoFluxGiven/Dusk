@@ -38,7 +38,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"debuff_duration"		"2.00 2.75 3.50 4.25"
+			"debuff_duration"		"1.50 2.00 2.50 3.00"
 		}
 		"03"
 		{

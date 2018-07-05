@@ -1,0 +1,16 @@
+<root> 
+  <styles>
+  </styles>
+  
+  <Panel>
+	<Panel id="CompilePanel">
+		<Image class="Hide" url="file://{images}/heroes/npc_dota_hero_shredder.png" />
+		<Image class="Hide" url="file://{images}/heroes/selection/npc_dota_hero_shredder.png" />
+		<Image class="Hide" url="file://{images}/heroes/icons/npc_dota_hero_shredder.png" />
+
+		<Image class="Hide" url="file://{images}/heroes/npc_dota_hero_lycan.png" />
+		<Image class="Hide" url="file://{images}/heroes/selection/npc_dota_hero_lycan.png" />
+		<Image class="Hide" url="file://{images}/heroes/icons/npc_dota_hero_lycan.png" />
+	</Panel>
+  </Panel>
+</root>

@@ -23,7 +23,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"30 24 18 12"
+	"AbilityCooldown"				"24 18 12 6"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,18 +40,18 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"proc_damage"				"30 40 50 60"
+			"proc_damage"				"50 100 150 200"
 			"LinkedSpecialBonus"		"special_bonus_shade_6"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"movespeed_bonus"			"20 30 40 50"
+			"movespeed_bonus"			"15 20 25 30"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"25"
+			"slow"						"15 20 25 30"
 		}
 		"04"
 		{

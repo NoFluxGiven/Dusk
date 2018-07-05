@@ -25,12 +25,20 @@ function modifier_bloodsport_passive:OnAttackLanded(params)
 
 	if attacker ~= self:GetParent() then return end
 	if target:IsBuilding() then return end
+	if attacker:IsIllusion() then return end
+	if attacker:PassivesDisabled() then return end
 
-	if attacker:HasModifier("modifier_berserk") then stack_bonus = 1 else stack_bonus = 0 end
+	local stack_bonus = 0
+
+	--if attacker:HasModifier("modifier_berserk") then stack_bonus = 1 else stack_bonus = 0 end
 
 	target:AddNewModifier(attacker, self:GetAbility(), "modifier_bloodsport", {Duration=duration, stack=1+stack_bonus}) --[[Returns:void
 	No Description Set
 	]]
+end
+
+function modifier_bloodsport_passive:IsHidden()
+	return true
 end
 
 modifier_bloodsport = class({})

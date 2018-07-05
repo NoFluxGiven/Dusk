@@ -16,7 +16,7 @@
 	"Ability3"				"gemini_planar_trickery"
 	// Creates a rune upon the ground beneath the Voidwalker. Recasting this Spell instantly
 	// transports him to the Rune and places the Spell on cooldown. Disjoints projectiles.
-	"Ability4"				"gemini_planar_trickery_activate"
+	"Ability4"				"generic_hidden"
 	// 
 	"Ability5"				"generic_hidden"
 	"Ability6"				"gemini_abyssal_shadow"
@@ -29,16 +29,16 @@
 	// Each attack the Shadow makes deals bonus Pure damage and reduces the target's Armor and Magic Res.
 	// Vortices
 	// The Shadow's attacks have a small chance to slow enemies in an AoE.
-	"Ability7"				""
+	"Ability7"				"gemini_planar_trickery_activate"
 	"Ability8"				""
 	"Ability9"				""
 	"Ability10"				"special_bonus_all_stats_7"
 	"Ability11"				"special_bonus_intelligence_12"
 	"Ability12"				"special_bonus_gemini_1"
 	"Ability13"				"special_bonus_magic_resistance_20"
-	"Ability14"				"special_bonus_gemini_2"
+	"Ability14"				"special_bonus_gemini_4"
 	"Ability15"				"special_bonus_gemini_3"
-	"Ability16"				"special_bonus_gemini_4"
+	"Ability16"				"special_bonus_gemini_2"
 	"Ability17"				"special_bonus_cooldown_reduction_25"
 
 	"ArmorPhysical"				"0"									// Physical protection.
