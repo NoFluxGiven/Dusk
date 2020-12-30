@@ -12,17 +12,18 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"2"
 	"AbilityTextureName"			"lightning_boltblast"
 	"AoERadius"						"315"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"975"
-	"AbilityCastPoint"				"0.4"
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.2"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"8"
+	"AbilityCooldown"				"5"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -44,7 +45,7 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"explosion_damage"			"120 180 240 300"
+			"explosion_damage"			"100 140 180 220"
 		}
 		"03"
 		{

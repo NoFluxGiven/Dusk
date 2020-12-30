@@ -1,9 +1,9 @@
 @define TotalLength: 4s;
 @define TimingFunc: ease-in-out;
 @define IterationCount: 1;
-@define AnimationDelay: 4s;
+@define AnimationDelay: 0s;
 
-@define FadeInLength: 6s;
+@define FadeInLength: 4.5s;
 
 .ClassContainer
 {

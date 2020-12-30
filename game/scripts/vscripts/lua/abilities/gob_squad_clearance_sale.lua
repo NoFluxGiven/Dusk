@@ -20,6 +20,7 @@ function gob_squad_clearance_sale:CreateBomb(caster)
 		local radius = self:GetSpecialValueFor("radius")
 
 		local damage = self:GetAbilityDamage()
+		local stun = self:GetSpecialValueFor("stun")
 
 		local pos = caster:GetAbsOrigin()
 
@@ -109,7 +110,7 @@ function gob_squad_clearance_sale:CreateBomb(caster)
 			for k,v in pairs(enemy_found) do
 				ability:InflictDamage(v,caster,damage,unit.bomb_type)
 				if unit.bomb_type == DAMAGE_TYPE_PURE then
-					v:AddNewModifier(caster, nil, "modifier_stunned", {Duration=0.60}) --[[Returns:void
+					v:AddNewModifier(caster, nil, "modifier_stunned", {Duration=stun}) --[[Returns:void
 					No Description Set
 					]]
 				end
@@ -120,11 +121,11 @@ function gob_squad_clearance_sale:CreateBomb(caster)
 				end
 			end
 
-			for k,v in pairs(ally_found) do
+			--[[for k,v in pairs(ally_found) do
 				if v == caster then
 					ability:InflictDamage(v,caster,damage*0.33,unit.bomb_type)
 				end
-			end
+			end]]
 		end)
 end
 
@@ -146,11 +147,11 @@ function modifier_clearance_sale:OnDestroy()
 	if IsServer() then
 		local caster = self:GetParent()
 
-		if not caster:HasScepter() then return end
+		--if not caster:HasScepter() then return end
 
-		local radius = self:GetAbility():GetSpecialValueFor("scepter_end_bomb_radius")
+		local radius = self:GetAbility():GetSpecialValueFor("end_bomb_radius")
 
-		local damage = self:GetAbility():GetSpecialValueFor("scepter_end_bomb_damage")
+		local damage = self:GetAbility():GetSpecialValueFor("end_bomb_damage")
 
 		local ability = self:GetAbility()
 
@@ -225,11 +226,11 @@ function modifier_clearance_sale:OnDestroy()
 				ability:InflictDamage(v,caster,damage,DAMAGE_TYPE_MAGICAL)
 			end
 
-			for k,v in pairs(ally_found) do
+			--[[for k,v in pairs(ally_found) do
 				if v == caster then
 					ability:InflictDamage(v,caster,damage*0.33,DAMAGE_TYPE_MAGICAL)
 				end
-			end
+			end]]
 		end)
 	end
 end

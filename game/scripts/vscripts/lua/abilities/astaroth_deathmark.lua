@@ -93,7 +93,8 @@ function modifier_astaroth_deathmark_buff:DeclareFunctions()
 		MODIFIER_EVENT_ON_ATTACK_START,
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-		MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE
+		MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE,
+		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
 	}
 	return funcs
 end
@@ -107,6 +108,10 @@ function modifier_astaroth_deathmark_buff:GetModifierProcAttack_BonusDamage_Pure
 	local r = self:GetAbility():GetSpecialValueFor("bonus_damage")
 	local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_astaroth_4") or 0
 	return r + t_damage_bonus
+end
+
+function modifier_astaroth_deathmark_buff:GetModifierIncomingDamage_Percentage(params)
+	return -self:GetAbility():GetSpecialValueFor("damage_reduction")
 end
 
 function modifier_astaroth_deathmark_buff:OnAttackLanded(params)

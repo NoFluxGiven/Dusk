@@ -1,6 +1,17 @@
 //=====================================================================================================
 // SHADE: Isolation
 //=====================================================================================================
+
+///@changelog
+///@version 2.2
+///@hero Shade
+///@ability Stalk
+///@changes #
+/// Stalk now applies a 3.5s debuff, on attack, that slows by 30/40/50/60% and deals 20/30/40/50 Physical damage per second in 0.5s intervals.
+/// Damage type changed to Physical (was Pure).
+/// Movement speed steal reduced to 12%.
+/// Duration reduced to 3.5s.
+
 "shade_stalk"
 {
 	// General
@@ -8,12 +19,12 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/shade_stalk"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"AbilityTextureName"			"shade_stalk"
 
 	// Casting
@@ -23,11 +34,11 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"24 18 12 6"
+	"AbilityCooldown"				"8"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"110"
+	"AbilityManaCost"				"65 75 85 95"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,23 +51,38 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"proc_damage"				"50 100 150 200"
+			"proc_damage"				"25 75 125 175"
 			"LinkedSpecialBonus"		"special_bonus_shade_6"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"movespeed_bonus"			"15 20 25 30"
+			"movespeed_bonus"			"12"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"15 20 25 30"
+			"slow"						"12"
 		}
 		"04"
 		{
+			"var_type"					"FIELD_INTEGER"
+			"poison_slow"				"30 40 50 60"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"poison_damage_over_time"	"20 30 40 50"
+		}
+		"05"
+		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"					"4.5"
+			"poison_duration"			"3.5"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"3.5"
 			"LinkedSpecialBonus"		"special_bonus_shade_1"
 		}
 	}

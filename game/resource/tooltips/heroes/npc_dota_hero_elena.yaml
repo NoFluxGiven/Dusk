@@ -1,0 +1,102 @@
+Abilities:
+  elena_bladebreaker:
+    data:
+      Description: Elena enchants nearby opponent's weaponry with a powerful hex,
+        causing them to take Pure damage equivalent to a base amount plus a portion
+        of their attack damage, and become disarmed for a short time.
+      attack_damage: '%DAMAGE FROM ATTACK DAMAGE:'
+      base_damage: 'BASE DAMAGE:'
+      disarm_duration: 'DISARM DURATION:'
+      duration: 'DURATION:'
+      radius: 'RADIUS:'
+    modifiers:
+      bladebreaker:
+      - Bladebreaker
+      - Attacking will cause you to take damage and become disarmed for a short time.
+      bladebreaker_effect:
+      - Bladebreaker
+      - Disarmed.
+    name: Bladebreaker
+  elena_devotion:
+    data:
+      Lore: The protective aura of an Infuser grows stronger as their devotion to
+        their subjects improves.
+      armor: 'ARMOR BONUS/REMOVAL:'
+      description: Grants bonus regeneration to nearby allies whenever Elena casts
+        a Spell.
+      duration: 'DURATION:'
+      hp_regen: 'HP REGEN:'
+      mr: 'MAGIC RESISTANCE BONUS/REMOVAL:'
+      radius: 'RADIUS:'
+    modifiers:
+      devotion_effect:
+      - Devotion
+      - Recovering Health over time.
+    name: Devotion Aura
+  elena_guardian_bubble:
+    data:
+      Description: Elena weaves a bubble of protective energy around the target ally,
+        disabling them. The bubble converts damage taken to healing instead.
+      damage_to_healing: '%DAMAGE TO HEALING:'
+      duration: 'DURATION:'
+    modifiers:
+      guardian_bubble:
+      - Malefic Inversion
+      - Stunned, but all damage heals you instead for a multiplier of the original
+        damage (after reductions).
+    name: Malefic Inversion
+  elena_starlight:
+    data:
+      Description: After a short charge time, Elena fires a blast of energy in a line,
+        damaging enemies and healing allies. The damage and heal increases for each
+        enemy and ally Hero caught in it. The heal is only a portion of the damage.
+      damage: 'DAMAGE:'
+      damage_bonus: 'DAMAGE BONUS PER HERO:'
+      delay: 'DELAY:'
+      heal_percentage: '%HEAL PERCENTAGE:'
+      range: 'RANGE:'
+    modifiers: {}
+    name: Starlight
+  special_bonus_elena_1:
+    data: {}
+    modifiers: {}
+    name: Devotion Stacks Grant 6 Armor
+  special_bonus_elena_2:
+    data: {}
+    modifiers: {}
+    name: Devotion Stacks Grant 20% Magic Res
+  special_bonus_elena_3:
+    data: {}
+    modifiers: {}
+    name: +120 Starlight Damage/Heal
+  special_bonus_elena_4:
+    data: {}
+    modifiers: {}
+    name: +20% Bladebreaker Damage
+  special_bonus_elena_5:
+    data: {}
+    modifiers: {}
+    name: +40 Starlight Damage/Heal Per Hero
+  special_bonus_elena_6:
+    data: {}
+    modifiers: {}
+    name: +200% Malefic Inversion Heal
+Hero:
+  data:
+    bio: There is an old folktale the Tijadi pass down, of a mother and her young
+      child. The child could speak to Spirits, but should they utter a word in return,
+      they would be wrenched of their immortality, left weak and vulnerable. The Marqas,
+      arbiters of order, deemed her child cursed, and banished her to the Nothing.
+      As the darkness twisted around her, pulling every cell from her body for an
+      agonising eternity, the true nature of her curse was discovered. The spirits
+      of the old land began to die, one by one, their souls fading as the child's
+      did. In a panicked realisation of their mistakes, the Marqas pulled her from
+      her prison and tasked her with wandering the planes and restoring the dead or
+      mortal Spirits, bestowing upon her incredible powers of regeneration and fighting
+      prowess.
+    hype: The healer in chief, Elena is an excellent sustainer with incredible teamfight
+      capabilities. Possessing damaging/healing AoEs and an Ultimate that turns the
+      opponents' attacks against them, she is difficult to deal with in any case.
+  modref: npc_dota_hero_elena
+  name: Elena
+  ref: npc_dota_hero_vengefulspirit

@@ -1,0 +1,92 @@
+Abilities:
+  lightning_boltblast:
+    data:
+      Description: Lightning summons forth a payload of electrical energy that detonates
+        after a short delay, dealing damage and slowing enemies in an AoE.
+      attack_slow: 'ATTACKSPEED SLOW:'
+      explosion_damage: 'EXPLOSION DAMAGE:'
+      explosion_delay: 'EXPLOSION DELAY:'
+      movespeed_slow: '%MOVESPEED SLOW:'
+      radius: 'RADIUS:'
+      slow_duration: 'SLOW DURATION:'
+    modifiers:
+      boltblast_slow:
+      - Slow
+      - ''
+    name: Boltblast
+  lightning_lightning_dagger:
+    data:
+      ? ''
+      : Lightning Daggers
+      Lore: The Tijadi have unending prowess with their throwing daggers, able to
+        strike with pinpoint accuracy at the most elusive of foes.
+      _Lore: The Tijadi have unending prowess with their throwing daggers, able to
+        strike with pinpoint accuracy at the most elusive of foes.
+      _Note0: The initial slow is 100% and lasts for 0.75s.
+      _description: Lightning throws a dagger at the target enemy, dealing a small
+        amount of Magical damage.
+      _mark_aoe: 'MARK AOE:'
+      _mark_damage: 'MARK DAMAGE:'
+      _mark_slow: '%MARK SLOW:'
+      _mark_slow_duration: 'MARK SLOW DURATION:'
+      bounces: 'BOUNCES:'
+      description: Lightning throws a dagger at the target enemy, dealing a small
+        amount of Magical damage and slowing. The dagger bounces to a random nearby
+        target a number of times before stopping.
+      duration: 'SLOW DURATION:'
+      slow: '%SLOW:'
+    modifiers:
+      lightning_dagger_slow:
+      - Slow
+      - ''
+    name: Lightning Daggers
+  lightning_overload:
+    data:
+      Lore: Those who face the Tijadi in close combat rarely live long enough to see
+        their full strength.
+      attack_slow: 'ATTACK SLOW:'
+      damage: 'DAMAGE:'
+      description: Slows and damages enemies in an area around Lightning.
+      duration: 'SLOW DURATION:'
+      move_slow: '%MOVE SLOW:'
+      radius: 'RADIUS:'
+    modifiers:
+      overload_slow:
+      - Slow
+      - ''
+    name: Overload
+  lightning_spark:
+    data:
+      Description: Each time Lightning casts a spell, enemies in a large radius around
+        her take Magical damage and are slowed by a small amount.
+      Lore: A Tijadi's fury can set the very air of the battlefield crackling and
+        ready to destroy their foes.
+      bonus_damage: 'DAMAGE:'
+      radius: 'RADIUS:'
+      slow: '%SLOW:'
+    modifiers:
+      spark_slow:
+      - Spark
+      - Being slowed a bit.
+    name: Spark
+  special_bonus_lightning_1:
+    data: {}
+    modifiers: {}
+    name: +2 Lightning Dagger Bounces
+  special_bonus_lightning_2:
+    data: {}
+    modifiers: {}
+    name: +60 Overload Damage
+  special_bonus_lightning_3:
+    data: {}
+    modifiers: {}
+    name: +40% Boltblast Damage/Charge Time
+  special_bonus_lightning_4:
+    data: {}
+    modifiers: {}
+    name: +20% Spark Slow
+Hero:
+  data: {}
+  modref: npc_dota_hero_lightning
+  name: ''
+  ref: right

@@ -7,10 +7,27 @@ end
 function FetchTalentValue(talent_name,val) -- grabs the value of the Talent or nil if not found
   local val = val or "value"
 
-  if TALENTS[talent_name] == nil then return nil end
+  local talent_value = CustomNetTables:GetTableValue("talent_data", talent_name)
 
-  local v = TALENTS[talent_name][val]
-  if v then return v else return 0 end -- since if the talent entry exists, and values dont, it's probably a boolean
+  print("[FetchTalentValue] Fetching talent value for "..talent_name)
+
+  if talent_value == nil then
+    print("[FetchTalentValue] Nil")
+    return nil
+  end
+
+  if talent_value then
+  	local v = talent_value[val]
+  	if v then
+      print("[FetchTalentValue] Value is "..v)
+  		return v
+  	else
+      print("[FetchTalentValue] Value is a table and is empty. Returning a table with value: 0")
+  		return {value = 0}
+  	end
+  end
+
+  print("[FetchTalentValue] After all that, value is nil.")
 
   return nil
 end

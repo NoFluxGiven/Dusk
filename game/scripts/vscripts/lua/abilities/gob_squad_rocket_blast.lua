@@ -1,6 +1,8 @@
 gob_squad_rocket_blast = class({})
 
 LinkLuaModifier("modifier_rocket_blast_thinker","lua/abilities/gob_squad_rocket_blast",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_rocket_blast_ride","lua/abilities/gob_squad_rocket_blast",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_rocket_blast_ride_next","lua/abilities/gob_squad_rocket_blast",LUA_MODIFIER_MOTION_NONE)
 
 function gob_squad_rocket_blast:OnSpellStart()
 	if IsServer() then
@@ -9,6 +11,16 @@ function gob_squad_rocket_blast:OnSpellStart()
 		local d = c:GetForwardVector()
 		local speed = self:GetSpecialValueFor("speed")
 		local range = self:GetSpecialValueFor("range")
+
+		local mod = "modifier_rocket_blast_ride"
+		local mod_next = "modifier_rocket_blast_ride_next"
+
+		chc = self:GetSpecialValueFor("ride_chance")
+
+		if c:HasModifier(mod_next) then
+			c:RemoveModifierByName(mod_next)
+			c:AddNewModifier(c, self, mod, {IsHidden=true})
+		end
 
 		local data = {
 			Ability = self,
@@ -34,15 +46,27 @@ function gob_squad_rocket_blast:OnSpellStart()
 
 		ProjectileManager:CreateLinearProjectile(data)
 
+		if (chance(chc)) then
+			c:AddNewModifier(c, self, mod_next, {})
+		end
+
 		c:EmitSound("Hero_Tinker.Heat-Seeking_Missile_Dud") --[[Returns:void
 		 
 		]]
 	end
 end
 
+function gob_squad_rocket_blast:GetAbilityTextureName()
+	if (self:GetCaster():HasModifier("modifier_rocket_blast_ride_next")) then
+		return "gob_squad_rocket_blast_ride"
+	end
+
+	return "gob_squad_rocket_blast"
+end
+
 function gob_squad_rocket_blast:OnProjectileThink( l )
 	local c = self:GetCaster()
-	local t_ride_the_rocket_blast = self:GetCaster():FetchTalent("special_bonus_gob_squad_4")
+	local t_ride_the_rocket_blast = c:HasModifier("modifier_rocket_blast_ride") --self:GetCaster():FetchTalent("special_bonus_gob_squad_4")
 
 	if t_ride_the_rocket_blast then
 		local groundpos = GetGroundPosition(l, c) + Vector(0,0,65)
@@ -60,11 +84,16 @@ function gob_squad_rocket_blast:OnProjectileHit(t, l)
 		local t_damage_bonus = c:FetchTalent("special_bonus_gob_squad_1") or 0
 		local d = self:GetAbilityDamage() + t_damage_bonus
 
-		local t_ride_the_rocket_blast = self:GetCaster():FetchTalent("special_bonus_gob_squad_4")
+		
+
+		local t_ride_the_rocket_blast = c:HasModifier("modifier_rocket_blast_ride") --self:GetCaster():FetchTalent("special_bonus_gob_squad_4")
 
 		if t_ride_the_rocket_blast then
 			FindClearSpaceForUnit(c, l, true)
-			GridNav:DestroyTreesAroundPoint( l, 250, false ) 
+			GridNav:DestroyTreesAroundPoint( l, 250, false )
+			Timers:CreateTimer(0.1, function()
+				c:RemoveModifierByName("modifier_rocket_blast_ride")
+			end) 
 		end		
 
 		if t then
@@ -85,7 +114,7 @@ function gob_squad_rocket_blast:OnProjectileHit(t, l)
 
 			for k,v in pairs(ent) do
 				if CheckClass(v,"npc_dota_building") then
-					self:InflictDamage(v,c,d*0.20,DAMAGE_TYPE_PURE)
+					self:InflictDamage(v,c,d*0.5,DAMAGE_TYPE_MAGICAL)
 				else
 					self:InflictDamage(v,c,d,DAMAGE_TYPE_MAGICAL)
 				end
@@ -111,4 +140,16 @@ function modifier_rocket_blast_thinker:OnCreated()
 		Set the control point data for a control on a particle effect
 		]]
 	end
+end
+
+modifier_rocket_blast_ride = class({})
+
+function modifier_rocket_blast_ride:IsHidden()
+	return true
+end
+
+modifier_rocket_blast_ride_next = class({})
+
+function modifier_rocket_blast_ride_next:IsHidden()
+	return true
 end

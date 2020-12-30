@@ -219,7 +219,11 @@ function modifier_seers_lantern_ethereal:OnCreated(kv)
 end
 
 function modifier_seers_lantern_ethereal:GetModifierMoveSpeedBonus_Percentage()
-	return -self:GetAbility():GetSpecialValueFor("slow")
+	local mult = 1
+
+	if self:GetParent():IsInvisible() then mult = 4 end
+
+	return -self:GetAbility():GetSpecialValueFor("slow") * mult
 end
 
 function modifier_seers_lantern_ethereal:GetModifierMagicalResistanceBonus()

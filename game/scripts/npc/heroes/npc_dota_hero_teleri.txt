@@ -1,0 +1,99 @@
+"npc_dota_hero_phantom_lancer"
+{
+	"AbilityLayout" 		"4"
+	"override_hero"			"npc_dota_hero_drow_ranger"
+	"HeroSelectSoundEffect"	"teleri.Something"
+	"Role"					"Nuker,Durable"
+	"Rolelevels"			"2,3"
+	"Complexity"			"1"
+	"Ability1"				"teleri_shock_arrow"
+	// Teleri readies her bow, then looses an electric bolt that deals damage and slows the target.
+	// The bolt has no travel time and deals 60/120/180/240 damage, slowing by 100% for 1s.
+	// When the bolt lands, it propagates to enemies in an area behind the target, and applies
+	// an attack. The attack preserves all procs.
+	// Applies the same effect to all enemies in a 250 radius 175 units away from the target.
+	// This is based on Teleri's current position.
+	// 9s cooldown.
+	"Ability2"				"teleri_tijadis_gambit"
+	// Teleri invokes the power of her tribe, striking 3 random targets in a radius with lightning
+	// bolts that deal damage and ministun, after a delay.
+	// Teleri may be struck by the bolts as well.
+	// If Teleri is struck by a bolt, she takes far less damage, and is empowered, gaining
+	// regen, movespeed and attackspeed for a short time. Stacks fully.
+	// After a 1s delay, deals 100/175/250/325 damage to each target in a 700 radius
+	// and ministuns for 0.4s.
+	// If Teleri is hit by a bolt, she takes 50% less damage from it, is still ministunned,
+	// and gains 8/16/24/32 Health regen, 30/40/50/60 attack speed and 10/20/30% movespeed for 4s.
+	// The bolts have a 0.2s delay between them. Bolts can only hit each unit once, with
+	// the exception of Teleri.
+	// Damage Teleri takes from this ability is non-lethal.
+	// 14s cooldown.
+	// If Teleri is hit with all 3 Bolts, she receives the following:
+	// 489 damage
+	// 96 Health Regen (384 Health regained, so reduces total damage to 105)
+	// 180 attack speed
+	// 90% movespeed
+	"Ability3"				"teleri_grace_of_the_thunder_archer"
+	// Teleri dashes towards a closeby location, gaining bonus attack speed and attacking
+	// units on the way.
+	// Dashes up to 400 units away, gaining 30/60/90/120 attack speed for 2s.
+	// As she dashes, up to 2/3/4/5 random enemies within her attack range are attacked once.
+	// The dash takes 0.3s to complete.
+	// 4s cooldown.
+	"Ability4"				"generic_hidden"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"teleri_blitz"
+	// Unleashes a storm of electric arrows upon the target area, dealing damage in random locations.
+	// Each arrow deals her base damage + 30/50/70 bonus as Magical damage in a 75 radius.
+	// The arrows land every 0.20s over a 3s duration, and have a 15/20/25% chance to apply her attack
+	// modifiers on the hit targets (as a 0 damage attack.)
+	// 275 radius.
+	// 90s cooldown.
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				"special_bonus_attack_speed_25" // 
+	"Ability11"				"special_bonus_hp_regen_6" // 
+	"Ability12"				"special_bonus_teleri_1" // +15% Merciless Slow
+	"Ability13"				"special_bonus_hp_225" // 
+	"Ability14"				"special_bonus_teleri_2" // +25 Lionheart Attack Speed
+	"Ability15"				"special_bonus_teleri_3" // +12% Echospear Damage
+	"Ability16"				"special_bonus_teleri_4" // +2s Elyat's Bellow Duration
+	"Ability17"				"special_bonus_teleri_5" // Lionheart Magic Immunity
+
+	"ArmorPhysical"				"2"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"600"
+	"AttackRate"				"1.70"
+	"AttackDamageMin"			"25"										// Damage range min.
+	"AttackDamageMax"			"32"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+	"AttributeBaseStrength"		"19"										// Base strength
+	"AttributeStrengthGain"		"2.3"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"12"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.4"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"25"										// Base agility
+	"AttributeAgilityGain"		"2.3"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"305"									// Speed.
+	"MovementTurnRate"			"0.5"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
+}

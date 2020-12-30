@@ -79,6 +79,12 @@ if IsServer() then
 			if kv.stack then
 				self:SetStackCount(kv.stack)
 			end
+
+			local amt = 5
+
+			self:GetParent():Heal(kv.stack*amt, self:GetParent()) --[[Returns:void
+			Heal this unit.
+			]]
 		end
 	end
 

@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/lightning_spark"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -15,7 +15,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"900"
+	"AbilityCastRange"				"300"
 	"AbilityCastPoint"				"0"
 	
 	// Time		
@@ -37,31 +37,41 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"				"20 40 60"
+			"damage"					"20 30 40 50"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"radius"					"900"
+			"radius"					"300"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"-5 -10 -15"
+			"slow"						"-10 -15 -20 -25"
 			"LinkedSpecialBonus"		"special_bonus_lightning_4"
 		}
 		"04"
 		{
+			"var_type"					"FIELD_INTEGER"
+			"movespeed"					"10 20 30 40"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_speed"				"80 120 160 200"
+		}
+		"06"
+		{
 			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"0.8 1.2 1.6"
+			"buff_duration"				"2"
 		}
 	}
 	
 	"precache"
 		{
-			"particle"  "particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf"
-			"particle"	"particles/units/heroes/hero_lightning/spark.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+			"particle"	"particles/units/heroes/hero_lightning/spark_unit.vpcf"
+			"particle"	"particles/units/heroes/hero_lightning/spark_unit_damage.vpcf"
+			"soundfile" "soundevents/hero_lightning.vsndevts"
 		}
 	
 	"Modifiers"

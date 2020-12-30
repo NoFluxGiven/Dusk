@@ -55,16 +55,18 @@ function modifier_beneath_the_mask:OnAttackLanded(params)
 
 		local duration = self:GetAbility():GetSpecialValueFor("duration")
 
-		local t_duration_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_lupin_6") or 0
+		--local t_duration_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_lupin_6") or 0
 
-		duration = duration + t_duration_bonus
+		duration = duration --+ t_duration_bonus
 
 		if not target:IsHero() then return end
 
 		if not params.attacker:IsRealHero() then return end
 
+		if caster:HasModifier("modifier_last_surprise") then return end
+
 		if params.attacker == caster then
-			if self:GetAbility():IsCooldownReady() and not caster:HasModifier("modifier_last_surprise") then
+			if self:GetAbility():IsCooldownReady() then
 				target:AddNewModifier(caster, self:GetAbility(), "modifier_beneath_the_mask_slow", {Duration=duration})
 				caster:AddNewModifier(caster, self:GetAbility(), "modifier_beneath_the_mask_bonus", {Duration=duration})
 				self:GetAbility():UseResources(true, true, true)
@@ -124,9 +126,17 @@ modifier_beneath_the_mask_bonus = class({})
 function modifier_beneath_the_mask_bonus:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_INVISIBILITY_LEVEL
 	}
 	return funcs
+end
+
+function modifier_beneath_the_mask_bonus:CheckState()
+	local state = {
+		[MODIFIER_STATE_INVISIBLE] = true
+	}
+	return state
 end
 
 function modifier_beneath_the_mask_bonus:GetModifierMoveSpeedBonus_Percentage()
@@ -135,4 +145,7 @@ function modifier_beneath_the_mask_bonus:GetModifierMoveSpeedBonus_Percentage()
 end
 function modifier_beneath_the_mask_bonus:GetModifierAttackSpeedBonus_Constant()
 	return ( self:GetAbility():GetSpecialValueFor("attack_speed_steal") )
+end
+function modifier_beneath_the_mask_bonus:GetModifierInvisibilityLevel()
+	return 1
 end

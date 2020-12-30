@@ -1,0 +1,63 @@
+//=====================================================================================================
+// SHADE: Venomous
+//=====================================================================================================
+
+///@changelog
+///@version 2.2
+///@hero Shade
+///@ability REWORK: Venomous => Shadowshift
+///@changes #
+/// Removed slow components.
+/// Reduced damage to 10/14/18/22.
+/// Venomous now deals damage over time based on the amount of debuffs the affected target has.
+
+"shade_shadowshift"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/shade_shadowshift"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityTextureName"			"shade_venomous_dark"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"8"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"2.25"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"movespeed"					"20 30 40 50"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles\units\heroes\hero_shade\shade_shadowshift_trail.vpcf"
+		"particle" "particles\units\heroes\hero_shade\shade_status_effect_shadowshift.vpcf"
+		"particle" "particles/units/heroes/hero_doom_bringer/doom_bringer_lvl_death.vpcf"
+		}
+}

@@ -8,6 +8,7 @@
 	"hero_ids",
 	"skillbuild_heroes",
 	"talent_manager",
-	"learned_abilities"
+	"learned_abilities",
+	"talent_data"
   ]
 }

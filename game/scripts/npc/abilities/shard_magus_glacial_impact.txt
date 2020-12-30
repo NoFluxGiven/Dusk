@@ -1,6 +1,19 @@
 //=====================================================================================================
 // shard_magus: Glacial Impact
 //=====================================================================================================
+
+///@changelog
+///@version 2.2
+///@hero Shard Magus
+///@ability Glacial Impact
+///@changes #
+/// Heroes under 10/11/12% Health that are hit by Glacial Impact are shattered, killing them. Applies after damage is inflicted.
+/// Reduced damage to 200/300/400 from 225/375/525
+/// Reduced cooldown to 70s from 80s.
+/// Increased stun duration to 1.4/2.0/2.6 from 0.8/1.0/1.2.
+/// Increased radius to 400 from 275/300/325.
+/// Increased cast point to 0.4s from 0.1s.
+
 "shard_magus_glacial_impact"
 {
 	// General
@@ -14,16 +27,18 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1"
 	"AbilityTextureName"			"ice_wyrm_glacial_impact"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"875"
-	"AbilityCastPoint"				"0.1"
+	"AbilityCastPoint"				"0.4"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"75"
+	"AbilityCooldown"				"70"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,18 +55,23 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"stun_duration"				"0.8 1.0 1.2"
+			"stun_duration"				"1.4 2.0 2.6"
 			"LinkedSpecialBonus"		"special_bonus_shard_magus_5"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"275 400 525"
+			"damage"					"200 300 400"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"radius"					"275 300 325"
+			"radius"					"400"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"shatter_threshold"			"10 11 12"
 		}
 	}
 	

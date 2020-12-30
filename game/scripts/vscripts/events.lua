@@ -4,8 +4,8 @@ RESPAWN_TIME_MULTIPLIER = 0.75
 
 -- Cleanup a player when they leave
 function duskDota:OnDisconnect(keys)
-  DebugPrint('[DUSKDOTA] Player Disconnected ' .. tostring(keys.userid))
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] Player Disconnected ' .. tostring(keys.userid))
+  --DebugPrintTable(keys)
 
   local name = keys.name
   local networkid = keys.networkid
@@ -18,16 +18,16 @@ function duskDota:OnDisconnect(keys)
 end
 -- The overall game state has changed
 function duskDota:OnGameRulesStateChange(keys)
-  DebugPrint("[DUSKDOTA] GameRules State Changed")
-  DebugPrintTable(keys)
+  --DebugPrint("[DUSKDOTA] GameRules State Changed")
+  --DebugPrintTable(keys)
 
-  local newState = GameRules:State_Get()
+  --local newState = GameRules:State_Get()
 end
 
 -- An NPC has spawned somewhere in game.  This includes heroes
 function duskDota:OnNPCSpawned(keys)
-  DebugPrint("[DUSKDOTA] NPC Spawned")
-  DebugPrintTable(keys)
+  --DebugPrint("[DUSKDOTA] NPC Spawned")
+  --DebugPrintTable(keys)
 
   local npc = EntIndexToHScript(keys.entindex)
   local name = npc:GetUnitName()
@@ -144,8 +144,8 @@ end
 -- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive
 -- operations here
 function duskDota:OnEntityHurt(keys)
-  --DebugPrint("[DUSKDOTA] Entity Hurt")
-  --DebugPrintTable(keys)
+  ----DebugPrint("[DUSKDOTA] Entity Hurt")
+  ----DebugPrintTable(keys)
 
   local damagebits = keys.damagebits -- This might always be 0 and therefore useless
   if keys.entindex_attacker ~= nil and keys.entindex_killed ~= nil then
@@ -163,8 +163,8 @@ end
 
 -- An item was picked up off the ground
 function duskDota:OnItemPickedUp(keys)
-  DebugPrint( '[DUSKDOTA] OnItemPickedUp' )
-  DebugPrintTable(keys)
+  --DebugPrint( '[DUSKDOTA] OnItemPickedUp' )
+  --DebugPrintTable(keys)
 
   local unitEntity = nil
   if keys.UnitEntitIndex then
@@ -181,14 +181,14 @@ end
 -- A player has reconnected to the game.  This function can be used to repaint Player-based particles or change
 -- state as necessary
 function duskDota:OnPlayerReconnect(keys)
-  DebugPrint( '[DUSKDOTA] OnPlayerReconnect' )
-  DebugPrintTable(keys) 
+  --DebugPrint( '[DUSKDOTA] OnPlayerReconnect' )
+  --DebugPrintTable(keys) 
 end
 
 -- An item was purchased by a player
 function duskDota:OnItemPurchased( keys )
-  DebugPrint( '[DUSKDOTA] OnItemPurchased' )
-  DebugPrintTable(keys)
+  --DebugPrint( '[DUSKDOTA] OnItemPurchased' )
+  --DebugPrintTable(keys)
 
   -- The playerID of the hero who is buying something
   local plyID = keys.PlayerID
@@ -204,8 +204,8 @@ end
 
 -- An ability was used by a player
 function duskDota:OnAbilityUsed(keys)
-  DebugPrint('[DUSKDOTA] AbilityUsed')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] AbilityUsed')
+  --DebugPrintTable(keys)
 
   local player = PlayerResource:GetPlayer(keys.PlayerID)
   local abilityname = keys.abilityname
@@ -213,31 +213,35 @@ end
 
 -- A non-player entity (necro-book, chen creep, etc) used an ability
 function duskDota:OnNonPlayerUsedAbility(keys)
-  DebugPrint('[DUSKDOTA] OnNonPlayerUsedAbility')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnNonPlayerUsedAbility')
+  --DebugPrintTable(keys)
 
   local abilityname=  keys.abilityname
 end
 
 -- A player changed their name
 function duskDota:OnPlayerChangedName(keys)
-  DebugPrint('[DUSKDOTA] OnPlayerChangedName')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnPlayerChangedName')
+  --DebugPrintTable(keys)
 
   local newName = keys.newname
   local oldName = keys.oldName
 end
 
+--OnPlayerLearnedAbility
+--on_player_learned_ability
 -- A player leveled up an ability
 function duskDota:OnPlayerLearnedAbility( keys)
-  DebugPrint('[DUSKDOTA] OnPlayerLearnedAbility')
+  --DebugPrint('[DUSKDOTA] OnPlayerLearnedAbility')
   PrintTable(keys)
 
   local talent = keys.abilityname
   local playerid = keys.player-1
   local player = PlayerResource:GetPlayer(playerid)
   local hero = player:GetAssignedHero()
-  local ei = hero:entindex()
+  --local ei = hero:entindex()
+  --local ei = hero:GetPlayerOwnerID()
+  local ei = hero:GetEntityIndex()
 
   local t = CustomNetTables:GetTableValue("learned_abilities",tostring(ei))
 
@@ -253,8 +257,20 @@ function duskDota:OnPlayerLearnedAbility( keys)
   print(talent)
   print("Currently learned abilities for entity index "..ei..":")
   for k,v in pairs(temp) do
-    print("  "..k.." : "..v)
+    if v then
+      if type(v) == "table" then
+        if v.value then
+          print("  "..k.." : "..v.value )
+        end
+      else
+        print("  "..k.." : "..v )
+      end
+    else
+      print("  "..k)
+    end
   end
+
+  --hero:AddNewModifier(hero, nil, "modifier_invisible", {Duration=1})
 
   --[[local player = EntIndexToHScript(keys.player)
   local abilityname = keys.abilityName
@@ -276,8 +292,8 @@ end
 
 -- A channelled ability finished by either completing or being interrupted
 function duskDota:OnAbilityChannelFinished(keys)
-  DebugPrint('[DUSKDOTA] OnAbilityChannelFinished')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnAbilityChannelFinished')
+  --DebugPrintTable(keys)
 
   local abilityname = keys.abilityname
   local interrupted = keys.interrupted == 1
@@ -285,8 +301,8 @@ end
 
 -- A player leveled up
 function duskDota:OnPlayerLevelUp(keys)
-  DebugPrint('[DUSKDOTA] OnPlayerLevelUp')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnPlayerLevelUp')
+  --DebugPrintTable(keys)
 
   local player = EntIndexToHScript(keys.player)
   local level = keys.level
@@ -294,8 +310,8 @@ end
 
 -- A player last hit a creep, a tower, or a hero
 function duskDota:OnLastHit(keys)
-  DebugPrint('[DUSKDOTA] OnLastHit')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnLastHit')
+  --DebugPrintTable(keys)
 
   local isFirstBlood = keys.FirstBlood == 1
   local isHeroKill = keys.HeroKill == 1
@@ -311,8 +327,8 @@ end
 
 -- A tree was cut down by tango, quelling blade, etc
 function duskDota:OnTreeCut(keys)
-  DebugPrint('[DUSKDOTA] OnTreeCut')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnTreeCut')
+  --DebugPrintTable(keys)
 
   local treeX = keys.tree_x
   local treeY = keys.tree_y
@@ -320,8 +336,8 @@ end
 
 -- A rune was activated by a player
 function duskDota:OnRuneActivated (keys)
-  DebugPrint('[DUSKDOTA] OnRuneActivated')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnRuneActivated')
+  --DebugPrintTable(keys)
 
   local player = PlayerResource:GetPlayer(keys.PlayerID)
   local rune = keys.rune
@@ -343,8 +359,8 @@ end
 
 -- A player took damage from a tower
 function duskDota:OnPlayerTakeTowerDamage(keys)
-  DebugPrint('[DUSKDOTA] OnPlayerTakeTowerDamage')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnPlayerTakeTowerDamage')
+  --DebugPrintTable(keys)
 
   local player = PlayerResource:GetPlayer(keys.PlayerID)
   local damage = keys.damage
@@ -352,8 +368,8 @@ end
 
 -- A player picked a hero
 function duskDota:OnPlayerPickHero(keys)
-  DebugPrint('[DUSKDOTA] OnPlayerPickHero')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnPlayerPickHero')
+  --DebugPrintTable(keys)
 
   local heroClass = keys.hero
   local heroEntity = EntIndexToHScript(keys.heroindex)
@@ -362,8 +378,8 @@ end
 
 -- A player killed another player in a multi-team context
 function duskDota:OnTeamKillCredit(keys)
-  DebugPrint('[DUSKDOTA] OnTeamKillCredit')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnTeamKillCredit')
+  --DebugPrintTable(keys)
 
   local killerPlayer = PlayerResource:GetPlayer(keys.killer_userid)
   local victimPlayer = PlayerResource:GetPlayer(keys.victim_userid)
@@ -373,8 +389,8 @@ end
 
 -- An entity died
 function duskDota:OnEntityKilled( keys )
-  DebugPrint( '[DUSKDOTA] OnEntityKilled Called' )
-  DebugPrintTable( keys )
+  --DebugPrint( '[DUSKDOTA] OnEntityKilled Called' )
+  --DebugPrintTable( keys )
   
 
   -- The Unit that was Killed
@@ -462,14 +478,14 @@ end
 -- This function is called 1 to 2 times as the player connects initially but before they 
 -- have completely connected
 function duskDota:PlayerConnect(keys)
-  DebugPrint('[DUSKDOTA] PlayerConnect')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] PlayerConnect')
+  --DebugPrintTable(keys)
 end
 
 -- This function is called once when the player fully connects and becomes "Ready" during Loading
 function duskDota:OnConnectFull(keys)
-  DebugPrint('[DUSKDOTA] OnConnectFull')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnConnectFull')
+  --DebugPrintTable(keys)
   
   local entIndex = keys.index+1
   -- The Player entity of the joining user
@@ -483,16 +499,16 @@ end
 
 -- This function is called whenever illusions are created and tells you which was/is the original entity
 function duskDota:OnIllusionsCreated(keys)
-  DebugPrint('[DUSKDOTA] OnIllusionsCreated')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnIllusionsCreated')
+  --DebugPrintTable(keys)
 
   local originalEntity = EntIndexToHScript(keys.original_entindex)
 end
 
 -- This function is called whenever an item is combined to create a new item
 function duskDota:OnItemCombined(keys)
-  DebugPrint('[DUSKDOTA] OnItemCombined')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnItemCombined')
+  --DebugPrintTable(keys)
 
   -- The playerID of the hero who is buying something
   local plyID = keys.PlayerID
@@ -508,8 +524,8 @@ end
 
 -- This function is called whenever an ability begins its PhaseStart phase (but before it is actually cast)
 function duskDota:OnAbilityCastBegins(keys)
-  DebugPrint('[DUSKDOTA] OnAbilityCastBegins')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnAbilityCastBegins')
+  --DebugPrintTable(keys)
 
   local player = PlayerResource:GetPlayer(keys.PlayerID)
   local abilityName = keys.abilityname
@@ -517,8 +533,8 @@ end
 
 -- This function is called whenever a tower is killed
 function duskDota:OnTowerKill(keys)
-  DebugPrint('[DUSKDOTA] OnTowerKill')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnTowerKill')
+  --DebugPrintTable(keys)
 
   local gold = keys.gold
   local killerPlayer = PlayerResource:GetPlayer(keys.killer_userid)
@@ -527,8 +543,8 @@ end
 
 -- This function is called whenever a player changes there custom team selection during Game Setup 
 function duskDota:OnPlayerSelectedCustomTeam(keys)
-  DebugPrint('[DUSKDOTA] OnPlayerSelectedCustomTeam')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnPlayerSelectedCustomTeam')
+  --DebugPrintTable(keys)
 
   local player = PlayerResource:GetPlayer(keys.player_id)
   local success = (keys.success == 1)
@@ -537,8 +553,8 @@ end
 
 -- This function is called whenever an NPC reaches its goal position/target
 function duskDota:OnNPCGoalReached(keys)
-  DebugPrint('[DUSKDOTA] OnNPCGoalReached')
-  DebugPrintTable(keys)
+  --DebugPrint('[DUSKDOTA] OnNPCGoalReached')
+  --DebugPrintTable(keys)
 
   local goalEntity = EntIndexToHScript(keys.goal_entindex)
   local nextGoalEntity = EntIndexToHScript(keys.next_goal_entindex)
@@ -552,9 +568,16 @@ function duskDota:OnPlayerChat(keys)
   local playerID = self.vUserIds[userID]:GetPlayerID()
 
   local text = keys.text
-end
 
-function duskDota:On_dota_player_update_hero_selection(data)
-  print("[DUSKDOTA] dota_player_update_hero_selection")
-  PrintTable(data)
+  if text == "big sniff" then
+    ShowMessage("snig biff")
+  end
+
+  if text == "please pause mr osfrog" then
+    PauseGame(true)
+  end
+
+  if text == "please unpause mr osfrog" then
+    PauseGame(false)
+  end
 end

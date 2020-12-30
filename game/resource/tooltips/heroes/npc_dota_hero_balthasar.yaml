@@ -1,0 +1,78 @@
+Abilities:
+  balthasar_doomflame:
+    data:
+      Description: With a howl, the Wolf summons a wave of fire that washes over the
+        battlefield, leaving damaging ground in its wake. Balthasar may traverse this
+        ground at extremely high speed, catching enemies that normally would escape
+        him.
+      damage: 'DAMAGE:'
+      damage_over_time: 'DAMAGE OVER TIME:'
+      duration: 'DURATION:'
+      movespeed: 'MOVESPEED OVER GROUND:'
+      radius: 'DAMAGE RADIUS:'
+      range: 'RANGE:'
+    modifiers:
+      doomflame_buff:
+      - Doomflame
+      - Moving at 1000 movespeed.
+    name: Doomflame
+  balthasar_emerald_fang:
+    data:
+      Description: Striking his enemies with a deadly fang, Balthasar deals Magical
+        damage over time to enemies based on his attack damage. Ticks every 0.5s.
+      damage_over_time: '%ATTACK DAMAGE:'
+      duration: 'DURATION:'
+    modifiers:
+      emerald_fang:
+      - Emerald Fang
+      - Taking damage over time based on the user's attack damage.
+    name: Emerald Fang
+  balthasar_firebolt:
+    data:
+      Description: Balthasar unleashes a blast of jade fire at his target, dealing
+        damage and then damage over time.
+      base_damage: 'DAMAGE:'
+      dot: 'DAMAGE OVER TIME:'
+      duration: 'DURATION:'
+    modifiers:
+      firebolt:
+      - Firebolt
+      - Taking damage over time.
+    name: Firebolt
+  balthasar_ward_of_the_emerald_flame:
+    data:
+      Description: Summons the Ward of the Emerald Flame to guard an area, granting
+        Flying vision, dealing damage over time, and slowing enemies by a small amount.
+        Any invisible unit that wanders under the Ward is revealed and receives the
+        full slow amount.
+      damage: 'DAMAGE:'
+      duration: 'DURATION:'
+      radius: 'RADIUS:'
+      slow: '%INVISIBLE SLOW:'
+      visible_slow: '%SLOW:'
+    modifiers:
+      ward_of_the_emerald_flame_buff:
+      - Ward of the Emerald Flame
+      - Taking damage over time and being revealed and slowed drastically if invisible.
+    name: Ward Of The Emerald Flame
+  special_bonus_balthasar_1:
+    data: {}
+    modifiers: {}
+    name: +1s Emerald Fang Duration
+  special_bonus_balthasar_2:
+    data: {}
+    modifiers: {}
+    name: Doomflame Free Pathing
+  special_bonus_balthasar_3:
+    data: {}
+    modifiers: {}
+    name: +350 Ward of the Emerald Flame Range
+  special_bonus_balthasar_4:
+    data: {}
+    modifiers: {}
+    name: -8s Firebolt Cooldown
+Hero:
+  data: {}
+  modref: npc_dota_hero_balthasar
+  name: Balthasar
+  ref: npc_dota_hero_lycan

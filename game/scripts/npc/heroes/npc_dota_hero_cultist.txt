@@ -16,7 +16,7 @@
 	// 10s cooldown.
 	"Ability2"				"cultist_chaotic_ritual"
 	// Afflicts a curse upon a target enemy.
-	// The curse deals 20/30/40/50 damage over time over 0.5s intervals.
+	// The curse deals 20/30/40/50 damage per second over 0.5s intervals.
 	// When the enemy receives total damage that exceeds a threshold
 	// of 50% of their Health on cast, the debuff ends, they become stunned and take damage.
 	// Deals 80/120/180/240 Magical damage, and stuns them for 0.6/1.2/1.8/2.4s.
@@ -26,21 +26,23 @@
 	"Ability3"				"cultist_skinscrolls"
 	// The Cultist's skin is engraved with myriad symbols, each of which react to
 	// spells cast by his enemies. Every time an enemy casts a Spell within a
-	// 1000 radius, he gains the Skinscrolls buff.
-	// He can target an enemy to fire a blast of energy at them, dealing Magical damage
-	// so long as he has the Skinscrolls buff. Removes the buff on cast.
-	// Deals 75/125/175/225 damage.
-	// Lasts 3s.
-	// 2s cooldown.
+	// 1000 radius, he gains a stack of Skinscrolls.
+	// Skinscrolls may be cast at any time to hurl a fireball at the target enemy,
+	// so long as the caster has the Skinscrolls buff. Consumes the buff on cast.
+	// Deals 40/60/80/100 damage per stack.
+	// Stacks last 12s, fully refresh, and have a maximum stack count of 4.
+	// 4s cooldown.
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
-	"Ability6"				"cultist_chaos"
-	// Swaps the positions of all nearby enemies and allies with each other,
-	// slowing enemies.
-	// Disjoints projectiles for both.
-	// The swap targets are random, but it is always an enemy for an ally.
-	// 800 radius.
-	// 100% slow for 1/1.5/2s.
+	"Ability6"				"cultist_sigil_of_decay"
+	// The Cultist places a Sigil upon the ground that curses the target area.
+	// In a large radius, enemies gradually lose Strength and have reduced outgoing damage.
+	// Reduces Strength by 1.0/1.5/2.0 per second, and reduces outgoing damage by 20/30/40%.
+	// Leaving the area of effect immediately dispels the debuff.
+	// Does not pierce Spell Immunity.
+	// 500 cast range.
+	// 1300 radius.
+	// Lasts 8s.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""

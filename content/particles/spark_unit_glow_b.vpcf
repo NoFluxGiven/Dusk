@@ -1,0 +1,71 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf10:version{b5ef673d-0450-4fb0-a91b-bacae6864827} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 6
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 25.0
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 135, 206, 235, 255 ]
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 1.0
+			m_fLifetimeMax = 1.0
+		},
+		{
+			_class = "C_INIT_CreateOnModel"
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 10.0
+			m_flRadiusMax = 40.0
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 102
+			m_nAlphaMax = 106
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+			m_flStartAlpha = 0.0
+		},
+		{
+			_class = "C_OP_LockToBone"
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_bAdditive = true
+			m_bDisableZBuffering = true
+			m_hTexture = resource:"materials/materials/particle/basic_glow.vtex"
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+}

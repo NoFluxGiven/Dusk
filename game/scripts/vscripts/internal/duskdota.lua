@@ -69,16 +69,19 @@ function duskDota:_InitduskDota()
   --     SetTeamCustomHealthbarColor(team, color[1], color[2], color[3])
   --   end
   -- end
-  DebugPrint('[DUSKDOTA] GameRules set')
+  --DebugPrint('[DUSKDOTA] GameRules set')
 
   --InitLogFile( "log/duskdota.txt","")
+--ListenToGameEvent(string EventName, handle functionNameToCall, handle context) --[[Returns:int ]]
 
+      -- Register as a listener for a game event from script.
   -- Event Hooks
   -- All of these events can potentially be fired by the game, though only the uncommented ones have had
   -- Functions supplied for them.  If you are interested in the other events, you can uncomment the
   -- ListenToGameEvent line and add a function to handle the event
   ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(duskDota, 'OnPlayerLevelUp'), self)
   ListenToGameEvent('dota_ability_channel_finished', Dynamic_Wrap(duskDota, 'OnAbilityChannelFinished'), self)
+  -- ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap(duskDota, 'OnPlayerLearnedAbility'), self)
   ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap(duskDota, 'OnPlayerLearnedAbility'), self)
   ListenToGameEvent('entity_killed', Dynamic_Wrap(duskDota, '_OnEntityKilled'), self)
   ListenToGameEvent('player_connect_full', Dynamic_Wrap(duskDota, '_OnConnectFull'), self)

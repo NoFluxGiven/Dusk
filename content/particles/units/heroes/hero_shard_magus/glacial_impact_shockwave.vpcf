@@ -1,7 +1,9 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf31:version{593cd181-a1d6-4c6f-9a8c-0534e8d44db0} -->
 {
 	_class = "CParticleSystemDefinition"
 	m_flConstantRadius = 15.0
+	m_nBehaviorVersion = 10
+	m_nFirstMultipleOverride_BackwardCompat = 4
 	m_controlPointConfigurations = 
 	[
 		{
@@ -11,10 +13,151 @@
 				{
 					m_iAttachType = "PATTACH_WORLDORIGIN"
 					m_vecOffset = [ 0.0, 0.0, 0.0 ]
-					m_angOffset = [ null, null, null ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
 					m_entityName = "self"
 				},
 			]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 12.0
+			}
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_vecDistanceBias = [ 0.0, 0.0, 1.0 ]
+			m_vecDistanceBiasAbs = [ 0.0, 0.0, 1.0 ]
+			m_fRadiusMin = 
+			{
+				m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+				m_nControlPoint = 0
+				m_nVectorComponent = 0
+				m_nMapType = "PF_MAP_TYPE_MULT"
+				m_flMultFactor = 0.0
+			}
+			m_fRadiusMax = 
+			{
+				m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+				m_nControlPoint = 0
+				m_nVectorComponent = 0
+				m_nMapType = "PF_MAP_TYPE_MULT"
+				m_flMultFactor = 0.0
+			}
+			m_fSpeedMin = 
+			{
+				m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+				m_nControlPoint = 0
+				m_nVectorComponent = 1
+				m_nMapType = "PF_MAP_TYPE_MULT"
+				m_flMultFactor = 0.0
+			}
+			m_fSpeedMax = 
+			{
+				m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+				m_nControlPoint = 0
+				m_nVectorComponent = 1
+				m_nMapType = "PF_MAP_TYPE_MULT"
+				m_flMultFactor = 0.0
+			}
+			m_LocalCoordinateSystemSpeedMin = 
+			{
+				m_nType = "PVEC_TYPE_FLOAT_COMPONENTS"
+				m_FloatComponentX = 
+				{
+					m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+					m_nControlPoint = 0
+					m_nVectorComponent = 2
+					m_nMapType = "PF_MAP_TYPE_MULT"
+					m_flMultFactor = 0.0
+				}
+				m_FloatComponentY = 
+				{
+					m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+					m_nControlPoint = 0
+					m_nVectorComponent = 2
+					m_nMapType = "PF_MAP_TYPE_MULT"
+					m_flMultFactor = 0.0
+				}
+				m_FloatComponentZ = 
+				{
+					m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+					m_nControlPoint = 0
+					m_nVectorComponent = 2
+					m_nMapType = "PF_MAP_TYPE_MULT"
+					m_flMultFactor = 0.0
+				}
+			}
+			m_LocalCoordinateSystemSpeedMax = 
+			{
+				m_nType = "PVEC_TYPE_FLOAT_COMPONENTS"
+				m_FloatComponentX = 
+				{
+					m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+					m_nControlPoint = 0
+					m_nVectorComponent = 2
+					m_nMapType = "PF_MAP_TYPE_MULT"
+					m_flMultFactor = 0.0
+				}
+				m_FloatComponentY = 
+				{
+					m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+					m_nControlPoint = 0
+					m_nVectorComponent = 2
+					m_nMapType = "PF_MAP_TYPE_MULT"
+					m_flMultFactor = 0.0
+				}
+				m_FloatComponentZ = 
+				{
+					m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+					m_nControlPoint = 0
+					m_nVectorComponent = 2
+					m_nMapType = "PF_MAP_TYPE_MULT"
+					m_flMultFactor = 0.0
+				}
+			}
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.25
+			m_fLifetimeMax = 0.75
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMax = 1.2
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 135, 206, 250 ]
+			m_ColorMax = [ 255, 255, 255 ]
+			m_TintMin = [ 0, 0, 0 ]
+			m_TintMax = [ 255, 255, 255 ]
+		},
+		{
+			_class = "C_INIT_VelocityRandom"
+			m_LocalCoordinateSystemSpeedMin = [ 0.0, 0.0, 1400.0 ]
+			m_LocalCoordinateSystemSpeedMax = [ 0.0, 0.0, 1400.0 ]
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RemapCPtoScalar"
+			m_nCPInput = 1
+			m_flInputMax = 1000.0
+			m_flOutputMax = 1000.0
+			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 15.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 15.0 ]
 		},
 	]
 	m_Operators = 
@@ -46,62 +189,24 @@
 	[
 		{
 			_class = "C_OP_RenderSprites"
-			m_nOrientationType = 2
-			m_bAdditive = true
-			m_hTexture = resource:"materials/particle/particle_ring_wave.vtex"
-		},
-	]
-	m_Initializers = 
-	[
-		{
-			_class = "C_INIT_CreateWithinSphere"
-			m_vecDistanceBias = [ 0.0, 0.0, 1.0 ]
-			m_vecDistanceBiasAbs = [ 0.0, 0.0, 1.0 ]
-			m_nScaleCP = 0
-		},
-		{
-			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 0.25
-			m_fLifetimeMax = 0.75
-		},
-		{
-			_class = "C_INIT_VelocityRandom"
-			m_LocalCoordinateSystemSpeedMin = [ 0.0, 0.0, 1400.0 ]
-			m_LocalCoordinateSystemSpeedMax = [ 0.0, 0.0, 1400.0 ]
-			m_bDisableOperator = true
-		},
-		{
-			_class = "C_INIT_RemapCPtoScalar"
-			m_nCPInput = 1
-			m_flInputMax = 1000.0
-			m_flOutputMax = 1000.0
-			m_bScaleInitialRange = true
-		},
-		{
-			_class = "C_INIT_RandomRadius"
-			m_flRadiusMax = 1.2
-		},
-		{
-			_class = "C_INIT_PositionOffset"
-			m_OffsetMin = [ 0.0, 0.0, 15.0 ]
-			m_OffsetMax = [ 0.0, 0.0, 15.0 ]
-		},
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 135, 206, 250, 255 ]
-		},
-	]
-	m_Emitters = 
-	[
-		{
-			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 12
+			m_nOrientationType = "PARTICLE_ORIENTATION_WORLD_Z_ALIGNED"
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/particle_ring_wave.vtex"
+				},
+			]
+			m_nOutputBlendMode = "PARTICLE_OUTPUT_BLEND_MODE_ADD"
+			m_OutlineColor = [ 255, 255, 255 ]
 		},
 	]
 	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_shard_magus/glacial_impact_shockwave_sphere.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_shard_magus/glacial_impact_shockwave_sphere_solid.vpcf"
 		},
 	]
 }

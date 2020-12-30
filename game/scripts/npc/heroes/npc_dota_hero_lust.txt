@@ -1,7 +1,7 @@
-"npc_dota_hero_lust"
+"npc_dota_hero_queenofpain"
 {
 	"AbilityLayout" 		"5"
-	"override_hero"			"npc_dota_hero_queen_of_pain"
+	"override_hero"			"npc_dota_hero_queenofpain"
 	"Ability1"				"lust_curse" // Poisons the mind of the target, causing them to take damage over time, have reduced attack damage and lose Mana.
 	// If the curse ends, the target is forced to attack its nearby Hero allies for a short time and then fall asleep.  The curse can be quelled by moving out of the max range or killing 4 units.
 	"Ability2"				"lust_searing_dart" // Lust's attacks have a chance to deal bonus damage and slow slightly.  The more times this procs the more damage it will deal.

@@ -5,6 +5,7 @@ shade_stalk = class({})
 
 LinkLuaModifier("modifier_stalk","lua/abilities/shade_stalk",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_stalk_target","lua/abilities/shade_stalk",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_stalk_poison","lua/abilities/shade_stalk",LUA_MODIFIER_MOTION_NONE)
 
 function shade_stalk:OnSpellStart()
 	local c = self:GetCaster()
@@ -66,6 +67,7 @@ function modifier_stalk:OnAttackLanded(params)
 		local damage = self:GetAbility():GetSpecialValueFor("proc_damage") --[[Returns:table
 		No Description Set
 		]]
+		local poison_duration = self:GetAbility():GetSpecialValueFor("poison_duration")
 
 		local tbonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_shade_6")
 		if tbonus then
@@ -74,9 +76,12 @@ function modifier_stalk:OnAttackLanded(params)
 
 		if attacker == self:GetParent() then
 			if target:HasModifier("modifier_stalk_target") then
-				self:GetAbility():InflictDamage(target,attacker,damage,DAMAGE_TYPE_PURE)
+				self:GetAbility():InflictDamage(target,attacker,damage,self:GetAbility():GetAbilityDamageType())
+				--attacker:Heal(damage, attacker)
+				--self:GetAbility():EndCooldown()
 				CreateParticleHitloc(target,"particles/units/heroes/hero_shade/stalk_attack.vpcf")
 				target:EmitSound("Hero_BountyHunter.Jinada")
+				target:AddNewModifier(attacker, self:GetAbility(), "modifier_stalk_poison", {Duration=poison_duration})
 				local mod = target:FindModifierByNameAndCaster("modifier_stalk_target",attacker)
 				if mod then
 					mod:Destroy()
@@ -120,4 +125,50 @@ function modifier_stalk_target:CheckState()
 		[MODIFIER_STATE_PROVIDES_VISION] = true
 	}
 	return state
+end
+
+---------------
+
+modifier_stalk_poison = class({})
+
+function modifier_stalk_poison:DeclareFunctions()
+	local func = {
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+	}
+	return func
+end
+
+function modifier_stalk_poison:OnCreated()
+	self:StartIntervalThink(0.5)
+	self:GetParent():EmitSound("Hero_Viper.PoisonAttack")
+	self.start_time = GameRules:GetGameTime()
+end
+
+function modifier_stalk_poison:OnIntervalThink()
+	if IsServer() then
+		local agh_interval = 14
+		local dot = self:GetAbility():GetSpecialValueFor("poison_damage_over_time")
+		local dmg = dot / 2
+		local tbonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_shade_2")
+		if tbonus then dmg = dmg + tbonus end
+		local dtype = self:GetAbility():GetAbilityDamageType()
+		self:GetAbility():InflictDamage(self:GetParent(),self:GetCaster(),dmg,dtype,DOTA_DAMAGE_FLAG_BYPASSES_BLOCK)
+	end
+end
+
+function modifier_stalk_poison:GetModifierMoveSpeedBonus_Percentage()
+	local agh_interval = 8
+	local slow = self:GetAbility():GetSpecialValueFor("poison_slow")
+	return -slow
+end
+
+function modifier_stalk_poison:GetModifierAttackSpeedBonus_Constant()
+	local agh_interval = 8
+	local slow = self:GetAbility():GetSpecialValueFor("poison_slow")
+	return -slow
+end
+
+function modifier_stalk_poison:GetEffectName()
+	return "particles/units/heroes/hero_viper/viper_poison_debuff.vpcf"
 end

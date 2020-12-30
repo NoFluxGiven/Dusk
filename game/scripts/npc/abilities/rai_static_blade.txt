@@ -1,5 +1,5 @@
 //=====================================================================================================
-// RAI: Static Blade
+// RAI: Static Burst
 //=====================================================================================================
 "rai_static_blade"
 {
@@ -20,7 +20,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"4"
+	"AbilityCooldown"				"6"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -37,38 +37,23 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage_per_stack"				"20 30 40 50"
+			"damage"						"20 30 40 50"
 		}
 		"02"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"slow_per_stack"				"7 9 11 13"
+			"var_type"						"FIELD_FLOAT"
+			"mute_duration"					"0.2 0.4 0.6 0.8"
 		}
 		"03"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"45"
+			"var_type"						"FIELD_INTEGER"
+			"max_stacks"					"5"
+			"LinkedSpecialBonus"			"special_bonus_rai_1"
 		}
 		"04"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"slow_duration"					"1.5"
-		}
-		"05"
-		{
 			"var_type"						"FIELD_INTEGER"
-			"max_stack"						"6"
-			"LinkedSpecialBonus"			"special_bonus_rai_1"
-		}
-		"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"dot_per_stack"					"5 10 15 20"
-		}
-		"07"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"threshold"						"215"
+			"radius"						"350"
 		}
 	}
 	

@@ -44,7 +44,7 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"8 12 16 20"
+			"slow"						"8 14 20 26"
 			"LinkedSpecialBonus"		"special_bonus_lupin_1"
 		}
 		"03"
@@ -55,7 +55,7 @@
 		"04"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"					"2 3 4 5"
+			"duration"					"2.5 3.0 3.5 4.0"
 			"LinkedSpecialBonus"		"special_bonus_lupin_6"
 		}
 	}

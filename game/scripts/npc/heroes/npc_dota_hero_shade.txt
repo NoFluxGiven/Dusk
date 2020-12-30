@@ -10,11 +10,16 @@
 	// Shade targets an enemy, becoming invisible, gaining vision of them, moving faster, and slowing them.
 	// Attacking the enemy out of invisibility deals Pure, Physical and Magical damage.
 	"Ability2"				"shade_dark_hunger"
-	// When an enemy Hero dies near Shade, he recovers Health,
-	// and purges debuffs.
-	// Recovers 100/150/200/250 Health, and purges debuffs with a strong dispel.
-	// 1200 radius.
-	"Ability3"				"shade_venomous"
+	// Shade fires a dark orb at the target enemy, which latches onto them.
+	// Pulses, dealing damage, then returns to Shade either at the end of the duration,
+	// or when he activates the ability again, restoring Health based on the amount of pulses.
+	// 6 pulses, 1s between.
+	// Each pulse deals 15/30/45/60 damage and restores the same amount on return.
+	// When returning, all of the Health is restored immediately.
+	// At max pulses, deals 90/180/270/360 damage and restores the same amount.
+	// 17s cooldown. Can be reactivated to return the orb at any time.
+	// Starts pulsing immediately as it hits the target enemy. Disjointable.
+	"Ability3"				"shade_shadowshift"
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
 	"Ability6"				"shade_isolation"
@@ -48,7 +53,7 @@
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 	"AttributeBaseStrength"		"19"										// Base strength
-	"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
+	"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"16"										// Base intelligence
 	"AttributeIntelligenceGain"	"1.7"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"25"										// Base agility

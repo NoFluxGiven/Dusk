@@ -1,0 +1,86 @@
+Abilities:
+  ptomely_astralise:
+    data:
+      Description: The targeted unit has its soul removed from its body, dealing damage
+        to enemies, and emitting pulses that heal allies and damage enemies. Deals
+        damage based on a percentage of the target's Intelligence. Heals for half
+        the amount.
+      Note0: There is a 0.5s delay before pulses start.
+      damage: 'DAMAGE:'
+      duration: 'DURATION:'
+      interval: 'PULSE INTERVAL:'
+      pulse_damage: '%INT TO DAMAGE (PULSE):'
+      radius: 'RADIUS:'
+    modifiers:
+      astralise:
+      - Astralise
+      - Stunned, taking no Magical damage, and healing/damaging in an AoE based on
+        Intelligence.
+    name: Astralise
+  ptomely_enthrall:
+    data:
+      Description: The targeted unit is afflicted with a powerful enchantment that
+        lowers their Magic Resistance and converts all Physical damage taken to Magical
+        damage before reductions. If the Physical damage would be negated absolutely
+        (such as if the unit is Ethereal, or with Phantasm's Shadowstep), the effect
+        does not function.
+      duration: 'DURATION:'
+      magic_resistance_reduction: '%MAGIC RESISTANCE REDUCTION:'
+      magic_resistance_reduction_ally: '%MAGIC RESISTANCE REDUCTION (ALLY):'
+    modifiers:
+      enthrall:
+      - Enthralled
+      - Converting all Physical damage to Magical damage.
+    name: Enthrall
+  ptomely_expunge:
+    data:
+      Description: Drains a base amount plus a portion of current Mana out of the
+        target unit, slowing them and creating an orb of energy above them. After
+        a short delay, the orb explodes, dealing Magical damage equivalent to the
+        amount drained, and restoring Mana to nearby allies equal to half of the amount
+        drained. The damage cannot go below a minimum amount.\n\nUpgradable by Aghanim's
+        Scepter.
+      aghanim_Description: Causes the spell to drain a percentage of the target's
+        Max Mana as well as their Current Mana.
+      base_drain: 'BASE MANA DRAIN:'
+      mana_drain: '%CURRENT MANA DRAIN:'
+      radius: 'RADIUS:'
+      scepter_mana_drain: '%SCEPTER MAX MANA DRAIN:'
+      slow: 'SLOW:'
+    modifiers:
+      expunge:
+      - Expunge
+      - Mana is being drained!
+    name: Expunge
+  ptomely_mirror_blade:
+    data:
+      Description: Fires multiple blades of pure energy towards the target location,
+        dealing Physical damage based upon Ptomely's Intelligence.
+      blades: 'BLADES:'
+      damage: 'DAMAGE PER INT:'
+      radius: 'HIT RADIUS:'
+      range: 'RANGE:'
+    modifiers: {}
+    name: Mirror Blade
+  special_bonus_ptomely_1:
+    data: {}
+    modifiers: {}
+    name: +10% Enthrall Magic Res Reduction
+  special_bonus_ptomely_2:
+    data: {}
+    modifiers: {}
+    name: +2 Mirror Blades
+  special_bonus_ptomely_3:
+    data: {}
+    modifiers: {}
+    name: +2s Astralise Duration
+Hero:
+  data:
+    bio: ''
+    hype: A master of late-game damage output, Ptolemy is a deadly scaling Intelligence
+      core that can fire blades of light (Mirror Blade), convert Physical damage to
+      Magical damage (Enthrall), force the target's soul out of their body (Astralise),
+      and turn their Mana pool into a bomb (Expunge).
+  modref: npc_dota_hero_ptomely
+  name: Ptolemy
+  ref: npc_dota_hero_leshrac

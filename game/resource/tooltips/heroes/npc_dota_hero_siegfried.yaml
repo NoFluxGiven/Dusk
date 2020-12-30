@@ -1,0 +1,75 @@
+Abilities:
+  siegfried_eon_shield:
+    data:
+      Description: Siegfried tosses his ancient shield in the target direction, dealing
+        %proj_damage% damage to enemies hit on the way. When it arrives, after a %delay%
+        second delay, it deals %area_damage% and roots enemies in it for %root% seconds.
+      proj_radius: 'PROJ RADIUS:'
+      radius: 'RADIUS:'
+      speed: 'SPEED:'
+    modifiers:
+      eon_shield_slow:
+      - Eon Shield
+      - Turn rate, movement speed and attack speed are slowed.
+    name: Eon Shield
+  siegfried_epochs_protection:
+    data:
+      Description: When Siegfried casts a Spell, Epoch grants him a shard of his protective
+        energies, blessing him with Magic Immunity for a short time.
+      duration: 'DURATION:'
+    modifiers:
+      epochs_protection_immunity:
+      - Epoch's Protection
+      - Magic Immune for a short time after casting a Spell.
+    name: Epoch's Protection
+  siegfried_heaven_sent:
+    data:
+      Description: Siegfried appears at the location of the target ally, rendering
+        them invulnerable and untargetable, but unable to perform actions. After %duration%
+        seconds, he returns to the location he cast the Spell from. Globally targetable.\n\nUpgradable
+        by Aghanim's Scepter.
+      aghanim_Description: Drastically increases Siegfried and his ally's Health Regen
+        for the duration.
+      scepter_health_regen: 'SCEPTER HEALTH REGEN:'
+    modifiers:
+      heaven_sent_caster:
+      - Heaven Sent
+      - Returning to the cast location when this expires.
+    name: Heaven Sent
+  siegfried_hell_bent:
+    data:
+      Description: Siegfried sacrifices %health_reduction%%% of his current Health
+        to use the Demonfire forged into his soul and enter a frenzy, forcing himself
+        to attack the target enemy for a short time. He gains bonus attack speed and
+        bonus movespeed, alongside taking %damage_reduction%%% reduced damage.
+      attack_speed: 'ATTACK SPEED:'
+      duration: 'DURATION:'
+      movespeed: 'MOVESPEED:'
+    modifiers:
+      hell_bent:
+      - Hell Bent
+      - Being forced to attack the target you chose, but taking less damage
+        and gaining movement speed and attack speed.
+    name: Hell Bent
+  special_bonus_siegfried_1:
+    data:
+      Description: Applies on creating a new buff, not on refreshing an existing one.
+    modifiers: {}
+    name: Epoch's Protection Basic Dispel
+  special_bonus_siegfried_2:
+    data: {}
+    modifiers: {}
+    name: +100 Eon Shield Radius
+  special_bonus_siegfried_3:
+    data: {}
+    modifiers: {}
+    name: +150 Hell Bent Attack Speed
+  special_bonus_siegfried_4:
+    data: {}
+    modifiers: {}
+    name: +2s Epoch's Protection
+Hero:
+  data: {}
+  modref: npc_dota_hero_siegfried
+  name: ''
+  ref: npc_dota_hero_siegfried

@@ -1,5 +1,5 @@
 -- This is the primary duskdota duskdota script and should be used to assist in initializing your game mode
-DUSKDOTA_VERSION = "2.10"
+DUSKDOTA_VERSION = "2.14"
 
 -- Set this to true if you want to see a complete debug output of all events/processes done by duskdota
 -- You can also change the cvar 'duskdota_spew' at any time to 1 or 0 for output/no output
@@ -66,8 +66,6 @@ require('events')
 
 require('addon_init')
 
-PrintTable(TALENTS)
-
 
 -- This is a detailed example of many of the containers.lua possibilities, but only activates if you use the provided "playground" map
 if GetMapName() == "playground" then
@@ -131,9 +129,58 @@ function duskDota:OnFirstPlayerLoaded()
 
   populateHeroIDS()
 
-  populateLearnValues()
+  --populateLearnValues()
 
-  populateSkillValues()
+  --populateSkillValues()
+
+  local ABILITY_KV = LoadKeyValues("scripts/npc/npc_abilities_custom.txt")
+
+  local TALENTS = {}
+  for k,v in pairs(ABILITY_KV) do
+    if string.find(k,"special_bonus") then
+      local talent = v
+      if not TALENTS[k] then
+        TALENTS[k] = {} --{learned=false}
+      end
+      for K,V in pairs(talent.AbilitySpecial) do
+        -- print("["..k.."] ".."AbilitySpecial Index: "..K)
+        for KK,VV in pairs(V) do
+          if KK ~= "var_type" and KK ~= "LinkedSpecialBonus" then
+            TALENTS[k][KK] = VV
+          end
+        end
+      end
+    end
+  end
+
+  --PrintTable(TALENTS)
+
+  -- Insert the data from the Talents table into a custom nettable
+  print("[NETTABLES] Populating Nettable with Talent Data:")
+  for k,v in pairs(TALENTS) do
+    local talent_name = k
+    local talent_values = v
+
+    local talent_string = ""
+
+    for kk,vv in pairs(talent_values) do
+      if not kk then kk = "{NIL}" end
+      if not vv then vv = "{NIL}" end
+      talent_string = talent_string .. "( " .. kk .. " : " .. vv .. " ), "
+    end
+
+    if talent_name then
+      CustomNetTables:SetTableValue("talent_data", talent_name, talent_values)
+
+      if talent_values == nil then
+        print("  [!!] "..talent_name.." : {NIL}")
+      else
+        print("  "..talent_name.." : "..talent_string)
+      end
+    else
+      print("  [!!] Talent has no key.")
+    end
+  end
 
   --LinkLuaModifier("modifier_soul_vial_damage_lua","libraries/modifiers/modifier_soul_vial_damage_lua.lua",LUA_MODIFIER_MOTION_NONE)
   -- LinkLuaModifier("modifier_shopkeeper_always_show","libraries/modifiers/modifier_shopkeeper_always_show.lua",LUA_MODIFIER_MOTION_NONE)

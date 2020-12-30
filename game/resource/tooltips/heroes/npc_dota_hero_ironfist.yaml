@@ -1,0 +1,176 @@
+Abilities:
+  ironfist_boulder_throw:
+    data:
+      Description: Ironfist tosses the target enemy behind him. When they land, they
+        are stunned and damaged.
+      damage: 'DAMAGE:'
+      distance: 'DISTANCE:'
+      stun: 'STUN:'
+    modifiers:
+      boulder_throw:
+      - Boulder Throw
+      - Wheee!!
+    name: Boulder Throw
+  ironfist_change_stance:
+    data:
+      Description: Change between different Stances.\n\nUpgradable by Aghanim's Scepter.
+      aghanim_Description: Removes cooldown.
+      lore: The Lost One's training turns weakness to strength.
+    modifiers: {}
+    name: Change Stance
+  ironfist_dragon_fist:
+    data:
+      Description: Ironfist strikes the target with the fist of the Dragon, dealing
+        massive Physical damage and stunning them.
+      damage: 'DAMAGE:'
+      stun: 'STUN:'
+    modifiers: {}
+    name: Dragon Fist
+  ironfist_dragon_stance:
+    data:
+      Description: Focuses on dealing damage and fighting prowess. Can counter attacks,
+        and strike with extreme damage.
+    modifiers: {}
+    name: Dragon Stance
+  ironfist_focus:
+    data:
+      Description: Ironfist focuses while he is not attacking or casting Spells, increasing
+        the efficacy of his fighting abilities. Stacks of Focus grant different bonuses
+        depending on the Stance he is in, and accumulate at a set rate. Casting a
+        Spell will consume all stacks, whereas attacking will consume 1 stack, and
+        prevent it from ticking up for a short time.\nRegardless of what Stance he
+        is in, casting a Spell will cause its cooldown to be reduced based on the
+        amounts of Focus stacks he has.\n\nUpgradable by Aghanim's Scepter.
+      aghanim_Description: Increases the Focus stack maximum and reduces the interval.
+      blue: Blue Focus
+      blue_aghanim_description: This ability goes on cooldown only when all three
+        focii are cast.
+      blue_description: Places a focus on the target enemy, causing their weakpoint
+        to be exposed.  Attacks targeting them will reduce their Intelligence and
+        burn their mana.  If Ironfist hits a target with a blue Focus, he will gain
+        the mana burned as well.\n\nUpgradable by Aghanim's Scepter.
+      blue_duration: 'DURATION:'
+      blue_int_red: 'INTELLIGENCE REDUCTION:'
+      blue_mana_burn: 'MANA BURN:'
+      dragon_damage: 'DAMAGE (DRAGON STANCE):'
+      gale_evasion: 'EVASION (GALE STANCE):'
+      gale_movespeed: 'MOVESPEED (GALE STANCE):'
+      green: Green Focus
+      green_aghanim_description: This ability goes on cooldown only when all three
+        focii are cast.
+      green_agi_red: 'AGILITY REDUCTION:'
+      green_bonus_as: 'BONUS ATTACK SPEED:'
+      green_description: Places a focus on the target enemy, causing their weakpoint
+        to be exposed.  Attacks targeting them will reduce their Agility and movespeed.  If
+        Ironfist hits a target with a green Focus, he will gain bonus attack speed
+        for a short time.\n\nUpgradable by Aghanim's Scepter.
+      green_duration: 'DURATION:'
+      green_speed_red: 'SPEED REDUCTION:'
+      interval: 'INTERVAL:'
+      max_stack: 'MAX STACK:'
+      red: Red Focus
+      red_aghanim_description: This ability goes on cooldown only when all three focii
+        are cast.
+      red_armor_red: 'ARMOR REDUCTION:'
+      red_bonus_damage: 'BONUS DAMAGE:'
+      red_description: Places a focus on the target enemy, causing their weakpoint
+        to be exposed.  Attacks targeting them will reduce their Strength and Armor.  If
+        Ironfist hits a target with a red Focus, he will gain bonus damage for a short
+        time.\n\nUpgradable by Aghanim's Scepter.
+      red_duration: 'DURATION:'
+      red_str_red: 'STRENGTH REDUCTION:'
+      reduction: '%COOLDOWN REDUCTION (ALL STANCES):'
+      scepter_interval: 'SCEPTER INTERVAL:'
+      scepter_max_stack: 'SCEPTER MAX STACK:'
+      stonewall_armor: 'ARMOR (STONEWALL STANCE):'
+      stonewall_regen: 'REGEN (STONEWALL STANCE):'
+    modifiers:
+      crystal_focus_prismancy:
+      - Prismancy
+      - The next non-Ultimate Spell you cast will have its cooldown refreshed, and
+        you'll lose a percentage of your current Mana.
+      focus:
+      - Focus
+      - Gaining bonuses depending on what Stance we're in.
+    name: Focus
+  ironfist_gale_stance:
+    data:
+      description: Focuses on avoiding attacks, and moving quickly around opponents.
+        Can slow enemies with a dash attack, and attack extremely fast for a short
+        time.
+    modifiers: {}
+    name: Gale Stance
+  ironfist_lightning_strike:
+    data:
+      Description: Ironfist strikes extremely fast for a number of attacks, reducing
+        his BAT and increasing his attack speed.
+      attacks: 'ATTACKS:'
+      bat: 'BASE ATTACK TIME:'
+      bonus_attack_speed: 'BONUS ATTACK SPEED:'
+      duration: 'DURATION:'
+    modifiers:
+      lightning_strike:
+      - Lightning Strike
+      - Attacking very fast!
+    name: Lightning Strike
+  ironfist_quake:
+    data:
+      delay: 'DELAY:'
+      description: Ironfist creates blasts of energy to fissure the ground beneath
+        him, dealing damage multiple times.  Expands by the radius times the number
+        of hits.  If 3 or more instances hit a target, they are stunned.
+      hits: 'HITS:'
+      radius: 'RADIUS:'
+      stun: 'STUN:'
+    modifiers: {}
+    name: Quake
+  ironfist_reversal:
+    data:
+      counter_time: 'COUNTER TIME:'
+      damage: '%DAMAGE:'
+      description: With some concentration it's possible to turn your opponent's strikes
+        against them. Deals damage based on the attack's damage and stuns the attacker.
+        If timed perfectly, deals more damage and stuns for longer.
+      perfect_damage: '%PERFECT DAMAGE:'
+      perfect_time: 'PERFECT TIME:'
+      reduction: '%REDUCTION:'
+      stun: 'STUN:'
+    modifiers:
+      reversal:
+      - Reversal
+      - COUNTER COUNTER!
+    name: Reversal
+  ironfist_stonewall_stance:
+    data:
+      description: Focuses on withstanding attacks, and controlling enemies. Can stun
+        and deal Magical damage, and displace enemy positions.
+    modifiers: {}
+    name: Stonewall Stance
+  ironfist_typhoon:
+    data:
+      description: Ironfist dashes forward, dealing damage and slowing those in his
+        way.
+      duration: 'DASH DURATION:'
+      radius: 'LINE RADIUS:'
+      slow: '%SLOW:'
+      slow_duration: 'SLOW DURATION:'
+    modifiers:
+      typhoon_slow:
+      - Typhoon
+      - Being slowed.
+    name: Typhoon
+Hero:
+  data:
+    bio: White, pockmarked knuckles gripped the wooden frame. A glint in the dark;
+      eyes darting to and fro, surveying their surroundings carefully for any sign
+      of movement. A moment later, the figure slipped into the shadows of the room,
+      the door closing gently behind him. Many had come to seek the Lost One, to destroy
+      him and the twisted reality he represented. This man, however, was different.
+      He sought more than simple destruction. He wished to learn the Lost One's ways,
+      and become powerful. So was born the Ironfist; master of every method of fighting.
+    hype: 'Master of many arts, Ironfist is a powerful adversary. Equipped with three
+      sets of skills that he can switch between, and three modes: tank, high damage
+      or speed, Ironfist is capable of adapting to most situations very quickly.'
+  modref: npc_dota_hero_ironfist
+  name: Ironfist
+  ref: npc_dota_hero_dark_seer

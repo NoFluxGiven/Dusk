@@ -88,12 +88,12 @@
 		"09"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"slow" 				"25"
+			"slow" 				"30"
 		}
 		"10"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"magic_res_reduction" "20"
+			"magic_res_reduction" "30"
 		}
 	}
 }

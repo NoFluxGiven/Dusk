@@ -6,17 +6,15 @@
 	"Role"					"Carry"
 	"Rolelevels"			"3"
 	"Complexity"			"1"
-	"Ability1"				"fury_roar" // Fury unleashes a roar in the target direction, granting him bonus movespeed, damage and attack speed for each unit hit, and slowing and damaging the units affected.
-	// Grants per Hero:
-	// 2/3/4/5% movespeed
-	// 10/15/20/25 attack speed
-	// Grants per non-Hero unit:
-	// 0.3/0.4/0.5/0.6% movespeed
-	// 2/3/4/5 attack speed
-
-	// Deals 75/125/175/225 damage.
-	// Slows by 10/15/20/25% for 4s.
+	"Ability1"				"fury_roar" // 
+	// Fury unleashes a roar in the target direction, dealing Physical
+	// damage equal to a multiplier of his attack damage, and slowing
+	// enemies caught in the cone.
 	"Ability2"				"fury_rend"
+	// Fury's attacks tear through his opponent's defenses.
+	// Each attack causes the opponent to take 2/3/4/5% damage.
+	// Each stack fully refreshes the buff duration.
+	// Lasts 6s.
 	"Ability3"				"fury_bloodsport"
 	"Ability4"				"generic_hidden" //Automatically levelled to 1 when the character is picked.
 	"Ability5"				"generic_hidden"
@@ -27,11 +25,11 @@
 	"Ability10"				"special_bonus_attack_speed_20" // 
 	"Ability11"				"special_bonus_fury_1" // +14% Roar Slow
 	"Ability12"				"special_bonus_lifesteal_10" // 
-	"Ability13"				"special_bonus_fury_2" // +20 Rend HP Removal
+	"Ability13"				"special_bonus_fury_2" // +2% Rend Bonus Damage
 	"Ability14"				"special_bonus_armor_9" // 
 	"Ability15"				"special_bonus_strength_14" //
-	"Ability16"				"special_bonus_fury_3" // Berserk Grants Magic Immunity
-	"Ability17"				"special_bonus_fury_4" // +3s Berserk Duration
+	"Ability16"				"special_bonus_fury_3" // Roar 1s Stun
+	"Ability17"				"special_bonus_fury_4" // -0.3s Bloodsport Interval
 
 	"ArmorPhysical"				"2"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).

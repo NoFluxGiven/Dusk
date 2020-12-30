@@ -1,6 +1,17 @@
 //=====================================================================================================
 // SHARD_MAGUS: Icicle_barrage
 //=====================================================================================================
+
+///@changelog
+///@version 2.2
+///@hero Shard Magus
+///@ability Icicle Barrage
+///@changes #
+/// Increased cooldown to 16s from 10s.
+/// Increased icicle damage to 25 from 20.
+/// Increased number of icicles to 10/20/30/40 from 8/16/24/32.
+/// Reduced icicle range to 1200 from 1400.
+
 "shard_magus_icicle_barrage"
 {
 	// General
@@ -23,7 +34,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"10"
+	"AbilityCooldown"				"16"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -45,12 +56,12 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"icicles"					"15 20 25 30"
+			"icicles"					"10 20 30 40"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"20"
+			"damage"					"25"
 		}
 		"04"
 		{
@@ -60,7 +71,7 @@
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"range"						"1400" // total
+			"range"						"1200" // total
 		}
 		"06"
 		{

@@ -1,6 +1,16 @@
 //=====================================================================================================
 // SET: scarab_curse
 //=====================================================================================================
+
+///@changelog
+///@version 2.2
+///@hero Set
+///@ability Scarab Curse
+///@changes #
+/// Increased base damage to 15/20/25/30.
+/// Increased damage steal to 12/20/28/36%.
+/// The total damage stolen is now the base damage steal plus the percentage damage steal.
+
 "set_scarab_curse"
 {
 	// General
@@ -33,12 +43,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"base_damage" 			"10 15 20 25"
+			"base_damage" 			"15 20 25 30"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"percent_damage_reduction" "15"
+			"percent_damage_reduction" "12 20 28 36"
 		}
 		"03"
 		{

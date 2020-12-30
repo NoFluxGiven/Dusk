@@ -1,0 +1,88 @@
+Abilities:
+
+  vessa_windfall:
+    data:
+      Description: >-
+        Vessa pulls nearby enemies towards her, then summons a 
+        tornado that damages enemies constantly in a small radius. <b>Imbues WIND</b>.
+      Note0: 
+      initial_damage: '*'
+      damage_per_second: '*'
+      pull_radius: '*'
+      tornado_radius: '*'
+    modifiers: null
+    name: Windfall
+
+  vessa_stone_wall:
+    data:
+      Description: >-
+        Vessa unleashes the power of earth, slamming the ground to create a wall perpendicular
+        to her facing direction. The wall lifts, stuns and damages enemies upon formation, and prevents movement
+        through it for %wall_duration% seconds. <b>Imbues EARTH</b>.
+      damage: '*'
+      distance: '*'
+      duration: '*'
+    modifiers: null
+    name: Stone Wall
+
+  vessa_sleet_wave:
+    data:
+      Description: >-
+        Vessa unleashes a cone of freezing magic in the target direction, slowing and damaging enemies in the effect area. <b>Imbues ICE</b>.
+      radius: '*'
+      damage: '*'
+      slow_duration: '*'
+      icy_ground_duration: '*'
+      icy_ground_slow: '*'
+    modifiers: {}
+    name: Sleet Wave
+
+  vessa_imbue:
+    data:
+      Description: >-
+        Vessa casts unique magic based on the element of the last Spell she cast. 
+        <b>FIRE</b> shoots %fire_projectile_count% bolts of flame at random nearby enemies with a slight delay between them. The bolts deal %fire_damage% Magical damage,
+        and apply a stacking %fire_dps% Magical damage per second debuff.
+        <b>EARTH</b> has Vessa stomp the ground, dealing %earth_damage% Magical damage, stunning nearby enemies for %stun% seconds,
+        and reducing Physical damage she takes by %earth_damage_reduction%%% for each enemy hit in the %earth_radius% radius.
+        <b>ICE</b> surrounds Vessa in freezing air, rocketing her in her facing direction. The first enemy she runs into is frozen for %ice_stun%,
+        and takes %ice_physical_damage_increase%%% more Physical damage. After %ice_shatter_attacks% attacks, they shatter, taking %ice_shatter_damage% Magical damage.
+        <b>WIND</b> lifts Vessa into the air, allowing her Flying movement and %wind_movespeed%%% bonus movement speed for a short time. After a %wind_delay% second delay, she lands,
+        creating a gust that deals %wind_damage% Magical damage, knocks nearby enemies away by %wind_knockback% units and disjoints projectiles in a %wind_radius% radius.
+      fire_projectile_count: "*"
+      fire_damage: "*"
+      fire_dps: "*"
+      earth_damage: "*"
+      earth_damage_reduction: "*"
+      earth_stun: "*"
+      earth_radius: "*"
+      ice_physical_damage_increase: "*"
+      ice_shatter_attacks: "*"
+      ice_shatter_damage: "*"
+      wind_movespeed: "*"
+      wind_delay: "*"
+      wind_damage: "*"
+      wind_knockback: "*"
+      wind_radius: "*"
+    modifiers: {}
+    name: Sleet Wave
+
+  vessa_inferno:
+    data:
+      Description: Vessa creates a blast of flame that ignites nearby enemies. Following this, a ring of fire forms at the outer radius, dealing
+        damage over time to enemies caught in its effect radius.
+    modifiers:
+    name: Inferno
+
+Hero:
+  data:
+    bio: ''
+    hype: A combo-oriented Hero, Vessa's Spells are powerful and versatile, with the ability to augment the last Spell cast with her signature
+      Imbue. A typical combo of Vessa's involves using <i>Windfall</i> to drag enemies in, then <i>Imbue</i> to cast <i>Aerial Strike (AIR)</i>,
+      <i>Stonewall</i> to stun them and add some damage into
+      the mix, <i>Sleet Wave</i> to deal more damage and slow them, and she finishes with <i>Inferno</i>
+      as she lands from <i>Imbue's Aerial Strike</i>, landing them square in the spinning fire ring and dealing
+      massive damage.
+  modref: npc_dota_hero_vessa
+  name: vessa
+  ref: npc_dota_hero_templar_assassin

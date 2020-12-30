@@ -1,10 +1,27 @@
 "gob_squad_clearance_sale"
+
+///@changelog
+///@version 2.2
+///@hero Gob Squad
+///@ability Clearance Sale
+///@changes #
+/// Removed Aghanim's Upgrade.
+/// Clearance Sale bombs no longer damage Gob Squad.
+/// Made it immediate cast.
+/// Added the giant bomb to the regular ability; it deals 400/500/600 damage in a 600 radius.
+/// Bomb explosion radius increased to 350.
+/// Bomb damage increased to 275/390/505.
+/// Interval increased to 1.00s per bomb.
+/// Slow now scales with level (20/40/60%).
+/// Stun duration increased to 0.50/0.75/1.00.
+/// Duration reduced to 8s.
+
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"				"ability_lua"
 	"ScriptFile"			"lua/abilities/gob_squad_clearance_sale"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
@@ -42,7 +59,7 @@
 
 	// Damage.
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"100 150 200"
+	"AbilityDamage"					"275 390 505"
 	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -55,37 +72,42 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"				"300"
+			"radius"				"350"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"10"
+			"duration"				"8"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"slow"					"-20"
+			"slow"					"-50 -75 -100"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow_duration"			"2.00"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"interval"				"0.4"
+			"interval"				"1.00"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"interval_scepter"		"0.3"
+			"stun"					"0.5 0.75 1.00"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"scepter_end_bomb_damage"		"300 450 600"
+			"end_bomb_radius"		"600"
 		}
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"scepter_end_bomb_radius"		"1000"
+			"end_bomb_damage"		"400 500 600"
 		}
 	}
 

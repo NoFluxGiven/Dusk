@@ -1,0 +1,80 @@
+Abilities:
+  hawkeye_detonator_dart:
+    data:
+      Note0: If the unit dies, the explosion occurs regardless of the countdown.
+      Note1: Detonator Dart debuffs stack fully, unless the debuffs are being applied
+        through Hawkeye's Talent, in which case it will not apply another debuff if
+        one already exists on the unit.
+      damage: 'EXPLOSION DAMAGE:'
+      description: Hawkeye pins an enemy with one of his powerful explosive devices.  After
+        a short delay, the unit explodes, dealing large damage in a significant area.
+      duration: 'DELAY:'
+      initial_damage: 'INITIAL DAMAGE:'
+    modifiers:
+      detonator_dart:
+      - Detonator Dart
+      - ''
+    name: Detonator Dart
+  hawkeye_hit_n_run:
+    data:
+      Note0: Does not interrupt channelled abilities.
+      description: With a spring in his step, Hawkeye leaps out of harms way using
+        the explosive soles on his boots.  Leaves behind an area of damaging and slowing
+        shrapnel to deter his more eager foes.
+      slow: '%SLOW:'
+    modifiers:
+      hit_n_run_slow:
+      - Hit 'n' Run
+      - ''
+    name: Hit 'n' Run
+  hawkeye_ricochet:
+    data:
+      Note0: Issues an attack order on the targeted unit.
+      damage_reduction: '%DAMAGE REDUCTION:'
+      description: Fires multiple shots in succession at the target unit.  This ability
+        preserves UAMs, attack effects, procs, and crits. Reduces the damage by a
+        percentage.
+      hits: 'SHOTS:'
+    modifiers: {}
+    name: Rapidfire
+  hawkeye_snipe:
+    data:
+      Description: Hawkeye focuses, gaining true strike, bonus attack range, bonus
+        damage and vision of attacked targets for a number of attacks, but his movement
+        slows to a crawl.
+      Note0: The vision of attack targets lasts for 1.75s.
+      attack_range_bonus: 'BONUS ATTACK RANGE:'
+      attacks: 'ATTACKS:'
+      damage_bonus: 'BONUS ATTACK DAMAGE:'
+      duration: 'DURATION:'
+      movespeed: 'MOVESPEED:'
+    modifiers:
+      snipe_caster:
+      - Snipe
+      - Gaining bonus attack range, damage, true strike, and vision of targets attacked
+        for a number of attacks.
+      snipe_vision:
+      - Snipe
+      - Hawkeye sees you clearly.
+    name: Snipe
+  special_bonus_hawkeye_1:
+    data: {}
+    modifiers: {}
+    name: +40 Hit 'n' Run Damage Over Time
+  special_bonus_hawkeye_2:
+    data: {}
+    modifiers: {}
+    name: 2 More Rapidfire Shots
+  special_bonus_hawkeye_3:
+    data: {}
+    modifiers: {}
+    name: Snipe Attacks Apply Detonator Dart
+  special_bonus_hawkeye_4:
+    data: {}
+    modifiers: {}
+    name: +600 Snipe Attack Range
+Hero:
+  data: {}
+  modref: npc_dota_hero_hawkeye
+  name: ''
+  ref: right

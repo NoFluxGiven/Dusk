@@ -42,7 +42,7 @@
 	"AttributeBaseStrength"		"22"										// Base strength
 	"AttributeStrengthGain"		"2.9"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"14"										// Base intelligence
-	"AttributeIntelligenceGain"	"1.7"										// Intelligence bonus per level.
+	"AttributeIntelligenceGain"	"2.2"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"15"										// Base agility
 	"AttributeAgilityGain"		"2.1"										// Agility bonus per level.
 

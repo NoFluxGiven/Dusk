@@ -38,6 +38,11 @@ function shard_magus_glacial_impact:OnSpellStart()
 		if not v:IsMagicImmune() then
 			self:InflictDamage(v,self:GetCaster(),damage,DAMAGE_TYPE_MAGICAL)
 			v:AddNewModifier(self:GetCaster(), nil, "modifier_stunned", {Duration=duration})
+
+			if v:GetHealthPercent() <= self:GetSpecialValueFor("shatter_threshold") and v:IsRealHero() then
+				v:Kill(self, self:GetCaster())
+				v:EmitSound("Alroth.Shatter")
+			end
 		end
 	end
 

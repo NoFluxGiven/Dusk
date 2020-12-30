@@ -33,7 +33,7 @@
 	// The mines are fired in 0.4s intervals, and explode after 1s. They are visible to enemies, but the targets are not.
 	// Deals 40/60/80/100 damage per mine, allowing a total of 120/240/400/600 damage.
 
-	"ArmorPhysical"				"1"									// Physical protection.
+	"ArmorPhysical"				"4"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"

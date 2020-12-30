@@ -1,4 +1,19 @@
 "gob_squad_rocket_blast"
+
+///@changelog
+///@version 2.2
+///@hero Gob Squad
+///@ability Rocket Blast
+///@changes #
+/// No longer applies a slow.
+/// Gob Squad now has a 25% chance to ride the rocket towards its target on the next cast (displayed in the ability icon).
+/// Increased cooldown to 9.5s.
+/// Increased Mana cost to 95 at all levels (was 60/75/90/105).
+/// Reduced damage to 100/175/250/325.
+/// Reduced range to 1100.
+/// Reduced projectile speed to 1000.
+/// Reduced cast point to 0.25s (was 0.4s).
+
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
@@ -26,20 +41,20 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1600"
-	"AbilityCastPoint"				"0.40"
+	"AbilityCastRange"				"1100"
+	"AbilityCastPoint"				"0.25"
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"8.0 7.5 7.0 6.5"
+	"AbilityCooldown"				"9.5"
 
 	// Damage.
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"125 200 275 350"
+	"AbilityDamage"					"100 175 250 325"
 	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"60 75 90 105"
+	"AbilityManaCost"				"95"
 	
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
@@ -58,32 +73,27 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"range"					"1600"
+			"range"					"1100"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"speed"					"1200"
+			"speed"					"1000"
 		}
 		"05"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"slow"					"-50"
+			"var_type"				"FIELD_FLOAT"
+			"radius"				"225"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow_duration"			"1.40 1.80 2.20 2.60"
+			"projectile_speed"		"1000"
 		}
 		"07"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"radius"				"300"
-		}
-		"08"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"projectile_speed"		"1000"
+			"var_type"				"FIELD_INTEGER"
+			"ride_chance"			"25"
 		}
 	}
 

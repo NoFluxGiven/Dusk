@@ -6,24 +6,38 @@
 	"Role"					"Support"
 	"Rolelevels"			"3"
 	"Complexity"			"3"
-	"Ability1"				"fate_displace" // Decreases damage the target takes by 30/40/50/60% for 5s, then heals them for 125/150/175/200% of the HP they lost over the next 5s.
-	"Ability2"				"fate_chains_of_fate" // Places a powerful enchantment on the target enemy. When any unit within a large radius takes damage, the enchanted unit receives a portion of that damage as Magical.
-	"Ability3"				"fate_realign" // Fate heals nearby allies and damages nearby enemies.
+	"Ability1"				"fate_displace" // Renders the target ally untargetable, completely attack immune,
+	// and totally unselectable.
+	// The affected ally can still make attacks, cast spells and use items.
+	"Ability2"				"fate_chains_of_fate" // The target enemy is rooted after a short delay.
+	// All enemies around the rooted target are Silenced and take damage over time for the root duration.
+	// At the end of the root duration, the target emanates a wave of energy that slows and Silences
+	// for a further duration.
+	// 0.75s delay.
+	// Lasts 1.5/2.0/2.5/3.0s.
+	// Deals 20/40/60/80 damage per second in 0.5s intervals (30/80/150/240 damage).
+	// 350 radius.
+	// At the end of the duration, all enemies in the radius are Silenced and
+	// slowed by 15/20/25/30% for 3s, excluding the main target.
+	"Ability3"				"fate_realign" // Fate damages nearby enemies.
+	// Deals 75/150/225/300 damage.
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
-	"Ability6"				"fate_ancestral_recall" // After a 2s charge, grants the target ancient knowledge, instantly restoring a percentage of their maximum Health and Mana, purging debuffs, and giving them bonus stats as if they were 8/14/20 levels higher.
-	// Lasts 10s.
+	"Ability6"				"fate_defiance" // Fate defies the destiny of all Heroes on the map,
+	// preventing their Health from dropping below 1. At the end of the duration, enemies are slowed
+	// by 30/40/50% for 2s.
+	// Lasts 4.5s.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
 	"Ability10"				"special_bonus_movement_speed_15" // 
 	"Ability11"				"special_bonus_fate_1" // +1s Displace Duration
-	"Ability12"				"special_bonus_intelligence_8" //
-	"Ability13"				"special_bonus_fate_2" // +7s Chains of Fate Duration
-	"Ability14"				"special_bonus_attack_damage_40" // 
-	"Ability15"				"special_bonus_fate_3" // +60 Realign Damage/Heal
-	"Ability16"				"special_bonus_fate_4" // +20% Ancestral Recall Restore
-	"Ability17"				"special_bonus_spell_amplify_25" //
+	"Ability12"				"special_bonus_attack_damage_40" //
+	"Ability13"				"" // 
+	"Ability14"				"" // 
+	"Ability15"				"special_bonus_fate_2" // Chains of Fate 
+	"Ability16"				"special_bonus_fate_3" // 
+	"Ability17"				"special_bonus_fate_4" // +300 Realign Heal/Damage
 
 	"ArmorPhysical"				"2"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -36,7 +50,7 @@
 
 	//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
 	"AttributeBaseStrength"		"14"										// Base strength
-	"AttributeStrengthGain"		"1.0"										// Strength bonus per level.
+	"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"35"										// Base intelligence
 	"AttributeIntelligenceGain"	"3.2"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"10"										// Base agility

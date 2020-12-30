@@ -2,15 +2,43 @@
 {
 	"AbilityLayout" 		"4"
 	"override_hero"			"npc_dota_hero_windrunner"
-	"Ability1"				"apple_strafe" // Apple strafes the target enemy, attacking at 0.6/0.9/1.2/1.5x her attack speed while still being able to move and cast abilities.
-	// The first shot of strafe slows by 80% for 1s, and Apple gains 40% movespeed for the duration.  Lasts 4s.  She is disarmed whilst casting this ability.
-	"Ability2"				"apple_bouncing_arrow" // Apple fires an arrow at the target unit.  The arrow bounces 4 times (including the first hit), exploding on the last bounce.
-	"Ability3"				"apple_natures_blessing" // When Apple is within range of trees, she gains stacks that grant her bonus Armor and Magic Resistance every few seconds.
-	// Each time she would take damage, she loses a stack.  Each stack grants 2/4/6/8 Armor and 2/4/6/8% Magic Resistance with a maximum of 5 stacks.  At full stacks, she is healed instead.
-	// Regains 5/10/15/20 Health every 3s.
-	"Ability4"				"apple_corporeal_mine" // Apple sets a mine that gathers energies from its surrounds.  The longer the mine lays there, the more powerful its explosion will be.
-	// Mines have an activation delay of 0.75s, and when they explode deal up to 300/400/500 Magical damage and heal half that amount to nearby allied units.
-	// A maximum of 5 mines can be placed on the map.
+	"Ability1"				"apple_effigy_of_nature"
+	// Apple creates an effigy of herself that forms over 0.75s.
+	// When it finishes forming, it attacks nearby enemies.
+	// Effigies attack once every 0.8s, die in 2/3/4/5 hits, and last 8s. They grant 25 Gold.
+	// Their attack damage is equal to 30/40/50/60% of Apple's base damage.
+	// Effigies are uncontrollable and cannot move, but can be stunned. They take no damage from
+	// Magical, Physical or Pure sources. Hero attacks deal 100 damage to them, whereas creep attacks
+	// deal 50 damage.
+	// 400 cast range.
+	// 7s cooldown.
+	"Ability2"				"apple_draining_arrow"
+	// Apple fires an arrow at the target unit.
+	// The arrow latches onto the target and drains their Health over time.
+	// After a max duration, or when Apple is over a certain distance threshold, the arrow returns,
+	// restoring her Health based on the amount it drained.
+	// Lasts up to 5s, dealing 3.0% of their current Health + 30/40/50/60 damage per second.
+	// At the end of the duration, or if Apple is more than 800 range away, the arrow returns,
+	// healing her, and granting her a buff that increases her
+	// movespeed based on the amount of Health it drained.
+	// Heals 100% of the Health drained,
+	// and grants 2/4/6/8% movespeed for each second it was latched for 2s.
+	// Deals damage in 0.25s intervals.
+	"Ability3"				"apple_form_of_the_hawk"
+	// Apple uses her Druidic training to morph into a hawk, disjointing projectiles
+	// and gaining bonus movespeed and Flying movement.
+	// She cannot cast Spells, use items, or attack whilst in Hawk form.
+	// Grants 15/30/45/60% movespeed.
+	// Lasts 2.5s.
+	// 7s cooldown.
+	"Ability4"				"apple_arrow_of_gaia"
+	// Apple gains the favour of the earth below,
+	// firing an arrow that travels at extreme speed, dealing massive damage in a line
+	// that reaches across the entire map.
+	// Deals 380/600/820 Magical damage in a line to the edge of the map in a targeted direction.
+	// The arrow travels at 4000 speed.
+	// Has a 1.1s cast time.
+	// 70s cooldown.
 	"Ability5"				""
 	"Ability6"				""
 	"Ability7"				""

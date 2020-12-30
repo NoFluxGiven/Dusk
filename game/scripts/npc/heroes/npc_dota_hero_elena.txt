@@ -49,12 +49,12 @@
 	"AttackDamageMax"			"30"										// Damage range max.
 
 	"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-	"AttributeBaseStrength"		"14"										// Base strength
-	"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
+	"AttributeBaseStrength"		"17"										// Base strength
+	"AttributeStrengthGain"		"1.9"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"26"										// Base intelligence
 	"AttributeIntelligenceGain"	"2.6"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"8"										// Base agility
-	"AttributeAgilityGain"		"0.4"										// Agility bonus per level.
+	"AttributeBaseAgility"		"16"										// Base agility
+	"AttributeAgilityGain"		"2"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.

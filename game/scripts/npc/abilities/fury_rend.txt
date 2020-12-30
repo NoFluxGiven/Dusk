@@ -11,6 +11,15 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityTextureName"			"fury_rend"
+
+	// Tooltips
+	//-------------------------------------------------------------------------------------------------------------
+
+	"Tooltips"
+	{
+		"Description" "Fury tears away the target's defenses as he strikes, increasing the Physical damage they take by %damage_amp%%%."
+
+	}
 			
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -19,7 +28,7 @@
 		"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"reset_time"					"6"
+			"reset_time"					"6" ///@< RESET TIME:
 		}
 		"02"
 		{
@@ -29,8 +38,14 @@
 		"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"max_hp_removal_per_stack"		"8 16 24 32"
+			"damage_amp"					"2 3 4 5"
 			"LinkedSpecialBonus"			"special_bonus_fury_2"
+			"modifiers" {
+				"modifier_fury_damage_amp" {
+					"name" "Rend Damage Amplification"
+					"description" "Taking more damage when being struck by attacks."
+				}
+			}
 		}
 	}
 	

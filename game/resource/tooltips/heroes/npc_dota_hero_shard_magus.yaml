@@ -1,0 +1,94 @@
+Abilities:
+  shard_magus_cryst_whorl:
+    data:
+      Description: The Shard Magus unleashes a blast of chilling magic at the target
+        location. Enemies caught in it take a small amount of damage, and are afflicted
+        with multiple phases of debuffs. Every few seconds, they take damage, and
+        proceed to the next phase. The <b>1st is a grace period</b>, the <b>2nd slows</b>,
+        and the <b>3rd stuns</b>.
+      damage: 'TOTAL DAMAGE:'
+      duration: 'DURATION:'
+      initial_damage: 'INITIAL DAMAGE:'
+      interval: 'TIME BETWEEN DEBUFFS:'
+      phase_duration: 'DEBUFF DURATION:'
+      radius: 'RADIUS:'
+      slow: '%SLOW:'
+    modifiers:
+      cryst_whorl:
+      - Cryst Whorl
+      - Being slowed, then stunned, and taking damage over time through the whole
+        duration.
+    name: Cryst Whorl
+  shard_magus_glacial_impact:
+    data:
+      Description: The Shard Magus creates shards of ice that burst through the ground,
+        stunning and damaging any enemies caught inside the radius.
+      damage: 'DAMAGE:'
+      radius: 'RADIUS:'
+      stun_duration: STUN DURATION
+    modifiers: {}
+    name: Glacial Impact
+  shard_magus_iceheart:
+    data:
+      Description: Whenever the Shard Magus casts a spell, her ensorced heart reacts,
+        surging an icy shockwave forth. The shockwave deals damage, and slows movespeed,
+        attackspeed and turnrate.
+      attack_slow: 'ATTACK SLOW:'
+      damage: 'DAMAGE:'
+      duration: 'DURATION:'
+      movement_slow: '%MOVEMENT SLOW:'
+      radius: 'RADIUS:'
+      range: 'RANGE:'
+      turnrate_slow: '%TURNRATE SLOW:'
+    modifiers:
+      iceheart_slow:
+      - Iceheart
+      - Slowing turnrate, movespeed and attack speed.
+    name: Iceheart
+  shard_magus_icicle_barrage:
+    data:
+      Description: With an incantation lost to time, the Shard Magus summons a turret-like
+        structure before her. After a short delay, the turret begins peppering the
+        area in front of it with myriad icicles. Each icicle deals damage and fully
+        pierces the target.<br/><br/>Upgradable by Aghanim's Scepter.
+      damage: 'DAMAGE:'
+      duration: 'DURATION:'
+      icicles: 'ICICLES:'
+      radius: 'RADIUS:'
+      range: 'RANGE:'
+      scepter_damage: 'SCEPTER DAMAGE:'
+      scepter_slow: 'SCEPTER SLOW:'
+      scepter_slow_duration: 'SCEPTER SLOW DURATION:'
+    modifiers: {}
+    name: Icicle Barrage
+  special_bonus_shard_magus_1:
+    data: {}
+    modifiers: {}
+    name: +60 Cryst Whorl Initial Damage
+  special_bonus_shard_magus_2:
+    data: {}
+    modifiers: {}
+    name: +0.75s Iceheart Debuff Duration
+  special_bonus_shard_magus_3:
+    data: {}
+    modifiers: {}
+    name: Icicle Barrage Icicles Burn 20 Mana
+  special_bonus_shard_magus_4:
+    data: {}
+    modifiers: {}
+    name: -5s Cryst Whorl Cooldown
+  special_bonus_shard_magus_5:
+    data:
+      Description: Against non-building targets, it does the same amount of stun and
+        damage.
+    modifiers: {}
+    name: Glacial Impact Hits Buildings (2x Stun, 0.5x Damage)
+Hero:
+  data:
+    bio: ''
+    hype: The Shard Magus can command powerful ice magic with very little effort.
+      Damage, slow, then stun your enemies with Cryst Whorl, blow them away with a
+      barrage of icicles, and summon a powerful ice Wyrm to aid you in battle.
+  modref: npc_dota_hero_shard_magus
+  name: Shard Magus
+  ref: npc_dota_hero_crystal_maiden

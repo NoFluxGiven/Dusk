@@ -1,46 +1,53 @@
 "npc_dota_hero_phantom_lancer"
 {
 	"AbilityLayout" 		"4"
-	//"override_hero"			"npc_dota_hero_necrolyte"
+	"override_hero"			"npc_dota_hero_phantom_lancer"
 	"HeroSelectSoundEffect"	"Pride.Something"
 	"Role"					"Nuker,Durable"
 	"Rolelevels"			"2,3"
 	"Complexity"			"1"
-	"Ability1"				"pride_elyats_bellow" // Pride stabs his spear into the ground.
-	// After a short delay, a blast of energy appears at the target location dealing damage.
-	// Enemies affected are afflicted with a debuff that causes Pride's attacks to
-	// deal bonus damage.
-	// After a 1s delay, deals 100/150/200/250 damage in a 325 AoE.
-	// Each attack deals 20/30/40/50 bonus Magical damage.
-	// Lasts 6s.
-	// 6s cooldown, 0.5s cast point.
-	"Ability2"				"pride_merciless" // Pride can instantly deal damage to,
+	"Ability1"				"pride_elyats_bellow"
+	
+	"Ability2"				"pride_merciless"
+	// Pride can instantly deal damage to,
 	// and jump to, the last unit he dealt damage to with his attacks.
 	// Deals 40/80/120/160 damage and slows for 25% for 2s.
 	// 5s cooldown.
-	// Must be cast within 5s of attacking a target (applies a debuff).
-	"Ability3"				"pride_lionheart" // Pride's Strength increases
-	// with each strike he makes.
-	// Creeps increase his Strength by 1, while Heroes increase it by 1/2/3/4.
-	// Lasts 20s.
+	// Must be cast within 4s of attacking a target (applies a debuff).
+	"Ability3"				"pride_lionheart"
+	// Pride's bravery knows no bounds, as through his veins courses the blood of Elyat.
+	// Upon activation, grants Pride a buff that
+	// gives him bonus attack speed and damage reduction for each
+	// nearby enemy.
+	// Grants 10/20/30/40 attack speed, 3/5/7/9% movespeed and 4/6/8/10% damage reduction
+	// per enemy in a 600 radius for 10s.
+	// Updates dynamically, and Pride always has 1 Stack. With 5 Heroes in range, he has
+	// 6 stacks.
+	// Does not count enemy illusions.
+	// 35/30/25/20s cooldown.
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
-	"Ability6"				"pride_echospear" // Pride targets an enemy Hero within
-	// a large range. Whenever he attacks, that Hero is attacked as well. If the main target
-	// of his attacks is the same unit, this doesn't work.
-	// Lasts 5s.
-	// 90/60/30s cooldown.
+	"Ability6"				"pride_echospear"
+	// Pride afflicts a powerful hex upon the target enemy, passed down through his bloodline,
+	// that causes damage sources inflicted during its duration to echo multiple times.
+	// At the end of the buff duration, a 30/40/50% portion of the total damage
+	// they received echoes 2/3/4 times,
+	// reducing to 30/40/50% each echo.
+	// There is a 2s delay between each echo.
+	// Initial buff lasts 5s.
+	// Deals Pure damage and pierces Spell Immunity.
+	// 70s cooldown.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				"special_bonus_attack_speed_25" //
-	"Ability11"				"special_bonus_pride_1" // +60 Morbid Blade Damage
-	"Ability12"				"special_bonus_pride_2" // +4s To Dust Duration
+	"Ability10"				"special_bonus_attack_speed_25" // 
+	"Ability11"				"special_bonus_hp_regen_6" // 
+	"Ability12"				"special_bonus_pride_1" // +15% Merciless Slow
 	"Ability13"				"special_bonus_hp_225" // 
-	"Ability14"				"special_bonus_pride_3" // +100 Grave Guard Regen
-	"Ability15"				"special_bonus_pride_4" // Deathtouch 40% Slow
-	"Ability16"				"special_bonus_pride_5" // 1200 Radius Ally Grave Guard
-	"Ability17"				"special_bonus_cooldown_reduction_20" // 
+	"Ability14"				"special_bonus_pride_2" // +25 Lionheart Attack Speed
+	"Ability15"				"special_bonus_pride_3" // +12% Echospear Damage
+	"Ability16"				"special_bonus_pride_4" // +2s Elyat's Bellow Duration
+	"Ability17"				"special_bonus_pride_5" // Lionheart Magic Immunity
 
 	"ArmorPhysical"				"2"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -52,12 +59,12 @@
 	"AttackDamageMax"			"32"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"30"										// Base strength
-	"AttributeStrengthGain"		"2.5"										// Strength bonus per level.
-	"AttributeBaseIntelligence"	"12"										// Base intelligence
-	"AttributeIntelligenceGain"	"1.4"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"26"										// Base agility
-	"AttributeAgilityGain"		"2.9"										// Agility bonus per level.
+	"AttributeBaseStrength"		"19"										// Base strength
+	"AttributeStrengthGain"		"2.3"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"14"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"25"										// Base agility
+	"AttributeAgilityGain"		"2.3"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.

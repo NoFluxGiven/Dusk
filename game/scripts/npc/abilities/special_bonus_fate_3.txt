@@ -11,7 +11,7 @@
 
 	"LinkedAbility"
 	{
-		"01" "fate_realign"
+		"01" "fate_ancestral_visions"
 	}
 
 	// Special
@@ -20,8 +20,8 @@
 	{
 		"01"
 		{
-			"var_type" "FIELD_INTEGER"
-			"value" "60"
+			"var_type" "FIELD_FLOAT"
+			"value" "0.5"
 		}
 	}
 }

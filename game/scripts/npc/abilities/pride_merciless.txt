@@ -1,0 +1,79 @@
+//=====================================================================================================
+// pride: merciless
+//=====================================================================================================
+"pride_merciless"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/pride_merciless"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"pride_merciless"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.1"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"5"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"80"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"40 80 120 160"
+		}
+
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"debuff_duration"			"2.5"
+		}
+
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"4.5"
+		}
+
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"movement_slow"				"25 30 35 40"
+		}
+
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_slow"				"50"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_pride/merciless.vpcf"
+		"particle" "particles/units/heroes/hero_pride/merciless_marker.vpcf"
+		"particle" "particles/units/heroes/hero_pride/merciless_target.vpcf"
+		"soundfile" "soundevents/hero_pride.vsndevts"
+
+		}
+}

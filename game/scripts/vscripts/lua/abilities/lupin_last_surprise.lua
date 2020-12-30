@@ -60,7 +60,7 @@ function lupin_last_surprise:OnSpellStart()
 
 		local r = 1
 		
-		caster:AddNewModifier(caster, self, "modifier_last_surprise", {Duration=delay*r+0.06})
+		caster:AddNewModifier(caster, self, "modifier_last_surprise", {Duration=delay*r+0.3})
 
 		AddFOWViewer( caster:GetTeamNumber(), caster:GetAbsOrigin(), range, 1.2, false )
 
@@ -134,9 +134,9 @@ function lupin_last_surprise:OnSpellStart()
 				caster:SetForwardVector(end_cfac)
 				caster:Interrupt()
 
-				if n > 0 then
-					ab:StartCooldown(-1)
-				end
+				-- if n > 0 then
+				-- 	ab:StartCooldown(-1)
+				-- end
 			end)
 		end
 	end

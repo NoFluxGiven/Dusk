@@ -41,8 +41,7 @@ function modifier_planar_trickery:OnCreated()
 		local ab1 = self:GetAbility()
 		local ab2 = c:FindAbilityByName("gemini_planar_trickery_activate")
 
-		ab1:SetHidden(true)
-		ab2:SetHidden(false)
+		c:SwapAbilities(ab1:GetName(), ab2:GetName(), false, true)
 
 		ab2:SetLevel(1)
 
@@ -77,7 +76,6 @@ function modifier_planar_trickery:OnDestroy()
 		local ab1 = self:GetAbility()
 		local ab2 = c:FindAbilityByName("gemini_planar_trickery_activate")
 
-		ab1:SetHidden(false)
-		ab2:SetHidden(true)
+		c:SwapAbilities(ab1:GetName(), ab2:GetName(), true, false)
 	end
 end

@@ -91,7 +91,10 @@ function modifier_crystal_focus_prismancy:OnAbilityFullyCast(params)
 
 			c:EmitSound("CrystalFocus.Prismancy.Cast")
 			
+			local cdr = ability:GetCooldownTimeRemaining() - self:GetAbility():GetSpecialValueFor("cdr")
 			ability:EndCooldown()
+
+			if cdr > 0 then ability:StartCooldown(cdr) end
 
 			self:GetParent():ReduceMana(cost)
 

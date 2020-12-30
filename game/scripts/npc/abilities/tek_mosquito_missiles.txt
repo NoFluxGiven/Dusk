@@ -14,7 +14,7 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation"			"ACT_DOTA_TELEPORT"
-	"AbilityChannelTime" "1.5"
+	"AbilityChannelTime" "0.8"
 	"AbilityTextureName"			"tek_mosquito_missiles"
 
 	// Casting
@@ -24,7 +24,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"16 14 12 10"
+	"AbilityCooldown"				"8"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -41,7 +41,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"interval"					"0.20 0.15 0.10 0.05"
+			"interval"					"0.05"
 		}
 		"02"
 		{
@@ -51,7 +51,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"20"
+			"damage"					"10 20 30 40"
 			"LinkedSpecialBonus"		"special_bonus_tek_3"
 		}
 	}

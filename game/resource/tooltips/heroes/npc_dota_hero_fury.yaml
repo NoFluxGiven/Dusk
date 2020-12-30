@@ -1,0 +1,92 @@
+Abilities:
+  fury_berserk:
+    data:
+      bonus_attackspeed: 'BONUS ATTACKSPEED:'
+      bonus_stacks: 'REND/BLOODSPORT STACK BONUS:'
+      description: With a frenzied roar, Fury lives up to his name, entering a state
+        of frenzy, doubling the efficacy of all of his abilities. Increases his attack
+        speed, causes Rend and Bloodsport to apply an additional stack, and doubles
+        the damage, slow and bonuses if Roar is used while active.
+      duration: 'DURATION:'
+      roar_cooldown_reduction: 'ROAR COOLDOWN REDUCTION:'
+    modifiers:
+      berserk:
+      - Berserk
+      - ''
+    name: Berserk
+  fury_bloodsport:
+    data:
+      bleed: 'DAMAGE:'
+      description: The Deathbeast has such insatiable bloodlust that strikes against
+        his opponents have an almost supernatural tendency to make them bleed.  Damages
+        over time for each stack on the target.  Stacks last for 6s, and ignore damage
+        block.
+    modifiers:
+      bloodsport:
+      - Bloodsport
+      - Taking damage over time for each stack.
+    name: Bloodsport
+  fury_rend:
+    data:
+      description: With each strike, Fury rends his target's flesh, reducing their
+        maximum Health.
+      max_hp_removal_per_stack: 'HP REMOVAL PER STACK:'
+      reset_time: 'DURATION:'
+    modifiers:
+      rend:
+      - Rend
+      - Taking %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% more damage from
+        all sources.
+    name: Rend
+  fury_roar:
+    data:
+      Description: Fury unleashes a roar that leaves his enemies shaken and fearing
+        for their lives. The sonic blast reduces their movespeed, damages them, and
+        empowers Fury for each unit hit, granting him bonus attack speed, movespeed,
+        and damage.
+      bonus_attackspeed: 'BONUS ATTACK SPEED:'
+      bonus_damage: 'BONUS DAMAGE:'
+      bonus_movespeed: '%BONUS MOVESPEED:'
+      damage: 'DAMAGE:'
+      duration: 'DURATION:'
+      range: 'RANGE:'
+      slow: '%SLOW:'
+    modifiers:
+      roar:
+      - Roar
+      - Slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
+      roar_enemy:
+      - Roar
+      - ''
+      thunder_roar:
+      - Thunder Roar
+      - Striking nearby targets with bolts of lightning.
+    name: Roar
+  special_bonus_fury_1:
+    data: {}
+    modifiers: {}
+    name: +14% Roar Slow
+  special_bonus_fury_2:
+    data: {}
+    modifiers: {}
+    name: +2% Rend Damage Amp
+  special_bonus_fury_3:
+    data: {}
+    modifiers: {}
+    name: Roar 1s Stun
+  special_bonus_fury_4:
+    data: {}
+    modifiers: {}
+    name: ''
+Hero:
+  data:
+    bio: ''
+    hype: A scary bear. Difficult to run from once he gets a few hits off, Fury is
+      a powerful ganker and carry due to his incredible Bloodsport and Rend abilities,
+      a damage over time per hit and max health reduction per hit, respectively. His
+      Q is Roar, empowering him for each unit hit in its AoE for bonus attack speed,
+      movespeed and damage, and his Ultimate makes him attack even faster and augments
+      the power of his Rend and Bloodsport. A true force of nature.
+  modref: npc_dota_hero_fury
+  name: Fury
+  ref: npc_dota_hero_ursa

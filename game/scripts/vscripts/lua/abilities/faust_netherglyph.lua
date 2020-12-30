@@ -25,6 +25,8 @@ function faust_netherglyph:OnSpellStart()
 	local thinker = CreateModifierThinker( caster, self, "modifier_netherglyph",
 	{Duration=duration+0.25}, caster:GetAbsOrigin(), caster:GetTeamNumber(), false)
 
+	caster:AddNewModifier(caster, self, "modifier_netherglyph_buff", {})
+
 end
 
 modifier_netherglyph = class({})
@@ -95,34 +97,52 @@ modifier_netherglyph_buff = class({})
 
 function modifier_netherglyph_buff:DeclareFunctions()
 	local func = {
-		MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING,
+		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
+		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
 		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT
 	}
 	return func
 end
 
-function modifier_netherglyph_buff:GetModifierPercentageCooldownStacking()
-	return self:GetAbility():GetSpecialValueFor("cooldown_reduction")
+function modifier_netherglyph_buff:CheckState()
+	local state = {
+		[MODIFIER_STATE_ATTACK_IMMUNE] = true,
+		[MODIFIER_STATE_UNTARGETABLE] = true,
+	}
+	return state
+end
+
+function modifier_netherglyph_buff:GetModifierMagicalResistanceBonus()
+	return -self:GetAbility():GetSpecialValueFor("magic_res_reduction")
 end
 
 function modifier_netherglyph_buff:GetModifierSpellAmplify_Percentage()
 	return self:GetAbility():GetSpecialValueFor("spell_amp")
 end
 
-function modifier_netherglyph_buff:GetModifierIncomingDamage_Percentage()
-	return -self:GetAbility():GetSpecialValueFor("incoming_damage_reduction")
+function modifier_netherglyph_buff:GetAbsoluteNoDamagePhysical()
+	return 1
 end
 
 function modifier_netherglyph_buff:GetModifierConstantManaRegen()
-	return -self:GetAbility():GetSpecialValueFor("mana_regen")
+	return self:GetAbility():GetSpecialValueFor("mana_regen")
 end
 
+function modifier_netherglyph_buff:GetStatusEffectName()
+	return "particles/units/heroes/hero_faust/status_effect_netherglyph_buff.vpcf"
+end
 
+function modifier_netherglyph_buff:StatusEffectPriority()
+	return 15
+end
 
 function modifier_netherglyph_buff:GetEffectName()
-	return "particles/units/heroes/hero_faust/forbidden_knowledge_deprecated_on_attack_buff.vpcf"
+	return "particles/units/heroes/hero_faust/netherglyph_buff.vpcf"
+end
+
+function modifier_netherglyph_buff:GetEffectAttachType()
+	return PATTACH_POINT_FOLLOW
 end
 
 modifier_netherglyph_remove = class({})

@@ -1,0 +1,59 @@
+"Lightning.Overload"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/overload2.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Lightning.Spark"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/spark_passive.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.00"
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -12,8 +12,9 @@ function nu_warpstar:OnSpellStart()
 	local target = self:GetCursorPosition()
 
 	local delay = self:GetSpecialValueFor("delay")
+	local stun = self:GetSpecialValueFor("stun")
 
-	CreateModifierThinker( caster, self, "modifier_warpstar", {Duration=delay+1, delay=delay}, target, caster:GetTeamNumber(), false )
+	CreateModifierThinker( caster, self, "modifier_warpstar", {Duration=delay+1, delay=delay, stun_duration=stun}, target, caster:GetTeamNumber(), false )
 
 	self:CreateVisibilityNode(target, 600, delay+1)
 end
@@ -26,6 +27,7 @@ function modifier_warpstar:OnCreated(kv)
 
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 		local damage = self:GetAbility():GetSpecialValueFor("damage")
+		local stun = kv.stun_duration
 
 		self:GetParent():EmitSound("Nu.Warpstar")
 
@@ -68,6 +70,7 @@ function modifier_warpstar:OnCreated(kv)
 
 					if v:GetTeam() ~= self:GetAbility():GetCaster():GetTeam() then
 						self:GetAbility():InflictDamage(v,self:GetAbility():GetCaster(),damage,DAMAGE_TYPE_PURE)
+						v:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration=stun})
 					end
 
 				end

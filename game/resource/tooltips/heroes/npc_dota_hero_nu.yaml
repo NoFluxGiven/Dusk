@@ -1,0 +1,96 @@
+Abilities:
+  nu_flux_field:
+    data:
+      Description: Nu gathers the fluctuating energies of the cosmos into one spot,
+        creating an area that deals damage over time. Whenever an enemy casts a Spell
+        or uses an item that costs Mana whilst inside the area, all enemy units in
+        the radius are damaged and ministunned.
+      damage_over_time: 'DAMAGE OVER TIME:'
+      damage_per_cast: 'DAMAGE PER CAST:'
+      duration: 'DURATION:'
+      radius: 'RADIUS:'
+      unit: Nu Antimatter Mines Unit
+      unit_Description: ''
+      unit_check_radius: 'CHECK RADIUS:'
+      unit_damage: 'DAMAGE:'
+      unit_delay: 'DELAY:'
+      unit_duration: 'DURATION:'
+      unit_explosion_delay: 'EXPLOSION DELAY:'
+    modifiers:
+      flux_field:
+      - Flux Field
+      - ''
+      flux_field_aura:
+      - Flux Field
+      - Taking damage and being ministunned when any unit in the radius casts Spells
+        or uses items.
+    name: Flux Field
+  nu_gravity_pulse:
+    data:
+      Description: Nu creates a devastating gravitational pulse at the target area,
+        dealing large Physical damage and slowing drastically any enemies caught in
+        it.
+      slow: '%SLOW:'
+      slow_duration: 'SLOW DURATION:'
+    modifiers:
+      gravity_pulse:
+      - Gravity Pulse Attack/Move Slow
+      - ''
+    name: Gravity Pulse
+  nu_micronebula:
+    data:
+      Description: Nu summons a Micronebula that latches onto the target unit. At
+        the end of its duration, a percentage of damage the unit took is dealt over
+        3s to units in a 325 radius before dissipating. Reduces Armor. If the target
+        would die, half the damage they would have taken at the end of the duration
+        is instead dealt instantly to all units in the radius.
+      armor_reduction: 'ARMOR REDUCTION:'
+      dmg: '%DAMAGE:'
+      duration: 'DURATION:'
+    modifiers:
+      micronebula:
+      - Micronebula
+      - Taking damage over time.
+      micronebula_display:
+      - Micronebula
+      - A portion of damage taken will be dealt over time after duration ends.
+    name: Micronebula
+  nu_warpstar:
+    data:
+      Description: A devastating cosmological entity, the Warpstar, after a short
+        delay, deals Pure damage and transports allies and enemies alike to the position
+        where Nu cast the spell. During the delay, enemies caught in the vortex are
+        slowed.
+      Note0: Allies do not take damage from this ability.
+      Note1: Transport targets are locked 0.4s before the ability completes. Even
+        if those locked targets leave the immediate area, they will be transported.
+      damage: 'DAMAGE:'
+      delay: 'DELAY:'
+      radius: 'RADIUS:'
+      slow: '%SLOW:'
+      stun: 'STUN DURATION:'
+    modifiers: {}
+    name: Warpstar
+  special_bonus_nu_1:
+    data: {}
+    modifiers: {}
+    name: +12% Micronebula Damage
+  special_bonus_nu_2:
+    data: {}
+    modifiers: {}
+    name: +60 Flux Field DPS
+  special_bonus_nu_3:
+    data: {}
+    modifiers: {}
+    name: +300 Gravity Pulse Damage
+Hero:
+  data:
+    bio: ''
+    hype: A disabler, nuker, and teamfighter, Nu is dangerous at all stages of the
+      game. Possessing the strongest slow and Physical damage nuke in the game, Gravity
+      Pulse, a damage augmenter with Micronebulae, numerous deadly floating mines
+      with Antimatter Mines, and a powerful Ult, Warpstar, that can pull enemies in
+      from thousands of units away and stun them, Nu is devastating if played correctly.
+  modref: npc_dota_hero_nu
+  name: Nu
+  ref: npc_dota_hero_enigma

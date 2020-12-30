@@ -16,7 +16,7 @@
 
 	"AbilityCastRange"				"600"
 
-	"AbilityCooldown"				"12"
+	"AbilityCooldown"				"10 8 6 4"
 	"AbilityManaCost"				"60 70 80 90"
 			
 	// Special
@@ -26,7 +26,7 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"75 125 175 225"
+			"damage"						"50 100 150 200"
 		}
 		"02"
 		{
@@ -41,17 +41,17 @@
 		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_movespeed"				"1 2 3 4"
+			"bonus_movespeed"				"3"
 		}
 		"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_attackspeed"				"5 10 15 20"
+			"bonus_attackspeed"				"10"
 		}
 		"06"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"4 6 8 10"
+			"bonus_damage"					"5"
 		}
 		"07"
 		{

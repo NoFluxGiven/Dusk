@@ -4,32 +4,45 @@
 	"override_hero"			"npc_dota_hero_faceless_void"
 	"Ability1"				"chronos_continuum_crystal" // Envelops the target enemy
 	// in crystal, rendering them stunned for 2.00/2.75/3.50/4.25s, but only Chronos can damage them.
-	"Ability2"				"chronos_" // 
-	"Ability3"				"chronos_" // 
-	"Ability4"				"chronos_time_splicer" // When Chronos strikes an enemy, he strikes one other
-	// enemy in a 700/800/900 radius. Has a 2/1/0s cooldown.
+	// Reduces the damage they take by 35/30/25/20%.
+	// On cooldown abilities are frozen for the duration.
+	"Ability2"				"chronos_time_splicer" // When Chronos strikes an enemy, he strikes
+	// one other
+	// enemy in a 600 radius. Has a 3/2.5/2/1.5s cooldown.
 	// Cannot hit the same enemy Chronos is attacking.
 	// Selects the enemy randomly.
 	// The attack retains all UAMs and attack modifiers.
+	// Targets affected by Continuum Crystal are prioritised.
+	// Disabled by Break.
+	"Ability3"				"chronos_chronoshock" // Chronos deals damage to the target enemy
+	// equal to 1.0/1.5/2.0/2.5x their total cooldown time on all abilities and items.
+	// 12s cooldown.
+	"Ability4"				"chronos_convergence" // Chronos may
+	// reset all his non-Ultimate cooldowns and restore his Health and Mana to full.
+	// After 3s, his Health, Mana, and cooldowns return to what they were originally.
+	// Applies a strong dispel upon cast.
+	// 0.3s cast point.
+	// 70/60/50s cooldown.
 	"Ability5"				""
 	"Ability6"				""
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				""
-	"Ability11"				""
-	"Ability12"				""
-	"Ability13"				""
-	"Ability14"				""
-	"Ability15"				""
-	"Ability16"				"attribute_bonus"
+	"Ability10"				"special_bonus_chronos_1" // +2 Chronotheft Max Stacks
+	"Ability11"				"special_bonus_all_stats_7" // 
+	"Ability12"				"special_bonus_lifesteal_15" //
+	"Ability13"				"special_bonus_strength_10" // 
+	"Ability14"				"special_bonus_magic_resistance_25" // 
+	"Ability15"				"special_bonus_chronos_2" // +1s Continuum Crystal Duration
+	"Ability16"				"special_bonus_chronos_3" // -30s Convergence Cooldown
+	"Ability17"				"special_bonus_chronos_4" // +1 Time Splicer Target
 
 	"ArmorPhysical"				"2"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackRange"				"150"
-	"AttackRate"				"1.5"
+	"AttackRate"				"1.6"
 	"AttackDamageMin"			"27"										// Damage range min.
 	"AttackDamageMax"			"31"										// Damage range max.
 

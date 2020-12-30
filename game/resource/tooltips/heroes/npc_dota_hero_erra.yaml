@@ -1,0 +1,95 @@
+Abilities:
+  erra_deathtouch:
+    data:
+      Description: With but a touch, Erra rends the target's soul asunder, dealing
+        massive damage over time.
+      dot_amount: 'DAMAGE OVER TIME:'
+      dot_duration: 'DURATION:'
+    modifiers:
+      deathtouch_dot:
+      - Deathtouch
+      - Taking damage over time.
+    name: Deathtouch
+  erra_grave_guard:
+    data:
+      Description: When Erra drops below certain threshold of Health, he gains bonus
+        Health and Mana regeneration for a short time to combat it.
+      duration: 'DURATION:'
+      hp_recovery: 'HP RECOVERY:'
+      mp_recovery: 'MP RECOVERY:'
+      threshold: '%HEALTH THRESHOLD:'
+    modifiers:
+      erra_grave_guard_recovery:
+      - Grave Guard Recovery Buff
+      - Gaining bonus Health and Mana regen over time.
+      grave_guard:
+      - Grave Guard
+      - Recovering Health and Mana.
+      grave_guard_recovery:
+      - Grave Guard Recovery
+      - ''
+      grave_guard_talent_cooldown:
+      - Grave Guard Cooldown
+      - Grave Guard will not activate.
+    name: Grave Guard
+  erra_morbid_blade:
+    data:
+      Description: Summons forth the winds of the Black Tide to slice through all
+        enemies caught in them. Deals Physical damage, but if any enemy is below a
+        Health threshold, it deals Pure damage, and its cooldown is halved. A portion
+        of the target's missing Health is granted as healing to Erra.
+      lifesteal: '%MISSING HEALTH LIFESTEAL:'
+      pure_threshold: '%PURE DAMAGE HEALTH THRESHOLD:'
+      radius: 'RADIUS:'
+    modifiers: {}
+    name: Morbid Blade
+  erra_to_dust:
+    data:
+      Description: Revelling in the pain of his enemies, Erra drinks in their dwindling
+        lifeforce, converting the entropy to damage. Grants bonus attack damage based
+        on the amount of missing Health of all the enemies in the radius given.
+      creep_hp_to_bonus_damage: '%MISSING HEALTH TO BONUS DAMAGE (CREEPS):'
+      duration: 'DURATION:'
+      hp_to_bonus_damage: '%MISSING HEALTH TO BONUS DAMAGE (HEROES):'
+      radius: 'RADIUS:'
+    modifiers:
+      to_dust_show:
+      - To Dust
+      - Granted bonus attack damage based on missing Health of nearby enemies when
+        cast.
+    name: To Dust
+  special_bonus_erra_1:
+    data: {}
+    modifiers: {}
+    name: +60 Morbid Blade Damage
+  special_bonus_erra_2:
+    data: {}
+    modifiers: {}
+    name: +4s To Dust Duration
+  special_bonus_erra_3:
+    data: {}
+    modifiers: {}
+    name: +100 Grave Guard Regen
+  special_bonus_erra_4:
+    data: {}
+    modifiers: {}
+    name: Deathtouch 40% Slow
+  special_bonus_erra_5:
+    data:
+      Description: When allies drop below the threshold, they gain the Grave Guard
+        buff as if they possessed the skill. Has its own cooldown.
+    modifiers: {}
+    name: 1200 Radius Grave Guard Aura
+Hero:
+  data:
+    bio: ''
+    hype: Strangely well-rounded, Erra is a nuker with access to his signature Grave
+      Guard, an ability that activates when he drops below a portion of Health and
+      restores his Health and Mana rapidly for a short time. Otherwise, he has access
+      to a nuke that has a reduced cooldown and Pure damage, should any of the targets
+      in the AoE be below 40% Health, bonus damage gained from the missing Health
+      of nearby enemies, and a devastating close range nuke/damage over time with
+      his Ultimate, Deathtouch.
+  modref: npc_dota_hero_erra
+  name: Erra
+  ref: npc_dota_hero_necrolyte

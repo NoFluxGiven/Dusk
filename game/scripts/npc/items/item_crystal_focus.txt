@@ -1,6 +1,15 @@
 //=================================================================================================================
 // Crystal Focus
 //=================================================================================================================
+
+///@changelog
+///@version 2.2
+///@item Crystal Focus
+///@changes #
+/// Now grants a flat 10s cooldown reduction on the activating ability rather than refreshing it.
+/// Reduced Mana drain to 35% from 70%.
+/// Reduced Spell Amp to 7%.
+
 "item_crystal_focus"
 {
 	// General
@@ -63,7 +72,7 @@
 		"04"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"bonus_spell_amp"	"10"
+			"bonus_spell_amp"	"7"
 		}
 		"05"
 		{
@@ -83,7 +92,12 @@
 		"08"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"mana_percentage" 	"70"
+			"mana_percentage" 	"35"
+		}
+		"09"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"cdr" 				"10"
 		}
 	}
 }

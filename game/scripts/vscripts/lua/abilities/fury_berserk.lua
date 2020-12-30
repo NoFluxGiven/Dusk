@@ -16,9 +16,30 @@ modifier_berserk = class({})
 function modifier_berserk:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-		MODIFIER_PROPERTY_MIN_HEALTH
+		MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
+		MODIFIER_PROPERTY_MIN_HEALTH,
+		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
+		MODIFIER_EVENT_ON_ATTACK_LANDED
 	}
 	return funcs
+end
+
+function modifier_berserk:OnAttackLanded(params)
+	local caster = self:GetParent()
+
+	local attacker = params.attacker
+	local target = params.target or params.unit
+
+	if (attacker == caster) then
+		if not self:GetAbility():IsCooldownReady() and not target:IsBuilding() then
+			local cdr = self:GetAbility():GetSpecialValueFor("cooldown_reduction")
+			local cd = self:GetAbility():GetCooldownTimeRemaining()
+			local new_cd = cd-cdr
+
+			self:GetAbility():EndCooldown()
+			self:GetAbility():StartCooldown(new_cd)
+		end
+	end
 end
 
 function modifier_berserk:GetEffectName()
@@ -33,8 +54,16 @@ function modifier_berserk:GetModifierAttackSpeedBonus_Constant()
 	return self:GetAbility():GetSpecialValueFor("bonus_attackspeed")
 end
 
+function modifier_berserk:GetModifierAttackSpeedBonus_Constant()
+	return self:GetAbility():GetSpecialValueFor("bonus_attackspeed")
+end
+
 function modifier_berserk:GetMinHealth()
 	return 1
+end
+
+function modifier_berserk:GetModifierBaseAttackTimeConstant()
+	return self:GetAbility():GetSpecialValueFor("bat")
 end
 
 function modifier_berserk:CheckState()

@@ -1,6 +1,16 @@
 //=====================================================================================================
 // SHARD_MAGUS: Cryst_whorl
 //=====================================================================================================
+
+///@changelog
+///@version 2.2
+///@type HERO_ABILITY
+///@hero Shard Magus
+///@ability Cryst Whorl
+///@changes #
+/// Increased total damage to 100/175/250/325 from 60/120/180/240.
+/// Increased base damage to 100 from 60.
+
 "shard_magus_cryst_whorl"
 {
 	// General
@@ -60,17 +70,17 @@
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"60 120 180 240" // total
+			"damage"					"100 175 250 325" // total
 		}
 		"06"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"20 25 30 35"
+			"slow"						"15 30 45 60"
 		}
 		"07"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"initial_damage"			"60"
+			"initial_damage"			"100"
 			"LinkedSpecialBonus"		"special_bonus_shard_magus_1"
 		}
 	}

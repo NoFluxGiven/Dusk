@@ -1,29 +1,24 @@
 rai_static_blade = class({})
 
 LinkLuaModifier("modifier_static_blade","lua/abilities/rai_static_blade",LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_static_blade_slow","lua/abilities/rai_static_blade",LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_static_blade_cooldown","lua/abilities/rai_static_blade",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_static_blade_mute","lua/abilities/rai_static_blade",LUA_MODIFIER_MOTION_NONE)
 
 function rai_static_blade:GetIntrinsicModifierName()
 	return "modifier_static_blade"
 end
 
 function rai_static_blade:GetBehavior()
-	return DOTA_ABILITY_BEHAVIOR_NO_TARGET+DOTA_ABILITY_BEHAVIOR_TOGGLE
+	return DOTA_ABILITY_BEHAVIOR_PASSIVE
 end
 
-function rai_static_blade:OnToggle()
-	if not self:GetCaster():HasModifier("modifier_static_blade_cooldown") then
-		self:EndCooldown()
-	end
-	return
-end
+---------------------------------------------
 
 modifier_static_blade = class({})
 
 function modifier_static_blade:DeclareFunctions()
 	local funcs = {
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
+		MODIFIER_EVENT_ON_ABILITY_FULLY_CAST
 		MODIFIER_EVENT_ON_TAKEDAMAGE
 		-- MODIFIER_EVENT_ON_ABILITY_FULLY_CAST
 	}
@@ -34,7 +29,21 @@ function modifier_static_blade:OnCreated()
 	self.static_blade_damage = 0
 end
 
-function modifier_static_blade:OnAttackLanded(params)
+function modifier_static_blade:OnAbilityFullyCast(params)
+	if self:GetParent() == params.unit then
+		if params.ability:IsItem() == false then
+			if params.ability:IsToggle() == false then
+				if (self:GetStackCount() < self:GetSpecialValueFor("max_stacks")) then
+					self:GainCharges()
+				end
+			end
+		end
+	end
+end
+
+	
+
+--[[function modifier_static_blade:OnAttackLanded(params)
 	if params.attacker ~= self:GetParent() then return end
 	if CheckClass(params.target,"npc_dota_building") then return end
 	if self:GetAbility():GetToggleState() == false then return end
@@ -45,32 +54,15 @@ function modifier_static_blade:OnAttackLanded(params)
 
 		local cooldown = self:GetAbility():GetCooldown(self:GetAbility():GetLevel())
 
-		params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_static_blade_slow", {stacks = self:GetStackCount(), Duration = duration}) --[[Returns:void
-		No Description Set
-		]]
-		params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_static_blade_cooldown", {Duration = cooldown}) --[[Returns:void
-		No Description Set
-		]]
+		params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_static_blade_slow", {stacks = self:GetStackCount(), Duration = duration})
+		params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_static_blade_cooldown", {Duration = cooldown})
 		params.target:EmitSound("Hero_razor.lightning")
 		self:GetAbility():InflictDamage(params.target,self:GetParent(),damage*self:GetStackCount(),DAMAGE_TYPE_MAGICAL)
 		self:SetStackCount(0)
-		ParticleManager:CreateParticle("particles/units/heroes/hero_rai/static_blade_strike.vpcf", PATTACH_ABSORIGIN_FOLLOW, params.target) --[[Returns:int
-		Creates a new particle effect
-		]]
+		ParticleManager:CreateParticle("particles/units/heroes/hero_rai/static_blade_strike.vpcf", PATTACH_ABSORIGIN_FOLLOW, params.target)
 		self:GetAbility():StartCooldown(cooldown)
 	end
 end
-
--- function modifier_static_blade:OnAbilityFullyCast(params)
--- 	ToolsPrint("ABILITY CAST")
--- 	if self:GetParent() == params.unit then
--- 		if params.ability:IsItem() == false then
--- 			if params.ability:IsToggle() == false then
--- 				self:GainCharges()
--- 			end
--- 		end
--- 	end
--- end
 
 function modifier_static_blade:OnTakeDamage(params)
 	if params.attacker == self:GetParent() then

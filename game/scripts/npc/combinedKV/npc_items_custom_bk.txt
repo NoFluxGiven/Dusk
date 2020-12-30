@@ -1,0 +1,1209 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Arcanite Shards
+	//=================================================================================================================
+	"item_arcanite_shards"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"3026"  //Valve's version of this item uses the ID "39".
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/clarity.mdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_arcanite_shards"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"
+		"AbilityCooldown"				"3.5"
+		"AbilityManaCost"				"0"
+		"AbilityCastRange"				"0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"275"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"arcanite_shards"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"0"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemInitialCharges"			"4"
+		"ItemStockMax" "1"
+		"ItemStockTime" "180"
+		"ItemStockInitial" "0"
+	
+		"precache"
+		{
+		
+			"particle" "particles/items/arcanite_shards.vpcf"
+		
+		}
+	
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"60"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"minimum_dmg"			"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"6"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_arcanite_shards"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_dmg"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// black_rose
+	//=================================================================================================================
+	"item_black_rose"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua/items/item_black_rose"
+		"ID"							"501"  //Valve's version of this item uses the ID "39".
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"Model"							"models/props_gameplay/clarity.mdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_black_rose"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.1"
+		"AbilityCooldown"				"45"
+		"AbilityManaCost"				"50"
+		"AbilityCastRange"				"500"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"                      "1900"
+	    "ItemShopTags"                  "damage"
+	    "ItemQuality"                   "rare"
+	    "ItemAliases"                   "black_rose"
+	    "ItemRequiresCharges"           "0"
+	    "ItemDisplayCharges"            "0"
+	    "ItemPermanent"                 "1"
+	    //"ItemInitialCharges"            "0"
+	
+		"precache"
+		{
+		
+			"particle" "particles/items/black_rose.vpcf"	
+			"particle" "particles/items/black_rose_aura.vpcf"
+			"particle" "particles/items/black_rose_slow.vpcf"
+			"soundfile"	"soundevents/game_sounds_items.vsndevts"
+		
+		}
+	
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage" 		"20"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"active_delay"		"1.5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"active_duration"	"2.25"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"active_damage_increase" "15"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage" 			"125"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_distance" 		"1200"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Crystal Focus
+	//=================================================================================================================
+	"item_crystal_focus"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua/items/item_crystal_focus"
+		"ID"							"3035"  //Valve's version of this item uses the ID "39".
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"Model"							"models/props_gameplay/clarity.mdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_crystal_focus"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"
+		"AbilityCooldown"				"120"
+		"AbilityManaCost"				"225"
+		"AbilityCastRange"				"0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"                      "5175"
+	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int"
+	    "ItemQuality"                   "epic"
+	    "ItemAliases"                   "crystal_focus"
+	    "ItemRequiresCharges"           "0"
+	    "ItemDisplayCharges"            "0"
+	    "ItemPermanent"                 "1"
+	    "ItemInitialCharges"            "0"
+		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+		"precache"
+		{
+		
+			"particle" "particles/items/crystal_focus_prismancy.vpcf"
+			"soundfile"	"soundevents/game_sounds_items.vsndevts"
+		
+		}
+	
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_intelligence" "15"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_cast_range"	"250"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mana_total"	"200"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_spell_amp"	"10"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana_regen"	"2.00"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_health_regen" "4.00"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration" 			"14.00"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_percentage" 	"70"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Deathscythe
+	//=================================================================================================================
+	"item_deathscythe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua/items/item_deathscythe"
+		"ID"							"3036"  //Valve's version of this item uses the ID "39".
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"Model"							"models/props_gameplay/clarity.mdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_deathscythe"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"0"
+		"AbilityCastRange"				"0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"                      "5175"
+	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;"
+	    "ItemQuality"                   "epic"
+	    "ItemAliases"                   "deathscythe"
+	    "ItemRequiresCharges"           "0"
+	    "ItemDisplayCharges"            "0"
+	    "ItemPermanent"                 "1"
+	    "ItemInitialCharges"            "0"
+		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+		"precache"
+		{
+		
+			"particle" "particles/items/deathscythe_attack.vpcf"
+			"soundfile"	"soundevents/game_sounds_items.vsndevts"
+		
+		}
+	
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_intelligence" "10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_strength"	"10"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"85"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_speed" "20"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana_regen"	"0.85"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"percent_damage" "16" // percentage
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow" 				"100" // percentage
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_duration" 	"1.75"
+			}
+		}
+	}
+	"item_grim_gauntlet"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "item_lua"
+	    "ScriptFile"                    "lua/items/item_grim_gauntlet"
+	    "ID"                            "3010"  //Valve's version of this item uses the ID "123".
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	    "Model"                         "models/props_gameplay/red_box.vmdl" 
+	    "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+	    "AbilityTextureName"            "item_grim_gauntlet"
+	    "FightRecapLevel"               "1"
+	    
+	    // Stats
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCastPoint"              "0.0"
+	    "AbilityCastRange"              "475"
+	    "AbilityCooldown"               "20.0"
+	    "AbilityManaCost"               "0"
+	    
+	    // Item Info
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemCost"                      "5175"
+	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;"
+	    "ItemQuality"                   "epic"
+	    "ItemAliases"                   "ls;linken's sphere"
+	    "ItemRequiresCharges"           "0"
+	    "ItemDisplayCharges"            "1"
+	    "ItemPermanent"                 "1"
+	    "ItemInitialCharges"            "0"
+	    "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/items/grim_gauntlet.vpcf"
+	        "particle"  "particles/items/grim_gauntlet_hero_b.vpcf"
+	        "particle"  "particles/generic_gameplay/generic_disarm.vpcf"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts"
+	        "soundfile" "soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	    }
+	
+	    // Special  
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "bonus_attack_speed"        "15"
+	        }
+	        "02"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "bonus_damage"              "25"
+	        }
+	        "03"
+	        {
+	            "var_type"                  "FIELD_FLOAT"
+	            "damage"                    "115"
+	        }
+	        "04"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "maxcharge"                 "4"
+	        }
+	        "05"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "health_perc"               "15"
+	        }
+	        "06"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "mana_perc"                 "15"
+	        }
+	        "07"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "slow"                      "-10"
+	        }
+	    }
+	}
+	//=================================================================================================================
+	// hephaestus_hammer
+	//=================================================================================================================
+	"item_hephaestus_hammer"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua/items/item_hephaestus_hammer"
+		"ID"							"3037"  //Valve's version of this item uses the ID "39".
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"Model"							"models/props_gameplay/clarity.mdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_hephaestus_hammer"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"
+		"AbilityCooldown"				"75"
+		"AbilityManaCost"				"50"
+		"AbilityCastRange"				"1200"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"                      "5175"
+	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;"
+	    "ItemQuality"                   "epic"
+	    "ItemAliases"                   "hephaestus_hammer"
+	    "ItemRequiresCharges"           "0"
+	    "ItemDisplayCharges"            "0"
+	    "ItemPermanent"                 "1"
+	    "ItemInitialCharges"            "0"
+		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+		"precache"
+		{
+		
+			"particle" "particles/items/hephaestus.vpcf"
+			"particle" "particles/items/hephaestus_aura.vpcf"
+			"particle" "particles/items/hephaestus_slow.vpcf"
+			"soundfile"	"soundevents/game_sounds_items.vsndevts"
+		
+		}
+	
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_health_regen" "5.5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana_regen"	"1.5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"20"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_armor" 		"5"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"active_damage_reduction" "80"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration" 			"6"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"active_move_slow" 	"50" // percentage
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"active_att_slow"  "100"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"active_slow_duration" 	"2.50"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"active_regen_bonus" "25"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"active_cooldown" 	"45.0"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_armor_bonus"  "15"
+			}
+			"12"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius" 		"1200"
+			}
+		}
+	}
+	"item_ironblood_potion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua/items/item_ironblood_potion"
+		"ID"							"3030"  //Valve's version of this item uses the ID "156".
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_ironblood_potion"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"0.0"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"ironblood_potion"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemInitialCharges"            "1"
+		"ItemStackable"                 "1"
+	    "ItemPermanent"                 "0"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"15"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_magic_resistance"	"30"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"buff_duration"				"4.5"
+			}
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/items/ironblood_potion.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+		}
+	}
+	//=================================================================================================================
+	// Purging Dust
+	//=================================================================================================================
+	"item_purging_dust"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua/items/item_purging_dust"
+		"ID"							"3024"  //Valve's version of this item uses the ID "39".
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"Model"							"models/props_gameplay/clarity.mdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_purging_dust"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"
+		"AbilityCooldown"				"45"
+		"AbilityManaCost"				"25"
+		"AbilityCastRange"				"175"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"275"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"purging_dust"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"0"
+		"ItemPurchasable"				"1"
+		"ItemStockMax" 					"1" 
+		"ItemStockTime" 				"600"
+		"ItemStockInitial" 				"1"
+		"ItemInitialCharges"			"1"
+	
+		"precache"
+		{
+		
+			"particle" "particles/items/purging_dust.vpcf"
+			"soundfile"	"soundevents/game_sounds_items.vsndevts"
+		
+		}
+	
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+	"item_rage_potion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua/items/item_rage_potion"
+		"ID"							"500"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_rage_potion"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"23"
+		"AbilityManaCost"				"0.0"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"rage_potion"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"20"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"30"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"buff_duration"				"4.5"
+			}
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/items/rage_potion.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+		}
+		
+		"Modifiers"
+		{
+		}
+	}
+	"item_reaving_stone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"3028"  //Valve's version of this item uses the ID "156".
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_reaving_stone"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
+		"AbilityManaCost"				"0.0"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"475"
+		"ItemShopTags"					""
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"reaving_stone"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"50"
+			}
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/items2_fx/satanic_buff.vpcf"
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_soul_reaver_datadriven"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
+				}
+			}
+			"modifier_item_soul_reaver_damage"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
+				}
+			}
+		}
+	}
+	// Rewrite of Recipe: Linken's Sphere
+	// Author: Rook
+	// Date: January 29, 2015
+	
+	"item_recipe_crystal_focus"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "item_datadriven"
+	    "ID"                            "2035"  //Valve's version of this item uses the ID "122".
+	    "Model"                         "models/props_gameplay/recipe.mdl"
+	    "AbilityTextureName"            "item_recipe"
+	    
+	    // Item Info
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemCost"                      "700"
+	    "ItemShopTags"                  ""
+	    
+	    // Recipe
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemRecipe"                    "1"
+	    "ItemResult"                    "item_crystal_focus"
+	    "ItemRequirements"
+	    {
+	        "01"                        "item_kaya;item_aether_lens;item_magic_wand"
+	    }
+	}
+	// Rewrite of Recipe: Linken's Sphere
+	// Author: Rook
+	// Date: January 29, 2015
+	
+	"item_recipe_deathscythe"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "item_datadriven"
+	    "ID"                            "2036"  //Valve's version of this item uses the ID "122".
+	    "Model"                         "models/props_gameplay/recipe.mdl"
+	    "AbilityTextureName"            "item_recipe"
+	    
+	    // Item Info
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemCost"                      "900"
+	    "ItemShopTags"                  ""
+	    
+	    // Recipe
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemRecipe"                    "1"
+	    "ItemResult"                    "item_deathscythe"
+	    "ItemRequirements"
+	    {
+	        "01"                        "item_echo_sabre;item_relic"
+	    }
+	}
+	// Rewrite of Recipe: Linken's Sphere
+	// Author: Rook
+	// Date: January 29, 2015
+	
+	"item_recipe_grim_gauntlet"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "item_datadriven"
+	    "ID"                            "2010"  //Valve's version of this item uses the ID "122".
+	    "Model"                         "models/props_gameplay/recipe.mdl"
+	    "AbilityTextureName"            "item_recipe"
+	    
+	    // Item Info
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemCost"                      "1450"
+	    "ItemShopTags"                  ""
+	    
+	    // Recipe
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemRecipe"                    "1"
+	    "ItemResult"                    "item_grim_gauntlet"
+	    "ItemRequirements"
+	    {
+	        "01"                        "item_soul_vial;item_gloves"
+	    }
+	}
+	// Rewrite of Recipe: Linken's Sphere
+	// Author: Rook
+	// Date: January 29, 2015
+	
+	"item_recipe_hephaestus_hammer"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "item_datadriven"
+	    "ID"                            "2037"  //Valve's version of this item uses the ID "122".
+	    "Model"                         "models/props_gameplay/recipe.mdl"
+	    "AbilityTextureName"            "item_recipe"
+	    
+	    // Item Info
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemCost"                      "1000"
+	    "ItemShopTags"                  ""
+	    
+	    // Recipe
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemRecipe"                    "1"
+	    "ItemResult"                    "item_hephaestus_hammer"
+	    "ItemRequirements"
+	    {
+	        "01"                        "item_mithril_hammer;item_pers;item_buckler"
+	    }
+	}
+	// Rewrite of Recipe: Linken's Sphere
+	// Author: Rook
+	// Date: January 29, 2015
+	
+	"item_recipe_seers_lantern"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "item_datadriven"
+	    "ID"                            "2041"  //Valve's version of this item uses the ID "122".
+	    "Model"                         "models/props_gameplay/recipe.mdl"
+	    "AbilityTextureName"            "item_recipe"
+	    
+	    // Item Info
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemCost"                      "0"
+	    "ItemShopTags"                  ""
+	    
+	    // Recipe
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemRecipe"                    "1"
+	    "ItemResult"                    "item_seers_lantern"
+	    "ItemRequirements"
+	    {
+	        "01"                        "item_ghost;item_arcanite_shards;item_void_stone"
+	    }
+	}
+	// Rewrite of Recipe: Linken's Sphere
+	// Author: Rook
+	// Date: January 29, 2015
+	
+	"item_recipe_wand_of_yggdrasil"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "item_datadriven"
+	    "ID"                            "2040"  //Valve's version of this item uses the ID "122".
+	    "Model"                         "models/props_gameplay/recipe.mdl"
+	    "AbilityTextureName"            "item_recipe"
+	    
+	    // Item Info
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemCost"                      "1200"
+	    "ItemShopTags"                  ""
+	    
+	    // Recipe
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemRecipe"                    "1"
+	    "ItemResult"                    "item_wand_of_yggdrasil"
+	    "ItemRequirements"
+	    {
+	        "01"                        "item_magic_wand;item_oblivion_staff;item_null_talisman"
+	    }
+	}
+	//=================================================================================================================
+	// Seer's Lantern
+	//=================================================================================================================
+	"item_seers_lantern"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua/items/item_seers_lantern"
+		"ID"							"3041"  //Valve's version of this item uses the ID "39".
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"Model"							"models/props_gameplay/clarity.mdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_seers_lantern"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"75"
+		"AbilityCastRange"				"500"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"                      "5175"
+	    "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;"
+	    "ItemQuality"                   "epic"
+	    "ItemAliases"                   "seers_lantern"
+	    "ItemRequiresCharges"           "0"
+	    "ItemDisplayCharges"            "0"
+	    "ItemPermanent"                 "1"
+	    "ItemInitialCharges"            "0"
+		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+		"precache"
+		{
+		
+			"particle" "particles/items/seers_lantern.vpcf"
+			"soundfile"	"soundevents/game_sounds_items.vsndevts"
+		
+		}
+	
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_str" 		"8"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_int"			"8"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_agi"			"8"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"10"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana_regen"	"1.00"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration" 			"4.00"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"true_sight_duration" "4.00"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius" 			"500"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow" 				"30"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"magic_res_reduction" "30"
+			}
+		}
+	}
+	"item_soul_vial"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "item_lua"
+	    "ScriptFile"                    "lua/items/item_soul_vial"
+	    "ID"                            "3015"  //Valve's version of this item uses the ID "34".
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	    "Model"                         "models/props_gameplay/magic_wand.mdl"
+	    "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+	    "AbilityTextureName"            "item_soul_vial"
+	    
+	    // Stats        
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCooldown"               "12.0"
+	    "AbilityCastPoint"              "0.0"
+	    "AbilityManaCost"               "0"
+	    "AbilitySharedCooldown"         "soulvial"
+	    
+	    // Item Info
+	    //-------------------------------------------------------------------------------------------------------------
+	    "ItemCost"                      "400"
+	    "ItemShopTags"                  "regen_health;regen_mana;boost_health;boost_mana;damage"
+	    "ItemQuality"                   "component"
+	    "ItemAliases"                   "soul vial"
+	    "ItemRequiresCharges"           "1"
+	    "ItemDisplayCharges"            "1"
+	    "ItemPermanent"                 "1"
+	    "ItemInitialCharges"            "0"
+	    "SideShop"                      "1"
+	
+	    // Special  
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "max_charges"           "12"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "damage_per_charge"     "4"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "restore_per_charge"    "4"
+	        }
+	        "04"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "duration"              "4.5"
+	        }
+	    }
+	}
+	//=================================================================================================================
+	// wand_of_yggdrasil
+	//=================================================================================================================
+	"item_wand_of_yggdrasil"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua/items/item_wand_of_yggdrasil"
+		"ID"							"3040"  //Valve's version of this item uses the ID "39".
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"Model"							"models/props_gameplay/clarity.mdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_wand_of_yggdrasil"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0.0"
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"70"
+		"AbilityCastRange"				"650"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"                      "1900"
+	    "ItemShopTags"                  ""
+	    "ItemQuality"                   "epic"
+	    "ItemAliases"                   "wand_of_yggdrasil"
+	    "ItemRequiresCharges"           "0"
+	    "ItemDisplayCharges"            "0"
+	    "ItemPermanent"                 "1"
+	    "ItemInitialCharges"            "0"
+		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+		"precache"
+		{
+		
+			"particle" "particles/items/improved_magic_wand.vpcf"
+			"particle" "particles/items/yggdrasil_target.vpcf"
+			"particle" "particles/items/yggdrasil_drain_proj.vpcf"
+			"soundfile"	"soundevents/game_sounds_items.vsndevts"
+		
+		}
+	
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_int" 		"20"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_str" 		"7"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_agi" 		"7"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_speed" "15"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage" 		"15"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_health_regen" "3"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana_regen"  "1.00"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_drain"			"150"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mp_drain"			"150"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_percent_drain"  "7"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mp_percent_drain" 	"7"
+			}
+			"12"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay" 			"0.75"
+			}
+		}
+	}
+}

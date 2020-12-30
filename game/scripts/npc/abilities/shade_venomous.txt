@@ -1,6 +1,7 @@
 //=====================================================================================================
 // SHADE: Venomous
 //=====================================================================================================
+
 "shade_venomous"
 {
 	// General
@@ -40,23 +41,12 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"5 10 15 20"
-			"LinkedSpecialBonus"		"special_bonus_shade_2"
+			"damage"					"8 14 20 26"
 		}
 		"02"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"-7 -10 -13 -16"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"duration"					"6"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"armor_reduction"			"-1 -2 -3 -4"
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"4.0"
 		}
 	}
 	

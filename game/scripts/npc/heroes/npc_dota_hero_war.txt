@@ -41,7 +41,7 @@
 	"AttackDamageMax"			"40"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"30"										// Base strength
+	"AttributeBaseStrength"		"27"										// Base strength
 	"AttributeStrengthGain"		"2.9"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"16"										// Base intelligence
 	"AttributeIntelligenceGain"	"1.5"										// Intelligence bonus per level.

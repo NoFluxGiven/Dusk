@@ -1,0 +1,63 @@
+Abilities:
+  fate_chains_of_fate:
+    data:
+      damage_creep: '%DAMAGE (CREEP):'
+      damage_hero: '%DAMAGE (HERO):'
+      description: Fate binds the targeted unit with the chains of fate. Any unit
+        bound to the chains will receive a portion of the damage units in the radius
+        receive.
+      duration: 'DURATION:'
+      radius: 'RADIUS:'
+    modifiers:
+      chains_of_fate:
+      - Chains Of Fate
+      - Taking damage when nearby units take damage.
+    name: Chains Of Fate
+  fate_displace:
+    data:
+      description: Displaces the target ally's destiny temporarily, making them untargetable,
+        attack immune, not appear on the minimap, and move through units. Disjoints
+        projectiles and purges debuffs upon cast.
+      duration: 'DURATION:'
+    modifiers:
+      displace:
+      - Displace
+      - Cannot be attacked or targeted.
+    name: Displace
+  fate_realign:
+    data:
+      damage: 'DAMAGE/HEAL:'
+      description: Realigns allies and enemies in a small AoE, dealing damage to enemies
+        and healing allies.  Immediately ends Displace's first effect.
+      shock_radius: 'RADIUS:'
+    modifiers: {}
+    name: Realign
+  special_bonus_fate_1:
+    data: {}
+    modifiers: {}
+    name: +1s Displace Duration
+  special_bonus_fate_2:
+    data: {}
+    modifiers: {}
+    name: +7s Chains of Fate Duration
+  special_bonus_fate_3:
+    data: {}
+    modifiers: {}
+    name: +60 Realign Damage/Heal
+  special_bonus_fate_4:
+    data: {}
+    modifiers: {}
+    name: +20% Ancestral Recall Restore
+Hero:
+  data:
+    bio: ''
+    hype: Fate is an extremely difficult but highly rewarding character to use. Frail
+      and slow, but possessing a multitude of devastating spells that can function
+      as both support or offensive abilities, Fate can destroy most enemies given
+      enough space in a fight. Wrap your opponents in chains that bond their destinies
+      together, dealing damage as nearby units take damage, reduce the damage your
+      allies take with Displace, heal and damage in an AoE with Realign, and grant
+      you, or an ally, the stat power of extra levels, with Ancestral Recall.
+  modref: npc_dota_hero_fate
+  name: Fate
+  ref: npc_dota_hero_oracle

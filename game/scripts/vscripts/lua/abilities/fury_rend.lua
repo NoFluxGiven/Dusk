@@ -1,7 +1,7 @@
 fury_rend = class({})
 
 LinkLuaModifier("modifier_rend_passive","lua/abilities/fury_rend",LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_rend_hp","lua/abilities/fury_rend",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_rend_damage_amp","lua/abilities/fury_rend",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_rend","lua/abilities/fury_rend",LUA_MODIFIER_MOTION_NONE)
 
 function fury_rend:GetIntrinsicModifierName()
@@ -28,7 +28,7 @@ function modifier_rend_passive:OnAttackLanded(params)
 	if attacker ~= self:GetParent() then return end
 	if attacker:IsIllusion() then return end
 	if target:IsBuilding() then return end
-	if not target:IsHero() then return end
+	--if not target:IsHero() then return end
 	if attacker:PassivesDisabled() then return end
 	-- if target:IsRoshan() then duration = rosh_duration end
 
@@ -51,9 +51,9 @@ function modifier_rend:OnCreated(kv)
 	if IsServer() then
 		local stack = kv.stack or 1
 		self:SetStackCount(stack)
-		self:GetParent():RemoveModifierByName("modifier_rend_hp")
+		self:GetParent():RemoveModifierByName("modifier_rend_damage_amp")
 		self:GetParent():AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(),
-			"modifier_rend_hp",
+			"modifier_rend_damage_amp",
 			{Duration=self:GetDuration(), stack=self:GetStackCount()})
 	end
 end
@@ -62,9 +62,9 @@ function modifier_rend:OnRefresh(kv)
 	if IsServer() then
 		local stack = kv.stack or 1
 		self:SetStackCount(self:GetStackCount()+stack)
-		self:GetParent():RemoveModifierByName("modifier_rend_hp")
+		self:GetParent():RemoveModifierByName("modifier_rend_damage_amp")
 		self:GetParent():AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(),
-			"modifier_rend_hp",
+			"modifier_rend_damage_amp",
 			{Duration=self:GetDuration(), stack=self:GetStackCount()})
 	end
 end
@@ -77,41 +77,39 @@ function modifier_rend:GetEffectAttachType()
 	return PATTACH_OVERHEAD_FOLLOw
 end
 
-modifier_rend_hp = class({})
+modifier_rend_damage_amp = class({})
 
-function modifier_rend_hp:OnCreated(kv)
+function modifier_rend_damage_amp:OnCreated(kv)
 	if IsServer() then
 		local stack = kv.stack or 1
 		self:SetStackCount(stack)
 	end
 end
 
-function modifier_rend_hp:OnRefresh(kv)
+function modifier_rend_damage_amp:OnRefresh(kv)
 	if IsServer() then
 		local stack = kv.stack or 1
 		self:SetStackCount(stack)
 	end
 end
 
-function modifier_rend_hp:DeclareFunctions()
+function modifier_rend_damage_amp:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_HEALTH_BONUS
+		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
 	}
 	return funcs
 end
 
-function modifier_rend_hp:GetModifierHealthBonus()
+function modifier_rend_damage_amp:GetModifierIncomingDamage_Percentage()
 	local s = self:GetStackCount()
 
-	local t_hp_removal_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_fury_2") or 0
+	local t_damage_amp = self:GetAbility():GetCaster():FetchTalent("special_bonus_fury_2") or 0
 
-	local a = self:GetAbility():GetSpecialValueFor("max_hp_removal_per_stack") + t_hp_removal_bonus
+	local a = self:GetAbility():GetSpecialValueFor("damage_amp") + t_damage_amp
 
-	print(-(s*a))
-
-	return -(s*a)
+	return (s*a)
 end
 
-function modifier_rend_hp:IsHidden()
+function modifier_rend_damage_amp:IsHidden()
 	return true
 end

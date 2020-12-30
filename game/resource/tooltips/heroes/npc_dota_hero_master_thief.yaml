@@ -1,0 +1,70 @@
+Abilities:
+  master_thief_eye_for_an_eye:
+    name: Eye for an Eye
+    data:
+      description: The Master Thief throws between %min_daggers% and %max_daggers% daggers at the target.
+        Each one deals %damage% Physical damage; if they are facing towards the Master Thief, they are blinded
+        for a duration that extends for each dagger. If they are not, they take %sneak_damage%%% more damage.
+      duration: 'BLIND DURATION PER DAGGER:' # 1.0/1.2/1.4/1.6s
+      damage: 'DAMAGE:' # 20/30/40/50
+      sneak_damage: '%BACKSTAB DAMAGE INCREASE:' # 30/60/90/120%
+      # 1/1/2/2 minimum daggers
+      # 2/3/4/5 maximum daggers
+    modifiers:
+      eye_for_an_eye_blind:
+        - Eye for an Eye Blind
+        - Missing all attacks.
+
+  master_thief_become_sword:
+    name: Become Sword
+    data:
+      description: The Master Thief polymorphs into a sword. Allies can pick up the Item to gain bonus damage, and
+        additional bonus damage and Lifesteal when striking from behind, but they slowly lose Intelligence over time.
+        At any point, the Master Thief can activate his Unbecome Ability to change back.
+        If the holder would die, the sword is dropped on the ground.
+      damage: 'BONUS DAMAGE:' # 25/45/65/85
+      sneak_damage: '%BACKSTAB BONUS DAMAGE INCREASE:' # 30/60/90/120%
+      lifesteal: '%BACKSTAB LIFESTEAL:' # 20/40/60/80%
+      #90s cooldown
+    modifiers: {}
+
+  master_thief_cursed_cutlery:
+    name: Cursed Cutlery
+    data:
+      description: The Master Thief is truly a master of theft, and no thief covets an item more than they covet
+        the almighty Fork.
+        With each attack, the Master Thief has a %proc_chance%%% chance to strike an opponent with a cursed Fork,
+        dealing damage over time and leaving the Fork on their person. After %fork_grace_duration% seconds,
+        the Master Thief's next strike recovers the Fork, dealing %crit_damage%%% Critical damage and slowing the target
+        drastically for a short time.
+      proc_chance: '%CHANCE:' # 15%
+      fork_grace_duration: 'GRACE DURATION:' # 4s
+      duration: 'FORK DURATION:' # 10s
+      crit_damage: '%CRITICAL DAMAGE:' # 200/300/400/500%
+      slow: '%SLOW:' # 100%
+      slow_duration: 'SLOW DURATION:' # 2s
+    modifiers:
+      fork:
+        - After a grace period, the next attack from the fork's owner deals bonus damage and slows.
+
+  master_thief_thieves_cant:
+    name: Thieves' Cant
+    data:
+      description: The Master Thief is also a master wordsmith. Babbling in the tongues of the less common,
+        he confuses and outright bamboozles his foes in a large radius. Every %interval% seconds, each
+        enemy in a %radius% radius has a %sleep_chance%%% chance to fall asleep for %duration% seconds.
+        If they are already asleep, they have the sleep duration extended.
+        Enemies that are sleeping always take Backstab damage from the Master Thief's abilities.
+        If he is Silenced or Stunned, the effect is muted until the Silence or Stun ends.
+    modifiers:
+      thieves_cant_sleep:
+        - Thieves' Cant Sleep
+        - Snoozing away!
+        
+Hero:
+  data:
+    bio: ''
+    hype: ''
+  modref: npc_dota_hero_master_thief
+  name: Master Thief
+  ref: npc_dota_hero_meepo

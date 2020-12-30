@@ -32,45 +32,22 @@ end
 
 function modifier_venomous_lua:OnIntervalThink()
 	if IsServer() then
-		local agh_interval = 14
 		local dot = self:GetAbility():GetSpecialValueFor("damage")
-		local dmg = dot
-		local tbonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_shade_2")
-		if tbonus then dmg = dmg + tbonus end
 		local dtype = self:GetAbility():GetAbilityDamageType()
-		if self:GetCaster():HasScepter() then
-			local time_elapsed = GameRules:GetGameTime() - self.start_time
-			dmg = (time_elapsed / agh_interval) * dot + dot
-			local limit = 200
-			if dmg > limit then dmg = limit end
+
+		local modifiers = self:GetParent():FindAllModifiers()
+
+		local debuff_count = 0
+		for _,m in pairs(modifiers) do
+			print(m:GetName())
+			print(m.IsHidden)
+			if m:IsDebuff() and m:GetAbility():GetOwner():IsHero() then debuff_count = debuff_count + 1 end
 		end
-		self:GetAbility():InflictDamage(self:GetParent(),self:GetCaster(),dmg,dtype,DOTA_DAMAGE_FLAG_BYPASSES_BLOCK)
-	end
-end
 
-function modifier_venomous_lua:GetModifierMoveSpeedBonus_Percentage()
-	local agh_interval = 8
-	local slow = self:GetAbility():GetSpecialValueFor("slow")
-	if self:GetCaster():HasScepter() then
-		local time_elapsed = GameRules:GetGameTime() - self.start_time
-		slow = (time_elapsed / agh_interval) * slow + slow
-	end
-	return slow
-end
+		dot = dot * debuff_count
 
-function modifier_venomous_lua:GetModifierAttackSpeedBonus_Constant()
-	local agh_interval = 8
-	local slow = self:GetAbility():GetSpecialValueFor("slow")
-	if self:GetCaster():HasScepter() then
-		local time_elapsed = GameRules:GetGameTime() - self.start_time
-		slow = (time_elapsed / agh_interval) * slow + slow
+		self:GetAbility():InflictDamage(self:GetParent(),self:GetCaster(),dot,dtype,DOTA_DAMAGE_FLAG_BYPASSES_BLOCK)
 	end
-	return slow
-end
-
-function modifier_venomous_lua:GetModifierPhysicalArmorBonus()
-	local t_armor_reduction = self:GetAbility():GetCaster():FetchTalent("special_bonus_shade_5") or 0
-	return self:GetAbility():GetSpecialValueFor("armor_reduction")-t_armor_reduction
 end
 
 function modifier_venomous_lua:GetEffectName()
@@ -92,7 +69,7 @@ function modifier_venomous_passive_lua:OnAttackLanded( params )
 	local att = params.attacker
 	local dmg = params.attack_damage
 	local unit = params.unit or params.target
-	local dur = GetModifierSV(self,"duration")
+	local dur = GetModifierSV(self,"duration") or 4
 
 	if att ~= self:GetParent() then return end
 
@@ -100,9 +77,7 @@ function modifier_venomous_passive_lua:OnAttackLanded( params )
 		return
 	end
 
-	unit:AddNewModifier(att, self:GetAbility(), "modifier_venomous_lua", {Duration = dur}) --[[Returns:void
-	No Description Set
-	]]
+	unit:AddNewModifier(att, self:GetAbility(), "modifier_venomous_lua", {Duration = dur})
 end
 
 function modifier_venomous_passive_lua:IsHidden()

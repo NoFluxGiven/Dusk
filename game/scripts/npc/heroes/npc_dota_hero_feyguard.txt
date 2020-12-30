@@ -22,12 +22,13 @@
 	// Stuns for up to 1.75/2.50/3.25/4.00s.
 	// Deals up to 100/175/250/325 damage.
 	// Has a radius of up to 275/350/425/500 (starts at 225).
-	"Ability3"				"feyguard_unending" // 
-	// The Feyguard cannot be killed so long as there is an allied Hero nearby to
-	// possess.
-	// Upon taking lethal damage, the Feyguard enters any allied Hero that is within
-	// 700 units.
-	// 
+	"Ability3"				"feyguard_retaliation_curse" // 
+	// The Feyguard applies a curse to enemies that damage her.
+	// After a 3s delay, the enemy takes damage and is slowed. The damage is proportionate to
+	// the amount she took.
+	// Deals 40/80/120/160% of the damage she took and slows by 100% for 1.5s.
+	// Cannot apply multiple instances, and does not apply during the delay time.
+	// Can be purged.
 	"Ability4"				"generic_hidden" // 
 	"Ability5"				"generic_hidden" // 
 	"Ability6"				"feyguard_" // 

@@ -330,13 +330,18 @@ function CDOTA_Buff:DestroySubModifiers()
 end
 
 function CDOTA_BaseNPC:FetchTalent(talent_name,val) -- returns the value attached to the Talent if it is learned, nil if not
-  local ei = self:entindex()
+  local ei = self:GetEntityIndex()
   local t = CustomNetTables:GetTableValue("learned_abilities", tostring(ei))
+  local val = val or "value"
 
   local v = nil
 
   if t then
   	v = t[talent_name]
+
+  	if type(v) == "table" then
+  		v = v[val]
+  	end
   end
 
   return v
@@ -367,3 +372,17 @@ function CDOTA_BaseNPC:Knockback(direction,distance,time)
 		p:PreventDI(false)
 	end)
 end
+
+-- function CDOTA_BaseNPC:FetchTalent(talent_name,val) -- returns the value attached to the Talent if it is learned, nil if not
+--   if self:HasTalent(talent_name) then
+--   	return FetchTalentValue(talent_name,val)
+--   end
+-- end
+
+-- function CDOTA_BaseNPC:HasTalent(talent_name)
+-- 	if self:FindAbilityByName(talent_name) then
+-- 		return true
+-- 	end
+
+-- 	return false
+-- end

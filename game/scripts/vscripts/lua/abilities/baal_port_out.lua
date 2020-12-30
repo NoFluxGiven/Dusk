@@ -31,7 +31,7 @@ function baal_port_out:OnSpellStart()
 
 			caster:RemoveModifierByName("modifier_spatial_rift_display")
 
-			main_ability:EndRift()
+			main_ability:EndRift(false)
 		end)
 	end
 end

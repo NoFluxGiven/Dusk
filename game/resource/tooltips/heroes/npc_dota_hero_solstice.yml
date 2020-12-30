@@ -1,0 +1,86 @@
+Abilities:
+  solstice_equinox:
+    name: Equinox
+    data:
+      description: Solstice curses the target unit, blasting them with icy winds.
+        The winds deal %damage_per_second% Magical damage per second in a %radius% radius, slowing affected units'
+        movespeed by %slow%%%.
+      duration: 'DURATION:' # 8s
+      radius: 'RADIUS:' # 250
+      damage_per_second: 'DAMAGE PER SECOND:' # 15/25/35/45
+      slow: '%SLOW:' # 15/20/25/30%
+    modifiers:
+      equinox:
+        - Equinox
+        - Taking damage over time.
+      equinox_delay:
+        - Equinox
+        - Taking damage over time after this buff duration ends.
+    # 8s cooldown
+    # 175 Mana Cost
+
+  solstice_frostwave:
+    name: Frostwave
+    data:
+      description: Creates a wave of freezing air that expands over %expansion_time% seconds and
+        deals damage. Low Health Heroes hit are frozen solid.
+        Deals %damage% damage in a %radius% radius. Heroes with less than %freezing_threshold%%% Health take %freezing_damage%
+        bonus damage and become frozen for %freezing_duration% seconds.
+      freezing_threshold: '%FREEZING THRESHOLD:' # 35%
+      freezing_duration: 'FREEZING DURATION:' # 1.25/2.00/2.75/3.50s
+      freezing_damage: 'FREEZING DAMAGE:' # 75/100/125/150
+      damage: 'DAMAGE:' # 175/225/275/325
+      radius: 'RADIUS:' # 450
+      expansion_time: 'EXPANSION TIME:' # 1s
+    modifiers:
+      equinox:
+        - Equinox
+        - Taking damage over time.
+      equinox_delay:
+        - Equinox
+        - Taking damage over time after this buff duration ends.
+
+  solstice_winters_wrath:
+    name: Winter's Wrath
+    data:
+      description: Solstice's attacks deal bonus damage to enemies affected by his abilities.
+        Whenever Solstice attacks a unit afflicted with one of his abilities' debuffs, he deals
+        bonus damage and applies stacks of Winter's Wrath. At %max_stack% stacks, the buff detonates,
+        dealing %detonate_damage% damage and slowing by %slow%%% for %slow_duration% seconds.
+        He cannot apply stacks to units still affected by the slow.
+      duration: 'DURATION:' # 4s
+      range: 'RANGE:' # 400/500/600/700
+      bonus_damage: 'BONUS DAMAGE:' # 20/30/40/50
+      max_stack: 'MAX STACKS:' # 4
+      detonate_damage: 'DETONATE DAMAGE:' # 50/100/150/200
+      slow: '%SLOW:' # 30%
+      slow_duration: 'SLOW DURATION:' # 1.4s
+    modifiers:
+
+  solstice_rime_curse:
+    name: Rime Curse
+    data:
+      description: The target enemy Hero is cursed with long forgotten magic. After a %delay% second delay,
+        they are surrounded by chill winds, trapping them in an ice crystal for %duration% seconds.
+        Their allies can attack the crystal %attack_count% times to break it, ending the curse.
+        Whilst frozen, they cannot recover Health, and are stunned.
+
+        Cannot be dispelled.
+
+        Pierces Spell Immunity.
+
+        Upgradable by Aghanim's Scepter.
+      aghanim_description: For the duration of the Rime Curse, Solstice creates an icy illusion of the target enemy.
+        The illusion has an Aura that deals damage over time, slows, and reduces Health Regen in a large radius.
+      delay: "DELAY:" # 4s
+      duration: "DURATION:" # 8s
+      attack_count: "ATTACK COUNT:" # 4/6/8
+    modifiers:
+        
+Hero:
+  data:
+    bio: ''
+    hype: ''
+  modref: npc_dota_hero_solstice
+  name: Solstice
+  ref: npc_dota_hero_lich

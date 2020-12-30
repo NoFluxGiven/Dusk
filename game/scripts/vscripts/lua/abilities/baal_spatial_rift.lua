@@ -57,7 +57,7 @@ function baal_spatial_rift:OnChannelFinish(interrupted)
 		]]
 
 		Timers:CreateTimer(duration+0.1,function()
-			self:EndRift()
+			self:EndRift(false)
 		end)
 
 		local found = FindUnitsInRadius( caster:GetTeamNumber(),
@@ -77,17 +77,17 @@ function baal_spatial_rift:OnChannelFinish(interrupted)
 			DealDamage(v,caster,damage,DAMAGE_TYPE_MAGICAL)
 		end
 	else
-		self:EndRift()
+		self:EndRift(true)
 	end
 end
 
-function baal_spatial_rift:EndRift()
+function baal_spatial_rift:EndRift(interrupted)
 	local caster = self:GetCaster()
 	local ability = caster:FindAbilityByName("baal_port_out")
 
 	if caster.spatial_rift_unit then
 
-		caster:SwapAbilities( "baal_spatial_rift", "baal_port_out", true, false )
+		if not interrupted then caster:SwapAbilities( "baal_spatial_rift", "baal_port_out", true, false ) end
 
 		if caster.spatial_rift_particle then ParticleManager:DestroyParticle(caster.spatial_rift_particle,true) end
 		if caster.spatial_rift_start_particle then ParticleManager:DestroyParticle(caster.spatial_rift_start_particle,true) end

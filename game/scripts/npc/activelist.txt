@@ -8,9 +8,11 @@
 	"npc_dota_hero_lifestealer" "0" // Plague; in the works
 	"npc_dota_hero_bristleback" "0" // Spike; in the works
 	"npc_dota_hero_kunkka" "0" // Lysander; needs an E
-	"npc_dota_hero_warlock" "0" // Faust; in the works
+	"npc_dota_hero_warlock" "1" // Faust; in the works
 	"npc_dota_hero_lycan" "1" // Balthasar; in the works - complete: particles, design
-	"npc_dota_hero_sven" "1" // Siegfried; sounds, particles, npc_dota_hero_sand_king
+	"npc_dota_hero_sven" "1" // Siegfried; sounds, particles
+	"npc_dota_hero_phantom_lancer" "1" // Pride; in the works
+	"npc_dota_hero_drow_ranger" "1" // Teleri; in the works
 
 	//==========================================
 

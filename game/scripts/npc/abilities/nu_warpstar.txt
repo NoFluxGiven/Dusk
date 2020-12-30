@@ -20,7 +20,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1400"
+	"AbilityCastRange"				"1000 1400 1800"
 	"AbilityCastPoint"				"0.3"
 	
 	// Time		
@@ -42,7 +42,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"125 200 275"
+			"damage"					"200 275 350"
 		}
 		"02"
 		{
@@ -53,6 +53,11 @@
 		{
 			"var_type"					"FIELD_FLOAT"
 			"delay"						"2.00"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"stun"						"1.6"
 		}
 	}
 	

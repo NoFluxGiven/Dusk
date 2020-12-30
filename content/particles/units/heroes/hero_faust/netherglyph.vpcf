@@ -1,6 +1,8 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf1:version{d47d07e6-072c-49cb-9718-5bfd8d6c3d21} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf31:version{593cd181-a1d6-4c6f-9a8c-0534e8d44db0} -->
 {
 	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 10
+	m_nFirstMultipleOverride_BackwardCompat = 5
 	m_controlPointConfigurations = 
 	[
 		{
@@ -10,10 +12,59 @@
 				{
 					m_iAttachType = "PATTACH_WORLDORIGIN"
 					m_vecOffset = [ 0.0, 0.0, 0.0 ]
-					m_angOffset = [ null, null, null ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
 					m_entityName = "self"
 				},
 			]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 2.0
+			}
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomRadius"
+		},
+		{
+			_class = "C_INIT_RandomRotationSpeed"
+			m_flDegreesMin = 25.0
+			m_flDegreesMax = 25.0
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 28, 28, 30 ]
+			m_ColorMax = [ 106, 90, 205 ]
+			m_TintMin = [ 0, 0, 0 ]
+			m_TintMax = [ 255, 255, 255 ]
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RemapCPtoScalar"
+			m_nCPInput = 1
+			m_flInputMin = 100.0
+			m_flInputMax = 10000.0
+			m_flOutputMin = 100.0
+			m_flOutputMax = 10000.0
+			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 55.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 55.0 ]
 		},
 	]
 	m_Operators = 
@@ -41,51 +92,14 @@
 	[
 		{
 			_class = "C_OP_RenderSprites"
-			m_nOrientationType = 2
-			m_hTexture = resource:"materials/particle/items/treant/ti7_immortal_shoulder/treant_ti7_livingarmor_rune.vtex"
-		},
-	]
-	m_Initializers = 
-	[
-		{
-			_class = "C_INIT_RandomRadius"
-		},
-		{
-			_class = "C_INIT_RemapCPtoScalar"
-			m_nCPInput = 1
-			m_flInputMin = 100.0
-			m_flInputMax = 10000.0
-			m_flOutputMin = 100.0
-			m_flOutputMax = 10000.0
-			m_bScaleInitialRange = true
-		},
-		{
-			_class = "C_INIT_RandomRotationSpeed"
-			m_flDegreesMin = 25.0
-			m_flDegreesMax = 25.0
-		},
-		{
-			_class = "C_INIT_RandomRotation"
-		},
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 28, 28, 30, 255 ]
-			m_ColorMax = [ 106, 90, 205, 255 ]
-		},
-		{
-			_class = "C_INIT_PositionOffset"
-			m_OffsetMin = [ 0.0, 0.0, 55.0 ]
-			m_OffsetMax = [ 0.0, 0.0, 55.0 ]
-		},
-		{
-			_class = "C_INIT_CreateWithinSphere"
-		},
-	]
-	m_Emitters = 
-	[
-		{
-			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 2
+			m_nOrientationType = "PARTICLE_ORIENTATION_WORLD_Z_ALIGNED"
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/items/treant/ti7_immortal_shoulder/treant_ti7_livingarmor_rune.vtex"
+				},
+			]
+			m_OutlineColor = [ 255, 255, 255 ]
 		},
 	]
 	m_Children = 

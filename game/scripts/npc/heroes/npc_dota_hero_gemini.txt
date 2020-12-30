@@ -40,6 +40,10 @@
 	"Ability15"				"special_bonus_gemini_3"
 	"Ability16"				"special_bonus_gemini_2"
 	"Ability17"				"special_bonus_cooldown_reduction_25"
+	"Ability18"				""
+	"Ability19"				""
+
+	"AbilityTalentStart"	"10"
 
 	"ArmorPhysical"				"0"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -51,7 +55,7 @@
 	"AttackDamageMax"			"25"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-	"AttributeBaseStrength"		"15"										// Base strength
+	"AttributeBaseStrength"		"19"										// Base strength
 	"AttributeStrengthGain"		"1.7"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"26"										// Base intelligence
 	"AttributeIntelligenceGain"	"2.5"										// Intelligence bonus per level.

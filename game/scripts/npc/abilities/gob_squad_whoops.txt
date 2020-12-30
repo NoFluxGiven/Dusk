@@ -1,3 +1,14 @@
+///@tooltip
+///@hero npc_dota_hero_gob_squad
+///@name Whoops!
+///@description The Gob Squad's something does something.
+
+///@changelog
+///@version 2.2
+///@hero Gob Squad
+///@ability Whoops!
+///@changes #
+
 "gob_squad_whoops"
 {
 	// General

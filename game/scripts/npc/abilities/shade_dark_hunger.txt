@@ -1,6 +1,15 @@
 //=====================================================================================================
 // SHADE: Dark_hunger
 //=====================================================================================================
+
+///@changelog
+///@version 2.2
+///@type HERO_ABILITY
+///@hero Shade
+///@ability Dark Hunger
+///@changes #
+/// Dark Hunger is now an activated ability that causes Shade to drain Health from enemies around him, with the total drain amount increasing with each subsequent hit on an identical enemy.
+
 "shade_dark_hunger"
 {
 	// General
@@ -8,7 +17,8 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/shade_dark_hunger"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -16,16 +26,16 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"0"
+	"AbilityCastRange"				"325"
 	"AbilityCastPoint"				"0"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"0"
+	"AbilityCooldown"				"19"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"0"
+	"AbilityManaCost"				"110"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -38,13 +48,33 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"heal"						"10 15 20 25"
-			"LinkedSpecialBonus"		"special_bonus_shade_3"
+			"proc_increase"				"5 10 15 20"
+			//"LinkedSpecialBonus"		"special_bonus_shade_3"
 		}
 		"02"
 		{
+			"var_type"					"FIELD_INTEGER"
+			"health_drain"				"10"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"health_drain_max"			"30 50 70 90"
+		}
+		"04"
+		{
 			"var_type"					"FIELD_FLOAT"
-			"creep_heal"				"2.5 3.75 5 6.25"
+			"duration"					"8.00"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"interval"					"1.00"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"325"
 		}
 	}
 	

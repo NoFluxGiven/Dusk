@@ -25,7 +25,7 @@
 	"Ability16"				"special_bonus_gob_squad_3" // Creates 4 Bombs on Spell Cast
 	"Ability17"				"special_bonus_gob_squad_4" // Ride the Rocket Blast!
 
-	"ArmorPhysical"				"2"									// Physical protection.
+	"ArmorPhysical"				"15"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -35,7 +35,7 @@
 	"AttackDamageMax"			"15"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-	"AttributeBaseStrength"		"17"										// Base strength
+	"AttributeBaseStrength"		"12"										// Base strength
 	"AttributeStrengthGain"		"1.0"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"19"										// Base intelligence
 	"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.

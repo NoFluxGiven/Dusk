@@ -34,6 +34,7 @@ function modifier_tesla:OnDestroy()
 		local damage = self:GetAbility():GetSpecialValueFor("damage")
 
 		local stun = self:GetAbility():GetSpecialValueFor("stun")
+		local mana_drain = self:GetAbility():GetSpecialValueFor("mana_drain")
 
 		local enemy = FindEnemies(caster, caster:GetAbsOrigin(), radius)
 
@@ -46,10 +47,15 @@ function modifier_tesla:OnDestroy()
 
 		for k,v in pairs(enemy) do
 			local vdamage = damage
-			if v:IsStunned() then vdamage = vdamage * 2 end
+			--if v:IsStunned() then vdamage = vdamage * 2 end
+
+			local mana_drain_amount = v:GetMana() * (mana_drain/100)
+
 			self:GetAbility():InflictDamage(v,caster,vdamage,DAMAGE_TYPE_MAGICAL)
 			v:AddNewModifier(caster, self:GetAbility(), "modifier_tesla_debuff", {Duration=stun})
+			v:ReduceMana(mana_drain_amount)
 			v:EmitSound("Hero_Invoker.SunStrike.Ignite.Apex")
+			caster:GiveMana(mana_drain_amount)
 		end
 	end
 end

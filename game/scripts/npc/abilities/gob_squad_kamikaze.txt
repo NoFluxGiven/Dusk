@@ -1,10 +1,24 @@
 "gob_squad_kamikaze"
+
+///@changelog
+///@version 2.2
+///@hero Gob Squad
+///@ability Kamikaze
+///@changes #
+/// Is now immediate cast.
+/// Increased movespeed bonus to 40%.
+/// Increased damage to 250/300/350/400.
+/// No longer grants bonus damage based on the amount of self damage taken.
+/// Reduced self stun to 0.7s.
+/// Reduced self damage to 35%.
+/// Reduced cooldown to 20s.
+
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"				"ability_lua"
 	"ScriptFile"			"lua/abilities/gob_squad_kamikaze"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
@@ -33,11 +47,11 @@
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"60 50 40 30"
+	"AbilityCooldown"				"20"
 
 	// Damage.
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"150 200 250 300"
+	"AbilityDamage"					"250 300 350 400"
 	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -60,17 +74,17 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"movespeed_bonus"		"15 20 25 30"
+			"movespeed_bonus"		"40"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"health_damage"			"50"
+			"health_damage"			"35"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"total"					"50"
+			"total"					"0"
 		}
 		"06"
 		{
@@ -80,7 +94,7 @@
 		"07"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"stun"					"1.4"
+			"stun"					"0.7"
 		}
 	}
 

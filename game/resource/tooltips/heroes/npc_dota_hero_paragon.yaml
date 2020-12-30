@@ -1,0 +1,97 @@
+Abilities:
+  paragon_cleanse:
+    data:
+      Lore: The Paragon must learn to cleanse both his allies and his enemies of their
+        worldly anchors.
+      Note0: Secondary Heal does not affect the primary target.
+      description: Heals an ally or deals damage to an enemy.  Additionally heals
+        allies in a radius around them for a smaller amount.
+      heal: 'HEAL/DAMAGE:'
+      secondary: 'SECONDARY HEAL:'
+    modifiers:
+      cleanse_heal_amp_display:
+      - Cleanse Heal Amp
+      - All healing amplified for this unit.
+    name: Cleanse
+  paragon_divine_armour:
+    data:
+      Description: "After \treaching a threshold of damage, Paragon's Armour unleashes\
+        \ a blast of light, damaging nearby enemies based on their Maximum Health,\
+        \ and causing him to take less damage for a short time afterwards. Disabled\
+        \ by Break."
+      damage_block_duration: 'DAMAGE REDUCTION DURATION:'
+      damage_heal: '%DAMAGE:'
+      damage_reduction: '%DAMAGE REDUCTION:'
+      radius: 'RADIUS:'
+      threshold: 'THRESHOLD:'
+    modifiers:
+      divine_armour_block_lua:
+      - Divine Armour
+      - Taking reduced damage for a short time.
+      divine_armour_lua:
+      - Divine Armour
+      - Damage threshold nearly reached.
+    name: Divine Armour
+  paragon_smite:
+    data:
+      Lore: While the Paragon is pure in soul, retribution leaves a sweet taste on
+        the tongue.
+      aghanim_description: Damage increase. Adds bonus damage if the target was the
+        last person to kill a member of your team.
+      damage: 'DAMAGE:'
+      description: The Paragon calls forth a divine bolt to strike the targeted enemy.
+        Global.\n\nUpgradable by Aghanim's Scepter.
+      scepter_damage: 'SCEPTER DAMAGE:'
+      scepter_damage_bonus: 'SCEPTER BONUS DAMAGE:'
+    modifiers: {}
+    name: Smite
+  paragon_tranquility_seal:
+    data:
+      Lore: Sometimes the simplest of seals are the most effective.
+      description: The target is sealed, preventing them from dealing or receiving
+        damage for the duration.\nCan be cast on Buildings.
+      duration: 'DURATION:'
+      range: 'CAST RANGE:'
+    modifiers:
+      tranquility_seal:
+      - Cannot deal or receive damage.
+      - ''
+    name: Tranquility Seal
+  special_bonus_paragon_1:
+    data: {}
+    modifiers: {}
+    name: Cleanse Stacking 10% Heal Amp (45s)
+  special_bonus_paragon_2:
+    data: {}
+    modifiers: {}
+    name: +1s Divine Armour Duration
+  special_bonus_paragon_3:
+    data: {}
+    modifiers: {}
+    name: Tranquil Seal 40 HP Regen/-Regen
+  special_bonus_paragon_4:
+    data: {}
+    modifiers: {}
+    name: 50% Damage Mini-Smite On Ally Death
+  special_bonus_paragon_5:
+    data: {}
+    modifiers: {}
+    name: Cleanse Applies Basic Dispel
+  special_bonus_paragon_6:
+    data: {}
+    modifiers: {}
+    name: +4s Tranquil Seal Duration
+  special_bonus_paragon_7:
+    data: {}
+    modifiers: {}
+    name: Cleanse Can Target Buildings (50%)
+Hero:
+  data:
+    bio: ''
+    hype: A healer of mind and body, and a destroyer of his enemies, Paragon can entirely
+      negate damage with his Tranquil Seal, staunchly defend himself with Divine Armour,
+      heal his allies or damage his enemies with Cleanse, and inflict massive amounts
+      of Pure damage globally with Smite.
+  modref: npc_dota_hero_paragon
+  name: Paragon
+  ref: npc_dota_hero_omniknight

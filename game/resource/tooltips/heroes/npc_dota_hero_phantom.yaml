@@ -1,0 +1,88 @@
+Abilities:
+  phantom_deathstrike:
+    data:
+      Lore: Her banishment from the material plane had some unintended side effects;
+        such as the ability to strike directly at the soul of her targets.
+      bonus_damage: '%MISSING HEALTH AS DAMAGE:'
+      description: The Phantasm's strikes are much more effective against targets
+        close to death, dealing bonus Physical damage based upon their missing Health
+        when below a threshold.
+      threshold: '%THRESHOLD:'
+    modifiers: {}
+    name: Deathstrike
+  phantom_nightmare:
+    data:
+      description: The Phantasm inflicts a terrible nightmare upon the target enemy.
+        The nightmare prevents them from targeting Phantasm with Spells, Items, or
+        attacks, and prevents the target from being targeted by their allies' Spells
+        and Items.
+      duration: 'DURATION:'
+    modifiers:
+      nightmare:
+      - Nightmare
+      - Unable to target the caster with Spells, Items or attacks.
+      nightmare_caster:
+      - Nightmare
+      - Units afflicted with the Nightmare debuff cannot target you with Spells, Items
+        or attacks.
+    name: Nightmare
+  phantom_shadowstep:
+    data:
+      Lore: As twisted a nightmare the Phantasm may be, she insists that it's nothin'
+        personal, kid.
+      bonus_evasion: '%BONUS EVASION:'
+      bonus_movespeed: '%BONUS MOVESPEED:'
+      delay: 'DELAY:'
+      description: Phantasm weaves herself into the shadows, appearing behind a target
+        enemy after a delay and gaining bonus movespeed and evasion. If she is stunned
+        or Silenced during the delay, the Spell does not complete. Global.
+      duration: 'DURATION:'
+    modifiers:
+      shadowstep:
+      - Shadowstep
+      - Increased movement speed and evasion.
+      shadowstep_delay:
+      - Shadowstep
+      - About to jump to your target Hero. Get ready!
+    name: Shadowstep
+  phantom_soul_wave:
+    data:
+      damage: 'DAMAGE:'
+      description: Emits a shockwave from Phantasm that deals Magical damage. She
+        regains a portion of the damage dealt to all units as Health, after reductions
+        and amplifications.
+      mult: '%DAMAGE TO HEALING:'
+      radius: 'RADIUS:'
+      slow: '%SLOW:'
+      slow_duration: 'DURATION:'
+    modifiers:
+      soul_wave:
+      - Soul Wave
+      - Movement speed slowed slightly.
+    name: Soul Wave
+  special_bonus_phantom_1:
+    data: {}
+    modifiers: {}
+    name: +7% Deathstrike Threshold
+  special_bonus_phantom_2:
+    data: {}
+    modifiers: {}
+    name: +1.75s Soul Wave Slow
+  special_bonus_phantom_3:
+    data:
+      Description: Nightmare affects all enemies in the AoE on cast.
+    modifiers: {}
+    name: Nightmare 300 AoE
+Hero:
+  data:
+    bio: ''
+    hype: A spectral form that can barely be perceived, Phantasm may be fragile, but
+      she is an incredibly powerful manfighter and late game carry. Possessing a cleave
+      that increases its damage the more times it hits, an excellent scaling AoE nuke/slow
+      that is based on her Attribute total, a devastating critical strike that deals
+      more damage the lower Health the target is on, and a long range teleport that
+      allows her to quickly close the distance against even the most elusive foes,
+      Phantasm is a powerful and terrifying Hero.
+  modref: npc_dota_hero_phantom
+  name: Phantasm
+  ref: npc_dota_hero_spectre

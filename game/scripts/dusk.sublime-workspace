@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"propertypercen",
+				"modifierPropertyMovespeedbonuspercentage"
+			],
+			[
+				"property",
+				"modifierPropertyAttackspeedbonusconstant"
+			],
+			[
+				"unittarget",
+				"unitTargetOther"
+			],
+			[
+				"modifier_",
+				"modifier_merciless_marker"
+			],
+			[
+				"modifier_merci",
+				"modifier_merciless_marker"
+			],
+			[
+				"GetAbilityDamage",
+				"GetAbilityDamageType\tNo Description Set"
+			],
+			[
+				"GetCurso",
+				"GetCursorPosition\tNo Description Set"
+			],
+			[
+				"modifier_spark",
+				"modifier_spark_buff"
+			],
+			[
+				"target",
+				"unitTargetBasic"
+			],
+			[
+				"modifier_overload_",
+				"modifier_overload_invuln"
+			],
+			[
+				"true",
+				"modifierNameTruesight"
+			],
+			[
+				"modifier_bean",
+				"modifier_beneath_the_mask_bonus"
+			],
+			[
+				"modifier_doom",
+				"modifier_doomflame_buff"
+			],
+			[
+				"GetPlayerOwner",
+				"GetPlayerOwnerID\tGet the owner player ID for this unit."
+			],
+			[
 				"modifier_emer",
 				"modifier_emerald_fang_passive"
 			],
@@ -22,14 +78,6 @@
 			[
 				"propertymovesp",
 				"modifierPropertyMovespeedbonuspercentage"
-			],
-			[
-				"modifier_doom",
-				"modifier_doomflame_aura"
-			],
-			[
-				"modifier_",
-				"modifier_doomflame_buff"
 			],
 			[
 				"modifier_do",
@@ -230,10 +278,6 @@
 			[
 				"modifier_he",
 				"modifier_hephaestus_guard_slow"
-			],
-			[
-				"target",
-				"unitTargetBuilding"
 			],
 			[
 				"flag",
@@ -470,211 +514,181 @@
 			[
 				"modifier_grave_g",
 				"modifier_grave_guard_aura"
-			],
-			[
-				"modifier_displace",
-				"modifier_displace_debuff"
-			],
-			[
-				"propertyabsoluteno",
-				"modifierPropertyAbsolutenodamagephysical"
-			],
-			[
-				"propertyanimation",
-				"modifierPropertyOverrideanimationrate"
-			],
-			[
-				"modifier_dee",
-				"modifier_deep_freeze"
-			],
-			[
-				"modifier_deep_",
-				"modifier_deep_freeze_stun"
-			],
-			[
-				"modifier_ab",
-				"modifier_absolute_zero_aura"
-			],
-			[
-				"propertymove",
-				"modifierPropertyMovespeedbonuspercentage"
-			],
-			[
-				"propertydamage",
-				"modifierPropertyPreattackbonusdamage"
-			],
-			[
-				"preattack",
-				"modifierPropertyPreattackbonusdamage"
-			],
-			[
-				"modifier_zan",
-				"modifier_zanmato_target"
-			],
-			[
-				"modifier_zanmato",
-				"modifier_zanmato_caster"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "npc/heroes/npc_dota_hero_pride.txt",
+			"settings":
+			{
+				"buffer_size": 4023,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "npc/heroes/npc_dota_hero_teleri.txt",
+			"settings":
+			{
+				"buffer_size": 4736,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "vscripts/duskdota.lua",
+			"settings":
+			{
+				"buffer_size": 43672,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "vscripts/addon_init.lua",
+			"settings":
+			{
+				"buffer_size": 1439,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "vscripts/addon_game_mode.lua",
+			"settings":
+			{
+				"buffer_size": 12230,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "npc/heroes/npc_dota_hero_cultist.txt",
+			"settings":
+			{
+				"buffer_size": 4098,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "npc/heroes/npc_dota_hero_solstice.txt",
+			"settings":
+			{
+				"buffer_size": 3007,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "npc/heroes/npc_dota_hero_wight.txt",
+			"settings":
+			{
+				"buffer_size": 4791,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "npc/activelist.txt",
 			"settings":
 			{
-				"buffer_size": 2344,
+				"buffer_size": 2460,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game/compile_images.xml",
+			"file": "npc/abilities/pride_elyats_bellow.txt",
 			"settings":
 			{
-				"buffer_size": 609,
+				"buffer_size": 2289,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/styles/custom_loading_screen.css",
+			"file": "vscripts/lua/abilities/pride_elyats_bellow.lua",
 			"settings":
 			{
-				"buffer_size": 2798,
+				"buffer_size": 1268,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "vscripts/lua/abilities/balthasar_doomflame.lua",
+			"file": "npc/abilities/pride_merciless.txt",
 			"settings":
 			{
-				"buffer_size": 4477,
+				"buffer_size": 2323,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "vscripts/lua/abilities/balthasar_emerald_fang.lua",
+			"file": "npc/items/item_seers_lantern.txt",
 			"settings":
 			{
-				"buffer_size": 1785,
+				"buffer_size": 2681,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "npc/abilities/balthasar_emerald_fang.txt",
+			"file": "vscripts/lua/items/item_seers_lantern.lua",
 			"settings":
 			{
-				"buffer_size": 1973,
+				"buffer_size": 8224,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "npc/abilities/balthasar_firebolt.txt",
+			"file": "vscripts/lua/abilities/pride_merciless.lua",
 			"settings":
 			{
-				"buffer_size": 2164,
+				"buffer_size": 3627,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "npc/abilities/siegfried_heaven_sent.txt",
+			"file": "npc/abilities/pride_lionheart.txt",
 			"settings":
 			{
-				"buffer_size": 2061,
+				"buffer_size": 2234,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "npc/abilities/special_bonus_balthasar_1.txt",
+			"file": "vscripts/lua/abilities/pride_lionheart.lua",
 			"settings":
 			{
-				"buffer_size": 832,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "npc/abilities/balthasar_doomflame.txt",
-			"settings":
-			{
-				"buffer_size": 2602,
+				"buffer_size": 1956,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "vscripts/settings.lua",
+			"file": "vscripts/internal/util.lua",
 			"settings":
 			{
-				"buffer_size": 9112,
-				"encoding": "UTF-8",
+				"buffer_size": 34904,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "npc/abilities/balthasar_ward_of_the_emerald_flame.txt",
+			"contents": "Searching 1202 files for \"setoriginalhealth\"\n\n0 matches",
 			"settings":
 			{
-				"buffer_size": 2365,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game/custom_loading_screen.xml",
-			"settings":
-			{
-				"buffer_size": 1704,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game/custom_ui_manifest.xml",
-			"settings":
-			{
-				"buffer_size": 5645,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "npc/items/item_rage_potion.txt",
-			"settings":
-			{
-				"buffer_size": 1528,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "npc/items/item_ironblood_potion.txt",
-			"settings":
-			{
-				"buffer_size": 1672,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "vscripts/lua/items/item_rage_potion.lua",
-			"settings":
-			{
-				"buffer_size": 913,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"buffer_size": 55,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
 			}
 		},
 		{
 			"file": "/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/resource/special_bonus_dump.txt",
 			"settings":
 			{
-				"buffer_size": 20802,
+				"buffer_size": 20801,
 				"encoding": "UTF-8",
 				"line_ending": "Windows",
 				"name": "\"DOTA_Tooltip_ability_special_bonus_undefined\"\t\t\t\""
@@ -684,7 +698,8 @@
 			"file": "vscripts/talents/modifier_overhead.lua",
 			"settings":
 			{
-				"buffer_size": 14143,
+				"buffer_size": 14162,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -701,12 +716,12 @@
 		"selected_items":
 		[
 			[
-				"lua",
-				"Set Syntax: Lua Dota"
-			],
-			[
 				"kv",
 				"Set Syntax: Dota KV"
+			],
+			[
+				"lua",
+				"Set Syntax: Lua Dota"
 			],
 			[
 				"dota kv",
@@ -812,149 +827,143 @@
 	[
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/items",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/itembuilds",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game"
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/itembuilds"
 	],
 	"file_history":
 	[
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/internal/util.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/siegfried_heaven_sent.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/siegfried_eon_shield.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_cultist.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_apple.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_stoneforger.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_solstice.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_astaroth.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_astaroth_4.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/astaroth_deathmark.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_elementalist.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/astaroth_deathmark.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/poo.html",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_fury.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_shard_magus.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_siegfried.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_shade.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_hawkeye.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_rai.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_lightning.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_lich.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_gob_squad.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_gemini.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_erra.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_elena.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_bloodwarrior.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_bahamut.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_alroth.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_alexander.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_aeronaut.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_tek.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_war.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lightning_overload.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/soundevents/hero_lightning.vsndevts",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lightning_spark.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lightning_lightning_dagger.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lightning_boltblast.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/duskdota.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/lightning_overload.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/nu_warpstar.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/nu_flux_field.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/soundevents/hero_lightning.vsndevts_c",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/shard_magus_glacial_impact.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_fury_3.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/fury_bloodsport.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/events.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/lightning_spark.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/rai_arc_twister.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_fury_2.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_fury_4.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/fury_berserk.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/fury_berserk.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/fury_rend.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/fury_rend.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/erra_to_dust.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/erra_to_dust.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/erra_deathtouch.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/erra_deathtouch.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/fury_roar.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/fury_roar.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/libraries/extend_client.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/libraries/extend.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/alexander_steadfast.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/lightning_lightning_dagger.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/timekeeper_haste_aura.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/fury_bloodsport_old_2.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/war_berserker_aura.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_feyguard.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/fate_displace.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/fate_displace.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_summoner.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_chronos.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_fate.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/internal/util_client.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/internal/duskdota.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/lupin_finisher.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_lupin.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lupin_finisher.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lupin_last_surprise.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lupin_beneath_the_mask.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/lupin_beneath_the_mask.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/styles/custom_loading_screen.css",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game/compile_images.xml",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/fate_realign.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_fate_4.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_fate_3.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/addon_game_mode.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/libraries/physics.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/faust_photonic_barrier.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/settings.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/addon_init.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/barebones.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/activelist.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/lupin_last_surprise.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/balthasar_doomflame.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/balthasar_emerald_fang.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/balthasar_doomflame.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game/custom_loading_screen.xml",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game/custom_ui_manifest.xml",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_rage_potion.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_ironblood_potion.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_balthasar_2.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_balthasar_4.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_balthasar_3.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_balthasar.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/rai_arc_twister.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/items/item_rage_potion.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/balthasar_emerald_fang.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/balthasar_firebolt.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_balthasar_1.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/baal_superposition2.lua",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/balthasar_ward_of_the_emerald_flame.txt",
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/custom_net_tables.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_purging_dust.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/items/item_ironblood_potion.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_ironblood_potion.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/balthasar_ward_of_the_emerald_flame.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_rage_potion.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_balthasar.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/siegfried_eon_shield.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_balthasar_2.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/balthasar_doomflame.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/balthasar_firebolt.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/balthasar_emerald_fang.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/balthasar_ward_of_the_emerald_flame.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/siegfried_eon_shield.lua",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/siegfried_hell_bent.lua",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/siegfried_epochs_protection.lua",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/siegfried_heaven_sent.lua",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/balthasar_firebolt.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_balthasar_3.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/soundevents/hero_balthasar.vsndevts",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/balthasar_emerald_fang.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/balthasar_doomflame.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game/compile_images.xml",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game/selection.xml",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/scripts/barebones_notifications.js",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/libraries/notifications.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game/custom_loading_screen.xml",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game/custom_ui_manifest.xml",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/faust_photonic_barrier.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/rai_arc_twister.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/activelist.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_balthasar_1.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_balthasar_4.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_rai_4.txt",
 		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/mana_knight_vorpal_assault.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/fate_doomsayer.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/alexander_godfall.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/alexander_godfall.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/gemini_voidal_flare.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/gemini_voidal_flare.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/nu_flux_field.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/war_fight_me.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/war_bloodlust.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/war_bloodlust.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/war_fight_me.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/war_earthbreaker.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_war.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_war_3.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/war_earthbreaker.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_war_2.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_war_4.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/war_berserker_aura.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/war_berserker_aura.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/faust_cease.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/faust_planecracker.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/faust_planecracker.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_faust.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/faust_cease.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_aeronaut.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/faust_dark_shard.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/faust_agony.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/faust_agony.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/faust_photonic_barrier.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/shade_dark_hunger.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/faust_netherglyph.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/faust_netherglyph.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_alroth.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_feyguard.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_siegfried.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/internal/util.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/libraries/extend.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/faust_forbidden_knowledge.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/faust_forbidden_knowledge.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/faust_forbidden_knowledge_deprecated.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/items/item_seers_lantern.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/shade_dark_hunger.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/phantom_shadowstep.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/astaroth_overwhelm.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/astaroth_overwhelm.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/faust_dark_shard.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/alroth_raze.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/siegfried_hell_bent.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/siegfried_heaven_sent.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/faust_shockbolt.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/faust_abilities.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_baal.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_chronos.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/siegfried_epochs_protection.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_siegfried_1.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_siegfried_2.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_siegfried_3.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/heroes/npc_dota_hero_shade.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/shade_isolation.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/shade_isolation.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/phantom_shadowstep.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/shade_stalk.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/lua/abilities/shade_stalk.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/lysander_grapeshot.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/phantom_deathstrike.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/phantom_nightmare.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/duskdota.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/special_bonus_shade_6.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/horror_stalk.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/addon_game_mode.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/addon_init.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/events.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_black_rose.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_arcanite_shards.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_deathscythe.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_grim_gauntlet.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_hephaestus_hammer.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_reaving_stone.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_seers_lantern.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/scrapped/items/item_turins_scepter.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_wand_of_yggdrasil.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/npc_items_custom.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/scrapped/items/item_demonfire.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/scrapped/items/item_fenrir.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/scrapped/items/item_holdingorb.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/scrapped/items/item_improved_wand.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/scrapped/items/item_iris.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/scrapped/items/item_magisteel.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/scrapped/items/item_sword_of_greed.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/scrapped/items/item_thunderbolt.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_crystal_focus.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/items/item_soul_vial.txt",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/internal/events.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/vscripts/heroes/barebones.lua",
-		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/scrapped/items/item_watchers_eye.txt"
+		"/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/scripts/npc/abilities/fate_doomsayer.txt"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -986,6 +995,46 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"building",
+			"setoriginalhealth",
+			"merciless",
+			"randomvector",
+			"elyats_bellow",
+			"pride",
+			"checkstate",
+			"dashy_dashy",
+			"aeronaut",
+			"shard_magus",
+			"cryst_whorl",
+			"apple",
+			"fury",
+			"modifier_spark_buff",
+			".\n",
+			"rend_hp",
+			"fate",
+			"duskdota_spew",
+			"attachments",
+			"\\vscripts\\libraries\\attachments.lua",
+			"\\scripts\\vscripts\\libraries\\attachments.lua",
+			"DebugPrint",
+			"debugprint",
+			"DebugPrint",
+			"hastalent",
+			"require(",
+			"require('heroes/barebones')",
+			"require('heroesbarebones')",
+			"OnPlayerLearnedAbility",
+			"fetchtalen",
+			"flying_for_pathing",
+			"return",
+			"TALENTS",
+			"fetchtalentvalue(talent_name",
+			"fetch",
+			"fetchtalent",
+			"etchtalent",
+			"talent",
+			"learned_abilities",
+			"nettable",
 			"ironblood",
 			"modifier_eon_shield_root",
 			"abilitytype",
@@ -1073,54 +1122,25 @@
 			"starlight",
 			"elena",
 			"hell_bent",
-			"submodifier",
-			"guardian bubble",
-			"ptomely",
-			"gemini",
-			"wand_of_yggdrasil",
-			"crystal_focus",
-			"reckoning_aura",
-			"crystal_focus",
-			"nightmare",
-			"erra",
-			"lupin",
-			"\"\n",
-			"channeltime",
-			"dashy_dashy",
-			"upwind",
-			"aerial_ace",
-			"physics",
-			"startgesture",
-			"upwind",
-			"hidden_engine",
-			"npc",
-			"upwind",
-			"land",
-			"upwind",
-			"mifune",
-			"raigeki",
-			"energy_burst",
-			"alroth",
-			"balthasar",
-			"wight",
-			"visage",
-			"earthshaker",
-			"ice_wyrm",
-			"npc_dota_roshan",
-			"improved_wand",
-			"createtracking",
-			"improved_wand",
-			"deathscythe",
-			"\"\n",
-			"deathscythe",
-			"onabilityfully"
+			"submodifier"
 		],
 		"highlight": true,
 		"in_selection": false,
-		"preserve_case": true,
+		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
+			"lionheart",
+			"merciless",
+			"teleri",
+			"elyats_bellow",
+			"pride",
+			"elyats_bellow",
+			"solstice",
+			"stoneforger",
+			"rend_damage_amp",
+			"chronos",
+			"--DebugPrint",
 			"rage",
 			"modifier_eon_shield_slow",
 			"ward_of_the_emerald_flame_truesight_aura",
@@ -1237,18 +1257,7 @@
 			"mana_knight",
 			"arcanum_break",
 			"mana_knight",
-			"vorpal_assault",
-			"3",
-			"horror",
-			"paranoia",
-			"obscure",
-			"sinister",
-			"horror",
-			"terrify",
-			"freedom_strike",
-			"hero",
-			"heroic_soul",
-			"freedom_strike"
+			"vorpal_assault"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1259,56 +1268,56 @@
 	"groups":
 	[
 		{
-			"selected": 15,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "npc/activelist.txt",
+					"file": "npc/heroes/npc_dota_hero_pride.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2344,
+						"buffer_size": 4023,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								325,
-								325
+								2053,
+								2053
 							]
 						],
 						"settings":
 						{
-							"SL.21.region_keys":
+							"SL.17.region_keys":
 							[
 							],
-							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"syntax": "Packages/Dota KV/dotaKV.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game/compile_images.xml",
+					"file": "npc/heroes/npc_dota_hero_teleri.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 609,
+						"buffer_size": 4736,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								568,
-								568
+								1695,
+								1695
 							]
 						],
 						"settings":
@@ -1316,109 +1325,10 @@
 							"SL.15.region_keys":
 							[
 							],
-							"syntax": "Packages/XML/XML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/styles/custom_loading_screen.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2798,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								331,
-								331
-							]
-						],
-						"settings":
-						{
-							"SL.16.region_keys":
+							"SL.21.region_keys":
 							[
 							],
-							"SL.28.region_keys":
-							[
-							],
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 468.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "vscripts/lua/abilities/balthasar_doomflame.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4477,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2158,
-								2158
-							]
-						],
-						"settings":
-						{
-							"SL.76.region_keys":
-							[
-							],
-							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 195.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "vscripts/lua/abilities/balthasar_emerald_fang.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1785,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								123,
-								147
-							]
-						],
-						"settings":
-						{
-							"SL.18.region_keys":
-							[
-							],
-							"SL.97.region_keys":
-							[
-							],
-							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage",
+							"syntax": "Packages/Dota KV/dotaKV.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -1429,53 +1339,332 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "npc/abilities/balthasar_emerald_fang.txt",
+					"buffer": 2,
+					"file": "vscripts/duskdota.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1973,
+						"buffer_size": 43672,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1472,
-								1472
+								8172,
+								8172
 							]
 						],
 						"settings":
 						{
-							"SL.121.region_keys":
+							"SL.33.region_keys":
 							[
 							],
-							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3196.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "vscripts/addon_init.lua",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1439,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"SL.40.region_keys":
+							[
+							],
+							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "vscripts/addon_game_mode.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12230,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"SL.34.region_keys":
+							[
+							],
+							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
+						"translation.y": 1443.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "npc/heroes/npc_dota_hero_cultist.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4098,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2114,
+								2114
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Dota KV/dotaKV.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "npc/heroes/npc_dota_hero_solstice.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3007,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1251,
+								1251
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "npc/heroes/npc_dota_hero_wight.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4791,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2843,
+								2843
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Dota KV/dotaKV.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "npc/activelist.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								660,
+								660
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "npc/abilities/pride_elyats_bellow.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2289,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1496,
+								1496
+							]
+						],
+						"settings":
+						{
+							"SL.24.region_keys":
+							[
+							],
+							"syntax": "Packages/Dota KV/dotaKV.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "vscripts/lua/abilities/pride_elyats_bellow.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1268,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1268
+							]
+						],
+						"settings":
+						{
+							"SL.18.region_keys":
+							[
+							],
+							"SL.29.region_keys":
+							[
+							],
+							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "npc/abilities/pride_merciless.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2323,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2323
+							]
+						],
+						"settings":
+						{
+							"SL.24.region_keys":
+							[
+							],
+							"syntax": "Packages/Dota KV/dotaKV.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 62.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "npc/abilities/balthasar_firebolt.txt",
+					"buffer": 12,
+					"file": "npc/items/item_seers_lantern.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2164,
+						"buffer_size": 2681,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								501,
-								501
+								2594,
+								2594
 							]
 						],
 						"settings":
@@ -1487,304 +1676,202 @@
 						"translation.y": 39.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "npc/abilities/siegfried_heaven_sent.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2061,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1576,
-								1576
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "npc/abilities/special_bonus_balthasar_1.txt",
+					"buffer": 13,
+					"file": "vscripts/lua/items/item_seers_lantern.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 832,
+						"buffer_size": 8224,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								584,
-								584
+								6332,
+								6332
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"SL.32.region_keys":
+							[
+							],
+							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2184.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "npc/abilities/balthasar_doomflame.txt",
+					"buffer": 14,
+					"file": "vscripts/lua/abilities/pride_merciless.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2602,
+						"buffer_size": 3627,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1165,
-								1165
+								0,
+								3627
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"SL.22.region_keys":
+							[
+							],
+							"SL.25.region_keys":
+							[
+							],
+							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 312.0,
+						"translation.y": 117.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "npc/abilities/pride_lionheart.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2234,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1738,
+								1738
+							]
+						],
+						"settings":
+						{
+							"SL.29.region_keys":
+							[
+							],
+							"syntax": "Packages/Dota KV/dotaKV.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 117.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "vscripts/settings.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9112,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6736,
-								6736
-							]
-						],
-						"settings":
-						{
-							"SL.36.region_keys":
-							[
-							],
-							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage"
-						},
-						"translation.x": 520.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "npc/abilities/balthasar_ward_of_the_emerald_flame.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2365,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								637,
-								637
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game/custom_loading_screen.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1704,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								977,
-								977
-							]
-						],
-						"settings":
-						{
-							"SL.33.region_keys":
-							[
-							],
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/content/dota_addons/duskdota/panorama/layout/custom_game/custom_ui_manifest.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5645,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2440,
-								2440
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 364.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "npc/items/item_rage_potion.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1528,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								221,
-								221
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "npc/items/item_ironblood_potion.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1672,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1264,
-								1264
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
 					"buffer": 16,
-					"file": "vscripts/lua/items/item_rage_potion.lua",
+					"file": "vscripts/lua/abilities/pride_lionheart.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 913,
+						"buffer_size": 1956,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								819,
-								819
+								1108,
+								1108
 							]
 						],
 						"settings":
 						{
-							"SL.54.region_keys":
+							"SL.31.region_keys":
 							[
 							],
 							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 27.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "vscripts/internal/util.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 34904,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3271,
+								3271
+							]
+						],
+						"settings":
+						{
+							"SL.28.region_keys":
+							[
+							],
+							"SL.32.region_keys":
+							[
+							],
+							"syntax": "Packages/User/Dota-2-Sublime-Packages-master/Lua Dota/Lua.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 870.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 55,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1800,20 +1887,20 @@
 			"sheets":
 			[
 				{
-					"buffer": 17,
+					"buffer": 19,
 					"file": "/C/Program Files (x86)/Steam/SteamApps/common/dota 2 beta/game/dota_addons/duskdota/resource/special_bonus_dump.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 20802,
+						"buffer_size": 20801,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1232,
-								942
+								3711,
+								3756
 							]
 						],
 						"settings":
@@ -1827,13 +1914,22 @@
 							"SL.16.region_keys":
 							[
 							],
+							"SL.19.region_keys":
+							[
+							],
 							"SL.20.region_keys":
+							[
+							],
+							"SL.22.region_keys":
 							[
 							],
 							"SL.25.region_keys":
 							[
 							],
 							"SL.27.region_keys":
+							[
+							],
+							"SL.31.region_keys":
 							[
 							],
 							"SL.35.region_keys":
@@ -1844,27 +1940,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 195.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 20,
 					"file": "vscripts/talents/modifier_overhead.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14143,
+						"buffer_size": 14162,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2573,
-								2617
+								6166,
+								6202
 							]
 						],
 						"settings":
@@ -1908,10 +2004,37 @@
 							"SL.29.region_keys":
 							[
 							],
+							"SL.30.region_keys":
+							[
+							],
+							"SL.31.region_keys":
+							[
+							],
+							"SL.32.region_keys":
+							[
+							],
+							"SL.33.region_keys":
+							[
+							],
+							"SL.34.region_keys":
+							[
+							],
+							"SL.35.region_keys":
+							[
+							],
 							"SL.36.region_keys":
 							[
 							],
 							"SL.37.region_keys":
+							[
+							],
+							"SL.38.region_keys":
+							[
+							],
+							"SL.40.region_keys":
+							[
+							],
+							"SL.42.region_keys":
 							[
 							],
 							"history_list_is_closing": true,
@@ -1920,10 +2043,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 351.0,
+						"translation.y": 780.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
@@ -1991,7 +2114,7 @@
 	"project": "dusk.sublime-project",
 	"replace":
 	{
-		"height": 72.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -2000,6 +2123,298 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"util",
+				"scripts\\vscripts\\internal\\util.lua"
+			],
+			[
+				"seers",
+				"scripts\\vscripts\\lua\\items\\item_seers_lantern.lua"
+			],
+			[
+				"astarot",
+				"scripts\\npc\\heroes\\npc_dota_hero_astaroth.txt"
+			],
+			[
+				"astaroth4",
+				"scripts\\npc\\abilities\\special_bonus_astaroth_4.txt"
+			],
+			[
+				"deathmark",
+				"scripts\\vscripts\\lua\\abilities\\astaroth_deathmark.lua"
+			],
+			[
+				"duskdota",
+				"scripts\\vscripts\\duskdota.lua"
+			],
+			[
+				"warpstar",
+				"scripts\\npc\\abilities\\nu_warpstar.txt"
+			],
+			[
+				"flux_f",
+				"scripts\\vscripts\\lua\\abilities\\nu_flux_field.lua"
+			],
+			[
+				"dagger",
+				"scripts\\npc\\abilities\\lightning_lightning_dagger.txt"
+			],
+			[
+				"bolt",
+				"scripts\\npc\\abilities\\lightning_boltblast.txt"
+			],
+			[
+				"overload",
+				"scripts\\vscripts\\lua\\abilities\\lightning_overload.lua"
+			],
+			[
+				"spar",
+				"scripts\\npc\\abilities\\lightning_spark.txt"
+			],
+			[
+				"events",
+				"scripts\\vscripts\\events.lua"
+			],
+			[
+				"lightning_overlo",
+				"scripts\\vscripts\\lua\\abilities\\lightning_overload.lua"
+			],
+			[
+				"glacial",
+				"scripts\\npc\\abilities\\shard_magus_glacial_impact.txt"
+			],
+			[
+				"spark",
+				"scripts\\vscripts\\lua\\abilities\\lightning_spark.lua"
+			],
+			[
+				"boltblast",
+				"scripts\\npc\\abilities\\lightning_boltblast.txt"
+			],
+			[
+				"lightningdagg",
+				"scripts\\vscripts\\lua\\abilities\\lightning_lightning_dagger.lua"
+			],
+			[
+				"aura",
+				"scripts\\vscripts\\lua\\abilities\\timekeeper_haste_aura.lua"
+			],
+			[
+				"spark.lu",
+				"scripts\\vscripts\\lua\\abilities\\lightning_spark.lua"
+			],
+			[
+				"lightning_dagg",
+				"scripts\\npc\\abilities\\lightning_lightning_dagger.txt"
+			],
+			[
+				"arc twi",
+				"scripts\\vscripts\\lua\\abilities\\rai_arc_twister.lua"
+			],
+			[
+				"",
+				"scripts\\vscripts\\lua\\abilities\\lightning_overload.lua"
+			],
+			[
+				"lightning dagg",
+				"scripts\\npc\\abilities\\lightning_lightning_dagger.txt"
+			],
+			[
+				"lightning",
+				"scripts\\npc\\abilities\\lightning_overload.txt"
+			],
+			[
+				"to dus",
+				"scripts\\vscripts\\lua\\abilities\\erra_to_dust.lua"
+			],
+			[
+				"deathto",
+				"scripts\\vscripts\\lua\\abilities\\erra_deathtouch.lua"
+			],
+			[
+				"deathtouc",
+				"scripts\\npc\\abilities\\erra_deathtouch.txt"
+			],
+			[
+				"to dust",
+				"scripts\\npc\\abilities\\erra_to_dust.txt"
+			],
+			[
+				"bloodsport",
+				"scripts\\vscripts\\lua\\abilities\\fury_bloodsport.lua"
+			],
+			[
+				"fury4",
+				"scripts\\npc\\abilities\\special_bonus_fury_4.txt"
+			],
+			[
+				"berserk",
+				"scripts\\npc\\abilities\\fury_berserk.txt"
+			],
+			[
+				"fury2",
+				"scripts\\npc\\abilities\\special_bonus_fury_2.txt"
+			],
+			[
+				"roar",
+				"scripts\\npc\\abilities\\fury_roar.txt"
+			],
+			[
+				"fury3",
+				"scripts\\npc\\abilities\\special_bonus_fury_3.txt"
+			],
+			[
+				"fury",
+				"scripts\\npc\\abilities\\special_bonus_fury_4.txt"
+			],
+			[
+				"bloods",
+				"scripts\\vscripts\\lua\\abilities\\fury_bloodsport.lua"
+			],
+			[
+				"extend",
+				"scripts\\vscripts\\libraries\\extend.lua"
+			],
+			[
+				"rend",
+				"scripts\\vscripts\\lua\\abilities\\fury_rend.lua"
+			],
+			[
+				"displace",
+				"scripts\\vscripts\\lua\\abilities\\fate_displace.lua"
+			],
+			[
+				"fate3",
+				"scripts\\npc\\abilities\\special_bonus_fate_3.txt"
+			],
+			[
+				"fate4",
+				"scripts\\npc\\abilities\\special_bonus_fate_4.txt"
+			],
+			[
+				"realign",
+				"scripts\\npc\\abilities\\fate_realign.txt"
+			],
+			[
+				"fatedisplace",
+				"scripts\\npc\\abilities\\fate_displace.txt"
+			],
+			[
+				"herofate",
+				"scripts\\npc\\heroes\\npc_dota_hero_fate.txt"
+			],
+			[
+				"exted",
+				"scripts\\vscripts\\libraries\\extend_client.lua"
+			],
+			[
+				"extendcl",
+				"scripts\\vscripts\\libraries\\extend_client.lua"
+			],
+			[
+				"util_clien",
+				"scripts\\vscripts\\internal\\util_client.lua"
+			],
+			[
+				"util_",
+				"scripts\\vscripts\\internal\\util_client.lua"
+			],
+			[
+				"FEYGU",
+				"scripts\\npc\\heroes\\npc_dota_hero_feyguard.txt"
+			],
+			[
+				"active",
+				"scripts\\npc\\activelist.txt"
+			],
+			[
+				"beneat",
+				"scripts\\vscripts\\lua\\abilities\\lupin_beneath_the_mask.lua"
+			],
+			[
+				"HEROLUPIN",
+				"scripts\\npc\\heroes\\npc_dota_hero_lupin.txt"
+			],
+			[
+				"finisher",
+				"scripts\\npc\\abilities\\lupin_finisher.txt"
+			],
+			[
+				"lastsurpri",
+				"scripts\\npc\\abilities\\lupin_last_surprise.txt"
+			],
+			[
+				"beneathth",
+				"scripts\\npc\\abilities\\lupin_beneath_the_mask.txt"
+			],
+			[
+				"lupin_last",
+				"scripts\\vscripts\\lua\\abilities\\lupin_last_surprise.lua"
+			],
+			[
+				"exten",
+				"scripts\\vscripts\\libraries\\extend.lua"
+			],
+			[
+				"extend_cl",
+				"scripts\\vscripts\\libraries\\extend_client.lua"
+			],
+			[
+				"utilclient",
+				"scripts\\vscripts\\internal\\util_client.lua"
+			],
+			[
+				"addonini",
+				"scripts\\vscripts\\addon_init.lua"
+			],
+			[
+				"doomfa",
+				"scripts\\vscripts\\lua\\abilities\\balthasar_doomflame.lua"
+			],
+			[
+				"ward_o",
+				"scripts\\npc\\abilities\\balthasar_ward_of_the_emerald_flame.txt"
+			],
+			[
+				"herobal",
+				"scripts\\npc\\heroes\\npc_dota_hero_balthasar.txt"
+			],
+			[
+				"balthasar3",
+				"scripts\\npc\\abilities\\special_bonus_balthasar_3.txt"
+			],
+			[
+				"balthasar4",
+				"scripts\\npc\\abilities\\special_bonus_balthasar_4.txt"
+			],
+			[
+				"specialbonusbaltha",
+				"scripts\\npc\\abilities\\special_bonus_balthasar_2.txt"
+			],
+			[
+				"duskd",
+				"scripts\\vscripts\\duskdota.lua"
+			],
+			[
+				"cut",
+				"scripts\\custom_net_tables.txt"
+			],
+			[
+				"extend_cli",
+				"scripts\\vscripts\\libraries\\extend_client.lua"
+			],
+			[
+				"balthsar4",
+				"scripts\\npc\\abilities\\special_bonus_balthasar_4.txt"
+			],
+			[
+				"arc",
+				"scripts\\vscripts\\lua\\abilities\\rai_arc_twister.lua"
+			],
+			[
+				"raiarc",
+				"scripts\\npc\\abilities\\rai_arc_twister.txt"
+			],
 			[
 				"iron",
 				"scripts\\npc\\items\\item_ironblood_potion.txt"
@@ -2011,10 +2426,6 @@
 			[
 				"ironblod",
 				"scripts\\npc\\items\\item_ironblood_potion.txt"
-			],
-			[
-				"herobal",
-				"scripts\\npc\\heroes\\npc_dota_hero_balthasar.txt"
 			],
 			[
 				"ward",
@@ -2081,10 +2492,6 @@
 				"scripts\\vscripts\\lua\\abilities\\balthasar_firebolt.lua"
 			],
 			[
-				"balthasar3",
-				"scripts\\npc\\abilities\\special_bonus_balthasar_3.txt"
-			],
-			[
 				"WARD",
 				"scripts\\vscripts\\lua\\abilities\\balthasar_ward_of_the_emerald_flame.lua"
 			],
@@ -2111,10 +2518,6 @@
 			[
 				"ward_f",
 				"scripts\\npc\\abilities\\balthasar_ward_of_the_emerald_flame.txt"
-			],
-			[
-				"active",
-				"scripts\\npc\\activelist.txt"
 			],
 			[
 				"photonic",
@@ -2231,286 +2634,6 @@
 			[
 				"activelist",
 				"scripts\\npc\\activelist.txt"
-			],
-			[
-				"herosieg",
-				"scripts\\npc\\heroes\\npc_dota_hero_siegfried.txt"
-			],
-			[
-				"nether",
-				"scripts\\vscripts\\lua\\abilities\\faust_netherglyph.lua"
-			],
-			[
-				"extend",
-				"scripts\\vscripts\\libraries\\extend.lua"
-			],
-			[
-				"util",
-				"scripts\\vscripts\\internal\\util.lua"
-			],
-			[
-				"forbidden",
-				"scripts\\vscripts\\lua\\abilities\\faust_forbidden_knowledge_deprecated.lua"
-			],
-			[
-				"uti",
-				"scripts\\vscripts\\internal\\util.lua"
-			],
-			[
-				"dark",
-				"scripts\\npc\\abilities\\shade_dark_hunger.txt"
-			],
-			[
-				"darkhung",
-				"scripts\\vscripts\\lua\\abilities\\shade_dark_hunger.lua"
-			],
-			[
-				"seers",
-				"scripts\\vscripts\\lua\\items\\item_seers_lantern.lua"
-			],
-			[
-				"darkshard",
-				"scripts\\npc\\abilities\\faust_dark_shard.txt"
-			],
-			[
-				"shadowstep",
-				"scripts\\vscripts\\lua\\abilities\\phantom_shadowstep.lua"
-			],
-			[
-				"plane",
-				"scripts\\vscripts\\lua\\abilities\\faust_planecracker.lua"
-			],
-			[
-				"astaroth_ov",
-				"scripts\\vscripts\\lua\\abilities\\astaroth_overwhelm.lua"
-			],
-			[
-				"astaroth_over",
-				"scripts\\npc\\abilities\\astaroth_overwhelm.txt"
-			],
-			[
-				"faust",
-				"scripts\\npc\\abilities\\faust_dark_shard.txt"
-			],
-			[
-				"siegfriedheaven",
-				"scripts\\npc\\abilities\\siegfried_heaven_sent.txt"
-			],
-			[
-				"siegfried_",
-				"scripts\\npc\\abilities\\siegfried_hell_bent.txt"
-			],
-			[
-				"faustabl",
-				"scripts\\vscripts\\heroes\\faust_abilities.lua"
-			],
-			[
-				"fuast",
-				"scripts\\npc\\abilities\\faust_shockbolt.txt"
-			],
-			[
-				"herofaust",
-				"scripts\\npc\\heroes\\npc_dota_hero_faust.txt"
-			],
-			[
-				"herobaal",
-				"scripts\\npc\\heroes\\npc_dota_hero_baal.txt"
-			],
-			[
-				"herosiegfried",
-				"scripts\\npc\\heroes\\npc_dota_hero_siegfried.txt"
-			],
-			[
-				"herofast",
-				"scripts\\npc\\heroes\\npc_dota_hero_faust.txt"
-			],
-			[
-				"alrothraze",
-				"scripts\\vscripts\\lua\\abilities\\alroth_raze.lua"
-			],
-			[
-				"eonshiel",
-				"scripts\\vscripts\\lua\\abilities\\siegfried_eon_shield.lua"
-			],
-			[
-				"eonshield",
-				"scripts\\npc\\abilities\\siegfried_eon_shield.txt"
-			],
-			[
-				"heaven",
-				"scripts\\npc\\abilities\\siegfried_heaven_sent.txt"
-			],
-			[
-				"heavent",
-				"scripts\\vscripts\\lua\\abilities\\siegfried_heaven_sent.lua"
-			],
-			[
-				"eon_shi",
-				"scripts\\vscripts\\lua\\abilities\\siegfried_eon_shield.lua"
-			],
-			[
-				"epochs",
-				"scripts\\vscripts\\lua\\abilities\\siegfried_epochs_protection.lua"
-			],
-			[
-				"specialbonussieg",
-				"scripts\\npc\\abilities\\special_bonus_siegfried_1.txt"
-			],
-			[
-				"lysander",
-				"scripts\\npc\\abilities\\lysander_grapeshot.txt"
-			],
-			[
-				"specialbonussi",
-				"scripts\\npc\\abilities\\special_bonus_siegfried_3.txt"
-			],
-			[
-				"siegfriedhell",
-				"scripts\\npc\\abilities\\siegfried_hell_bent.txt"
-			],
-			[
-				"siegfriedeon",
-				"scripts\\npc\\abilities\\siegfried_eon_shield.txt"
-			],
-			[
-				"phantom",
-				"scripts\\npc\\abilities\\phantom_shadowstep.txt"
-			],
-			[
-				"nightmare",
-				"scripts\\npc\\abilities\\phantom_nightmare.txt"
-			],
-			[
-				"duskdota",
-				"scripts\\vscripts\\duskdota.lua"
-			],
-			[
-				"isolation",
-				"scripts\\vscripts\\lua\\abilities\\shade_isolation.lua"
-			],
-			[
-				"shade_dark",
-				"scripts\\npc\\abilities\\shade_dark_hunger.txt"
-			],
-			[
-				"specialbonusshade6",
-				"scripts\\npc\\abilities\\special_bonus_shade_6.txt"
-			],
-			[
-				"stalk",
-				"scripts\\vscripts\\lua\\abilities\\shade_stalk.lua"
-			],
-			[
-				"heroshade",
-				"scripts\\npc\\heroes\\npc_dota_hero_shade.txt"
-			],
-			[
-				"hell",
-				"scripts\\npc\\abilities\\siegfried_hell_bent.txt"
-			],
-			[
-				"hellb",
-				"scripts\\vscripts\\lua\\abilities\\siegfried_hell_bent.lua"
-			],
-			[
-				"eon shie",
-				"scripts\\npc\\abilities\\siegfried_eon_shield.txt"
-			],
-			[
-				"addon",
-				"scripts\\vscripts\\addon_init.lua"
-			],
-			[
-				"addon_game",
-				"scripts\\vscripts\\addon_game_mode.lua"
-			],
-			[
-				"ironblo",
-				"scripts\\npc\\items\\item_ironblood_potion.txt"
-			],
-			[
-				"soulvial",
-				"scripts\\npc\\items\\item_soul_vial.txt"
-			],
-			[
-				"purging_du",
-				"scripts\\npc\\items\\item_purging_dust.txt"
-			],
-			[
-				"rage_p",
-				"scripts\\npc\\items\\item_rage_potion.txt"
-			],
-			[
-				"herogemin",
-				"scripts\\npc\\heroes\\npc_dota_hero_gemini.txt"
-			],
-			[
-				"abyssal",
-				"scripts\\vscripts\\lua\\abilities\\abyssal_shadow_void_strikes.lua"
-			],
-			[
-				"herotimek",
-				"scripts\\npc\\heroes\\npc_dota_hero_timekeeper.txt"
-			],
-			[
-				"dilatin",
-				"scripts\\vscripts\\lua\\abilities\\timekeeper_dilation.lua"
-			],
-			[
-				"spark",
-				"scripts\\npc\\abilities\\lightning_spark.txt"
-			],
-			[
-				"whoops",
-				"scripts\\vscripts\\lua\\abilities\\gob_squad_whoops.lua"
-			],
-			[
-				"ancestral",
-				"scripts\\vscripts\\lua\\abilities\\fate_ancestral_recall.lua"
-			],
-			[
-				"shade_venomous",
-				"scripts\\vscripts\\lua\\abilities\\shade_venomous.lua"
-			],
-			[
-				"genso",
-				"scripts\\vscripts\\lua\\abilities\\mifune_genso.lua"
-			],
-			[
-				"hawkeye2",
-				"scripts\\npc\\abilities\\special_bonus_hawkeye_2.txt"
-			],
-			[
-				"snipe",
-				"scripts\\npc\\abilities\\hawkeye_snipe.txt"
-			],
-			[
-				"hawkeye4",
-				"scripts\\npc\\abilities\\special_bonus_hawkeye_4.txt"
-			],
-			[
-				"fulmination",
-				"scripts\\vscripts\\lua\\abilities\\bahamut_fulmination.lua"
-			],
-			[
-				"reckoning",
-				"scripts\\vscripts\\lua\\abilities\\bahamut_reckoning_aura.lua"
-			],
-			[
-				"paincurse",
-				"scripts\\vscripts\\lua\\abilities\\astaroth_pain_curse.lua"
-			],
-			[
-				"berserk",
-				"scripts\\vscripts\\lua\\abilities\\war_berserker_aura.lua"
-			],
-			[
-				"sand_warrior",
-				"scripts\\npc\\abilities\\set_sand_puppet_warrior.txt"
-			],
-			[
-				"cleanse",
-				"scripts\\vscripts\\lua\\abilities\\paragon_cleanse.lua"
 			]
 		],
 		"width": 0.0
@@ -2541,7 +2664,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 303.0,
+	"side_bar_width": 309.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

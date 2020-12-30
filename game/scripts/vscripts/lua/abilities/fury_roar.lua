@@ -52,6 +52,8 @@ function fury_roar:OnProjectileHit(target)
 	local duration = self:GetSpecialValueFor("duration")
 	local stack = 1
 
+	local t_stun = self:GetCaster():FetchTalent("special_bonus_fury_4")
+
 	if not target then return end
 
 	if self:GetCaster():HasModifier("modifier_berserk") then
@@ -62,6 +64,8 @@ function fury_roar:OnProjectileHit(target)
 	self:InflictDamage(target, self:GetCaster(), dmg, DAMAGE_TYPE_MAGICAL)
 
 	target:AddNewModifier(self:GetCaster(), self, "modifier_roar_enemy", {Duration=duration, stack=stack})
+
+	if t_stun then target:AddNewModifier(self:GetCaster(), nil, "modifier_stunned", {Duration=t_stun}) end
 
 	--if target:IsRealHero() them
 

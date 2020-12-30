@@ -1,0 +1,97 @@
+"npc_dota_hero_earthshaker"
+{
+	"AbilityLayout" 		"4"
+	//"override_hero"			"npc_dota_hero_earthshaker"
+	"HeroSelectSoundEffect"	"Geos.Impact"
+	"Role"					"Carry"
+	"Rolelevels"			"3"
+	"Complexity"			"1"
+	"Ability1"				"geos_impact" // 
+	// Slams the ground to create damaging shockwaves that travel forward.
+	// Consists of 4 waves; each deals full damage, and is a line perpendicular to the Hero.
+	// Base length of 200/250/300/350.
+	// Travels forward by 175 units each wave. The lines have a radius of 225.
+	// The waves have an interval of 0.3s between them and increase the length and damage by 16%
+    // Level 1: 200/231/267/309 length, 40/46/53/61 damage, total damage is 200
+    // Level 2: 250/290/336/389 length, 60/69/80/92 damage, total damage is 301
+    // Level 3: 300/348/403/467 length, 80/92/106/122 damage, total damage is 400
+    // Level 4: 350/406/470/545 length, 100/115/133/154 damage, total damage is 502
+	// Deals 40/60/80/100 damage per wave.
+	// 16s cooldown, 0.5s cast point.
+	"Ability2"				"geos_enstone"
+	// Target Hero is turned to stone over 1.5s.
+	// Heroes that are turned to stone take reduced damage. When being turned to stone,
+	// they are slowed by up to 100% and 100 attack speed over the duration.
+	// Reduces the damage the target takes by 75%, but they are stunned.
+	// Lasts 2/3/4/5s.
+	// 20s cooldown, 0.1s cast point.
+	"Ability3"				"geos_whispering_earth"
+	// Geos enchants the target allied Hero, causing them to gain bonus movespeed.
+	// At the end of the buff's duration,
+	// the target recovers Health equal to 10% of their Max Health +
+	// 2x the damage they received during the buff (before reductions),
+	// and a strong Dispel is applied.
+	// Grants 15% bonus movespeed.
+	// Lasts 3s.
+	// 20s cooldown, 0.3s cast point.
+	"Ability4"				"generic_hidden" //Automatically levelled to 1 when the character is picked.
+	"Ability5"				"generic_hidden"
+	"Ability6"				"geos_terashock"
+	// Geos slams the ground after a large cast point, dealing large Magical damage and slowing.
+	// Terashock leaves behind an area of cracked ground that, when he casts an ability,
+	// slows and damages enemies in its radius.
+	// Deals 250/325/400 Magical damage in a 375 radius, leaving a 375 AoE Cracked Ground area,
+	// and stunning them for 1s. The cracked ground lasts for 60s.
+	// When casting any Spell, cracked ground areas deal 75/125/175 damage in their radius and
+	// slow by 40/50/60% for 2s.
+	// The stun and slow pierces Spell Immunity.
+	// Enemies can see the Cracked Ground area.
+	// Only one area can exist at any one time, with the oldest being overridden.
+	// 45s cooldown, 0.6s cast point.
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				"special_bonus_attack_speed_20" // 
+	"Ability11"				"special_bonus_stoneforger_1" // +14% Roar Slow
+	"Ability12"				"special_bonus_lifesteal_10" // 
+	"Ability13"				"special_bonus_stoneforger_2" // +2% Rend Bonus Damage
+	"Ability14"				"special_bonus_armor_9" // 
+	"Ability15"				"special_bonus_strength_14" //
+	"Ability16"				"special_bonus_stoneforger_3" // Roar 1s Stun
+	"Ability17"				"special_bonus_stoneforger_4" // -0.3s Bloodsport Interval
+
+	"ArmorPhysical"				"2"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRange"				"150"
+	"AttackRate"				"1.75"
+	"AttackDamageMin"			"35"										// Damage range min.
+	"AttackDamageMax"			"45"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"17"										// Base strength
+	"AttributeStrengthGain"		"2.2"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"12"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"23"										// Base agility
+	"AttributeAgilityGain"		"1.5"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"305"									// Speed.
+	"MovementTurnRate"			"0.6"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"950"									// Range of vision at night time.
+}

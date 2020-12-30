@@ -17,6 +17,11 @@
 	// targeted. The drone can build units and possesses energy stores based on the level
 	// of this ability, and the amount of Mana Vulcan had.
 
+	// REWORK 2
+
+	// Creates structures in various locations on the map.
+	// The structures summon automated units that make him more efficient.
+
 	// REWORK
 
 	//"Ability1"				"summoner_nanobots"

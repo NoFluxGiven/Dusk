@@ -27,7 +27,7 @@
 	"Ability16"				"special_bonus_alexander_4" // Radiant Heals Nearby Allies (50%)
 	"Ability17"				"special_bonus_strength_25" //
 
-	"ArmorPhysical"				"3"									// Physical protection.
+	"ArmorPhysical"				"1"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -36,7 +36,7 @@
 	"AttackDamageMax"			"27"										// Damage range max.
 
 	//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"23"										// Base strength
+	"AttributeBaseStrength"		"24"										// Base strength
 	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"17"										// Base intelligence
 	"AttributeIntelligenceGain"	"1.75"										// Intelligence bonus per level.

@@ -7,10 +7,18 @@
 	"Complexity"			"1"
 	"Ability1"				"lightning_lightning_dagger"
 	"Ability2"				"lightning_boltblast"
-	"Ability3"				"lightning_overload"
+	"Ability3"				"lightning_spark"
+	// Each time Lightning casts a Spell, the location she targeted is marked.
+	// For the next 2s, Lightning can activate Spark to dash to that area, dealing damage
+	// to, and slowing enemies in between. When Spark is activated, her current on cooldown
+	// abilities are reduced by 0.5/1.0/1.5s.
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
-	"Ability6"				"lightning_spark"
+	"Ability6"				"lightning_overload"
+	// Lightning becomes a mass of electrical energy,
+	// gaining complete invulnerability and disjointing projectiles,
+	// and dealing damage, slowing, and ministunning enemies around her.
+	// She cannot cast Spells, attack or move whilst invulnerable.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -23,7 +31,7 @@
 	"Ability16"				"special_bonus_spell_amplify_15" // 
 	"Ability17"				"special_bonus_lightning_4" // +20% Spark Slow
 
-	"ArmorPhysical"				"2"									// Physical protection.
+	"ArmorPhysical"				"5"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -33,8 +41,8 @@
 	"AttackDamageMax"			"23"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-	"AttributeBaseStrength"		"19"										// Base strength
-	"AttributeStrengthGain"		"1.5"										// Strength bonus per level.
+	"AttributeBaseStrength"		"23"										// Base strength
+	"AttributeStrengthGain"		"2"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"23"										// Base intelligence
 	"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"16"										// Base agility

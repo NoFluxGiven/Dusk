@@ -1,0 +1,92 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf10:version{b5ef673d-0450-4fb0-a91b-bacae6864827} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 6
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 40
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateSequentialPath"
+			m_flNumToAssign = 40.0
+			m_PathParams = 
+			{
+				m_nEndControlPointNumber = 1
+			}
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 200.0
+			m_flRadiusMax = 300.0
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 83, 71, 62, 255 ]
+			m_ColorMax = [ 50, 50, 50, 255 ]
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.4
+			m_fLifetimeMax = 0.5
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 5.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 5.0 ]
+		},
+		{
+			_class = "C_INIT_VelocityRandom"
+			m_LocalCoordinateSystemSpeedMin = [ 0.0, 0.0, 500.0 ]
+			m_LocalCoordinateSystemSpeedMax = [ 0.0, 0.0, 1800.0 ]
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 15
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, -5000.0 ]
+		},
+		{
+			_class = "C_OP_RadiusDecay"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 0.8
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_flAnimationRate = 1.0
+			m_hTexture = resource:"materials/particle/smoke1/smoke1.vtex"
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+}

@@ -1,0 +1,99 @@
+Abilities:
+  bloodwarrior_blood_madness:
+    data:
+      Description: The Bloodwarrior consumes a portion of his own vitality to convert
+        it into pure, unbridled rage, granting him incredible fighting prowess for
+        a short time. He gains bonus movespeed, attackspeed, damage, and Lifesteal.
+        Killing an enemy Hero under Blood Madness' effects will grant him bonus Lifesteal
+        and add a bonus to the duration of the ability.
+      bonus_attack_speed: 'BONUS ATTACK SPEED:'
+      bonus_damage: 'BONUS DAMAGE:'
+      bonus_duration: 'BONUS DURATION (PER KILL):'
+      bonus_lifesteal: '%LIFESTEAL:'
+      bonus_movespeed: '%BONUS MOVEMENT SPEED:'
+      duration: 'DURATION:'
+      health_removal: '%SELF HEALTH REMOVAL:'
+      lifesteal_increase: '%LIFESTEAL INCREASE (PER KILL):'
+    modifiers:
+      blood_madness:
+      - Blood Madness
+      - ''
+    name: Blood Madness
+  bloodwarrior_blood_rain:
+    data:
+      Description: Global cast range. Bloodwarrior creates an area where blood rains
+        from the skies, drenching enemies in sanguine fluid. The area damages enemies,
+        and continuously applies a debuff that slows them and causes attacks to Lifesteal
+        against them.
+      damage: 'DAMAGE:'
+      duration: 'DEBUFF DURATION:'
+      lifesteal: '%LIFESTEAL:'
+      radius: 'RADIUS:'
+      rain_duration: 'RAIN DURATION:'
+      slow: '%SLOW:'
+    modifiers:
+      blood_rain:
+      - Blood Rain
+      - Granting Lifesteal to enemies that attack you, and being slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
+    name: Blood Rain
+  bloodwarrior_red_curse:
+    data:
+      Description: Bloodwarrior transfers his blood curse to the target enemy for
+        a long duration. Steals Strength, slows, and reduces attack damage. The debuff
+        gradually increases to its maximum strength, reaching 100%% of its reductions
+        at half its duration. Killing a creep immediately dispels the debuff.
+      damage_reduction: '%MAX DAMAGE REDUCTION:'
+      duration: 'DURATION:'
+      slow: '%MAX SLOW:'
+      str_drain: 'MAX STRENGTH DRAIN:'
+    modifiers:
+      red_curse:
+      - Red Curse
+      - Gradually losing Strength, attack damage and movespeed. At half its duration,
+        this buff reaches its maximum power. Killing a unit will purge the buff.
+      red_curse_caster:
+      - Red Curse
+      - Gaining Strength as your enemy loses theirs.
+    name: Red Curse
+  bloodwarrior_soul_claw:
+    data:
+      Description: Occasionally, Bloodwarrior's strikes are imbued with his whorling
+        vital energies, dealing bonus Magical damage, ministunning and preventing
+        the target from regenerating Health for a short time. The bonus damage is
+        based off his current Health.
+      chance: '%CHANCE:'
+      duration: 'NO HEAL DURATION:'
+      hp_percent: '%CURRENT HEALTH TO BONUS DAMAGE:'
+      internal_cooldown: 'INTERNAL COOLDOWN:'
+      ministun_duration: 'MINISTUN DURATION:'
+    modifiers:
+      soul_claw_no_healing:
+      - Soul Claw
+      - Healing is prevented on this unit for a short time.
+    name: Soul Claw
+  special_bonus_bloodwarrior_1:
+    data: {}
+    modifiers: {}
+    name: +4s Blood Rain Duration
+  special_bonus_bloodwarrior_2:
+    data: {}
+    modifiers: {}
+    name: +5% Soul Claw Damage
+  special_bonus_bloodwarrior_3:
+    data: {}
+    modifiers: {}
+    name: +15 Red Curse Strength Drain
+  special_bonus_bloodwarrior_4:
+    data: {}
+    modifiers: {}
+    name: +80 Blood Madness Damage
+Hero:
+  data:
+    bio: ''
+    hype: A difficult to kill right-clicker with a wide subset of abilities. Able
+      to shower enemies in blood to grant Lifesteal to his allies, slow and steal
+      Strength from targets, strike with his vital force, and ingest his own blood
+      to enter a maddened state for a short time.
+  modref: npc_dota_hero_bloodwarrior
+  name: Bloodwarrior
+  ref: npc_dota_hero_bloodseeker

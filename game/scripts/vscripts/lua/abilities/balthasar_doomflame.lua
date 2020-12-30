@@ -14,13 +14,12 @@ function balthasar_doomflame:OnSpellStart()
 		local point = self:GetCursorPosition()
 		local caster_pos = caster:GetAbsOrigin()
 		local distance = self:GetSpecialValueFor("range")
-		local t_distance_bonus = self:GetCaster():FetchTalent("special_bonus_balthasar_2") or 0
 		local direction = (point - caster_pos):Normalized()
 		local segments = 6
 
 		local segment_gap = distance / segments
 
-		distance = distance + t_distance_bonus
+		distance = distance
 
 		for i=0,segments do
 			local pos = caster:GetAbsOrigin() + direction * i * segment_gap
@@ -148,3 +147,14 @@ function modifier_doomflame_buff:GetModifierMoveSpeed_Max()
 	end
 end
 
+function modifier_doomflame_buff:CheckState()
+	local t_freepathing = self:GetParent():FetchTalent("special_bonus_balthasar_2")
+
+	local state = {
+		[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = false
+	}
+
+	if t_freepathing then state.MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY = true end
+
+	return state
+end
