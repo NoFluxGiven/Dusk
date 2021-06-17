@@ -27,6 +27,8 @@ end
 
 modifier_deathtouch_dot = class({})
 
+function modifier_deathtouch_dot:IsPurgable() return false end
+
 function modifier_deathtouch_dot:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,

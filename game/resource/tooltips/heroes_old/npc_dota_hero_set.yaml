@@ -1,0 +1,109 @@
+Abilities:
+  set_harsh_sun:
+    data:
+      Note0: Does not affect Ancients or Magic Immune enemies.
+      attack_slow: 'ENEMY ATTACK SLOW:'
+      bonus_day_vision: 'BONUS DAY VISION:'
+      bonus_movespeed: 'BONUS BASE  MOVESPEED:'
+      description: The very presence of the Sand God turns the climate during the
+        day from gentle to harsh, reducing enemies' attack speed and vision globally.
+        Meanwhile Set is empowered by this harsh weather, gaining bonus movespeed
+        and vision. Is less effective on creeps.
+      vision_reduction: 'ENEMY VISION REDUCTION:'
+    modifiers: {}
+    name: Harsh Climate
+  set_sands_of_war:
+    data:
+      damage: 'DAMAGE:'
+      description: Set kicks up two sand clouds that travel quickly and pass through
+        each other.  Enemies hit by them are slowed. When they reach their destination,
+        two Sand Puppets are spawned.  Sand Archers have large attack range that scales
+        with level but low damage, and Sand Warriors have short attack range but high
+        damage plus bonus movespeed that scales with level, and both last %time% seconds.  Sand
+        Puppets are based upon Set's level, not the level of this skill.
+      duration: 'SLOW DURATION:'
+      mult: 'LEVEL MULTIPLIER:'
+      slow: '%SLOW:'
+      time: 'PUPPET DURATION:'
+    modifiers:
+      sands_of_war:
+      - Sands of War Slow
+      - ''
+      sands_of_war_attack_speed:
+      - Sands of War Attack Speed Talent
+      - ''
+    name: Sands Of War
+  set_scarab_curse:
+    data:
+      Description: Set places a curse on the target unit, summoning a Scarab to fly
+        around them. The Scarab steals a portion of their attack damage, and then
+        deals damage every %interval% second based on the amount stolen plus a base
+        damage amount. Set can retarget the debuff to any other nearby unit within
+        a %retarget_range% radius with his Switch Scarab Targets subability.
+      base_damage: 'BASE DAMAGE:'
+      duration: 'DURATION:'
+      interval: 'INTERVAL:'
+      percent_damage_reduction: '%DAMAGE REDUCTION:'
+      retarget_range: 'RETARGET RANGE:'
+      slow: '%SLOW:'
+    modifiers:
+      scarab_curse_damage_steal_display:
+      - Scarab Curse Damage Steal
+      - Your damage is feeding the Scarab!
+      scarab_curse_display:
+      - Scarab Curse
+      - Taking damage over time equal to the damage stolen on initial cast.
+    name: Scarab Curse
+  set_sirocco:
+    data:
+      Description: Set unleashes a merciless sandstorm in the area around him. Enemies
+        caught in it take %damage% damage per second, and have their vision reduced
+        to %vision_change%, while Set and any Sand Puppets under his control recover
+        Health equal to the damage amount. Lasts %duration% seconds. %radius% radius.
+        Deals damage in 0.25s intervals. The vision reduction fully affects Buildings
+        (but the damage does not).
+      damage: 'DAMAGE PER SECOND:'
+      duration: 'DURATION:'
+      radius: 'RADIUS:'
+      vision_change: 'VISION:'
+    modifiers:
+      sirocco_aura_ally:
+      - Sirocco
+      - Set and his controlled Puppets are gaining Health over time.
+      sirocco_aura_enemy:
+      - Sirocco
+      - Taking damage over time and vision is being reduced.
+    name: Sirocco
+  set_switch_scarab_targets:
+    data:
+      Description: Changes the Scarab's target.
+    modifiers: {}
+    name: Switch Scarab Targets
+  special_bonus_set_1:
+    data: {}
+    modifiers: {}
+    name: +1 Sands of War Archer
+  special_bonus_set_2:
+    data: {}
+    modifiers: {}
+    name: +25 Harsh Sun Attack Speed Slow
+  special_bonus_set_3:
+    data: {}
+    modifiers: {}
+    name: +125 Sand Puppets Attack Speed
+  special_bonus_set_4:
+    data: {}
+    modifiers: {}
+    name: -0.4s Scarab Curse Interval
+Hero:
+  data:
+    bio: ''
+    hype: A sieger and teamfighter, Set functions best in messy fights where he will
+      not be interrupted whilst channelling his devastating An Army Beneath the Sands.
+      Focused on creating powerful Sand Puppets through his Sands of War and Ultimate,
+      he can quickly push down towers if not kept in check. His Harsh Sun passive
+      grants him bonus regeneration and slows enemies' attack speed during the day,
+      globally.
+  modref: npc_dota_hero_set
+  name: Set
+  ref: npc_dota_hero_sand_king

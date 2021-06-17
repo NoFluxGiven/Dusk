@@ -1,88 +1,6 @@
-Abilities:
-  astaroth_deathmark:
-    data:
-      attack_speed_bonus: 'ATTACK SPEED BONUS:'
-      bonus_damage: 'PURE DAMAGE BONUS:'
-      bonus_duration: 'BONUS DURATION:'
-      damage_reduction: '%DAMAGE REDUCTION:'
-      description: Upon striking an opponent a number of times, he removes a portion
-        of their Health and stuns them, gaining bonus attack speed, Pure damage on
-        his attacks, and damage reduction for a short time afterwards. While this
-        ability is on cooldown, he cannot increment marks on any target.
-      duration: 'STACK DURATION:'
-      hits: 'HITS:'
-      removal: '%CURRENT HEALTH REMOVAL DAMAGE:'
-      stun: 'STUN:'
-    modifiers:
-      astaroth_deathmark_buff:
-      - Black Insignia
-      - Gaining True Strike and %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% bonus
-        attack speed, plus bonus Pure damage on attacks.
-      astaroth_deathmark_stack:
-      - Black Insignia
-      - On the 5th strike, losing a percentage of current Health and being stunned.
-    name: Black Insignia
-  astaroth_erase:
-    data:
-      current_hp_damage: '%CURRENT HEALTH DAMAGE:'
-      current_mana_damage: '%CURRENT MANA DAMAGE:'
-      description: Astaroth calls upon Abyssal energies to slowly erase the target's
-        existence, dealing damage to Health and Current Health, and Mana and Current
-        Mana, over a large duration.
-      duration: 'DURATION:'
-      hp_damage: 'HEALTH DAMAGE:'
-      mana_damage: 'MANA DAMAGE:'
-    modifiers:
-      erase:
-      - Erase
-      - ''
-    name: Erase
-  astaroth_overwhelm:
-    data:
-      description: Astaroth forces energies into the target unit.  After 2s, the unit
-        creates an explosion that deals large Magical damage to itself and the units
-        around it.
-      duration: 'DELAY:'
-      radius: 'RADIUS:'
-    modifiers:
-      overwhelm:
-      - Overwhelm
-      - ''
-    name: Overwhelm
-  astaroth_pain_curse:
-    data:
-      damage: 'DAMAGE:'
-      description: Afflicts the target unit with a curse that lowers their pain threshold.
-        Causes them to be slowed for a short time, and take bonus damage, whenever
-        they are affected by a damage instance. Has an internal cooldown on the slow.
-      duration: 'DURATION:'
-      slow: '%SLOW:'
-      slow_duration: 'SLOW DURATION:'
-    modifiers:
-      astaroth_pain_curse:
-      - Pain Curse
-      - Taking bonus damage and being slowed when damage is taken.
-      astaroth_pain_curse_debuff:
-      - Pain Curse Debuff
-      - Slowed.
-    name: Pain Curse
-  special_bonus_astaroth_1:
-    data: {}
-    modifiers: {}
-    name: +20 Pain Curse Damage
-  special_bonus_astaroth_2:
-    data: {}
-    modifiers: {}
-    name: +1s Black Insignia Duration
-  special_bonus_astaroth_3:
-    data: {}
-    modifiers: {}
-    name: Overwhelm No Cooldown
-  special_bonus_astaroth_4:
-    data: {}
-    modifiers: {}
-    name: +30 Black Insignia Bonus Damage
 Hero:
+  modref: npc_dota_hero_astaroth
+  ref: npc_dota_hero_antimage
   data:
     bio: ''
     hype: A late game carry, Astaroth's job is to hit you five times with his Black
@@ -90,6 +8,87 @@ Hero:
       up for in spells, with access to a slow that activates upon the target taking
       damage (Pain Curse), that transforms the target into a walking bomb (Overwhelm),
       and a devastating Ultimate that does its best to erase their existence (Erase).
-  modref: npc_dota_hero_astaroth
   name: Astaroth
-  ref: npc_dota_hero_antimage
+Abilities:
+  astaroth_overwhelm:
+    name: Overwhelm
+    data:
+      description: Astaroth forces energies into the target unit.  After 2s, the unit
+        creates an explosion that deals large Magical damage to itself and the units
+        around it.
+      duration: 'DELAY:'
+      radius: null
+    modifiers:
+      modifier_overwhelm:
+      - Overwhelm
+      - ''
+  astaroth_pain_curse:
+    name: Pain Curse
+    data:
+      description: Afflicts the target unit with a curse that lowers their pain threshold.
+        Causes them to be slowed for a short time, and take bonus damage, whenever
+        they are affected by a damage instance. Has an internal cooldown on the slow.
+      duration: null
+      damage: null
+      slow: '%SLOW:'
+      slow_duration: 'SLOW DURATION:'
+    modifiers:
+      modifier_astaroth_pain_curse:
+      - Pain Curse
+      - Taking bonus damage and being slowed when damage is taken.
+      modifier_astaroth_pain_curse_debuff:
+      - Pain Curse Debuff
+      - Slowed.
+  astaroth_deathmark:
+    name: Black Insignia
+    data:
+      description: Upon striking an opponent a number of times, he removes a portion
+        of their Health and stuns them, gaining bonus attack speed and Pure damage
+        on his attacks for a short time afterwards. While this ability is on cooldown,
+        he cannot increment marks on any target.
+      hits: null
+      stun: null
+      duration: 'STACK DURATION:'
+      removal: '%CURRENT HEALTH REMOVAL DAMAGE:'
+      attack_speed_bonus: 'ATTACK SPEED BONUS:'
+      bonus_damage: 'PURE DAMAGE BONUS:'
+      bonus_duration: 'BONUS DURATION:'
+    modifiers:
+      modifier_astaroth_deathmark_buff:
+      - Black Insignia
+      - Gaining True Strike and %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% bonus
+        attack speed, plus bonus Pure damage on attacks.
+      modifier_astaroth_deathmark_stack:
+      - Black Insignia
+      - On the 5th strike, losing a percentage of current Health and being stunned.
+  astaroth_erase:
+    name: Erase
+    data:
+      description: Astaroth calls upon Abyssal energies to slowly erase the target's
+        existence, dealing damage to Health and Current Health, and Mana and Current
+        Mana, over a large duration.
+      duration: null
+      hp_damage: 'HEALTH DAMAGE:'
+      mana_damage: 'MANA DAMAGE:'
+      current_hp_damage: '%CURRENT HEALTH DAMAGE:'
+      current_mana_damage: '%CURRENT MANA DAMAGE:'
+    modifiers:
+      modifier_erase:
+      - Erase
+      - ''
+  special_bonus_astaroth_1:
+    name: +20 Pain Curse Damage
+    data: {}
+    modifiers: {}
+  special_bonus_astaroth_2:
+    name: +1s Black Insignia Duration
+    data: {}
+    modifiers: {}
+  special_bonus_astaroth_3:
+    name: Overwhelm No Cooldown
+    data: {}
+    modifiers: {}
+  special_bonus_astaroth_4:
+    name: +30 Black Insignia Bonus Damage
+    data: {}
+    modifiers: {}

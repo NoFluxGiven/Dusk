@@ -1,0 +1,43 @@
+Abilities:
+  odin_gungnir:
+    data:
+      aghanim_description: Increases damage and removes attack range and damage debuff.
+      arrow_stun: 'STUN DURATION:'
+      description: Odin throws his spear at a target location globally.  After a 2s
+        delay, the spear lands with destructive impact, dealing large Magical damage
+        to all those unfortunate enough to be caught in the blast, and stunning them.  For
+        a short while afterwards, Odin's attacks are far weaker and shorter range,
+        until his spear returns to his person.\n\nUpgradable by Aghanim's Scepter.
+      scepter_damage: 'SCEPTER DAMAGE:'
+    modifiers: {}
+    name: Gungnir
+  odin_oppression:
+    data:
+      aspd: 'ATTACK SPEED REDUCTION:'
+      damage: 'DAMAGE REDUCTION:'
+      description: With each of their strikes against Odin, his opponents despair,
+        losing attack damage and attack speed.
+      duration: 'DURATION:'
+    modifiers: {}
+    name: Oppression
+  odin_sleipnirs_veil:
+    data:
+      description: Sleipnir whinnies and drags itself and its master into a veiled
+        plane, rendering them invisible to enemies and granting them bonus movespeed.  Enemies
+        that are passed through take damage and are slowed.  Can pass through enemies
+        multiple times.
+      duration: 'DURATION:'
+      slow: '%SLOW:'
+    modifiers: {}
+    name: Sleipnir's Veil
+Hero:
+  data:
+    hype: A supportive tank, Odin's claim to fame is his legendary spear, Gungnir.
+      Capable of being cast globally, this has a short delay before landing and stunning
+      and damaging anyone in the radius. Otherwise, he possesses a great escape tool
+      in Sleipnir's Veil, a difficult to get around defense against right clickers
+      in Oppression, and a powerful True Sight AoE spell that punishes invisible units
+      in Eye of Truth.
+  modref: npc_dota_hero_odin
+  name: ''
+  ref: npc_dota_hero_abaddon

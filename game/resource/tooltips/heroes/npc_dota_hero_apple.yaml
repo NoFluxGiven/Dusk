@@ -1,6 +1,6 @@
-Abilities: {}
 Hero:
-  data: {}
   modref: npc_dota_hero_apple
+  ref: npc_dota_hero_windrunner
+  data: {}
   name: ''
-  ref: npc_dota_hero_apple
+Abilities: {}

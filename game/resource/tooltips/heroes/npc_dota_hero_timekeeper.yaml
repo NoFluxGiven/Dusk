@@ -1,105 +1,6 @@
-Abilities:
-  special_bonus_timekeeper_1:
-    data: {}
-    modifiers: {}
-    name: +1s Dilation Duration
-  special_bonus_timekeeper_2:
-    data: {}
-    modifiers: {}
-    name: +150 Futurestrike Max Damage
-  special_bonus_timekeeper_3:
-    data: {}
-    modifiers: {}
-    name: +32 Haste Aura Attackspeed
-  special_bonus_timekeeper_4:
-    data: {}
-    modifiers: {}
-    name: +8% Haste Aura Cooldown Reduction
-  special_bonus_timekeeper_5:
-    data: {}
-    modifiers: {}
-    name: -14s Futurestrike Cooldown
-  timekeeper_chronoshift:
-    data:
-      Note0: Sets health and Mana.
-      Note1: After the delay this purges positive and negative buffs from all affected
-        targets.
-      Note2: Ignores units that are not or were not alive when the ability was cast.
-      delay: 'DELAY:'
-      description: The Timekeeper knocks the worldline out of sync for a short time
-        for a single unit.  When he reactivates the spell, the timeline resyncs after
-        a short delay, returning the unit to the position, health and mana amounts
-        they were at when this was cast.
-      end: Chronoshift End
-      end_Description: Ends the Chronoshift, returning the affected unit back to where
-        they were, with the same Health and Mana as they had when Chronoshift was
-        cast.
-      time: 'TIME:'
-    modifiers:
-      chronoshift:
-      - Chronoshift
-      - ''
-      chronoshift_caster:
-      - Chronoshift
-      - ''
-    name: Chronoshift
-  timekeeper_chronoshift_end:
-    data:
-      Description: Ends the Chronoshift, returning the affected unit back to where
-        they were, with the same Health and Mana as they had when Chronoshift was
-        cast.
-    modifiers: {}
-    name: Chronoshift End
-  timekeeper_dilation:
-    data:
-      Note0: The slow affects turn rate, attack speed and movement speed.
-      Note1: The slow is purgable.
-      description: Slows the targeted unit by shifting their position in the timeline.
-        Their on-cooldown abilities will tick upwards instead of downwards.
-      duration: 'DURATION:'
-      slow: '%SLOW:'
-    modifiers:
-      dilation:
-      - Dilation
-      - Turn rate, movespeed and attack speed are being slowed, while on-cooldown
-        abilities are ticking up instead of down.
-    name: Dilation
-  timekeeper_futurestrike:
-    data:
-      Note0: The debuff cannot be purged.
-      description: After a random delay, deals Magical damage based on the length
-        of the delay to the target enemy.
-      max_damage: 'MAX DAMAGE:'
-      max_delay: 'MAX DELAY:'
-      min_damage: 'MIN DAMAGE:'
-      min_delay: 'MIN DELAY:'
-    modifiers:
-      futurestrike:
-      - Futurestrike
-      - Taking damage after a random delay.
-    name: Futurestrike
-  timekeeper_haste_aura:
-    data:
-      Description: Timekeeper hastens his nearby allies, causing them to gain movespeed
-        and attack speed. When a spell is cast, there is a small chance its cooldown
-        will be reduced. Can be actively used on an ally to guarantee their next Spell
-        will have a reduced cooldown, with double the effective cooldown reduction.
-        Halved effect on Ultimate abilities.
-      attackspeed_boost: 'ATTACK SPEED BOOST:'
-      chance: '%CHANCE:'
-      cooldown_reduction: '%COOLDOWN REDUCTION:'
-      radius: 'RADIUS:'
-      speed_boost: '%MOVE SPEED BOOST:'
-    modifiers:
-      haste_aura_effect:
-      - Haste Aura
-      - Gaining movement speed, attack speed, and the chance to lower cooldowns upon
-        spell cast.
-      haste_aura_effect_act:
-      - Haste Aura Active
-      - The next spell cast will receive a reduced cooldown.
-    name: Haste Aura
 Hero:
+  modref: npc_dota_hero_timekeeper
+  ref: npc_dota_hero_keeper_of_the_light
   data:
     bio: ''
     hype: Keeper of timelines, the Timekeeper is difficult to use but rewarding when
@@ -107,6 +8,105 @@ Hero:
       drastically, have a chance to reduce his and his allies' cooldowns, and save/load
       an ally's position, Health and Mana, Timekeeper is a powerful and dependable
       support.
-  modref: npc_dota_hero_timekeeper
   name: Timekeeperer
-  ref: npc_dota_hero_keeper_of_the_light
+Abilities:
+  timekeeper_dilation:
+    name: Dilation
+    data:
+      description: Slows the targeted unit by shifting their position in the timeline.
+        Their on-cooldown abilities will tick upwards instead of downwards.
+      Note0: The slow affects turn rate, attack speed and movement speed.
+      Note1: The slow is purgable.
+      duration: null
+      slow: '%SLOW:'
+    modifiers:
+      modifier_dilation:
+      - Dilation
+      - Turn rate, movespeed and attack speed are being slowed, while on-cooldown
+        abilities are ticking up instead of down.
+  timekeeper_futurestrike:
+    name: Futurestrike
+    data:
+      description: After a random delay, deals Magical damage based on the length
+        of the delay to the target enemy.
+      Note0: The debuff cannot be purged.
+      min_delay: 'MIN DELAY:'
+      max_delay: 'MAX DELAY:'
+      min_damage: 'MIN DAMAGE:'
+      max_damage: 'MAX DAMAGE:'
+    modifiers:
+      modifier_futurestrike:
+      - Futurestrike
+      - Taking damage after a random delay.
+  timekeeper_haste_aura:
+    name: Haste Aura
+    data:
+      Description: Timekeeper hastens his nearby allies, causing them to gain movespeed
+        and attack speed. When a spell is cast, there is a small chance its cooldown
+        will be reduced. Can be actively used on an ally to guarantee their next Spell
+        will have a reduced cooldown, with double the effective cooldown reduction.
+        Halved effect on Ultimate abilities.
+      cooldown_reduction: '%COOLDOWN REDUCTION:'
+      radius: null
+      speed_boost: '%MOVE SPEED BOOST:'
+      attackspeed_boost: 'ATTACK SPEED BOOST:'
+      chance: '%CHANCE:'
+    modifiers:
+      modifier_haste_aura_effect:
+      - Haste Aura
+      - Gaining movement speed, attack speed, and the chance to lower cooldowns upon
+        spell cast.
+      modifier_haste_aura_effect_act:
+      - Haste Aura Active
+      - The next spell cast will receive a reduced cooldown.
+  timekeeper_chronoshift:
+    name: Chronoshift
+    data:
+      description: The Timekeeper knocks the worldline out of sync for a short time
+        for a single unit.  When he reactivates the spell, the timeline resyncs after
+        a short delay, returning the unit to the position, health and mana amounts
+        they were at when this was cast.
+      Note0: Sets health and Mana.
+      Note1: After the delay this purges positive and negative buffs from all affected
+        targets.
+      Note2: Ignores units that are not or were not alive when the ability was cast.
+      time: null
+      delay: null
+      end: Chronoshift End
+      end_Description: Ends the Chronoshift, returning the affected unit back to where
+        they were, with the same Health and Mana as they had when Chronoshift was
+        cast.
+    modifiers:
+      modifier_chronoshift:
+      - Chronoshift
+      - ''
+      modifier_chronoshift_caster:
+      - Chronoshift
+      - ''
+  timekeeper_chronoshift_end:
+    name: Chronoshift End
+    data:
+      Description: Ends the Chronoshift, returning the affected unit back to where
+        they were, with the same Health and Mana as they had when Chronoshift was
+        cast.
+    modifiers: {}
+  special_bonus_timekeeper_1:
+    name: +1s Dilation Duration
+    data: {}
+    modifiers: {}
+  special_bonus_timekeeper_2:
+    name: +150 Futurestrike Max Damage
+    data: {}
+    modifiers: {}
+  special_bonus_timekeeper_3:
+    name: +32 Haste Aura Attackspeed
+    data: {}
+    modifiers: {}
+  special_bonus_timekeeper_4:
+    name: +8% Haste Aura Cooldown Reduction
+    data: {}
+    modifiers: {}
+  special_bonus_timekeeper_5:
+    name: -14s Futurestrike Cooldown
+    data: {}
+    modifiers: {}

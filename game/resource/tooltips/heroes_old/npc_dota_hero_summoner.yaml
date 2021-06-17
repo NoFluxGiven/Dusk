@@ -1,0 +1,13 @@
+Abilities: {}
+Hero:
+  data:
+    bio: ''
+    hype: The sieger of towers, destroyer of bases, and overall one of the most annoying
+      Heroes to play against, Vulcan is a defensive core that can place nests of units
+      all over the map. His Tesla Coils are weak on their own, but in groups they
+      are devastatingly powerful, and the Sentinel can down towers in a short time.
+      His Vassal, built with an innate ability, can help him kill enemies with its
+      wide set of powerful spells, but is fragile and slow.
+  modref: npc_dota_hero_summoner
+  name: Vulcan [NT][NC]
+  ref: npc_dota_hero_rattletrap

@@ -1,28 +1,68 @@
+Hero:
+  modref: npc_dota_hero_siegfried
+  ref: npc_dota_hero_sven
+  data:
+    bio: 'Once a member of Epoch''s Counsel, a group of knights and mages selected
+      by a god''s hand, Siegfried was known as the Protector of All, the Right Hand
+      of Epoch. Wielding a shield that could twist time itself, and a sword that could
+      bend space to his will, his influence spanned centuries upon centuries, helping
+      the weak and purging evil from the lands. When another member, the Mouthpiece
+      of Epoch, began plotting against the people in His name, Siegfried tried all
+      he could to stop him, and to prove Epoch''s continued love for humanity, despite
+      the Mouthpiece''s mad ramblings of power and destruction. As each of his fellow
+      Counsel members turned against him, Siegfried had but one option remaining:
+      travel to the deepest pits of the Below, obtain the Demon''s Fire, absorbing
+      it into his sword, and use its power to cut through Epoch''s protection, ridding
+      the world of the treacherous Mouthpiece. Upon his return, he went to strike
+      the Mouthpiece to find he had been tricked. His blade, possessed by the Fire''s
+      malicious intent, cut down every member of the Counsel as he weeped, leaving
+      him the sole survivor. He now travels, cursed sword in one hand, and the time-bending
+      Eon Shield in the other, seeking to atone to Epoch for his sins...'
+    hype: A dangerous foe and valuable ally, the Demonfire Knight commands respect
+      from his enemies in battle, with huge AoE stuns, a powerful attack steroid,
+      and the ability to globally assist an ally for a short time.
+  name: Siegfried
 Abilities:
   siegfried_eon_shield:
+    name: Eon Shield
     data:
       Description: Siegfried tosses his ancient shield in the target direction, dealing
         %proj_damage% damage to enemies hit on the way. When it arrives, after a %delay%
         second delay, it deals %area_damage% and roots enemies in it for %root% seconds.
+      speed: null
+      radius: null
       proj_radius: 'PROJ RADIUS:'
-      radius: 'RADIUS:'
-      speed: 'SPEED:'
     modifiers:
-      eon_shield_slow:
+      modifier_eon_shield_slow:
       - Eon Shield
       - Turn rate, movement speed and attack speed are slowed.
-    name: Eon Shield
+  siegfried_hell_bent:
+    name: Hell Bent
+    data:
+      Description: Siegfried sacrifices %health_reduction%%% of his current Health
+        to use the Demonfire forged into his soul and enter a frenzy, forcing himself
+        to attack the target enemy for a short time. He gains bonus attack speed and
+        bonus movespeed, alongside taking %damage_reduction%%% reduced Physical damage.
+      duration: null
+      attack_speed: 'ATTACK SPEED:'
+      movespeed: null
+    modifiers:
+      modifier_hell_bent:
+      - Hell Bent
+      - Being forced to attack the target you chose, but taking less Physical damage
+        and gaining movement speed and attack speed.
   siegfried_epochs_protection:
+    name: Epoch's Protection
     data:
       Description: When Siegfried casts a Spell, Epoch grants him a shard of his protective
         energies, blessing him with Magic Immunity for a short time.
-      duration: 'DURATION:'
+      duration: null
     modifiers:
-      epochs_protection_immunity:
+      modifier_epochs_protection_immunity:
       - Epoch's Protection
       - Magic Immune for a short time after casting a Spell.
-    name: Epoch's Protection
   siegfried_heaven_sent:
+    name: Heaven Sent
     data:
       Description: Siegfried appears at the location of the target ally, rendering
         them invulnerable and untargetable, but unable to perform actions. After %duration%
@@ -32,44 +72,23 @@ Abilities:
         for the duration.
       scepter_health_regen: 'SCEPTER HEALTH REGEN:'
     modifiers:
-      heaven_sent_caster:
+      modifier_heaven_sent_caster:
       - Heaven Sent
       - Returning to the cast location when this expires.
-    name: Heaven Sent
-  siegfried_hell_bent:
-    data:
-      Description: Siegfried sacrifices %health_reduction%%% of his current Health
-        to use the Demonfire forged into his soul and enter a frenzy, forcing himself
-        to attack the target enemy for a short time. He gains bonus attack speed and
-        bonus movespeed, alongside taking %damage_reduction%%% reduced damage.
-      attack_speed: 'ATTACK SPEED:'
-      duration: 'DURATION:'
-      movespeed: 'MOVESPEED:'
-    modifiers:
-      hell_bent:
-      - Hell Bent
-      - Being forced to attack the target you chose, but taking less damage
-        and gaining movement speed and attack speed.
-    name: Hell Bent
   special_bonus_siegfried_1:
+    name: Epoch's Protection Basic Dispel
     data:
       Description: Applies on creating a new buff, not on refreshing an existing one.
     modifiers: {}
-    name: Epoch's Protection Basic Dispel
   special_bonus_siegfried_2:
-    data: {}
-    modifiers: {}
     name: +100 Eon Shield Radius
+    data: {}
+    modifiers: {}
   special_bonus_siegfried_3:
-    data: {}
-    modifiers: {}
     name: +150 Hell Bent Attack Speed
-  special_bonus_siegfried_4:
     data: {}
     modifiers: {}
+  special_bonus_siegfried_4:
     name: +2s Epoch's Protection
-Hero:
-  data: {}
-  modref: npc_dota_hero_siegfried
-  name: ''
-  ref: npc_dota_hero_siegfried
+    data: {}
+    modifiers: {}

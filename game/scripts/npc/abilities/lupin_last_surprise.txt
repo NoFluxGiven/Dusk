@@ -8,25 +8,30 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/lupin_last_surprise"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT" 
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+    "AnimationPlaybackRate"         "1.75"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityTextureName"			"lupin_last_surprise"
 
+	"TooltipName"					"Last Surprise"
+	"TooltipDescription"			"Lupin jumps to a nearby location, receiving a Strong Dispel."
+
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"775"
-	"AbilityCastPoint"				"0.1"
+	"AbilityCastRange"				"1000"
+	"AbilityCastPoint"				"0.22"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"30 20 10"
+	"AbilityCooldown"				"24 22 20"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"50"
+	"AbilityManaCost"				"75"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,27 +44,17 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"delay"						"0.15"
+			"duration"					"1.5 3.0 4.5"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"range"						"750"
+			"movespeed"					"25 35 45"
 		}
 		"03"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"creep_damage"				"30"
-		}
-		"04"
-		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"					"5"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"900"
+			"purge_interval"			"1.5"
 		}
 	}
 	

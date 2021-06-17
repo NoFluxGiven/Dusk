@@ -1,0 +1,54 @@
+Hero:
+  modref: npc_dota_hero_crimson
+  ref: npc_dota_hero_lion
+  data:
+    hype: None
+  name: ''
+Abilities:
+  crimson_life_drain:
+    name: Destruction Sphere
+    data:
+      description: Summons a sphere that, after a short delay, explodes, dealing Magical
+        damage based on the missing health of affected targets.
+      Lore: A sphere of ruinous intent.
+      increase: 'DAMAGE PER MISSING HEALTH:'
+      base_damage: 'BASE DAMAGE:'
+      delay: null
+    modifiers: {}
+  crimson_red_rituals:
+    name: Sacrifice
+    data:
+      description: Pulls a portion of the soul from a target enemy, dealing damage
+        and slowing.  Enemies hit by the traveling Soul Shard will take damage and
+        be slowed as well.
+      Lore: A soul rent asunder.
+      damage: null
+      slow: '%SLOW:'
+    modifiers: {}
+  crimson_blood_sorcery:
+    name: Ancient Pact
+    data:
+      description: Crimson calls upon the arts of his elders to trade his Mana for
+        health, healing as much as possible, with great efficiency allowing the mana
+        cost to be lower than the health healed.
+      Lore: A wound repaired instantly.
+      mult: 'EFFICIENCY:'
+    modifiers: {}
+  crimson_disintegrate:
+    name: Disintegrate
+    data:
+      description: Crimson fires a beam of such incredible power that it melts through
+        the defenses of its target, dealing current health percent based damage.  Reduces
+        the target's Armor, Magic Resistance and Movespeed for a short time.\n\nUpgradable
+        by Aghanim's Scepter.
+      Lore: An enemy annihilated once again.
+      Note0: If the main target is not a Hero, and Aghanim's Scepter is purchased,
+        it will not jump to nearby enemies.
+      aghanim_description: The beam jumps to nearby units with a short delay.
+      damage: '%DAMAGE:'
+      damage_scepter: '%SCEPTER DAMAGE:'
+      duration: null
+      armor_reduction: 'ARMOR REDUCTION:'
+      mres_reduction: '%MAGIC RESISTANCE REDUCTION:'
+      move_slow: '%SLOW:'
+    modifiers: {}

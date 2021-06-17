@@ -1,0 +1,6 @@
+Hero:
+  modref: npc_dota_hero_faust
+  ref: npc_dota_hero_warlock
+  data: {}
+  name: ''
+Abilities: {}

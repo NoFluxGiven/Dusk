@@ -1,0 +1,6 @@
+Hero:
+  modref: npc_dota_hero_wight
+  ref: npc_dota_hero_visage
+  data: {}
+  name: ''
+Abilities: {}

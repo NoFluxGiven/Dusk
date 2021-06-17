@@ -1,0 +1,81 @@
+Abilities:
+  gob_squad_clearance_sale:
+    data:
+      Description: The Gob Squad offloads all of their excess explosives, throwing
+        a bomb out of their cart every second. Bombs deal large Magical damage, Physical
+        damage and slow, or Pure damage and stun, and land in a random location nearby.
+      duration: 'DURATION:'
+      radius: 'EXPLOSION RADIUS:'
+    modifiers:
+      clearance_sale:
+      - Clearance Sale
+      - BOMBS EVERYWHERE
+      clearance_sale_slow:
+      - Clearance Sale Slow
+      - Being slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
+    name: Clearance Sale
+  gob_squad_kamikaze:
+    data:
+      Description: Charges for 4s, gaining %movespeed%%% bonus movespeed. When the duration ends,
+        or the Gob Squad dies, they explode, losing a portion of their Health (based
+        off their maximum Health), and dealing Magical base damage plus bonus damage
+        based on the amount of Health they lost. They are stunned for 1s after use.
+      duration: 'DURATION:'
+      health_damage: '%HEALTH LOST:'
+      movespeed_bonus: '%MOVESPEED BONUS:'
+      radius: 'RADIUS:'
+      total: '%HEALTH LOST TO BONUS DAMAGE:'
+    modifiers:
+      kamikaze:
+      - Kamikaze
+      - You gonna blow up.
+    name: Kamikaze
+  gob_squad_rocket_blast:
+    data:
+      Description: Fires a rocket at the target location. Upon colliding with any
+        enemy units or buildings, the rocket will explode, dealing Magical damage
+        in an AoE. Deals half damage to buildings. Gob Squad has a %ride_chance%%%
+        chance to jump on their next rocket, riding it towards the target location
+        when fired.
+      radius: 'BLAST RADIUS:'
+      range: 'RANGE:'
+    modifiers: {}
+    name: Rocket Blast
+  gob_squad_whoops:
+    data:
+      Description: When Gob Squad dies, they immediately explode, dealing heavy Magical
+        damage in a large area around them and stunning affected enemies for a short
+        time.
+      radius: 'RADIUS:'
+      stun: 'STUN:'
+    modifiers: {}
+    name: Whoops
+  special_bonus_gob_squad_1:
+    data: {}
+    modifiers: {}
+    name: +100 Rocket Blast Damage
+  special_bonus_gob_squad_2:
+    data: {}
+    modifiers: {}
+    name: +50% Kamikaze Damage/Charge Time
+  special_bonus_gob_squad_3:
+    data: {}
+    modifiers: {}
+    name: Throw 3 Bombs on Spell Cast
+  special_bonus_gob_squad_4:
+    data:
+      Description: Gob Squad rides his rocket into battle.
+    modifiers: {}
+    name: Ride the Rocket Blast!
+Hero:
+  data:
+    bio: ''
+    hype: The meaning of madness, Gob Squad cares not for self-preservation, only
+      for destruction. Firing long range rockets with Rocket Blast is where the sanity
+      ends-- the rest of their skillset is dangerous for everyone. Become extremely
+      fast, then explode, with Kamikaze. Throw numerous bombs out of your cart with
+      their Ultimate, Clearance Sale, and of course... explode anyway on death, with
+      Whoops!!
+  modref: npc_dota_hero_gob_squad
+  name: Gob Squad
+  ref: npc_dota_hero_techies

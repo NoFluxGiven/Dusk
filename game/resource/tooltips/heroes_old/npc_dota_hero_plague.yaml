@@ -1,0 +1,6 @@
+Abilities: {}
+Hero:
+  data: {}
+  modref: npc_dota_hero_plague
+  name: ''
+  ref: npc_dota_hero_plague

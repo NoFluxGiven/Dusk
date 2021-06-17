@@ -1,0 +1,94 @@
+Abilities:
+  neith_decisive_strike:
+    name: Decisive Strike
+    data:
+      description: Neith strikes a devastating blow with bloodlust alone against a
+        random nearby enemy, making an attack that deals bonus Physical damage,
+        slowing their attack speed and movespeed, and stealing some of their Armor for a short duration.
+      duration: 'DURATION:'
+      armor: ARMOR STEAL
+      hit_radius: 'RADIUS:'
+      slow: '%SLOW:'
+    modifiers:
+      decisive_strike_slow:
+      - Decisive Strike
+      - Being slowed drastically.
+    
+  neith_inspire:
+    data:
+      attack_damage: 'BONUS DAMAGE (HERO):'
+      attack_damage_creep: 'BONUS DAMAGE (CREEP):'
+      description: The Warrior Goddess' actions inspire her comrades, increasing their
+        attack damage for a short time when she uses her abilities near them. Grants
+        less damage to creeps.
+      duration: 'DURATION:'
+    modifiers:
+      inspire_buff_display:
+      - Inspire Damage
+      - ''
+    name: Inspire
+  neith_monsoon:
+    data:
+      armor_reduction: 'ARMOR REDUCTION:'
+      attack_steal: 'DAMAGE STEAL:'
+      description: Neith unleashes an attack that cripples nearby enemies and empowers
+        her, dealing damage in an AoE and stealing attack damage, alongside reducing
+        their Armor.
+      duration: 'DURATION:'
+    modifiers:
+      monsoon:
+      - Monsoon
+      - Damage is reduced.
+      monsoon_user:
+      - Monsoon
+      - Gaining damage from hit targets.
+    name: Monsoon
+  neith_rally:
+    data:
+      aghanim_description: Increases radius and duration, and reduces nearby enemies'
+        attackspeed, movespeed and damage by the same amount as it increases for your
+        allies.
+      attack_speed_increase: 'ATTACK SPEED INCREASE:'
+      bonus_movespeed: '%MOVESPEED INCREASE:'
+      damage_increase: 'DAMAGE INCREASE (HEROES):'
+      damage_increase_creep: 'DAMAGE INCREASE (CREEPS):'
+      description: With a war cry, Neith rallies her nearby allies to battle, increasing
+        their attack damage, move speed and attack speed for a very short time. Creeps
+        gain less attack damage, but the same amount of move speed and attack speed.\n\nUpgradable
+        by Aghanim's Scepter.
+      duration: 'DURATION:'
+      scepter_duration: 'SCEPTER DURATION:'
+      scepter_radius: 'SCEPTER RADIUS:'
+    modifiers:
+      rally_buff:
+      - Rally
+      - ''
+      rally_debuff:
+      - Rally
+      - ''
+    name: Rally
+  special_bonus_neith_1:
+    data: {}
+    modifiers: {}
+    name: +4s Inspire Duration
+  special_bonus_neith_2:
+    data: {}
+    modifiers: {}
+    name: Rally Grants 8 Armor
+  special_bonus_neith_3:
+    data: {}
+    modifiers: {}
+    name: Decisive Strike Makes an Attack
+  special_bonus_neith_4:
+    data: {}
+    modifiers: {}
+    name: +30 Monsoon Damage Steal
+  special_bonus_neith_5:
+    data: {}
+    modifiers: {}
+    name: -8 Monsoon Cooldown
+Hero:
+  data: {}
+  modref: npc_dota_hero_neith
+  name: ''
+  ref: right

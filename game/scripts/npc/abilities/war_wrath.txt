@@ -1,0 +1,67 @@
+"war_wrath"
+{
+
+    // Scripting
+    //----------------------------------------------
+    "BaseClass"                 "ability_lua"
+    "ScriptFile"                "lua/abilities/war_wrath"
+
+    // Precache
+    //----------------------------------------------
+    "precache"
+    {
+        // "particle"             "particles/heroes/hero_war/war_wrath.vpcf"
+        // "soundfile"            "soundevents/hero_war.vsndevts"
+    }
+
+    // Ability
+    //----------------------------------------------
+    "AbilityType"               "DOTA_ABILITY_TYPE_BASIC"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_POINT"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC"
+    "AbilityTextureName"        "war_wrath"
+
+    // Animation
+    //----------------------------------------------
+    "AbilityCastRange"          "0.0"
+    "AbilityCastAnimation"      "ACT_DOTA_IDLE"
+    "AnimationPlaybackRate"     "1.0"
+
+    // Casting
+    //----------------------------------------------
+    "AbilityCastRange"          "600"
+    "AbilityCooldown"           "12"
+    "AbilityManaCost"           "0"
+
+    // Special Values
+    //----------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "attack_damage"             "30"
+        }
+        "02"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "armor_reduction"           "3 4 5 6"
+        }
+        "03"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "magic_res_reduction"       "15 20 25 30"
+        }
+        "04"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "damage_over_time"          "20 30 40 50"
+        }
+        "05"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "attacks_to_dispel"         "3"
+        }
+    }
+}

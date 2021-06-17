@@ -1,0 +1,67 @@
+"elena_devotion"
+{
+    
+    // Scripting
+    //----------------------------------------------
+    "BaseClass"                 "ability_lua"
+    "ScriptFile"                "lua/abilities/elena_devotion"
+    
+    // Precache
+    //----------------------------------------------
+    "precache"
+    {
+        // "particle"             "particles/heroes/hero_elena/elena_devotion.vpcf"
+        // "soundfile"            "soundevents/hero_elena.vsndevts"
+    }
+    
+    // Ability
+    //----------------------------------------------
+    "AbilityType"               "DOTA_ABILITY_TYPE_BASIC"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC"
+    "AbilityTextureName"        "elena_devotion"
+    
+    // Animation
+    //----------------------------------------------
+    "AbilityCastRange"          "0.0"
+    "AbilityCastAnimation"      "ACT_DOTA_IDLE"
+    "AnimationPlaybackRate"     "1.0"
+    
+    // Casting
+    //----------------------------------------------
+    "AbilityCastRange"          "0"
+    "AbilityCooldown"           "0"
+    "AbilityManaCost"           "0"
+    
+    // Special Values
+    //----------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "duration"                  "5"
+        }
+        "02"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "health_regen"              "25 35 45 55"
+        }
+        "03"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "heal_increase"             "40 60 80 100"
+        }
+        "04"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "self_slow"                 "15"
+        }
+        "05"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "radius"                    "900"
+        }
+    }
+}

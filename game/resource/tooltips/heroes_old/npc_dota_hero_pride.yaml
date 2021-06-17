@@ -1,0 +1,20 @@
+Abilities:
+  ptomely_astralise:
+    data:
+      Description: ~Pride stabs his spear into the ground, summoning power from the souls of his family that wander the Betwixt.
+        Creates a blast of energy that appears at the target location and deals %damage% damage.
+        Targets affected are **Silenced** and **Muted** for a short time.
+        Lasts %duration% seconds.
+        Dispellable, fully blocked by Spell Immunity.
+      damage: 'DAMAGE:'
+      duration: 'DURATION:'
+    modifiers:
+      elyats_bellow:
+      - Elyat's Bellow
+      - Muted and Silenced.
+    name: Elyat's Bellow
+Hero:
+  data: {}
+  modref: npc_dota_hero_pride
+  name: ''
+  ref: npc_dota_hero_phantom_lancer

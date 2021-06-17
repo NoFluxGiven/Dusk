@@ -1,0 +1,97 @@
+Ideas:
+  lupin_beastblood:
+    data:
+      Description: Lupin allows the blood of the Beast to flow freely through his veins.
+        Each attack he makes against an enemy Hero has a chance to activate a Frenzy, granting him bonus movespeed,
+        damage, and attack speed, and the ability to 
+    modifiers:
+    name: Beastblood
+Abilities:
+  lupin_beneath_the_mask:
+    data:
+      Description: Lupin's next attack against a Hero deals bonus Physical damage,
+        Silencing them and stealing their movespeed and attack speed.
+      attack_speed_steal: 'ATTACK SPEED STEAL:'
+      damage: 'BONUS DAMAGE:'
+      duration: 'DURATION:'
+      slow: '%MOVESPEED STEAL:'
+    modifiers:
+      beneath_the_mask_slow:
+      - Beneath the Mask
+      - Silenced and slowed.
+    name: Beneath The Mask
+  lupin_finisher:
+    data:
+      Description: Lupin fires a shot from his trusty pistol at the target, dealing
+        Physical damage. If the target is Stunned or Dazed, deals bonus damage and
+        Lupin makes an attack against them. Slows for a short time.
+      bonus_damage: 'STUNNED BONUS DAMAGE:'
+      damage: 'DAMAGE:'
+      slow: '%SLOW:'
+      slow_duration: 'SLOW DURATION:'
+    modifiers:
+      finisher_slow:
+      - Finisher
+      - Slowed.
+    name: Finisher
+  lupin_flashbang:
+    data:
+      Description: In an area of effect, Lupin causes enemies to become Dazed by throwing
+        a Flashbang. Dazed enemies are stunned, but the effect is removed if they
+        take damage from any source.
+      Note0: Enemies stay Dazed for a minimum of 0.5s.
+      Note1: The damage source needs to exceed 20 to purge the Daze.
+      damage: 'DAMAGE:'
+      duration: 'DAZE DURATION:'
+      radius: 'RADIUS:'
+    modifiers:
+      flashbang_dazed:
+      - Dazed
+      - ''
+    name: Flashbang
+  lupin_last_surprise:
+    data:
+      Description: Lupin quickly strikes all enemy units in a line with an attack,
+        then does the same in the opposite direction, arriving at his starting location.
+        Creeps take less damage from this skill.
+      creep_damage: '%CREEP DAMAGE:'
+      range: 'RANGE:'
+    modifiers:
+      last_surprise:
+      - Last Surprise
+      - 
+    name: Last Surprise
+  special_bonus_lupin_1:
+    data: {}
+    modifiers: {}
+    name: +12% Beneath the Mask Slow
+  special_bonus_lupin_2:
+    data: {}
+    modifiers: {}
+    name: +125 Flashbang Damage
+  special_bonus_lupin_3:
+    data: {}
+    modifiers: {}
+    name: +0.75s Finisher Slow Duration
+  special_bonus_lupin_4:
+    data: {}
+    modifiers: {}
+    name: +1.75s Flashbang Daze Duration
+  special_bonus_lupin_5:
+    data: {}
+    modifiers: {}
+    name: +1000 Last Surprise Range
+  special_bonus_lupin_6:
+    data: {}
+    modifiers: {}
+    name: Beneath the Mask Mutes
+Hero:
+  data:
+    bio: ''
+    hype: Lupin is all about the surprise. With a kit that perfectly suits a roaming
+      ganker, he is excellent against casters and squishy carries. Silence and slow
+      your foes, Daze them, pop them with your trusty handgun, and then finish them
+      with a one-two-slash-Ultimate.
+  modref: npc_dota_hero_lupin
+  name: Lupin
+  ref: npc_dota_hero_riki

@@ -1,64 +1,6 @@
-Abilities:
-  lysander_captains_compass:
-    data:
-      description: Targets a unit with Lysander's Magical Compass, granting vision
-        and truesight of them. Lysander gains bonus movespeed and attack speed based
-        on how close he is to the unit.
-      duration: 'DURATION:'
-      movespeed_caster: '%MAX MOVESPEED/ATTACK SPEED INCREASE:'
-    modifiers:
-      captains_compass:
-      - Captain's Compass
-      - ''
-      captains_compass_buff_show:
-      - Captain's Compass Move Speed
-      - ''
-    name: Captains Compass
-  lysander_grapeshot:
-    data:
-      aghanim_description: Lysander has a chance to Grapeshot a nearby enemy when
-        he attacks. These shots can Crit as normal, but never stun.
-      crit: '%CRITICAL CHANCE:'
-      crit_multiplier: 'CRITICAL MULTIPLIER:'
-      description: Lysander fires his handgun at a target unit or building, dealing
-        Physical damage based on his attack strength.  When shooting at short range,
-        it ministuns the target.  Has a chance to crit, which halves the ability's
-        cooldown, refunds the Mana cost, increases the damage, and ministuns regardless
-        of how far away the target is.\n\nUpgradable by Aghanim's Scepter.
-      multiplier: 'MULTIPLIER:'
-      range_ministun: 'STUN RANGE:'
-      scepter_chance: '%SCEPTER GRAPESHOT CHANCE:'
-      scepter_radius: 'SCEPTER GRAPESHOT RADIUS:'
-      stun: 'STUN DURATION:'
-    modifiers:
-      grapeshot_scepter:
-      - Grapeshot Aghanim's Scepter Upgrade
-      - Owner has a chance to Grapeshot a nearby enemy when attacking.
-    name: Grapeshot
-  lysander_phantom_fleet:
-    data:
-      aghanim_description: Gives Lysander a guaranteed Grapeshot crit every 14s, doubles
-        the stun duration, and autocasts Grapeshot on targets affected by Captain's
-        Compass, if they are in range, but removes the crit chance completely.
-      damage: 'DAMAGE:'
-      description: Summons forth an ethereal ship that fires its chase cannons ahead,
-        dealing damage to enemy units and buildings. Deals quarter damage to buildings.
-      duration: 'DURATION:'
-      ministun: 'MINISTUN:'
-    modifiers:
-      phantom_fleet_slow:
-      - Phantom Fleet Slow
-      - ''
-    name: Phantom Dreadnaught
-  special_bonus_lysander_1:
-    data: {}
-    modifiers: {}
-    name: +75 Phantom Dreadnaught Damage
-  special_bonus_lysander_2:
-    data: {}
-    modifiers: {}
-    name: +30% Grapeshot Crit Chance
 Hero:
+  modref: npc_dota_hero_lysander
+  ref: npc_dota_hero_kunkka
   data:
     bio: ''
     hype: This cap'n is all about disrupting his enemies. His long range Physical
@@ -67,6 +9,58 @@ Hero:
       Adventurous Gale allows him to charge forth and carry enemies with him. Should
       he be in trouble, he can summon the great Dreadnaught, a ghostly ship that fires
       numerous cannonballs ahead of it.
-  modref: npc_dota_hero_lysander
   name: Lysander
-  ref: npc_dota_hero_kunkka
+Abilities:
+  lysander_grapeshot:
+    name: Grapeshot
+    data:
+      description: Lysander fires his handgun at a target unit or building, dealing
+        Physical damage based on his attack strength.  When shooting at short range,
+        it ministuns the target.  Has a chance to crit, which halves the ability's
+        cooldown, refunds the Mana cost, increases the damage, and ministuns regardless
+        of how far away the target is.\n\nUpgradable by Aghanim's Scepter.
+      aghanim_description: Lysander has a chance to Grapeshot a nearby enemy when
+        he attacks. These shots can Crit as normal, but never stun.
+      multiplier: null
+      range_ministun: 'STUN RANGE:'
+      stun: 'STUN DURATION:'
+      crit: '%CRITICAL CHANCE:'
+      crit_multiplier: 'CRITICAL MULTIPLIER:'
+      scepter_chance: '%SCEPTER GRAPESHOT CHANCE:'
+      scepter_radius: 'SCEPTER GRAPESHOT RADIUS:'
+    modifiers: {}
+  lysander_captains_compass:
+    name: Captains Compass
+    data:
+      description: Targets a unit with Lysander's Magical Compass, granting vision
+        and truesight of them. Lysander gains bonus movespeed and attack speed based
+        on how close he is to the unit.
+      duration: null
+      movespeed_caster: '%MAX MOVESPEED/ATTACK SPEED INCREASE:'
+    modifiers:
+      modifier_captains_compass:
+      - Captain's Compass
+      - ''
+      modifier_captains_compass_buff_show:
+      - Captain's Compass Move Speed
+      - ''
+  lysander_phantom_fleet:
+    name: Phantom Dreadnaught
+    data:
+      description: Summons forth an ethereal ship that fires its chase cannons ahead,
+        dealing damage to enemy units and buildings. Deals quarter damage to buildings.
+      aghanim_description: Gives Lysander a guaranteed Grapeshot crit every 14s, doubles
+        the stun duration, and autocasts Grapeshot on targets affected by Captain's
+        Compass, if they are in range, but removes the crit chance completely.
+      damage: null
+      ministun: null
+      duration: null
+    modifiers: {}
+  special_bonus_lysander_1:
+    name: +75 Phantom Dreadnaught Damage
+    data: {}
+    modifiers: {}
+  special_bonus_lysander_2:
+    name: +30% Grapeshot Crit Chance
+    data: {}
+    modifiers: {}

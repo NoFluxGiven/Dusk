@@ -5,11 +5,9 @@
 ///@changelog
 ///@version 2.2
 ///@hero Shade
-///@ability REWORK: Venomous => Shadowshift
+///@ability Venomous
 ///@changes #
-/// Removed slow components.
-/// Reduced damage to 10/14/18/22.
-/// Venomous now deals damage over time based on the amount of debuffs the affected target has.
+/// Reworked into Shadowshift: Shade becomes Untargetable and moves faster for a short time, dodging projectiles on cast.
 
 "shade_shadowshift"
 {
@@ -18,7 +16,7 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/shade_shadowshift"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 	"AbilityTextureName"			"shade_venomous_dark"
 
 	// Casting

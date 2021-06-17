@@ -1,0 +1,4 @@
+After a %delay% second delay, the target is Strong Dispelled and
+recovers Health equal to %recovery%% of their missing Health. If they
+are an enemy, they take the amount as damage instead, and are slowed
+by %slow%% for %slow_duration% seconds.

@@ -1,0 +1,6 @@
+Hero:
+  modref: npc_dota_hero_spike
+  ref: npc_dota_hero_bristleback
+  data: {}
+  name: ''
+Abilities: {}

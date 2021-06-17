@@ -1,0 +1,100 @@
+Abilities:
+  ouroboros_diffusion:
+    data:
+      Note0: Damage below or between the threshold of 100 still increases Magic Resistance,
+        Health regen and Mana regen, but does not show as a buff stack.
+      description: As Ouroboros takes Magical damage, his scales diffuse its energies,
+        converting it to life force. Increases Magic Resistance and Health and Mana
+        regen based on the damage Ouroboros takes.
+      duration: 'DURATION:'
+      health_regen: 'HEALTH REGEN PER STACK:'
+      magic_res: '%MAGIC RESISTANCE PER STACK:'
+      mana_regen: MANA REGEN PER STACK
+      max_stacks: 'MAXIMUM STACKS:'
+      per: 'DAMAGE FOR +1 STACK:'
+    modifiers:
+      diffusion:
+      - Diffusion
+      - Converting incoming Magical damage to Magic Resistance, Health Regen and Mana
+        Regen.
+    name: Diffusion
+  ouroboros_dualcast:
+    data:
+      delay: 'SPELL DELAY:'
+      description: Ouroboros takes advantage of his extra appendage and spellcasting
+        prowess combined, casting Spells twice in quick succession, provided he has
+        the mana to do so. Consumes a multiplier of the original Mana cost of the
+        Spell for the second cast.
+      mana_cost: '%MANA COST:'
+    modifiers:
+      dualcast:
+      - Dualcast
+      - When toggled on, Spells are cast twice in quick succession.
+    name: Dualcast
+  ouroboros_nexus:
+    data:
+      delay: 'DELAY:'
+      description: Summons a devastating concentrated blast of flame from the sky
+        after a short delay, dealing massive damage to enemies caught in the AoE.  Stuns
+        for a short time.
+      radius: 'RADIUS:'
+      stun: 'STUN DURATION:'
+    modifiers: {}
+    name: Nexus
+  ouroboros_searing_flame:
+    data:
+      Note0: Travels past the max cast range by 125 units.
+      aghanim_description: Increases slow and applies a stacking damage over time
+        effect to targets hit.
+      damage: 'DAMAGE:'
+      description: Ouroboros unleashes an incredible whorl of superheated gases from
+        his vesicles, dealing damage to, and crippling for a very short time, enemies
+        caught in the cone.
+      scepter_dot: 'SCEPTER DOT:'
+      scepter_dot_duration: 'SCEPTER DOT DURATION:'
+      scepter_slow: '%SCEPTER SLOW:'
+      slow: '%SLOW:'
+    modifiers:
+      searing_flame:
+      - Searing Flame Slow
+      - ''
+      searing_flame_scepter_dot_display:
+      - Searing Flame Damage Over Time
+      - ''
+    name: Searing Flame
+  special_bonus_ouroboros_1:
+    data: {}
+    modifiers: {}
+    name: +0.65s Nexus Stun
+  special_bonus_ouroboros_2:
+    data: {}
+    modifiers: {}
+    name: +2 Diffusion Stacks
+  special_bonus_ouroboros_3:
+    data: {}
+    modifiers: {}
+    name: +75 Searing Flame Damage
+  special_bonus_ouroboros_4:
+    data: {}
+    modifiers: {}
+    name: -25% Dualcast Mana Cost
+  special_bonus_ouroboros_5:
+    data: {}
+    modifiers: {}
+    name: +650 Searing Flame Cast Range
+  special_bonus_ouroboros_6:
+    data: {}
+    modifiers: {}
+    name: Nexus is Pure and Pierces Spell Immunity
+Hero:
+  data:
+    bio: ''
+    hype: A sturdy and dependable nuker, Ouroboros is tanky and destructive, capable
+      of disrupting fights and single handedly taking down most enemies, should they
+      be struck by his slow moving skills. Possessing fire breath in the form of Searing
+      Fire, a powerful stun in Nexus, scales that convert Magical damage he takes
+      to Spell Amp and attack damage, and a devastating Ultimate that causes his Spells
+      to be cast twice in quick succession.
+  modref: npc_dota_hero_ouroboros
+  name: Ouroboros
+  ref: npc_dota_hero_jakiro

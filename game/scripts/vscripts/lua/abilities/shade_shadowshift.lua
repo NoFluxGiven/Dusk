@@ -18,6 +18,14 @@ end
 
 function modifier_shadowshift:OnCreated()
     ProjectileManager:ProjectileDodge(self:GetCaster())
+    self:GetParent():EmitSound("Shade.Shadowshift.Start")
+    self:GetParent():EmitSound("Shade.Shadowshift.Loop")
+end
+
+function modifier_shadowshift:OnDestroy()
+    ProjectileManager:ProjectileDodge(self:GetCaster())
+    self:GetParent():EmitSound("Shade.Shadowshift.End")
+    self:GetParent():StopSound("Shade.Shadowshift.Loop")
 end
 
 function modifier_shadowshift:GetModifierMoveSpeedBonus_Percentage()
@@ -29,7 +37,7 @@ function modifier_shadowshift:CheckState()
         [MODIFIER_STATE_UNTARGETABLE] = true,
         [MODIFIER_STATE_ATTACK_IMMUNE] = true,
         [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
-        [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true
+        --[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true
     }
 
     return state

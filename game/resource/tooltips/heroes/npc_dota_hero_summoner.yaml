@@ -1,5 +1,6 @@
-Abilities: {}
 Hero:
+  modref: npc_dota_hero_summoner
+  ref: npc_dota_hero_rattletrap
   data:
     bio: ''
     hype: The sieger of towers, destroyer of bases, and overall one of the most annoying
@@ -8,6 +9,5 @@ Hero:
       are devastatingly powerful, and the Sentinel can down towers in a short time.
       His Vassal, built with an innate ability, can help him kill enemies with its
       wide set of powerful spells, but is fragile and slow.
-  modref: npc_dota_hero_summoner
   name: Vulcan [NT][NC]
-  ref: npc_dota_hero_rattletrap
+Abilities: {}

@@ -1,6 +1,15 @@
 //=====================================================================================================
 // HERO: Heroic Soul
 //=====================================================================================================
+
+///@changelog
+///@version 2.2
+///@hero Hero
+///@ability Heroic Soul
+///@changes #
+/// Reduced cooldown to 14s (was 20/18/16/14s).
+/// Reduced movespeed bonus to 32% (was 40%).
+
 "hero_heroic_soul"
 {
 	// General
@@ -18,7 +27,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"20 18 16 14"
+	"AbilityCooldown"				"14"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -36,7 +45,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_movespeed"		"40"
+			"bonus_movespeed"		"32"
 		}
 		"03"
 		{
@@ -52,7 +61,7 @@
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"damage_reduction_duration" "0.5"
+			"damage_reduction_duration" "0.75"
 		}
 	}
 

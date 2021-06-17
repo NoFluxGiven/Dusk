@@ -109,7 +109,7 @@
 	[
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flStartScale = 2.0
+			m_flStartScale = 3.0
 			m_flBias = 0.7
 			m_flEndScale = 0.0
 		},
@@ -195,6 +195,12 @@
 			m_flOutlineEnd1 = 1.0
 			m_flAnimationRate = 0.0
 			m_bDisableZBuffering = true
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_shade/shade_shadowshift_trail_start_lines.vpcf"
 		},
 	]
 }

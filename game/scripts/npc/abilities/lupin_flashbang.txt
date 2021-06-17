@@ -1,6 +1,9 @@
 //=====================================================================================================
 // LUPIN: Flashbang
 //=====================================================================================================
+
+///@change Now ministuns, then reduces cast range and increases cast point for the duration.
+
 "lupin_flashbang"
 {
 	// General
@@ -18,12 +21,12 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"350"
-	"AbilityCastPoint"				"0.2"
+	"AbilityCastRange"				"375"
+	"AbilityCastPoint"				"0.3"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"16 14 12 10"
+	"AbilityCooldown"				"12"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,19 +43,39 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"100"
+			"damage"					"125"
 			"LinkedSpecialBonus"		"special_bonus_lupin_2"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"					"1.50 2.25 3.00 3.75"
+			"duration"					"2.00 2.75 3.50 4.25"
 			"LinkedSpecialBonus"		"special_bonus_lupin_4"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"radius"					"350"
+			"cast_range_reduction"		"100 175 250 325"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"cast_point_increase"		"75"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_range_reduction"	"100 200 300 400"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_speed_reduction"	"25 50 75 100"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"375"
 		}
 	}
 	

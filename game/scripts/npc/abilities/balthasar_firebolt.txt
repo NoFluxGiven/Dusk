@@ -1,6 +1,17 @@
 //=====================================================================================================
 // BALTHASAR: Voidal Flare
 //=====================================================================================================
+
+///@changelog
+///@version 2.2
+///@hero Balthasar
+///@ability Firebolt
+///@changes #
+/// Cast range increased to 675 (was 575).
+/// Cooldown reduced to 7s (was 14/13/12/11s).
+/// Now deals damage over time equal to 10/20/30/40 + 20/30/40/50% of Balthasar's total attack damage.
+
+
 "balthasar_firebolt"
 	{
 	// General
@@ -27,12 +38,12 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"575"
+	"AbilityCastRange"				"675"
 	"AbilityCastPoint"				"0.2"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"14.00 13.00 12.00 11.00"
+	"AbilityCooldown"				"7.00"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -61,6 +72,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"projectiles"			"1"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_damage"			"20 30 40 50"
 		}
 	}
 }

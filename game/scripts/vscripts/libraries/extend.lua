@@ -96,7 +96,7 @@ function CDOTA_BaseNPC:GetDamageBeforeReductions(damageAmount,damageType)
 	local damage = damageAmount
 	local dtype = damageType
 
-	local armor = unit:GetPhysicalArmorValue()
+	local armor = unit:GetPhysicalArmorValue(false)
 	local magic_res = unit:GetMagicalArmorValue()
 
 	local reduction_amount = 0

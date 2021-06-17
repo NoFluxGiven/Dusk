@@ -363,8 +363,10 @@ function duskDota:OnHeroInGame(hero)
   end
 
   if hero:GetUnitName() == "npc_dota_hero_rattletrap" then
-    local ab = hero:FindAbilityByName("summoner_summon_blue_vassal")
-    ab:SetLevel(1)
+    --CosmeticLib:EquipHeroSet( hero, "bounty_hunter_creed_of_the_outlaw_huntsman")
+    CosmeticLib:EquipHeroSet( hero, "21679")
+    --local ab = hero:FindAbilityByName("summoner_summon_blue_vassal")
+    --ab:SetLevel(1)
   end
 
   if hero:GetUnitName() == "npc_dota_hero_abaddon" then
@@ -680,6 +682,7 @@ function duskDota:FilterExecuteOrder( filterTable )
   ]]
   local target = EntIndexToHScript(filterTable["entindex_target"])
   local hero = PlayerResource:GetSelectedHeroEntity(user)
+  if not hero then return true end
   local ability = nil
   if filterTable["endindex_ability"] then
     ability = EntIndexToHScript(filterTable["entindex_ability"])
@@ -1092,9 +1095,9 @@ function duskDota:FilterTakeDamage( filterTable )
     return false
   end
 
-  if defender:HasModifier("modifier_fight_me") then
-    return false
-  end
+  -- if defender:HasModifier("modifier_fight_me") then
+  --   return false
+  -- end
 
   -- DIFFUSION
 

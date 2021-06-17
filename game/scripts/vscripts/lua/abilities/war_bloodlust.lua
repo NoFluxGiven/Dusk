@@ -13,12 +13,11 @@ modifier_bloodlust_thinker_area = class({})
 
 function modifier_bloodlust_thinker_area:OnCreated()
 	if IsServer() then
-		local radius = self:GetAbility():GetSpecialValueFor("radius") --[[Returns:table
-		No Description Set
-		]]
-		local stacks = self:GetAbility():GetSpecialValueFor("duration") --[[Returns:table
-		No Description Set
-		]]
+		local radius = self:GetAbility():GetSpecialValueFor("radius")
+		local stacks = self:GetAbility():GetSpecialValueFor("attacks")
+		local duration = self:GetAbility():GetSpecialValueFor("duration")
+		local interval = self:GetAbility():GetSpecialValueFor("interval")
+		local attack_damage_pct = self:GetAbility():GetSpecialValueFor("attack_damage")
 
 		local p = ParticleManager:CreateParticle("particles/units/heroes/hero_war/bloodlust.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent()) --[[Returns:int
 		Creates a new particle effect
@@ -30,7 +29,7 @@ function modifier_bloodlust_thinker_area:OnCreated()
 		local enemy_found = FindEnemies(self:GetAbility():GetCaster(),self:GetParent():GetAbsOrigin(),radius)
 
 		for k,v in pairs(enemy_found) do
-			v:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_bloodlust", {Duration=-1, stacks=stacks}) --[[Returns:void
+			v:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_bloodlust", {Duration=duration, stacks=0, interval=interval, attack_damage_pct=attack_damage_pct}) --[[Returns:void
 			No Description Set
 			]]
 		end
@@ -46,7 +45,6 @@ modifier_bloodlust = class({})
 function modifier_bloodlust:DeclareFunctions()
 	local func = {
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
 		MODIFIER_EVENT_ON_DEATH
@@ -54,16 +52,12 @@ function modifier_bloodlust:DeclareFunctions()
 	return func
 end
 
-function modifier_bloodlust:GetModifierPreAttack_BonusDamage()
-	return self:GetAbility():GetSpecialValueFor("bonus_attack_damage") --[[Returns:table
-	No Description Set
-	]]
-end
+-- function modifier_bloodlust:GetModifierPreAttack_BonusDamage()
+-- 	return self:GetAbility():GetSpecialValueFor("bonus_attack_damage")
+-- end
 
 function modifier_bloodlust:GetModifierAttackSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") --[[Returns:table
-	No Description Set
-	]]
+	return self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
 end
 
 function modifier_bloodlust:GetModifierMoveSpeedBonus_Percentage()
@@ -71,7 +65,10 @@ function modifier_bloodlust:GetModifierMoveSpeedBonus_Percentage()
 end
 
 function modifier_bloodlust:OnCreated(kv)
-	self:StartIntervalThink(0.75)
+	self:StartIntervalThink(kv.interval)
+	self.interval = kv.interval
+	self.attack_damage_pct = kv.attack_damage_pct
+
 	if IsServer() then
 		self:SetStackCount(math.floor(kv.stacks))
 		local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_war_3") or 0
@@ -83,53 +80,50 @@ function modifier_bloodlust:OnRefresh(kv)
 	if IsServer() then
 		self:SetStackCount(math.floor(kv.stacks))
 		local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_war_3") or 0
-		self.damage = self:GetAbility():GetSpecialValueFor("dot") + t_damage_bonus
+
+		local new_damage = self:GetAbility():GetSpecialValueFor("dot") + t_damage_bonus
+
+		if (self.damage < new_damage) then
+			self.damage = new_damage
+		end
 	end
 end
 
 function modifier_bloodlust:OnIntervalThink()
 	if IsServer() then
-		local damage = self.damage
+		local base_damage = self.damage + self:GetParent():GetAverageTrueAttackDamage(self:GetParent()) * (self.attack_damage_pct/100)
+		local damage = base_damage * self.interval
 		local is_creep = self:GetParent():IsCreep()
-		local is_attacking = self:GetParent():IsAttacking()
 
-		local do_tick = true
+		self:GetAbility():InflictDamage(self:GetParent(),self:GetAbility():GetCaster(),damage,self:GetAbility():GetAbilityDamageType())
 
-		if is_attacking then
-			if is_creep then
-				do_tick = true
-			else
-				do_tick = false
-			end
-		end
-
-		if do_tick then
-			self:GetAbility():InflictDamage(self:GetParent(),self:GetAbility():GetCaster(),damage,DAMAGE_TYPE_PURE)
-			self:SetStackCount(self:GetStackCount()-1)
-		end
-
-		if self:GetStackCount() <= 0 then self:Destroy() end
+		--if self:GetStackCount() <= 0 then self:Destroy() end
 	end
 end
 
 function modifier_bloodlust:OnAttackLanded(kv)
 	-- if IsServer() then
 		if kv.attacker == self:GetParent() then
-			if kv.attacker:HasModifier("modifier_fight_me") then return end
-			if self:GetStackCount()-1 > 0 then
-				self:SetStackCount(self:GetStackCount()-1)
-			else
-				self:Destroy()
-			end
+			-- if kv.attacker:HasModifier("modifier_fight_me") then return end
+			if not kv.attacker:IsHero() then return end
+
+			-- increase duration on attack
+			self:SetDuration(self:GetRemainingTime()+2.00, true)
+
+			-- if self:GetStackCount()-1 > 0 then
+			-- 	self:SetStackCount(self:GetStackCount()-1)
+			-- else
+			-- 	self:Destroy()
+			-- end
 		end
 	-- end
 end
 
-function modifier_bloodlust:OnDeath(params)
-	if params.attacker == self:GetParent() and params.unit:IsRealHero() or params.unit == self:GetAbility():GetCaster() then
-		self:Destroy()
-	end
-end
+-- function modifier_bloodlust:OnDeath(params)
+-- 	if params.attacker == self:GetParent() and params.unit:IsRealHero() or params.unit == self:GetAbility():GetCaster() then
+-- 		self:Destroy()
+-- 	end
+-- end
 
 function modifier_bloodlust:GetEffectName()
 	return "particles/units/heroes/hero_war/bloodlust_unit.vpcf"

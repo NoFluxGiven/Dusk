@@ -1,0 +1,45 @@
+Abilities:
+  artificer_naturalise:
+    data:
+      Description: The Artificer temporarily reduces the target's form to their natural
+        state, causing them to lose all bonus Armor and Magic Resistance from abilities
+        and items, and a flat amount of attack damage.
+      attack_damage_reduction: 'ATTACK DAMAGE REDUCTION:'
+      duration: 'DURATION:'
+    modifiers: {}
+    name: Naturalise
+  artificer_replica:
+    data:
+      Description: The Artificer moulds a near-perfect replica of the target ally
+        or enemy. Creates an illusion copy of the target ally or enemy Hero, but it
+        cannot cast spells or use items.\n\nUpgradable by Aghanim's Scepter.
+      aghanim_Description: Causes enemies killed by Artificer to spawn weaker Replicas
+        automatically.
+      illusion_damage_tooltip: '%OUTGOING DAMAGE:'
+      illusion_duration: 'ILLUSION DURATION:'
+      illusion_incoming_tooltip: '%INCOMING DAMAGE:'
+    modifiers: {}
+    name: Replica
+  artificer_reshape:
+    data:
+      Description: Summoning voidal energies to do his bidding, the Artificer quickly
+        transmogrifies the target enemy into an immobile statue. The statue takes
+        half damage from everything.
+      duration: 'DURATION:'
+    modifiers: {}
+    name: Reshape
+  artificer_unmaking:
+    data:
+      Description: The Artificer lobs Nothingness at the target enemy, eating away
+        at their very existence. Deals bonus Magical damage and then Magical damage
+        over time based upon the target's Current Health.
+      base_damage: 'BASE DAMAGE:'
+      damage: '%CURRENT HEALTH DAMAGE:'
+      duration: 'DURATION:'
+    modifiers: {}
+    name: Unmaking
+Hero:
+  data: {}
+  modref: npc_dota_hero_artificer
+  name: ''
+  ref: npc_dota_hero_artificer

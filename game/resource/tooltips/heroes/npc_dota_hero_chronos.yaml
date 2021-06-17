@@ -1,0 +1,36 @@
+Hero:
+  modref: npc_dota_hero_chronos
+  ref: npc_dota_hero_faceless_void
+  data:
+    hype: None
+  name: ''
+Abilities:
+  chronos_continuum_crystal:
+    name: Continuum Crystal
+    data:
+      description: Envelops the target unit in temporally suspended crystals, rendering
+        them invulnerable and disabled for the duration, while recovering a percentage
+        of their health and mana.  Volatile temporal energy leaks from the crystal,
+        dealing damage and slowing in an AoE around them.
+      damage: 'DAMAGE PER SECOND:'
+      recovery: '%HEALTH AND MANA RECOVERY:'
+      slow: '%SLOW:'
+      radius: null
+      duration: null
+    modifiers: {}
+  special_bonus_chronos_1:
+    name: ''
+    data: {}
+    modifiers: {}
+  special_bonus_chronos_2:
+    name: ''
+    data: {}
+    modifiers: {}
+  special_bonus_chronos_3:
+    name: ''
+    data: {}
+    modifiers: {}
+  special_bonus_chronos_4:
+    name: ''
+    data: {}
+    modifiers: {}

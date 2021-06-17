@@ -1,6 +1,6 @@
-Abilities: {}
 Hero:
-  data: {}
   modref: npc_dota_hero_plague
+  ref: npc_dota_hero_life_stealer
+  data: {}
   name: ''
-  ref: npc_dota_hero_plague
+Abilities: {}

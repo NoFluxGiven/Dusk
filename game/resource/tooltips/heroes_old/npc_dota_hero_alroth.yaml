@@ -1,0 +1,80 @@
+Abilities:
+  alroth_energy_burst:
+    data:
+      Note0: Prevents Alroth's health from dropping below 1 for 0.2s.
+      damage: 'DAMAGE:'
+      description: Creates a blast of energy that deals large damage to nearby enemies,
+        as Alroth takes half the damage he dealt.
+    modifiers: {}
+    name: Energy Burst
+  alroth_model_change:
+    data:
+      description: ''
+    modifiers: {}
+    name: Alroth Model Change
+  alroth_raze:
+    data:
+      Note0: Deals damage immediately on cast, then every second thereafter until
+        it finishes.
+      damage_per_second: 'DAMAGE PER SECOND:'
+      description: Alroth creates an unstable maelstrom that deals damage over time
+        to units caught within it.
+      duration: 'DURATION:'
+      slow: '%SLOW:'
+      slow_duration: 'SLOW DURATION:'
+    modifiers: {}
+    name: Raze
+  alroth_shatter:
+    data:
+      damage_mult: 'ATTACK DAMAGE MULTIPLIER:'
+      description: Alroth's strikes break through the enemy's defenses, causing them
+        to lose Magic Resistance and take bonus Magical damage based upon his attack
+        damage.  Enemies hit by this will lose Mana equal to double the damage taken.
+      duration: 'DURATION:'
+      mres_reduction: '%MAGIC RESISTANCE REDUCTION:'
+      slow: '%SLOW:'
+    modifiers:
+      shatter:
+      - Shatter
+      - Slowed and Magic Resistance is reduced by a sizeable amount.
+    name: Shatter
+  alroth_solwave:
+    data:
+      damage_per_second: 'DAMAGE PER SECOND:'
+      description: Gathering the energies of the Planes, Alroth surrounds himself
+        with an aura of pure devastation, dealing massive damage over time to nearby
+        enemies. Lasts 4s.
+      duration: 'DURATION:'
+    modifiers:
+      solwave:
+      - Solwave
+      - Dealing damage over time to nearby enemies and yourself.
+    name: Solcharge
+  special_bonus_alroth_1:
+    data: {}
+    modifiers: {}
+    name: +0.4 Shatter Multiplier
+  special_bonus_alroth_2:
+    data: {}
+    modifiers: {}
+    name: -1s Energy Burst Cooldown
+  special_bonus_alroth_3:
+    data: {}
+    modifiers: {}
+    name: Raze 3% Max HP DPS
+  special_bonus_alroth_4:
+    data: {}
+    modifiers: {}
+    name: -12s Raze Cooldown
+Hero:
+  data:
+    bio: ''
+    hype: A commander of fire and ash, the being known as Alroth brings a great deal
+      to the table when it comes to Magical damage. Boasting an array of abilities
+      like the area of effect damage over time Maelstrom, instant cast Health draining
+      explosion Energy Burst, Magic Resistance breaking Shatter, and powerful close
+      range DoT Solwave, Alroth is capable of dealing with enemies his way, and no
+      one else's.
+  modref: npc_dota_hero_alroth
+  name: Alroth
+  ref: npc_dota_hero_doom_bringer

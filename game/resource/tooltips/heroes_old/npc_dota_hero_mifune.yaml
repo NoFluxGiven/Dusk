@@ -1,0 +1,100 @@
+Abilities:
+  mifune_bushido:
+    data:
+      Description: Mifune's intense training and discipline allows him to extract
+        more benefits from his Agility. Upon activation, grants a percentage of his
+        Base Agility as bonus Agility, and grants him bonus damage based upon his
+        base damage for a short time.
+      aghanim_Description: Bushido grants %scepter_evasion%%% evasion. When an enemy
+        misses an attack against Mifune in this form, he instantly counterattacks.
+      bonus_damage: '%BONUS DAMAGE:'
+      duration: 'DURATION:'
+      percent: '%BONUS AGILITY:'
+      scepter_evasion: '%EVASION:'
+    modifiers:
+      bushido:
+      - Bushido
+      - Gaining bonus Agility and percentage bonus damage based on your Agility.
+    name: Bushido
+  mifune_genso:
+    data:
+      Note0: Illusions have a 15% movespeed bonus.
+      description: Creates an illusion to attack the targeted enemy.  The illusions
+        can be killed and move slightly faster than Mifune himself, but cannot be
+        controlled.
+      illusion_duration: 'ILLUSION DURATION:'
+      illusion_incoming: '%ILLUSION INCOMING DAMAGE:'
+      illusion_tooltip: '%ILLUSION OUTGOING DAMAGE:'
+      illusions: 'ILLUSIONS:'
+    modifiers: {}
+    name: Genso
+  mifune_raigeki:
+    data:
+      delay: 'DELAY:'
+      description: Slashes to create a burst of energy that travels at speed towards
+        the target point.  After a delay, a second shockwave explodes across the battlefield,
+        dealing the same damage.  Both attacks slow the enemy.
+      initial_damage: 'DAMAGE:'
+      slow: '%SLOW:'
+    modifiers:
+      raigeki:
+      - Raigeki Slow
+      - ''
+    name: Raigeki
+  mifune_zanmato:
+    data:
+      Note0: The main target is stunned for a minimum of 1s.
+      Note1: The slash preserves procs and orb effects.
+      Note2: The Orbs deal Magical damage, and converge on the main target when the
+        initial slashes end.
+      bonus_hero_damage: 'BONUS HERO DAMAGE:'
+      description: Mifune focuses for a moment, then unleashes the most powerful ability
+        in his arsenal; he slashes at blinding speed, attacking all enemies in the
+        radius of the spell.  After this ends, the energy created from his attacks
+        converges on the main target, dealing Magical damage for each enemy within
+        the radius.  The main target is stunned while Mifune is slashing.  Deals bonus
+        damage to Heroes.\n\nUpgradable by Aghanim's Scepter.
+      orb_damage: 'ORB DAMAGE:'
+      radius: 'RADIUS:'
+      scepter: Zanmato
+      scepter_Note0: The main target is stunned for a minimum of 1s.
+      scepter_Note1: The slash preserves procs and orb effects.
+      scepter_Note2: The Orbs deal Magical damage, and converge on the main target
+        when the initial slashes end.
+      scepter_aghanim_description: Increases cast range, damage, radius and reduces
+        cooldown.
+      scepter_bonus_hero_damage: 'BONUS HERO DAMAGE:'
+      scepter_description: Mifune focuses for a moment, then unleashes the most powerful
+        ability in his arsenal; he slashes at blinding speed, attacking all enemies
+        in the radius of the spell.  After this ends, the energy created from his
+        attacks converges on the main target, dealing Magical damage for each enemy
+        within the radius.  The main target is stunned while Mifune is slashing.  Deals
+        bonus damage to Heroes.
+      scepter_orb_damage: 'ORB DAMAGE:'
+    modifiers:
+      zanmato_main_target:
+      - Zanmato
+      - ''
+    name: Zanmato
+  special_bonus_mifune_1:
+    data: {}
+    modifiers: {}
+    name: +75 Raigeki Damage
+  special_bonus_mifune_2:
+    data: {}
+    modifiers: {}
+    name: Bushido +15% Movespeed
+  special_bonus_mifune_3:
+    data: {}
+    modifiers: {}
+    name: +2 Genso Illusions
+Hero:
+  data:
+    bio: ''
+    hype: A powerful master swordsman, hailing from the land of spirits, Mifune has
+      access to an array of extraordinary abilities, one of which being the devastating
+      Zanmato, a strike that deals more damage to the target the more units are around
+      them.
+  modref: npc_dota_hero_mifune
+  name: Mifune
+  ref: npc_dota_hero_juggernaut

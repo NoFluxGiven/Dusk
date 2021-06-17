@@ -1,0 +1,97 @@
+Abilities:
+  bahamut_desolation:
+    data:
+      damage: 'DAMAGE:'
+      description: Forces elemental energies into the target enemy, dealing Magical
+        damage and surrounding them with a burning aura that deals damage over time
+        to nearby enemies. The main target has any Fulmination stacks it possesses
+        detonated.
+      dps: 'DAMAGE PER SECOND:'
+      duration: 'DURATION:'
+    modifiers:
+      desolation:
+      - Desolation
+      - Taking damage over time and dealing it to allies in an AoE.
+      desolation_aura:
+      - Desolation
+      - ''
+    name: Desolation
+  bahamut_fulmination:
+    data:
+      Note0: The bonus damage is linear. 8 stacks grants a 100% damage bonus.
+      damage: 'DAMAGE PER STACK:'
+      description: Each attack that Bahamut makes against his enemies begins to pull
+        apart the strands of reality, reweaving them into explosive energies.  A short
+        time after he stops attacking them, these energies detonate, dealing large
+        damage based on the amount of stacks accumulated. The final detonation damage
+        is equivalent to the number of stacks multiplied by the base damage, and is
+        increased by a percentage per stack.
+      max_stacks: 'MAX STACKS:'
+      percent: '%DAMAGE INCREASE PER STACK:'
+      time: 'DURATION:'
+    modifiers:
+      bahamut_fulmination_stack:
+      - Fulmination
+      - Taking damage when modifier expires.
+    name: Fulmination
+  bahamut_hidden_transform:
+    data:
+      description: ''
+    modifiers: {}
+    name: Hidden Transform
+  bahamut_mega_flare:
+    data:
+      Note0: The minimum cast range is 475.  Targeting a point below this range will
+        force the targeted point to be 475 units away from the caster, in the direction
+        they cast it.
+      damage_inner: 'DAMAGE (INNER):'
+      damage_outer: 'DAMAGE (OUTER):'
+      description: Summons an orb of pure power that slowly travels towards the targeted
+        point, detonating when it reaches it to deal massive Pure damage.  Enemies
+        closer to the center of the explosion take more damage.  Has a minimum cast
+        range.
+      radius_inner: 'RADIUS (INNER):'
+      radius_outer: 'RADIUS (OUTER):'
+    modifiers: {}
+    name: Mega Flare
+  bahamut_reckoning_aura:
+    data:
+      damage: '%INCREASE:'
+      description: Bahamut's very presence causes nearby enemies to take more damage.
+        Can be targeted on an enemy to double the effect for them alone.
+    modifiers:
+      reckoning_aura_buff:
+      - Reckoning Aura
+      - Taking %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% more damage.
+      reckoning_aura_power_up:
+      - Reckoning Aura Active
+      - Taking %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% more damage.
+    name: Reckoning Aura
+  special_bonus_bahamut_1:
+    data: {}
+    modifiers: {}
+    name: +25 Desolation DPS
+  special_bonus_bahamut_2:
+    data: {}
+    modifiers: {}
+    name: Fulmination Stacks -1 Armor
+  special_bonus_bahamut_3:
+    data: {}
+    modifiers: {}
+    name: +50% Mega Flare Damage
+  special_bonus_bahamut_4:
+    data:
+      Description: Desolation's AoE ticks each apply 1 stack of Fulmination to all
+        affected targets.
+    modifiers: {}
+    name: Desolation AoE Applies Fulmination Stacks
+Hero:
+  data:
+    bio: ''
+    hype: Possessing a good balance of Physical and Magical damage, Bahamut is a powerful
+      mid-game Agility carry. Turn your enemies into a walking radiance with Desolation,
+      increase the damage they take with Reckoning Aura, deal ever increasing Magical
+      damage with Fulmination, and finish the fight with the obliterating Mega Flare.
+  modref: npc_dota_hero_bahamut
+  name: Bahamut
+  ref: npc_dota_hero_terrorblade

@@ -46,14 +46,14 @@ function balthasar_firebolt:OnProjectileHit(t,l)
 		local adamage = self:GetCaster():GetAverageTrueAttackDamage(self:GetCaster())
 		local pct = self:GetSpecialValueFor("attack_damage") / 100
 
+		local dot = adamage * pct
+
 		damage = damage
 
 		local duration = self:GetSpecialValueFor("duration")
 
 		self:InflictDamage(t, self:GetCaster(), damage, DAMAGE_TYPE_MAGICAL)
-		t:AddNewModifier(self:GetCaster(), self, "modifier_firebolt", {Duration=duration}) --[[Returns:void
-		No Description Set
-		]]
+		t:AddNewModifier(self:GetCaster(), self, "modifier_firebolt", {Duration=duration, dot=dot})
 
 		t:EmitSound("Balthasar.Firebolt.Target")
 	end
@@ -62,13 +62,14 @@ end
 modifier_firebolt = class({})
 
 function modifier_firebolt:OnCreated(kv)
+	self.dot = kv.dot
 	if IsServer() then
 		self:StartIntervalThink(1.0)
 	end
 end
 
 function modifier_firebolt:OnIntervalThink()
-	local damage = self:GetAbility():GetSpecialValueFor("dot")
+	local damage = self:GetAbility():GetSpecialValueFor("dot") + self.dot
 	local bonus = self:GetParent():FindModifierByName("modifier_emerald_fang")
 	if bonus then
 		bonus = bonus:GetAbility():GetSpecialValueFor("bonus_spell_damage") / 100

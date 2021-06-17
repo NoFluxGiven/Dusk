@@ -1,93 +1,93 @@
-Abilities:
-  alexander_elandras_blessing:
-    data:
-      Description: Blesses the target ally with bonus attack damage and Armor. When
-        they are struck by an enemy, the attacker takes Magical damage based on the
-        blessed ally's main Attribute.
-      bonus_armor: 'BONUS ARMOR:'
-      bonus_damage: 'BONUS DAMAGE:'
-      duration: 'DURATION:'
-      reflect_damage: '%ATTRIBUTE DAMAGE:'
-    modifiers:
-      elandras_blessing:
-      - Elandra's Blessing
-      - Receiving bonus damage and Armor, and dealing damage based on your main Attribute
-        when attacked.
-    name: Elandra's Blessing
-  alexander_godfall:
-    data:
-      aghanim_description: Reduces cooldown, and Godfall applies Soulseal to all enemies
-        within a 325 radius when the attack lands.
-      damage: '%DAMAGE OUTPUT:'
-      description: Unleashing the true power of the Godslayer, after a short channeling
-        Duration, the next attack Alexander makes deals bonus Pure damage as a percentage
-        of his attack damage, healing him for the damage dealt if the target was a
-        Hero. This skill purges positive buffs from the enemy. Deals 5x damage to
-        illusions.\n\nUpgradable by Aghanim's Scepter.
-      duration: 'RETAIN BUFF DURATION:'
-      scepter_cooldown: 'SCEPTER COOLDOWN:'
-      scepter_radius: '%SCEPTER SOULSEAL RADIUS:'
-    modifiers:
-      godfall:
-      - Godfall
-      - The next attack made will deal Pure damage as a bonus.
-    name: Godfall
-  alexander_radiant:
-    data:
-      description: Alexander is bathed in an unearthly light, a magick used oft by
-        Paladins.  Causes opponents to miss attacks, as he rapidly recovers health
-        over time.
-      duration: 'DURATION:'
-      miss: '%MISS CHANCE:'
-      radius: 'RADIUS:'
-      regen: 'REGEN:'
-    modifiers:
-      radiant:
-      - Radiant
-      - Recovering a percentage of your Health over time.
-      radiant_aura:
-      - Radiant
-      - Partially blinded, missing some attacks.
-    name: Radiant
-  alexander_soulseal:
-    data:
-      Note0: Purgable.
-      description: Seals away the target's soul with the power of the Godslayer to
-        slow, prevent them from casting spells, and break their passives for a short
-        time.
-      duration: 'DURATION:'
-      slow: '%SLOW:'
-    modifiers:
-      soulseal:
-      - Soulseal
-      - Silenced and passives are disabled.
-    name: Soulseal
-  special_bonus_alexander_1:
-    data: {}
-    modifiers: {}
-    name: +7 Elandra's Blessing Armor
-  special_bonus_alexander_2:
-    data:
-      Description: Deals the damage instantly in the effective radius.
-    modifiers: {}
-    name: Radiant Deals 225 Magical Damage
-  special_bonus_alexander_3:
-    data: {}
-    modifiers: {}
-    name: +40% Godfall Damage
-  special_bonus_alexander_4:
-    data:
-      Description: Restores the same percentage as it does for Alexander, but halved,
-        and in the effective range.
-    modifiers: {}
-    name: Radiant Heals Nearby Allies (50%)
 Hero:
+  modref: npc_dota_hero_alexander
+  ref: npc_dota_hero_dragon_knight
   data:
     bio: ''
     hype: A servant of her Radiance, former paladin and wielder of the legendary Godfall,
       Alexander is a tanky and difficult to deal with carry that can buff allies,
       Break and Silence enemies, heal himself and demolish those who would dare stand
       against him with his Ultimate.
-  modref: npc_dota_hero_alexander
   name: Alexander
-  ref: npc_dota_hero_dragon_knight
+Abilities:
+  alexander_soulseal:
+    name: Soulseal
+    data:
+      description: Seals away the target's soul with the power of the Godslayer to
+        slow, prevent them from casting spells, and break their passives for a short
+        time.
+      Note0: Purgable.
+      duration: null
+      slow: '%SLOW:'
+    modifiers:
+      modifier_soulseal:
+      - Soulseal
+      - Silenced and passives are disabled.
+  alexander_elandras_blessing:
+    name: Elandra's Blessing
+    data:
+      Description: Blesses the target ally with bonus attack damage and Armor. When
+        they are struck by an enemy, the attacker takes Magical damage based on the
+        blessed ally's main Attribute.
+      bonus_damage: 'BONUS DAMAGE:'
+      bonus_armor: 'BONUS ARMOR:'
+      duration: null
+      reflect_damage: '%ATTRIBUTE DAMAGE:'
+    modifiers:
+      modifier_elandras_blessing:
+      - Elandra's Blessing
+      - Receiving bonus damage and Armor, and dealing damage based on your main Attribute
+        when attacked.
+  alexander_radiant:
+    name: Radiant
+    data:
+      description: Alexander is bathed in an unearthly light, a magick used oft by
+        Paladins.  Causes opponents to miss attacks, as he rapidly recovers health
+        over time.
+      duration: null
+      regen: null
+      miss: '%MISS CHANCE:'
+      radius: null
+    modifiers:
+      modifier_radiant:
+      - Radiant
+      - Recovering a percentage of your Health over time.
+      modifier_radiant_aura:
+      - Radiant
+      - Partially blinded, missing some attacks.
+  alexander_godfall:
+    name: Godfall
+    data:
+      description: Unleashing the true power of the Godslayer, after a short channeling
+        Duration, the next attack Alexander makes deals bonus Pure damage as a percentage
+        of his attack damage, healing him for the damage dealt if the target was a
+        Hero. This skill purges positive buffs from the enemy. Deals 5x damage to
+        illusions.\n\nUpgradable by Aghanim's Scepter.
+      aghanim_description: Reduces cooldown, and Godfall applies Soulseal to all enemies
+        within a 325 radius when the attack lands.
+      duration: 'RETAIN BUFF DURATION:'
+      damage: '%DAMAGE OUTPUT:'
+      scepter_radius: '%SCEPTER SOULSEAL RADIUS:'
+      scepter_cooldown: 'SCEPTER COOLDOWN:'
+    modifiers:
+      modifier_godfall:
+      - Godfall
+      - The next attack made will deal Pure damage as a bonus.
+  special_bonus_alexander_1:
+    name: +7 Elandra's Blessing Armor
+    data: {}
+    modifiers: {}
+  special_bonus_alexander_2:
+    name: Radiant Deals 225 Magical Damage
+    data:
+      Description: Deals the damage instantly in the effective radius.
+    modifiers: {}
+  special_bonus_alexander_3:
+    name: +40% Godfall Damage
+    data: {}
+    modifiers: {}
+  special_bonus_alexander_4:
+    name: Radiant Heals Nearby Allies (50%)
+    data:
+      Description: Restores the same percentage as it does for Alexander, but halved,
+        and in the effective range.
+    modifiers: {}

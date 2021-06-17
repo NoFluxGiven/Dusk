@@ -1,0 +1,63 @@
+//=====================================================================================================
+// TITAN: Command Aura
+//=====================================================================================================
+
+///@desc Applies a buff to War that Silences him, but grants him bonus attack speed and damage based on his team's attack damage.
+"war_enwrath"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/war_enwrath"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"war_enwrath"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.2"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"16"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"155"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"1200"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_damage_output"			"20 30 40 50"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"status_res_reduction"			"35"
+		}
+	}
+	
+	"precache"
+		{
+		"soundfile" "soundevents\hero_phantom.vsndevts"
+		}
+	
+	"Modifiers"
+		{
+		}
+}

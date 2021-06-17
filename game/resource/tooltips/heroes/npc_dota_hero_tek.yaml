@@ -1,80 +1,84 @@
+Hero:
+  modref: npc_dota_hero_tek
+  ref: npc_dota_hero_tinker
+  data:
+    bio: ''
+    hype: An extremely dangerous nuker, Tek can crush most opposition with a great
+      deal of Magical damage very quickly. His Skycrack is a low cooldown nuke+slow,
+      Mosquito Missiles deals a huge amount of damage spread between available targets,
+      Quantum Vibrance Engine causes his attacks to become more dangerous as he builds
+      up charges from using his abilities, and his Ultimate is a powerful uninterruptable
+      AoE stun.
+  name: Tek
 Abilities:
-  special_bonus_tek_1:
-    data: {}
-    modifiers: {}
-    name: +70 Skycrack Damage
-  special_bonus_tek_2:
-    data: {}
-    modifiers: {}
-    name: +125 Megaton Blast Damage
-  special_bonus_tek_3:
-    data: {}
-    modifiers: {}
-    name: +15 Mosquito Missile Damage
-    
+  tek_skycrack:
+    name: Skycrack
+    data:
+      description: Tek unleashes a powerful beam of energy that cripples anyone caught
+        in it, dealing large damage and slowing them.
+      aghanim_description: Reduces cooldown and causes Skycrack to burn Mana equal
+        to a percentage of its damage.
+      slow: '%SLOW:'
+      duration: 'SLOW DURATION:'
+      damage: null
+      scepter_cooldown: 'SCEPTER COOLDOWN:'
+      scepter_burn: '%SCEPTER MANA BURN:'
+    modifiers:
+      modifier_skycrack:
+      - Skycrack
+      - Being slowed.
+  tek_mosquito_missiles:
+    name: Mosquito Missiles
+    data:
+      description: Tek locks on to as many targets as possible, then unleashes a barrage
+        of laser missiles that deal small damage.  Can target units multiple times.
+      interval: null
+      range: null
+      damage: null
+    modifiers:
+      modifier_mosquito_missiles_fire:
+      - Mosquito Missiles
+      - Blasting targeted units with missiles.
   tek_megaton_blast:
+    name: Megaton Blast
     data:
       Description: Tek engages the kinetic generators in his suit. After a charge
         time, Tek fires a blast of pure force at the target, dealing large damage
         and ministunning them. The charge time is <b>not</b> a channel.
-      damage: 'DAMAGE:'
-      delay: 'CHARGE-UP TIME:'
+      damage: null
       stun: 'MINISTUN:'
+      delay: 'CHARGE-UP TIME:'
     modifiers:
-      megaton_blast:
+      modifier_megaton_blast:
       - Megaton Blast
       - Ready, aim...
-    name: Megaton Blast
-
-  tek_mosquito_missiles:
-    data:
-      damage: 'DAMAGE:'
-      description: Tek locks on to as many targets as possible, then unleashes a barrage
-        of laser missiles that deal small damage.  Can target units multiple times.
-      interval: 'INTERVAL:'
-      range: 'RANGE:'
-    modifiers:
-      mosquito_missiles_fire:
-      - Mosquito Missiles
-      - Blasting targeted units with missiles.
-    name: Mosquito Missiles
-  tek_skycrack:
-    data:
-      aghanim_description: Reduces cooldown and causes Skycrack to burn Mana equal
-        to a percentage of its damage.
-      damage: 'DAMAGE:'
-      description: Tek unleashes a powerful beam of energy that cripples anyone caught
-        in it, dealing large damage and slowing them.
-      duration: 'SLOW DURATION:'
-      scepter_burn: '%SCEPTER MANA BURN:'
-      scepter_cooldown: 'SCEPTER COOLDOWN:'
-      slow: '%SLOW:'
-    modifiers:
-      skycrack:
-      - Skycrack
-      - Being slowed.
-    name: Skycrack
-    
   tek_tesla_microarray:
+    name: Tesla Microarray
     data:
       Description: Deep within Tek's suit is a powerful electrical node. By redirecting
         his energies to it, he can cause it to release a blast of electrical coils
-        that stun and damage nearby enemies, stealing a portion of their current Mana.
+        that stun and damage nearby enemies. Deals double damage to enemies that are
+        already stunned. Has a small charge up time.
+      damage: null
+      radius: null
+      stun: null
       chargetime: 'CHARGE TIME:'
-      damage: 'DAMAGE:'
-      radius: 'RADIUS:'
-      mana_drain: "*"
-      stun: 'STUN:'
+    modifiers:
+      modifier_tesla:
+      - Tesla Microarray
+      - Charging!
+      modifier_tesla_debuff:
+      - Tesla Microarray
+      - Stunned.
+  special_bonus_tek_1:
+    name: +70 Skycrack Damage
+    data: {}
     modifiers: {}
-    name: Tesla Microarray
-Hero:
-  data:
-    bio: ''
-    hype: An extremely dangerous nuker, Tek can crush most Heroes with a great
-      deal of Magical damage very quickly. His Skycrack is a low cooldown nuke+slow,
-      Mosquito Missiles deals a huge amount of damage spread between available targets,
-      Megaton Blast deals huge damage and stun after a short delay, and his Ultimate is a powerful uninterruptable
-      AoE stun that steals Mana from his enemies.
-  modref: npc_dota_hero_tek
-  name: Tek
-  ref: npc_dota_hero_tinker
+  special_bonus_tek_2:
+    name: +125 Megaton Blast Damage
+    data: {}
+    modifiers: {}
+  special_bonus_tek_3:
+    name: +15 Mosquito Missile Damage
+    data: {}
+    modifiers: {}

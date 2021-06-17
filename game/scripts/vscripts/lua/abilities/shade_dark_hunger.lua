@@ -14,16 +14,15 @@ function shade_dark_hunger:OnSpellStart()
 	local c = self:GetCaster()
 	local duration = self:GetSpecialValueFor("duration")
 	local radius = self:GetSpecialValueFor("radius")
+	local interval = self:GetSpecialValueFor("interval")
 	local drain = self:GetSpecialValueFor("health_drain")
-	local drain_increase = self:GetSpecialValueFor("proc_increase")
-	local drain_max = self:GetSpecialValueFor("health_drain_max")
 
 	-- Self cast
 
 	--@TODO PARTICLE
 	--@TODO SOUND
 
-	c:AddNewModifier(c, self, "modifier_dark_hunger_active", {Duration=duration, radius=radius, drain = drain, drain_increase = drain_increase, drain_max = drain_max})
+	c:AddNewModifier(c, self, "modifier_dark_hunger_active", {Duration=duration, radius=radius, drain = drain, interval = interval})
 end
 
 -- Modifiers
@@ -40,41 +39,39 @@ end
 function modifier_dark_hunger_active:OnCreated(kv)
 	self.caster = self:GetAbility():GetCaster()
 	self.radius = kv.radius
-	local interval = 0.25
-	self.drain = kv.drain / ( 1 / interval )
-	self.drain_increase = kv.drain_increase / ( 1 / interval )
-	self.drain_max = kv.drain_max / ( 1 / interval )
-	self:StartIntervalThink(interval)
+	self.interval = kv.interval
+	self.drain = kv.drain / ( 1 / self.interval )
 
-	self.last_damaged = nil
+	self:GetParent():EmitSound("Shade.DarkHunger.Start")
+
+	self:GetParent():EmitSound("Shade.DarkHunger.Loop")
+
+	self:StartIntervalThink(self.interval)
 end
 
 function modifier_dark_hunger_active:OnIntervalThink()
 	local enemies = FindEnemiesRandom( self.caster, self.caster:GetAbsOrigin(), self.radius )
 
-	local target = enemies[1]
+	local target_count = #enemies
 
 	ParticleManager:CreateParticle("particles/units/heroes/hero_shade/shade_dark_hunger_drain_unit.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
-	--@TODO SOUND
 
-	local damage = self.drain
+	local damage = self.drain / target_count
 	local damage_type = self:GetAbility():GetAbilityDamageType()
-
-	self:GetAbility():InflictDamage( target, self.caster, damage, damage_type )
-	self.caster:Heal(damage, self.caster)
-
-	if self.last_damaged then
-		if (target == self.last_damaged) then
-			self.drain = self.drain + self.drain_increase
-			if self.drain > self.drain_max then self.drain = self.drain_max end
-		end
+	
+	for _,target in pairs(enemies) do
+		self:GetAbility():InflictDamage( target, self.caster, damage, damage_type )
+		self.caster:Heal(damage, self.caster)
 	end
-
-	self.last_damaged = target
 end
 
 function modifier_dark_hunger_active:GetEffectName()
 	return "particles/units/heroes/hero_shade/shade_dark_hunger_drain.vpcf"
+end
+
+function modifier_dark_hunger_active:OnDestroy()
+	self:GetParent():EmitSound("Shade.DarkHunger.End")
+	self:GetParent():StopSound("Shade.DarkHunger.Loop")
 end
 
 -- --[[modifier_dark_hunger_passive = class({})

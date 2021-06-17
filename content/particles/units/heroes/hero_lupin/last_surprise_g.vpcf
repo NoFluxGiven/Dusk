@@ -1,0 +1,32 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 4
+	m_BoundingBoxMin = [ -20.0, -20.0, -20.0 ]
+	m_BoundingBoxMax = [ 20.0, 20.0, 20.0 ]
+	m_flConstantRadius = 64.0
+	m_flConstantLifespan = 0.3
+	m_ConstantColor = [ 0, 84, 255, 220 ]
+	m_bShouldSort = false
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_lupin/last_surprise_g0.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_lupin/last_surprise_g2.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_lupin/last_surprise_g1.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_lupin/last_surprise_g3.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_lupin/last_surprise_g4.vpcf"
+		},
+	]
+	m_PreEmissionOperators = [  ]
+	m_nBehaviorVersion = 11
+}

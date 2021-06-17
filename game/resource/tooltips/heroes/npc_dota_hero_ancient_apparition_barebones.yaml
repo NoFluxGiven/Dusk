@@ -1,18 +1,18 @@
+Hero:
+  modref: npc_dota_hero_ancient_apparition_barebones
+  ref: npc_dota_hero_ancient_apparition
+  data: {}
+  name: ''
 Abilities:
   example_ability:
+    name: Detonation
     data:
-      Lore: ''
       description: Detonator channels a charge and releases an explosion around the
         caster if the channel is successful, dealing damage and knocking back all
         enemies in range of the explosion
+      Lore: ''
+      duration: null
+      radius: null
       distance: 'KNOCKBACK DISTANCE:'
-      duration: 'DURATION:'
       height: 'KNOCKBACK HEIGHT:'
-      radius: 'RADIUS:'
     modifiers: {}
-    name: Detonation
-Hero:
-  data: {}
-  modref: npc_dota_hero_ancient_apparition_barebones
-  name: ''
-  ref: npc_dota_hero_ancient_apparition_barebones

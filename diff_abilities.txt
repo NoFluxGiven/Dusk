@@ -1,0 +1,262 @@
+diff --git a/game/scripts/npc/abilities/balthasar_firebolt.txt b/game/scripts/npc/abilities/balthasar_firebolt.txt
+index 7ed2ada..e0788cc 100644
+--- a/game/scripts/npc/abilities/balthasar_firebolt.txt
++++ b/game/scripts/npc/abilities/balthasar_firebolt.txt
+@@ -3,0 +4,11 @@
++
++///@changelog
++///@version 2.2
++///@hero Balthasar
++///@ability Firebolt
++///@changes
++/// Cast range increased to 675 (was 575).
++/// Cooldown reduced to 7s (was 14/13/12/11s).
++/// Now deals damage over time equal to 10/20/30/40 + 20/30/40/50% of Balthasar's total attack damage.
++
++
+@@ -30 +41 @@
+-	"AbilityCastRange"				"575"
++	"AbilityCastRange"				"675"
+@@ -35 +46 @@
+-	"AbilityCooldown"				"14.00 13.00 12.00 11.00"
++	"AbilityCooldown"				"7.00"
+@@ -64,0 +76,5 @@
++		"05"
++		{
++			"var_type"				"FIELD_INTEGER"
++			"attack_damage"			"20 30 40 50"
++		}
+diff --git a/game/scripts/npc/abilities/hero_freedom_strike.txt b/game/scripts/npc/abilities/hero_freedom_strike.txt
+index c74c51e..62ff80e 100644
+--- a/game/scripts/npc/abilities/hero_freedom_strike.txt
++++ b/game/scripts/npc/abilities/hero_freedom_strike.txt
+@@ -3,0 +4,13 @@
++
++///@changelog
++///@version 2.2
++///@hero Hero
++///@ability Freedom Strike
++///@changes #
++/// Increased slow to 25%.
++/// Rescaled slow duration to 2.0/2.5/3.0/3.5s
++/// Reduced cooldown to 5s (was 12/10/8/6s).
++/// Reduced Mana cost to 55.
++/// Increased radius to 275 (was 250).
++/// Now slows attack speed by 100.
++
+@@ -26 +39 @@
+-	"AbilityCooldown"				"12 10 8 6"
++	"AbilityCooldown"				"5"
+@@ -30 +43 @@
+-	"AbilityManaCost"				"60"
++	"AbilityManaCost"				"55"
+@@ -48 +61 @@
+-			"radius"					"250"
++			"radius"					"275"
+@@ -53 +66 @@
+-			"slow"						"-10 -12 -14 -16"
++			"slow"						"-25"
+@@ -58 +71 @@
+-			"duration"					"3"
++			"attack_slow"				"-100"
+@@ -60,0 +74,5 @@
++		{
++			"var_type"					"FIELD_FLOAT"
++			"duration"					"2.0 2.5 3.0 3.5"
++		}
++		"06"
+diff --git a/game/scripts/npc/abilities/hero_heroic_soul.txt b/game/scripts/npc/abilities/hero_heroic_soul.txt
+index 490b84d..45d6c51 100644
+--- a/game/scripts/npc/abilities/hero_heroic_soul.txt
++++ b/game/scripts/npc/abilities/hero_heroic_soul.txt
+@@ -3,0 +4,9 @@
++
++///@changelog
++///@version 2.2
++///@hero Hero
++///@ability Heroic Soul
++///@changes #
++/// Reduced cooldown to 14s (was 20/18/16/14s).
++/// Reduced movespeed bonus to 32% (was 40%).
++
+@@ -21 +30 @@
+-	"AbilityCooldown"				"20 18 16 14"
++	"AbilityCooldown"				"14"
+@@ -39 +48 @@
+-			"bonus_movespeed"		"40"
++			"bonus_movespeed"		"32"
+@@ -55 +64 @@
+-			"damage_reduction_duration" "0.5"
++			"damage_reduction_duration" "0.75"
+diff --git a/game/scripts/npc/abilities/hero_justice_kick.txt b/game/scripts/npc/abilities/hero_justice_kick.txt
+index ec14d36..9aa06ff 100644
+--- a/game/scripts/npc/abilities/hero_justice_kick.txt
++++ b/game/scripts/npc/abilities/hero_justice_kick.txt
+@@ -3,0 +4,10 @@
++
++///@changelog
++///@version 2.2
++///@hero Hero
++///@ability Justice Kick
++///@changes #
++/// Reduced cooldown to 5s (was 8/7/6/5s).
++/// Improved cast point to 0.25s (was 0.3s).
++/// Increased slow duration to 1.3s (was 1.0s).
++
+@@ -24 +34 @@
+-	"AbilityCastPoint"				"0.3"
++	"AbilityCastPoint"				"0.25"
+@@ -28 +38 @@
+-	"AbilityCooldown"				"8 7 6 5"
++	"AbilityCooldown"				"5"
+@@ -32 +42 @@
+-	"AbilityManaCost"				"50"
++	"AbilityManaCost"				"55"
+@@ -61 +71 @@
+-			"duration"					"1"
++			"duration"					"1.3"
+diff --git a/game/scripts/npc/abilities/shade_dark_hunger.txt b/game/scripts/npc/abilities/shade_dark_hunger.txt
+index 0fbb9d1..4435763 100644
+--- a/game/scripts/npc/abilities/shade_dark_hunger.txt
++++ b/game/scripts/npc/abilities/shade_dark_hunger.txt
+@@ -21 +21 @@
+-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
++	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+@@ -30 +30 @@
+-	"AbilityCastPoint"				"0"
++	"AbilityCastPoint"				"0.2"
+@@ -51,2 +51 @@
+-			"proc_increase"				"5 10 15 20"
+-			//"LinkedSpecialBonus"		"special_bonus_shade_3"
++			"health_drain"				"20 35 50 65"
+@@ -55,10 +53,0 @@
+-		{
+-			"var_type"					"FIELD_INTEGER"
+-			"health_drain"				"10"
+-		}
+-		"03"
+-		{
+-			"var_type"					"FIELD_INTEGER"
+-			"health_drain_max"			"30 50 70 90"
+-		}
+-		"04"
+@@ -67 +56 @@
+-			"duration"					"8.00"
++			"duration"					"6.00"
+@@ -69 +58 @@
+-		"05"
++		"03"
+@@ -72 +61 @@
+-			"interval"					"1.00"
++			"interval"					"0.25"
+@@ -74 +63 @@
+-		"06"
++		"04"
+@@ -77 +66 @@
+-			"radius"					"325"
++			"radius"					"350"
+diff --git a/game/scripts/npc/abilities/shade_shadowshift.txt b/game/scripts/npc/abilities/shade_shadowshift.txt
+index f7042f7..0aa2f1d 100644
+--- a/game/scripts/npc/abilities/shade_shadowshift.txt
++++ b/game/scripts/npc/abilities/shade_shadowshift.txt
+@@ -8 +8 @@
+-///@ability REWORK: Venomous => Shadowshift
++///@ability Venomous
+@@ -10,3 +10 @@
+-/// Removed slow components.
+-/// Reduced damage to 10/14/18/22.
+-/// Venomous now deals damage over time based on the amount of debuffs the affected target has.
++/// Reworked into Shadowshift: Shade becomes Untargetable and moves faster for a short time, dodging projectiles on cast.
+@@ -21 +19 @@
+-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
++	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+diff --git a/game/scripts/npc/abilities/shade_stalk.txt b/game/scripts/npc/abilities/shade_stalk.txt
+index 3334106..655709b 100644
+--- a/game/scripts/npc/abilities/shade_stalk.txt
++++ b/game/scripts/npc/abilities/shade_stalk.txt
+@@ -11,0 +12,2 @@
++/// Cast range increased to 1100.
++/// Movement speed bonus increased to 36%.
+@@ -13 +15 @@
+-/// Duration reduced to 3.5s.
++/// Duration reduced to 4.5s.
+@@ -32 +34 @@
+-	"AbilityCastRange"				"900"
++	"AbilityCastRange"				"1100"
+@@ -60 +62 @@
+-			"movespeed_bonus"			"12"
++			"movespeed_bonus"			"36"
+diff --git a/game/scripts/npc/abilities/war_bloodlust.txt b/game/scripts/npc/abilities/war_bloodlust.txt
+index a42ed22..2ad19eb 100644
+--- a/game/scripts/npc/abilities/war_bloodlust.txt
++++ b/game/scripts/npc/abilities/war_bloodlust.txt
+@@ -0,0 +1,11 @@
++///@changelog
++///@version 2.2
++///@type HERO_ABILITY
++///@hero War
++///@ability Bloodlust
++///@changes #
++/// Deals damage for a set duration of 6.0s.
++/// Silences affected units.
++/// Deals 30/45/60/75 + 20/30/40/50% of the target's attack damage every 2s.
++/// Dispelled when the unit makes 3 successful attacks against enemy Heroes.
++
+@@ -9 +20 @@
+-    "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"
++    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+@@ -15 +26 @@
+-    "AoERadius"                     "275"
++    "AoERadius"                     "325"
+@@ -24 +35 @@
+-    "AbilityCooldown"               "20"
++    "AbilityCooldown"               "12"
+@@ -43 +54 @@
+-
++        
+@@ -47 +58 @@
+-            "bonus_attack_speed"    "30"
++            "radius"                "325"
+@@ -49 +60 @@
+-        
++
+@@ -52,2 +63,2 @@
+-            "var_type"              "FIELD_INTEGER"
+-            "radius"                "275"
++            "var_type"              "FIELD_FLOAT"
++            "duration"              "6.0"
+@@ -58,2 +69,3 @@
+-            "var_type"              "FIELD_FLOAT"
+-            "duration"              "10.0"
++            "var_type"              "FIELD_INTEGER"
++            "dot"                   "15"
++            "LinkedSpecialBonus"    "special_bonus_war_3"
+@@ -65,2 +77 @@
+-            "dot"                   "15 25 35 45"
+-            "LinkedSpecialBonus"    "special_bonus_war_3"
++            "slow"                  "15 20 25 30"
+@@ -72 +83,13 @@
+-            "slow"                  "15"
++            "attacks"               "3"
++        }
++
++        "07"
++        {
++            "var_type"              "FIELD_INTEGER"
++            "attack_damage"         "20 30 40 50"
++        }
++
++        "08"
++        {
++            "var_type"              "FIELD_FLOAT"
++            "interval"              "0.5"
+diff --git a/game/scripts/npc/abilities/war_fight_me.txt b/game/scripts/npc/abilities/war_fight_me.txt
+index 3e2ade3..a2428cb 100644
+--- a/game/scripts/npc/abilities/war_fight_me.txt
++++ b/game/scripts/npc/abilities/war_fight_me.txt
+@@ -10 +10 @@
+-    "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"
++    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+@@ -59 +59 @@
+-            "mult"                  "50"
++            "mult"                  "40 60 80"

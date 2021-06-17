@@ -7,10 +7,14 @@
 ///@hero Shade
 ///@ability Stalk
 ///@changes #
-/// Stalk now applies a 3.5s debuff, on attack, that slows by 30/40/50/60% and deals 20/30/40/50 Physical damage per second in 0.5s intervals.
+/// Stalk now applies a 4.0s debuff, on attack, that slows by 30/40/50/60% and deals 20/30/40/50 Physical damage per second in 0.5s intervals.
 /// Damage type changed to Physical (was Pure).
-/// Movement speed steal reduced to 12%.
-/// Duration reduced to 3.5s.
+/// Cast range increased to 1100.
+/// Cooldown increased to 12s (was 8s).
+/// On-hit damage rescaled to 40/80/120/160 (was 25/75/125/175).
+/// Movement speed bonus increased to 12/20/28/36%.
+/// Movement speed slow reduced to 12%.
+/// Duration increased to 6.0s.
 
 "shade_stalk"
 {
@@ -19,26 +23,26 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/shade_stalk"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"AbilityTextureName"			"shade_stalk"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"900"
+	"AbilityCastRange"				"1100"
 	"AbilityCastPoint"				"0.3"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"8"
+	"AbilityCooldown"				"12"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"65 75 85 95"
+	"AbilityManaCost"				"75 85 95 105"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -51,13 +55,13 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"proc_damage"				"25 75 125 175"
+			"proc_damage"				"40 80 120 160"
 			"LinkedSpecialBonus"		"special_bonus_shade_6"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"movespeed_bonus"			"12"
+			"movespeed_bonus"			"12 20 28 36"
 		}
 		"03"
 		{
@@ -77,12 +81,12 @@
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"poison_duration"			"3.5"
+			"poison_duration"			"4.0"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"					"3.5"
+			"duration"					"6.0"
 			"LinkedSpecialBonus"		"special_bonus_shade_1"
 		}
 	}

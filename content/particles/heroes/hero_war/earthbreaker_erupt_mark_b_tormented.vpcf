@@ -1,0 +1,98 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf31:version{593cd181-a1d6-4c6f-9a8c-0534e8d44db0} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_flConstantLifespan = 0.75
+	m_ConstantColor = [ 244, 239, 255, 255 ]
+	m_nConstantSequenceNumber1 = 1
+	m_bShouldSort = false
+	m_nBehaviorVersion = 10
+	m_nFirstMultipleOverride_BackwardCompat = 3
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomScalar"
+			m_nFieldOutput = "13"
+			m_flMax = 1.31
+			m_flMin = 1.31
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_bDisableOperator = true
+			m_bRandomlyFlipDirection = false
+		},
+		{
+			_class = "C_INIT_RemapCPtoScalar"
+			m_flOutputMax = 1400.0
+			m_flInputMax = 1000.0
+			m_nCPInput = 1
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_RampScalarSpline"
+			m_flStartTime_max = 0.7
+			m_flStartTime_min = 0.6
+			m_nField = "13"
+			m_RateMin = 0.5
+			m_RateMax = 0.75
+			m_flEndTime_min = 0.9
+		},
+		{
+			_class = "C_OP_RampScalarSpline"
+			m_flStartTime_max = 1.0
+			m_flStartTime_min = 0.35
+			m_bEaseOut = true
+			m_RateMax = -1.5
+			m_RateMin = -1.0
+			m_nField = "13"
+			m_flEndTime_min = 0.75
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+			m_flFadeInTime = 0.025
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.35
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_bEaseInOut = false
+			m_flFadeStartTime = 0.25
+			m_ColorFade = [ 48, 21, 77 ]
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderProjected"
+			m_bProjectWater = false
+			m_hProjectedMaterial = resource:"materials/particle/leshrac/projected_ground_mark_glow.vmat"
+			m_bFlipHorizontal = true
+		},
+	]
+}

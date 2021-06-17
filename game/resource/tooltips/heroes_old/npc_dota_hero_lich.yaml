@@ -1,0 +1,99 @@
+Abilities:
+  lich_absolute_zero:
+    data:
+      Lore: ''
+      attack_slow: 'ATTACK SLOW:'
+      aura_attack_slow: '%AURA ATTACK SLOW:'
+      aura_move_slow: '%AURA MOVE SLOW:'
+      description: The target enemy is afflicted with a terrible curse, having their
+        movespeed, attack speed and cast time for Spells drastically slowed for a
+        long duration and slowing their nearby allies' movespeed and attack speed
+        within a radius.
+      duration: 'DURATION:'
+      move_slow: '%MOVE SLOW:'
+      radius: 'RADIUS:'
+    modifiers:
+      absolute_zero:
+      - Absolute Zero Slow
+      - Attack speed, move speed, turn rate and cast points are slowed. Nearby allies
+        are being slowed slightly as well.
+      absolute_zero_aura:
+      - Absolute Zero Aura Slow
+      - Attack speed and move speed are slowed.
+    name: Absolute Zero
+  lich_deep_freeze:
+    data:
+      Lore: Brrr.
+      damage: 'DAMAGE:'
+      description: The Lich's attacks ignite a chain reaction of freezing magic in
+        their target, causing them to become ministunned and take Magical damage.
+      stun: 'STUN:'
+    modifiers:
+      deep_freeze_stun:
+      - Deep Freeze Stun
+      - ''
+    name: Deep Freeze
+  lich_traveling_frost:
+    data:
+      Lore: It was ICE knowing you.
+      aghanim_description: Increases hit detection radius, and Traveling Frost creates
+        multiple projectiles that travel in random directions when it hits a unit.
+      damage: 'DAMAGE:'
+      description: Fires a rolling wave of ice towards a target point.  The first
+        enemy it hits is damaged and frozen in place for a short time. Passes through
+        and ignores units already affected by Traveling Frost.<br/><br/>Upgradable
+        by Aghanim's Scepter.
+      radius: 'RADIUS:'
+      scepter_radius: 'SCEPTER PROJECTILES:'
+      scepter_units: 'SCEPTER PROJECTILES:'
+      stun: 'STUN:'
+    modifiers: {}
+    name: Traveling Frost
+  lich_winters_requiem:
+    data:
+      Lore: Are you feeling cold?
+      Note0: Each explosion deals damage separately. If all explosions hit a target
+        this Spell's damage total is 160/360/640/1000. With the Talent, it's 340/630/1000/1450.
+      Note1: This Spell cannot target a unit more than once.
+      damage: 'DAMAGE:'
+      damage_radius: 'DAMAGE AOE:'
+      delay: 'DELAY:'
+      description: All enemies within a large radius are marked. After a short delay,
+        they are assailed by an icy explosion that deals damage and slows in an AoE.
+      radius: 'RADIUS:'
+      slow: '%SLOW:'
+      slow_duration: 'SLOW DURATION:'
+    modifiers:
+      winters_requiem:
+      - Winters Requiem Slow
+      - ''
+    name: Winter's Requiem
+  special_bonus_lich_1:
+    data: {}
+    modifiers: {}
+    name: +0.4s Deep Freeze Stun
+  special_bonus_lich_2:
+    data: {}
+    modifiers: {}
+    name: +10% Winter's Requiem Slow
+  special_bonus_lich_3:
+    data: {}
+    modifiers: {}
+    name: +750 Traveling Frost Speed
+  special_bonus_lich_4:
+    data: {}
+    modifiers: {}
+    name: +90 Winter's Requiem Damage
+  special_bonus_lich_5:
+    data: {}
+    modifiers: {}
+    name: +1.4s Traveling Frost Stun
+Hero:
+  data:
+    bio: ''
+    hype: A progenitor of frost magic, The Lich freezes his foes with reckless abandon,
+      crushing them with powerful long range disables, close range nukes, a devastating
+      Aura, and a global chill that slows enemies drastically.
+  modref: npc_dota_hero_lich
+  name: The Lich
+  ref: npc_dota_hero_lich

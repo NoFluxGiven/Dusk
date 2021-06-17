@@ -1,0 +1,6 @@
+Hero:
+  modref: npc_dota_hero_solstice
+  ref: npc_dota_hero_skeleton_king
+  data: {}
+  name: ''
+Abilities: {}

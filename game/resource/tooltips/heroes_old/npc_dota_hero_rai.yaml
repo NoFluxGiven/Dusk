@@ -1,0 +1,98 @@
+Abilities:
+  rai_amplify:
+    data:
+      Description: Rai forces his electrical energies into the air around him, causing
+        it to damage nearby enemies over time. At the end of the duration, bolts of
+        lightning zap multiple randomly selected nearby targets, slowing and damaging
+        them.
+      damage: 'DAMAGE PER SECOND:'
+      duration: 'DURATION:'
+      end_damage: 'BOLT DAMAGE:'
+      radius: 'RADIUS:'
+      slow: '%BOLT MOVEMENT SLOW:'
+      slow_duration: 'SLOW DURATION:'
+      targets: 'BOLT TARGETS:'
+    modifiers:
+      amplify:
+      - Amplify
+      - Dealing damage over time to nearby enemies, then zapping some random targets.
+      amplify_slow:
+      - Amplify
+      - Being slowed.
+    name: Amplify
+  rai_arc_twister:
+    data:
+      Description: Rai transforms into an arc of electricity, jumping from unit to unit to
+        reach his target destination.
+      damage: 'DAMAGE:'
+      delay: 'DELAY:'
+    modifiers: {}
+    name: Arc Twister
+  rai_static_blade:
+    data:
+      Description: When Rai casts a Spell, he becomes imbued with electrical energy, gaining
+        1 stack of Static Burst (maximum %max_charges% charges). If he would gain a stack beyond the maximum,
+        he unleashes a burst of energy that deals %damage% bonus Magical damage and Mutes his opponents for %mute_duration% per stack,
+        placing this Ability on cooldown.
+      damage: 'DAMAGE PER STACK:'
+      max_stacks: 'MAX STACKS:'
+      mute_duration: 'MUTE DURATION:'
+    modifiers:
+      static_blade:
+      - Static Burst
+      - Exploding at maximum stacks, dealing Magical damage and Muting enemies.
+      static_blade_mute:
+      - Static Burst
+      - Being slowed and taking damage over time.
+    name: Static Blade
+  rai_thunder_roar:
+    data:
+      Description: After a short cast time, Rai creates an area of high energetic
+        potential that follows him, striking a random nearby enemy with a bolt of
+        lightning every few moments. The bolts mini-stun enemies and deal half damage
+        in a large area around them.
+      bolt_ministun: 'MINISTUN:'
+      bolt_radius: 'DAMAGE RADIUS:'
+      bolts: 'NUMBER OF BOLTS:'
+      damage: 'BOLT DAMAGE:'
+      duration: 'DURATION:'
+      radius: 'RADIUS:'
+    modifiers:
+      thunder_roar:
+      - Thunder Roar
+      - Striking nearby targets with bolts of lightning.
+    name: Thunder Roar
+  special_bonus_rai_1:
+    data: {}
+    modifiers: {}
+    name: +1 Max Static Blade Charges
+  special_bonus_rai_2:
+    data: {}
+    modifiers: {}
+    name: +25 Amplify DPS
+  special_bonus_rai_3:
+    data: {}
+    modifiers: {}
+    name: +75 Arc Twister Damage
+  special_bonus_rai_4:
+    data: {}
+    modifiers: {}
+    name: +2 Amplify Targets
+  special_bonus_rai_5:
+    data: {}
+    modifiers: {}
+    name: +0.25s Thunder Roar Ministun
+  special_bonus_rai_6:
+    data: {}
+    modifiers: {}
+    name: -4s Arc Twister Cooldown
+Hero:
+  data:
+    bio: ''
+    hype: A Tijadi Prince, nicknamed the Prince of Thunder, and so named for his control
+      over electricity. Rai is a dangerous and excellently scaling nuker who is capable
+      of destroying enemies when played well. A good balance of escape, initiation,
+      control and damage output makes this Hero a deadly force on your team.
+  modref: npc_dota_hero_rai
+  name: Rai
+  ref: npc_dota_hero_ember_spirit

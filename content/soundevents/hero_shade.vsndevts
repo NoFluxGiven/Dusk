@@ -59,124 +59,242 @@
     }
 }
 
-"Shade.DarkHunger"
+"Shade.DarkHunger.Loop"
 {
     "operator_stacks"
     {
         "update_stack"
         {
-            "speakers_spatialize"
-            {
-                "input_radius"  "900"
-            }
             "reference_operator"
             {
                 "operator"          "sos_reference_stack"
-                "reference_stack"           "src1_2d"
+                "reference_stack"           "dota_update_default"
                 "operator_variables"
                 {
                     "vsnd_files"
                     {
                         "value"
                         {
-                            "value0"        "sounds/dark_hunger_proc_small.vsnd"
+                            "value0"        "sounds/dark_hunger_drain_loop_8s.vsnd"
                         }
                     }
-                    "volume_min"
+                    "volume"
                     {
-                        "value"     "1.000000"
-                    }
-                    "volume_max"
-                    {
-                        "value"     "1.000000"
-                    }
-                    "pitch_min"
-                    {
-                        "value"     "0.500000"
-                    }
-                    "pitch_max"
-                    {
-                        "value"     "1.500000"
-                    }
-                    "chan_type"
-                    {
-                        "value"     "6"
-                    }
-                    "memory_type"
-                    {
-                        "value"     "0"
-                    }
-                    "soundlevel_min"
-                    {
-                        "value"     "100.000000"
-                    }
-                    "soundlevel_max"
-                    {
-                        "value"     "100.000000"
+                        "value" "1.25"
                     }
                 }
             }
         }
     }
+
 }
 
-"Shade.DarkHunger.Hero"
+"Shade.DarkHunger.Start"
 {
     "operator_stacks"
     {
         "update_stack"
         {
-            "speakers_spatialize"
-            {
-                "input_radius"  "900"
-            }
             "reference_operator"
             {
                 "operator"          "sos_reference_stack"
-                "reference_stack"           "src1_2d"
+                "reference_stack"           "dota_update_default"
                 "operator_variables"
                 {
                     "vsnd_files"
                     {
                         "value"
                         {
-                            "value0"        "sounds/dark_hunger_proc.vsnd"
+                            "value0"        "sounds/dark_hunger_drain_start.vsnd"
                         }
                     }
-                    "volume_min"
+                    "volume"
                     {
-                        "value"     "1.000000"
-                    }
-                    "volume_max"
-                    {
-                        "value"     "1.000000"
-                    }
-                    "pitch_min"
-                    {
-                        "value"     "0.500000"
-                    }
-                    "pitch_max"
-                    {
-                        "value"     "1.500000"
-                    }
-                    "chan_type"
-                    {
-                        "value"     "6"
-                    }
-                    "memory_type"
-                    {
-                        "value"     "0"
-                    }
-                    "soundlevel_min"
-                    {
-                        "value"     "100.000000"
-                    }
-                    "soundlevel_max"
-                    {
-                        "value"     "100.000000"
+                        "value" "1.25"
                     }
                 }
             }
         }
     }
+
+}
+
+"Shade.DarkHunger.End"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/dark_hunger_drain_end.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Shade.Stalk.Start"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/stalk_start.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Shade.Stalk.Strike"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/stalk_strike.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Shade.Shadowshift.Start"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/shadowshift_start.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Shade.Shadowshift.Loop"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/shadowshift_loop.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Shade.Shadowshift.End"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/shadowshift_out.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
+                    }
+                }
+            }
+        }
+    }
+
 }

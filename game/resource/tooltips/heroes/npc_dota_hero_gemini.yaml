@@ -1,90 +1,6 @@
-Abilities:
-  gemini_abyssal_shadow:
-    data:
-      Description: The Voidwalker summons a powerful being from another plane to help
-        him fight. The creature floats behind him at all times and attacks anything
-        nearby. Each level in this ability increases the creature's damage.<br/>The
-        creature's attacks deal bonus Magical damage that increases with each strike.
-        It is invulnerable and untargetable.
-      bonus_damage: 'BONUS DAMAGE PER ATTACK:'
-      duration: 'DURATION:'
-      level: 'LEVEL:'
-    modifiers:
-      abyssal_shadow:
-      - Abyssal Shadow
-      - The Abyssal Shadow has been summoned to help you.
-    name: Abyssal Shadow
-  gemini_extraplanar_pact:
-    data:
-      Description: Drags the target ally into another plane to make a pact with an
-        extraplanar being, causing them to become invulnerable for a short time. Upon
-        entering the pact, they recover a percentage of their maximum Health and Mana.
-      duration: 'BUFF DURATION:'
-      health_regen: 'HEALTH RESTORE:'
-      mana_regen: 'MANA RESTORE:'
-      out_of_game_duration: 'OUT OF GAME DURATION:'
-    modifiers:
-      extraplanar_pact:
-      - Extraplanar Pact
-      - Recovering Health and Mana.
-      extraplanar_pact_oog:
-      - Extraplanar Pact
-      - Currently out of game and recovering Health and Mana.
-    name: Extraplanar Pact
-  gemini_planar_trickery:
-    data:
-      activate: Jump to Planar Trickery Portal
-      activate_description: Teleports Voidwalker to a placed Planar Trickery portal
-        on the map.
-      description: Summons a portal beneath the target allied or enemy Hero's feet.
-        At any time, he may recast this Spell to instantly transport to the portal's
-        location, consuming it. If the Voidwalker dies, the portal disappears.
-      duration: 'DURATION:'
-    modifiers:
-      planar_trickery:
-      - Planar Trickery Portal
-      - A portal is active and ready to jump to.
-    name: Planar Trickery
-  gemini_planar_trickery_activate:
-    data:
-      description: Teleports Voidwalker to a placed Planar Trickery portal on the
-        map.
-    modifiers: {}
-    name: Jump to Planar Trickery Portal
-  gemini_voidal_flare:
-    data:
-      damage: 'INITIAL DAMAGE:'
-      damage_bonus: 'BONUS DAMAGE:'
-      description: The Voidwalker fires a flare of dark energy at the target, dealing
-        Magical damage and stunning them. The damage and duration increase by a flat
-        amount each time it is used on the same target, up to a maximum amount of
-        times.
-      max_mult: 'MAXIMUM HITS:'
-      stun: 'INITIAL STUN:'
-      stun_bonus: 'BONUS STUN:'
-    modifiers:
-      voidal_flare:
-      - Voidal Flare
-      - Being stunned for longer and taking more damage when hit by the next Voidal
-        Flare.
-    name: Voidal Flare
-  special_bonus_gemini_1:
-    data: {}
-    modifiers: {}
-    name: +30 Voidal Flare Damage Bonus
-  special_bonus_gemini_2:
-    data: {}
-    modifiers: {}
-    name: +250 Extraplanar Pact Restore
-  special_bonus_gemini_3:
-    data: {}
-    modifiers: {}
-    name: Voidal Flare Purges Buffs
-  special_bonus_gemini_4:
-    data: {}
-    modifiers: {}
-    name: +150 Abyssal Shadow Attack Range
 Hero:
+  modref: npc_dota_hero_gemini
+  ref: npc_dota_hero_rubick
   data:
     bio: ''
     hype: Eccentric, perhaps, but undoubtably skilled, the Voidwalker can crush opposition
@@ -92,6 +8,90 @@ Hero:
       a portal that can transport allies to anywhere on the map, a pact with a being
       from beyond, and a terrifying vortex of abyssal energies that pulls enemies
       into the centre with ease.
-  modref: npc_dota_hero_gemini
   name: Voidwalker
-  ref: npc_dota_hero_rubick
+Abilities:
+  gemini_voidal_flare:
+    name: Voidal Flare
+    data:
+      description: The Voidwalker fires a flare of dark energy at the target, dealing
+        Magical damage and stunning them. The damage and duration increase by a flat
+        amount each time it is used on the same target, up to a maximum amount of
+        times.
+      stun: 'INITIAL STUN:'
+      damage: 'INITIAL DAMAGE:'
+      stun_bonus: 'BONUS STUN:'
+      damage_bonus: 'BONUS DAMAGE:'
+      max_mult: 'MAXIMUM HITS:'
+    modifiers:
+      modifier_voidal_flare:
+      - Voidal Flare
+      - Being stunned for longer and taking more damage when hit by the next Voidal
+        Flare.
+  gemini_extraplanar_pact:
+    name: Extraplanar Pact
+    data:
+      Description: Drags the target ally into another plane to make a pact with an
+        extraplanar being, causing them to become invulnerable for a short time. Upon
+        entering the pact, they recover a percentage of their maximum Health and Mana.
+      health_regen: 'HEALTH RESTORE:'
+      mana_regen: 'MANA RESTORE:'
+      duration: 'BUFF DURATION:'
+      out_of_game_duration: 'OUT OF GAME DURATION:'
+    modifiers:
+      modifier_extraplanar_pact_oog:
+      - Extraplanar Pact
+      - Currently out of game and recovering Health and Mana.
+      modifier_extraplanar_pact:
+      - Extraplanar Pact
+      - Recovering Health and Mana.
+  gemini_planar_trickery:
+    name: Planar Trickery
+    data:
+      description: Summons a portal beneath the target allied or enemy Hero's feet.
+        At any time, he may recast this Spell to instantly transport to the portal's
+        location, consuming it. If the Voidwalker dies, the portal disappears.
+      duration: null
+      activate: Jump to Planar Trickery Portal
+      activate_description: Teleports Voidwalker to a placed Planar Trickery portal
+        on the map.
+    modifiers:
+      modifier_planar_trickery:
+      - Planar Trickery Portal
+      - A portal is active and ready to jump to.
+  gemini_abyssal_shadow:
+    name: Abyssal Shadow
+    data:
+      Description: The Voidwalker summons a powerful being from another plane to help
+        him fight. The creature floats behind him at all times and attacks anything
+        nearby. Each level in this ability increases the creature's damage.<br/>The
+        creature's attacks deal bonus Magical damage that increases with each strike.
+        It is invulnerable and untargetable.
+      level: null
+      duration: null
+      bonus_damage: 'BONUS DAMAGE PER ATTACK:'
+    modifiers:
+      modifier_abyssal_shadow:
+      - Abyssal Shadow
+      - The Abyssal Shadow has been summoned to help you.
+  gemini_planar_trickery_activate:
+    name: Jump to Planar Trickery Portal
+    data:
+      description: Teleports Voidwalker to a placed Planar Trickery portal on the
+        map.
+    modifiers: {}
+  special_bonus_gemini_1:
+    name: +30 Voidal Flare Damage Bonus
+    data: {}
+    modifiers: {}
+  special_bonus_gemini_4:
+    name: +150 Abyssal Shadow Attack Range
+    data: {}
+    modifiers: {}
+  special_bonus_gemini_3:
+    name: Voidal Flare Purges Buffs
+    data: {}
+    modifiers: {}
+  special_bonus_gemini_2:
+    name: +250 Extraplanar Pact Restore
+    data: {}
+    modifiers: {}

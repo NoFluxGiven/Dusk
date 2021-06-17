@@ -18,8 +18,8 @@ modifier_static_blade = class({})
 function modifier_static_blade:DeclareFunctions()
 	local funcs = {
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
-		MODIFIER_EVENT_ON_ABILITY_FULLY_CAST
-		MODIFIER_EVENT_ON_TAKEDAMAGE
+		MODIFIER_EVENT_ON_ABILITY_FULLY_CAST,
+		MODIFIER_EVENT_ON_TAKEDAMAGE,
 		-- MODIFIER_EVENT_ON_ABILITY_FULLY_CAST
 	}
 	return funcs
@@ -145,4 +145,4 @@ modifier_static_blade_cooldown = class({})
 
 function modifier_static_blade_cooldown:IsHidden()
 	return true
-end
+end ]]

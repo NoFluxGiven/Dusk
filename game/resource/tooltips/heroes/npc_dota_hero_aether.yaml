@@ -1,88 +1,88 @@
-Abilities:
-  aether_disrupt:
-    data:
-      damage: 'DAMAGE:'
-      description: Aether unleashes a blast of Rift energies, dealing damage and slowing
-        enemies, and disjointing projectiles for all nearby allies.  Monoliths will
-        cast this ability as well.
-      duration: 'SLOW DURATION:'
-      radius: 'RADIUS:'
-      slow: '%SLOW:'
-    modifiers: {}
-    name: Disrupt
-  aether_monolith:
-    data:
-      aghanim_description: Allows up to 3 Monoliths to be placed. They must be a minimum
-        distance apart.
-      description: Aether summons forth a Monolith that buffs allies and debuffs enemies,
-        granting vision in a small area. Monoliths cast Disrupt when Aether does.<br/><br/>Upgradable
-        by Aghanim's Scepter.
-      monolith_healthregen: 'HEALTH REGEN:'
-      monolith_manaregen: 'MANA REGEN:'
-      monolith_slow: '%SLOW:'
-      monolith_speed: '%SPEED BONUS:'
-      monolith_time: 'MONOLITH TIME:'
-    modifiers:
-      monolith_slow_unit:
-      - Monolith
-      - Being slowed by Aether's Monolith.
-      monolith_speed_unit:
-      - Monolith
-      - Gaining movespeed.
-    name: Monolith
-  aether_reality_shift:
-    data:
-      Note0: Does not affect buildings.
-      Note1: Has a delay time of 0.2s, but an instant cast time.
-      damage: 'DAMAGE:'
-      description: Aether drags all nearby units from this plane to the next temporarily,
-        returning after the duration ends, and damaging and stunning enemy units within
-        range that were not affected by the initial cast.  Units affected are out
-        of game and invulnerable for the duration.
-      duration: 'DURATION:'
-      radius: 'RADIUS:'
-      stun: 'STUN:'
-    modifiers:
-      reality_shift_unit:
-      - Reality Shift
-      - ''
-    name: Reality Shift
-  aether_teleport:
-    data:
-      Note0: Teleports the unit to the position Aether was in when the spell was cast,
-        not when the spell ends.
-      delay: 'DELAY:'
-      description: The targeted allied unit is teleported to Aether's position after
-        a short delay.  Aether can target herself to teleport to her Monolith, but
-        the delay time is doubled.  A silenced unit will not be transported.
-    modifiers:
-      teleport_start_up:
-      - Transporting...
-      - ''
-    name: Teleport
-  special_bonus_aether_1:
-    data: {}
-    modifiers: {}
-    name: +100 Disrupt Damage
-  special_bonus_aether_2:
-    data: {}
-    modifiers: {}
-    name: -50% Teleport Delay Time
-  special_bonus_aether_3:
-    data: {}
-    modifiers: {}
-    name: -60s Reality Shift Cooldown
-  special_bonus_aether_4:
-    data: {}
-    modifiers: {}
-    name: +25 Monolith Regen/Drain
 Hero:
+  modref: npc_dota_hero_aether
+  ref: npc_dota_hero_wisp
   data:
     bio: ''
     hype: A support with a set of skills designed to save allies and annoy enemies,
       Aether can drag an ally out of a bad situation with Teleport, deal damage and
       disjoint projectiles with Disrupt, place buffing Monoliths with Monolith, and
       suck all enemies and allies in the immediate area into a dimensional safe zone.
-  modref: npc_dota_hero_aether
   name: Aether
-  ref: npc_dota_hero_wisp
+Abilities:
+  aether_teleport:
+    name: Teleport
+    data:
+      description: The targeted allied unit is teleported to Aether's position after
+        a short delay.  Aether can target herself to teleport to her Monolith, but
+        the delay time is doubled.  A silenced unit will not be transported.
+      Note0: Teleports the unit to the position Aether was in when the spell was cast,
+        not when the spell ends.
+      delay: null
+    modifiers:
+      modifier_teleport_start_up:
+      - Transporting...
+      - ''
+  aether_disrupt:
+    name: Disrupt
+    data:
+      description: Aether unleashes a blast of Rift energies, dealing damage and slowing
+        enemies, and disjointing projectiles for all nearby allies.  Monoliths will
+        cast this ability as well.
+      damage: null
+      radius: null
+      duration: 'SLOW DURATION:'
+      slow: '%SLOW:'
+    modifiers: {}
+  aether_monolith:
+    name: Monolith
+    data:
+      description: Aether summons forth a Monolith that buffs allies and debuffs enemies,
+        granting vision in a small area. Monoliths cast Disrupt when Aether does.<br/><br/>Upgradable
+        by Aghanim's Scepter.
+      aghanim_description: Allows up to 3 Monoliths to be placed. They must be a minimum
+        distance apart.
+      monolith_time: 'MONOLITH TIME:'
+      monolith_speed: '%SPEED BONUS:'
+      monolith_slow: '%SLOW:'
+      monolith_manaregen: 'MANA REGEN:'
+      monolith_healthregen: 'HEALTH REGEN:'
+    modifiers:
+      modifier_monolith_speed_unit:
+      - Monolith
+      - Gaining movespeed.
+      modifier_monolith_slow_unit:
+      - Monolith
+      - Being slowed by Aether's Monolith.
+  aether_reality_shift:
+    name: Reality Shift
+    data:
+      description: Aether drags all nearby units from this plane to the next temporarily,
+        returning after the duration ends, and damaging and stunning enemy units within
+        range that were not affected by the initial cast.  Units affected are out
+        of game and invulnerable for the duration.
+      Note0: Does not affect buildings.
+      Note1: Has a delay time of 0.2s, but an instant cast time.
+      duration: null
+      radius: null
+      stun: null
+      damage: null
+    modifiers:
+      modifier_reality_shift_unit:
+      - Reality Shift
+      - ''
+  special_bonus_aether_1:
+    name: +100 Disrupt Damage
+    data: {}
+    modifiers: {}
+  special_bonus_aether_2:
+    name: -50% Teleport Delay Time
+    data: {}
+    modifiers: {}
+  special_bonus_aether_3:
+    name: -60s Reality Shift Cooldown
+    data: {}
+    modifiers: {}
+  special_bonus_aether_4:
+    name: +25 Monolith Regen/Drain
+    data: {}
+    modifiers: {}

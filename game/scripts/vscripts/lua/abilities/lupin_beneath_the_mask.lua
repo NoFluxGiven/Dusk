@@ -59,18 +59,29 @@ function modifier_beneath_the_mask:OnAttackLanded(params)
 
 		duration = duration --+ t_duration_bonus
 
-		if not target:IsHero() then return end
+		-- if not target:IsHero() or not target:IsCreep() or not target:IsAncient() or not target:IsRoshan() or not target:IsBui then return end
+
+		if target:IsBuilding() then return end
 
 		if not params.attacker:IsRealHero() then return end
 
-		if caster:HasModifier("modifier_last_surprise") then return end
+		-- if caster:HasModifier("modifier_last_surprise") then return end
 
 		if params.attacker == caster then
-			if self:GetAbility():IsCooldownReady() then
+			if self:GetAbility():IsCooldownReady() and not caster:PassivesDisabled() then
 				target:AddNewModifier(caster, self:GetAbility(), "modifier_beneath_the_mask_slow", {Duration=duration})
 				caster:AddNewModifier(caster, self:GetAbility(), "modifier_beneath_the_mask_bonus", {Duration=duration})
 				self:GetAbility():UseResources(true, true, true)
 				self:GetAbility():InflictDamage(target,caster,damage,DAMAGE_TYPE_PHYSICAL)
+				caster:Heal(damage, caster)
+				ExecuteOrderFromTable(
+					{
+						UnitIndex = caster:entindex(),
+						OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
+						TargetIndex = target:entindex(),
+						Queue = true
+					}
+				)
 				CreateParticleHitloc(target,"particles/units/heroes/hero_lupin/beneath_the_mask_hit.vpcf")
 				target:EmitSound("Lupin.BeneathTheMask")
 			end

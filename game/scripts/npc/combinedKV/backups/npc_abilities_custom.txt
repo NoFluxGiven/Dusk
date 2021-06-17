@@ -4142,12 +4142,12 @@
   
   	// Casting
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCastRange"				"400"
+  	"AbilityCastRange"				"750"
   	"AbilityCastPoint"				"0.3"
   	
   	// Time		
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCooldown"				"23"
+  	"AbilityCooldown"				"14"
   
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
@@ -4564,23 +4564,23 @@
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
   	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-  	"AnimationPlaybackRate"			"0.95"
-  	"AbilityChannelTime"			"0.75"
+  	"AnimationPlaybackRate"			"1.15"
+  	"AbilityChannelTime"			"2.00 1.50 1.00 0.50"
   	"AbilityTextureName"			"baal_spatial_rift"
   	"AoERadius"						"230"
   
   	// Casting
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCastRange"				"800 1000 1200 1400"
+  	"AbilityCastRange"				"1200"
   	"AbilityCastPoint"				"0.0"
   	
   	// Time		
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCooldown"				"17 16 15 14"
+  	"AbilityCooldown"				"9"
   
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityManaCost"				"125"
+  	"AbilityManaCost"				"75"
   	
   	// Stats
   	//-------------------------------------------------------------------------------------------------------------
@@ -4598,7 +4598,7 @@
   	"02"
   		{
   			"var_type"						"FIELD_INTEGER"
-  			"damage"						"50 125 200 275"
+  			"damage"						"100 125 150 175"
   			"LinkedSpecialBonus"			"special_bonus_baal_1"
   		}
   	"03"
@@ -5954,6 +5954,17 @@
   //=====================================================================================================
   // BALTHASAR: Voidal Flare
   //=====================================================================================================
+  
+  ///@changelog
+  ///@version 2.2
+  ///@hero Balthasar
+  ///@ability Firebolt
+  ///@changes #
+  /// Cast range increased to 675 (was 575).
+  /// Cooldown reduced to 7s (was 14/13/12/11s).
+  /// Now deals damage over time equal to 10/20/30/40 + 20/30/40/50% of Balthasar's total attack damage.
+  
+  
   "balthasar_firebolt"
   	{
   	// General
@@ -5970,6 +5981,8 @@
   	"FightRecapLevel"				"1"
   	"AbilityTextureName"			"balthasar_firebolt"
   
+  	"tooltipDescription"			"Poo."
+  
   	// Precache
   	//-------------------------------------------------------------------------------------------------------------
   	"precache"
@@ -5980,12 +5993,12 @@
   
   	// Casting
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCastRange"				"575"
+  	"AbilityCastRange"				"675"
   	"AbilityCastPoint"				"0.2"
   	
   	// Time		
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCooldown"				"14.00 13.00 12.00 11.00"
+  	"AbilityCooldown"				"7.00"
   
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
@@ -6014,6 +6027,11 @@
   		{
   			"var_type"				"FIELD_INTEGER"
   			"projectiles"			"1"
+  		}
+  		"05"
+  		{
+  			"var_type"				"FIELD_INTEGER"
+  			"attack_damage"			"20 30 40 50"
   		}
   	}
   }
@@ -10861,6 +10879,7 @@
   //=====================================================================================================
   // FAUST: Netherglyph
   //=====================================================================================================
+  
   "faust_netherglyph"
   {
   	// General
@@ -10874,16 +10893,16 @@
   	
   	// Casting
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCastRange"				"275"
+  	"AbilityCastRange"				"225"
   	"AbilityCastPoint"				"0.1"
   	
   	// Time		
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCooldown"				"60"
+  	"AbilityCooldown"				"75"
   
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityManaCost"				"100"
+  	"AbilityManaCost"				"0"
   	
   	// Stats
   	//-------------------------------------------------------------------------------------------------------------
@@ -10896,43 +10915,40 @@
   	"01"
   		{
   			"var_type"						"FIELD_INTEGER"
-  			"cooldown_reduction"			"50"
+  			"magic_res_reduction"			"30"
   		}
   	"02"
   		{
   			"var_type"						"FIELD_INTEGER"
-  			"spell_amp"						"15"
+  			"spell_amp"						"30"
   		}
   	"03"
   		{
   			"var_type"						"FIELD_INTEGER"
-  			"incoming_damage_reduction"		"45 60 75"
+  			"mana_regen"					"25"
   		}
   	"04"
   		{
-  			"var_type"						"FIELD_INTEGER"
-  			"mana_regen"					"6 8 10"
+  			"var_type"						"FIELD_FLOAT"
+  			"duration"						"8.0"
   		}
   	"05"
   		{
   			"var_type"						"FIELD_FLOAT"
-  			"duration"						"10.0 12.0 14.0"
+  			"timeout"						"4.0"
   		}
   	"06"
   		{
-  			"var_type"						"FIELD_FLOAT"
-  			"timeout"						"4.0"
-  		}
-  	"07"
-  		{
   			"var_type"						"FIELD_INTEGER"
-  			"radius"						"275"
+  			"radius"						"225"
   		}
   	}
   	
   	"precache"
   		{
   		"particle" "particles/units/heroes/hero_faust/netherglyph.vpcf"
+  		"particle" "particles/units/heroes/hero_faust/netherglyph_buff.vpcf"
+  		"particle" "particles/units/heroes/hero_faust/status_effect_netherglyph_buff.vpcf"
   		"soundfile" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
   		"soundfile" "soundevents\hero_faust.vsndevts"
   		}
@@ -12588,12 +12604,29 @@
   //. . . . . . . . . . . . .
 
   "gob_squad_clearance_sale"
+  
+  ///@changelog
+  ///@version 2.2
+  ///@hero Gob Squad
+  ///@ability Clearance Sale
+  ///@changes #
+  /// Removed Aghanim's Upgrade.
+  /// Clearance Sale bombs no longer damage Gob Squad.
+  /// Made it immediate cast.
+  /// Added the giant bomb to the regular ability; it deals 400/500/600 damage in a 600 radius.
+  /// Bomb explosion radius increased to 350.
+  /// Bomb damage increased to 275/390/505.
+  /// Interval increased to 1.00s per bomb.
+  /// Slow now scales with level (20/40/60%).
+  /// Stun duration increased to 0.50/0.75/1.00.
+  /// Duration reduced to 8s.
+  
   {
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"				"ability_lua"
   	"ScriptFile"			"lua/abilities/gob_squad_clearance_sale"
-  	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
   	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
@@ -12631,7 +12664,7 @@
   
   	// Damage.
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityDamage"					"100 150 200"
+  	"AbilityDamage"					"275 390 505"
   	
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
@@ -12644,37 +12677,42 @@
   		"01"
   		{
   			"var_type"				"FIELD_INTEGER"
-  			"radius"				"300"
+  			"radius"				"350"
   		}
   		"02"
   		{
   			"var_type"				"FIELD_INTEGER"
-  			"duration"				"10"
+  			"duration"				"8"
   		}
   		"03"
   		{
   			"var_type"				"FIELD_INTEGER"
-  			"slow"					"-20"
+  			"slow"					"-50 -75 -100"
+  		}
+  		"03"
+  		{
+  			"var_type"				"FIELD_FLOAT"
+  			"slow_duration"			"2.00"
   		}
   		"04"
   		{
   			"var_type"				"FIELD_FLOAT"
-  			"interval"				"0.4"
+  			"interval"				"1.00"
   		}
   		"05"
   		{
   			"var_type"				"FIELD_FLOAT"
-  			"interval_scepter"		"0.3"
+  			"stun"					"0.5 0.75 1.00"
   		}
   		"06"
   		{
   			"var_type"				"FIELD_INTEGER"
-  			"scepter_end_bomb_damage"		"300 450 600"
+  			"end_bomb_radius"		"600"
   		}
   		"07"
   		{
   			"var_type"				"FIELD_INTEGER"
-  			"scepter_end_bomb_radius"		"1000"
+  			"end_bomb_damage"		"400 500 600"
   		}
   	}
   
@@ -12686,12 +12724,26 @@
   //. . . . . . . . . . . . .
 
   "gob_squad_kamikaze"
+  
+  ///@changelog
+  ///@version 2.2
+  ///@hero Gob Squad
+  ///@ability Kamikaze
+  ///@changes #
+  /// Is now immediate cast.
+  /// Increased movespeed bonus to 40%.
+  /// Increased damage to 250/300/350/400.
+  /// No longer grants bonus damage based on the amount of self damage taken.
+  /// Reduced self stun to 0.7s.
+  /// Reduced self damage to 35%.
+  /// Reduced cooldown to 20s.
+  
   {
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"				"ability_lua"
   	"ScriptFile"			"lua/abilities/gob_squad_kamikaze"
-  	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
   	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
@@ -12720,11 +12772,11 @@
   
   	// Time		
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCooldown"				"60 50 40 30"
+  	"AbilityCooldown"				"20"
   
   	// Damage.
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityDamage"					"150 200 250 300"
+  	"AbilityDamage"					"250 300 350 400"
   	
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
@@ -12747,17 +12799,17 @@
   		"03"
   		{
   			"var_type"				"FIELD_INTEGER"
-  			"movespeed_bonus"		"15 20 25 30"
+  			"movespeed_bonus"		"40"
   		}
   		"04"
   		{
   			"var_type"				"FIELD_INTEGER"
-  			"health_damage"			"50"
+  			"health_damage"			"35"
   		}
   		"05"
   		{
   			"var_type"				"FIELD_INTEGER"
-  			"total"					"50"
+  			"total"					"0"
   		}
   		"06"
   		{
@@ -12767,7 +12819,7 @@
   		"07"
   		{
   			"var_type"				"FIELD_FLOAT"
-  			"stun"					"1.4"
+  			"stun"					"0.7"
   		}
   	}
   
@@ -12779,6 +12831,21 @@
   //. . . . . . . . . . . . .
 
   "gob_squad_rocket_blast"
+  
+  ///@changelog
+  ///@version 2.2
+  ///@hero Gob Squad
+  ///@ability Rocket Blast
+  ///@changes #
+  /// No longer applies a slow.
+  /// Gob Squad now has a 25% chance to ride the rocket towards its target on the next cast (displayed in the ability icon).
+  /// Increased cooldown to 9.5s.
+  /// Increased Mana cost to 95 at all levels (was 60/75/90/105).
+  /// Reduced damage to 100/175/250/325.
+  /// Reduced range to 1100.
+  /// Reduced projectile speed to 1000.
+  /// Reduced cast point to 0.25s (was 0.4s).
+  
   {
   	// General
   	//-------------------------------------------------------------------------------------------------------------
@@ -12806,20 +12873,20 @@
   
   	// Casting
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCastRange"				"1600"
-  	"AbilityCastPoint"				"0.40"
+  	"AbilityCastRange"				"1100"
+  	"AbilityCastPoint"				"0.25"
   
   	// Time		
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCooldown"				"8.0 7.5 7.0 6.5"
+  	"AbilityCooldown"				"9.5"
   
   	// Damage.
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityDamage"					"125 200 275 350"
+  	"AbilityDamage"					"100 175 250 325"
   	
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityManaCost"				"60 75 90 105"
+  	"AbilityManaCost"				"95"
   	
   	// Special	
   	//-------------------------------------------------------------------------------------------------------------
@@ -12838,32 +12905,27 @@
   		"03"
   		{
   			"var_type"				"FIELD_INTEGER"
-  			"range"					"1600"
+  			"range"					"1100"
   		}
   		"04"
   		{
   			"var_type"				"FIELD_INTEGER"
-  			"speed"					"1200"
+  			"speed"					"1000"
   		}
   		"05"
   		{
-  			"var_type"				"FIELD_INTEGER"
-  			"slow"					"-50"
+  			"var_type"				"FIELD_FLOAT"
+  			"radius"				"225"
   		}
   		"06"
   		{
   			"var_type"				"FIELD_FLOAT"
-  			"slow_duration"			"1.40 1.80 2.20 2.60"
+  			"projectile_speed"		"1000"
   		}
   		"07"
   		{
-  			"var_type"				"FIELD_FLOAT"
-  			"radius"				"300"
-  		}
-  		"08"
-  		{
-  			"var_type"				"FIELD_FLOAT"
-  			"projectile_speed"		"1000"
+  			"var_type"				"FIELD_INTEGER"
+  			"ride_chance"			"25"
   		}
   	}
   
@@ -12874,6 +12936,17 @@
 
   //. . . . . . . . . . . . .
 
+  ///@tooltip
+  ///@hero npc_dota_hero_gob_squad
+  ///@name Whoops!
+  ///@description The Gob Squad's something does something.
+  
+  ///@changelog
+  ///@version 2.2
+  ///@hero Gob Squad
+  ///@ability Whoops!
+  ///@changes #
+  
   "gob_squad_whoops"
   {
   	// General
@@ -13507,6 +13580,7 @@
   //=====================================================================================================
   // HAWKEYE: Ricochet
   //=====================================================================================================
+  
   "hawkeye_ricochet"
   {
   	// General
@@ -13553,7 +13627,7 @@
   		"02"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"damage_reduction"			"-80 -72 -64 -56"
+  			"damage_reduction"			"-70 -55 -40 -25"
   		}
   	}
   	
@@ -13652,6 +13726,19 @@
   //=====================================================================================================
   // HERO: Freedom Strike
   //=====================================================================================================
+  
+  ///@changelog
+  ///@version 2.2
+  ///@hero Hero
+  ///@ability Freedom Strike
+  ///@changes #
+  /// Increased slow to 25%.
+  /// Rescaled slow duration to 2.0/2.5/3.0/3.5s
+  /// Reduced cooldown to 5s (was 12/10/8/6s).
+  /// Reduced Mana cost to 55.
+  /// Increased radius to 275 (was 250).
+  /// Now slows attack speed by 100.
+  
   "hero_freedom_strike"
   {
   	// General
@@ -13674,11 +13761,11 @@
   	
   	// Time		
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCooldown"				"12 10 8 6"
+  	"AbilityCooldown"				"5"
   
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityManaCost"				"60"
+  	"AbilityManaCost"				"55"
   	
   	// Stats
   	//-------------------------------------------------------------------------------------------------------------
@@ -13696,19 +13783,24 @@
   		"02"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"radius"					"250"
+  			"radius"					"275"
   		}
   		"03"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"slow"						"-10 -12 -14 -16"
+  			"slow"						"-25"
   		}
   		"04"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"duration"					"3"
+  			"attack_slow"				"-100"
   		}
   		"05"
+  		{
+  			"var_type"					"FIELD_FLOAT"
+  			"duration"					"2.0 2.5 3.0 3.5"
+  		}
+  		"06"
   		{
   			"var_type"					"FIELD_INTEGER"
   			"damage"					"110 150 190 230"
@@ -13729,6 +13821,15 @@
   //=====================================================================================================
   // HERO: Heroic Soul
   //=====================================================================================================
+  
+  ///@changelog
+  ///@version 2.2
+  ///@hero Hero
+  ///@ability Heroic Soul
+  ///@changes #
+  /// Reduced cooldown to 14s (was 20/18/16/14s).
+  /// Reduced movespeed bonus to 32% (was 40%).
+  
   "hero_heroic_soul"
   {
   	// General
@@ -13746,7 +13847,7 @@
   	
   	// Time		
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCooldown"				"20 18 16 14"
+  	"AbilityCooldown"				"14"
   
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
@@ -13764,7 +13865,7 @@
   		"02"
   		{
   			"var_type"				"FIELD_INTEGER"
-  			"bonus_movespeed"		"40"
+  			"bonus_movespeed"		"32"
   		}
   		"03"
   		{
@@ -13780,7 +13881,7 @@
   		"05"
   		{
   			"var_type"					"FIELD_FLOAT"
-  			"damage_reduction_duration" "0.5"
+  			"damage_reduction_duration" "0.75"
   		}
   	}
   
@@ -13955,6 +14056,16 @@
   //=====================================================================================================
   // HERO: Justice Kick
   //=====================================================================================================
+  
+  ///@changelog
+  ///@version 2.2
+  ///@hero Hero
+  ///@ability Justice Kick
+  ///@changes #
+  /// Reduced cooldown to 5s (was 8/7/6/5s).
+  /// Improved cast point to 0.25s (was 0.3s).
+  /// Increased slow duration to 1.3s (was 1.0s).
+  
   "hero_justice_kick"
   {
   	// General
@@ -13975,15 +14086,15 @@
   	// Casting
   	//-------------------------------------------------------------------------------------------------------------
   	"AbilityCastRange"				"150"
-  	"AbilityCastPoint"				"0.3"
+  	"AbilityCastPoint"				"0.25"
   	
   	// Time		
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCooldown"				"8 7 6 5"
+  	"AbilityCooldown"				"5"
   
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityManaCost"				"50"
+  	"AbilityManaCost"				"55"
   	
   	// Stats
   	//-------------------------------------------------------------------------------------------------------------
@@ -14012,7 +14123,7 @@
   		"04"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"duration"					"1"
+  			"duration"					"1.3"
   		}
   	}
   	
@@ -25884,6 +25995,16 @@
   //=====================================================================================================
   // SET: scarab_curse
   //=====================================================================================================
+  
+  ///@changelog
+  ///@version 2.2
+  ///@hero Set
+  ///@ability Scarab Curse
+  ///@changes #
+  /// Increased base damage to 15/20/25/30.
+  /// Increased damage steal to 12/20/28/36%.
+  /// The total damage stolen is now the base damage steal plus the percentage damage steal.
+  
   "set_scarab_curse"
   {
   	// General
@@ -25916,12 +26037,12 @@
   		"01"
   		{
   			"var_type"				"FIELD_INTEGER"
-  			"base_damage" 			"10 15 20 25"
+  			"base_damage" 			"15 20 25 30"
   		}
   		"02"
   		{
   			"var_type"				"FIELD_INTEGER"
-  			"percent_damage_reduction" "15"
+  			"percent_damage_reduction" "12 20 28 36"
   		}
   		"03"
   		{
@@ -26071,6 +26192,15 @@
   //=====================================================================================================
   // SHADE: Dark_hunger
   //=====================================================================================================
+  
+  ///@changelog
+  ///@version 2.2
+  ///@type HERO_ABILITY
+  ///@hero Shade
+  ///@ability Dark Hunger
+  ///@changes #
+  /// Dark Hunger is now an activated ability that causes Shade to drain Health from enemies around him, with the total drain amount increasing with each subsequent hit on an identical enemy.
+  
   "shade_dark_hunger"
   {
   	// General
@@ -26078,7 +26208,8 @@
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/shade_dark_hunger"
   	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-  	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+  	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -26086,16 +26217,16 @@
   
   	// Casting
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCastRange"				"0"
-  	"AbilityCastPoint"				"0"
+  	"AbilityCastRange"				"325"
+  	"AbilityCastPoint"				"0.2"
   	
   	// Time		
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCooldown"				"0"
+  	"AbilityCooldown"				"19"
   
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityManaCost"				"0"
+  	"AbilityManaCost"				"110"
   	
   	// Stats
   	//-------------------------------------------------------------------------------------------------------------
@@ -26108,13 +26239,22 @@
   		"01"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"heal"						"10 15 20 25"
-  			"LinkedSpecialBonus"		"special_bonus_shade_3"
+  			"health_drain"				"20 35 50 65"
   		}
   		"02"
   		{
   			"var_type"					"FIELD_FLOAT"
-  			"creep_heal"				"2.5 3.75 5 6.25"
+  			"duration"					"6.00"
+  		}
+  		"03"
+  		{
+  			"var_type"					"FIELD_FLOAT"
+  			"interval"					"0.25"
+  		}
+  		"04"
+  		{
+  			"var_type"					"FIELD_INTEGER"
+  			"radius"					"350"
   		}
   	}
   	
@@ -26345,8 +26485,88 @@
   //. . . . . . . . . . . . .
 
   //=====================================================================================================
+  // SHADE: Venomous
+  //=====================================================================================================
+  
+  ///@changelog
+  ///@version 2.2
+  ///@hero Shade
+  ///@ability Venomous
+  ///@changes #
+  /// Reworked into Shadowshift: Shade becomes Untargetable and moves faster for a short time, dodging projectiles on cast.
+  
+  "shade_shadowshift"
+  {
+  	// General
+  	//-------------------------------------------------------------------------------------------------------------
+  	"BaseClass"						"ability_lua"
+  	"ScriptFile"					"lua/abilities/shade_shadowshift"
+  	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+  	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+  	"AbilityTextureName"			"shade_venomous_dark"
+  
+  	// Casting
+  	//-------------------------------------------------------------------------------------------------------------
+  	"AbilityCastRange"				"0"
+  	"AbilityCastPoint"				"0"
+  	
+  	// Time		
+  	//-------------------------------------------------------------------------------------------------------------
+  	"AbilityCooldown"				"8"
+  
+  	// Cost
+  	//-------------------------------------------------------------------------------------------------------------
+  	"AbilityManaCost"				"0"
+  	
+  	// Stats
+  	//-------------------------------------------------------------------------------------------------------------
+  	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+  
+  	// Special
+  	//-------------------------------------------------------------------------------------------------------------
+  	"AbilitySpecial"
+  	{
+  		"01"
+  		{
+  			"var_type"					"FIELD_FLOAT"
+  			"duration"					"2.25"
+  		}
+  		"02"
+  		{
+  			"var_type"					"FIELD_INTEGER"
+  			"movespeed"					"20 30 40 50"
+  		}
+  	}
+  	
+  	"precache"
+  		{
+  		"particle" "particles\units\heroes\hero_shade\shade_shadowshift_trail.vpcf"
+  		"particle" "particles\units\heroes\hero_shade\shade_status_effect_shadowshift.vpcf"
+  		"particle" "particles/units/heroes/hero_doom_bringer/doom_bringer_lvl_death.vpcf"
+  		}
+  }
+
+
+  //. . . . . . . . . . . . .
+
+  //=====================================================================================================
   // SHADE: Isolation
   //=====================================================================================================
+  
+  ///@changelog
+  ///@version 2.2
+  ///@hero Shade
+  ///@ability Stalk
+  ///@changes #
+  /// Stalk now applies a 4.0s debuff, on attack, that slows by 30/40/50/60% and deals 20/30/40/50 Physical damage per second in 0.5s intervals.
+  /// Damage type changed to Physical (was Pure).
+  /// Cast range increased to 1100.
+  /// Cooldown increased to 12s (was 8s).
+  /// On-hit damage rescaled to 40/80/120/160 (was 25/75/125/175).
+  /// Movement speed bonus increased to 12/20/28/36%.
+  /// Movement speed slow reduced to 12%.
+  /// Duration increased to 6.0s.
+  
   "shade_stalk"
   {
   	// General
@@ -26354,26 +26574,26 @@
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/shade_stalk"
   	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-  	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+  	"AbilityBehavior"				"  GET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
   	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-  	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+  	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
   	"AbilityTextureName"			"shade_stalk"
   
   	// Casting
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCastRange"				"900"
+  	"AbilityCastRange"				"1100"
   	"AbilityCastPoint"				"0.3"
   	
   	// Time		
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCooldown"				"6"
+  	"AbilityCooldown"				"12"
   
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityManaCost"				"65 75 85 95"
+  	"AbilityManaCost"				"75 85 95 105"
   	
   	// Stats
   	//-------------------------------------------------------------------------------------------------------------
@@ -26386,13 +26606,13 @@
   		"01"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"proc_damage"				"25 75 125 175"
+  			"proc_damage"				"40 80 120 160"
   			"LinkedSpecialBonus"		"special_bonus_shade_6"
   		}
   		"02"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"movespeed_bonus"			"12"
+  			"movespeed_bonus"			"12 20 28 36"
   		}
   		"03"
   		{
@@ -26412,12 +26632,12 @@
   		"05"
   		{
   			"var_type"					"FIELD_FLOAT"
-  			"poison_duration"			"3.5"
+  			"poison_duration"			"4.0"
   		}
   		"05"
   		{
   			"var_type"					"FIELD_FLOAT"
-  			"duration"					"4.5"
+  			"duration"					"6.0"
   			"LinkedSpecialBonus"		"special_bonus_shade_1"
   		}
   	}
@@ -26444,6 +26664,7 @@
   //=====================================================================================================
   // SHADE: Venomous
   //=====================================================================================================
+  
   "shade_venomous"
   {
   	// General
@@ -26483,23 +26704,12 @@
   		"01"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"damage"					"5 10 15 20"
-  			"LinkedSpecialBonus"		"special_bonus_shade_2"
+  			"damage"					"8 14 20 26"
   		}
   		"02"
   		{
-  			"var_type"					"FIELD_INTEGER"
-  			"slow"						"-7 -10 -13 -16"
-  		}
-  		"03"
-  		{
-  			"var_type"					"FIELD_INTEGER"
-  			"duration"					"6"
-  		}
-  		"04"
-  		{
-  			"var_type"					"FIELD_INTEGER"
-  			"armor_reduction"			"-1 -2 -3 -4"
+  			"var_type"					"FIELD_FLOAT"
+  			"duration"					"4.0"
   		}
   	}
   	
@@ -26694,6 +26904,16 @@
   //=====================================================================================================
   // SHARD_MAGUS: Cryst_whorl
   //=====================================================================================================
+  
+  ///@changelog
+  ///@version 2.2
+  ///@type HERO_ABILITY
+  ///@hero Shard Magus
+  ///@ability Cryst Whorl
+  ///@changes #
+  /// Increased total damage to 100/175/250/325 from 60/120/180/240.
+  /// Increased base damage to 100 from 60.
+  
   "shard_magus_cryst_whorl"
   {
   	// General
@@ -26753,17 +26973,17 @@
   		"05"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"damage"					"60 120 180 240" // total
+  			"damage"					"100 175 250 325" // total
   		}
   		"06"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"slow"						"20 25 30 35"
+  			"slow"						"15 30 45 60"
   		}
   		"07"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"initial_damage"			"60"
+  			"initial_damage"			"100"
   			"LinkedSpecialBonus"		"special_bonus_shard_magus_1"
   		}
   	}
@@ -26785,6 +27005,19 @@
   //=====================================================================================================
   // shard_magus: Glacial Impact
   //=====================================================================================================
+  
+  ///@changelog
+  ///@version 2.2
+  ///@hero Shard Magus
+  ///@ability Glacial Impact
+  ///@changes #
+  /// Heroes under 10/11/12% Health that are hit by Glacial Impact are shattered, killing them. Applies after damage is inflicted.
+  /// Reduced damage to 200/300/400 from 225/375/525
+  /// Reduced cooldown to 70s from 80s.
+  /// Increased stun duration to 1.4/2.0/2.6 from 0.8/1.0/1.2.
+  /// Increased radius to 400 from 275/300/325.
+  /// Increased cast point to 0.4s from 0.1s.
+  
   "shard_magus_glacial_impact"
   {
   	// General
@@ -26799,17 +27032,17 @@
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
   	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
   	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-  	"AnimationPlaybackRate"			"4"
+  	"AnimationPlaybackRate"			"1"
   	"AbilityTextureName"			"ice_wyrm_glacial_impact"
   
   	// Casting
   	//-------------------------------------------------------------------------------------------------------------
   	"AbilityCastRange"				"875"
-  	"AbilityCastPoint"				"0.1"
+  	"AbilityCastPoint"				"0.4"
   	
   	// Time		
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCooldown"				"75"
+  	"AbilityCooldown"				"70"
   
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
@@ -26826,18 +27059,23 @@
   		"01"
   		{
   			"var_type"					"FIELD_FLOAT"
-  			"stun_duration"				"0.8 1.0 1.2"
+  			"stun_duration"				"1.4 2.0 2.6"
   			"LinkedSpecialBonus"		"special_bonus_shard_magus_5"
   		}
   		"02"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"damage"					"275 400 525"
+  			"damage"					"200 300 400"
   		}
   		"03"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"radius"					"275 300 325"
+  			"radius"					"400"
+  		}
+  		"04"
+  		{
+  			"var_type"					"FIELD_INTEGER"
+  			"shatter_threshold"			"10 11 12"
   		}
   	}
   	
@@ -26939,6 +27177,17 @@
   //=====================================================================================================
   // SHARD_MAGUS: Icicle_barrage
   //=====================================================================================================
+  
+  ///@changelog
+  ///@version 2.2
+  ///@hero Shard Magus
+  ///@ability Icicle Barrage
+  ///@changes #
+  /// Increased cooldown to 16s from 10s.
+  /// Increased icicle damage to 25 from 20.
+  /// Increased number of icicles to 10/20/30/40 from 8/16/24/32.
+  /// Reduced icicle range to 1200 from 1400.
+  
   "shard_magus_icicle_barrage"
   {
   	// General
@@ -26961,7 +27210,7 @@
   	
   	// Time		
   	//-------------------------------------------------------------------------------------------------------------
-  	"AbilityCooldown"				"10"
+  	"AbilityCooldown"				"16"
   
   	// Cost
   	//-------------------------------------------------------------------------------------------------------------
@@ -26983,12 +27232,12 @@
   		"02"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"icicles"					"15 20 25 30"
+  			"icicles"					"10 20 30 40"
   		}
   		"03"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"damage"					"20"
+  			"damage"					"25"
   		}
   		"04"
   		{
@@ -26998,7 +27247,7 @@
   		"05"
   		{
   			"var_type"					"FIELD_INTEGER"
-  			"range"						"1400" // total
+  			"range"						"1200" // total
   		}
   		"06"
   		{
@@ -40443,6 +40692,17 @@
 
   //. . . . . . . . . . . . .
 
+  ///@changelog
+  ///@version 2.2
+  ///@type HERO_ABILITY
+  ///@hero War
+  ///@ability Bloodlust
+  ///@changes #
+  /// Deals damage for a set duration of 6.0s.
+  /// Silences affected units.
+  /// Deals 30/45/60/75 + 20/30/40/50% of the target's attack damage every 2s.
+  /// Dispelled when the unit makes 3 successful attacks against enemy Heroes.
+  
   "war_bloodlust"
   {
       // General
@@ -40451,13 +40711,13 @@
       "ScriptFile"            "lua/abilities/war_bloodlust"
       "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
       "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-      "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"
+      "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
       "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
       "AbilityCastAnimation"          "ACT_DOTA_OVERRIDE_ABILITY_2"
       "AnimationPlaybackRate"         "1.50"
       "FightRecapLevel"               "1"
       "AbilityTextureName"            "war_bloodlust"
-      "AoERadius"                     "275"
+      "AoERadius"                     "325"
       
       // Casting
       //-------------------------------------------------------------------------------------------------------------
@@ -40466,7 +40726,7 @@
   
       // Time     
       //-------------------------------------------------------------------------------------------------------------
-      "AbilityCooldown"               "20"
+      "AbilityCooldown"               "12"
   
       // Cost
       //-------------------------------------------------------------------------------------------------------------
@@ -40485,36 +40745,48 @@
               "var_type"              "FIELD_INTEGER"
               "bonus_attack_damage"   "30"
           }
-  
+          
           "02"
           {
               "var_type"              "FIELD_INTEGER"
-              "bonus_attack_speed"    "30"
+              "radius"                "325"
           }
-          
+  
           "03"
           {
-              "var_type"              "FIELD_INTEGER"
-              "radius"                "275"
+              "var_type"              "FIELD_FLOAT"
+              "duration"              "6.0"
           }
   
           "04"
           {
-              "var_type"              "FIELD_FLOAT"
-              "duration"              "10.0"
+              "var_type"              "FIELD_INTEGER"
+              "dot"                   "15"
+              "LinkedSpecialBonus"    "special_bonus_war_3"
           }
   
           "05"
           {
               "var_type"              "FIELD_INTEGER"
-              "dot"                   "15 25 35 45"
-              "LinkedSpecialBonus"    "special_bonus_war_3"
+              "slow"                  "15 20 25 30"
           }
   
           "06"
           {
               "var_type"              "FIELD_INTEGER"
-              "slow"                  "15"
+              "attacks"               "3"
+          }
+  
+          "07"
+          {
+              "var_type"              "FIELD_INTEGER"
+              "attack_damage"         "20 30 40 50"
+          }
+  
+          "08"
+          {
+              "var_type"              "FIELD_FLOAT"
+              "interval"              "0.5"
           }
       }
   
@@ -40610,7 +40882,7 @@
       "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
       "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
       "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-      "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"
+      "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
       "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
       "AbilityCastAnimation"          "ACT_DOTA_OVERRIDE_ABILITY_1"
       "AnimationPlaybackRate"         "0.60"
@@ -40659,7 +40931,7 @@
           "04"
           {
               "var_type"              "FIELD_INTEGER"
-              "mult"                  "50"
+              "mult"                  "40 60 80"
           }
   
           "05"

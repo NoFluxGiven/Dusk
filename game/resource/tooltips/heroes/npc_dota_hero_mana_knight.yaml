@@ -1,87 +1,6 @@
-Abilities:
-  mana_knight_arcanum_break:
-    data:
-      Description: The Mindflayer's attacks have a chance to strike at the soul of
-        his targets, shattering their Magical energies. Removes Mana from the target,
-        and deals bonus Magical damage, alongside reducing all outgoing spell damage
-        for a short time.
-      bonus_damage: 'BONUS DAMAGE:'
-      chance: '%CHANCE:'
-      duration: 'DURATION:'
-      mana_burn: 'MANA BURN:'
-      spell_damage_reduction: '%SPELL DAMAGE REDUCTION:'
-    modifiers:
-      arcanum_break_spell_damage:
-      - Arcanum Break
-      - Spell damage is reduced.
-    name: Arcanum Break
-  mana_knight_infusion_bolt:
-    data:
-      Description: Mindflayer fires a bolt at the target that stuns them, and deals
-        damage based on their missing Mana.
-      damage: '%MISSING MANA AS DAMAGE:'
-      max_damage: 'MAXIMUM DAMAGE:'
-      min_damage: 'MINIMUM DAMAGE:'
-      stun: 'STUN:'
-    modifiers: {}
-    name: Infusion Bolt
-  mana_knight_mana_seal:
-    data:
-      Description: The Mindflayer creates a glyph that seals away Magical energies,
-        gradually draining the Mana of enemies that stand upon it. If their Mana hits
-        0, they are mini-stunned, damaged and slowed for 1.5s. Ignores targets affected
-        by the 0 Mana mini-stun for a short time afterwards.
-      aghanim_Description: Upgrades Mana Seal to pierce Magic Immunity, increases
-        the mana drain per second, reduces the ignore time to 4s, and makes the damage
-        upon reaching zero Mana Pure.
-      cooldown: 'COOLDOWN TIME:'
-      damage: 'DAMAGE:'
-      duration: 'DURATION:'
-      mana_removal: '%MANA REMOVAL PER SECOND:'
-      mana_removal_scepter: '%SCEPTER MANA REMOVAL PER SECOND:'
-      slow: '%SLOW'
-    modifiers:
-      mana_seal_cooldown:
-      - Mana Seal Prevention
-      - Prevented from being affected by Mana Seal's 0 Mana effects.
-      mana_seal_slow:
-      - Mana Seal
-      - Slowed.
-    name: Mana Seal
-  mana_knight_vorpal_assault:
-    data:
-      Description: The Mindflayer unleashes a flurry of anti-Magic energy at the target,
-        dealing damage, burning Mana, and cumulatively Silencing them. Each bolt applies
-        its effects separately, and is not a projectile; it hits instantly. There
-        is a short delay between the bolts.
-      bolts: 'BOLTS:'
-      damage: 'DAMAGE:'
-      mana_burn: 'MANA BURN:'
-      silence_duration: 'SILENCE DURATION PER BOLT:'
-    modifiers:
-      vorpal_assault_silence:
-      - Vorpal Assault
-      - Silenced, having lost Mana.
-    name: Vorpal Assault
-  special_bonus_mana_knight_1:
-    data:
-      Description: The Silence occurs when it's placed and is independent of the duration
-        of the Mana Seal.
-    modifiers: {}
-    name: Mana Seal Silences For 3s
-  special_bonus_mana_knight_2:
-    data: {}
-    modifiers: {}
-    name: +80 Arcanum Break Damage
-  special_bonus_mana_knight_3:
-    data: {}
-    modifiers: {}
-    name: +7% Mana Seal Drain
-  special_bonus_mana_knight_4:
-    data: {}
-    modifiers: {}
-    name: +2.5s Infusion Bolt Stun
 Hero:
+  modref: npc_dota_hero_mana_knight
+  ref: npc_dota_hero_chaos_knight
   data:
     bio: ''
     hype: Mindflayer, as the name implies, can destroy most casters. While his Ultimate,
@@ -90,6 +9,87 @@ Hero:
       standing in it. Should they reach zero Mana, they are mini-stunned, slowed,
       and take Magical damage, allowing him to continue his onslaught of stuns and
       Mana burning crits.
-  modref: npc_dota_hero_mana_knight
   name: Mindflayer
-  ref: npc_dota_hero_chaos_knight
+Abilities:
+  mana_knight_infusion_bolt:
+    name: Infusion Bolt
+    data:
+      Description: Mindflayer fires a bolt at the target that stuns them, and deals
+        damage based on their missing Mana.
+      damage: '%MISSING MANA AS DAMAGE:'
+      min_damage: 'MINIMUM DAMAGE:'
+      max_damage: 'MAXIMUM DAMAGE:'
+      stun: null
+    modifiers: {}
+  mana_knight_mana_seal:
+    name: Mana Seal
+    data:
+      Description: The Mindflayer creates a glyph that seals away Magical energies,
+        gradually draining the Mana of enemies that stand upon it. If their Mana hits
+        0, they are mini-stunned, damaged and slowed for 1.5s. Ignores targets affected
+        by the 0 Mana mini-stun for a short time afterwards.
+      aghanim_Description: Upgrades Mana Seal to pierce Magic Immunity, increases
+        the mana drain per second, reduces the ignore time to 4s, and makes the damage
+        upon reaching zero Mana Pure.
+      damage: null
+      mana_removal: '%MANA REMOVAL PER SECOND:'
+      mana_removal_scepter: '%SCEPTER MANA REMOVAL PER SECOND:'
+      slow: '%SLOW'
+      duration: null
+      cooldown: 'COOLDOWN TIME:'
+    modifiers:
+      modifier_mana_seal_cooldown:
+      - Mana Seal Prevention
+      - Prevented from being affected by Mana Seal's 0 Mana effects.
+      modifier_mana_seal_slow:
+      - Mana Seal
+      - Slowed.
+  mana_knight_arcanum_break:
+    name: Arcanum Break
+    data:
+      Description: The Mindflayer's attacks have a chance to strike at the soul of
+        his targets, shattering their Magical energies. Removes Mana from the target,
+        and deals bonus Magical damage, alongside reducing all outgoing spell damage
+        for a short time.
+      bonus_damage: 'BONUS DAMAGE:'
+      duration: null
+      spell_damage_reduction: '%SPELL DAMAGE REDUCTION:'
+      mana_burn: 'MANA BURN:'
+      chance: '%CHANCE:'
+    modifiers:
+      modifier_arcanum_break_spell_damage:
+      - Arcanum Break
+      - Spell damage is reduced.
+  mana_knight_vorpal_assault:
+    name: Vorpal Assault
+    data:
+      Description: The Mindflayer unleashes a flurry of anti-Magic energy at the target,
+        dealing damage, burning Mana, and cumulatively Silencing them. Each bolt applies
+        its effects separately, and is not a projectile; it hits instantly. There
+        is a short delay between the bolts.
+      bolts: null
+      damage: null
+      mana_burn: 'MANA BURN:'
+      silence_duration: 'SILENCE DURATION PER BOLT:'
+    modifiers:
+      modifier_vorpal_assault_silence:
+      - Vorpal Assault
+      - Silenced, having lost Mana.
+  special_bonus_mana_knight_1:
+    name: Mana Seal Silences For 3s
+    data:
+      Description: The Silence occurs when it's placed and is independent of the duration
+        of the Mana Seal.
+    modifiers: {}
+  special_bonus_mana_knight_2:
+    name: +80 Arcanum Break Damage
+    data: {}
+    modifiers: {}
+  special_bonus_mana_knight_3:
+    name: +7% Mana Seal Drain
+    data: {}
+    modifiers: {}
+  special_bonus_mana_knight_4:
+    name: +2.5s Infusion Bolt Stun
+    data: {}
+    modifiers: {}

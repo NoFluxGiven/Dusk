@@ -1,128 +1,108 @@
 Hero:
+  modref: npc_dota_hero_shade
+  ref: npc_dota_hero_bounty_hunter
   data:
     bio: Few possess a reputation capable of striking fear into the Arca of the realm,
       but the Nightwalker was one. A veteran assassin, and a slayer of countless mages,
-      he tore across Lochraith at the drop of a coin, seemingly unstoppable.
-      Not all lives were his, however; a young Arca had seen him coming days in advance,
-      and set a devious trap.
-      Caught in a powerful binding spell, he prepared to take his last breath,
-      but the Arca hesitated. For all the trouble he had caused, all those he had killed in the
-      name of avarice, he deserved worse than death. His punishment would forever be wandering a dark void,
-      unable to escape, with no need for material goods, with no quarries to find.
-      She hastily weaved a dark, terrible curse, full of isolation and solitude.
-      But curses are fickle creatures, born of terrible, turbulent emotions. She realised her mistake all but a second
-      too late. Using the very threads she had weaved prior, the Nightwalker tore her from the plane, imprisoning
-      her in a desolate realm, using his undying connection with her to weave dark magic of his own.
+      he tore across Lochraith at the drop of a coin, seemingly unstoppable. Not all
+      lives were his, however; a young Arca had seen him coming days in advance, and
+      set a devious trap. Caught in a powerful binding spell, he prepared to take
+      his last breath, but the Arca hesitated. For all the trouble he had caused,
+      all those he had killed in the name of avarice, he deserved worse than death.
+      His punishment would forever be wandering a dark void, unable to escape, with
+      no need for material goods, with no quarries to find. She hastily weaved a dark,
+      terrible curse, full of isolation and solitude. But curses are fickle creatures,
+      born of terrible, turbulent emotions. She realised her mistake all but a second
+      too late. Using the very threads she had weaved prior, the Nightwalker tore
+      her from the plane, imprisoning her in a desolate realm, using his undying connection
+      with her to weave dark magic of his own.
     hype: Shade is a powerful Agility Hero that relies on his enemies being isolated
       to deal his damage. His blades are coated in Darkwyrm Venom, dealing damage
-      based on the amount of debuffs his opponent has.
-      He can Stalk a target to inflict a large amount of Physical damage
-      and slow, and he can sustain in fights with his terrifying Dark
-      Hunger. His Ultimate, Isolation, may remove an enemy from their allies, crippling their
-      ability to deal damage.
-  modref: npc_dota_hero_shade
+      based on the amount of debuffs his opponent has. He can Stalk a target to inflict
+      a large amount of Physical damage and slow, and he can sustain in fights with
+      his terrifying Dark Hunger. His Ultimate, Isolation, may remove an enemy from
+      their allies, crippling their ability to deal damage.
   name: Shade
-  ref: npc_dota_hero_bounty_hunter
-
 Abilities:
-  shade_dark_hunger:
+  shade_stalk:
+    name: Stalk
     data:
-      Lore: Shade feeds on his opponents' souls as they slip.
-      creep_heal: 'HEAL AMOUNT (CREEPS):'
-      description: Shade surrounds himself in dark energy, taking damage over time. While affected,
-        he drains Health from nearby enemies, with each subsequent proc draining more.
-      health_drain: '%HEALTH DRAIN:'
-      health_drain_max: "%MAX HEALTH DRAIN:"
-      proc_increase: "%INCREASE PER PROC:"
-      radius: 'RADIUS:'
-    modifiers: {}
+      lore: The venom that coats the blades of the Nightwalker can down giants with
+        a single drop.
+      description: The target enemy is slowed and granted vision of, while Shade becomes
+        invisible and moves faster. When attacking the enemy, he deals bonus Physical
+        damage and applies a debuff that slows and deals Physical damage over time.
+      duration: null
+      movespeed_bonus: '%MOVESPEED INCREASE:'
+      proc_damage: 'DAMAGE:'
+      slow: '%SLOW:'
+    modifiers:
+      modifier_stalk:
+      - Stalking...
+      - Stalking a target and dealing Pure bonus damage when attacking them.
+      modifier_stalk_target:
+      - Stalked
+      - You're being watched... careful.
+  shade_dark_hunger:
     name: Dark Hunger
-
+    data:
+      lore: Shade feeds on his opponents' souls as they slip.
+      creep_heal: 'HEAL AMOUNT (CREEPS):'
+      description: Shade surrounds himself in dark energy, taking damage over time.
+        While affected, he drains Health from nearby enemies, spreading the drain
+        amount equally between all within the effective radius.
+      health_drain: 'HEALTH DRAIN:'
+      duration: null
+      radius: null
+    modifiers: {}
+  shade_shadowshift:
+    name: Shadowshift
+    data:
+      lore: ''
+      description: Shade melds into the shadows, becoming <b>Untargetable</b>, moving
+        %movespeed%%% faster and able to walk through units and terrain.
+    modifiers:
+      modifier_shadowshift:
+      - Shadowshift
+      - Untargetable, moving faster, and able to move through terrain and units.
   shade_isolation:
+    name: Isolation
     data:
       damage_reduction: '%DAMAGE REDUCTION:'
       description: The Nightwalker causes the target enemy to emit a shockwave, dealing
         a small amount of damage, and petrifying all of their nearby allies for a
         short time. The main target has their total damage output reduced and is blinded.
-      duration: 'DURATION:'
-      radius: 'RADIUS:'
+      duration: null
+      radius: null
       slow: '%SLOW:'
     modifiers:
-      isolation:
+      modifier_isolation:
       - Isolation
       - Damage reduced.
-      isolation_petrify:
+      modifier_isolation_petrify:
       - Isolation
       - Petrified and unable to help your allies at all.
-    name: Isolation
-
-  shade_stalk:
-    data:
-      Lore: The venom that coats the blades of the Nightwalker can down giants with
-        a single drop.
-      description: The target enemy is slowed and granted vision of, while Shade becomes
-        invisible and moves faster. When attacking the enemy, he deals bonus Physical damage
-        and applies a debuff that slows and deals Physical damage over time.
-      duration: 'DURATION:'
-      movespeed_bonus: '%MOVESPEED INCREASE:'
-      proc_damage: 'DAMAGE:'
-      slow: '%SLOW:'
-    modifiers:
-      stalk:
-      - Stalking...
-      - Stalking a target and dealing Pure bonus damage when attacking them.
-      stalk_target:
-      - Stalked
-      - You're being watched... careful.
-    name: Stalk
-
-  shade_shadowshift:
-    data:
-      Lore: 
-      description: The caster becomes a shadow, unable to cast Spells, use Items, attack, or deal any damage, but becoming Invulnerable for a short duration.
-    modifiers:
-      shadowshift:
-      - Shadowshift
-      - Invulnerable, but only able to move.
-    name: Venomous
-
-  shade_venomous:
-    data:
-      Lore: 
-      description: Shade applies a powerful Darkwyrm Venom that deals more damage the more debuffs the opponent is affected by.
-        Deals %damage% damage per second per debuff.
-    modifiers:
-      venomous_lua:
-      - Venomous
-      - Taking damage over time and losing Armor.
-    name: Venomous
-
   special_bonus_shade_1:
-    data: {}
-    modifiers: {}
     name: +2.5s Stalk Duration
-
+    data: {}
+    modifiers: {}
   special_bonus_shade_2:
-    data: {}
-    modifiers: {}
     name: +20 Venomous DPS
-
+    data: {}
+    modifiers: {}
   special_bonus_shade_3:
-    data: {}
-    modifiers: {}
     name: +8% Dark Hunger Hero Heal
-
+    data: {}
+    modifiers: {}
   special_bonus_shade_4:
-    data: {}
-    modifiers: {}
     name: Isolation Stuns for 2s
-
+    data: {}
+    modifiers: {}
   special_bonus_shade_5:
-    data: {}
-    modifiers: {}
     name: +4 Venomous Armor Reduction
-
-  special_bonus_shade_6:
     data: {}
     modifiers: {}
+  special_bonus_shade_6:
     name: +275 Stalk Damage
+    data: {}
+    modifiers: {}

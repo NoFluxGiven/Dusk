@@ -30,17 +30,10 @@ function war_fight_me:OnSpellStart()
 	for k,v in pairs(enemy_found) do
 		if not v:IsMagicImmune() then
 			v:AddNewModifier(caster, self, mod, {Duration=duration-0.1})
-			local atk_dmg = v:GetAverageTrueAttackDamage(v)
-
-			if not v:IsRealHero() then
-				atk_dmg = atk_dmg * 0.33
-			end
-			
-			caster.fight_me_damage = caster.fight_me_damage + atk_dmg
 		end
 	end
 
-	caster:AddNewModifier(caster, self, mod2, {Duration=duration}) --[[Returns:void
+	caster:AddNewModifier(caster, self, mod2, {Duration=duration, stacks=1}) --[[Returns:void
 	No Description Set
 	]]
 end
@@ -49,9 +42,15 @@ modifier_fight_me = class({})
 
 function modifier_fight_me:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+		MODIFIER_EVENT_ON_ATTACK_FINISHED
 	}
 	return funcs
+end
+
+function modifier_fight_me:CheckState()
+	local state = self.state
+	return state
 end
 
 function modifier_fight_me:GetModifierAttackSpeedBonus_Constant()
@@ -60,7 +59,7 @@ function modifier_fight_me:GetModifierAttackSpeedBonus_Constant()
 	]]
 end
 
-function modifier_fight_me:OnCreated()
+function modifier_fight_me:OnCreated(params)
 	self:StartIntervalThink(0.03)
 end
 
@@ -79,6 +78,21 @@ function modifier_fight_me:OnIntervalThink()
 			end
 		end
 		target:SetForceAttackTarget(target)
+
+		self.state = {
+			[MODIFIER_STATE_COMMAND_RESTRICTED] = target:IsAttacking() and true or false,
+			[MODIFIER_STATE_TAUNTED] = true
+		}
+	end
+end
+
+function modifier_fight_me:OnAttackFinished(params)
+	if ( params.attacker == self:GetParent() ) then
+		if params.target:HasModifier("modifier_fight_me_regen") and params.attacker:IsRealHero() then
+			local mod = params.target:FindModifierByName("modifier_fight_me_regen")
+
+			mod:IncrementStackCount()
+		end
 	end
 end
 
@@ -103,39 +117,40 @@ function modifier_fight_me_regen:OnDestroy()
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 
 		local base_damage = self:GetAbility():GetSpecialValueFor("base_damage")
+		local additional_damage = self:GetAbility():GetSpecialValueFor("damage_per_attack") * self:GetStackCount()
 
-		if caster.fight_me_damage then
-			local all = FindEnemies(caster,caster:GetAbsOrigin(),99999)
-			for k,v in pairs(all) do
-				if v:HasModifier("modifier_fight_me") then
-					v:RemoveModifierByName("modifier_fight_me")
-				end
+		local dmg = base_damage + additional_damage
+
+		-- Remove the modifier from all enemies with it
+
+		local all = FindEnemies(caster,caster:GetAbsOrigin(),99999)
+
+		for k,v in pairs(all) do
+			if v:HasModifier("modifier_fight_me") then
+				v:RemoveModifierByName("modifier_fight_me")
 			end
+		end
 
-			if not caster:IsAlive() then return end
+		if not caster:IsAlive() then return end
 
-			caster:EmitSound("Hero_Axe.Berserkers_Call")
+		-- Deal AOE damage
 
-			local enemy_found = FindEnemies(caster,caster:GetAbsOrigin(),radius)
+		local enemy_found = FindEnemies(caster,caster:GetAbsOrigin(),radius)
+		
+		local p = ParticleManager:CreateParticle("particles/units/heroes/hero_war/fight_me_damage.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+				  ParticleManager:SetParticleControl(p, 1, Vector(radius,0,0))
+
+		caster:EmitSound("Hero_Axe.Berserkers_Call")
+
+		for k,v in pairs(enemy_found) do
+			self:GetAbility():InflictDamage(v,caster,dmg,self:GetAbility():GetAbilityDamageType())
 			
-			local p = ParticleManager:CreateParticle("particles/units/heroes/hero_war/fight_me_damage.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster) --[[Returns:int
-			Creates a new particle effect
-			]]
-
-			local dmg = caster.fight_me_damage
-			local mult = self:GetAbility():GetSpecialValueFor("mult")/100
-			dmg = dmg*mult + base_damage
-
-			ParticleManager:SetParticleControl(p, 1, Vector(radius,0,0)) --[[Returns:void
-			Set the control point data for a control on a particle effect
-			]]
-			for k,v in pairs(enemy_found) do
-				self:GetAbility():InflictDamage(v,caster,dmg,DAMAGE_TYPE_PURE)
-			end
-
-			caster.fight_me_damage = 0
 		end
 	end
+end
+
+function modifier_fight_me_regen:OnCreated(params)
+	self:SetStackCount(params.stacks)
 end
 
 function modifier_fight_me_regen:IsPurgable()

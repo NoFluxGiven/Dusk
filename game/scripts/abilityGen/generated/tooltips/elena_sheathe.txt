@@ -1,0 +1,3 @@
+Elena globally prevents all allied and enemy Heroes from attacking for
+%duration% seconds, reducing their outgoing damage by
+%damage_reduction%%. Dispellable via a Strong Dispel.

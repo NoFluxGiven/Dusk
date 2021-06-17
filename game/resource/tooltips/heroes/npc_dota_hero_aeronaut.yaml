@@ -1,33 +1,27 @@
+Hero:
+  modref: npc_dota_hero_aeronaut
+  ref: npc_dota_hero_shredder
+  data: {}
+  name: Aeronaut
 Abilities:
-  aeronaut_aerial_ace:
+  aeronaut_upwind:
+    name: Upwind
     data:
-      Description: Gundalar's fighting prowess increases when he is airborne, granting
-        him bonus movespeed and attack speed. Additionally, when striking grounded
-        units while Flying, he deals bonus damage and slows them for a short time.
-      bonus_attack_speed: 'BONUS ATTACK SPEED:'
-      bonus_damage: 'BONUS DAMAGE:'
-      bonus_movespeed: '%BONUS MOVESPEED:'
-      slow: '%SLOW:'
-      slow_duration: 'SLOW DURATION:'
+      Description: The Aeronaut creates a blast of air that knocks him and nearby
+        enemies upwards, leaving them floating for a short time. Enemies affected
+        take Pure damage, and while they are floating, they are Rooted. Meanwhile,
+        the Aeronaut gains Flying movement and bonus attack range for a long duration.
+      damage: null
+      radius: null
+      duration: 'ROOT DURATION:'
+      bonus_attack_range: 'BONUS ATTACK RANGE:'
+      bonus_duration: 'EXTRA FLYING DURATION:'
     modifiers:
-      aerial_ace_slow:
-      - Slow
-      - Attacked by an airborne Aeronaut, alas!
-    name: Aerial Ace
-  aeronaut_air_raid:
-    data:
-      Description: Gundalar fires attacks at random enemies within a large radius.
-        The attacks fully preserve UAMs and procs, and deal full damage. If he is
-        stunned or disarmed, the attacks will not fire.
-      duration: 'DURATION:'
-      interval: 'INTERVAL:'
-      radius: 'RADIUS:'
-    modifiers:
-      air_raid:
-      - Air Raid
-      - Attacking random enemies in a large radius.
-    name: Air Raid
+      modifier_upwind_root:
+      - Rooted
+      - You're floating in the air... cannot move!
   aeronaut_dashy_dashy:
+    name: Dashy Dashy
     data:
       Description: The Aeronaut dashes forward. Any unit hit by him during the dash
         takes Pure damage, is mini-stunned, and stops the dash. The dash will only
@@ -35,61 +29,63 @@ Abilities:
       Lore: In his early days, the Aeronaut delegated the naming of his techniques
         to an ancient being, who, in his blocky, colourful and gravity-filled wisdom,
         named one Dashy Dashy.
-      damage: 'DAMAGE:'
-      distance: 'DISTANCE:'
-      knockback: 'KNOCKBACK:'
-      radius: 'RADIUS:'
+      damage: null
+      radius: null
       stun: 'STUN DURATION:'
+      knockback: null
+      distance: null
     modifiers: {}
-    name: Dashy Dashy
+  aeronaut_aerial_ace:
+    name: Aerial Ace
+    data:
+      Description: Gundalar's fighting prowess increases when he is airborne, granting
+        him bonus movespeed and attack speed. Additionally, when striking grounded
+        units while Flying, he deals bonus damage and slows them for a short time.
+      bonus_movespeed: '%BONUS MOVESPEED:'
+      bonus_attack_speed: 'BONUS ATTACK SPEED:'
+      bonus_damage: 'BONUS DAMAGE:'
+      slow: '%SLOW:'
+      slow_duration: 'SLOW DURATION:'
+    modifiers:
+      modifier_aerial_ace_slow:
+      - Slow
+      - Attacked by an airborne Aeronaut, alas!
   aeronaut_hidden_engine:
+    name: Hidden Engine
     data:
       Description: ''
     modifiers: {}
-    name: Hidden Engine
   aeronaut_land:
+    name: Land
     data:
       Description: Immediately land if flying due to Upwind.
-    modifiers:
-      elandras_blessing:
-      - Elandra's Blessing
-      - Receiving bonus damage and Armor, and dealing damage based on your main Attribute
-        when attacked.
-    name: Land
-  aeronaut_upwind:
+    modifiers: {}
+  aeronaut_air_raid:
+    name: Air Raid
     data:
-      Description: The Aeronaut creates a blast of air that knocks him and nearby
-        enemies upwards, leaving them floating for a short time. Enemies affected
-        take Pure damage, and while they are floating, they are Rooted. Meanwhile,
-        the Aeronaut gains Flying movement and bonus attack range for a long duration.
-      bonus_attack_range: 'BONUS ATTACK RANGE:'
-      bonus_duration: 'EXTRA FLYING DURATION:'
-      damage: 'DAMAGE:'
-      duration: 'ROOT DURATION:'
-      radius: 'RADIUS:'
+      Description: Gundalar fires attacks at random enemies within a large radius.
+        The attacks fully preserve UAMs and procs, and deal full damage. If he is
+        stunned or disarmed, the attacks will not fire.
+      interval: null
+      duration: null
+      radius: null
     modifiers:
-      upwind_root:
-      - Rooted
-      - You're floating in the air... cannot move!
-    name: Upwind
+      modifier_air_raid:
+      - Air Raid
+      - Attacking random enemies in a large radius.
   special_bonus_aeronaut_1:
-    data: {}
-    modifiers: {}
     name: +200 Dashy Dashy Knockback/Distance
-  special_bonus_aeronaut_2:
     data: {}
     modifiers: {}
-    name: +100 Aerial Ace Attack Speed
-  special_bonus_aeronaut_4:
-    data: {}
-    modifiers: {}
-    name: -0.2s Air Raid Interval
   special_bonus_aeronaut_5:
+    name: +2s Upwind Fly Duration
     data: {}
     modifiers: {}
-    name: +2s Upwind Fly Duration
-Hero:
-  data: {}
-  modref: npc_dota_hero_aeronaut
-  name: Aeronaut
-  ref: npc_dota_hero_shredder
+  special_bonus_aeronaut_4:
+    name: -0.2s Air Raid Interval
+    data: {}
+    modifiers: {}
+  special_bonus_aeronaut_2:
+    name: +100 Aerial Ace Attack Speed
+    data: {}
+    modifiers: {}

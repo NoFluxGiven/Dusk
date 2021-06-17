@@ -2426,7 +2426,7 @@
 	///// ABILITIES AND MODIFIERS /////
 
 	"DOTA_Tooltip_ability_ptomely_astralise"    "Elyat's Bellow"
-	"DOTA_Tooltip_ability_ptomely_astralise_description"    "<p>Pride stabs his spear into the ground, summoning power from the souls of his family that wander the Betwixt. Creates a blast of energy that appears at the target location and deals %damage% damage. Targets affected are <strong>Silenced</strong> and <strong>Muted</strong> for a short time. Lasts %duration% seconds. Dispellable, fully blocked by Spell Immunity.</p>"
+	"DOTA_Tooltip_ability_ptomely_astralise_description"    "Pride stabs his spear into the ground, summoning power from the souls of his family that wander the Betwixt. Creates a blast of energy that appears at the target location and deals %damage% damage. Targets affected are <b>Silenced</b> and <b>Muted</b> for a short time. Lasts %duration% seconds. Dispellable, fully blocked by Spell Immunity."
 	"DOTA_Tooltip_ability_ptomely_astralise_damage"    "DAMAGE:"
 	"DOTA_Tooltip_ability_ptomely_astralise_duration"    "DURATION:"
 		"DOTA_Tooltip_modifier_elyats_bellow"    "Elyat's Bellow"
@@ -2764,10 +2764,9 @@
 	"DOTA_Tooltip_ability_shade_dark_hunger"    "Dark Hunger"
 	"DOTA_Tooltip_ability_shade_dark_hunger_lore"    "Shade feeds on his opponents' souls as they slip."
 	"DOTA_Tooltip_ability_shade_dark_hunger_creep_heal"    "HEAL AMOUNT (CREEPS):"
-	"DOTA_Tooltip_ability_shade_dark_hunger_description"    "Shade surrounds himself in dark energy, taking damage over time. While affected, he drains Health from nearby enemies, with each subsequent proc draining more."
-	"DOTA_Tooltip_ability_shade_dark_hunger_health_drain"    "%HEALTH DRAIN:"
-	"DOTA_Tooltip_ability_shade_dark_hunger_health_drain_max"    "%MAX HEALTH DRAIN:"
-	"DOTA_Tooltip_ability_shade_dark_hunger_proc_increase"    "%INCREASE PER PROC:"
+	"DOTA_Tooltip_ability_shade_dark_hunger_description"    "Shade surrounds himself in dark energy, taking damage over time. While affected, he drains Health from nearby enemies, spreading the drain amount equally between all within the effective radius."
+	"DOTA_Tooltip_ability_shade_dark_hunger_health_drain"    "HEALTH DRAIN:"
+	"DOTA_Tooltip_ability_shade_dark_hunger_duration"    "DURATION:"
 	"DOTA_Tooltip_ability_shade_dark_hunger_radius"    "RADIUS:"
 
 
@@ -2796,11 +2795,11 @@
 		"DOTA_Tooltip_modifier_stalk_target_description"    "You're being watched... careful."
 
 
-	"DOTA_Tooltip_ability_shade_shadowshift"    "Venomous"
+	"DOTA_Tooltip_ability_shade_shadowshift"    "Shadowshift"
 	"DOTA_Tooltip_ability_shade_shadowshift_lore"    ""
-	"DOTA_Tooltip_ability_shade_shadowshift_description"    "The caster becomes a shadow, unable to cast Spells, use Items, attack, or deal any damage, but becoming Invulnerable for a short duration."
+	"DOTA_Tooltip_ability_shade_shadowshift_description"    "Shade melds into the shadows, becoming <b>Untargetable</b>, moving %movespeed%%% faster and able to walk through units and terrain."
 		"DOTA_Tooltip_modifier_shadowshift"    "Shadowshift"
-		"DOTA_Tooltip_modifier_shadowshift_description"    "Invulnerable, but only able to move."
+		"DOTA_Tooltip_modifier_shadowshift_description"    "Untargetable, moving faster, and able to move through terrain and units."
 
 
 	"DOTA_Tooltip_ability_shade_venomous"    "Venomous"

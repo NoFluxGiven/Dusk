@@ -1,0 +1,96 @@
+Abilities:
+  special_bonus_war_1:
+    data:
+      Description: 40% of the healing you gain from enemy attacks during FIGHT ME!!
+        is also restored as Mana.
+    modifiers: {}
+    name: FIGHT ME! +40% Mana From Attacks
+  special_bonus_war_2:
+    data: {}
+    modifiers: {}
+    name: +100 Earthbreaker Radius
+  special_bonus_war_3:
+    data: {}
+    modifiers: {}
+    name: +25 Bloodlust DPS
+  special_bonus_war_4:
+    data: {}
+    modifiers: {}
+    name: -4s Earthbreaker Cooldown
+  war_berserker_aura:
+    data:
+      Description: Grants bonus attack damage and attack speed to nearby allies based
+        on their missing Health.
+      Note0: The damage bonus lingers for 2s after leaving the aura radius.
+      max_bonus_attack_speed: 'MAX BONUS ATTACK SPEED:'
+      max_bonus_damage: 'MAX BONUS DAMAGE:'
+      radius: 'RADIUS:'
+    modifiers:
+      berserker_aura_fx:
+      - Berserker Aura
+      - Gaining bonus attack speed and attack damage based on missing Health.
+    name: Berserker Aura
+  war_bloodlust:
+    data:
+      Description: Causes enemies in an area to gain bonus attack speed and attack
+        damage, but have their movement speed slowed and take damage over time for
+        a large duration. Each attack they make reduces the amount of time the debuff
+        stays on them.
+      bonus_attack_damage: 'BONUS ATTACK DAMAGE:'
+      bonus_attack_speed: 'BONUS ATTACK SPEED:'
+      dot: 'DAMAGE OVER TIME:'
+      duration: 'DURATION:'
+      radius: 'RADIUS:'
+      slow: '%SLOW:'
+    modifiers:
+      bloodlust:
+      - Bloodlust
+      - Gaining bonus attack damage and attack speed, and taking damage over time
+        while not attacking. Each attack reduces the amount of ticks of damage.
+      bloodlust_thinker:
+      - Bloodlust
+      - ''
+    name: Bloodlust
+  war_earthbreaker:
+    data:
+      Description: War slams the ground with his axe, stunning nearby enemies and
+        dealing Physical damage.
+      radius: 'RADIUS:'
+      stun: 'STUN:'
+    modifiers: {}
+    name: Earthbreaker
+  war_fight_me:
+    data:
+      Description: War goads his enemies into striking him. Each attack an affected
+        enemy makes against War causes him to regain Health instead of losing it.
+        At the end of the duration, he deals Pure damage equal to a portion of the
+        combined attack damage of all enemies affected and his own attack damage.
+        Bloodlust does not tick down for affected units. <b>Affected enemies do not
+        take damage from any source during the duration of this ability.</b>
+      Note0: Any damage dealt to War by the affected enemies recovers his Health,
+        regardless of whether its source was an attack or not.
+      Note1: If War dies, the effect ends early.
+      base_damage: 'BASE DAMAGE:'
+      duration: 'DURATION:'
+      mult: '%ATTACK DAMAGE:'
+      radius: 'RADIUS:'
+    modifiers:
+      fight_me:
+      - Fight Me!
+      - Forced to attack War. He regains Health from damage you deal to him, and Bloodlust
+        does not tick down.
+      fight_me_regen:
+      - Fight Me!
+      - Gaining Health from affected units' damaging abilities or attacks, then dealing
+        Magical damage.
+    name: FIGHT ME!
+Hero:
+  data:
+    bio: ''
+    hype: A tank with access to a powerful stun in Earthbreaker and damage over time
+      with Bloodlust, War is a dangerous Hero to play against. He is difficult to
+      kill, and his Ultimate, Fight Me!, makes him even more disruptive, turning his
+      opponent's damage against them.
+  modref: npc_dota_hero_war
+  name: War
+  ref: npc_dota_hero_axe

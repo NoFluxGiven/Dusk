@@ -1,6 +1,71 @@
+Hero:
+  modref: npc_dota_hero_reus
+  ref: npc_dota_hero_elder_titan
+  data:
+    bio: 'Many eons ago, before '
+    hype: "Not many Heroes can claim to have as much visceral impact with their abilities\
+      \ as Reus. Rending the earth itself asunder, Reu\ts may fire stunning rocks\
+      \ with Stoneblast, create slowing and damaging tremors with Magnitude, wallop\
+      \ enemies into next week with Gaia's Fury, and trap his enemies and allies in\
+      \ an arena that is impossible to escape-- buffing himself in the process-- with\
+      \ Ancient Arena."
+  name: Reus
 Abilities:
-  reus_ancient_arena:
+  reus_stoneblast:
+    name: Stoneblast
     data:
+      description: The Titan goes to toss a heavy slab of rock towards his target
+        location, dealing physical damage and stunning enemies caught in it.
+      stun: null
+      damage: null
+    modifiers: {}
+  reus_magnitude:
+    name: Magnitude
+    data:
+      description: Reus slams the ground to create an area that experiences deadly
+        tremors, dealing damage and slowing enemies periodically.  Slows allies by
+        30%%.
+      damage: null
+      radius: null
+      quake_interval: 'QUAKE INTERVAL:'
+      slow_duration: 'SLOW DURATION:'
+      slow: '%MOVE/ATTACK SLOW:'
+      duration: null
+    modifiers:
+      modifier_magnitude_slow:
+      - Magnitude Slow
+      - Being slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
+      modifier_magnitude_slow_ally:
+      - Magnitude Slow
+      - Being slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
+  reus_gaias_fury:
+    name: Gaia's Fury
+    data:
+      description: Reus charges his next attack with the power of the Earth. Upon
+        striking a target, he deals bonus Physical damage based on his Strength stat,
+        stuns them, and damages and slows all units in a large radius around them.
+        Works on towers, but deals 0.25x damage, and stuns for half the duration.
+      radius: 'DAMAGE/SLOW RADIUS:'
+      duration: 'BUFF DURATION:'
+      damage: 'STRENGTH TO DAMAGE:'
+      cleave_damage: '%AREA DAMAGE:'
+      stun: null
+      slow: '%SLOW:'
+      slow_duration: 'SLOW DURATION:'
+    modifiers:
+      modifier_gaias_fury:
+      - Gaia's Fury
+      - Next attack is dealing bonus damage based on Strength, dealing half and slowing
+        in an AoE, and stunning the main target.
+      modifier_gaias_fury_slow:
+      - Gaia's Fury Slow
+      - ''
+  reus_ancient_arena:
+    name: Ancient Arena
+    data:
+      description: Reus summons an arena of stone to trap his enemies.  Units on the
+        inside cannot exit, and units on the outside cannot enter.  Whilst within
+        the Arena, Reus gains bonus move speed, attack speed, damage and armor.
       Note0: For almost all cases, units that are spawned inside the arena are not
         removed from it.  This includes illusions, summoned units, temporary units,
         and heroes.
@@ -11,98 +76,33 @@ Abilities:
       Note2: Has a maximum check range of 3000. If a unit goes beyond this range,
         they will not be pulled back into the arena.
       Note3: This spell pierces Spell Immunity.
-      bonus_armor: 'ARMOR:'
+      radius: null
       bonus_attackspeed: 'ATTACK SPEED:'
-      bonus_damage: 'BASE DAMAGE:'
       bonus_movespeed: '%MOVE SPEED:'
-      description: Reus summons an arena of stone to trap his enemies.  Units on the
-        inside cannot exit, and units on the outside cannot enter.  Whilst within
-        the Arena, Reus gains bonus move speed, attack speed, damage and armor.
-      duration: 'DURATION:'
-      radius: 'RADIUS:'
+      bonus_damage: 'BASE DAMAGE:'
+      bonus_armor: 'ARMOR:'
+      duration: null
     modifiers:
-      ancient_arena_caster:
-      - Ancient Arena
-      - Gaining various bonuses while in the Arena.
-      ancient_arena_sticky:
+      modifier_ancient_arena_sticky:
       - Ancient Arena
       - Cannot leave the arena!
-    name: Ancient Arena
-  reus_gaias_fury:
-    data:
-      cleave_damage: '%AREA DAMAGE:'
-      damage: 'STRENGTH TO DAMAGE:'
-      description: Reus charges his next attack with the power of the Earth. Upon
-        striking a target, he deals bonus Physical damage based on his Strength stat,
-        stuns them, and damages and slows all units in a large radius around them.
-        Works on towers, but deals 0.25x damage, and stuns for half the duration.
-      duration: 'BUFF DURATION:'
-      radius: 'DAMAGE/SLOW RADIUS:'
-      slow: '%SLOW:'
-      slow_duration: 'SLOW DURATION:'
-      stun: 'STUN:'
-    modifiers:
-      gaias_fury:
-      - Gaia's Fury
-      - Next attack is dealing bonus damage based on Strength, dealing half and slowing
-        in an AoE, and stunning the main target.
-      gaias_fury_slow:
-      - Gaia's Fury Slow
-      - ''
-    name: Gaia's Fury
-  reus_magnitude:
-    data:
-      damage: 'DAMAGE:'
-      description: Reus slams the ground to create an area that experiences deadly
-        tremors, dealing damage and slowing enemies periodically.  Slows allies by
-        30%%.
-      duration: 'DURATION:'
-      quake_interval: 'QUAKE INTERVAL:'
-      radius: 'RADIUS:'
-      slow: '%MOVE/ATTACK SLOW:'
-      slow_duration: 'SLOW DURATION:'
-    modifiers:
-      magnitude_slow:
-      - Magnitude Slow
-      - Being slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
-      magnitude_slow_ally:
-      - Magnitude Slow
-      - Being slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
-    name: Magnitude
-  reus_stoneblast:
-    data:
-      damage: 'DAMAGE:'
-      description: The Titan goes to toss a heavy slab of rock towards his target
-        location, dealing physical damage and stunning enemies caught in it.
-      stun: 'STUN:'
-    modifiers: {}
-    name: Stoneblast
+      modifier_ancient_arena_caster:
+      - Ancient Arena
+      - Gaining various bonuses while in the Arena.
   special_bonus_reus_1:
-    data: {}
-    modifiers: {}
     name: +40 Magnitude Damage
+    data: {}
+    modifiers: {}
   special_bonus_reus_2:
-    data: {}
-    modifiers: {}
     name: +0.8s Gaia's Fury Stun
-  special_bonus_reus_3:
     data: {}
     modifiers: {}
+  special_bonus_reus_3:
     name: +100 Stoneblast Damage
+    data: {}
+    modifiers: {}
   special_bonus_reus_4:
+    name: Half Magnitude Quake Interval
     data:
       Description: Magnitude hits twice as often.
     modifiers: {}
-    name: Half Magnitude Quake Interval
-Hero:
-  data:
-    bio: 'Many eons ago, before '
-    hype: "Not many Heroes can claim to have as much visceral impact with their abilities\
-      \ as Reus. Rending the earth itself asunder, Reu\ts may fire stunning rocks\
-      \ with Stoneblast, create slowing and damaging tremors with Magnitude, wallop\
-      \ enemies into next week with Gaia's Fury, and trap his enemies and allies in\
-      \ an arena that is impossible to escape-- buffing himself in the process-- with\
-      \ Ancient Arena."
-  modref: npc_dota_hero_reus
-  name: Reus
-  ref: npc_dota_hero_elder_titan

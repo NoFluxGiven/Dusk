@@ -1,0 +1,537 @@
+Item root['abilities']['war_enwrath'] added to dictionary.
+Item root['abilities']['pride_elyats_bellow'] added to dictionary.
+Item root['abilities']['war_wrath'] added to dictionary.
+Item root['abilities']['shade_stalk']['Hero'] added to dictionary.
+Item root['abilities']['ironfist_reversal']['Hero'] added to dictionary.
+Item root['abilities']['baal_spatial_rift']['Hero'] added to dictionary.
+Item root['abilities']['phantom_shadowstep']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_astaroth_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lysander_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_alroth_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_paragon_7']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_hawkeye_4']['Hero'] added to dictionary.
+Item root['abilities']['aeronaut_land']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_ouroboros_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_hero_1']['Hero'] added to dictionary.
+Item root['abilities']['faust_cease']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_timekeeper_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_paragon_6']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_erra_5']['Hero'] added to dictionary.
+Item root['abilities']['ouroboros_diffusion']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_astaroth_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lupin_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lupin_5']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_bloodwarrior_1']['Hero'] added to dictionary.
+Item root['abilities']['ironfist_stonewall_stance']['Hero'] added to dictionary.
+Item root['abilities']['bloodwarrior_blood_madness']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_hawkeye_2']['Hero'] added to dictionary.
+Item root['abilities']['ouroboros_nexus']['Hero'] added to dictionary.
+Item root['abilities']['lupin_beneath_the_mask']['Hero'] added to dictionary.
+Item root['abilities']['paragon_cleanse']['Hero'] added to dictionary.
+Item root['abilities']['paragon_smite']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_set_2']['Hero'] added to dictionary.
+Item root['abilities']['set_sirocco']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_bahamut_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lightning_1']['Hero'] added to dictionary.
+Item root['abilities']['baal_port_out']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_elena_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_timekeeper_2']['Hero'] added to dictionary.
+Item root['abilities']['alexander_godfall']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lupin_2']['Hero'] added to dictionary.
+Item root['abilities']['horror_sinister']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_phantom_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_set_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_gemini_4']['Hero'] added to dictionary.
+Item root['abilities']['aeronaut_dashy_dashy']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_paragon_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_fate_3']['Hero'] added to dictionary.
+Item root['abilities']['astaroth_overwhelm']['Hero'] added to dictionary.
+Item root['abilities']['horror_paranoia']['Hero'] added to dictionary.
+Item root['abilities']['odin_sleipnirs_veil']['Hero'] added to dictionary.
+Item root['abilities']['lich_winters_requiem']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_neith_2']['Hero'] added to dictionary.
+Item root['abilities']['set_harsh_sun']['Hero'] added to dictionary.
+Item root['abilities']['tek_mosquito_missiles']['Hero'] added to dictionary.
+Item root['abilities']['mifune_genso']['Hero'] added to dictionary.
+Item root['abilities']['ptomely_enthrall']['Hero'] added to dictionary.
+Item root['abilities']['odin_gungnir']['Hero'] added to dictionary.
+Item root['abilities']['trickster_encore']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_gob_squad_3']['Hero'] added to dictionary.
+Item root['abilities']['alroth_raze']['Hero'] added to dictionary.
+Item root['abilities']['balthasar_firebolt']['Hero'] added to dictionary.
+Item root['abilities']['balthasar_firebolt']['AbilitySpecial']['attack_damage'] added to dictionary.
+Item root['abilities']['special_bonus_tek_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_aether_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_mifune_1']['Hero'] added to dictionary.
+Item root['abilities']['trickster_disappearing_act']['Hero'] added to dictionary.
+Item root['abilities']['fury_rend']['Hero'] added to dictionary.
+Item root['abilities']['siegfried_hell_bent']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_alroth_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_phantom_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_rai_2']['Hero'] added to dictionary.
+Item root['abilities']['reflex_empty5']['Hero'] added to dictionary.
+Item root['abilities']['balthasar_emerald_fang']['Hero'] added to dictionary.
+Item root['abilities']['bahamut_hidden_transform']['Hero'] added to dictionary.
+Item root['abilities']['lysander_captains_compass']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_ptomely_2']['Hero'] added to dictionary.
+Item root['abilities']['alroth_energy_burst']['Hero'] added to dictionary.
+Item root['abilities']['bahamut_mega_flare']['Hero'] added to dictionary.
+Item root['abilities']['bahamut_reckoning_aura']['Hero'] added to dictionary.
+Item root['abilities']['war_bloodlust']['Hero'] added to dictionary.
+Item root['abilities']['war_bloodlust']['AbilitySpecial']['interval'] added to dictionary.
+Item root['abilities']['war_bloodlust']['AbilitySpecial']['attacks'] added to dictionary.
+Item root['abilities']['war_bloodlust']['AbilitySpecial']['attack_damage'] added to dictionary.
+Item root['abilities']['astaroth_pain_curse']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_shade_3']['Hero'] added to dictionary.
+Item root['abilities']['ironfist_change_stance']['Hero'] added to dictionary.
+Item root['abilities']['ironfist_focus']['Hero'] added to dictionary.
+Item root['abilities']['fate_chains_of_fate']['Hero'] added to dictionary.
+Item root['abilities']['timekeeper_futurestrike']['Hero'] added to dictionary.
+Item root['abilities']['timekeeper_haste_aura']['Hero'] added to dictionary.
+Item root['abilities']['bloodwarrior_blood_rain']['Hero'] added to dictionary.
+Item root['abilities']['rai_thunder_roar']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_fury_3']['Hero'] added to dictionary.
+Item root['abilities']['balthasar_ward_of_the_emerald_flame']['Hero'] added to dictionary.
+Item root['abilities']['timekeeper_dilation']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_tek_2']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lupin_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_baal_6']['Hero'] added to dictionary.
+Item root['abilities']['ironfist_boulder_throw']['Hero'] added to dictionary.
+Item root['abilities']['war_fight_me']['Hero'] added to dictionary.
+Item root['abilities']['war_fight_me']['AbilitySpecial']['damage_per_attack'] added to dictionary.
+Item root['abilities']['rai_amplify']['Hero'] added to dictionary.
+Item root['abilities']['gemini_abyssal_shadow']['Hero'] added to dictionary.
+Item root['abilities']['gob_squad_whoops']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_aether_4']['Hero'] added to dictionary.
+Item root['abilities']['elena_devotion']['Hero'] added to dictionary.
+Item root['abilities']['artificer_replica']['Hero'] added to dictionary.
+Item root['abilities']['erra_grave_guard']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_war_2']['Hero'] added to dictionary.
+Item root['abilities']['faust_planecracker']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_elena_4']['Hero'] added to dictionary.
+Item root['abilities']['hero_freedom_strike']['Hero'] added to dictionary.
+Item root['abilities']['hero_freedom_strike']['AbilitySpecial']['attack_slow'] added to dictionary.
+Item root['abilities']['special_bonus_war_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_siegfried_3']['Hero'] added to dictionary.
+Item root['abilities']['ironfist_quake']['Hero'] added to dictionary.
+Item root['abilities']['fate_displace']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_rai_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lich_2']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_mifune_2']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lich_1']['Hero'] added to dictionary.
+Item root['abilities']['trickster_jam_magic']['Hero'] added to dictionary.
+Item root['abilities']['shard_magus_icicle_barrage']['Hero'] added to dictionary.
+Item root['abilities']['baal_compression_sphere']['Hero'] added to dictionary.
+Item root['abilities']['elena_bladebreaker']['Hero'] added to dictionary.
+Item root['abilities']['ironfist_gale_stance']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_tek_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_balthasar_4']['Hero'] added to dictionary.
+Item root['abilities']['mifune_raigeki']['Hero'] added to dictionary.
+Item root['abilities']['neith_decisive_strike']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_siegfried_1']['Hero'] added to dictionary.
+Item root['abilities']['gemini_planar_trickery']['Hero'] added to dictionary.
+Item root['abilities']['faust_agony']['Hero'] added to dictionary.
+Item root['abilities']['war_earthbreaker']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_mana_knight_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_shade_2']['Hero'] added to dictionary.
+Item root['abilities']['set_sands_of_war']['Hero'] added to dictionary.
+Item root['abilities']['lysander_grapeshot']['Hero'] added to dictionary.
+Item root['abilities']['horror_obscure']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lysander_2']['Hero'] added to dictionary.
+Item root['abilities']['aether_reality_shift']['Hero'] added to dictionary.
+Item root['abilities']['artificer_replica_aghanims']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_baal_5']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_ptomely_3']['Hero'] added to dictionary.
+Item root['abilities']['tek_tesla_microarray']['Hero'] added to dictionary.
+Item root['abilities']['set_switch_scarab_targets']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_shade_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_hero_2']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_gemini_2']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_elena_5']['Hero'] added to dictionary.
+Item root['abilities']['lysander_phantom_fleet']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_erra_4']['Hero'] added to dictionary.
+Item root['abilities']['nu_warpstar']['Hero'] added to dictionary.
+Item root['abilities']['nu_micronebula']['Hero'] added to dictionary.
+Item root['abilities']['aeronaut_hidden_engine']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_reus_3']['Hero'] added to dictionary.
+Item root['abilities']['timekeeper_chronoshift']['Hero'] added to dictionary.
+Item root['abilities']['alexander_elandras_blessing']['Hero'] added to dictionary.
+Item root['abilities']['crimson_disintegrate']['Hero'] added to dictionary.
+Item root['abilities']['alexander_radiant']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_neith_1']['Hero'] added to dictionary.
+Item root['abilities']['rai_static_blade']['Hero'] added to dictionary.
+Item root['abilities']['fury_bloodsport']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_shard_magus_1']['Hero'] added to dictionary.
+Item root['abilities']['tek_skycrack']['Hero'] added to dictionary.
+Item root['abilities']['baal_superposition2']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_gemini_3']['Hero'] added to dictionary.
+Item root['abilities']['shard_magus_glacial_impact']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lightning_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_hero_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_alexander_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_aether_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_aeronaut_2']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_aeronaut_5']['Hero'] added to dictionary.
+Item root['abilities']['gob_squad_clearance_sale']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_baal_3']['Hero'] added to dictionary.
+Item root['abilities']['hero_one_punch']['Hero'] added to dictionary.
+Item root['abilities']['bloodwarrior_soul_claw']['Hero'] added to dictionary.
+Item root['abilities']['ironfist_dragon_fist']['Hero'] added to dictionary.
+Item root['abilities']['neith_monsoon']['Hero'] added to dictionary.
+Item root['abilities']['mifune_zanmato']['Hero'] added to dictionary.
+Item root['abilities']['erra_deathtouch']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_erra_2']['Hero'] added to dictionary.
+Item root['abilities']['artificer_naturalise']['Hero'] added to dictionary.
+Item root['abilities']['lich_absolute_zero']['Hero'] added to dictionary.
+Item root['abilities']['odin_gods_eye']['Hero'] added to dictionary.
+Item root['abilities']['tek_megaton_blast']['Hero'] added to dictionary.
+Item root['abilities']['lich_traveling_frost']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_bloodwarrior_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lightning_4']['Hero'] added to dictionary.
+Item root['abilities']['alexander_soulseal']['Hero'] added to dictionary.
+Item root['abilities']['gob_squad_rocket_blast']['Hero'] added to dictionary.
+Item root['abilities']['chronos_continuum_crystal']['Hero'] added to dictionary.
+Item root['abilities']['nu_flux_field']['Hero'] added to dictionary.
+Item root['abilities']['mana_knight_mana_seal']['Hero'] added to dictionary.
+Item root['abilities']['hawkeye_snipe']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_fury_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_baal_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lich_5']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lupin_6']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_siegfried_2']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_shade_1']['Hero'] added to dictionary.
+Item root['abilities']['siegfried_heaven_sent']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_shard_magus_3']['Hero'] added to dictionary.
+Item root['abilities']['gemini_voidal_flare']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_alexander_3']['Hero'] added to dictionary.
+Item root['abilities']['ironfist_lightning_strike']['Hero'] added to dictionary.
+Item root['abilities']['aeronaut_air_raid']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_shard_magus_2']['Hero'] added to dictionary.
+Item root['abilities']['artificer_reshape']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_paragon_1']['Hero'] added to dictionary.
+Item root['abilities']['crimson_blood_sorcery']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_aether_2']['Hero'] added to dictionary.
+Item root['abilities']['shade_isolation']['Hero'] added to dictionary.
+Item root['abilities']['hawkeye_ricochet']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_hero_4']['Hero'] added to dictionary.
+Item root['abilities']['mana_knight_infusion_bolt']['Hero'] added to dictionary.
+Item root['abilities']['artificer_unmaking']['Hero'] added to dictionary.
+Item root['abilities']['timekeeper_chronoshift_end']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_erra_1']['Hero'] added to dictionary.
+Item root['abilities']['lightning_lightning_dagger']['Hero'] added to dictionary.
+Item root['abilities']['hero_justice_kick']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_aeronaut_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_ouroboros_2']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_elena_6']['Hero'] added to dictionary.
+Item root['abilities']['fury_roar']['Hero'] added to dictionary.
+Item root['abilities']['phantom_nightmare']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_baal_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_shard_magus_4']['Hero'] added to dictionary.
+Item root['abilities']['crimson_red_rituals']['Hero'] added to dictionary.
+Item root['abilities']['reflex_empty6']['Hero'] added to dictionary.
+Item root['abilities']['shade_shadowshift']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_hawkeye_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_timekeeper_5']['Hero'] added to dictionary.
+Item root['abilities']['summoner_nanobots']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_fury_4']['Hero'] added to dictionary.
+Item root['abilities']['alroth_model_change']['Hero'] added to dictionary.
+Item root['abilities']['hawkeye_hit_n_run']['Hero'] added to dictionary.
+Item root['abilities']['faust_netherglyph']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_rai_4']['Hero'] added to dictionary.
+Item root['abilities']['siegfried_eon_shield']['Hero'] added to dictionary.
+Item root['abilities']['gob_squad_kamikaze']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_horror_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_ouroboros_5']['Hero'] added to dictionary.
+Item root['abilities']['lupin_last_surprise']['TooltipDescription'] added to dictionary.
+Item root['abilities']['lupin_last_surprise']['Hero'] added to dictionary.
+Item root['abilities']['lupin_last_surprise']['TooltipName'] added to dictionary.
+Item root['abilities']['lupin_last_surprise']['AnimationPlaybackRate'] added to dictionary.
+Item root['abilities']['lupin_last_surprise']['AbilityCastAnimation'] added to dictionary.
+Item root['abilities']['lupin_last_surprise']['AbilitySpecial']['purge_interval'] added to dictionary.
+Item root['abilities']['lupin_last_surprise']['AbilitySpecial']['movespeed'] added to dictionary.
+Item root['abilities']['lupin_last_surprise']['AbilitySpecial']['cooldown_reduction'] added to dictionary.
+Item root['abilities']['paragon_divine_armour']['Hero'] added to dictionary.
+Item root['abilities']['alroth_solwave']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_gob_squad_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_timekeeper_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_war_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_timekeeper_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lich_4']['Hero'] added to dictionary.
+Item root['abilities']['astaroth_deathmark']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_hawkeye_1']['Hero'] added to dictionary.
+Item root['abilities']['siegfried_epochs_protection']['Hero'] added to dictionary.
+Item root['abilities']['baal_st_anchor']['Hero'] added to dictionary.
+Item root['abilities']['erra_to_dust']['Hero'] added to dictionary.
+Item root['abilities']['hero_heroic_soul']['Hero'] added to dictionary.
+Item root['abilities']['ptomely_astralise']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_horror_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_balthasar_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_mifune_3']['Hero'] added to dictionary.
+Item root['abilities']['aether_monolith']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_alroth_2']['Hero'] added to dictionary.
+Item root['abilities']['faust_dark_shard']['Hero'] added to dictionary.
+Item root['abilities']['rai_arc_twister']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_reus_2']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_elena_2']['Hero'] added to dictionary.
+Item root['abilities']['reus_stoneblast']['Hero'] added to dictionary.
+Item root['abilities']['shade_dark_hunger']['Hero'] added to dictionary.
+Item root['abilities']['shard_magus_cryst_whorl']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_rai_5']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_nu_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_gob_squad_2']['Hero'] added to dictionary.
+Item root['abilities']['gemini_extraplanar_pact']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_alexander_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lupin_4']['Hero'] added to dictionary.
+Item root['abilities']['ouroboros_dualcast']['Hero'] added to dictionary.
+Item root['abilities']['lupin_finisher']['tooltipName'] added to dictionary.
+Item root['abilities']['lupin_finisher']['Hero'] added to dictionary.
+Item root['abilities']['lupin_finisher']['tooltipDescription'] added to dictionary.
+Item root['abilities']['lupin_finisher']['AnimationPlaybackRate'] added to dictionary.
+Item root['abilities']['lupin_finisher']['AbilityCastAnimation'] added to dictionary.
+Item root['abilities']['lupin_finisher']['AbilitySpecial']['bonus_slow_duration'] added to dictionary.
+Item root['abilities']['lupin_finisher']['AbilitySpecial']['attack_duration'] added to dictionary.
+Item root['abilities']['lupin_finisher']['AbilitySpecial']['damage_per_attack'] added to dictionary.
+Item root['abilities']['special_bonus_lightning_2']['Hero'] added to dictionary.
+Item root['abilities']['reus_ancient_arena']['Hero'] added to dictionary.
+Item root['abilities']['reflex_empty3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_aeronaut_4']['Hero'] added to dictionary.
+Item root['abilities']['trickster_surprise']['Hero'] added to dictionary.
+Item root['abilities']['bloodwarrior_red_curse']['Hero'] added to dictionary.
+Item root['abilities']['ptomely_mirror_blade']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_paragon_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_shade_6']['Hero'] added to dictionary.
+Item root['abilities']['aether_disrupt']['Hero'] added to dictionary.
+Item root['abilities']['war_berserker_aura']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_neith_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_neith_5']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_set_4']['Hero'] added to dictionary.
+Item root['abilities']['lightning_boltblast']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_astaroth_2']['Hero'] added to dictionary.
+Item root['abilities']['hawkeye_detonator_dart']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_ouroboros_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_neith_4']['Hero'] added to dictionary.
+Item root['abilities']['aeronaut_upwind']['Hero'] added to dictionary.
+Item root['abilities']['fury_berserk']['Hero'] added to dictionary.
+Item root['abilities']['phantom_soul_wave']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_bloodwarrior_4']['Hero'] added to dictionary.
+Item root['abilities']['bahamut_fulmination']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_gob_squad_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_ouroboros_6']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_balthasar_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_rai_6']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_set_1']['Hero'] added to dictionary.
+Item root['abilities']['mana_knight_vorpal_assault']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_phantom_2']['Hero'] added to dictionary.
+Item root['abilities']['aeronaut_aerial_ace']['Hero'] added to dictionary.
+Item root['abilities']['reflex_empty2']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_paragon_2']['Hero'] added to dictionary.
+Item root['abilities']['reflex_empty4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_nu_2']['Hero'] added to dictionary.
+Item root['abilities']['mana_knight_arcanum_break']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_fate_2']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_lich_3']['Hero'] added to dictionary.
+Item root['abilities']['pride_lionheart']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_fate_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_baal_2']['Hero'] added to dictionary.
+Item root['abilities']['elena_starlight']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_mana_knight_2']['Hero'] added to dictionary.
+Item root['abilities']['neith_inspire']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_siegfried_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_astaroth_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_gemini_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_ouroboros_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_balthasar_2']['Hero'] added to dictionary.
+Item root['abilities']['reus_gaias_fury']['Hero'] added to dictionary.
+Item root['abilities']['example_ability']['Hero'] added to dictionary.
+Item root['abilities']['lightning_overload']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_shard_magus_5']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_elena_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_paragon_5']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_horror_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_war_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_mana_knight_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_rai_1']['Hero'] added to dictionary.
+Item root['abilities']['lich_deep_freeze']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_reus_4']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_bahamut_3']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_fate_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_bahamut_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_erra_3']['Hero'] added to dictionary.
+Item root['abilities']['ironfist_dragon_stance']['Hero'] added to dictionary.
+Item root['abilities']['astaroth_erase']['Hero'] added to dictionary.
+Item root['abilities']['lupin_flashbang']['Hero'] added to dictionary.
+Item root['abilities']['mifune_bushido']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_bahamut_2']['Hero'] added to dictionary.
+Item root['abilities']['ironfist_typhoon']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_reus_1']['Hero'] added to dictionary.
+Item root['abilities']['erra_morbid_blade']['Hero'] added to dictionary.
+Item root['abilities']['phantom_deathstrike']['Hero'] added to dictionary.
+Item root['abilities']['set_scarab_curse']['Hero'] added to dictionary.
+Item root['abilities']['shard_magus_iceheart']['Hero'] added to dictionary.
+Item root['abilities']['alroth_shatter']['Hero'] added to dictionary.
+Item root['abilities']['pride_merciless']['Hero'] added to dictionary.
+Item root['abilities']['fate_realign']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_shade_5']['Hero'] added to dictionary.
+Item root['abilities']['neith_rally']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_horror_2']['Hero'] added to dictionary.
+Item root['abilities']['horror_terrify']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_mana_knight_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_fury_2']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_nu_3']['Hero'] added to dictionary.
+Item root['abilities']['aether_teleport']['Hero'] added to dictionary.
+Item root['abilities']['ptomely_expunge']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_alexander_2']['Hero'] added to dictionary.
+Item root['abilities']['balthasar_doomflame']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_alroth_1']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_bloodwarrior_2']['Hero'] added to dictionary.
+Item root['abilities']['gemini_planar_trickery_activate']['Hero'] added to dictionary.
+Item root['abilities']['odin_oppression']['Hero'] added to dictionary.
+Item root['abilities']['paragon_tranquility_seal']['Hero'] added to dictionary.
+Item root['abilities']['lightning_spark']['Hero'] added to dictionary.
+Item root['abilities']['ouroboros_searing_flame']['Hero'] added to dictionary.
+Item root['abilities']['special_bonus_ptomely_1']['Hero'] added to dictionary.
+Item root['abilities']['nu_gravity_pulse']['Hero'] added to dictionary.
+Item root['abilities']['elena_guardian_bubble']['Hero'] added to dictionary.
+Item root['abilities']['reus_magnitude']['Hero'] added to dictionary.
+Item root['abilities']['crimson_life_drain']['Hero'] added to dictionary.
+Item root['abilities']['bahamut_desolation']['Hero'] added to dictionary.
+Item root['heroes']['npc_dota_hero_drow_ranger'] added to dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['pride_lionheart'] added to dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['pride_echospear'] added to dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['special_bonus_pride_2'] added to dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['special_bonus_pride_3'] added to dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['pride_elyats_bellow'] added to dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['pride_merciless'] added to dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['special_bonus_pride_4'] added to dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['special_bonus_pride_1'] added to dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['special_bonus_pride_5'] added to dictionary.
+Item root['abilities']['ability'] removed from dictionary.
+Item root['abilities']['war_bloodlust']['AbilitySpecial']['bonus_attack_damage'] removed from dictionary.
+Item root['abilities']['war_fight_me']['AbilitySpecial']['mult'] removed from dictionary.
+Item root['abilities']['lupin_last_surprise']['AbilitySpecial']['range'] removed from dictionary.
+Item root['abilities']['lupin_last_surprise']['AbilitySpecial']['delay'] removed from dictionary.
+Item root['abilities']['lupin_last_surprise']['AbilitySpecial']['creep_damage'] removed from dictionary.
+Item root['abilities']['lupin_last_surprise']['AbilitySpecial']['radius'] removed from dictionary.
+Item root['abilities']['shade_dark_hunger']['AbilitySpecial']['proc_increase'] removed from dictionary.
+Item root['abilities']['shade_dark_hunger']['AbilitySpecial']['health_drain_max'] removed from dictionary.
+Item root['abilities']['lupin_finisher']['AbilitySpecial']['damage'] removed from dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['teleri_grace_of_the_thunder_archer'] removed from dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['special_bonus_teleri_5'] removed from dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['special_bonus_teleri_1'] removed from dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['teleri_blitz'] removed from dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['special_bonus_teleri_3'] removed from dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['teleri_tijadis_gambit'] removed from dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['special_bonus_teleri_2'] removed from dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['special_bonus_teleri_4'] removed from dictionary.
+Item root['heroes']['npc_dota_hero_phantom_lancer']['abilities']['teleri_shock_arrow'] removed from dictionary.
+Value of root['abilities']['shade_stalk']['AbilityCastRange'] changed from "900" to "1100".
+Value of root['abilities']['shade_stalk']['AbilityCooldown'] changed from "8" to "12".
+Value of root['abilities']['shade_stalk']['AbilitySpecial']['duration']['value'] changed from "3.5" to "6.0".
+Value of root['abilities']['shade_stalk']['AbilitySpecial']['movespeed_bonus']['value'] changed from "12" to "12 20 28 36".
+Value of root['abilities']['shade_stalk']['AbilitySpecial']['proc_damage']['value'] changed from "25 75 125 175" to "40 80 120 160".
+Value of root['abilities']['shade_stalk']['AbilityBehavior'] changed from "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET" to "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING".
+Value of root['abilities']['shade_stalk']['AbilityUnitTargetFlags'] changed from "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS" to "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES".
+Value of root['abilities']['shade_stalk']['AbilityManaCost'] changed from "65 75 85 95" to "75 85 95 105".
+Value of root['abilities']['phantom_shadowstep']['AbilityCooldown'] changed from "60" to "40 35 30 25".
+Value of root['abilities']['phantom_shadowstep']['AbilitySpecial']['bonus_movespeed']['value'] changed from "30" to "12 20 28 36".
+Value of root['abilities']['phantom_shadowstep']['AbilitySpecial']['delay']['value'] changed from "4.00 3.25 2.50 1.75" to "4.00".
+Value of root['abilities']['phantom_shadowstep']['AbilitySpecial']['duration']['value'] changed from "6.0" to "5.0 6.0 7.0 8.0".
+Value of root['abilities']['lupin_beneath_the_mask']['AbilityCooldown'] changed from "10" to "13 12 11 10".
+Value of root['abilities']['lupin_beneath_the_mask']['AbilitySpecial']['attack_speed_steal']['value'] changed from "30 40 50 60" to "40 60 80 100".
+Value of root['abilities']['lupin_beneath_the_mask']['AbilitySpecial']['duration']['value'] changed from "2.5 3.0 3.5 4.0" to "4.5".
+Value of root['abilities']['lupin_beneath_the_mask']['AbilitySpecial']['slow']['value'] changed from "8 14 20 26" to "16 24 32 40".
+Value of root['abilities']['balthasar_firebolt']['AbilityCastRange'] changed from "575" to "675".
+Value of root['abilities']['balthasar_firebolt']['AbilityCooldown'] changed from "14.00 13.00 12.00 11.00" to "7.00".
+Value of root['abilities']['war_bloodlust']['AbilityCooldown'] changed from "20" to "14".
+Value of root['abilities']['war_bloodlust']['AbilityUnitDamageType'] changed from "DAMAGE_TYPE_PURE" to "DAMAGE_TYPE_MAGICAL".
+Value of root['abilities']['war_bloodlust']['AbilitySpecial']['bonus_attack_speed']['value'] changed from "30" to "45".
+Value of root['abilities']['war_bloodlust']['AbilitySpecial']['duration']['value'] changed from "10.0" to "5.0".
+Value of root['abilities']['war_bloodlust']['AbilitySpecial']['slow']['value'] changed from "15" to "15 20 25 30".
+Value of root['abilities']['war_bloodlust']['AbilitySpecial']['dot']['value'] changed from "15 25 35 45" to "10 15 20 25".
+Value of root['abilities']['war_bloodlust']['AbilitySpecial']['radius']['value'] changed from "275" to "325".
+Value of root['abilities']['war_bloodlust']['AoERadius'] changed from "275" to "325".
+Value of root['abilities']['war_bloodlust']['AbilityManaCost'] changed from "45 60 75 90" to "85".
+Value of root['abilities']['war_fight_me']['AbilityCooldown'] changed from "80" to "100 90 80".
+Value of root['abilities']['war_fight_me']['AbilityUnitDamageType'] changed from "DAMAGE_TYPE_PURE" to "DAMAGE_TYPE_MAGICAL".
+Value of root['abilities']['war_fight_me']['AbilitySpecial']['duration']['value'] changed from "2.75 3.25 4.00" to "3.5".
+Value of root['abilities']['war_fight_me']['AbilityManaCost'] changed from "100" to "200".
+Value of root['abilities']['hero_freedom_strike']['AbilityCooldown'] changed from "12 10 8 6" to "5".
+Value of root['abilities']['hero_freedom_strike']['AbilitySpecial']['duration']['var_type'] changed from "FIELD_INTEGER" to "FIELD_FLOAT".
+Value of root['abilities']['hero_freedom_strike']['AbilitySpecial']['duration']['value'] changed from "3" to "2.0 2.5 3.0 3.5".
+Value of root['abilities']['hero_freedom_strike']['AbilitySpecial']['slow']['value'] changed from "-10 -12 -14 -16" to "-25".
+Value of root['abilities']['hero_freedom_strike']['AbilitySpecial']['radius']['value'] changed from "250" to "275".
+Value of root['abilities']['hero_freedom_strike']['AbilityManaCost'] changed from "60" to "55".
+Value of root['abilities']['war_earthbreaker']['AbilityCooldown'] changed from "14 12 10 8" to "13".
+Value of root['abilities']['war_earthbreaker']['AbilityDamage'] changed from "75 125 175 225" to "60 110 160 210".
+Value of root['abilities']['war_earthbreaker']['AbilitySpecial']['stun']['value'] changed from "1.50" to "0.90".
+Value of root['abilities']['war_earthbreaker']['AbilityManaCost'] changed from "75" to "95".
+Value of root['abilities']['hero_justice_kick']['AbilityCooldown'] changed from "8 7 6 5" to "5".
+Value of root['abilities']['hero_justice_kick']['AbilityCastPoint'] changed from "0.3" to "0.25".
+Value of root['abilities']['hero_justice_kick']['AbilitySpecial']['duration']['value'] changed from "1" to "1.3".
+Value of root['abilities']['hero_justice_kick']['AbilityManaCost'] changed from "50" to "55".
+Value of root['abilities']['shade_shadowshift']['AbilityBehavior'] changed from "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE" to "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT".
+Value of root['abilities']['lupin_last_surprise']['AbilityCastRange'] changed from "775" to "750".
+Value of root['abilities']['lupin_last_surprise']['AbilityCooldown'] changed from "30 20 10" to "16 12 8".
+Value of root['abilities']['lupin_last_surprise']['AbilitySpecial']['duration']['value'] changed from "5" to "2.0".
+Value of root['abilities']['lupin_last_surprise']['AbilityBehavior'] changed from "DOTA_ABILITY_BEHAVIOR_POINT" to "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT".
+Value of root['abilities']['lupin_last_surprise']['AbilityCastPoint'] changed from "0.1" to "0.22".
+Value of root['abilities']['lupin_last_surprise']['AbilityManaCost'] changed from "50" to "95".
+Value of root['abilities']['hero_heroic_soul']['AbilityCooldown'] changed from "20 18 16 14" to "14".
+Value of root['abilities']['hero_heroic_soul']['AbilitySpecial']['damage_reduction_duration']['value'] changed from "0.5" to "0.75".
+Value of root['abilities']['hero_heroic_soul']['AbilitySpecial']['bonus_movespeed']['value'] changed from "40" to "32".
+Value of root['abilities']['shade_dark_hunger']['AbilitySpecial']['interval']['value'] changed from "1.00" to "0.25".
+Value of root['abilities']['shade_dark_hunger']['AbilitySpecial']['health_drain']['value'] changed from "10" to "20 35 50 65".
+Value of root['abilities']['shade_dark_hunger']['AbilitySpecial']['duration']['value'] changed from "8.00" to "6.00".
+Value of root['abilities']['shade_dark_hunger']['AbilitySpecial']['radius']['value'] changed from "325" to "350".
+Value of root['abilities']['shade_dark_hunger']['AbilityBehavior'] changed from "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE" to "DOTA_ABILITY_BEHAVIOR_NO_TARGET".
+Value of root['abilities']['shade_dark_hunger']['AbilityCastPoint'] changed from "0" to "0.2".
+Value of root['abilities']['lupin_finisher']['AbilityCastRange'] changed from "750" to "575".
+Value of root['abilities']['lupin_finisher']['AbilityCooldown'] changed from "3" to "14".
+Value of root['abilities']['lupin_finisher']['AbilitySpecial']['bonus_damage']['value'] changed from "30 60 90 120" to "40 60 80 100".
+Value of root['abilities']['lupin_finisher']['AbilitySpecial']['slow_duration']['value'] changed from "0.50" to "0.40".
+Value of root['abilities']['lupin_finisher']['AbilitySpecial']['stun']['value'] changed from "0.50 0.75 1.00 1.25" to "0.70".
+Value of root['abilities']['lupin_finisher']['AbilityBehavior'] changed from "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET" to "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT".
+Value of root['abilities']['lupin_finisher']['AbilityCastPoint'] changed from "0.1" to "0.45".
+Value of root['abilities']['lupin_finisher']['AbilityManaCost'] changed from "30 40 50 60" to "95".
+Value of root['abilities']['war_berserker_aura']['AbilityCastRange'] changed from "900" to "0".
+Value of root['abilities']['war_berserker_aura']['AbilityCooldown'] changed from "0" to "15".
+Value of root['abilities']['war_berserker_aura']['AbilitySpecial']['percent']['value'] changed from "10" to "30 40 50 60".
+Value of root['abilities']['war_berserker_aura']['AbilitySpecial']['radius']['value'] changed from "900" to "0".
+Value of root['abilities']['war_berserker_aura']['AbilityBehavior'] changed from "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA" to "DOTA_ABILITY_BEHAVIOR_NO_TARGET".
+Value of root['abilities']['war_berserker_aura']['AbilityCastPoint'] changed from "0" to "0.2".
+Value of root['abilities']['war_berserker_aura']['AbilityManaCost'] changed from "0" to "155".
+Value of root['abilities']['lupin_flashbang']['AbilityCastRange'] changed from "350" to "375".
+Value of root['abilities']['lupin_flashbang']['AbilityCooldown'] changed from "16 14 12 10" to "12".
+Value of root['abilities']['lupin_flashbang']['AbilitySpecial']['damage']['value'] changed from "100" to "140".
+Value of root['abilities']['lupin_flashbang']['AbilitySpecial']['duration']['value'] changed from "1.50 2.25 3.00 3.75" to "2.00 2.75 3.50 4.25".
+Value of root['abilities']['lupin_flashbang']['AbilitySpecial']['radius']['value'] changed from "350" to "375".
+Value of root['abilities']['lupin_flashbang']['AbilityCastPoint'] changed from "0.2" to "0.3".
+Value of root['heroes']['npc_dota_hero_tusk']['AttributeStrengthGain'] changed from "2.0" to "3.6".
+Value of root['heroes']['npc_dota_hero_tusk']['AttackRange'] changed from "150" to "175".
+Value of root['heroes']['npc_dota_hero_tusk']['AttributeAgilityGain'] changed from "2.15" to "2.5".
+Value of root['heroes']['npc_dota_hero_tusk']['AttributeIntelligenceGain'] changed from "1.2" to "1.5".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['Ability12'] changed from "special_bonus_teleri_1" to "special_bonus_pride_1".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['AttackCapabilities'] changed from "DOTA_UNIT_CAP_RANGED_ATTACK" to "DOTA_UNIT_CAP_MELEE_ATTACK".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['Ability2'] changed from "teleri_tijadis_gambit" to "pride_merciless".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['Ability14'] changed from "special_bonus_teleri_2" to "special_bonus_pride_2".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['override_hero'] changed from "npc_dota_hero_drow_ranger" to "npc_dota_hero_phantom_lancer".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['abilityList'][1] changed from "teleri_shock_arrow" to "pride_elyats_bellow".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['abilityList'][2] changed from "teleri_tijadis_gambit" to "pride_merciless".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['abilityList'][3] changed from "teleri_grace_of_the_thunder_archer" to "pride_lionheart".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['abilityList'][6] changed from "teleri_blitz" to "pride_echospear".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['abilityList'][12] changed from "special_bonus_teleri_1" to "special_bonus_pride_1".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['abilityList'][14] changed from "special_bonus_teleri_2" to "special_bonus_pride_2".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['abilityList'][15] changed from "special_bonus_teleri_3" to "special_bonus_pride_3".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['abilityList'][16] changed from "special_bonus_teleri_4" to "special_bonus_pride_4".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['abilityList'][17] changed from "special_bonus_teleri_5" to "special_bonus_pride_5".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['AttackRange'] changed from "600" to "175".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['Ability16'] changed from "special_bonus_teleri_4" to "special_bonus_pride_4".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['Ability15'] changed from "special_bonus_teleri_3" to "special_bonus_pride_3".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['AttributeBaseIntelligence'] changed from "12" to "14".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['Ability17'] changed from "special_bonus_teleri_5" to "special_bonus_pride_5".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['HeroSelectSoundEffect'] changed from "teleri.Something" to "Pride.Something".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['Ability1'] changed from "teleri_shock_arrow" to "pride_elyats_bellow".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['Ability3'] changed from "teleri_grace_of_the_thunder_archer" to "pride_lionheart".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['Ability6'] changed from "teleri_blitz" to "pride_echospear".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['AttributePrimary'] changed from "DOTA_ATTRIBUTE_AGILITY" to "DOTA_ATTRIBUTE_STRENGTH".
+Value of root['heroes']['npc_dota_hero_phantom_lancer']['AttributeIntelligenceGain'] changed from "1.4" to "2.0".

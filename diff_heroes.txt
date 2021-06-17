@@ -1,0 +1,32 @@
+diff --git a/game/scripts/npc/heroes/npc_dota_hero_hero.txt b/game/scripts/npc/heroes/npc_dota_hero_hero.txt
+index bc56da2..dde7d15 100644
+--- a/game/scripts/npc/heroes/npc_dota_hero_hero.txt
++++ b/game/scripts/npc/heroes/npc_dota_hero_hero.txt
+@@ -0,0 +1,8 @@
++///@changelog
++///@version 2.2
++///@hero Hero
++///@changes #
++/// STR gain increased to 3.6 (was 2.0)
++/// INT gain increased to 1.5 (was 1.2)
++/// AGI gain increased to 2.5 (was 2.15)
++
+@@ -33 +41 @@
+-	"AttackRange"				"150"
++	"AttackRange"				"175"
+@@ -40 +48 @@
+-	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
++	"AttributeStrengthGain"		"3.6"										// Strength bonus per level.
+@@ -42 +50 @@
+-	"AttributeIntelligenceGain"	"1.2"										// Intelligence bonus per level.
++	"AttributeIntelligenceGain"	"1.5"										// Intelligence bonus per level.
+@@ -44 +52 @@
+-	"AttributeAgilityGain"		"2.15"										// Agility bonus per level.
++	"AttributeAgilityGain"		"2.5"										// Agility bonus per level.
+diff --git a/game/scripts/npc/heroes/npc_dota_hero_teleri.txt b/game/scripts/npc/heroes/npc_dota_hero_teleri.txt
+index ce85c59..3c7e40e 100644
+--- a/game/scripts/npc/heroes/npc_dota_hero_teleri.txt
++++ b/game/scripts/npc/heroes/npc_dota_hero_teleri.txt
+@@ -1 +1 @@
+-"npc_dota_hero_phantom_lancer"
++"npc_dota_hero_drow_ranger"

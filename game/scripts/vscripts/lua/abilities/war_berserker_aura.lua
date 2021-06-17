@@ -3,8 +3,9 @@ war_berserker_aura = class({})
 LinkLuaModifier("modifier_berserker_aura","lua/abilities/war_berserker_aura",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_berserker_aura_buff","lua/abilities/war_berserker_aura",LUA_MODIFIER_MOTION_NONE)
 
-function war_berserker_aura:GetIntrinsicModifierName()
-	return "modifier_berserker_aura"
+function war_berserker_aura:OnSpellStart()
+	local duration = self:GetSpecialValueFor("duration")
+	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_enwrath", {Duration=duration})
 end
 
 modifier_berserker_aura = class({})

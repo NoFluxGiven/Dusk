@@ -1,213 +1,149 @@
 lupin_last_surprise = class({})
 
 LinkLuaModifier("modifier_last_surprise","lua/abilities/lupin_last_surprise",LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_last_surprise_damage","lua/abilities/lupin_last_surprise",LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_last_surprise_damage_reduction","lua/abilities/lupin_last_surprise",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_last_surprise_movespeed_boost","lua/abilities/lupin_last_surprise",LUA_MODIFIER_MOTION_NONE)
 
--- Copies a portion of damage from nearby enemies,
--- then after a short delay slashes a set distance in the direction
--- targeted, attacking each unit hit, then does the same in the opposite direction, returning to the
--- starting position.
--- Does not proc attack effects or orbs.
+-- name: Last Surprise
+-- desc: Lupin teleports immediately to a nearby location, gaining status resistance and reducing the cooldown of his on-cooldown abilities.
 
 function lupin_last_surprise:OnSpellStart()
-	if IsServer() then
+	-- if IsServer() then
 		local caster = self:GetCaster()
-
-		local cloc = caster:GetAbsOrigin()
-		local cfac = caster:GetForwardVector()
-		local t_range_bonus = self:GetCaster():FetchTalent("special_bonus_lupin_5") or 0
-		local range = self:GetSpecialValueFor("range") + t_range_bonus
-
-		local start_loc = cloc
-		local end_loc = cloc + (cfac * range)
-
-		local end_cfac = (start_loc - end_loc):Normalized()
-
-		local delay = self:GetSpecialValueFor("delay") * 1
-
-		local radius = self:GetSpecialValueFor("radius")
+		local pos = self:GetCursorPosition()
 		local duration = self:GetSpecialValueFor("duration")
+		-- local status_res = self:GetSpecialValueFor("status_res")
+		local movespeed = self:GetSpecialValueFor("movespeed")
+		local cdr = self:GetSpecialValueFor("cooldown_reduction")
 
-		local mult = self:GetSpecialValueFor("damage_steal")/100
+		-- local p = CreateParticleHitloc(self:GetCaster(), "particles/econ/events/nexon_hero_compendium_2014/blink_dagger_end_nexon_hero_cp_2014.vpcf")
+		-- CreateParticleWorld(self:GetCaster():GetAbsOrigin(), "particles/econ/events/nexon_hero_compendium_2014/blink_dagger_start_nexon_hero_cp_2014.vpcf")
 
-		-- local found = FindEnemies(caster,cloc,radius)
+		local p = CreateParticleHitloc(self:GetCaster(), "particles/units/heroes/hero_lupin/ephemera.vpcf")
+		CreateParticleWorld(self:GetCaster():GetAbsOrigin(), "particles/units/heroes/hero_lupin/ephemera.vpcf")
+		--CreateParticleWo
 
-		local cmod = "modifier_last_surprise_damage"
+		---@todo particles
+		FindClearSpaceForUnit(caster, pos, true)
+		ProjectileManager:ProjectileDodge(caster)
 
-		local ab = "lupin_beneath_the_mask"
-
-		ab = caster:FindAbilityByName(ab)
-
-		-- ab:EndCooldown()
-
-		-- for k,v in pairs(found) do
-		-- 	local stack = 0
-
-		-- 	local ad = v:GetAttackDamage() * mult
-
-		-- 	stack = ad
-
-		-- 	caster:AddNewModifier(caster, self, cmod, {Duration=delay*2.5,stack=stack})
-
-		-- 	local p = ParticleManager:CreateParticle("particles/units/heroes/hero_lupin/last_surprise_absorb.vpcf",PATTACH_POINT_FOLLOW,v)
-		-- 	ParticleManager:SetParticleControl(p, 0, v:GetCenter())
-		-- 	ParticleManager:SetParticleControl(p, 1, caster:GetCenter())
-
-		-- end
-
-		local n = 0
-
-		local r = 1
-		
-		caster:AddNewModifier(caster, self, "modifier_last_surprise", {Duration=delay*r+0.3})
-
-		AddFOWViewer( caster:GetTeamNumber(), caster:GetAbsOrigin(), range, 1.2, false )
-
-		for i=1,r,2 do
-
-			Timers:CreateTimer(delay*i,function()
-				caster:Interrupt()
-				local fen = FindUnitsInLine(caster:GetTeamNumber(),
-					start_loc,
-					end_loc,
-					caster,
-					150,
-					DOTA_UNIT_TARGET_TEAM_ENEMY,
-					DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,
-					0)
-				for k,v in pairs(fen) do
-					if not v:IsHero() then
-						caster:AddNewModifier(caster, self, "modifier_last_surprise_damage_reduction", {Duration=0.1})
-					end
-
-					caster:PerformAttack( v,
-						true,
-						true,
-						true,
-						true,
-						false,
-						false,
-						true )
-					CreateParticleHitloc(v,"particles/units/heroes/hero_lupin/last_surprise_unit.vpcf")
-					n = n+1
-				end
-				local p = ParticleManager:CreateParticle("particles/units/heroes/hero_lupin/last_surprise_slash.vpcf",PATTACH_POINT_FOLLOW,caster)
-				ParticleManager:SetParticleControl(p, 0, start_loc+Vector(0,0,150))
-				ParticleManager:SetParticleControl(p, 1, end_loc+Vector(0,0,150))
-				FindClearSpaceForUnit(caster, end_loc, true)
-				caster:EmitSound("Hero_Riki.Backstab")
-				caster:SetForwardVector(cfac)
-			end)
-
-			Timers:CreateTimer(delay*(i+1),function()
-				caster:Interrupt()
-				local fen = FindUnitsInLine(caster:GetTeamNumber(),
-					start_loc,
-					end_loc,
-					caster,
-					50,
-					DOTA_UNIT_TARGET_TEAM_ENEMY,
-					DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,
-					0)
-				for k,v in pairs(fen) do
-					if not v:IsHero() then
-						caster:AddNewModifier(caster, self, "modifier_last_surprise_damage_reduction", {Duration=0.1})
-					end
-
-					caster:PerformAttack( v,
-						true,
-						true,
-						true,
-						true,
-						false,
-						false,
-						true )
-					CreateParticleHitloc(v,"particles/units/heroes/hero_lupin/last_surprise_unit.vpcf")
-					n = n+1
-				end
-				local p2 = ParticleManager:CreateParticle("particles/units/heroes/hero_lupin/last_surprise_slash.vpcf",PATTACH_POINT_FOLLOW,caster)
-				ParticleManager:SetParticleControl(p2, 0, end_loc+Vector(0,0,150))
-				ParticleManager:SetParticleControl(p2, 1, start_loc+Vector(0,0,150))
-				FindClearSpaceForUnit(caster, start_loc, true)
-				caster:EmitSound("Hero_Riki.Backstab")
-				caster:SetForwardVector(end_cfac)
-				caster:Interrupt()
-
-				-- if n > 0 then
-				-- 	ab:StartCooldown(-1)
-				-- end
-			end)
-		end
-	end
+		caster:AddNewModifier(caster, self, "modifier_last_surprise", {duration=duration, cdr=cdr, movespeed=movespeed})
+		---ReduceHeroCooldowns( caster, cdr, {self} )
+	-- end
 end
 
 modifier_last_surprise = class({})
 
-function modifier_last_surprise:GetEffectName()
-	return "particles/units/heroes/hero_lupin/ephemera_unit.vpcf"
+-- function modifier_last_surprise:IsHidden() return true end
+
+function modifier_last_surprise:OnCreated(kv)
+	-- self.status_res = kv.status_res
+	self.movespeed = self:GetAbility():GetSpecialValueFor("movespeed")
+	self.cooldown_reduction = self:GetAbility():GetSpecialValueFor("cooldown_reduction")
+	self.evasion = self:GetAbility():GetSpecialValueFor("evasion")
+	self.purge_interval = self:GetAbility():GetSpecialValueFor("purge_interval") or 1.0
+	self:StartIntervalThink(self.purge_interval)
+
+	self:PurgeSelf()
+
 end
 
-function modifier_last_surprise:IsPurgable()
-	return false
+function modifier_last_surprise:PurgeSelf()
+	if IsServer() then
+		local p = CreateParticleHitloc(self:GetCaster(), "particles/units/heroes/hero_lupin/last_surprise.vpcf")
+		local p = CreateParticleWorld(self:GetCaster():GetAbsOrigin(), "particles/units/heroes/hero_lupin/ephemera.vpcf")
+		-- local pct = self.health_recovery
+		-- pct = 4 / 100
+		-- if self.attacked_target then
+			-- local amt = self.attacked_target:GetMaxHealth()*pct
+			-- local amt = self:GetParent():GetMaxHealth()*pct
+			-- self:GetParent():Heal(amt, self:GetAbility():GetCaster())
+			-- self:GetAbility():InflictDamage(self.attacked_target, amt, DAMAGE_TYPE_MAGICAL, 0)
+		-- end
+		-- ParticleManager:SetParticleControl(p, 1, self:GetCaster():GetAbsOrigin())
+		self:GetCaster():Purge(false, true, false, true, false)
+		-- ReduceHeroCooldowns( self:GetCaster(), self.cooldown_reduction, {self:GetAbility()})
+		-- self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_last_surprise_movespeed_boost", {Duration=self.purge_interval})
+	end
 end
 
-function modifier_last_surprise:IsDebuff()
-	return false
+function modifier_last_surprise:OnIntervalThink()
+	---@todo particle
+	---@todo sound
+	self:PurgeSelf()
+end
+
+function modifier_last_surprise:DeclareFunctions()
+	local funcs = {
+		-- MODIFIER_PROPERTY_EVASION_CONSTANT,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_INVISIBILITY_LEVEL,
+		MODIFIER_EVENT_ON_ABILITY_FULLY_CAST,
+		MODIFIER_EVENT_ON_ATTACK_FINISHED
+	}
+	return funcs
+end
+
+function modifier_last_surprise:OnAbilityFullyCast(e)
+	if e.caster == self:GetParent() then
+		self:Destroy()
+	end
+end
+
+function modifier_last_surprise:OnAttackFinished(e)
+	if e.attacker == self:GetParent() then
+		self:Destroy()
+	end
+end
+
+function modifier_last_surprise:GetModifierMoveSpeedBonus_Percentage()
+	return self.movespeed
+end
+
+function modifier_last_surprise:GetModifierInvisibilityLevel()
+	return 1
 end
 
 function modifier_last_surprise:CheckState()
 	local state = {
-		[MODIFIER_STATE_INVULNERABLE] = true,
-		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
-		[MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES] = true,
-		[MODIFIER_STATE_DISARMED] = true
+		[MODIFIER_STATE_INVISIBLE] = true,
+		[MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES] = true
 	}
 	return state
 end
 
-modifier_last_surprise_damage = class({})
+-- function modifier_last_surprise:GetEffectName()
+-- 	return "particles/econ/items/windrunner/windranger_arcana/windranger_arcana_ambient.vpcf"
+-- end
 
-if IsServer() then
+-- function modifier_last_surprise:GetEffectAttachType()
+-- 	return PATTACH_ABSORIGIN_FOLLOW
+-- end
 
-	function modifier_last_surprise_damage:OnCreated(kv)
-		if kv then
-			self:SetStackCount(kv.stack)
-		end
-	end
+modifier_last_surprise_movespeed_boost = class({})
 
-	function modifier_last_surprise_damage:OnRefresh(kv)
-		if kv then
-			self:SetStackCount(self:GetStackCount()+kv.stack)
-		end
-	end
-
-end
-
-function modifier_last_surprise_damage:DeclareFunctions()
+function modifier_last_surprise_movespeed_boost:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
+		MODIFIER_PROPERTY_EVASION_CONSTANT,
+		MODIFIER_PROPERTY_INVISIBILITY_LEVEL
 	}
 	return funcs
 end
 
-function modifier_last_surprise_damage:GetModifierPreAttack_BonusDamage()
-	return self:GetStackCount()
+function modifier_last_surprise_movespeed_boost:OnCreated()
+	self.movespeed = self:GetAbility():GetSpecialValueFor("movespeed")
 end
 
-modifier_last_surprise_damage_reduction = class({})
-
-function modifier_last_surprise_damage:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
-	}
-	return funcs
+function modifier_last_surprise_movespeed_boost:GetModifierMoveSpeed_Absolute()
+	return 900 * math.max(self:GetRemainingTime() / self:GetDuration(),0.6)
 end
 
-function modifier_last_surprise_damage_reduction:IsHidden()
-	return true
+function modifier_last_surprise_movespeed_boost:GetModifierEvasion_Constant()
+	return 100
 end
 
-function modifier_last_surprise_damage:GetModifierDamageOutgoing_Percentage()
-	return -(100-self:GetAbility():GetSpecialValueFor("creep_damage"))
-end
+-- function modifier_last_surprise:GetModifierPercentageCooldown()
+
+
+-- 	return self.cdr
+-- end

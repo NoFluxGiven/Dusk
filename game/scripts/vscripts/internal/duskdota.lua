@@ -170,6 +170,8 @@ function duskDota:_CaptureduskDota()
     -- --mode:SetBotThinkingEnabled( USE_STANDARD_DOTA_BOT_THINKING )
     mode:SetTowerBackdoorProtectionEnabled( true )
 
+    mode:SetFreeCourierModeEnabled(true)
+
     -- mode:SetFogOfWarDisabled(DISABLE_FOG_OF_WAR_ENTIRELY)
     -- mode:SetGoldSoundDisabled( DISABLE_GOLD_SOUNDS )
     -- mode:SetRemoveIllusionsOnDeath( REMOVE_ILLUSIONS_ON_DEATH )

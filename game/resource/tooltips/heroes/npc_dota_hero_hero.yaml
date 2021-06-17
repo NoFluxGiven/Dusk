@@ -1,83 +1,80 @@
-Abilities:
-  hero_freedom_strike:
-    data:
-      charge: 'DISTANCE:'
-      description: For freedom!  Hero leaps into the air, and upon landing, deals
-        damage and slows enemies in a short radius.
-      duration: 'DURATION:'
-      radius: 'RADIUS:'
-      slow: '%SLOW:'
-    modifiers:
-      freedom_strike_slow:
-      - Freedom Slow!
-      - Being slowed! By freedom!
-    name: Freedom Strike!
-  hero_heroic_soul:
-    data:
-      bonus_damage: 'DAMAGE:'
-      bonus_movespeed: '%MOVE SPEED:'
-      description: For courage! Hero unleashes a war cry that removes any negative
-        effects he's experiencing and grants him bonus damage and move speed for a
-        short time.  Can be cast while stunned.  The first 0.75s of the effect reduces
-        the damage he takes by 60%%.
-      duration: 'DURATION:'
-    modifiers:
-      heroic_soul_bonus:
-      - Heroic Soul
-      - Gaining bonus damage and move speed after purging negative effects.
-    name: Heroic Soul
-  hero_justice_kick:
-    data:
-      damage: 'DAMAGE:'
-      description: For justice! Hero kicks the target enemy, knocking them back a
-        short distance and slowing them.
-      duration: 'DURATION:'
-      knockback: 'KNOCKBACK:'
-      slow: '%SLOW:'
-    modifiers:
-      justice_kick:
-      - Justice Slow!
-      - Being slowed! By justice!
-    name: Justice Kick!
-  hero_one_punch:
-    data:
-      aghanim_description: Increases crit and increases the Magical damage upon landing
-        by a multiple of Hero's attack damage.
-      crit: '%CRIT:'
-      description: Hero unleashes a devastating punch that deals critical damage,
-        launching the enemy into the air. After a short delay time, they land, creating
-        an explosion that deals Magical damage and stuns any affected units.
-      landing_aoe: 'LANDING EFFECT RADIUS:'
-      landing_damage: 'LANDING DAMAGE:'
-      landing_delay: 'LANDING DELAY:'
-      landing_stun: 'LANDING STUN:'
-      scepter_crit: '%SCEPTER CRIT:'
-      scepter_landing_damage: '%SCEPTER LANDING DAMAGE:'
-    modifiers: {}
-    name: One Punch!
-  special_bonus_hero_1:
-    data: {}
-    modifiers: {}
-    name: +1.25s Heroic Soul Duration
-  special_bonus_hero_2:
-    data: {}
-    modifiers: {}
-    name: -2s Freedom Strike Cooldown
-  special_bonus_hero_3:
-    data: {}
-    modifiers: {}
-    name: +300 Justice Kick Damage
-  special_bonus_hero_4:
-    data: {}
-    modifiers: {}
-    name: +1.75s One Punch! Stun
 Hero:
+  modref: npc_dota_hero_hero
+  ref: npc_dota_hero_tusk
   data:
     bio: ''
     hype: Fast and furious, Hero is a get-in-get-out Hero with a fun to use skillset.
       Kick your enemies away with Justice Kick to set up for your pouncing Freedom
       Strike, break out of stuns and purgable disables with Heroic Soul, and obliterate
       your targets with the famed ONE PUNCH!!
-  modref: npc_dota_hero_hero
   name: Hero
-  ref: npc_dota_hero_tusk
+Abilities:
+  hero_justice_kick:
+    name: Justice Kick!
+    data:
+      description: For justice! Hero kicks the target enemy, knocking them back a
+        short distance and slowing them.
+      damage: null
+      knockback: null
+      slow: '%SLOW:'
+      duration: null
+    modifiers:
+      modifier_justice_kick:
+      - Justice Slow!
+      - Being slowed! By justice!
+  hero_freedom_strike:
+    name: Freedom Strike!
+    data:
+      description: For freedom!  Hero leaps into the air, and upon landing, deals
+        damage and slows enemies in a short radius.
+      charge: 'DISTANCE:'
+      radius: null
+      slow: '%SLOW:'
+      duration: null
+    modifiers:
+      modifier_freedom_strike_slow:
+      - Freedom Slow!
+      - Being slowed! By freedom!
+  hero_heroic_soul:
+    name: Heroic Soul
+    data:
+      description: For courage! Hero unleashes a war cry that removes any negative
+        effects he's experiencing and grants him bonus damage and move speed for a
+        short time.  Can be cast while stunned.  The first 0.75s of the effect reduces
+        the damage he takes by 60%%.
+      bonus_damage: 'DAMAGE:'
+      bonus_movespeed: '%MOVE SPEED:'
+      duration: null
+    modifiers: {}
+  hero_one_punch:
+    name: One Punch!
+    data:
+      description: Hero unleashes a devastating punch that deals critical damage,
+        launching the enemy into the air. After a short delay time, they land, creating
+        an explosion that deals Magical damage and stuns any affected units.
+      aghanim_description: Increases crit and increases the Magical damage upon landing
+        by a multiple of Hero's attack damage.
+      crit: '%CRIT:'
+      scepter_crit: '%SCEPTER CRIT:'
+      scepter_landing_damage: '%SCEPTER LANDING DAMAGE:'
+      landing_delay: 'LANDING DELAY:'
+      landing_damage: 'LANDING DAMAGE:'
+      landing_aoe: 'LANDING EFFECT RADIUS:'
+      landing_stun: 'LANDING STUN:'
+    modifiers: {}
+  special_bonus_hero_1:
+    name: +1.25s Heroic Soul Duration
+    data: {}
+    modifiers: {}
+  special_bonus_hero_2:
+    name: -2s Freedom Strike Cooldown
+    data: {}
+    modifiers: {}
+  special_bonus_hero_3:
+    name: +300 Justice Kick Damage
+    data: {}
+    modifiers: {}
+  special_bonus_hero_4:
+    name: +1.75s One Punch! Stun
+    data: {}
+    modifiers: {}

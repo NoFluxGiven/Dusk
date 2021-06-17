@@ -1,0 +1,113 @@
+Abilities:
+  baal_compression_sphere:
+    data:
+      Description: Creates an area in which Baal's allies can move freely, but his
+        enemies are slowed the longer they remain within it. Applies a stacking slow
+        to turnrate, movespeed and attackspeed over its duration. The slow is unique
+        to the unit within it, and leaving the sphere will reset the stacks.
+      attack_slow: 'ATTACK SPEED SLOW:'
+      duration: 'DURATION:'
+      move_slow: '%MOVEMENT SLOW:'
+      radius: 'RADIUS:'
+      turn_slow: '%TURNRATE SLOW:'
+    modifiers:
+      compression_sphere_aura:
+      - Compression Sphere
+      - Being affected by a %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% movement
+        slow, %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attack speed slow, and
+        %dMODIFIER_PROPERTY_TURN_RATE_PERCENTAGE%%% turnrate slow.
+    name: Compression Sphere
+  baal_port_out:
+    data:
+      description: Jumps to the Rift immediately.
+    modifiers: {}
+    name: Port Out
+  baal_spatial_rift:
+    data:
+      damage: 'DAMAGE:'
+      description: After a 1 second channel time, creates a rift at the target location
+        that deals damage and slows drastically.
+      duration: 'DURATION:'
+      radius: 'RADIUS:'
+      slow: '%SLOW:'
+      slow_duration: 'SLOW DURATION:'
+    modifiers:
+      spatial_rift_display:
+      - Spatial Rift
+      - Can jump to a Rift with Port Out.
+      spatial_rift_slow:
+      - Spatial Rift
+      - Being slowed drastically by rift.
+    name: Spatial Rift
+  baal_st_anchor:
+    data:
+      description: Anchors the target enemy to a location.  When they move too far
+        away from the location, they are stunned, take damage, and are teleported
+        to it.
+      duration: 'DURATION:'
+      radius: 'RADIUS:'
+      slow: '%SLOW:'
+      stun: 'STUN:'
+    modifiers:
+      st_anchor:
+      - Spatiotemporal Anchor
+      - Being pulled back to the centre of the anchor radius when leaving it.
+    name: Spatiotemporal Anchor
+  baal_superposition2:
+    data:
+      Note0: Disjoints projectiles upon use.
+      Note1: Gives Baal phased movement.
+      bonus_ms: '%SPEED BONUS:'
+      description: Baal enters a state of instability for a short time, becoming untargetable,
+        invisible, unrevealable and immune to Physical damage.
+      duration: 'DURATION:'
+    modifiers: {}
+    name: Superposition
+  special_bonus_baal_1:
+    data: {}
+    modifiers: {}
+    name: +75 Spatial Rift Damage
+  special_bonus_baal_2:
+    data: {}
+    modifiers: {}
+    name: -150 Spatiotemporal Anchor Radius
+  special_bonus_baal_3:
+    data: {}
+    modifiers: {}
+    name: +2s Spatial Rift Slow
+  special_bonus_baal_4:
+    data: {}
+    modifiers: {}
+    name: +20% Superposition Movespeed
+  special_bonus_baal_5:
+    data: {}
+    modifiers: {}
+    name: Compression Sphere 80 DPS (Magical)
+  special_bonus_baal_6:
+    data: {}
+    modifiers: {}
+    name: Superposition Grants Free Pathing
+Hero:
+  data:
+    bio: 'A being from a forgotten Plane, the creature known only as ''Baal'' foresaw
+      that which his kind did not; the End. In his dreams he saw fire descending upon
+      his people, destroying all that he knew. His fears came to a head, and with
+      the help of others, he put a plan in motion; before the cataclysmic event, he
+      would drag his world into the next Plane, and deal with the consequences afterwards.
+      The event began as his dream foretold: a being of light and fire had formed,
+      infantile and oblivious, its light singeing the edges of his home. With a cry,
+      he and his comrades used all of their might to push their home through the warping
+      walls of the Plane. All seemed well, until the gap widened, and an unfathomable
+      force tore at the Plane. His home began to crumble as it fell through, and he
+      watched with horror as the being of fire was torn from its celestial cradle,
+      its form washing over and searing all that he knew to ash. As he fell into this
+      new plane, his anger and guilt consumed him, his physical form a self imposed
+      prison for his transgressions against his own kind.'
+    hype: A positional manipulator as masterful as they are irritating, Baal's job
+      is to constantly keep the enemy on their toes. Create a sphere that gradually
+      slows enemies' attack and movement speed, anchor them to the ground with Spatiotemporal
+      Anchor, teleport to a location after channelling with Spatial Rift, and enter
+      a state of uncertainty to wreak havoc on your unsuspecting enemies with Superposition.
+  modref: npc_dota_hero_baal
+  name: Baal
+  ref: npc_dota_hero_arc_warden

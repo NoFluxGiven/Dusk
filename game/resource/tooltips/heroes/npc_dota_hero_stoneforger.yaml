@@ -1,0 +1,6 @@
+Hero:
+  modref: npc_dota_hero_stoneforger
+  ref: npc_dota_hero_earthshaker
+  data: {}
+  name: ''
+Abilities: {}

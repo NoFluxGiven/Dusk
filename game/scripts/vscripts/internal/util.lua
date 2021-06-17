@@ -939,6 +939,11 @@ function FindEntities(caster,point,radius,team,targets,flags,find_order)
                             false)
 end
 
+---@param caster ehandle
+---@param point Vector
+---@param radius integer
+---@param targets integer
+---@param flags integer
 function FindEnemies(caster,point,radius,targets,flags)
   local targets = targets or DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP
   local flags = flags or DOTA_UNIT_TARGET_FLAG_NONE
@@ -1131,7 +1136,7 @@ function GenericParticle(handle,type)
   end
 end
 
-function WorldParticle(particle_name,position,table_cp_vectors)
+function CreateParticleWorld(position,particle_name,table_cp_vectors)
   local p = ParticleManager:CreateParticle(particle_name, PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(p, 0, position)
 
@@ -1144,6 +1149,40 @@ function WorldParticle(particle_name,position,table_cp_vectors)
   return p
 end
 
+function InTable(table, entry)
+  for n, v in ipairs(table) do
+    if entry == v then return true end
+  end
+
+  return false
+
+end
+
+function GetResistedDuration(target, duration)
+  return duration * (1 - target:GetStatusResistance())
+end
+
+function StunTarget(caster, ability, target, duration)
+  target:AddNewModifier(caster, ability, "modifier_stunned", {duration=GetResistedDuration(target,duration)})
+end
+
+function ReduceHeroCooldowns(hero, percent, except)
+  for i=0,31 do
+    local ab = hero:GetAbilityByIndex(i)
+    if ab ~= nil then
+      if not ab:IsCooldownReady() then
+        if not InTable(except, ab) then
+          local cd = ab:GetCooldownTimeRemaining()
+          local change = percent / 100
+          local final = cd - (cd * change)
+
+          ab:EndCooldown()
+          ab:StartCooldown(final)
+        end
+      end
+    end
+  end
+end
 
 function RemoveAllWearables(hero)
   local children = hero:GetChildren()

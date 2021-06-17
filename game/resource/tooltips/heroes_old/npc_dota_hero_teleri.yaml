@@ -1,0 +1,147 @@
+#############################################################################################################
+
+Hero:
+  ref: npc_dota_hero_drow_ranger
+  modref: npc_dota_hero_teleri
+
+  name: Teleri
+
+  data:
+    bio: >-
+      None.
+    hype: >-
+      None.
+
+  talents:
+      1: "+12 Lightning Arc Stack Damage" # 15
+      2: "+"
+      3: "*"
+      4: "*"
+      5: "*"
+
+#############################################################################################################
+
+Abilities:
+
+  # Lightning Arc
+
+  teleri_lightning_arc:
+    name: Lightning Arc
+
+    gen:
+      cast_range: 700
+      cast_point: 0.3
+      cost: 75
+      cooldown: 13
+      behavior:
+        - UNIT_TARGET
+        - IGNORE_BACKSWING
+      damage_type: PHYSICAL
+      spell_immunity: ENEMIES_NO
+      cast_animation: CAST_ABILITY_2
+      sv:
+        damage: 20 28 36 44
+        slow: 30
+        slow_duration: 1
+        stun_duration: 0.10 0.15 0.20 0.25
+        max_charges: 8
+        duration: 3.2
+
+    data: 
+      desc: >-
+        Teleri fires a bolt of electricity towards the target
+        enemy, dealing %damage% damage and electrically
+        charging them for %duration% seconds. Each attack Teleri makes against
+        the affected unit slows by %slow%%% for %slow_duration% seconds,
+        and adds another level of charge, refreshing the debuff. When this ability
+        is next cast on that target, they take %damage% damage
+        and are stunned for %stun_duration%, per charge.
+        
+      damage: "*" # 20/28/36/44 ( 352 at max level with max stacks )
+      slow: "%MOVEMENT SLOW:" # 30%
+      slow_duration: "*" # 1s
+      stun_duration: "*" # 0.10/0.15/0.20/0.25
+      max_charges: "*" # 8
+      duration: "*" # 3.2s
+      # 13s cooldown
+      # 0.3s cast point
+
+    modifiers: null
+
+  # Tijadi's Gambit
+  
+  teleri_tijadis_gambit:
+    name: Tijadi's Gambit
+    data:
+      desc: >
+        Teleri dashes with great speed towards the target,
+        attacking them %attack_count% times on the way.
+        Each attack unleashes a potent blast of electricity,
+        disrupting items and slowing move speed and
+        turn rate by %slow%%%. Places 1 random item
+        on cooldown for between %cooldown_min% and %cooldown_max%
+        seconds per attack. If the item is already on cooldown,
+        this increases its cooldown by the amount instead.
+      attack_count: "ATTACKS:" # 3
+      slow: "%TURNRATE/MOVEMENT SLOW:" # 15/20/25/30%
+      cooldown_min: "COOLDOWN MINIMUM:" # 2.0s
+      cooldown_max: "COOLDOWN MAXIMUM:" # 3.0/4.0/5.0/6.0s
+      
+    modifiers:
+      tijadis_slow:
+        - Tijadi's Gambit Slow
+        - Turn-rate and movespeed are slowed.
+
+  # Electrodominance
+  
+  teleri_electrodominance:
+    name: Electrodominance
+
+    data: 
+      desc: >-
+        Enemies that cast Spells near Teleri within %duration% of her casting a Spell
+        are zapped with damaging electricity that burns %mana_drain%%% of their current Mana,
+        and reduces their Spell damage by %spell_damage_reduction%%% for %debuff_duration% seconds.
+
+        Disabled by Break.
+
+      duration: "*" # 3s
+      radius: "*" # 700
+      mana_drain: "*" # 6/8/10/12%
+      damage: "*" # 90/110/130/150
+      spell_damage_reduction: "*" # 10/15/20/25%
+      debuff_duration: "*" # 4s
+
+
+    modifiers:
+      electrodominance_buff:
+          - Electrodominance
+          - Dealing damage, burning Mana, and reducing the Spell damage of enemies that cast Spells near you.
+
+  # 
+  
+  teleri_thundershot:
+    name: Thundershot
+
+    data: 
+      desc: >-
+        Teleri's fires an arrow that travels at great speed.
+        When it arrives at the target location, after a %delay% second delay,
+        it unleashes a barrage of electrical surges, preventing item usage
+        and damaging enemies inside it. Deals more damage
+        based on the amount of Heroes in the radius.
+
+        Every %interval% seconds in the %radius% radius,
+        deals %damage% Magical damage per enemy within the radius,
+        and Mutes for %mute_duration% seconds.
+        The Mute duration is extended for each instance applied.
+        Lasts %duration% seconds.
+
+      delay: "*" # 0.8s
+      interval: "*" # 1s
+      radius: "*" # 450
+      damage: "*" # 40/50/60 (200/250/300 max with 5 Heroes)
+      mute_duration: "*" # 2s
+      duration: "*" # 8s (with 5 Heroes inside for the full duration, deals a total of 1500 damage to each, Muting for 9.6s)
+
+    modifiers: null

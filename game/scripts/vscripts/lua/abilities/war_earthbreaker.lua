@@ -10,7 +10,11 @@ end
 
 function war_earthbreaker:OnSpellStart()
 	local caster = self:GetCaster()
-	local point = caster:GetAbsOrigin()+caster:GetForwardVector()*150
+	local offset = caster:GetForwardVector()*150
+	local extra_offset = caster:GetForwardVector()*450
+	local start = caster:GetAbsOrigin()
+
+	local max_count = 3
 
 	local damage = self:GetAbilityDamage()
 
@@ -18,18 +22,25 @@ function war_earthbreaker:OnSpellStart()
 
 	local radius = self:GetSpecialValueFor("radius") + t_radius_bonus
 	local stun = self:GetSpecialValueFor("stun")
+	local initial = true
 
-	local unit = FastDummy(point,caster:GetTeam(),2,0)
+	self:Slam(caster, start, offset, extra_offset, damage, t_radius_bonus, radius, stun, initial, 0, max_count)
+end
 
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_war/earthbreaker.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit) --[[Returns:int
-	Creates a new particle effect
-	]]
+function war_earthbreaker:Slam(caster, start, offset, extra_offset, damage, t_radius_bonus, radius, stun, initial, count, max_count)
+	-- local unit = FastDummy(start + offset + extra_offset * count,caster:GetTeam(),2,0)
+	local unit = FastDummy(start + offset,caster:GetTeam(),2,0)
 
-	ParticleManager:SetParticleControl(particle, 1, Vector(radius,0,0)) --[[Returns:void
-	Set the control point data for a control on a particle effect
-	]]
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_war/earthbreaker.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
+
+	ParticleManager:SetParticleControl(particle, 1, Vector(radius,0,0))
+
+	local dmg = damage
+
+	if not initial then dmg = damage / 2 end
 
 	unit:EmitSound("War.Earthbreaker")
+	--unit:EmitSoundParams("War.Earthbreaker", 1, volume, 0)
 
 	local enemy_found = FindEnemies(caster,unit:GetAbsOrigin(),radius)
 
@@ -37,10 +48,33 @@ function war_earthbreaker:OnSpellStart()
 
 	for k,v in pairs(enemy_found) do
 		if not v:IsMagicImmune() then
-			DealDamage(v,caster,damage,DAMAGE_TYPE_PHYSICAL)
-			v:AddNewModifier(caster, nil, "modifier_stunned", {Duration=stun}) --[[Returns:void
-			No Description Set
-			]]
+			DealDamage(v,caster,dmg,DAMAGE_TYPE_PHYSICAL)
+			v:AddNewModifier(caster, nil, "modifier_stunned", {Duration=stun * (1 - v:GetStatusResistance())})
+		end
+	end
+
+	if #enemy_found > 0 then 
+		count = count+1
+		if count < max_count then
+			-- earthquake sound effect here
+			-- earthquake particle effect here
+			local warning_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_war/earthbreaker_warning.vpcf", PATTACH_WORLDORIGIN, nil)
+
+			-- ParticleManager:SetParticleControl(warning_particle, 0, start + offset + extra_offset * count)
+			ParticleManager:SetParticleControl(warning_particle, 0, start + offset)
+
+			Timers:CreateTimer(2.50,
+			function()
+				self:Slam(
+				caster,
+				start,
+				offset,
+				extra_offset,
+				damage, t_radius_bonus, radius, stun,
+				count == 0 and true or false,
+				count, max_count)
+				ParticleManager:DestroyParticle(warning_particle, false)
+			end)
 		end
 	end
 end

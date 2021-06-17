@@ -1,0 +1,22 @@
+#Elena
+
+##Malefic Purge
+
+TargetType: HERO
+TargetTeam: BOTH
+
+Desc: After a {delay 1.5s} delay, the target is Strong Dispelled and recovers Health equal to {recovery 10/15/20/25%} of their missing Health. If they are an enemy, they take the amount as damage instead, and are slowed by {slow 100%} for {slow_duration 0.7S}.
+
+##Devotion
+
+Desc: Elena grants the target ally a potent piece of her soul for {duration 5S}, increasing their Health Regen by {health_regen 25/35/45/55} and the healing they receive by {heal_increase 40/60/80/100%} but preventing her own healing and slowing her by {self_slow 15%}.
+If Elena leaves the {radius 900} effective radius, or dies, the buff is immediately dispelled.
+
+##Sheathe
+
+Type: ULTIMATE
+TargetType: HERO
+TargetTeam: BOTH
+
+Desc: Elena globally prevents all allied and enemy Heroes from attacking for {duration 4/5/6S}, reducing their outgoing damage by {damage_reduction 50%}.
+Dispellable via a Strong Dispel.

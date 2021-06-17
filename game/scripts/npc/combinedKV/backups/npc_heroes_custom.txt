@@ -1751,6 +1751,10 @@
   	"Ability15"				"special_bonus_gemini_3"
   	"Ability16"				"special_bonus_gemini_2"
   	"Ability17"				"special_bonus_cooldown_reduction_25"
+  	"Ability18"				""
+  	"Ability19"				""
+  
+  	"AbilityTalentStart"	"10"
   
   	"ArmorPhysical"				"0"									// Physical protection.
   	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -1974,6 +1978,14 @@
 
   //. . . . . . . . . . . . .
 
+  ///@changelog
+  ///@version 2.2
+  ///@hero Hero
+  ///@changes #
+  /// STR gain increased to 3.6 (was 2.0)
+  /// INT gain increased to 1.5 (was 1.2)
+  /// AGI gain increased to 2.5 (was 2.15)
+  
   "npc_dota_hero_tusk"
   {
   	"AbilityLayout" 		"4"
@@ -2006,18 +2018,18 @@
   	"MagicalResistance"				"25"									// Magical protection (percentage).
   
   	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-  	"AttackRange"				"150"
+  	"AttackRange"				"175"
   	"AttackRate"				"1.7"
   	"AttackDamageMin"			"30"										// Damage range min.
   	"AttackDamageMax"			"34"										// Damage range max.
   
   	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
   	"AttributeBaseStrength"		"23"										// Base strength
-  	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
+  	"AttributeStrengthGain"		"3.6"										// Strength bonus per level.
   	"AttributeBaseIntelligence"	"16"										// Base intelligence
-  	"AttributeIntelligenceGain"	"1.2"										// Intelligence bonus per level.
+  	"AttributeIntelligenceGain"	"1.5"										// Intelligence bonus per level.
   	"AttributeBaseAgility"		"19"										// Base agility
-  	"AttributeAgilityGain"		"2.15"										// Agility bonus per level.
+  	"AttributeAgilityGain"		"2.5"										// Agility bonus per level.
   
   	//"BountyXP"					"0"							`		// Experience earn.
   	//"BountyGoldMin"				"0"										// Gold earned min.
@@ -3731,7 +3743,7 @@
   	// At max pulses, deals 90/180/270/360 damage and restores the same amount.
   	// 17s cooldown. Can be reactivated to return the orb at any time.
   	// Starts pulsing immediately as it hits the target enemy. Disjointable.
-  	"Ability3"				"shade_venomous"
+  	"Ability3"				"shade_shadowshift"
   	"Ability4"				"generic_hidden"
   	"Ability5"				"generic_hidden"
   	"Ability6"				"shade_isolation"
@@ -4413,7 +4425,7 @@
 
   //. . . . . . . . . . . . .
 
-  "npc_dota_hero_phantom_lancer"
+  "npc_dota_hero_drow_ranger"
   {
   	"AbilityLayout" 		"4"
   	"override_hero"			"npc_dota_hero_drow_ranger"

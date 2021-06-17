@@ -1,0 +1,7 @@
+Hero:
+  modref: npc_dota_hero_cultist
+  ref: npc_dota_hero_invoker
+  data:
+    hype: None
+  name: ''
+Abilities: {}

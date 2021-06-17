@@ -8,22 +8,22 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/war_berserker_aura"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"war_berserker_aura"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"900"
-	"AbilityCastPoint"				"0"
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.2"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"0"
+	"AbilityCooldown"				"15"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"0"
+	"AbilityManaCost"				"155"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -36,7 +36,7 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"900"
+			"radius"						"0"
 		}
 		"02"
 		{
@@ -51,7 +51,7 @@
 		"04"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"percent"						"10"
+			"percent"						"30 40 50 60"
 		}
 	}
 	

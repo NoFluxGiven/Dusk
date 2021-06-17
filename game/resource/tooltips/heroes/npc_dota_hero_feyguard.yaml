@@ -1,0 +1,6 @@
+Hero:
+  modref: npc_dota_hero_feyguard
+  ref: npc_dota_hero_dark_willow
+  data: {}
+  name: ''
+Abilities: {}

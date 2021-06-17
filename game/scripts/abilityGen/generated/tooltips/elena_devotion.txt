@@ -1,0 +1,5 @@
+Elena grants the target ally a potent piece of her soul for %duration%
+seconds, increasing their Health Regen by %health_regen% and the
+healing they receive by %heal_increase%% but preventing her own
+healing and slowing her by %self_slow%%. If Elena leaves the %radius%
+effective radius, or dies, the buff is immediately dispelled.

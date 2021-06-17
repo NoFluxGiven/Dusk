@@ -1,33 +1,56 @@
+Hero:
+  modref: npc_dota_hero_horror
+  ref: npc_dota_hero_night_stalker
+  data:
+    bio: ''
+    hype: Horror is a dangerous ganker, capable of forcing enemies to run away from
+      him with Terrify, blind them with Obscure, cause them to isolate themselves
+      from their allies with Paranoia, and teleport to anyone he can see with Sinister.
+  name: Horror
 Abilities:
+  horror_terrify:
+    name: Terrify
+    data:
+      description: Using dark magic Horror instils a deep fear in the target enemy.
+        For a short time, they are slowed slightly. If Horror draws near, they take
+        damage, the slow becomes more powerful, and they can do nothing but run away.
+      Note0: Horror's illusions do not cause terrified units to run away.
+      duration: null
+      debuff_duration: 'DEBUFF DURATION:'
+      slow: '%SLOW:'
+      slow_active: '%DEBUFF SLOW:'
+      damage: 'DEBUFF DAMAGE:'
+    modifiers: {}
   horror_obscure:
+    name: Obscure
     data:
       Description: Creates a blast of darkness around Horror that deals damage, then
         applies a blind, reducing affected units' vision range to 0, and causing them
         to miss all of their attacks.
-      duration: 'DURATION:'
+      duration: null
       miss_chance: '%MISS CHANCE:'
-      radius: 'RADIUS:'
+      radius: null
     modifiers:
-      obscure:
+      modifier_obscure:
       - Obscure
       - Blinded and missing attacks.
-    name: Obscure
   horror_paranoia:
+    name: Paranoia
     data:
       Description: The targeted enemy is cursed to take damage for each of their nearby
         allies over time. Creeps deal less damage than Heroes. Deals a base amount
         of half the Hero damage.
-      creep_damage: 'CREEP DAMAGE:'
-      duration: 'DURATION:'
-      end_damage: 'BONUS END DAMAGE:'
+      duration: null
       hero_damage: 'HERO DAMAGE:'
-      radius: 'RADIUS:'
+      creep_damage: 'CREEP DAMAGE:'
+      end_damage: 'BONUS END DAMAGE:'
+      radius: null
     modifiers:
-      paranoia:
+      modifier_paranoia:
       - Paranoia
       - Taking damage every second for each nearby allied unit and Hero.
-    name: Paranoia
   horror_sinister:
+    name: Sinister
     data:
       Description: Horror gains vision of the target enemy, bonus movespeed, and Flying
         movement. Every strike Horror makes against that enemy while this effect is
@@ -35,56 +58,21 @@ Abilities:
         increases.
       bonus_movespeed: '%BONUS MOVESPEED:'
       crit_bonus: '%CRITICAL DAMAGE PER HIT:'
-      duration: 'DURATION:'
-    modifiers:
-      sinister:
-      - Sinister
-      - Spooky.
-      sinister_slow:
-      - Sinister
-      - Slowed and granting your vision to Horror.
-    name: Sinister
-  horror_terrify:
-    data:
-      Note0: Horror's illusions do not cause terrified units to run away.
-      damage: 'DEBUFF DAMAGE:'
-      debuff_duration: 'DEBUFF DURATION:'
-      description: Using dark magic Horror instils a deep fear in the target enemy.
-        For a short time, they are slowed slightly. If Horror draws near, they take
-        damage, the slow becomes more powerful, and they can do nothing but run away.
-      duration: 'DURATION:'
-      slow: '%SLOW:'
-      slow_active: '%DEBUFF SLOW:'
-    modifiers:
-      horror_terrify:
-      - Terrify
-      - Will run away from Horror when he draws near.
-      horror_terrify_run:
-      - Terrified
-      - Running away!
-    name: Terrify
+      duration: null
+    modifiers: {}
   special_bonus_horror_1:
-    data: {}
-    modifiers: {}
     name: +125 Terrify Damage
+    data: {}
+    modifiers: {}
   special_bonus_horror_2:
-    data: {}
-    modifiers: {}
     name: +3s Sinister Duration
+    data: {}
+    modifiers: {}
   special_bonus_horror_3:
-    data: {}
-    modifiers: {}
     name: Obscure 1.5s Stun
-  special_bonus_horror_4:
     data: {}
     modifiers: {}
+  special_bonus_horror_4:
     name: x2 Paranoia Damage
-Hero:
-  data:
-    bio: ''
-    hype: Horror is a dangerous ganker, capable of forcing enemies to run away from
-      him with Terrify, blind them with Obscure, cause them to isolate themselves
-      from their allies with Paranoia, and teleport to anyone he can see with Sinister.
-  modref: npc_dota_hero_horror
-  name: Horror
-  ref: npc_dota_hero_night_stalker
+    data: {}
+    modifiers: {}

@@ -1,6 +1,19 @@
 //=====================================================================================================
 // HERO: Freedom Strike
 //=====================================================================================================
+
+///@changelog
+///@version 2.2
+///@hero Hero
+///@ability Freedom Strike
+///@changes #
+/// Increased slow to 25%.
+/// Rescaled slow duration to 2.0/2.5/3.0/3.5s
+/// Reduced cooldown to 5s (was 12/10/8/6s).
+/// Reduced Mana cost to 55.
+/// Increased radius to 275 (was 250).
+/// Now slows attack speed by 100.
+
 "hero_freedom_strike"
 {
 	// General
@@ -23,11 +36,11 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"12 10 8 6"
+	"AbilityCooldown"				"5"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"60"
+	"AbilityManaCost"				"55"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -45,19 +58,24 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"radius"					"250"
+			"radius"					"275"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"-10 -12 -14 -16"
+			"slow"						"-25"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"duration"					"3"
+			"attack_slow"				"-100"
 		}
 		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"2.0 2.5 3.0 3.5"
+		}
+		"06"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"damage"					"110 150 190 230"

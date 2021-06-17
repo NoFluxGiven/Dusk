@@ -28,32 +28,51 @@ function lupin_flashbang:OnSpellStart()
 	]]
 
 	for k,v in pairs(found) do
-		v:AddNewModifier(caster, self, "modifier_flashbang_dazed", {Duration=duration}) --[[Returns:void
-		No Description Set
-		]]
+		v:AddNewModifier(caster, self, "modifier_flashbang_dazed",
+		{
+			Duration=duration
+		})
+
+		StunTarget(caster, self, v, 0.3)
 		self:InflictDamage(v,caster,damage,DAMAGE_TYPE_PHYSICAL)
 	end
 end
 
 modifier_flashbang_dazed = class({})
 
+function modifier_flashbang_dazed:OnCreated(kv)
+	self.cast_range_reduction = self:GetAbility():GetSpecialValueFor("cast_range_reduction")
+	self.attack_speed_reduction = self:GetAbility():GetSpecialValueFor("attack_speed_reduction")
+	self.attack_range_reduction = self:GetAbility():GetSpecialValueFor("attack_range_reduction")
+	self.cast_point_increase = self:GetAbility():GetSpecialValueFor("cast_point_increase")
+	self.movespeed_reduction = 40
+end
+
 function modifier_flashbang_dazed:DeclareFunctions()
 	local funcs = {
-		MODIFIER_EVENT_ON_TAKEDAMAGE,
-		MODIFIER_PROPERTY_OVERRIDE_ANIMATION
+		-- MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING,
+		MODIFIER_PROPERTY_CASTTIME_PERCENTAGE,
+		MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
+		-- MODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE
 	}
 	return funcs
 end
 
-function modifier_flashbang_dazed:OnTakeDamage(params)
-	if self:GetParent() == params.unit then
-		if self:GetElapsedTime() > 0.5 then
-			if params.damage > 20 then
-				self:Destroy()
-			end
+-- if IsClient() then
+	-- function modifier_flashbang_dazed:GetModifierCastRangeBonusStacking() return -self.cast_range_reduction end
+	-- function modifier_flashbang_dazed:GetBonusVisionPercentage() return -self.cast_point_increase end
+	function modifier_flashbang_dazed:GetModifierPercentageCasttime()  return -self.cast_point_increase end
+	function modifier_flashbang_dazed:GetModifierAttackSpeedBonus_Constant() return -self.attack_speed_reduction end
+	function modifier_flashbang_dazed:GetModifierMoveSpeedBonus_Percentage() return -self.movespeed_reduction end
+	function modifier_flashbang_dazed:GetModifierAttackRangeBonus() 
+		if self:GetParent():IsRangedAttacker() then
+			print("RANGED!!!")
+			return -self.attack_range_reduction
 		end
 	end
-end
+-- end
 
 function modifier_flashbang_dazed:GetEffectName()
 	return "particles/units/heroes/hero_lupin/dazed.vpcf"
@@ -63,21 +82,10 @@ function modifier_flashbang_dazed:GetEffectAttachType()
 	return PATTACH_OVERHEAD_FOLLOW
 end
 
-function modifier_flashbang_dazed:GetOverrideAnimation()
-	return ACT_DOTA_DISABLED
-end
-
 function modifier_flashbang_dazed:IsPurgable()
 	return true
 end
 
 function modifier_flashbang_dazed:IsDebuff()
 	return true
-end
-
-function modifier_flashbang_dazed:CheckState()
-	local state = {
-		[MODIFIER_STATE_STUNNED] = true
-	}
-	return state
 end

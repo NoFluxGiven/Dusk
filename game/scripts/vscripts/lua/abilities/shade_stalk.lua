@@ -18,7 +18,7 @@ function shade_stalk:OnSpellStart()
 		duration = duration+tbonus_duration
 	end
 
-	t:EmitSound("Hero_Dark_Seer.Ion_Shield_Start")
+	t:EmitSound("Shade.Stalk.Start")
 
 	c:AddNewModifier(c, self, "modifier_invisible", {Duration=duration}) --[[Returns:void
 	No Description Set
@@ -80,7 +80,7 @@ function modifier_stalk:OnAttackLanded(params)
 				--attacker:Heal(damage, attacker)
 				--self:GetAbility():EndCooldown()
 				CreateParticleHitloc(target,"particles/units/heroes/hero_shade/stalk_attack.vpcf")
-				target:EmitSound("Hero_BountyHunter.Jinada")
+				target:EmitSound("Shade.Stalk.Strike")
 				target:AddNewModifier(attacker, self:GetAbility(), "modifier_stalk_poison", {Duration=poison_duration})
 				local mod = target:FindModifierByNameAndCaster("modifier_stalk_target",attacker)
 				if mod then

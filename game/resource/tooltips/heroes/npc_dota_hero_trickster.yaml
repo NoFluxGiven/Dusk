@@ -1,0 +1,39 @@
+Hero:
+  modref: npc_dota_hero_trickster
+  ref: npc_dota_hero_meepo
+  data:
+    hype: None
+  name: ''
+Abilities:
+  trickster_surprise:
+    name: Surprise!
+    data:
+      description: Fires a bolt of energy that deals large Magical damage, stuns,
+        and disarms the target.
+      magic_missile_disarm: 'DURATION:'
+    modifiers: {}
+  trickster_disappearing_act:
+    name: Disappearing Act
+    data:
+      description: The targeted ally or enemy is temporarily removed from the game,
+        reappearing at a random nearby spot after the duration.  Instantly kills non-Hero
+        units.
+      Note0: A marker appears to show Trickster where the target will land.
+      Note1: Grants a 200 radius of vision around the landing point.
+      duration: null
+    modifiers: {}
+  trickster_jam_magic:
+    name: Jam Magic
+    data:
+      description: Creates an aura near Trickster that silences enemies that stray
+        too close.
+      duration: null
+    modifiers: {}
+  trickster_encore:
+    name: Encore
+    data:
+      description: The targeted unit becomes cursed, unable to cast any abilities
+        or use any items except for the last one they used.
+      duration: null
+      duration_scepter: 'DURATION SCEPTER:'
+    modifiers: {}

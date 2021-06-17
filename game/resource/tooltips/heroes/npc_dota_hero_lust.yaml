@@ -1,0 +1,6 @@
+Hero:
+  modref: npc_dota_hero_lust
+  ref: npc_dota_hero_queenofpain
+  data: {}
+  name: ''
+Abilities: {}

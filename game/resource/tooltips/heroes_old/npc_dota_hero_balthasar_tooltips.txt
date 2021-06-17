@@ -1,0 +1,27 @@
+#npc_dota_hero_balthasar (npc_dota_hero_lycan)
+
+    Balthasar
+    ---
+    Bio here.
+    ---
+    Hype here.
+    ---
+
+#balthasar_doomflame
+
+    Doomflame
+    ---
+    With a howl, the Wolf summons a wave of fire that washes over the battlefield,
+    leaving damaging ground in its wake. Balthasar may traverse this ground at
+    extremely high speed, catching enemies that normally would escape him.
+
+    [SV]
+    damage
+    damage_over_time
+    duration
+    movespeed MOVESPEED OVER GROUND
+    radius
+    range
+
+    [Modifiers]
+    Doomflame - Moving at 1000 movespeed.

@@ -1,6 +1,7 @@
-Abilities: {}
 Hero:
-  data: {}
   modref: npc_dota_hero_elementalist
+  ref: npc_dota_hero_invoker
+  data:
+    hype: None
   name: ''
-  ref: npc_dota_hero_elementalist
+Abilities: {}

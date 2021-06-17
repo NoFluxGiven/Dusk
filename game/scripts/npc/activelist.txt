@@ -22,45 +22,47 @@
 	"npc_dota_hero_axe" "1"
 	"npc_dota_hero_antimage" "1"
 	"npc_dota_hero_dragon_knight" "1"
-	"npc_dota_hero_wisp" "1"
 	"npc_dota_hero_arc_warden" "1"
 	"npc_dota_hero_terrorblade" "1"
 	"npc_dota_hero_sniper" "1"
-	"npc_dota_hero_legion_commander" "1"
-	"npc_dota_hero_lich" "1"
-	"npc_dota_hero_omniknight" "1"
 	"npc_dota_hero_bounty_hunter" "1"
 	"npc_dota_hero_rubick" "1"
-	"npc_dota_hero_ursa" "1"
 	"npc_dota_hero_spectre" "1"
 	"npc_dota_hero_vengefulspirit" "1"
-	"npc_dota_hero_keeper_of_the_light" "1"
 	"npc_dota_hero_juggernaut" "1"
 	"npc_dota_hero_phantom_assassin" "1"
-	"npc_dota_hero_jakiro" "1"
 	"npc_dota_hero_tinker" "1"
 	"npc_dota_hero_elder_titan" "1"
 	"npc_dota_hero_tusk" "1"
-	"npc_dota_hero_night_stalker" "1"
-	"npc_dota_hero_bloodseeker" "1"
-	"npc_dota_hero_doom_bringer" "1"
-	"npc_dota_hero_oracle" "1"
 	"npc_dota_hero_techies" "1"
 	"npc_dota_hero_leshrac" "1"
 	"npc_dota_hero_necrolyte" "1"
-	"npc_dota_hero_chaos_knight" "1"
-	"npc_dota_hero_enigma" "1"	
+	"npc_dota_hero_enigma" "1"
 	"npc_dota_hero_riki" "1"
 	"npc_dota_hero_crystal_maiden" "1"
 	"npc_dota_hero_sand_king" "1"
 	"npc_dota_hero_shredder" "1"
+
+	"npc_dota_hero_night_stalker" "0" // weird
+	"npc_dota_hero_bloodseeker" "0" // boring
+	"npc_dota_hero_doom_bringer" "0" // very boring
+	"npc_dota_hero_oracle" "0" // confusing
+	"npc_dota_hero_chaos_knight" "0" // very boring
+	"npc_dota_hero_keeper_of_the_light" "0" // boring and weird
+	"npc_dota_hero_legion_commander" "0" // needs rework
+	"npc_dota_hero_lich" "0" // boring
+	"npc_dota_hero_omniknight" "0" // boring
+
+	"npc_dota_hero_jakiro" "0" // slight rework
+	"npc_dota_hero_wisp" "0" // rework
+	"npc_dota_hero_ursa" "0" // rework
 	
 
 	// WIP Buffer:
 
 	// REQUIRES Lua Conversion+Talents:
 
-	"npc_dota_hero_rattletrap" "0"
+	"npc_dota_hero_rattletrap" "1"
 
 	//==========================================
 
