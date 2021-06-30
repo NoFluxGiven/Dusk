@@ -1,28 +1,30 @@
 //=====================================================================================================
-// ALEXANDER: Radiant
+// ALEXANDER: Raise the Shield
 //=====================================================================================================
-"alexander_radiant"
+"alexander_lightburst"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
-	"ScriptFile"					"lua/abilities/alexander_radiant"
+	"ScriptFile"					"lua/abilities/alexander_lightburst"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	"AbilityTextureName"			"alexander_radiant"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"alexander_lightburst"
+	"AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"325"
-	"AbilityCastPoint"				"0"
+	"AbilityCastRange"				"425"
+	"AbilityCastPoint"				"0.2"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"40"
+	"AbilityCooldown"				"25"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"80"
+	"AbilityManaCost"				"125"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -34,23 +36,28 @@
 	{
 	"01"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"8"
+			"var_type"						"FIELD_FLOAT"
+			"debuff_duration"				"2.0 3.0 4.0 5.0"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"regen"							"5.0 7.5 10.0 12.5"
+			"debuff_damage"				    "5.0"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"miss"							"40"
+			"radius"						"425"
 		}
-	"04"
+    "04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"400"
+			"damage"						"90 120 150 180"
+		}
+    "05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"heal"						    "8 10 12 14"
 		}
 	}
 	

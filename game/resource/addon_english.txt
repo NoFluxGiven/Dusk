@@ -491,7 +491,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_ability_paragon_smite"											"Smite"
 			"DOTA_Tooltip_ability_paragon_smite_description"								"The Paragon calls forth a divine bolt to strike the targeted enemy. Global.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_paragon_smite_aghanim_description"						"Damage increase. Adds bonus damage if the target was the last person to kill a member of your team."
+			"DOTA_Tooltip_ability_paragon_smite_scepter_description"						"Damage increase. Adds bonus damage if the target was the last person to kill a member of your team."
 			"DOTA_Tooltip_ability_paragon_smite_Lore"										"While the Paragon is pure in soul, retribution leaves a sweet taste on the tongue."
 			"DOTA_Tooltip_ability_paragon_smite_damage"										"DAMAGE:"
 			"DOTA_Tooltip_ability_paragon_smite_scepter_damage"								"SCEPTER DAMAGE:"
@@ -539,7 +539,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			"DOTA_Tooltip_ability_crimson_disintegrate_description"								"Crimson fires a beam of such incredible power that it melts through the defenses of its target, dealing current health percent based damage.  Reduces the target's Armor, Magic Resistance and Movespeed for a short time.\n\nUpgradable by Aghanim's Scepter."
 			"DOTA_Tooltip_ability_crimson_disintegrate_Lore"									"An enemy annihilated once again."
 			"DOTA_Tooltip_ability_crimson_disintegrate_Note0"									"If the main target is not a Hero, and Aghanim's Scepter is purchased, it will not jump to nearby enemies."
-			"DOTA_Tooltip_ability_crimson_disintegrate_aghanim_description"								"The beam jumps to nearby units with a short delay."
+			"DOTA_Tooltip_ability_crimson_disintegrate_scepter_description"								"The beam jumps to nearby units with a short delay."
 			"DOTA_Tooltip_ability_crimson_disintegrate_damage"											"%DAMAGE:"
 			"DOTA_Tooltip_ability_crimson_disintegrate_damage_scepter"									"%SCEPTER DAMAGE:"
 			"DOTA_Tooltip_ability_crimson_disintegrate_duration"										"DURATION:"
@@ -571,7 +571,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_ability_elementalist_trinity" "Trinity"
 			"DOTA_Tooltip_ability_elementalist_trinity_description" "The Elementalist combines the powers of his spells, augmenting his attacks with them, but unable to cast them for the duration.  Each attack he makes is imbued with bonus magical damage based on the level of <font color='#ffcc56'>Fire Bolt</font>, a slow based on the level of <font color='#6699ff'>Ice Bolt</font>, and attack speed and damage over time based on the level of <font color='#66ffcc'>Electric Bolt</font>.  Lasts 15 seconds.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_elementalist_trinity_aghanim_description" "Increases Strength, Agility and Intellect based on the level of Elementalist's Ultimate while it is active, and removes the casting restrictions."
+			"DOTA_Tooltip_ability_elementalist_trinity_scepter_description" "Increases Strength, Agility and Intellect based on the level of Elementalist's Ultimate while it is active, and removes the casting restrictions."
 			"DOTA_Tooltip_ability_elementalist_trinity_bonus_scepter" "SCEPTER BONUS:"
 
 /////////////////////////////////////
@@ -668,7 +668,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 	
 	"DOTA_Tooltip_ability_lich_traveling_frost" "Traveling Frost"
 	"DOTA_Tooltip_ability_lich_traveling_frost_description" "Fires a rolling wave of ice towards a target point.  The first enemy it hits is damaged and frozen in place for a short time. Passes through and ignores units already affected by Traveling Frost.<br/><br/>Upgradable by Aghanim's Scepter."
-	"DOTA_Tooltip_ability_lich_traveling_frost_aghanim_description" "Increases hit detection radius, and Traveling Frost creates multiple projectiles that travel in random directions when it hits a unit."
+	"DOTA_Tooltip_ability_lich_traveling_frost_scepter_description" "Increases hit detection radius, and Traveling Frost creates multiple projectiles that travel in random directions when it hits a unit."
 	"DOTA_Tooltip_ability_lich_traveling_frost_Lore" "It was ICE knowing you."
 	"DOTA_Tooltip_ability_lich_traveling_frost_damage" "DAMAGE:"
 	"DOTA_Tooltip_ability_lich_traveling_frost_radius" "RADIUS:"
@@ -763,7 +763,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_ability_hawkeye_double_tap" "Single Tap"
 			"DOTA_Tooltip_ability_hawkeye_double_tap_description" "After 1 second of charging, Hawkeye fires a projectile that travels a great distance, dealing base damage and damage based on a multiplier of his attack damage while piercing through enemies.  The first Hero enemy hit that isn't killed is marked for his second, more potent shot, which deals Pure damage.  After the shot collides with its targets, Hawkeye has a few moments to take the second shot.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_hawkeye_double_tap_aghanim_description" "Increases range, shot speed, reduces Single Tap damage, but increases the damage of Double Tap."
+			"DOTA_Tooltip_ability_hawkeye_double_tap_scepter_description" "Increases range, shot speed, reduces Single Tap damage, but increases the damage of Double Tap."
 			"DOTA_Tooltip_ability_hawkeye_double_tap_mult" "MULTIPLIER:"
 			"DOTA_Tooltip_ability_hawkeye_double_tap_range" "RANGE:"
 			"DOTA_Tooltip_ability_hawkeye_double_tap_base_damage" "BASE DAMAGE:"
@@ -855,7 +855,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_ability_gemini_abyssal_vortex" "Abyssal Vortex"
 			"DOTA_Tooltip_ability_gemini_abyssal_vortex_description" "The Voidwalker unleashes his most powerful and dangerous spell, creating a gigantic vortex of whorling energy after a 1s delay.  The vortex drags in and damages all non-Magic Immune units, with the amount of damage dealt scaling as they get closer to the centre.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_gemini_abyssal_vortex_aghanim_description" "Stuns enemy units that reach the centre."
+			"DOTA_Tooltip_ability_gemini_abyssal_vortex_scepter_description" "Stuns enemy units that reach the centre."
 			"DOTA_Tooltip_ability_gemini_abyssal_vortex_chargetime" "VORTEX DURATION:"
 			"DOTA_Tooltip_ability_gemini_abyssal_vortex_pull_speed" "PULL STRENGTH:"
 			
@@ -1023,11 +1023,11 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			"DOTA_Tooltip_ability_ironfist_change_stance"                                     "Change Stance"
 			"DOTA_Tooltip_ability_ironfist_change_stance_Description"                         "Change between different Stances.\n\nUpgradable by Aghanim's Scepter."
 			"DOTA_Tooltip_ability_ironfist_change_stance_lore"                         		  "The Lost One's training turns weakness to strength."
-			"DOTA_Tooltip_ability_ironfist_change_stance_aghanim_Description"                         "Removes cooldown."
+			"DOTA_Tooltip_ability_ironfist_change_stance_scepter_description"                         "Removes cooldown."
 			
 			"DOTA_Tooltip_ability_ironfist_focus"                                             "Focus"
 			"DOTA_Tooltip_ability_ironfist_focus_Description"                                 "Ironfist focuses while he is not attacking or casting Spells, increasing the efficacy of his fighting abilities. Stacks of Focus grant different bonuses depending on the Stance he is in, and accumulate at a set rate. Casting a Spell will consume all stacks, whereas attacking will consume 1 stack, and prevent it from ticking up for a short time.\nRegardless of what Stance he is in, casting a Spell will cause its cooldown to be reduced based on the amounts of Focus stacks he has.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_ironfist_focus_aghanim_Description"                                 "Increases the Focus stack maximum and reduces the interval."
+			"DOTA_Tooltip_ability_ironfist_focus_scepter_description"                                 "Increases the Focus stack maximum and reduces the interval."
 			"DOTA_Tooltip_ability_ironfist_focus_interval"                                    "INTERVAL:"
 			"DOTA_Tooltip_ability_ironfist_focus_reduction"                                   "%COOLDOWN REDUCTION (ALL STANCES):"
 			"DOTA_Tooltip_ability_ironfist_focus_max_stack"                                   "MAX STACK:"
@@ -1099,7 +1099,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_ironfist_focus_red"                                         "Red Focus"
 			"DOTA_Tooltip_ability_ironfist_focus_red_description"                             "Places a focus on the target enemy, causing their weakpoint to be exposed.  Attacks targeting them will reduce their Strength and Armor.  If Ironfist hits a target with a red Focus, he will gain bonus damage for a short time.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_ironfist_focus_red_aghanim_description"                     "This ability goes on cooldown only when all three focii are cast."
+			"DOTA_Tooltip_ability_ironfist_focus_red_scepter_description"                     "This ability goes on cooldown only when all three focii are cast."
 			"DOTA_Tooltip_ability_ironfist_focus_red_str_red"                                 "STRENGTH REDUCTION:"
 			"DOTA_Tooltip_ability_ironfist_focus_red_armor_red"                               "ARMOR REDUCTION:"
 			"DOTA_Tooltip_ability_ironfist_focus_red_bonus_damage"                            "BONUS DAMAGE:"
@@ -1107,7 +1107,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_ironfist_focus_green"                                       "Green Focus"
 			"DOTA_Tooltip_ability_ironfist_focus_green_description"                           "Places a focus on the target enemy, causing their weakpoint to be exposed.  Attacks targeting them will reduce their Agility and movespeed.  If Ironfist hits a target with a green Focus, he will gain bonus attack speed for a short time.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_ironfist_focus_green_aghanim_description"                   "This ability goes on cooldown only when all three focii are cast."
+			"DOTA_Tooltip_ability_ironfist_focus_green_scepter_description"                   "This ability goes on cooldown only when all three focii are cast."
 			"DOTA_Tooltip_ability_ironfist_focus_green_agi_red"                               "AGILITY REDUCTION:"
 			"DOTA_Tooltip_ability_ironfist_focus_green_speed_red"                             "SPEED REDUCTION:"
 			"DOTA_Tooltip_ability_ironfist_focus_green_bonus_as"                              "BONUS ATTACK SPEED:"
@@ -1115,7 +1115,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_ironfist_focus_blue"                                        "Blue Focus"
 			"DOTA_Tooltip_ability_ironfist_focus_blue_description"                            "Places a focus on the target enemy, causing their weakpoint to be exposed.  Attacks targeting them will reduce their Intelligence and burn their mana.  If Ironfist hits a target with a blue Focus, he will gain the mana burned as well.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_ironfist_focus_blue_aghanim_description"                    "This ability goes on cooldown only when all three focii are cast."
+			"DOTA_Tooltip_ability_ironfist_focus_blue_scepter_description"                    "This ability goes on cooldown only when all three focii are cast."
 			"DOTA_Tooltip_ability_ironfist_focus_blue_int_red"                                "INTELLIGENCE REDUCTION:"
 			"DOTA_Tooltip_ability_ironfist_focus_blue_mana_burn"                              "MANA BURN:"
 			"DOTA_Tooltip_ability_ironfist_focus_blue_duration"                          	  "DURATION:"
@@ -1348,7 +1348,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_ability_timekeeper_chaos_wave"                                      "Chaos Wave"
 			"DOTA_Tooltip_ability_timekeeper_chaos_wave_description"                          "Stops time in a large radius around Timekeeper.  Allies and enemies affected by this ability are invulnerable for the duration.  Casting Dilation on a target will remove the time stop effect immediately, but not apply any other effects."
-			"DOTA_Tooltip_ability_timekeeper_chaos_wave_aghanim_description"                  ""
+			"DOTA_Tooltip_ability_timekeeper_chaos_wave_scepter_description"                  ""
 			"DOTA_Tooltip_ability_timekeeper_chaos_wave_radius"                               "RADIUS:"
 			"DOTA_Tooltip_ability_timekeeper_chaos_wave_stun"                                 "STUN:"
 			
@@ -1383,7 +1383,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_ability_mifune_bushido"                                             "Bushido"
 			"DOTA_Tooltip_ability_mifune_bushido_Description"                                 "Mifune's intense training and discipline allows him to extract more benefits from his Agility. Upon activation, grants a percentage of his Base Agility as bonus Agility, and grants him bonus damage based upon his base damage for a short time."
-			"DOTA_Tooltip_ability_mifune_bushido_aghanim_Description"                         "Bushido grants %scepter_evasion%%% evasion. When an enemy misses an attack against Mifune in this form, he instantly counterattacks."
+			"DOTA_Tooltip_ability_mifune_bushido_scepter_description"                         "Bushido grants %scepter_evasion%%% evasion. When an enemy misses an attack against Mifune in this form, he instantly counterattacks."
 			"DOTA_Tooltip_ability_mifune_bushido_percent"                                     "%BONUS AGILITY:"
 			"DOTA_Tooltip_ability_mifune_bushido_bonus_damage"                                "%BONUS DAMAGE:"
 			"DOTA_Tooltip_ability_mifune_bushido_duration"                                    "DURATION:"
@@ -1414,7 +1414,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_ability_mifune_zanmato_scepter"                                     "Zanmato"
 			"DOTA_Tooltip_ability_mifune_zanmato_scepter_description"                                 "Mifune focuses for a moment, then unleashes the most powerful ability in his arsenal; he slashes at blinding speed, attacking all enemies in the radius of the spell.  After this ends, the energy created from his attacks converges on the main target, dealing Magical damage for each enemy within the radius.  The main target is stunned while Mifune is slashing.  Deals bonus damage to Heroes."
-			"DOTA_Tooltip_ability_mifune_zanmato_scepter_aghanim_description"                         "Increases cast range, damage, radius and reduces cooldown."
+			"DOTA_Tooltip_ability_mifune_zanmato_scepter_scepter_description"                         "Increases cast range, damage, radius and reduces cooldown."
 			"DOTA_Tooltip_ability_mifune_zanmato_scepter_Note0"                                 	  "The main target is stunned for a minimum of 1s."
 			"DOTA_Tooltip_ability_mifune_zanmato_scepter_Note1"                                 	  "The slash preserves procs and orb effects."
 			"DOTA_Tooltip_ability_mifune_zanmato_scepter_Note2"                                 	  "The Orbs deal Magical damage, and converge on the main target when the initial slashes end."
@@ -1521,7 +1521,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_ability_lightning_blinding_speed"                                   "Blinding Speed"
 			"DOTA_Tooltip_ability_lightning_blinding_speed_description"                       "Lightning moves at extremely high speeds through obstacles for 6s, dealing a small amount of damage and slowing when she charges through her enemies.  She takes no damage while under the effects of this spell, but will be still be affected by buffs and debuffs.  If she stops moving for 1s, the effect will end prematurely."
-			"DOTA_Tooltip_ability_lightning_blinding_speed_aghanim_description"               "Drastically increases speed and purges debuffs over the duration."
+			"DOTA_Tooltip_ability_lightning_blinding_speed_scepter_description"               "Drastically increases speed and purges debuffs over the duration."
 			"DOTA_Tooltip_ability_lightning_blinding_speed_speed"                  			  "SPEED:"
 			"DOTA_Tooltip_ability_lightning_blinding_speed_scepter_speed"                  	  "SCEPTER SPEED:"
 			"DOTA_Tooltip_ability_lightning_blinding_speed_damage"                     		  "DAMAGE:"
@@ -1565,7 +1565,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_ability_ouroboros_searing_flame"                                    "Searing Flame"
 			"DOTA_Tooltip_ability_ouroboros_searing_flame_description"                        "Ouroboros unleashes an incredible whorl of superheated gases from his vesicles, dealing damage to, and crippling for a very short time, enemies caught in the cone."
-			"DOTA_Tooltip_ability_ouroboros_searing_flame_aghanim_description"                        "Increases slow and applies a stacking damage over time effect to targets hit."
+			"DOTA_Tooltip_ability_ouroboros_searing_flame_scepter_description"                        "Increases slow and applies a stacking damage over time effect to targets hit."
 			"DOTA_Tooltip_ability_ouroboros_searing_flame_slow"                        		  "%SLOW:"
 			"DOTA_Tooltip_ability_ouroboros_searing_flame_damage"                        	  "DAMAGE:"
 			"DOTA_Tooltip_ability_ouroboros_searing_flame_scepter_slow"                        	  "%SCEPTER SLOW:"
@@ -1666,7 +1666,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_ability_tek_skycrack"                                               "Skycrack"
 			"DOTA_Tooltip_ability_tek_skycrack_description"                                   "Tek unleashes a powerful beam of energy that cripples anyone caught in it, dealing large damage and slowing them."
-			"DOTA_Tooltip_ability_tek_skycrack_aghanim_description"                           "Reduces cooldown and causes Skycrack to burn Mana equal to a percentage of its damage."
+			"DOTA_Tooltip_ability_tek_skycrack_scepter_description"                           "Reduces cooldown and causes Skycrack to burn Mana equal to a percentage of its damage."
 			"DOTA_Tooltip_ability_tek_skycrack_slow"                                          "%SLOW:"
 			"DOTA_Tooltip_ability_tek_skycrack_duration"                                      "SLOW DURATION:"
 			"DOTA_Tooltip_ability_tek_skycrack_damage"                                      "DAMAGE:"
@@ -1840,7 +1840,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_lysander_grapeshot"                                         "Grapeshot"
 			"DOTA_Tooltip_ability_lysander_grapeshot_description"                             "Lysander fires his handgun at a target unit or building, dealing Physical damage based on his attack strength.  When shooting at short range, it ministuns the target.  Has a chance to crit, which halves the ability's cooldown, refunds the Mana cost, increases the damage, and ministuns regardless of how far away the target is.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_lysander_grapeshot_aghanim_description"                     "Lysander has a chance to Grapeshot a nearby enemy when he attacks. These shots can Crit as normal, but never stun."
+			"DOTA_Tooltip_ability_lysander_grapeshot_scepter_description"                     "Lysander has a chance to Grapeshot a nearby enemy when he attacks. These shots can Crit as normal, but never stun."
 			"DOTA_Tooltip_ability_lysander_grapeshot_multiplier"                              "MULTIPLIER:"
 			"DOTA_Tooltip_ability_lysander_grapeshot_range_ministun"                          "STUN RANGE:"
 			"DOTA_Tooltip_ability_lysander_grapeshot_stun"                                    "STUN DURATION:"
@@ -1851,7 +1851,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_lysander_phantom_fleet"                                     "Phantom Dreadnaught"
 			"DOTA_Tooltip_ability_lysander_phantom_fleet_description"                         "Summons forth an ethereal ship that fires its chase cannons ahead, dealing damage to enemy units and buildings. Deals quarter damage to buildings."
-			"DOTA_Tooltip_ability_lysander_phantom_fleet_aghanim_description"                 "Gives Lysander a guaranteed Grapeshot crit every 14s, doubles the stun duration, and autocasts Grapeshot on targets affected by Captain's Compass, if they are in range, but removes the crit chance completely."
+			"DOTA_Tooltip_ability_lysander_phantom_fleet_scepter_description"                 "Gives Lysander a guaranteed Grapeshot crit every 14s, doubles the stun duration, and autocasts Grapeshot on targets affected by Captain's Compass, if they are in range, but removes the crit chance completely."
 			"DOTA_Tooltip_ability_lysander_phantom_fleet_damage"                              "DAMAGE:"
 			"DOTA_Tooltip_ability_lysander_phantom_fleet_ministun"                            "MINISTUN:"
 			"DOTA_Tooltip_ability_lysander_phantom_fleet_duration"                            "DURATION:"
@@ -1942,7 +1942,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_bloodwarrior_blood_curse"                               "Blood Curse"
 			"DOTA_Tooltip_ability_bloodwarrior_blood_curse_description"                       "Vale's blood flows with the terrible curse of undeath. When he would die, he instead is transformed into a flying creature, called a Blood Fiend. The Blood Fiend has a ranged attack and flying movement, but lacks Health. If it feeds on 4 units with its Feast ability, the Bloodwarrior is revived where the Blood Fiend is, at 50%% of his Health and Mana.\nThe Blood Fiend is disabled for 2s whilst Bloodwarrior is reviving, and reduces damage by 35%%.\nIf the ability is on cooldown, it does not activate. The Bloodfiend automatically casts Dive when it spawns.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_bloodwarrior_blood_curse_aghanim_description"                "Removes the cooldown requirement, increases the Blood Fiend's level by 2, and causes Bloodwarrior to be revived at 100% Health and Mana."
+			"DOTA_Tooltip_ability_bloodwarrior_blood_curse_scepter_description"                "Removes the cooldown requirement, increases the Blood Fiend's level by 2, and causes Bloodwarrior to be revived at 100% Health and Mana."
 
 			"DOTA_Tooltip_ability_bloodwarrior_grapple"                                       "Grapple"
 			"DOTA_Tooltip_ability_bloodwarrior_grapple_description"                           "The Bloodwarrior latches onto the target enemy unit/Hero, draining it of its blood, and rendering it immobile. Drains a percentage of the target's Max Health and Max Mana.\n\nGrants the Bloodwarrior Health and Mana equal to 1.5x the amount drained.\nMana drain is half that of the Health drain.\nCreeps are drained for half the amount.\nBloodmarked Heroes are drained for slightly more."
@@ -2031,7 +2031,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_aether_monolith"                                            "Monolith"
 			"DOTA_Tooltip_ability_aether_monolith_description"                                "Aether summons forth a Monolith that buffs allies and debuffs enemies, granting vision in a small area. Monoliths cast Disrupt when Aether does.<br/><br/>Upgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_aether_monolith_aghanim_description"                                "Allows up to 3 Monoliths to be placed. They must be a minimum distance apart."
+			"DOTA_Tooltip_ability_aether_monolith_scepter_description"                                "Allows up to 3 Monoliths to be placed. They must be a minimum distance apart."
 			"DOTA_Tooltip_ability_aether_monolith_monolith_time"                              "MONOLITH TIME:"
 			"DOTA_Tooltip_ability_aether_monolith_monolith_speed"                             "%SPEED BONUS:"
 			"DOTA_Tooltip_ability_aether_monolith_monolith_slow"                              "%SLOW:"
@@ -2134,7 +2134,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_ability_set_an_army_beneath_the_sands"                              "An Army Beneath The Sands"
 			"DOTA_Tooltip_ability_set_an_army_beneath_the_sands_description"                  "Set channels, becoming invisible and creating a vortex of sand that slows and damages enemies, periodically summoning Sand Puppets to do his bidding.  The Sand Puppets will attack any enemies that are caught within, and will immediately die upon exiting the area or when the spell ends.  Sand Puppets generated through this ability are a multiplier of Set's level.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_set_an_army_beneath_the_sands_aghanim_description"          "Lowers the interval, increases damage over time, increases slow, Sand Puppets can leave the area without dying."
+			"DOTA_Tooltip_ability_set_an_army_beneath_the_sands_scepter_description"          "Lowers the interval, increases damage over time, increases slow, Sand Puppets can leave the area without dying."
 			"DOTA_Tooltip_ability_set_an_army_beneath_the_sands_interval"                     "INTERVAL:"
 			"DOTA_Tooltip_ability_set_an_army_beneath_the_sands_damage"                       "DAMAGE:"
 			"DOTA_Tooltip_ability_set_an_army_beneath_the_sands_radius"                       "RADIUS:"
@@ -2202,7 +2202,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_neith_rally"                                                "Rally"
 			"DOTA_Tooltip_ability_neith_rally_description"                                    "With a war cry, Neith rallies her nearby allies to battle, increasing their attack damage, move speed and attack speed for a very short time. Creeps gain less attack damage, but the same amount of move speed and attack speed.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_neith_rally_aghanim_description"                            "Increases radius and duration, and reduces nearby enemies' attackspeed, movespeed and damage by the same amount as it increases for your allies."
+			"DOTA_Tooltip_ability_neith_rally_scepter_description"                            "Increases radius and duration, and reduces nearby enemies' attackspeed, movespeed and damage by the same amount as it increases for your allies."
 			"DOTA_Tooltip_ability_neith_rally_damage_increase"                                "DAMAGE INCREASE (HEROES):"
 			"DOTA_Tooltip_ability_neith_rally_damage_increase_creep"                                "DAMAGE INCREASE (CREEPS):"
 			"DOTA_Tooltip_ability_neith_rally_attack_speed_increase"                          "ATTACK SPEED INCREASE:"
@@ -2248,7 +2248,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_fate_doomsayer"                                             "Doomsayer"
 			"DOTA_Tooltip_ability_fate_doomsayer_description"                                 "Fate places a deathly curse on the target area. After a delay, the area implodes, dealing damage based on the Max Health of all affected Heroes inside it. Displaced units have the buff purged immediately off them.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_fate_doomsayer_aghanim_description"                         "Reduces the Max Health of the affected targets by 15%% for 5s."
+			"DOTA_Tooltip_ability_fate_doomsayer_scepter_description"                         "Reduces the Max Health of the affected targets by 15%% for 5s."
 			"DOTA_Tooltip_ability_fate_doomsayer_delay"                                    	  "DELAY:"
 			"DOTA_Tooltip_ability_fate_doomsayer_damage"                               		  "%DAMAGE"
 			
@@ -2461,7 +2461,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_hero_one_punch"                                             "One Punch!"
 			"DOTA_Tooltip_ability_hero_one_punch_description"                                 "Hero unleashes a devastating punch that deals critical damage, launching the enemy into the air. After a short delay time, they land, creating an explosion that deals Magical damage and stuns any affected units."
-			"DOTA_Tooltip_ability_hero_one_punch_aghanim_description"                         "Increases crit and increases the Magical damage upon landing by a multiple of Hero's attack damage."
+			"DOTA_Tooltip_ability_hero_one_punch_scepter_description"                         "Increases crit and increases the Magical damage upon landing by a multiple of Hero's attack damage."
 			"DOTA_Tooltip_ability_hero_one_punch_crit"                                        "%CRIT:"
 			"DOTA_Tooltip_ability_hero_one_punch_scepter_crit"                                        "%SCEPTER CRIT:"
 			"DOTA_Tooltip_ability_hero_one_punch_scepter_landing_damage"                                        "%SCEPTER LANDING DAMAGE:"
@@ -2712,16 +2712,29 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_modifier_soulseal"                                "Soulseal"
 			"DOTA_Tooltip_modifier_soulseal_description"                    "Silenced and passives are disabled."
+
+			"DOTA_Tooltip_modifier_lightburst" "Lightburst"
+			"DOTA_Tooltip_modifier_lightburst_description" "Taking damage over time based on Max Health."
+
+			"DOTA_Tooltip_modifier_godfall_debuff" "Godfall Damage Reduction"
+
+			"DOTA_Tooltip_modifier_raise_the_shield" "Raise the Shield"
+			"DOTA_Tooltip_modifier_raise_the_shield_description" "Incoming damage reduced by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%."
 			
 			///// ABILITIES /////
+
+			"DOTA_Tooltip_ability_alexander_raise_the_shield"						"Raise the Shield"
+			"DOTA_Tooltip_ability_alexander_raise_the_shield_description"			"Alexander creates an area where allies take reduced damage from enemies. Reduces incoming damage by %damage_reduction%%%. The area lasts for %duration% seconds; if Alexander moves out of the area, the effect immediately ends."
+			"DOTA_Tooltip_ability_alexander_raise_the_shield_radius"				"RADIUS:"
 			
 			"DOTA_Tooltip_ability_alexander_godfall"                                          "Godfall"
-			"DOTA_Tooltip_ability_alexander_godfall_description"                              "Unleashing the true power of the Godslayer, after a short channeling Duration, the next attack Alexander makes deals bonus Pure damage as a percentage of his attack damage, healing him for the damage dealt if the target was a Hero. This skill purges positive buffs from the enemy. Deals 5x damage to illusions.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_alexander_godfall_aghanim_description"                      "Reduces cooldown, and Godfall applies Soulseal to all enemies within a 325 radius when the attack lands."
-			"DOTA_Tooltip_ability_alexander_godfall_duration"                                 "RETAIN BUFF DURATION:"
-			"DOTA_Tooltip_ability_alexander_godfall_damage"                                   "%DAMAGE OUTPUT:"
-			"DOTA_Tooltip_ability_alexander_godfall_scepter_radius"                           "%SCEPTER SOULSEAL RADIUS:"
-			"DOTA_Tooltip_ability_alexander_godfall_scepter_cooldown"                         "SCEPTER COOLDOWN:"
+			"DOTA_Tooltip_ability_alexander_godfall_description"                              "Alexander raises his sword to the skies, coalescing the essence of Elandra into scouring beams of light. For %duration% seconds, the beams fall in %bolt_count% rings, each %radius% units wide, alternating between clockwise and counterclockwise patterns. Each beam deals %bolt_damage% Pure damage in a %bolt_radius% as it lands, and applies a stacking, fully refreshable debuff that reduces affected enemies' outgoing damage by %bolt_damage_reduction%%%, up to a maximum of %bolt_damage_reduction_maximum%%%. The debuff lasts %bolt_debuff_duration% seconds and is fully dispellable."
+			"DOTA_Tooltip_ability_alexander_godfall_duration"				"DURATION:"
+			"DOTA_Tooltip_ability_alexander_godfall_bolt_interval"				"BEAM INTERVAL:"
+			// "DOTA_Tooltip_ability_alexander_godfall_scepter_description"                      "Reduces cooldown, and Godfall applies Soulseal to all enemies within a 325 radius when the attack lands."
+
+			"DOTA_Tooltip_ability_alexander_lightburst"						"Lightburst"
+			"DOTA_Tooltip_ability_alexander_lightburst_description"			"Alexander creates a burst of light in a %radius% radius around him that immediately heals him for %heal%%% of his Max Health, deals %damage% damage to enemies, and sets them aflame, dealing %debuff_damage%%% of their own Max Health as damage per second for %debuff_duration% seconds."
 
 			"DOTA_Tooltip_ability_alexander_radiant"                                          "Radiant"
 			"DOTA_Tooltip_ability_alexander_radiant_description"                              "Alexander is bathed in an unearthly light, a magick used oft by Paladins.  Causes opponents to miss attacks, as he rapidly recovers health over time."
@@ -2769,7 +2782,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_odin_gungnir"                                               "Gungnir"
 			"DOTA_Tooltip_ability_odin_gungnir_description"                                   "Odin throws his spear at a target location globally.  After a 2s delay, the spear lands with destructive impact, dealing large Magical damage to all those unfortunate enough to be caught in the blast, and stunning them.  For a short while afterwards, Odin's attacks are far weaker and shorter range, until his spear returns to his person.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_odin_gungnir_aghanim_description"                           "Increases damage and removes attack range and damage debuff."
+			"DOTA_Tooltip_ability_odin_gungnir_scepter_description"                           "Increases damage and removes attack range and damage debuff."
 			"DOTA_Tooltip_ability_odin_gungnir_scepter_damage"                                "SCEPTER DAMAGE:"
 			"DOTA_Tooltip_ability_odin_gungnir_arrow_stun"                                	  "STUN DURATION:"
 
@@ -2889,6 +2902,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			"DOTA_Tooltip_ability_nu_flux_field_damage_per_cast"                                 "DAMAGE PER CAST:"
 			"DOTA_Tooltip_ability_nu_flux_field_radius"                                 "RADIUS:"
 			"DOTA_Tooltip_ability_nu_flux_field_duration"                               "DURATION:"
+
 			
 
 			"DOTA_Tooltip_ability_nu_flux_field_unit"                                   "Nu Antimatter Mines Unit"
@@ -2965,7 +2979,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_mana_knight_mana_seal"                                      "Mana Seal"
 			"DOTA_Tooltip_ability_mana_knight_mana_seal_Description"                          "The Mindflayer creates a glyph that seals away Magical energies, gradually draining the Mana of enemies that stand upon it. If their Mana hits 0, they are mini-stunned, damaged and slowed for 1.5s. Ignores targets affected by the 0 Mana mini-stun for a short time afterwards."
-			"DOTA_Tooltip_ability_mana_knight_mana_seal_aghanim_Description"                  "Upgrades Mana Seal to pierce Magic Immunity, increases the mana drain per second, reduces the ignore time to 4s, and makes the damage upon reaching zero Mana Pure."
+			"DOTA_Tooltip_ability_mana_knight_mana_seal_scepter_description"                  "Upgrades Mana Seal to pierce Magic Immunity, increases the mana drain per second, reduces the ignore time to 4s, and makes the damage upon reaching zero Mana Pure."
 			"DOTA_Tooltip_ability_mana_knight_mana_seal_damage"                         	  "DAMAGE:"
 			"DOTA_Tooltip_ability_mana_knight_mana_seal_mana_removal"                         "%MANA REMOVAL PER SECOND:"
 			"DOTA_Tooltip_ability_mana_knight_mana_seal_mana_removal_scepter"                 "%SCEPTER MANA REMOVAL PER SECOND:"
@@ -3002,7 +3016,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_artificer_replica"                                          "Replica"
 			"DOTA_Tooltip_ability_artificer_replica_Description"                              "The Artificer moulds a near-perfect replica of the target ally or enemy. Creates an illusion copy of the target ally or enemy Hero, but it cannot cast spells or use items.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_artificer_replica_aghanim_Description"                      "Causes enemies killed by Artificer to spawn weaker Replicas automatically."	
+			"DOTA_Tooltip_ability_artificer_replica_scepter_description"                      "Causes enemies killed by Artificer to spawn weaker Replicas automatically."	
 			"DOTA_Tooltip_ability_artificer_replica_illusion_duration"                        "ILLUSION DURATION:"
 			"DOTA_Tooltip_ability_artificer_replica_illusion_damage_tooltip"                  "%OUTGOING DAMAGE:"
 			"DOTA_Tooltip_ability_artificer_replica_illusion_incoming_tooltip"                "%INCOMING DAMAGE:"
@@ -3044,7 +3058,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_ability_gob_squad_clearance_sale"                                   "Clearance Sale"
 			"DOTA_Tooltip_ability_gob_squad_clearance_sale_Description"                       "The Gob Squad offloads all of their excess explosives, throwing a bomb out of their cart every half second. Bombs deal Magical damage, Physical damage and slow, or Pure damage and stun, and land in a random location nearby. The Gob Squad takes half damage from the bombs.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_gob_squad_clearance_sale_aghanim_Description"               "Reduces interval between bombs, releases a giant bomb upon duration end or death."
+			"DOTA_Tooltip_ability_gob_squad_clearance_sale_scepter_description"               "Reduces interval between bombs, releases a giant bomb upon duration end or death."
 			"DOTA_Tooltip_ability_gob_squad_clearance_sale_radius"                            "EXPLOSION RADIUS:"
 			"DOTA_Tooltip_ability_gob_squad_clearance_sale_duration"                          "DURATION:"
 
@@ -3257,7 +3271,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 			"DOTA_Tooltip_ability_ptomely_expunge"                                            "Expunge"
 			"DOTA_Tooltip_ability_ptomely_expunge_Description"                                "Drains a base amount plus a portion of current Mana out of the target unit, slowing them and creating an orb of energy above them. After a short delay, the orb explodes, dealing Magical damage equivalent to the amount drained, and restoring Mana to nearby allies equal to half of the amount drained. The damage cannot go below a minimum amount.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_ptomely_expunge_aghanim_Description"                        "Causes the spell to drain a percentage of the target's Max Mana as well as their Current Mana."
+			"DOTA_Tooltip_ability_ptomely_expunge_scepter_description"                        "Causes the spell to drain a percentage of the target's Max Mana as well as their Current Mana."
 			"DOTA_Tooltip_ability_ptomely_expunge_mana_drain"                                 "%CURRENT MANA DRAIN:"
 			"DOTA_Tooltip_ability_ptomely_expunge_scepter_mana_drain"                         "%SCEPTER MAX MANA DRAIN:"
 			"DOTA_Tooltip_ability_ptomely_expunge_radius"                                     "RADIUS:"
@@ -3373,35 +3387,76 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_modifier_last_surprise" "Last Surprise"
 			"DOTA_Tooltip_modifier_last_surprise_Description" "Heaven or Hell... Let's Rock!"
+
+			"DOTA_Tooltip_modifier_finisher_bonus_damage_debuff" "Finisher"
+			"DOTA_Tooltip_modifier_finisher_bonus_damage_debuff_description" ""
+
+			"DOTA_Tooltip_modifier_finisher_bonus_damage_timer" "Finisher"
+			"DOTA_Tooltip_modifier_finisher_bonus_damage_timer_description" ""
+
+			"DOTA_Tooltip_modifier_calling_card" "Calling Card"
+			"DOTA_Tooltip_modifier_calling_card_description" "Lupin's letting you know he's coming for you!"
+
+			"DOTA_Tooltip_modifier_calling_card_caster" "Calling Card"
+			"DOTA_Tooltip_modifier_calling_card_caster_description" "Ready to jump to a target, gaining %dMODIFIER_PROPERTY_TOOLTIP% Armor and %dMODIFIER_PROPERTY_TOOLTIP2% attack damage."
+
+			"DOTA_Tooltip_modifier_calling_card_buff" "Calling Card Buff"
+			"DOTA_Tooltip_modifier_calling_card_buff_description" "Receiving stolen %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor and %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% attack damage."
+
+			"DOTA_Tooltip_modifier_calling_card_debuff" "Calling Card Debuff"
+			"DOTA_Tooltip_modifier_calling_card_debuff_description" "%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor and %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% attack damage stolen away!"
 			
 			///// ABILITIES /////
 			
 			"DOTA_Tooltip_ability_lupin_beneath_the_mask"                                     "Beneath The Mask"
-			"DOTA_Tooltip_ability_lupin_beneath_the_mask_Description"                         "Lupin's next attack against a Hero deals bonus Physical damage, Silencing them and stealing their movespeed and attack speed."
-			"DOTA_Tooltip_ability_lupin_beneath_the_mask_damage"                              "BONUS DAMAGE:"
+			"DOTA_Tooltip_ability_lupin_beneath_the_mask_Description"                         "Lupin's next attack against a Hero deals bonus Physical damage, Silencing them and stealing some of their Health, movespeed and attack speed."
+			"DOTA_Tooltip_ability_lupin_beneath_the_mask_damage"                              "HEALTH STEAL/DAMAGE:"
 			"DOTA_Tooltip_ability_lupin_beneath_the_mask_slow"                                "%MOVESPEED STEAL:"
 			"DOTA_Tooltip_ability_lupin_beneath_the_mask_attack_speed_steal"                  "ATTACK SPEED STEAL:"
 			"DOTA_Tooltip_ability_lupin_beneath_the_mask_duration"                            "DURATION:"
 
-			"DOTA_Tooltip_ability_lupin_finisher"                                             "Finisher"
-			"DOTA_Tooltip_ability_lupin_finisher_Description"                                 "Lupin fires a shot from his trusty pistol at the target, dealing Physical damage. If the target is Stunned or Dazed, deals bonus damage and Lupin makes an attack against them. Slows for a short time."
-			"DOTA_Tooltip_ability_lupin_finisher_damage"                                      "DAMAGE:"
-			"DOTA_Tooltip_ability_lupin_finisher_bonus_damage"                                "STUNNED BONUS DAMAGE:"
-			"DOTA_Tooltip_ability_lupin_finisher_slow"                                        "%SLOW:"
-			"DOTA_Tooltip_ability_lupin_finisher_slow_duration"                               "SLOW DURATION:"
+			"DOTA_Tooltip_ability_lupin_finisher"						"Finisher"
+			"DOTA_Tooltip_ability_lupin_finisher_description"			"Lupin unleashes a shot from his trusty pistol, dealing damage based on the number of times he has attacked the target in the last few seconds. Deals bonus damage if he has attacked them over a certain number of times."
+			"DOTA_Tooltip_ability_lupin_finisher_damage_per_attack"		"DAMAGE PER ATTACK:"
+			"DOTA_Tooltip_ability_lupin_finisher_bonus_damage"			"BONUS DAMAGE:"
+			"DOTA_Tooltip_ability_lupin_finisher_slow"					"%SLOW:"
+			"DOTA_Tooltip_ability_lupin_finisher_slow_duration"			"SLOW DURATION:"
+			"DOTA_Tooltip_ability_lupin_finisher_bonus_slow_duration"	"BONUS SLOW DURATION:"
+			"DOTA_Tooltip_ability_lupin_finisher_stun"					"STUN:"
+			"DOTA_Tooltip_ability_lupin_finisher_attack_duration"		"ATTACK DURATION:"
+			// "DOTA_Tooltip_ability_lupin_finisher_gold_gain"				"GOLD GAINED ON KILL:"
+
 
 			"DOTA_Tooltip_ability_lupin_flashbang"                                            "Flashbang"
-			"DOTA_Tooltip_ability_lupin_flashbang_Description"                                "In an area of effect, Lupin causes enemies to become Dazed by throwing a Flashbang. Dazed enemies are stunned, but the effect is removed if they take damage from any source."
-			"DOTA_Tooltip_ability_lupin_flashbang_Note0"                                "Enemies stay Dazed for a minimum of 0.5s."
-			"DOTA_Tooltip_ability_lupin_flashbang_Note1"                                "The damage source needs to exceed 20 to purge the Daze."
+			"DOTA_Tooltip_ability_lupin_flashbang_Description"                                "Lupin throws down a powerful explosive that deals Physical damage and Dazes enemies caught in the area of effect. Dazed enemies have their cast points worsened by  %cast_point_increase% seconds, attack speed reduced by %attack_speed_reduction% and movespeed reduced by %movespeed_reduction%%%, and if they are ranged, their attack range reduced by %attack_range_reduction%. Ministuns for %stun%s."
 			"DOTA_Tooltip_ability_lupin_flashbang_damage"                                     "DAMAGE:"
 			"DOTA_Tooltip_ability_lupin_flashbang_duration"                                   "DAZE DURATION:"
 			"DOTA_Tooltip_ability_lupin_flashbang_radius"                                     "RADIUS:"
+			"DOTA_Tooltip_ability_lupin_flashbang_movespeed_reduction"				"%SLOW:"
+			// "DOTA_Tooltip_ability_lupin_flashbang_cast_point_increase"				"CAST POINT INCREASE:"
+			// "DOTA_Tooltip_ability_lupin_flashbang_attack_range_reduction"				"ATTACK RANGE REDUCTION:"
+			// "DOTA_Tooltip_ability_lupin_flashbang_attack_speed_reduction"				"ATTACK SPEED REDUCTION:"
+			"DOTA_Tooltip_ability_lupin_flashbang_shard_description"			"Increases stun duration to %scepter_stun%s and reduces cooldown by %scepter_cdr%s."
 
-			"DOTA_Tooltip_ability_lupin_last_surprise"                                        "Last Surprise"
-			"DOTA_Tooltip_ability_lupin_last_surprise_Description"                            "Lupin quickly strikes all enemy units in a line with an attack, then does the same in the opposite direction, arriving at his starting location. Creeps take less damage from this skill."
-			"DOTA_Tooltip_ability_lupin_last_surprise_range"                               "RANGE:"
-			"DOTA_Tooltip_ability_lupin_last_surprise_creep_damage"                        "%CREEP DAMAGE:"
+
+			"DOTA_Tooltip_ability_lupin_last_surprise"							"Calling Card"
+			// "DOTA_Tooltip_ability_lupin_last_surprise_description"				"Lupin throws a calling card at the target enemy, marking them. At any point, Lupin can target them with this ability again, at additional range, to jump to the target, consuming the card and stealing Gold, Armor and damage from the target based on the amount of time it remained on them."
+			
+			"DOTA_Tooltip_ability_lupin_last_surprise_description"				"Lupin throws a calling card at the target location that floats into the air, pulsing every %interval% seconds. The card gathers more energy with each pulse, increasing its radius by %radius_increase_per_stack%. At any point during its %duration% second duration, Lupin can jump to the location of the card, unleashing a powerful wave of cutting force in the effective radius that, for <b>each pulse</b> that occurred before he jumped, deals %damage_per_stack% damage, steals %damage_steal_per_stack% attack damage, %armor_steal_per_stack% Armor, and %gold_steal_per_stack% Gold. Slows enemies' movement speed by %movement_slow%%%. Pulses up to %max_stacks% times."
+			"DOTA_Tooltip_ability_lupin_last_surprise_scepter_description"		"Reduces the pulse interval to %scepter_interval% seconds and increases the maximum pulses to %scepter_max_stacks%."
+
+			"DOTA_Tooltip_ability_lupin_last_surprise_duration"					"DURATION:"
+			// "DOTA_Tooltip_ability_lupin_last_surprise_damage_steal_per_stack"	"DAMAGE STEAL PER STACK:"
+			// "DOTA_Tooltip_ability_lupin_last_surprise_armor_steal_per_stack"	"ARMOR STEAL PER STACK:"
+			// "DOTA_Tooltip_ability_lupin_last_surprise_gold_steal_per_stack"		"GOLD STEAL PER STACK:"
+			// "DOTA_Tooltip_ability_lupin_last_surprise_bonus_cast_range"			"EXTRA CAST RANGE:"
+			// "DOTA_Tooltip_ability_lupin_last_surprise_radius_increase_per_stack" "RADIUS INCREASE PER STACK:"
+			"DOTA_Tooltip_ability_lupin_last_surprise_damage_per_stack"			"DAMAGE PER STACK:"
+			"DOTA_Tooltip_ability_lupin_last_surprise_max_stacks"				"MAX STACKS:"
+			"DOTA_Tooltip_ability_lupin_last_surprise_interval"					"INTERVAL:"
+			// "DOTA_Tooltip_ability_lupin_last_surprise_scepter_max_stacks"				"SCEPTER MAX STACKS:"
+			// "DOTA_Tooltip_ability_lupin_last_surprise_scepter_interval"				"SCEPTER INTERVAL:"
+
 			
 			//--------------------
 			// SHARD MAGUS
@@ -3618,7 +3673,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			"DOTA_Tooltip_ability_siegfried_heaven_sent"                                      "Heaven Sent"
 			"DOTA_Tooltip_ability_siegfried_heaven_sent_Description"                          "Siegfried appears at the location of the target ally, rendering them invulnerable and untargetable, but unable to perform actions. After %duration% seconds, he returns to the location he cast the Spell from. Globally targetable.\n\nUpgradable by Aghanim's Scepter."
-			"DOTA_Tooltip_ability_siegfried_heaven_sent_aghanim_Description"                  "Drastically increases Siegfried and his ally's Health Regen for the duration."
+			"DOTA_Tooltip_ability_siegfried_heaven_sent_scepter_description"                  "Drastically increases Siegfried and his ally's Health Regen for the duration."
 			"DOTA_Tooltip_ability_siegfried_heaven_sent_scepter_health_regen"                 "SCEPTER HEALTH REGEN:"
 			
 			//--------------------

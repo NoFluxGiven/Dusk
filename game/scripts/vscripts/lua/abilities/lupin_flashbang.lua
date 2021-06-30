@@ -2,12 +2,26 @@ lupin_flashbang = class({})
 
 LinkLuaModifier("modifier_flashbang_dazed","lua/abilities/lupin_flashbang",LUA_MODIFIER_MOTION_NONE)
 
+function lupin_flashbang:GetCooldown(level)
+	local base_cooldown = self.BaseClass.GetCooldown(self, level)
+	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+		base_cooldown = base_cooldown - self:GetSpecialValueFor("scepter_cdr")
+	end
+	return base_cooldown
+end
+
 function lupin_flashbang:OnSpellStart()
 	local caster = self:GetCaster()
 
 	local damage = self:GetSpecialValueFor("damage")
 	local radius = self:GetSpecialValueFor("radius")
 	local duration = self:GetSpecialValueFor("duration")
+
+	local stun_duration = self:GetSpecialValueFor("stun")
+
+	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+		stun_duration = stun_duration + self:GetSpecialValueFor("scepter_stun")
+	end
 
 	local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_lupin_2") or 0
 
@@ -33,7 +47,7 @@ function lupin_flashbang:OnSpellStart()
 			Duration=duration
 		})
 
-		StunTarget(caster, self, v, 0.3)
+		StunTarget(caster, self, v, stun_duration)
 		self:InflictDamage(v,caster,damage,DAMAGE_TYPE_PHYSICAL)
 	end
 end
@@ -45,7 +59,7 @@ function modifier_flashbang_dazed:OnCreated(kv)
 	self.attack_speed_reduction = self:GetAbility():GetSpecialValueFor("attack_speed_reduction")
 	self.attack_range_reduction = self:GetAbility():GetSpecialValueFor("attack_range_reduction")
 	self.cast_point_increase = self:GetAbility():GetSpecialValueFor("cast_point_increase")
-	self.movespeed_reduction = 40
+	self.movespeed_reduction = self:GetAbility():GetSpecialValueFor("movespeed_reduction")
 end
 
 function modifier_flashbang_dazed:DeclareFunctions()

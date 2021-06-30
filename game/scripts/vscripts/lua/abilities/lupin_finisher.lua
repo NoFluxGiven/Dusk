@@ -18,6 +18,8 @@ function lupin_finisher:OnSpellStart()
 	local damage_per_attack = self:GetSpecialValueFor("damage_per_attack")
 	local bonus_damage = self:GetSpecialValueFor("bonus_damage")
 
+	local attack_limit = self:GetSpecialValueFor("attack_limit")
+
 	local stun = self:GetSpecialValueFor("stun")
 
 	local duration = self:GetSpecialValueFor("slow_duration")
@@ -45,10 +47,10 @@ function lupin_finisher:OnSpellStart()
 	-- then
 	if damage > damage_per_attack then
 
-		if damage > damage_per_attack * 5 then
+		if damage >= damage_per_attack * ( attack_limit/2 ) then
 			particle = "particles/units/heroes/hero_lupin/lupin_finisher_crit.vpcf"
 			sound = "Lupin.Finisher.Crit"
-			damage = damage + bonus_damage
+
 			target:AddNewModifier(target, self, "modifier_stunned", {Duration=stun})
 		end
 		 --[[Returns:void
@@ -79,34 +81,6 @@ function lupin_finisher:OnSpellStart()
 	target:AddNewModifier(caster, self, "modifier_finisher_slow", {Duration=duration}) --[[Returns:void
 	No Description Set
 	]]
-
-	if not target:IsAlive() and target:IsRealHero() then
-		local total_gold = self:GetSpecialValueFor("gold_gain")
-		local gold_per_tick = total_gold / 4
-		local n = 0
-		Timers:CreateTimer(0.20, function()
-			local cast_sound = "DOTA_Item.Hand_Of_Midas"
-			target:EmitSound(cast_sound)
-
-			n = n + 1
-
-			local player = PlayerResource:GetPlayer(caster:GetPlayerID())
-
-			local total_gold = self:GetSpecialValueFor("gold_gain")
-
-			local particleName = "particles/units/heroes/hero_alchemist/alchemist_lasthit_coins.vpcf"
-			local particle1 = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_ABSORIGIN, caster, player)
-			ParticleManager:SetParticleControl(particle1, 0, caster:GetAbsOrigin())
-			ParticleManager:SetParticleControl(particle1, 1, caster:GetAbsOrigin())
-
-			caster:ModifyGold(gold_per_tick, false, DOTA_ModifyGold_Unspecified)
-			target:ModifyGold(-gold_per_tick, false, DOTA_ModifyGold_Unspecified)
-
-			SendOverheadEventMessage(player, OVERHEAD_ALERT_GOLD, caster, gold_per_tick, nil)
-
-			if n < 4 then return 0.20 end
-		end)
-	end
 end
 
 function lupin_finisher:GetIntrinsicModifierName()
@@ -174,7 +148,8 @@ modifier_finisher_bonus_damage_debuff = class({})
 function modifier_finisher_bonus_damage_debuff:IsRefreshable() return false end
 
 function modifier_finisher_bonus_damage_debuff:OnCreated(kv)
-	self.attack_duration = kv.attack_duration
+	self.attack_duration = self:GetAbility():GetSpecialValueFor("attack_duration")
+	self.attack_limit = self:GetAbility():GetSpecialValueFor("attack_limit")
 	self:SetStackCount(1)
 	--self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_finisher_bonus_damage_timer", {duration=self.attack_duration, parent=self})
 end
@@ -187,6 +162,8 @@ function modifier_finisher_bonus_damage_debuff:OnAttackLanded(params)
 	if params.attacker == self:GetAbility():GetOwner() then
 		local t = params.target or params.unit
 
-		self:IncrementStackCount()
+		if self:GetStackCount() < self.attack_limit then
+			self:IncrementStackCount()
+		end
 	end
 end

@@ -30,7 +30,7 @@ require('libraries/notifications')
 -- This library can be used for starting customized animations on units from lua
 require('libraries/animations')
 -- This library can be used for performing "Frankenstein" attachments on units
-require('libraries/attachments')
+-- require('libraries/attachments')
 -- This library can be used to synchronize client-server data via player/client-specific nettables
 require('libraries/playertables')
 -- This library can be used to create container inventories or container shops
@@ -388,21 +388,21 @@ function duskDota:OnHeroInGame(hero)
     attachPropToUnit(hero,"attach_hitloc","models/items/warlock/ceaseless/ceaseless.vmdl",0.8,"artificer_back")
   end
 
-  if hero:GetUnitName() == "npc_dota_hero_techies" then
-    -- Timers:CreateTimer(0.06, function()
-      -- hero:RemoveAbility("techies_land_mines")
-      -- hero:RemoveAbility("techies_stasis_trap")
-      -- hero:RemoveAbility("techies_suicide")
-      -- hero:RemoveAbility("techies_focused_detonate")
-      -- hero:RemoveAbility("techies_minefield_sign")
-      -- hero:RemoveAbility("techies_remote_mines")
-      -- hero:AddAbility("gob_squad_rocket_blast")
-      -- hero:AddAbility("gob_squad_kamikaze")
-      -- hero:AddAbility("gob_squad_whoops")
-      -- hero:AddAbility("gob_squad_clearance_sale")
-      -- hero:RemoveModfierByName("modifier_whoops")
-    -- end)
-  end
+  -- if hero:GetUnitName() == "npc_dota_hero_techies" then
+  --   -- Timers:CreateTimer(0.06, function()
+  --     -- hero:RemoveAbility("techies_land_mines")
+  --     -- hero:RemoveAbility("techies_stasis_trap")
+  --     -- hero:RemoveAbility("techies_suicide")
+  --     -- hero:RemoveAbility("techies_focused_detonate")
+  --     -- hero:RemoveAbility("techies_minefield_sign")
+  --     -- hero:RemoveAbility("techies_remote_mines")
+  --     -- hero:AddAbility("gob_squad_rocket_blast")
+  --     -- hero:AddAbility("gob_squad_kamikaze")
+  --     -- hero:AddAbility("gob_squad_whoops")
+  --     -- hero:AddAbility("gob_squad_clearance_sale")
+  --     -- hero:RemoveModfierByName("modifier_whoops")
+  --   -- end)
+  -- end
 
   if hero:GetUnitName() == "npc_dota_hero_dark_seer" then
     hero:FindAbilityByName("ironfist_change_stance"):SetLevel(1)
@@ -415,13 +415,13 @@ function duskDota:OnHeroInGame(hero)
     ab:SetLevel(1)
   end
 
-  Timers:CreateTimer(0.06,function()-- check if illusion
-    if hero:IsIllusion() and hero.hero_attachments then
-      print("Illusion has been created, and illusion has attachments")
-      print("Making sure its attachments are removed upon death")
-      hero.remove_attachments_on_death = true
-    end
-  end)
+  -- Timers:CreateTimer(0.06,function()-- check if illusion
+  --   if hero:IsIllusion() and hero.hero_attachments then
+  --     print("Illusion has been created, and illusion has attachments")
+  --     print("Making sure its attachments are removed upon death")
+  --     hero.remove_attachments_on_death = true
+  --   end
+  -- end)
 
 end
 

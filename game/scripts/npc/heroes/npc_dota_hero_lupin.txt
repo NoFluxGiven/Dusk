@@ -27,9 +27,6 @@
 	// to the target location. Enemies between the two locations are struck with an attack that deals critical damage, and are Dazed for 2/2.5/3.0s.
 	// Deals 175/200/225% damage.
 	// 500/600/700 range.
-	"Ability7"				""
-	"Ability8"				""
-	"Ability9"				""
 	"Ability10"				"special_bonus_attack_damage_25"
 	"Ability11"				"special_bonus_lupin_1" // +12% Beneath the mask Slow
 	"Ability12"				"special_bonus_lupin_2" // +125 Flashbang Damage

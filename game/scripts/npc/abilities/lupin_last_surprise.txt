@@ -14,24 +14,32 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
     "AnimationPlaybackRate"         "1.75"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"AbilityTextureName"			"lupin_last_surprise"
 
-	"TooltipName"					"Last Surprise"
-	"TooltipDescription"			"Lupin jumps to a nearby location, receiving a Strong Dispel."
+	"HasScepterUpgrade"               "1"
+
+	// SFX
+	//-------------------------------------------------------------------------------------------------------------
+
+	// On throw: card flick noises (gross) [./]
+	// Travel: quiet, bright ambience [./]
+	// On land: punchy, ethereal sound with a sort of bombastic hit [./]
+	// Tick: increasing pitch tones to demonstrate the growing damage/AoE [./]
+	// On activate: a whooshing slash with a sort of cracking slash noise if units are hit [./]
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1000"
+	"AbilityCastRange"				"1250"
 	"AbilityCastPoint"				"0.22"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"24 22 20"
+	"AbilityCooldown"				"40 35 30"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"75"
+	"AbilityManaCost"				"125"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -44,17 +52,62 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"					"1.5 3.0 4.5"
+			"duration"					"6"
 		}
 		"02"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"movespeed"					"25 35 45"
+			"var_type"					"FIELD_FLOAT"
+			"debuff_duration"			"6.0"
 		}
 		"03"
 		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"250"
+		}
+		"04"
+		{
 			"var_type"					"FIELD_FLOAT"
-			"purge_interval"			"1.5"
+			"interval"					"0.4"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"scepter_interval"			"0.3"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"max_stacks"				"6"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"scepter_max_stacks"		"8"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"armor_steal_per_stack"		"1.00 1.25 1.50"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_steal_per_stack"	"4 6 8"
+		}
+		"09"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"gold_steal_per_stack"		"5 10 15"
+		}
+		"10"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_per_stack"			"60 80 100"
+		}
+		"11"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius_increase_per_stack" "35 50 65"
 		}
 	}
 	
@@ -62,6 +115,8 @@
 		{
 		"particle" "particles/units/heroes/hero_lupin/ephemera.vpcf"
 		"particle" "particles/units/heroes/hero_lupin/ephemera_unit.vpcf"
+		"particle" "particles/units/heroes/hero_lupin/calling_card_card_ground.vpcf"
+		"particle" "particles/units/heroes/hero_lupin/calling_card_projectile.vpcf"
 		"particle" "particles/units/heroes/hero_lupin/last_surprise_slash.vpcf"
 		"particle" "particles/units/heroes/hero_lupin/last_surprise_absorb.vpcf"
 		"particle" "particles/units/heroes/hero_lupin/last_surprise_unit.vpcf"

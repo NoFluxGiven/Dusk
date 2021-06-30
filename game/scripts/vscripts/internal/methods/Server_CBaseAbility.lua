@@ -1,0 +1,17 @@
+-- OVERRIDE
+-- CDOTABaseAbility.__GetSpecialValueFor = CDOTABaseAbility.GetSpecialValueFor
+-- CDOTABaseAbility.GetSpecialValueFor = function(self, name)
+--     if self.GetCaster ~= nil then
+--         if self:GetCaster() ~= nil then
+--             if self:GetCaster():HasScepter() then
+--                 local val = self:__GetSpecialValueFor("scepter_"..name)
+--                 if val ~= 0 then return val end
+--             end
+--         end
+--     end
+--     return self:__GetSpecialValueFor(name)
+-- end
+
+-- CDOTA_Buff.GetSpecialValueFor = function(self, name)
+--     return self:GetAbility():GetSpecialValueFor(name)
+-- end

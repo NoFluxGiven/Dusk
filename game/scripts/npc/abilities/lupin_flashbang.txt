@@ -19,6 +19,8 @@
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 	"AbilityTextureName"			"lupin_flashbang"
 
+	"HasShardUpgrade"               "1"
+
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"375"
@@ -55,7 +57,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"cast_range_reduction"		"100 175 250 325"
+			"movespeed_reduction"		"40 45 50 55"
 		}
 		"04"
 		{
@@ -76,6 +78,21 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"radius"					"375"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"stun"						"0.3"
+		}
+		"09"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"scepter_stun"				"1.75"
+		}
+		"10"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"scepter_cdr"				"4"
 		}
 	}
 	

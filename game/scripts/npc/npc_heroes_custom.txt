@@ -171,8 +171,9 @@
 	"Rolelevels"			"2,2"
 	"Complexity"			"1"
 	"Ability1"				"alexander_soulseal" // Alexander uses the Godslayer to seal away a target's soul, rendering them unable to cast spells for a short time.  Lasts 3/4/5/6s.
-	"Ability2"				"alexander_elandras_blessing" // Alexander gains bonus Armor and Health Regen as he loses health.
-	"Ability3"				"alexander_radiant" // Alexander is bathed in an unearthly light, a magick used oft by Paladins.  Causes opponents to miss attacks against him, as he rapidly
+	"Ability2"				"alexander_lightburst" // Alexander emanates a blast of bright light, dealing damage to nearby enemies and causing them to miss their attacks. Sets enemies on fire for a short time,
+	// dealing Magical damage per second.
+	"Ability3"				"alexander_raise_the_shield" // Alexander is bathed in an unearthly light, a magick used oft by Paladins.  Causes opponents to miss attacks against him, as he rapidly
 	// recovers health over time.  Recovers 20/40/60/80 health per second for 5s, with a 15/30/45/60% miss chance to all nearby enemies in a 325 radius.
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
@@ -194,16 +195,16 @@
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackRate"				"1.6"
-	"AttackDamageMin"			"23"										// Damage range min.
-	"AttackDamageMax"			"27"										// Damage range max.
+	"AttackRate"				"1.7"
+	"AttackDamageMin"			"24"										// Damage range min.
+	"AttackDamageMax"			"31"										// Damage range max.
 
 	//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"24"										// Base strength
-	"AttributeStrengthGain"		"2.0"										// Strength bonus per level.
-	"AttributeBaseIntelligence"	"17"										// Base intelligence
-	"AttributeIntelligenceGain"	"1.75"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"11"										// Base agility
+	"AttributeBaseStrength"		"32"										// Base strength
+	"AttributeStrengthGain"		"3.4"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"12"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.9"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"13"										// Base agility
 	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
@@ -2311,9 +2312,6 @@
 	// to the target location. Enemies between the two locations are struck with an attack that deals critical damage, and are Dazed for 2/2.5/3.0s.
 	// Deals 175/200/225% damage.
 	// 500/600/700 range.
-	"Ability7"				""
-	"Ability8"				""
-	"Ability9"				""
 	"Ability10"				"special_bonus_attack_damage_25"
 	"Ability11"				"special_bonus_lupin_1" // +12% Beneath the mask Slow
 	"Ability12"				"special_bonus_lupin_2" // +125 Flashbang Damage

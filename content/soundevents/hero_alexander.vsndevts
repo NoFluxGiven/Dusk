@@ -58,6 +58,186 @@
 
 }
 
+"Alexander.RaiseTheShield.Pre"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/raise_the_shield_ability_phase.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Alexander.RaiseTheShield.Formation"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/raise_the_shield_form.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Alexander.RaiseTheShield.DamageBlock"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/raise_the_shield_block.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Alexander.Lightburst"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/lightburst.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Alexander.Lightburst.Fire"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/lightburst_fire.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "0.6"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Alexander.RaiseTheShield.Area"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/raise_the_shield_area.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 "Alexander.Godfall.Charge"
 {
     "operator_stacks"
@@ -118,7 +298,7 @@
 
 }
 
-"Alexander.Godfall"
+"Alexander.Godfall.Bolts"
 {
     "operator_stacks"
     {
@@ -134,7 +314,37 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/godfall.vsnd"
+                            "value0"        "sounds/godfall_bolts.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.5"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Alexander.Godfall.Bolts.End"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/godfall_bolts_end.vsnd"
                         }
                     }
                     "volume"

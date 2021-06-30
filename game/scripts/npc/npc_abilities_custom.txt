@@ -1460,18 +1460,19 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/alexander_godfall"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-	"AbilityChannelTime"			"1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityTextureName"			"alexander_godfall"
+	"AbilityCastAnimation"          "ACT_DOTA_VICTORY"
+	"AnimationPlaybackRate"			"0.8"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"0"
-	"AbilityCastPoint"				"0"
+	"AbilityCastPoint"				"0.6"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"70"
+	"AbilityCooldown"				"250"
 	"HasScepterUpgrade"				"1"
 
 	// Cost
@@ -1488,24 +1489,49 @@
 	{
 	"01"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"7"
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"12.0"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"135 170 205"
+			"bolt_damage"					"40 55 70"
 			"LinkedSpecialBonus"			"special_bonus_alexander_3"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"scepter_radius"				"325"
+			"bolt_radius"					"190"
 		}
 	"04"
 		{
+			"var_type"						"FIELD_FLOAT"
+			"bolt_interval"					"0.1"
+		}
+	"05"
+		{
 			"var_type"						"FIELD_INTEGER"
-			"scepter_cooldown"				"24"
+			"bolt_count"					"3"
+		}
+	"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"300"
+		}
+	"07"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bolt_damage_reduction"			"3"
+		}
+	"08"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bolt_damage_reduction_maximum"	"60"
+		}
+	"09"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"bolt_debuff_duration"			"10"
 		}
 	}
 	
@@ -1516,6 +1542,7 @@
 		"particle" "particles/units/heroes/hero_alexander/godfall_charged.vpcf"
 		"particle" "particles/units/heroes/hero_alexander/godfall_strike.vpcf"
 		"particle" "particles/units/heroes/hero_alexander/godfall_success.vpcf"
+		"particle" "particles/units/heroes/hero_alexander/godfall_ground_hit.vpcf"
 		"soundfile" "soundevents\hero_alexander.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
 		}
@@ -1524,22 +1551,97 @@
 		{
 		}
 }//=====================================================================================================
-// ALEXANDER: Radiant
+// ALEXANDER: Raise the Shield
 //=====================================================================================================
-"alexander_radiant"
+"alexander_lightburst"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
-	"ScriptFile"					"lua/abilities/alexander_radiant"
+	"ScriptFile"					"lua/abilities/alexander_lightburst"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	"AbilityTextureName"			"alexander_radiant"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"alexander_lightburst"
+	"AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"325"
-	"AbilityCastPoint"				"0"
+	"AbilityCastRange"				"425"
+	"AbilityCastPoint"				"0.2"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"125"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"debuff_duration"				"2.0 3.0 4.0 5.0"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"debuff_damage"				    "5.0"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"425"
+		}
+    "04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"90 120 150 180"
+		}
+    "05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"heal"						    "8 10 12 14"
+		}
+	}
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_ambient.vpcf"
+		"particle" "particles/status_fx/status_effect_keeper_spirit_form.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+		}
+	
+	"Modifiers"
+		{
+		}
+}//=====================================================================================================
+// ALEXANDER: Raise the Shield
+//=====================================================================================================
+"alexander_raise_the_shield"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/alexander_raise_the_shield"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"alexander_raise_the_shield"
+	"AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"0.8"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"375"
+	"AbilityCastPoint"				"0.45"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -1547,7 +1649,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"80"
+	"AbilityManaCost"				"170"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -1560,22 +1662,17 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"duration"						"8"
+			"duration"						"8.0"
 		}
 	"02"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"regen"							"5.0 7.5 10.0 12.5"
+			"var_type"						"FIELD_INTEGER"
+			"damage_reduction"				"22 28 34 40"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"miss"							"40"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"400"
+			"radius"						"425"
 		}
 	}
 	
@@ -17720,6 +17817,10 @@
 //=====================================================================================================
 // LUPIN: Finisher
 //=====================================================================================================
+///@name Finisher
+///@desc placeholder
+///@aghs_desc placeholder
+///@shard_desc placeholder
 "lupin_finisher"
 {
 	// General
@@ -17736,19 +17837,14 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"AbilityTextureName"			"lupin_finisher"
 
-	// Tooltips
-	//-------------------------------------------------------------------------------------------------------------
-	"tooltipName" 					"Finisher"
-	"tooltipDescription"			"Lupin fires a shot from his trusty pistol, making an attack against the target that increases in damage for each attack Lupin makes against the target before casting."
-
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"575"
-	"AbilityCastPoint"				"0.45"
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.48"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"14"
+	"AbilityCooldown"				"15"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -17765,44 +17861,39 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_per_attack"			"12 20 28 36"
+			"damage_per_attack"			"10 20 30 40"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"				"40 60 80 100"
+			"slow"						"140"
 		}
 		"03"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"140"
+			"var_type"					"FIELD_FLOAT"
+			"slow_duration"				"0.80"
+			"LinkedSpecialBonus"		"special_bonus_lupin_3"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"0.40"
+			"bonus_slow_duration"		"1.00 1.50 2.00 2.50"
 			"LinkedSpecialBonus"		"special_bonus_lupin_3"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"bonus_slow_duration"		"0.40 0.80 1.20 1.60"
-			"LinkedSpecialBonus"		"special_bonus_lupin_3"
+			"stun"						"0.70"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"stun"						"0.70"
+			"attack_duration"			"4.0"
 		}
 		"07"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"attack_duration"			"4.0"
-		}
-		"08"
-		{
 			"var_type"					"FIELD_INTEGER"
-			"gold_gain"					"50 75 100 125"
+			"attack_limit"				"8"
 		}
 	}
 	
@@ -17831,6 +17922,8 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 	"AbilityTextureName"			"lupin_flashbang"
+
+	"HasShardUpgrade"               "1"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
@@ -17868,7 +17961,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"cast_range_reduction"		"100 175 250 325"
+			"movespeed_reduction"		"40 45 50 55"
 		}
 		"04"
 		{
@@ -17889,6 +17982,21 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"radius"					"375"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"stun"						"0.3"
+		}
+		"09"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"scepter_stun"				"1.75"
+		}
+		"10"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"scepter_cdr"				"4"
 		}
 	}
 	
@@ -17913,24 +18021,32 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
     "AnimationPlaybackRate"         "1.75"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"AbilityTextureName"			"lupin_last_surprise"
 
-	"TooltipName"					"Last Surprise"
-	"TooltipDescription"			"Lupin jumps to a nearby location, receiving a Strong Dispel."
+	"HasScepterUpgrade"               "1"
+
+	// SFX
+	//-------------------------------------------------------------------------------------------------------------
+
+	// On throw: card flick noises (gross) [./]
+	// Travel: quiet, bright ambience [./]
+	// On land: punchy, ethereal sound with a sort of bombastic hit [./]
+	// Tick: increasing pitch tones to demonstrate the growing damage/AoE [./]
+	// On activate: a whooshing slash with a sort of cracking slash noise if units are hit [./]
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1000"
+	"AbilityCastRange"				"1250"
 	"AbilityCastPoint"				"0.22"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"24 22 20"
+	"AbilityCooldown"				"40 35 30"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"75"
+	"AbilityManaCost"				"125"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -17943,17 +18059,62 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"					"1.5 3.0 4.5"
+			"duration"					"6"
 		}
 		"02"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"movespeed"					"25 35 45"
+			"var_type"					"FIELD_FLOAT"
+			"debuff_duration"			"6.0"
 		}
 		"03"
 		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"250"
+		}
+		"04"
+		{
 			"var_type"					"FIELD_FLOAT"
-			"purge_interval"			"1.5"
+			"interval"					"0.4"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"scepter_interval"			"0.3"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"max_stacks"				"6"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"scepter_max_stacks"		"8"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"armor_steal_per_stack"		"1.00 1.25 1.50"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_steal_per_stack"	"4 6 8"
+		}
+		"09"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"gold_steal_per_stack"		"5 10 15"
+		}
+		"10"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_per_stack"			"60 80 100"
+		}
+		"11"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius_increase_per_stack" "35 50 65"
 		}
 	}
 	
@@ -17961,6 +18122,8 @@
 		{
 		"particle" "particles/units/heroes/hero_lupin/ephemera.vpcf"
 		"particle" "particles/units/heroes/hero_lupin/ephemera_unit.vpcf"
+		"particle" "particles/units/heroes/hero_lupin/calling_card_card_ground.vpcf"
+		"particle" "particles/units/heroes/hero_lupin/calling_card_projectile.vpcf"
 		"particle" "particles/units/heroes/hero_lupin/last_surprise_slash.vpcf"
 		"particle" "particles/units/heroes/hero_lupin/last_surprise_absorb.vpcf"
 		"particle" "particles/units/heroes/hero_lupin/last_surprise_unit.vpcf"

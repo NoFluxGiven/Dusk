@@ -118,6 +118,293 @@
 
 }
 
+"Lupin.CallingCard.Throw"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/calling_card_throw.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+}
+
+"Lupin.CallingCard.Land"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/calling_card_land.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Lupin.CallingCard.Pulse.1"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/calling_card_pulse.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "0"  }
+                    "pitch_rand_max"    {   "value"     "0"  }
+                    "pitch"             {   "value"     "1.02"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+
+}
+
+"Lupin.CallingCard.Pulse.2"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/calling_card_pulse.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "0"  }
+                    "pitch_rand_max"    {   "value"     "0"  }
+                    "pitch"             {   "value"     "1.04"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+
+}
+
+"Lupin.CallingCard.Pulse.3"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/calling_card_pulse.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "0"  }
+                    "pitch_rand_max"    {   "value"     "0"  }
+                    "pitch"             {   "value"     "1.06"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+
+}
+
+"Lupin.CallingCard.Pulse.4"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/calling_card_pulse.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "0"  }
+                    "pitch_rand_max"    {   "value"     "0"  }
+                    "pitch"             {   "value"     "1.08"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+
+}
+
+"Lupin.CallingCard.Pulse.5"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/calling_card_pulse.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "0"  }
+                    "pitch_rand_max"    {   "value"     "0"  }
+                    "pitch"             {   "value"     "1.10"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+
+}
+
+"Lupin.CallingCard.Pulse.6"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/calling_card_pulse.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "0"  }
+                    "pitch_rand_max"    {   "value"     "0"  }
+                    "pitch"             {   "value"     "1.12"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+                }
+            }
+        }
+    }
+
+}
+
+"Lupin.CallingCard.Slash"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/calling_card_slash.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.75"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 "Lupin.LastSurprise"
 {
     "operator_stacks"

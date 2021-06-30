@@ -51,9 +51,11 @@ function modifier_beneath_the_mask:OnAttackLanded(params)
 		local caster = self:GetParent()
 		local target = params.target
 
-		local damage = self:GetAbility():GetSpecialValueFor("damage")		
+		local damage = self:GetAbility():GetSpecialValueFor("damage")
 
 		local duration = self:GetAbility():GetSpecialValueFor("duration")
+
+		
 
 		--local t_duration_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_lupin_6") or 0
 
@@ -71,7 +73,9 @@ function modifier_beneath_the_mask:OnAttackLanded(params)
 			if self:GetAbility():IsCooldownReady() and not caster:PassivesDisabled() then
 				target:AddNewModifier(caster, self:GetAbility(), "modifier_beneath_the_mask_slow", {Duration=duration})
 				caster:AddNewModifier(caster, self:GetAbility(), "modifier_beneath_the_mask_bonus", {Duration=duration})
-				self:GetAbility():UseResources(true, true, true)
+				-- if not caster:HasModifier("modifier_calling_card_caster") then
+					self:GetAbility():UseResources(true, true, true)
+				-- end
 				self:GetAbility():InflictDamage(target,caster,damage,DAMAGE_TYPE_PHYSICAL)
 				caster:Heal(damage, caster)
 				ExecuteOrderFromTable(

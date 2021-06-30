@@ -2,6 +2,8 @@
 
 -- Extends various resources with extra functionality.
 
+require("../internal/methods/Server_CBaseAbility")
+
 -- ===================================================== PLAYER RESOURCE =====================================================
 
 -- Initialise PDataTable:

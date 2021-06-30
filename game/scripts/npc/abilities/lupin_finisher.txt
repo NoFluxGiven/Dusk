@@ -1,6 +1,10 @@
 //=====================================================================================================
 // LUPIN: Finisher
 //=====================================================================================================
+///@name Finisher
+///@desc placeholder
+///@aghs_desc placeholder
+///@shard_desc placeholder
 "lupin_finisher"
 {
 	// General
@@ -17,19 +21,14 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"AbilityTextureName"			"lupin_finisher"
 
-	// Tooltips
-	//-------------------------------------------------------------------------------------------------------------
-	"tooltipName" 					"Finisher"
-	"tooltipDescription"			"Lupin fires a shot from his trusty pistol, making an attack against the target that increases in damage for each attack Lupin makes against the target before casting."
-
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"575"
-	"AbilityCastPoint"				"0.45"
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.48"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"14"
+	"AbilityCooldown"				"15"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -46,44 +45,39 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_per_attack"			"12 20 28 36"
+			"damage_per_attack"			"10 20 30 40"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"				"40 60 80 100"
+			"slow"						"140"
 		}
 		"03"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"140"
+			"var_type"					"FIELD_FLOAT"
+			"slow_duration"				"0.80"
+			"LinkedSpecialBonus"		"special_bonus_lupin_3"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"0.40"
+			"bonus_slow_duration"		"1.00 1.50 2.00 2.50"
 			"LinkedSpecialBonus"		"special_bonus_lupin_3"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"bonus_slow_duration"		"0.40 0.80 1.20 1.60"
-			"LinkedSpecialBonus"		"special_bonus_lupin_3"
+			"stun"						"0.70"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"stun"						"0.70"
+			"attack_duration"			"4.0"
 		}
 		"07"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"attack_duration"			"4.0"
-		}
-		"08"
-		{
 			"var_type"					"FIELD_INTEGER"
-			"gold_gain"					"50 75 100 125"
+			"attack_limit"				"8"
 		}
 	}
 	

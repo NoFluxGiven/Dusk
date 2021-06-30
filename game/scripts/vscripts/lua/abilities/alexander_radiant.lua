@@ -6,6 +6,15 @@ LinkLuaModifier("modifier_radiant_aura","lua/abilities/alexander_radiant",LUA_MO
 LinkLuaModifier("modifier_radiant_allies","lua/abilities/alexander_radiant",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_radiant_allies_aura","lua/abilities/alexander_radiant",LUA_MODIFIER_MOTION_NONE)
 
+function alexander_radiant:OnAbilityPhaseStart()
+	self:GetCaster():AddActivityModifier("iron")
+	return true
+end
+
+function alexander_radiant:OnAbilityPhaseInterrupted()
+	self:GetCaster():ClearActivityModifiers()
+end
+
 function alexander_radiant:OnSpellStart()
 	local caster = self:GetCaster()
 
@@ -13,14 +22,31 @@ function alexander_radiant:OnSpellStart()
 	No Description Set
 	]]
 
+	local radius = self:GetSpecialValueFor("radius")
+
 	local t_damage = self:GetCaster():FetchTalent("special_bonus_alexander_2")
 
+	local p = CreateParticleWorld(caster:GetCenter(), "particles/units/heroes/hero_alexander/raise_the_shield_dome.vpcf")
+
+	caster:GetAttachmentOrigin(DOTA_PROJECTILE_ATTACHMENT_HITLOCATION)
+
+	ParticleManager:SetParticleControl(p, 1, Vector(radius,0,0))
+
+	Timers:CreateTimer(4.0,
+	function()
+		ParticleManager:DestroyParticle(p, false)
+	end)
+
 	if t_damage then
-		local radius = self:GetSpecialValueFor("radius")
+		
 
 		local e = FindEnemies(caster,caster:GetAbsOrigin(),radius)
 
-		local p = CreateParticleHitloc(caster,"particles/units/heroes/hero_alexander/radiant_damage.vpcf")
+		-- local p = CreateParticleHitloc(caster,"particles/units/heroes/hero_alexander/radiant_damage.vpcf")
+
+		-- ParticleManager:SetParticleControl(p, 1, Vector(radius,0,0))
+
+		local p = CreateParticleWorld(caster:GetAbsOrigin(), "particles/units/heroes/hero_alexander/.vpcf")
 
 		ParticleManager:SetParticleControl(p, 1, Vector(radius,0,0))
 

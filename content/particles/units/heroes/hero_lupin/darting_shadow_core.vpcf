@@ -7,13 +7,6 @@
 	[
 		{
 			m_name = "preview"
-			m_drivers = 
-			[
-				{
-					m_iAttachType = "PATTACH_WORLDORIGIN"
-					m_entityName = "self"
-				},
-			]
 		},
 	]
 	m_Emitters = 
@@ -54,22 +47,22 @@
 	m_Operators = 
 	[
 		{
-			_class = "C_OP_FadeAndKill"
-			m_flStartAlpha = 0.0
-		},
-		{
 			_class = "C_OP_BasicMovement"
 			m_fDrag = 0.1
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_OFF"
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
 			m_flStartScale = 3.0
-			m_flEndScale = 12.0
-			m_flBias = 0.25
+			m_flEndScale = 15.0
+			m_flBias = 0.8
 		},
 		{
 			_class = "C_OP_PositionLock"
 			m_nControlPointNumber = 3
+		},
+		{
+			_class = "C_OP_Decay"
 		},
 	]
 	m_Renderers = 
@@ -83,6 +76,12 @@
 				},
 			]
 			m_OutlineColor = [ 255, 255, 255 ]
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_lupin/calling_card_projectile.vpcf"
 		},
 	]
 }

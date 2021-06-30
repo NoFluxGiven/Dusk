@@ -236,12 +236,47 @@ function duskDota:OnPlayerLearnedAbility( keys)
   PrintTable(keys)
 
   local talent = keys.abilityname
+  local istalent = false
   local playerid = keys.player-1
   local player = PlayerResource:GetPlayer(playerid)
   local hero = player:GetAssignedHero()
   --local ei = hero:entindex()
   --local ei = hero:GetPlayerOwnerID()
   local ei = hero:GetEntityIndex()
+
+  -- if abilityname:find("special_bonus") == 1 then
+  --   istalent = true
+  -- end
+
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------  
+----------------- LOOK AT ME -----------------
+  ---@todo DEPRECATE THE NETTABLES FOR LEARNED_ABILITIES
+  ---@todo USE PERMANENT, HIDDEN MODIFIERS INSTEAD
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+----------------- LOOK AT ME -----------------
+
 
   local t = CustomNetTables:GetTableValue("learned_abilities",tostring(ei))
 

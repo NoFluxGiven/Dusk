@@ -8,18 +8,19 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/alexander_godfall"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-	"AbilityChannelTime"			"1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityTextureName"			"alexander_godfall"
+	"AbilityCastAnimation"          "ACT_DOTA_VICTORY"
+	"AnimationPlaybackRate"			"0.8"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"0"
-	"AbilityCastPoint"				"0"
+	"AbilityCastPoint"				"0.6"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"70"
+	"AbilityCooldown"				"250"
 	"HasScepterUpgrade"				"1"
 
 	// Cost
@@ -36,24 +37,49 @@
 	{
 	"01"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"7"
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"12.0"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"135 170 205"
+			"bolt_damage"					"40 55 70"
 			"LinkedSpecialBonus"			"special_bonus_alexander_3"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"scepter_radius"				"325"
+			"bolt_radius"					"190"
 		}
 	"04"
 		{
+			"var_type"						"FIELD_FLOAT"
+			"bolt_interval"					"0.1"
+		}
+	"05"
+		{
 			"var_type"						"FIELD_INTEGER"
-			"scepter_cooldown"				"24"
+			"bolt_count"					"3"
+		}
+	"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"300"
+		}
+	"07"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bolt_damage_reduction"			"3"
+		}
+	"08"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bolt_damage_reduction_maximum"	"60"
+		}
+	"09"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"bolt_debuff_duration"			"10"
 		}
 	}
 	
@@ -64,6 +90,7 @@
 		"particle" "particles/units/heroes/hero_alexander/godfall_charged.vpcf"
 		"particle" "particles/units/heroes/hero_alexander/godfall_strike.vpcf"
 		"particle" "particles/units/heroes/hero_alexander/godfall_success.vpcf"
+		"particle" "particles/units/heroes/hero_alexander/godfall_ground_hit.vpcf"
 		"soundfile" "soundevents\hero_alexander.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
 		}

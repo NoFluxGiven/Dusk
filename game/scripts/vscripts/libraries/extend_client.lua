@@ -1,3 +1,6 @@
+-- ALL THE BELOW DEPRECATED
+-- Replace with the Modifier Talent System that imba has
+
 function C_DOTA_BaseNPC:GetHasTalent(talent_string)
 	local name = self:GetUnitName()
 	local interim = "_talent_"

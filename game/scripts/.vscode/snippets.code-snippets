@@ -1,0 +1,108 @@
+{
+	// Place your scripts workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"SpecialValue": {
+		"scope": "lua",
+		"body": "local ${special_value_name} = self:GetSpecialValueFor(\"${special_value_name}\")",
+		"prefix": ",,sv"
+	},
+	"ModifierSpecialValue": {
+		"scope": "lua",
+		"body": "self.${special_value_name} = self:GetAbility():GetSpecialValueFor(\"${special_value_name}\")",
+		"prefix": ",,msv"
+	},
+	"Modifier": {
+		"scope": "lua",
+		"body": [
+			"--------------------------------------------------------------------------------------------------------------",
+			"",
+			"modifier_${1} = class({})",
+			"",
+			"function modifier_${1}:IsHidden() return ${2|false,true|} end",
+			"function modifier_${1}:IsPurgable() return ${3|true,false|} end",
+			"",
+			"function modifier_${1}:OnCreated(kv)",
+			"\t${0}",
+			"end"
+		],
+		"prefix": ",,mod"
+	},
+	"AbilityTooltip": {
+		"scope": "plaintext",
+		"body": [
+			"\"DOTA_Tooltip_ability_${CLIPBOARD}\"\t\t\t\t\t\t\"${ability_name}\"",
+			"\"DOTA_Tooltip_ability_${CLIPBOARD}_description\"\t\t\t\"${ability_description}\"",
+		],
+		"prefix": ",,ability"
+	},
+	"AbilitySVTooltip": {
+		"scope": "plaintext",
+		"body": [
+			"\"DOTA_Tooltip_ability_${CLIPBOARD}_${1:special_value}\"\t\t\t\t\"${1/(.*)/${1:/upcase}/}:\"",
+		],
+		"prefix": ",,sv"
+	},
+	"AbilityAghsTooltip": {
+		"scope": "plaintext",
+		"body": [
+			"\"DOTA_Tooltip_ability_${CLIPBOARD}_scepter_description\"\t\t\t\t\"\""
+		],
+		"prefix": ",,aghs"
+	},
+	"AbilityShardTooltip": {
+		"scope": "plaintext",
+		"body": [
+			"\"DOTA_Tooltip_ability_${CLIPBOARD}_shard_description\"\t\t\t\t\"\""
+		],
+		"prefix": ",,shard"
+	},
+	"ModifierTooltip": {
+		"scope": "plaintext",
+		"body": [
+			"\"DOTA_Tooltip_modifier_${1}\" \"${2}\"",
+			"\"DOTA_Tooltip_modifier_${1}_description\" \"${0}\"",
+		],
+		"prefix": ",,mod"
+	},
+	"LinkModifier": {
+		"scope": "lua",
+		"body": [
+			"LinkLuaModifier(\"${1}\",\"lua/abilities/${TM_FILENAME_BASE}\",LUA_MODIFIER_MOTION_NONE)"
+		],
+		"prefix": ",,link"
+	},
+	"Line": {
+		"scope": "lua",
+		"body": "--------------------------------------------------------------------------------------------------------------",
+		"prefix": ",,sep"
+	},
+	"Function:FindEnemies":
+	{
+		"scope": "lua",
+		"body": "FindEnemies(${caster},${point},${radius},${targets},${flags})",
+		"prefix": "FindEnemies"
+	},
+	"Function:DealDamage":
+	{
+		"scope": "lua",
+		"body": "DealDamage(${target},${attacker},${damageAmount},${damageType},${ability},${damageFlags})",
+		"prefix": "DealDamage"
+	}
+
+	
+}
