@@ -38627,6 +38627,12 @@
             "var_type"              "FIELD_FLOAT"
             "stun"                  "0.90"
         }
+
+        "03"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "block_duration"        "5.0"
+        }
     }
 
     "precache"
@@ -38801,9 +38807,9 @@
     // Ability
     //----------------------------------------------
     "AbilityType"               "DOTA_ABILITY_TYPE_BASIC"
-    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_POINT"
-    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
-    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
     "AbilityTextureName"        "war_wrath"
 
     // Animation
@@ -38814,8 +38820,8 @@
 
     // Casting
     //----------------------------------------------
-    "AbilityCastRange"          "600"
-    "AbilityCooldown"           "12"
+    "AbilityCastRange"          "450"
+    "AbilityCooldown"           "16"
     "AbilityManaCost"           "0"
 
     // Special Values
@@ -38825,27 +38831,42 @@
         "01"
         {
             "var_type"                  "FIELD_INTEGER"
-            "attack_damage"             "30"
+            "base_attack_speed"         "30"
         }
         "02"
         {
             "var_type"                  "FIELD_INTEGER"
-            "armor_reduction"           "3 4 5 6"
+            "base_movespeed"            "8"
         }
         "03"
         {
             "var_type"                  "FIELD_INTEGER"
-            "magic_res_reduction"       "15 20 25 30"
+            "base_physical_damage_reduction" "10"
         }
         "04"
         {
             "var_type"                  "FIELD_INTEGER"
-            "damage_over_time"          "20 30 40 50"
+            "attack_speed_increase"     "8 12 16 20"
         }
         "05"
         {
             "var_type"                  "FIELD_INTEGER"
-            "attacks_to_dispel"         "3"
+            "movespeed_increase"        "4"
+        }
+        "06"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "physical_damage_reduction_increase" "5"
+        }
+        "07"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "max_stacks"                "8"
+        }
+        "08"
+        {
+            "var_type"                  "FIELD_FLOAT"
+            "duration"                  "12"
         }
     }
 }//=====================================================================================================

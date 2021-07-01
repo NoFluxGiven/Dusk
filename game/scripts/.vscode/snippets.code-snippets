@@ -94,15 +94,27 @@
 	"Function:FindEnemies":
 	{
 		"scope": "lua",
-		"body": "FindEnemies(${caster},${point},${radius},${targets},${flags})",
+		"body": "FindEnemies(${caster}, ${point}, ${radius}, ${targets}, ${flags})",
 		"prefix": "FindEnemies"
 	},
 	"Function:DealDamage":
 	{
 		"scope": "lua",
-		"body": "DealDamage(${target},${attacker},${damageAmount},${damageType},${ability},${damageFlags})",
+		"body": "DealDamage(${target}, ${attacker}, ${damageAmount}, ${damageType}, ${ability}, ${damageFlags})",
 		"prefix": "DealDamage"
-	}
+	},
+	"Function:AddSRModifier":
+	{
+		"scope": "lua",
+		"body": "AddSRModifier( ${caster}, ${ability}, ${modifier_name}, ${duration}, ${kv} )",
+		"prefix": "AddSRModifier"
+	},
+	"Function:Stun":
+	{
+		"scope": "lua",
+		"body": "Stun( ${caster}, ${ability}, ${duration} )",
+		"prefix": "Stun"
+	},
 
 	
 }

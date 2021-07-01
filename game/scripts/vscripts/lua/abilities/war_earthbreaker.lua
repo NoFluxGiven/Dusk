@@ -1,6 +1,6 @@
 war_earthbreaker = class({})
 
--- LinkLuaModifier("modifier_earthbreaker","lua/abilities/war_earthbreaker",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_earthbreaker_arena","lua/abilities/war_earthbreaker",LUA_MODIFIER_MOTION_NONE)
 
 function war_earthbreaker:GetCooldown(level)
 	local base_cooldown = self.BaseClass.GetCooldown(self, level)
@@ -14,7 +14,7 @@ function war_earthbreaker:OnSpellStart()
 	local extra_offset = caster:GetForwardVector()*450
 	local start = caster:GetAbsOrigin()
 
-	local max_count = 3
+	-- local max_count = 3
 
 	local damage = self:GetAbilityDamage()
 
@@ -37,7 +37,7 @@ function war_earthbreaker:Slam(caster, start, offset, extra_offset, damage, t_ra
 
 	local dmg = damage
 
-	if not initial then dmg = damage / 2 end
+	-- if not initial then dmg = damage / 2 end
 
 	unit:EmitSound("War.Earthbreaker")
 	--unit:EmitSoundParams("War.Earthbreaker", 1, volume, 0)
@@ -46,35 +46,98 @@ function war_earthbreaker:Slam(caster, start, offset, extra_offset, damage, t_ra
 
 	ScreenShake(unit:GetCenter(), 1000, 3, 0.75, 1500, 0, true)
 
+	self:CreateBlockers( start, offset, radius, t_radius_bonus )
+
 	for k,v in pairs(enemy_found) do
 		if not v:IsMagicImmune() then
 			DealDamage(v,caster,dmg,DAMAGE_TYPE_PHYSICAL)
-			v:AddNewModifier(caster, nil, "modifier_stunned", {Duration=stun * (1 - v:GetStatusResistance())})
+			v:Stun( caster, nil, stun )
 		end
+
+		Timers:CreateTimer(0.06,function()
+			FindClearSpaceForUnit(v, v:GetAbsOrigin(), true)
+		end)
+	end
+end
+
+function war_earthbreaker:CreateBlockers(start, offset, radius, t_radius_bonus)
+	-- local block_duration = self:GetSpecialValueFor("block_duration")
+	local block_duration = 5
+
+	local blocker_width = 24
+
+	-- Find clear space
+	local found = FindEntities(self:GetCaster(), start + offset, radius + blocker_width * 1.25)
+
+	for k,v in pairs(found) do
+		Timers:CreateTimer(0.06,function()
+			FindClearSpaceForUnit(v, v:GetAbsOrigin(), true)
+		end)
+	end
+	--------------------
+
+	local intervals = ( radius / blocker_width ) * 2
+	local angle = 2 * math.pi / intervals
+
+	for i=1,intervals do
+		-- if i ~= 12 then
+			local qangles = VectorAngles(self:GetCaster():GetForwardVector())
+
+			local qy = qangles.y
+
+			local angle_start = qy * (math.pi / 180)
+
+			-- Create direction vector from the angle
+			local direction =  Vector(math.cos(angle_start + angle * (i)), math.sin(angle_start + angle * (i)))
+			-- Multiply the direction (length 1) with the desired radius of the circle
+			local circlePoint = direction * ( radius + t_radius_bonus )
+
+			-- Add the calculated green vector to the player position and do something
+			local placement = start + offset + circlePoint
+
+			local blocker = CreateModifierThinker(
+				self:GetCaster(), -- player source
+				self, -- ability source
+				"modifier_earthbreaker_arena", -- modifier name
+				{ duration = block_duration }, -- kv
+				placement,
+				self:GetCaster():GetTeamNumber(),
+				true
+			)
+			-- blocker:SetHullRadius( blocker_width )
+
+			-- DebugDrawCircle(placement + Vector(0,0,5), Vector(255,255,255), 1, blocker_width, true, block_duration)
+			-- DebugDrawText(placement + Vector(15,0,5), "["..i.."] "..angle*i, false, block_duration)
+		-- end
 	end
 
-	if #enemy_found > 0 then 
-		count = count+1
-		if count < max_count then
-			-- earthquake sound effect here
-			-- earthquake particle effect here
-			local warning_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_war/earthbreaker_warning.vpcf", PATTACH_WORLDORIGIN, nil)
+	DebugDrawCircle(self:GetCaster():GetAbsOrigin(), Vector(0,255,0), 1, self:GetCaster():GetHullRadius(), true, 5)
+end
 
-			-- ParticleManager:SetParticleControl(warning_particle, 0, start + offset + extra_offset * count)
-			ParticleManager:SetParticleControl(warning_particle, 0, start + offset)
+--------------------------------------------------------------------------------------------------------------
 
-			Timers:CreateTimer(2.50,
-			function()
-				self:Slam(
-				caster,
-				start,
-				offset,
-				extra_offset,
-				damage, t_radius_bonus, radius, stun,
-				count == 0 and true or false,
-				count, max_count)
-				ParticleManager:DestroyParticle(warning_particle, false)
-			end)
-		end
-	end
+modifier_earthbreaker_arena = class({})
+
+function modifier_earthbreaker_arena:IsHidden() return true end
+function modifier_earthbreaker_arena:IsPurgable() return false end
+
+function modifier_earthbreaker_arena:OnCreated(kv)
+	if not IsServer() then return end
+	self.spike_particle = CreateParticleWorld( self:GetParent():GetAbsOrigin(), "particles/units/heroes/hero_war/earthbreaker_arena_spikes.vpcf" )
+	ParticleManager:SetParticleControl(self.spike_particle, 1, Vector(0,0,1))
+	self:StartIntervalThink(0.7)
+end
+
+function modifier_earthbreaker_arena:OnIntervalThink()
+	local hide_radius = 100
+	local hide = 0
+
+	self:GetParent():SetHullRadius(24)
+
+	ParticleManager:SetParticleControl(self.spike_particle, 1, Vector(0,0,0))
+end
+
+function modifier_earthbreaker_arena:OnDestroy()
+	if not IsServer() then return end
+	ParticleManager:DestroyParticle(self.spike_particle, false)
 end

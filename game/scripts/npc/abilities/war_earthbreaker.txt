@@ -53,6 +53,12 @@
             "var_type"              "FIELD_FLOAT"
             "stun"                  "0.90"
         }
+
+        "03"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "block_duration"        "5.0"
+        }
     }
 
     "precache"

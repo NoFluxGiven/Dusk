@@ -4,6 +4,22 @@
 
 require("../internal/methods/Server_CBaseAbility")
 
+-- ===================================================== NPC =====================================================
+
+function CDOTA_BaseNPC:AddSRModifier( caster, ability, modifier_name, duration, kv )
+	local sr = caster:GetStatusResistance()
+
+	local modified_duration = (1 - (sr / 100)) * duration
+	
+	kv.Duration = modified_duration
+
+	self:AddNewModifier(caster, ability, modifier_name, kv)
+end
+
+function CDOTA_BaseNPC:Stun( caster, ability, duration )
+	self:AddSRModifier( caster, ability, "modifier_stunned", duration, {} )
+end
+
 -- ===================================================== PLAYER RESOURCE =====================================================
 
 -- Initialise PDataTable:
