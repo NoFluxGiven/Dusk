@@ -523,7 +523,7 @@
 			"file": "vscripts/duskdota.lua",
 			"settings":
 			{
-				"buffer_size": 43805,
+				"buffer_size": 43918,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -1141,7 +1141,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 43805,
+						"buffer_size": 43918,
 						"regions":
 						{
 						},

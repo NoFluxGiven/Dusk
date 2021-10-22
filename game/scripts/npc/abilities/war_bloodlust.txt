@@ -8,6 +8,15 @@
 /// Deals 30/45/60/75 + 20/30/40/50% of the target's attack damage every 2s.
 /// Dispelled when the unit makes 3 successful attacks against enemy Heroes.
 
+///@new
+/// Bloodlust now causes targets to take increasing damage per second while
+/// not attacking. The damage begins at 10/15/20/25 DPS, then increases by
+/// 5/10/15/20 per second, dealing the damage in 0.5s intervals.
+/// Attacking resets it to the base damage.
+/// Lasts 8s.
+/// The slow amount increases by 4/6/8/10% per second of not attacking.
+/// Maximum damage/slow at max level is 185 damage/80% slow.
+
 "war_bloodlust"
 {
     // General
@@ -22,11 +31,11 @@
     "AnimationPlaybackRate"         "1.50"
     "FightRecapLevel"               "1"
     "AbilityTextureName"            "war_bloodlust"
-    "AoERadius"                     "325"
+    "AoERadius"                     "375"
     
     // Casting
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"              "425"
+    "AbilityCastRange"              "450"
     "AbilityCastPoint"              "0.25"
 
     // Time     
@@ -48,19 +57,19 @@
         "01"
         {
             "var_type"              "FIELD_INTEGER"
-            "bonus_attack_speed"   "45"
+            "bonus_attack_speed"   "50"
         }
         
         "02"
         {
             "var_type"              "FIELD_INTEGER"
-            "radius"                "325"
+            "radius"                "375"
         }
 
         "03"
         {
             "var_type"              "FIELD_FLOAT"
-            "duration"              "5.0"
+            "duration"              "6.0"
         }
 
         "04"
@@ -85,7 +94,7 @@
         "07"
         {
             "var_type"              "FIELD_INTEGER"
-            "attack_damage"         "35 45 55 65"
+            "attack_damage_percent"         "50"
         }
 
         "08"

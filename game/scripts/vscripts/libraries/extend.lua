@@ -8,6 +8,7 @@ require("../internal/methods/Server_CBaseAbility")
 
 function CDOTA_BaseNPC:AddSRModifier( caster, ability, modifier_name, duration, kv )
 	local sr = caster:GetStatusResistance()
+	if kv == nil then kv = {} end
 
 	local modified_duration = (1 - (sr / 100)) * duration
 	

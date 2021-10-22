@@ -16,7 +16,7 @@ function war_earthbreaker:OnSpellStart()
 
 	-- local max_count = 3
 
-	local damage = self:GetAbilityDamage()
+	local damage = self:GetSpecialValueFor("damage")
 
 	local t_radius_bonus = caster:FetchTalent("special_bonus_war_2") or 0
 
@@ -35,6 +35,10 @@ function war_earthbreaker:Slam(caster, start, offset, extra_offset, damage, t_ra
 
 	ParticleManager:SetParticleControl(particle, 1, Vector(radius,0,0))
 
+	-- if damage == 0 then damage = 200 end
+
+	-- local dmg = (damage/100) * caster:GetAverageTrueAttackDamage(caster)
+	
 	local dmg = damage
 
 	-- if not initial then dmg = damage / 2 end
@@ -46,7 +50,7 @@ function war_earthbreaker:Slam(caster, start, offset, extra_offset, damage, t_ra
 
 	ScreenShake(unit:GetCenter(), 1000, 3, 0.75, 1500, 0, true)
 
-	self:CreateBlockers( start, offset, radius, t_radius_bonus )
+	-- self:CreateBlockers( start, offset, radius, t_radius_bonus )
 
 	for k,v in pairs(enemy_found) do
 		if not v:IsMagicImmune() then
@@ -54,9 +58,9 @@ function war_earthbreaker:Slam(caster, start, offset, extra_offset, damage, t_ra
 			v:Stun( caster, nil, stun )
 		end
 
-		Timers:CreateTimer(0.06,function()
-			FindClearSpaceForUnit(v, v:GetAbsOrigin(), true)
-		end)
+		-- Timers:CreateTimer(0.06,function()
+		-- 	FindClearSpaceForUnit(v, v:GetAbsOrigin(), true)
+		-- end)
 	end
 end
 

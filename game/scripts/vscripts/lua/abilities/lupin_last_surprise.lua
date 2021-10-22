@@ -111,7 +111,7 @@ function lupin_last_surprise:OnProjectileHit(target, location)
 
 	-- should have reached the end of its travel time
 
-	if not target then
+	if not target and caster:IsAlive() then
 		self:EndCooldown()
 		self.calling_card_thinker_position = location
 

@@ -8,23 +8,24 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/rai_thunder_roar"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"0.75"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 	"AbilityTextureName"			"rai_thunder_roar"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"475"
-	"AbilityCastPoint"				"0.3"
+	"AbilityCastRange"				"1100 1200 1300"
+	"AbilityCastPoint"				"0.6"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"80 75 70"
+	"AbilityCooldown"				"60 55 50"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"200"
+	"AbilityManaCost"				"225 250 275"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -37,32 +38,17 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"100 125 150"
+			"damage"						"250 325 400"
 		}
 		"02"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"5.5"
+			"var_type"						"FIELD_INTEGER"
+			"bolt_radius"					"275"
 		}
 		"03"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"bolts"							"4 6 8"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"350"
-		}
-		"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bolt_radius"					"300"
-		}
-		"06"
-		{
 			"var_type"						"FIELD_FLOAT"
-			"ministun"						"0.3"
+			"stun"							"0.75"
 			"LinkedSpecialBonus"			"special_bonus_rai_5"
 		}
 	}

@@ -9,6 +9,8 @@ function war_wrath:OnSpellStart()
 
 	-- local max_count = 3
 
+    target:EmitSound("War.Wrath")
+
 	target:AddNewModifier(caster, self, "modifier_wrath", {Duration=duration})
 end
 
@@ -20,53 +22,42 @@ function modifier_wrath:IsHidden() return false end
 function modifier_wrath:IsPurgable() return true end
 
 function modifier_wrath:OnCreated(kv)
-    self.base_attack_speed = self:GetAbility():GetSpecialValueFor("base_attack_speed")
-    self.base_movespeed = self:GetAbility():GetSpecialValueFor("base_movespeed")
-    self.base_physical_damage_reduction = self:GetAbility():GetSpecialValueFor("base_physical_damage_reduction")
+    -- self.base_attack_speed = self:GetAbility():GetSpecialValueFor("base_attack_speed")
+    -- self.base_movespeed = self:GetAbility():GetSpecialValueFor("base_movespeed")
+    -- self.base_physical_damage_reduction = self:GetAbility():GetSpecialValueFor("base_physical_damage_reduction")
 
-    self.attack_speed_increase = self:GetAbility():GetSpecialValueFor("attack_speed_increase")
-    self.movespeed_increase = self:GetAbility():GetSpecialValueFor("movespeed_increase")
-    self.physical_damage_reduction_increase = self:GetAbility():GetSpecialValueFor("physical_damage_reduction_increase")
+    self.attack_speed_bonus = self:GetAbility():GetSpecialValueFor("attack_speed_bonus")
+    self.movespeed_bonus = self:GetAbility():GetSpecialValueFor("movespeed_bonus")
+    self.incoming_damage_bonus = self:GetAbility():GetSpecialValueFor("incoming_damage_bonus")
 
-    self.max_stacks = self:GetAbility():GetSpecialValueFor("max_stacks")
-
-    self:SetStackCount(0)
-
-    -- self:StartIntervalThink(0.5)
+    self:GetParent():Purge(false, true, false, true, false)
 end
 
 function modifier_wrath:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-        MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE,
-        MODIFIER_EVENT_ON_ATTACK_LANDED
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
     }
     return funcs
 end
 
--- function modifier_wrath:OnIntervalThink()
---     if not self:GetParent():IsAttacking() then
---         self:DecrementStackCount()
---     end
--- end
-
-function modifier_wrath:OnAttackLanded(params)
-    if (params.attacker == self:GetParent()) then
-        if self:GetStackCount() < self.max_stacks then
-            self:IncrementStackCount()
-        end
-    end
-end
-
 function modifier_wrath:GetModifierAttackSpeedBonus_Constant()
-    return self.base_attack_speed + self:GetStackCount() * self.attack_speed_increase
+    return self.attack_speed_bonus
 end
 
 function modifier_wrath:GetModifierMoveSpeedBonus_Percentage()
-    return self.base_movespeed + self:GetStackCount() * self.movespeed_increase
+    return self.movespeed_bonus
 end
 
-function modifier_wrath:GetModifierIncomingPhysicalDamage_Percentage()
-    return -1 * (self.base_physical_damage_reduction + self:GetStackCount() * self.physical_damage_reduction_increase)
+function modifier_wrath:GetModifierIncomingDamage_Percentage()
+    return self.incoming_damage_bonus
+end
+
+function modifier_wrath:GetEffectName()
+    return "particles/units/heroes/hero_war/wrath.vpcf"
+end
+
+function modifier_wrath:GetEffectAttachType()
+    return PATTACH_OVERHEAD_FOLLOW
 end

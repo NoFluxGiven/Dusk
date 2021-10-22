@@ -18,7 +18,7 @@ function bahamut_mega_flare:OnSpellStart()
 
 	if self:GetCaster():GetHasTalent("special_bonus_bahamut_mega_flare") then dmg = dmg*1.4 dmg2 = dmg2*1.4 end
 
-	local min = 475
+	local min = 350
 
 	local d = (target - caster:GetAbsOrigin()):Normalized()
 
@@ -68,7 +68,7 @@ function bahamut_mega_flare:OnSpellStart()
                         r,
                         DOTA_UNIT_TARGET_TEAM_ENEMY,
                         DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
-                        DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+                        0,
                         FIND_CLOSEST,
                         false)
   		local enemy_outer = FindUnitsInRadius( caster:GetTeamNumber(),
@@ -77,15 +77,15 @@ function bahamut_mega_flare:OnSpellStart()
                         r2,
                         DOTA_UNIT_TARGET_TEAM_ENEMY,
                         DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_CREEP,
-                        DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+                        0,
                         FIND_CLOSEST,
                         false)
 
   		for k,v in pairs(enemy_inner) do
-  			DealDamage(v,caster,dmg,DAMAGE_TYPE_PURE)
+  			DealDamage(v,caster,dmg,DAMAGE_TYPE_MAGICAL)
   		end
   		for k,v in pairs(enemy_outer) do
-  			DealDamage(v,caster,dmg2,DAMAGE_TYPE_PURE)
+  			DealDamage(v,caster,dmg2,DAMAGE_TYPE_MAGICAL)
   		end
 
   		ScreenShake(caster:GetCenter(), 2400, 170, 2, 1200, 0, true)

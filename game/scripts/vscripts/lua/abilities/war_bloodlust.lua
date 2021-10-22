@@ -65,9 +65,10 @@ function modifier_bloodlust:GetModifierMoveSpeedBonus_Percentage()
 end
 
 function modifier_bloodlust:OnCreated(kv)
-	self:StartIntervalThink(kv.interval)
-	self.interval = kv.interval
-	self.attack_damage_pct = kv.attack_damage_pct
+	self.interval = self:GetAbility():GetSpecialValueFor("interval")
+	self:StartIntervalThink(self.interval)
+	
+	self.attack_damage_percent = self:GetAbility():GetSpecialValueFor("attack_damage_percent")
 
 	if IsServer() then
 		self:SetStackCount(math.floor(kv.stacks))
@@ -91,13 +92,19 @@ end
 
 function modifier_bloodlust:OnIntervalThink()
 	if IsServer() then
-		local base_damage = self.damage + self:GetParent():GetAverageTrueAttackDamage(self:GetParent()) * (self.attack_damage_pct/100)
-		local damage = base_damage * self.interval
+		self:TickDamage()
+	end
+end
+
+
+function modifier_bloodlust:TickDamage(multiplier)
+	multiplier = multiplier or 1
+	if IsServer() then
+		local base_damage = self.damage + self:GetParent():GetAverageTrueAttackDamage(self:GetParent()) * (self.attack_damage_percent/100)
+		local damage = base_damage * self.interval * multiplier
 		local is_creep = self:GetParent():IsCreep()
 
 		self:GetAbility():InflictDamage(self:GetParent(),self:GetAbility():GetCaster(),damage,self:GetAbility():GetAbilityDamageType())
-
-		--if self:GetStackCount() <= 0 then self:Destroy() end
 	end
 end
 
@@ -107,8 +114,11 @@ function modifier_bloodlust:OnAttackLanded(kv)
 			-- if kv.attacker:HasModifier("modifier_fight_me") then return end
 			if not kv.attacker:IsHero() then return end
 
-			-- increase duration on attack
-			self:SetDuration(self:GetRemainingTime()+2.00, true)
+			-- tick damage on attack
+
+			kv.attacker:EmitSound("War.Bloodlust.Attack")
+			self:TickDamage(2)
+			
 
 			-- if self:GetStackCount()-1 > 0 then
 			-- 	self:SetStackCount(self:GetStackCount()-1)

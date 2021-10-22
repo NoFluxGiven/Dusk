@@ -31,8 +31,8 @@
     // Casting
     //----------------------------------------------
     "AbilityCastRange"          "450"
-    "AbilityCooldown"           "16"
-    "AbilityManaCost"           "0"
+    "AbilityCooldown"           "16 14 12 10"
+    "AbilityManaCost"           "70"
 
     // Special Values
     //----------------------------------------------
@@ -41,42 +41,22 @@
         "01"
         {
             "var_type"                  "FIELD_INTEGER"
-            "base_attack_speed"         "30"
+            "attack_speed_bonus"        "250"
         }
         "02"
         {
             "var_type"                  "FIELD_INTEGER"
-            "base_movespeed"            "8"
+            "movespeed_bonus"           "8 16 24 32"
+        }
+        "02"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "incoming_damage_bonus"     "30"
         }
         "03"
         {
-            "var_type"                  "FIELD_INTEGER"
-            "base_physical_damage_reduction" "10"
-        }
-        "04"
-        {
-            "var_type"                  "FIELD_INTEGER"
-            "attack_speed_increase"     "8 12 16 20"
-        }
-        "05"
-        {
-            "var_type"                  "FIELD_INTEGER"
-            "movespeed_increase"        "4"
-        }
-        "06"
-        {
-            "var_type"                  "FIELD_INTEGER"
-            "physical_damage_reduction_increase" "5"
-        }
-        "07"
-        {
-            "var_type"                  "FIELD_INTEGER"
-            "max_stacks"                "8"
-        }
-        "08"
-        {
             "var_type"                  "FIELD_FLOAT"
-            "duration"                  "12"
+            "duration"                  "3.5"
         }
     }
 }

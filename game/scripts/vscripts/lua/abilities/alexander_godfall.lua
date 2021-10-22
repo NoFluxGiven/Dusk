@@ -306,6 +306,7 @@ function modifier_godfall_debuff:DeclareFunctions()
 end
 
 function modifier_godfall_debuff:GetModifierDamageOutgoing_Percentage()
+	print("DAMAGE REDUCED")
 	return -self:GetStackCount()
 end
 

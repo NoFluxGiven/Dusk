@@ -13,9 +13,21 @@ end
 
 modifier_amplify = class({})
 
+function modifier_amplify:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
+	}
+end
+
+function modifier_amplify:GetModifierMoveSpeedBonus_Percentage()
+	return self.bonus_movespeed
+end
+
 function modifier_amplify:OnCreated()
 	if IsServer() then
 		self:StartIntervalThink(0.25)
+
+		self.bonus_movespeed = self:GetAbility():GetSpecialValueFor("bonus_movespeed")
 
 		local p = ParticleManager:CreateParticle("particles/units/heroes/hero_rai/rai_amplify2.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent()) --[[Returns:int
 		Creates a new particle effect
@@ -43,7 +55,7 @@ function modifier_amplify:OnIntervalThink()
 		local t = FindEnemies(self:GetParent(),self:GetParent():GetAbsOrigin(),radius)
 
 		for k,v in pairs(t) do
-			DealDamage(v,self:GetParent(),damage*0.25,DAMAGE_TYPE_MAGICAL)
+			self:GetAbility():InflictDamage(v,self:GetParent(),damage*0.25,DAMAGE_TYPE_MAGICAL)
 			-- Particle effects
 		end
 	end
@@ -89,7 +101,7 @@ function modifier_amplify:OnDestroy()
 			]]
 			local t = 0.1*(k-1) + r
 			Timers:CreateTimer(t,function()
-				DealDamage(v,c,edamage,DAMAGE_TYPE_MAGICAL)
+				a:InflictDamage(v,c,edamage,DAMAGE_TYPE_MAGICAL)
 				v:AddNewModifier(c, a, "modifier_amplify_slow", {Duration=d}) --[[Returns:void
 				No Description Set
 				]]

@@ -50,7 +50,7 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"bonus_damage" 		"20"
+			"bonus_damage" 		"15"
 		}
 		"02"
 		{
@@ -60,12 +60,12 @@
 		"03"
 		{
 			"var_type"			"FIELD_FLOAT"
-			"active_duration"	"2.25"
+			"active_duration"	"1.5"
 		}
 		"04"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"active_damage_increase" "15"
+			"active_damage_increase" "12"
 		}
 		"05"
 		{
@@ -75,7 +75,7 @@
 		"06"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"max_distance" 		"1200"
+			"max_distance" 		"1000"
 		}
 	}
 }

@@ -46,7 +46,7 @@ end
 function modifier_deathtouch_dot:OnIntervalThink()
 	if IsServer() then
 		local dot = self:GetAbility():GetSpecialValueFor("dot_amount") * 0.25
-		local hp_miss = (100 - self:GetParent():GetHealthPercent())/100
+		local hp_miss = ((100 - self:GetParent():GetHealthPercent())/100)*0.5
 
 		local mult = 1 + hp_miss
 

@@ -17,16 +17,16 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"550"
-	"AbilityCastPoint"				"0.4"
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.5"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"16"
+	"AbilityCooldown"				"25 22 19 16"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"115 120 125 130"
+	"AbilityManaCost"				"145"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,23 +39,28 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"60 80 100 120"
+			"damage"						"125"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"dps"							"10 20 30 40"
+			"dps"							"15 25 35 45"
 			"LinkedSpecialBonus"			"special_bonus_bahamut_1"
 		}
 	"03"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"6"
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"8.0"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"400"
+			"radius"						"550"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"magic_res_reduction"			"15 20 25 30"
 		}
 	}
 	

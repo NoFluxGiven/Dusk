@@ -2279,55 +2279,50 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			///// MODIFIERS /////
 			
 			"DOTA_Tooltip_modifier_desolation"                                                "Desolation"
-			"DOTA_Tooltip_modifier_desolation_description"                                    "Taking (and dealing to nearby allies) damage over time."
+			"DOTA_Tooltip_modifier_desolation_description"                                    "Taking damage over time to yourself and allies in an AoE, with some Magic Resistance burned away."
 
 			"DOTA_Tooltip_modifier_desolation_aura"                                           "Desolation"
 			"DOTA_Tooltip_modifier_desolation_aura_description"                               ""
 			
-			"DOTA_Tooltip_modifier_desolation"                                           "Desolation"
-			"DOTA_Tooltip_modifier_desolation_Description"                               "Taking damage over time and dealing it to allies in an AoE."
-			
-			"DOTA_Tooltip_modifier_bahamut_fulmination_stack"                                 "Fulmination"
-			"DOTA_Tooltip_modifier_bahamut_fulmination_stack_description"                     "Taking damage when modifier expires."
-
-			"DOTA_Tooltip_modifier_reckoning_aura_buff"                                        "Reckoning Aura"
-			"DOTA_Tooltip_modifier_reckoning_aura_buff_description"                            "Taking %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% more damage."
-			
-			"DOTA_Tooltip_modifier_reckoning_aura_power_up"                                        "Reckoning Aura Active"
-			"DOTA_Tooltip_modifier_reckoning_aura_power_up_description"                            "Taking %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% more damage."
+			"DOTA_Tooltip_modifier_fulmination"                                 "Fulmination"
+			"DOTA_Tooltip_modifier_fulmination_description"                     "Your next few attacks are dealing Magical damage instead of Physical, and have increased attack range and projectile speed."
 			
 			
 			
 			///// ABILITIES /////
 			
 			"DOTA_Tooltip_ability_bahamut_desolation"                                         "Desolation"
-			"DOTA_Tooltip_ability_bahamut_desolation_description"                             "Forces elemental energies into the target enemy, dealing Magical damage and surrounding them with a burning aura that deals damage over time to nearby enemies. The main target has any Fulmination stacks it possesses detonated."
+			"DOTA_Tooltip_ability_bahamut_desolation_description"                             "Forces elemental energies into the target enemy, dealing Magical damage and surrounding them with a burning aura that deals damage over time to nearby enemies."
 			"DOTA_Tooltip_ability_bahamut_desolation_damage"                                  "DAMAGE:"
 			"DOTA_Tooltip_ability_bahamut_desolation_duration"                                "DURATION:"
 			"DOTA_Tooltip_ability_bahamut_desolation_dps"                                     "DAMAGE PER SECOND:"
 
 			"DOTA_Tooltip_ability_bahamut_fulmination"                                        "Fulmination"
-			"DOTA_Tooltip_ability_bahamut_fulmination_description"                            "Each attack that Bahamut makes against his enemies begins to pull apart the strands of reality, reweaving them into explosive energies.  A short time after he stops attacking them, these energies detonate, dealing large damage based on the amount of stacks accumulated. The final detonation damage is equivalent to the number of stacks multiplied by the base damage, and is increased by a percentage per stack."
-			"DOTA_Tooltip_ability_bahamut_fulmination_Note0"                           		  "The bonus damage is linear. 8 stacks grants a 100% damage bonus."
-			"DOTA_Tooltip_ability_bahamut_fulmination_damage"                                 "DAMAGE PER STACK:"
-			"DOTA_Tooltip_ability_bahamut_fulmination_max_stacks"                             "MAX STACKS:"
-			"DOTA_Tooltip_ability_bahamut_fulmination_percent"                                "%DAMAGE INCREASE PER STACK:"
-			"DOTA_Tooltip_ability_bahamut_fulmination_time"                                   "DURATION:"
+			"DOTA_Tooltip_ability_bahamut_fulmination_description"                            "Bahamut pulls apart strands of reality, reweaving them into volatile arcane energy. His next 4 attacks are replaced with powerful Magical projectiles that have %attack_range_bonus% bonus attack range, increased projectile speed, deal damage equal to %damage% + his total attack damage, and apply a debuff that slows enemies by %move_slow%%% and reduces their Magic Resistance by %magic_res_reduction%%%. The debuff lasts %duration% seconds."
+			"DOTA_Tooltip_ability_bahamut_fulmination_damage"                                 "BONUS MAGICAL DAMAGE:"
+			"DOTA_Tooltip_ability_bahamut_fulmination_move_slow"                              "%MOVEMENT SLOW:"
+			"DOTA_Tooltip_ability_bahamut_fulmination_magic_res_reduction"                    "%MAGIC RESISTANCE REDUCTION:"
+			"DOTA_Tooltip_ability_bahamut_fulmination_shard_mana_drain"                   	  "%SHARD MANA DRAIN:"
+			"DOTA_Tooltip_ability_bahamut_fulmination_shard_description"                      "Increases Fulmination attacks by 1 and causes each attack to drain a portion of the target's current Mana."
 
 			"DOTA_Tooltip_ability_bahamut_hidden_transform"                                   "Hidden Transform"
 			"DOTA_Tooltip_ability_bahamut_hidden_transform_description"                       ""
 
 			"DOTA_Tooltip_ability_bahamut_mega_flare"                                         "Mega Flare"
-			"DOTA_Tooltip_ability_bahamut_mega_flare_description"                             "Summons an orb of pure power that slowly travels towards the targeted point, detonating when it reaches it to deal massive Pure damage.  Enemies closer to the center of the explosion take more damage.  Has a minimum cast range."
-			"DOTA_Tooltip_ability_bahamut_mega_flare_Note0"                             	  "The minimum cast range is 475.  Targeting a point below this range will force the targeted point to be 475 units away from the caster, in the direction they cast it."
+			"DOTA_Tooltip_ability_bahamut_mega_flare_description"                             "Summons an orb of pure power that slowly travels towards the targeted point, detonating when it reaches it to deal massive damage.  Enemies closer to the center of the explosion take an additional instance of damage.  Has a minimum range it must travel before detonating."
+			"DOTA_Tooltip_ability_bahamut_mega_flare_Note0"                             	  "The minimum cast range is 275.  Targeting a point below this range will force the targeted point to be 275 units away from the caster, in the direction they cast it."
 			"DOTA_Tooltip_ability_bahamut_mega_flare_damage_inner"                            "DAMAGE (INNER):"
 			"DOTA_Tooltip_ability_bahamut_mega_flare_radius_inner"                            "RADIUS (INNER):"
 			"DOTA_Tooltip_ability_bahamut_mega_flare_damage_outer"                            "DAMAGE (OUTER):"
 			"DOTA_Tooltip_ability_bahamut_mega_flare_radius_outer"                            "RADIUS (OUTER):"
 			
-			"DOTA_Tooltip_ability_bahamut_reckoning_aura"                                     "Reckoning Aura"
-			"DOTA_Tooltip_ability_bahamut_reckoning_aura_description"                         "Bahamut's very presence causes nearby enemies to take more damage. Can be targeted on an enemy to double the effect for them alone."
-			"DOTA_Tooltip_ability_bahamut_reckoning_aura_damage"                              "%INCREASE:"
+			"DOTA_Tooltip_ability_bahamut_reckoning_aura"                                     "Reckoning"
+			"DOTA_Tooltip_ability_bahamut_reckoning_aura_description"                                     "Bahamut drains Spell Amp from a target enemy, slowing them and granting him the amount taken for a short time."
+			"DOTA_Tooltip_ability_bahamut_reckoning_aura_lore"                         "Bahamut's soul, composed of shards of volatile energy, grants him power that others lack."
+			"DOTA_Tooltip_ability_bahamut_reckoning_aura_slow"                             "%MOVEMENT SLOW:"
+			"DOTA_Tooltip_ability_bahamut_reckoning_aura_duration"                             "DURATION:"
+			"DOTA_Tooltip_ability_bahamut_reckoning_aura_spell_amp_steal"                              "%SPELL AMP STEAL:"
+			
 			
 			//--------------------
 			//HORROR
@@ -3188,7 +3183,10 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			"DOTA_Tooltip_modifier_berserker_aura_fx_Description"                             "Gaining bonus attack speed and attack damage based on missing Health."
 
 			"DOTA_Tooltip_modifier_bloodlust"                                          "Bloodlust"
-			"DOTA_Tooltip_modifier_bloodlust_Description"                              "Gaining bonus attack damage and attack speed, and taking damage over time while not attacking. Each attack reduces the amount of ticks of damage."
+			"DOTA_Tooltip_modifier_bloodlust_Description"                              "Gaining bonus attack speed, being slowed, and taking damage over time. Each attack immediately ticks this debuff for double damage."
+
+			"DOTA_Tooltip_modifier_wrath" "Wrath"
+			"DOTA_Tooltip_modifier_wrath_description" "Gaining bonus attack speed and movespeed, but taking additional damage."
 
 			"DOTA_Tooltip_modifier_bloodlust_thinker"                                         "Bloodlust"
 			"DOTA_Tooltip_modifier_bloodlust_thinker_Description"                             ""
@@ -3201,35 +3199,42 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			///// ABILITIES /////
 			
-			"DOTA_Tooltip_ability_war_berserker_aura"                                         "Berserker Aura"
-			"DOTA_Tooltip_ability_war_berserker_aura_Description"                             "Grants bonus attack damage and attack speed to nearby allies based on their missing Health."
-			"DOTA_Tooltip_ability_war_berserker_aura_Note0"                             	  "The damage bonus lingers for 2s after leaving the aura radius."
-			"DOTA_Tooltip_ability_war_berserker_aura_radius"                                  "RADIUS:"
-			"DOTA_Tooltip_ability_war_berserker_aura_max_bonus_attack_speed"                  "MAX BONUS ATTACK SPEED:"
-			"DOTA_Tooltip_ability_war_berserker_aura_max_bonus_damage"                        "MAX BONUS DAMAGE:"
+			// "DOTA_Tooltip_ability_war_berserker_aura"                                         "Berserker Aura"
+			// "DOTA_Tooltip_ability_war_berserker_aura_Description"                             "Grants bonus attack damage and attack speed to nearby allies based on their missing Health."
+			// "DOTA_Tooltip_ability_war_berserker_aura_Note0"                             	  "The damage bonus lingers for 2s after leaving the aura radius."
+			// "DOTA_Tooltip_ability_war_berserker_aura_radius"                                  "RADIUS:"
+			// "DOTA_Tooltip_ability_war_berserker_aura_max_bonus_attack_speed"                  "MAX BONUS ATTACK SPEED:"
+			// "DOTA_Tooltip_ability_war_berserker_aura_max_bonus_damage"                        "MAX BONUS DAMAGE:"
 
 			"DOTA_Tooltip_ability_war_bloodlust"                                              "Bloodlust"
-			"DOTA_Tooltip_ability_war_bloodlust_Description"                                  "Causes enemies in an area to gain bonus attack speed and attack damage, but have their movement speed slowed and take damage over time for a large duration. Each attack they make reduces the amount of time the debuff stays on them."
-			"DOTA_Tooltip_ability_war_bloodlust_bonus_attack_damage"                          "BONUS ATTACK DAMAGE:"
+			"DOTA_Tooltip_ability_war_bloodlust_Description"                                  "Causes enemies in an area to gain bonus attack speed, but have their movement speed slowed and take damage over time equal to a flat amount + a percentage of their attack damage for a large duration. Each attack they make causes the debuff to tick for double damage."
+			"DOTA_Tooltip_ability_war_bloodlust_bonus_attack_damage"                          "%DAMAGE OVER TIME (ATTACK DAMAGE):"
 			"DOTA_Tooltip_ability_war_bloodlust_bonus_attack_speed"                           "BONUS ATTACK SPEED:"
 			"DOTA_Tooltip_ability_war_bloodlust_slow"                                         "%SLOW:"
 			"DOTA_Tooltip_ability_war_bloodlust_radius"                                       "RADIUS:"
 			"DOTA_Tooltip_ability_war_bloodlust_duration"                                     "DURATION:"
-			"DOTA_Tooltip_ability_war_bloodlust_dot"                                          "DAMAGE OVER TIME:"
+			"DOTA_Tooltip_ability_war_bloodlust_dot"                                          "DAMAGE OVER TIME (BASE):"
 
 			"DOTA_Tooltip_ability_war_earthbreaker"                                           "Earthbreaker"
-			"DOTA_Tooltip_ability_war_earthbreaker_Description"                               "War slams the ground with his axe, stunning nearby enemies and dealing Physical damage."
+			"DOTA_Tooltip_ability_war_earthbreaker_Description"                               "War slams the ground with his axe, stunning nearby enemies and dealing Physical damage based on his attack damage."
+			"DOTA_Tooltip_ability_war_earthbreaker_damage"									  "%ATTACK DAMAGE:"
 			"DOTA_Tooltip_ability_war_earthbreaker_radius"                                    "RADIUS:"
 			"DOTA_Tooltip_ability_war_earthbreaker_stun"                                      "STUN:"
 
-			"DOTA_Tooltip_ability_war_fight_me"                                               "FIGHT ME!"
-			"DOTA_Tooltip_ability_war_fight_me_Description"                                   "War goads his enemies into striking him. Each attack an affected enemy makes against War causes him to regain Health instead of losing it. At the end of the duration, he deals Pure damage equal to a portion of the combined attack damage of all enemies affected and his own attack damage. Bloodlust does not tick down for affected units. <b>Affected enemies do not take damage from any source during the duration of this ability.</b>"
-			"DOTA_Tooltip_ability_war_fight_me_Note0"                                   "Any damage dealt to War by the affected enemies recovers his Health, regardless of whether its source was an attack or not."
-			"DOTA_Tooltip_ability_war_fight_me_Note1"                                   "If War dies, the effect ends early."
-			"DOTA_Tooltip_ability_war_fight_me_duration"                                      "DURATION:"
-			"DOTA_Tooltip_ability_war_fight_me_base_damage"                                   "BASE DAMAGE:"
-			"DOTA_Tooltip_ability_war_fight_me_mult"                                      	  "%ATTACK DAMAGE:"
-			"DOTA_Tooltip_ability_war_fight_me_radius"                                        "RADIUS:"
+			"DOTA_Tooltip_ability_war_warbellow"						"Warbellow"
+			"DOTA_Tooltip_ability_war_warbellow_description"			"War unleashes the malevolent energies of war itself to turn the tide of battle, causing all allies <b>globally</b> to emanate violent force. Deals %damage% damage in a %radius% radius around each allied Hero, and grants them a buff that copies %reflect%%% of any damage they take back to their assailant for %reflect_duration% seconds.\nGlobal."
+			"DOTA_Tooltip_ability_war_warbellow_damage"				"DAMAGE:"
+			"DOTA_Tooltip_ability_war_warbellow_radius"				"RADIUS:"
+			"DOTA_Tooltip_ability_war_warbellow_reflect"			"%REFLECTED DAMAGE:"
+
+			// "DOTA_Tooltip_ability_war_fight_me"                                               "FIGHT ME!"
+			// "DOTA_Tooltip_ability_war_fight_me_Description"                                   "War goads his enemies into striking him. Each attack an affected enemy makes against War causes him to regain Health instead of losing it. At the end of the duration, he deals Pure damage equal to a portion of the combined attack damage of all enemies affected and his own attack damage. Bloodlust does not tick down for affected units. <b>Affected enemies do not take damage from any source during the duration of this ability.</b>"
+			// "DOTA_Tooltip_ability_war_fight_me_Note0"                                   "Any damage dealt to War by the affected enemies recovers his Health, regardless of whether its source was an attack or not."
+			// "DOTA_Tooltip_ability_war_fight_me_Note1"                                   "If War dies, the effect ends early."
+			// "DOTA_Tooltip_ability_war_fight_me_duration"                                      "DURATION:"
+			// "DOTA_Tooltip_ability_war_fight_me_base_damage"                                   "BASE DAMAGE:"
+			// "DOTA_Tooltip_ability_war_fight_me_mult"                                      	  "%ATTACK DAMAGE:"
+			// "DOTA_Tooltip_ability_war_fight_me_radius"                                        "RADIUS:"
 			
 			//--------------------
 			// PTOLEMY
@@ -3334,27 +3339,23 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			"DOTA_Tooltip_ability_rai_amplify_slow_duration"                                  "SLOW DURATION:"
 
 			"DOTA_Tooltip_ability_rai_arc_twister"                                            "Arc Twister"
-			"DOTA_Tooltip_ability_rai_arc_twister_Description"                                "Rai travels to a target location at extreme speed, arriving after a very short delay, and dealing damage to any enemies caught between his start and end point."
+			"DOTA_Tooltip_ability_rai_arc_twister_Description"                                "Rai travels to a target location at extreme speed, becoming an invulnerable bolt of electricity that arrives after a very short delay, and dealing damage to any enemies caught between his start and end point."
 			"DOTA_Tooltip_ability_rai_arc_twister_damage"                                     "DAMAGE:"
 			"DOTA_Tooltip_ability_rai_arc_twister_delay"                                      "DELAY:"
 
 			"DOTA_Tooltip_ability_rai_static_blade"                                           "Static Blade"
-			"DOTA_Tooltip_ability_rai_static_blade_Description"                               "As Rai deals Magical damage over a threshold to enemies, he gains Static Blade charges. When toggled on, deals bonus Magical damage, slows, and damages over time the enemy struck based on the amount of charges he has."
-			"DOTA_Tooltip_ability_rai_static_blade_damage_per_stack"                          "DAMAGE PER STACK:"
-			"DOTA_Tooltip_ability_rai_static_blade_slow_per_stack"                            "%SLOW PER STACK:"
-			"DOTA_Tooltip_ability_rai_static_blade_slow_duration"                             "SLOW DURATION:"
-			"DOTA_Tooltip_ability_rai_static_blade_max_stack"                                 "MAX STACKS:"
-			"DOTA_Tooltip_ability_rai_static_blade_dot_per_stack"                             "DAMAGE OVER TIME PER STACK:"
-			"DOTA_Tooltip_ability_rai_static_blade_threshold"                                 "MAGIC DAMAGE THRESHOLD:"
+			"DOTA_Tooltip_ability_rai_static_blade_Description"                               "Rai has a chance to deal bonus Magical damage, slow, and Silence enemies he strikes."
+			"DOTA_Tooltip_ability_rai_static_blade_Note0"                               		"The proc chance is pseudorandom."
+			"DOTA_Tooltip_ability_rai_static_blade_damage"                          			"BONUS DAMAGE:"
+			"DOTA_Tooltip_ability_rai_static_blade_slow"                           	 			"%SLOW:"
+			"DOTA_Tooltip_ability_rai_static_blade_silence_duration"                            "SILENCE DURATION:"
+			"DOTA_Tooltip_ability_rai_static_blade_proc_chance"                                 "%PROC CHANCE:"
 
 			"DOTA_Tooltip_ability_rai_thunder_roar"                                           "Thunder Roar"
-			"DOTA_Tooltip_ability_rai_thunder_roar_Description"                               "After a short cast time, Rai creates an area of high energetic potential that follows him, striking a random nearby enemy with a bolt of lightning every few moments. The bolts mini-stun enemies and deal half damage in a large area around them."
+			"DOTA_Tooltip_ability_rai_thunder_roar_Description"                               "Rai jumps to a nearby location, heralding a bolt of lightning that stuns and deals damage at his start and end points."
 			"DOTA_Tooltip_ability_rai_thunder_roar_damage"                                    "BOLT DAMAGE:"
-			"DOTA_Tooltip_ability_rai_thunder_roar_duration"                                  "DURATION:"
-			"DOTA_Tooltip_ability_rai_thunder_roar_bolts"                                     "NUMBER OF BOLTS:"
-			"DOTA_Tooltip_ability_rai_thunder_roar_radius"                                    "RADIUS:"
 			"DOTA_Tooltip_ability_rai_thunder_roar_bolt_radius"                               "DAMAGE RADIUS:"
-			"DOTA_Tooltip_ability_rai_thunder_roar_bolt_ministun"                             "MINISTUN:"
+			"DOTA_Tooltip_ability_rai_thunder_roar_bolt_stun"                             	  "STUN DURATION:"
 			
 			//--------------------
 			// LUPIN
@@ -3428,7 +3429,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 
 
 			"DOTA_Tooltip_ability_lupin_flashbang"                                            "Flashbang"
-			"DOTA_Tooltip_ability_lupin_flashbang_Description"                                "Lupin throws down a powerful explosive that deals Physical damage and Dazes enemies caught in the area of effect. Dazed enemies have their cast points worsened by  %cast_point_increase% seconds, attack speed reduced by %attack_speed_reduction% and movespeed reduced by %movespeed_reduction%%%, and if they are ranged, their attack range reduced by %attack_range_reduction%. Ministuns for %stun%s."
+			"DOTA_Tooltip_ability_lupin_flashbang_Description"                                "Lupin throws down a powerful explosive that deals Physical damage and Dazes enemies caught in the area of effect. Dazed enemies have their cast points worsened by  %cast_point_increase%%%, attack speed reduced by %attack_speed_reduction% and movespeed reduced by %movespeed_reduction%%%, and if they are ranged, their attack range reduced by %attack_range_reduction%. Ministuns for %stun%s."
 			"DOTA_Tooltip_ability_lupin_flashbang_damage"                                     "DAMAGE:"
 			"DOTA_Tooltip_ability_lupin_flashbang_duration"                                   "DAZE DURATION:"
 			"DOTA_Tooltip_ability_lupin_flashbang_radius"                                     "RADIUS:"
@@ -3809,7 +3810,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 		// Improved Wand, Oblivion Staff, 600 Gold Recipe (2400 + 1650 + 600 = 4650)
 		
 		"DOTA_Tooltip_ability_item_wand_of_yggdrasil"                                            "Wand of Yggdrasil"
-		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_description"                                "<h1>Active: Greater Drain</h1>Drains %hp_drain% Health, %hp_percent_drain%%% of the max Health, %mp_drain% Mana, and %mp_percent_drain%%% of the max Mana, of the target enemy. After a %delay% second delay, you regain the amount drained as Health and Mana."
+		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_description"                                "<h1>Active: Greater Drain</h1>Drains %hp_drain% Health, %hp_percent_drain%%% of the max Health, %mp_drain% Mana, and %mp_percent_drain%%% max Mana per charge from the target enemy. After a %delay% second delay, you regain the amount drained as Health and Mana.<h1>Passive: Replenish</h1>Gains a charge every 8 seconds."
 		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_Note0"                              		 "The drain deals Pure damage, and is not blocked by Spell Immunity."
 		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_bonus_health_regen"                         "+$hp_regen"
 		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_bonus_intelligence"                         "+$int"
@@ -3869,7 +3870,7 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 		//////////////////////////////////////////////////////////////////////
 		
 		"DOTA_Tooltip_ability_item_crystal_focus"                                      "Crystal Focus"
-		"DOTA_Tooltip_ability_item_crystal_focus_Description"                          "<h1>Active: Prismancy</h1>Grants a charge of Prismancy to the caster. Upon casting a non-Ultimate Spell, the charge is consumed, the Spell is refreshed, and you lose %mana_percentage%%% of your current Mana."
+		"DOTA_Tooltip_ability_item_crystal_focus_Description"                          "<h1>Active: Prismancy</h1>Grants a charge of Prismancy to the caster. Upon casting a non-Ultimate Spell, the charge is consumed, you lose %mana_percentage%%% of your current Mana, and the Spell's cooldown is reduced by %cdr% seconds."
 		"DOTA_Tooltip_ability_item_crystal_focus_lore"                          	   "A crystalline flower, found growing in the tombs of powerful mages. It is said to increase the caster's ability to channel magical energy greatly, but its absorptive properties can render a mage's Mana pool rather empty after use."
 		"DOTA_Tooltip_ability_item_crystal_focus_bonus_intelligence"                   "+$int"
 		"DOTA_Tooltip_ability_item_crystal_focus_bonus_cast_range"                     "+$cast_range"

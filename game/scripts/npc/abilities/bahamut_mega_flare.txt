@@ -5,29 +5,30 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"            		"lua/abilities/bahamut_mega_flare"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	"AbilityTextureName"			"bahamut_mega_flare"
-	"AoERadius"						"400"
+	"AoERadius"						"700"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1500"
-	"AbilityCastPoint"				"0.4"
+	"AbilityCastRange"				"975"
+	"AbilityCastPoint"				"0.3"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"110"
+	"AbilityCooldown"				"110 100 90"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"230"
+	"AbilityManaCost"				"350 400 450"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,17 +41,17 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage_inner"					"225 300 375"
+			"damage_inner"					"300 400 500"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius_inner"					"325"
+			"radius_inner"					"275"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage_outer"					"175 225 275"
+			"damage_outer"					"200 250 300"
 		}
 	"04"
 		{
@@ -60,7 +61,7 @@
 	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"speed"							"450"
+			"speed"							"315"
 		}
 	}
 	
@@ -71,58 +72,59 @@
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
 		}
-		
-	"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/bahamut_abilities.lua"
-				"Function"		"MegaFlare"
-				"damage"		"%damage_inner"
-				"damage2"		"%damage_outer"
-				"radius"		"%radius_inner"
-				"radius2"		"%radius_outer"
-				"speed"			"%speed"
-			}
-		}
-	
-	"Modifiers"
-		{
-			"modifier_desolation"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"EffectName"		"particles/units/heroes/hero_bahamut/desolation_model.vpcf"
-				"EffectAttachType"	"attach_hitloc"
-			
-				"Aura"          	"modifier_desolation_aura"
-				"Aura_Radius"   	"400"
-				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
-				"Aura_ApplyToCaster" "1"
-			}
-			"modifier_desolation_aura"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"EffectName"		"particles/units/heroes/hero_bahamut/desolation_model_secondary.vpcf"
-				"EffectAttachType"	"attach_hitloc"
-			
-				"ThinkInterval"  "1.0"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%dps"
-					}
-				}
-			}
-		}
 }
+		
+	// "OnSpellStart"
+	// 	{
+	// 		"RunScript"
+	// 		{
+	// 			"ScriptFile"	"heroes/bahamut_abilities.lua"
+	// 			"Function"		"MegaFlare"
+	// 			"damage"		"%damage_inner"
+	// 			"damage2"		"%damage_outer"
+	// 			"radius"		"%radius_inner"
+	// 			"radius2"		"%radius_outer"
+	// 			"speed"			"%speed"
+	// 		}
+	// 	}
+	
+	// "Modifiers"
+	// 	{
+	// 		"modifier_desolation"
+	// 		{
+	// 			"Passive"			"0"
+	// 			"IsHidden"			"0"
+	// 			"IsDebuff"			"1"
+			
+	// 			"EffectName"		"particles/units/heroes/hero_bahamut/desolation_model.vpcf"
+	// 			"EffectAttachType"	"attach_hitloc"
+			
+	// 			"Aura"          	"modifier_desolation_aura"
+	// 			"Aura_Radius"   	"400"
+	// 			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	// 			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	// 			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+	// 			"Aura_ApplyToCaster" "1"
+	// 		}
+	// 		"modifier_desolation_aura"
+	// 		{
+	// 			"Passive"			"0"
+	// 			"IsHidden"			"0"
+	// 			"IsDebuff"			"1"
+			
+	// 			"EffectName"		"particles/units/heroes/hero_bahamut/desolation_model_secondary.vpcf"
+	// 			"EffectAttachType"	"attach_hitloc"
+			
+	// 			"ThinkInterval"  "1.0"
+	// 			"OnIntervalThink"
+	// 			{
+	// 				"Damage"
+	// 				{
+	// 					"Target"		"TARGET"
+	// 					"Type"			"DAMAGE_TYPE_MAGICAL"
+	// 					"Damage"		"%dps"
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+

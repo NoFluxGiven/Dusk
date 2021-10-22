@@ -58,6 +58,36 @@
 
 }
 
+"War.Bloodlust.Attack"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/bloodlust_attack.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 "War.FightMe"
 {
     "operator_stacks"
@@ -80,6 +110,35 @@
                     "volume"
                     {
                         "value" "1.50"
+                    }
+                }
+            }
+        }
+    }
+
+}
+"War.Wrath"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/wrath.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.25"
                     }
                 }
             }

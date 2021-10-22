@@ -1472,7 +1472,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"250"
+	"AbilityCooldown"				"140"
 	"HasScepterUpgrade"				"1"
 
 	// Cost
@@ -1490,28 +1490,28 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"12.0"
+			"duration"						"8.0"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bolt_damage"					"40 55 70"
+			"bolt_damage"					"30 40 50"
 			"LinkedSpecialBonus"			"special_bonus_alexander_3"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bolt_radius"					"190"
+			"bolt_radius"					"175"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"bolt_interval"					"0.1"
+			"bolt_interval"					"0.12"
 		}
 	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bolt_count"					"3"
+			"bolt_count"					"2 3 4"
 		}
 	"06"
 		{
@@ -1521,17 +1521,17 @@
 	"07"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bolt_damage_reduction"			"3"
+			"bolt_damage_reduction"			"4"
 		}
 	"08"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bolt_damage_reduction_maximum"	"60"
+			"bolt_damage_reduction_maximum"	"50"
 		}
 	"09"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"bolt_debuff_duration"			"10"
+			"bolt_debuff_duration"			"6 8 10"
 		}
 	}
 	
@@ -1572,7 +1572,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"25"
+	"AbilityCooldown"				"22"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -1589,12 +1589,12 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"debuff_duration"				"2.0 3.0 4.0 5.0"
+			"debuff_duration"				"5.0"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"debuff_damage"				    "5.0"
+			"debuff_damage"				    "2.0 3.0 4.0 5.0"
 		}
 	"03"
 		{
@@ -1672,7 +1672,7 @@
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"425"
+			"radius"						"450"
 		}
 	}
 	
@@ -5249,16 +5249,16 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"550"
-	"AbilityCastPoint"				"0.4"
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.5"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"16"
+	"AbilityCooldown"				"25 22 19 16"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"115 120 125 130"
+	"AbilityManaCost"				"145"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -5271,23 +5271,28 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"60 80 100 120"
+			"damage"						"125"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"dps"							"10 20 30 40"
+			"dps"							"15 25 35 45"
 			"LinkedSpecialBonus"			"special_bonus_bahamut_1"
 		}
 	"03"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"6"
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"8.0"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"400"
+			"radius"						"550"
+		}
+	"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"magic_res_reduction"			"15 20 25 30"
 		}
 	}
 	
@@ -5314,23 +5319,24 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/bahamut_fulmination"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityTextureName"			"bahamut_fulmination"
+	"AnimationPlaybackRate"			"2.0"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"0"
-	"AbilityCastPoint"				"0"
+	"AbilityCastPoint"				"0.0"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"0"
+	"AbilityCooldown"				"40 32 24 16"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"0"
+	"AbilityManaCost"				"110"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -5343,22 +5349,27 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"12 20 28 36"
+			"bonus_damage"					"40 60 80 100"
 		}
 		"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"time"							"4"
+			"projectile_speed_increase"		"1100"
 		}
-		"03"
+		"03" 
 		{
-			"var_type"						"FIELD_FLOAT"
-			"increase"						"7"
+			"var_type"						"FIELD_INTEGER"
+			"attack_range_bonus"			"250"
 		}
 		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"max_stacks"					"8"
+			"stack_count"					"3"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"8.0"
 		}
 	}
 	
@@ -5371,7 +5382,7 @@
 		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_2.vpcf"
 		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_3.vpcf"
 		"particle" "particles/units/heroes/hero_bahamut/desolation_cast.vpcf"
-		"soundfile" "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+		"soundfile" "soundevents/hero_bahamut.vsndevts"
 		}
 	
 	"Modifiers"
@@ -5456,29 +5467,30 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"            		"lua/abilities/bahamut_mega_flare"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	"AbilityTextureName"			"bahamut_mega_flare"
-	"AoERadius"						"400"
+	"AoERadius"						"700"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1500"
-	"AbilityCastPoint"				"0.4"
+	"AbilityCastRange"				"975"
+	"AbilityCastPoint"				"0.3"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"110"
+	"AbilityCooldown"				"110 100 90"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"230"
+	"AbilityManaCost"				"350 400 450"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -5491,17 +5503,17 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage_inner"					"225 300 375"
+			"damage_inner"					"300 400 500"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius_inner"					"325"
+			"radius_inner"					"275"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage_outer"					"175 225 275"
+			"damage_outer"					"200 250 300"
 		}
 	"04"
 		{
@@ -5511,7 +5523,7 @@
 	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"speed"							"450"
+			"speed"							"315"
 		}
 	}
 	
@@ -5522,61 +5534,62 @@
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
 		}
-		
-	"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/bahamut_abilities.lua"
-				"Function"		"MegaFlare"
-				"damage"		"%damage_inner"
-				"damage2"		"%damage_outer"
-				"radius"		"%radius_inner"
-				"radius2"		"%radius_outer"
-				"speed"			"%speed"
-			}
-		}
-	
-	"Modifiers"
-		{
-			"modifier_desolation"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"EffectName"		"particles/units/heroes/hero_bahamut/desolation_model.vpcf"
-				"EffectAttachType"	"attach_hitloc"
-			
-				"Aura"          	"modifier_desolation_aura"
-				"Aura_Radius"   	"400"
-				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
-				"Aura_ApplyToCaster" "1"
-			}
-			"modifier_desolation_aura"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-			
-				"EffectName"		"particles/units/heroes/hero_bahamut/desolation_model_secondary.vpcf"
-				"EffectAttachType"	"attach_hitloc"
-			
-				"ThinkInterval"  "1.0"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%dps"
-					}
-				}
-			}
-		}
 }
+		
+	// "OnSpellStart"
+	// 	{
+	// 		"RunScript"
+	// 		{
+	// 			"ScriptFile"	"heroes/bahamut_abilities.lua"
+	// 			"Function"		"MegaFlare"
+	// 			"damage"		"%damage_inner"
+	// 			"damage2"		"%damage_outer"
+	// 			"radius"		"%radius_inner"
+	// 			"radius2"		"%radius_outer"
+	// 			"speed"			"%speed"
+	// 		}
+	// 	}
+	
+	// "Modifiers"
+	// 	{
+	// 		"modifier_desolation"
+	// 		{
+	// 			"Passive"			"0"
+	// 			"IsHidden"			"0"
+	// 			"IsDebuff"			"1"
+			
+	// 			"EffectName"		"particles/units/heroes/hero_bahamut/desolation_model.vpcf"
+	// 			"EffectAttachType"	"attach_hitloc"
+			
+	// 			"Aura"          	"modifier_desolation_aura"
+	// 			"Aura_Radius"   	"400"
+	// 			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	// 			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	// 			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+	// 			"Aura_ApplyToCaster" "1"
+	// 		}
+	// 		"modifier_desolation_aura"
+	// 		{
+	// 			"Passive"			"0"
+	// 			"IsHidden"			"0"
+	// 			"IsDebuff"			"1"
+			
+	// 			"EffectName"		"particles/units/heroes/hero_bahamut/desolation_model_secondary.vpcf"
+	// 			"EffectAttachType"	"attach_hitloc"
+			
+	// 			"ThinkInterval"  "1.0"
+	// 			"OnIntervalThink"
+	// 			{
+	// 				"Damage"
+	// 				{
+	// 					"Target"		"TARGET"
+	// 					"Type"			"DAMAGE_TYPE_MAGICAL"
+	// 					"Damage"		"%dps"
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+
 //=====================================================================================================
 // BAHAMUT: Reckoning Aura
 //=====================================================================================================
@@ -5587,7 +5600,7 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/bahamut_reckoning_aura"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET" 
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -5596,16 +5609,16 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"800"
-	"AbilityCastPoint"				"0.3"
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.2"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"45"
+	"AbilityCooldown"				"20"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"0"
+	"AbilityManaCost"				"95"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -5618,34 +5631,24 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"8 12 16 20"
+			"spell_amp_steal"				"25"
 		}
 		"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"800"
+			"slow"							"20 30 40 50"
 		}
 		"03"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"6"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"mult"							"250"
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"3.5 4.0 4.5 5.0"
 		}
 	}
 	
 	"precache"
 		{
-		"particle" "particles/units/heroes/hero_bahamut/bahamut_ambience.vpcf"
-		"particle" "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/bahamut_fulmination_model.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_2.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_3.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/desolation_cast.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/reckoning_drain.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/reckoning_drain_buff.vpcf"
 		"soundfile" "soundevents\hero_phantom.vsndevts"
 		}
 	
@@ -22922,13 +22925,14 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AnimationPlaybackRate"			"2.5"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	"AbilityTextureName"			"rai_amplify"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"400"
-	"AbilityCastPoint"				"0.3"
+	"AbilityCastPoint"				"0.15"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -22949,13 +22953,13 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"10 20 30 40"
+			"damage"						"30 50 70 90"
 			"LinkedSpecialBonus"			"special_bonus_rai_2"
 		}
 		"02"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"5"
+			"duration"						"2.5"
 		}
 		"03"
 		{
@@ -22965,12 +22969,12 @@
 		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"400"
+			"radius"						"350"
 		}
 		"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"targets"						"1 2 3 4"
+			"targets"						"2 3 4 5"
 			"LinkedSpecialBonus"			"special_bonus_rai_4"
 		}
 		"06"
@@ -22981,20 +22985,17 @@
 		"07"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"slow_duration"					"1.65"
+			"slow_duration"					"2.25"
+		}
+		"08"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_movespeed"				"50"
 		}
 	}
 	
 	"precache"
 		{
-		"particle" "particles/units/heroes/hero_bahamut/bahamut_ambience.vpcf"
-		"particle" "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/bahamut_fulmination_model.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_2.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_3.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/desolation_cast.vpcf"
-		"soundfile" "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
 		}
 	
 	"Modifiers"
@@ -23024,11 +23025,11 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"9 8 7 6"
+	"AbilityCooldown"				"5"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"75"
+	"AbilityManaCost"				"115"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -23047,7 +23048,7 @@
 		"02"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"delay"							"0.15"
+			"delay"							"0.16"
 		}
 	}
 	
@@ -23077,7 +23078,7 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/rai_static_blade"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	"AbilityTextureName"			"rai_static_blade"
@@ -23089,7 +23090,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"6"
+	"AbilityCooldown"				"2.5"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -23106,23 +23107,22 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"20 30 40 50"
+			"damage"						"30 60 90 120"
 		}
 		"02"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"mute_duration"					"0.2 0.4 0.6 0.8"
+			"silence_duration"				"0.8 1.2 1.6 2.0"
 		}
 		"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"max_stacks"					"5"
-			"LinkedSpecialBonus"			"special_bonus_rai_1"
+			"slow"							"35"
 		}
 		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"350"
+			"proc_chance"					"15 20 25 30"
 		}
 	}
 	
@@ -23149,23 +23149,24 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/rai_thunder_roar"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"0.75"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 	"AbilityTextureName"			"rai_thunder_roar"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"475"
-	"AbilityCastPoint"				"0.3"
+	"AbilityCastRange"				"1100 1200 1300"
+	"AbilityCastPoint"				"0.6"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"80 75 70"
+	"AbilityCooldown"				"60 55 50"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"200"
+	"AbilityManaCost"				"225 250 275"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -23178,32 +23179,17 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"100 125 150"
+			"damage"						"250 325 400"
 		}
 		"02"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"5.5"
+			"var_type"						"FIELD_INTEGER"
+			"bolt_radius"					"275"
 		}
 		"03"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"bolts"							"4 6 8"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"350"
-		}
-		"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bolt_radius"					"300"
-		}
-		"06"
-		{
 			"var_type"						"FIELD_FLOAT"
-			"ministun"						"0.3"
+			"stun"							"0.75"
 			"LinkedSpecialBonus"			"special_bonus_rai_5"
 		}
 	}
@@ -38475,6 +38461,15 @@
 /// Deals 30/45/60/75 + 20/30/40/50% of the target's attack damage every 2s.
 /// Dispelled when the unit makes 3 successful attacks against enemy Heroes.
 
+///@new
+/// Bloodlust now causes targets to take increasing damage per second while
+/// not attacking. The damage begins at 10/15/20/25 DPS, then increases by
+/// 5/10/15/20 per second, dealing the damage in 0.5s intervals.
+/// Attacking resets it to the base damage.
+/// Lasts 8s.
+/// The slow amount increases by 4/6/8/10% per second of not attacking.
+/// Maximum damage/slow at max level is 185 damage/80% slow.
+
 "war_bloodlust"
 {
     // General
@@ -38489,11 +38484,11 @@
     "AnimationPlaybackRate"         "1.50"
     "FightRecapLevel"               "1"
     "AbilityTextureName"            "war_bloodlust"
-    "AoERadius"                     "325"
+    "AoERadius"                     "375"
     
     // Casting
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"              "425"
+    "AbilityCastRange"              "450"
     "AbilityCastPoint"              "0.25"
 
     // Time     
@@ -38515,19 +38510,19 @@
         "01"
         {
             "var_type"              "FIELD_INTEGER"
-            "bonus_attack_speed"   "45"
+            "bonus_attack_speed"   "50"
         }
         
         "02"
         {
             "var_type"              "FIELD_INTEGER"
-            "radius"                "325"
+            "radius"                "375"
         }
 
         "03"
         {
             "var_type"              "FIELD_FLOAT"
-            "duration"              "5.0"
+            "duration"              "6.0"
         }
 
         "04"
@@ -38552,7 +38547,7 @@
         "07"
         {
             "var_type"              "FIELD_INTEGER"
-            "attack_damage"         "35 45 55 65"
+            "attack_damage_percent"         "50"
         }
 
         "08"
@@ -38592,15 +38587,11 @@
     // Casting
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCastRange"              "325"
-    "AbilityCastPoint"              "0.38"
+    "AbilityCastPoint"              "0.42"
 
     // Time     
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"               "13"
-
-    // Damage.
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityDamage"                 "60 110 160 210"
+    "AbilityCooldown"               "16"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -38618,20 +38609,26 @@
         "01"
         {
             "var_type"              "FIELD_INTEGER"
-            "radius"                "300"
+            "radius"                "310"
             "LinkedSpecialBonus"    "special_bonus_war_2"
         }
 
         "02"
         {
             "var_type"              "FIELD_FLOAT"
-            "stun"                  "0.90"
+            "stun"                  "1.25 1.50 1.75 2.00"
         }
 
         "03"
         {
             "var_type"              "FIELD_FLOAT"
             "block_duration"        "5.0"
+        }
+
+        "04"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "damage"                "110 160 210 260"
         }
     }
 
@@ -38788,6 +38785,88 @@
     {
     }
 }
+"war_warbellow"
+
+///@change Now strikes again in the same area after a short delay, provided it hits a unit. Repeats up to 3 times.
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_lua"
+    "ScriptFile"            "lua/abilities/war_warbellow"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityCastAnimation"          "ACT_DOTA_OVERRIDE_ABILITY_1"
+    "AnimationPlaybackRate"         "0.85"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "war_warbellow"
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "0"
+    "AbilityCastPoint"              "0.4"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "70"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "175"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityModifierSupportValue"   "0.5"   // Applies two modifiers
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "radius"                "380"
+            "LinkedSpecialBonus"    "special_bonus_war_2"
+        }
+
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "damage"                "250 400 550"
+        }
+
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "reflect"               "100"
+        }
+
+        "04"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "reflect_duration"      "3.5 4.0 4.5"
+        }
+
+        "05"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "propagation_radius"    "0"
+        }
+    }
+
+    "precache"
+    {
+        "soundfile" "soundevents/hero_war.vsndevts"
+        "particle"  "particles/units/heroes/hero_war/warbellow.vpcf"
+    }
+
+    "Modifiers"
+    {
+    }
+}
 "war_wrath"
 {
 
@@ -38821,8 +38900,8 @@
     // Casting
     //----------------------------------------------
     "AbilityCastRange"          "450"
-    "AbilityCooldown"           "16"
-    "AbilityManaCost"           "0"
+    "AbilityCooldown"           "16 14 12 10"
+    "AbilityManaCost"           "70"
 
     // Special Values
     //----------------------------------------------
@@ -38831,42 +38910,22 @@
         "01"
         {
             "var_type"                  "FIELD_INTEGER"
-            "base_attack_speed"         "30"
+            "attack_speed_bonus"        "250"
         }
         "02"
         {
             "var_type"                  "FIELD_INTEGER"
-            "base_movespeed"            "8"
+            "movespeed_bonus"           "8 16 24 32"
+        }
+        "02"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "incoming_damage_bonus"     "30"
         }
         "03"
         {
-            "var_type"                  "FIELD_INTEGER"
-            "base_physical_damage_reduction" "10"
-        }
-        "04"
-        {
-            "var_type"                  "FIELD_INTEGER"
-            "attack_speed_increase"     "8 12 16 20"
-        }
-        "05"
-        {
-            "var_type"                  "FIELD_INTEGER"
-            "movespeed_increase"        "4"
-        }
-        "06"
-        {
-            "var_type"                  "FIELD_INTEGER"
-            "physical_damage_reduction_increase" "5"
-        }
-        "07"
-        {
-            "var_type"                  "FIELD_INTEGER"
-            "max_stacks"                "8"
-        }
-        "08"
-        {
             "var_type"                  "FIELD_FLOAT"
-            "duration"                  "12"
+            "duration"                  "3.5"
         }
     }
 }//=====================================================================================================

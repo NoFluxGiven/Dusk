@@ -28,8 +28,8 @@
     "ItemShopTags"                  ""
     "ItemQuality"                   "epic"
     "ItemAliases"                   "wand_of_yggdrasil"
-    "ItemRequiresCharges"           "0"
-    "ItemDisplayCharges"            "0"
+    "ItemRequiresCharges"           "1"
+    "ItemDisplayCharges"            "1"
     "ItemPermanent"                 "1"
     "ItemInitialCharges"            "0"
 	"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -86,27 +86,32 @@
 		"08"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"hp_drain"			"150"
+			"hp_drain"			"15"
 		}
 		"09"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"mp_drain"			"150"
+			"mp_drain"			"15"
 		}
 		"10"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"hp_percent_drain"  "7"
+			"hp_percent_drain"  "0.5"
 		}
 		"11"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"mp_percent_drain" 	"7"
+			"mp_percent_drain" 	"0.25"
 		}
 		"12"
 		{
 			"var_type"			"FIELD_FLOAT"
-			"delay" 			"0.75"
+			"delay" 			"0.15"
+		}
+		"13"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"max_charges" 		"12"
 		}
 	}
 }

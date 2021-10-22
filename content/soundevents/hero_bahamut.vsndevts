@@ -1,0 +1,154 @@
+"Bahamut.Fulmination.PreAttack"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/fulmination_preattack.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.12"  }
+                    "pitch_rand_max"    {   "value"     "0.12"  }
+                    "pitch"             {   "value"     "1.00"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                }
+            }
+        }
+    }
+
+}
+
+"Bahamut.Fulmination.OnAttack"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/fulmination_onattack.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.12"  }
+                    "pitch_rand_max"    {   "value"     "0.12"  }
+                    "pitch"             {   "value"     "1.00"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                }
+            }
+        }
+    }
+
+}
+
+"Bahamut.Fulmination"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/fulmination.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.12"  }
+                    "pitch_rand_max"    {   "value"     "0.12"  }
+                    "pitch"             {   "value"     "1.00"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                }
+            }
+        }
+    }
+
+}
+
+"Bahamut.Fulmination.StartUp"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/fulmination_startup.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.12"  }
+                    "pitch_rand_max"    {   "value"     "0.12"  }
+                    "pitch"             {   "value"     "1.00"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                }
+            }
+        }
+    }
+
+}
+
+"Bahamut.Fulmination.Damage"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/fulmination_dot.vsnd"
+                        }
+                    }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.12"  }
+                    "pitch_rand_max"    {   "value"     "0.12"  }
+                    "pitch"             {   "value"     "1.00"  }
+                    "soundlevel"        {   "value"     "100.00000" }
+                }
+            }
+        }
+    }
+
+}

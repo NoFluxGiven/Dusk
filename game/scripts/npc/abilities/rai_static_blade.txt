@@ -8,7 +8,7 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/rai_static_blade"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	"AbilityTextureName"			"rai_static_blade"
@@ -20,7 +20,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"6"
+	"AbilityCooldown"				"2.5"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -37,23 +37,22 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"20 30 40 50"
+			"damage"						"30 60 90 120"
 		}
 		"02"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"mute_duration"					"0.2 0.4 0.6 0.8"
+			"silence_duration"				"0.8 1.2 1.6 2.0"
 		}
 		"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"max_stacks"					"5"
-			"LinkedSpecialBonus"			"special_bonus_rai_1"
+			"slow"							"35"
 		}
 		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"350"
+			"proc_chance"					"15 20 25 30"
 		}
 	}
 	

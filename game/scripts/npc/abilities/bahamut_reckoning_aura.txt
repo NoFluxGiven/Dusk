@@ -8,7 +8,7 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/bahamut_reckoning_aura"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET" 
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -17,16 +17,16 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"800"
-	"AbilityCastPoint"				"0.3"
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.2"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"45"
+	"AbilityCooldown"				"20"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"0"
+	"AbilityManaCost"				"95"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,34 +39,24 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"8 12 16 20"
+			"spell_amp_steal"				"25"
 		}
 		"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"800"
+			"slow"							"20 30 40 50"
 		}
 		"03"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"6"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"mult"							"250"
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"3.5 4.0 4.5 5.0"
 		}
 	}
 	
 	"precache"
 		{
-		"particle" "particles/units/heroes/hero_bahamut/bahamut_ambience.vpcf"
-		"particle" "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/bahamut_fulmination_model.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_2.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/fulmination_detonate_3.vpcf"
-		"particle" "particles/units/heroes/hero_bahamut/desolation_cast.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/reckoning_drain.vpcf"
+		"particle" "particles/units/heroes/hero_bahamut/reckoning_drain_buff.vpcf"
 		"soundfile" "soundevents\hero_phantom.vsndevts"
 		}
 	

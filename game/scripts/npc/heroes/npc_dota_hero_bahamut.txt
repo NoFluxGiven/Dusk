@@ -28,17 +28,17 @@
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackRange"				"425"
-	"AttackRate"				"1.5"
-	"AttackDamageMin"			"24"										// Damage range min.
-	"AttackDamageMax"			"28"										// Damage range max.
+	"AttackRate"				"1.6"
+	"AttackDamageMin"			"20"										// Damage range min.
+	"AttackDamageMax"			"22"										// Damage range max.
 
-	"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
-	"AttributeBaseStrength"		"19"										// Base strength
-	"AttributeStrengthGain"		"1.6"										// Strength bonus per level.
-	"AttributeBaseIntelligence"	"15"										// Base intelligence
-	"AttributeIntelligenceGain"	"1.7"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"28"										// Base agility
-	"AttributeAgilityGain"		"2.6"										// Agility bonus per level.
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"22"										// Base strength
+	"AttributeStrengthGain"		"1.9"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"33"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.8"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"20"										// Base agility
+	"AttributeAgilityGain"		"2.8"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.
 	//"BountyGoldMin"				"0"										// Gold earned min.
@@ -48,7 +48,7 @@
 	//"RingRadius"				"70"
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"315"									// Speed.
+	"MovementSpeed"				"290"									// Speed.
 	"MovementTurnRate"			"1.0"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.

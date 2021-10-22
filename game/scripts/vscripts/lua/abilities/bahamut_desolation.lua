@@ -42,6 +42,20 @@ end
 
 modifier_desolation = class({})
 
+function modifier_desolation:OnCreated()
+	self.magic_res_reduction = self:GetAbility():GetSpecialValueFor("magic_res_reduction")
+end
+
+function modifier_desolation:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
+	}
+end
+
+function modifier_desolation:GetModifierMagicalResistanceBonus()
+	return -self.magic_res_reduction
+end
+
 function modifier_desolation:IsAura()
 	return true
 end

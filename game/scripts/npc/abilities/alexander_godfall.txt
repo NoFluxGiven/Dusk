@@ -20,7 +20,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"250"
+	"AbilityCooldown"				"140"
 	"HasScepterUpgrade"				"1"
 
 	// Cost
@@ -38,28 +38,28 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"12.0"
+			"duration"						"8.0"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bolt_damage"					"40 55 70"
+			"bolt_damage"					"30 40 50"
 			"LinkedSpecialBonus"			"special_bonus_alexander_3"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bolt_radius"					"190"
+			"bolt_radius"					"175"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"bolt_interval"					"0.1"
+			"bolt_interval"					"0.12"
 		}
 	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bolt_count"					"3"
+			"bolt_count"					"2 3 4"
 		}
 	"06"
 		{
@@ -69,17 +69,17 @@
 	"07"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bolt_damage_reduction"			"3"
+			"bolt_damage_reduction"			"4"
 		}
 	"08"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bolt_damage_reduction_maximum"	"60"
+			"bolt_damage_reduction_maximum"	"50"
 		}
 	"09"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"bolt_debuff_duration"			"10"
+			"bolt_debuff_duration"			"6 8 10"
 		}
 	}
 	

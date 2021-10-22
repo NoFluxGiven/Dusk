@@ -2,13 +2,74 @@ rai_thunder_roar = class({})
 
 LinkLuaModifier("modifier_thunder_roar","lua/abilities/rai_thunder_roar",LUA_MODIFIER_MOTION_NONE)
 
+function rai_thunder_roar:OnAbilityPhaseStart()
+	local pos = self:GetCursorPosition()
+	self.thunder_roar_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_rai/thunder_roar_start_up.vpcf", PATTACH_WORLDORIGIN, nil)
+	ParticleManager:SetParticleControl(self.thunder_roar_particle, 0, pos)
+
+	--sound
+
+	return true
+end
+
+function rai_thunder_roar:OnAbilityPhaseInterrupted()
+	ParticleManager:DestroyParticle(self.thunder_roar_particle, false)
+end
+
 function rai_thunder_roar:OnSpellStart()
-	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_thunder_roar", {Duration=self:GetSpecialValueFor("duration")}) --[[Returns:void
-	No Description Set
-	]]
+
+	ParticleManager:DestroyParticle(self.thunder_roar_particle, false)
+
+	local pos = self:GetCursorPosition()
+
+	self:FireBolt(true)
+
+	FindClearSpaceForUnit(self:GetCaster(), pos, true)
+
+	Timers:CreateTimer(0.03,function()
+		self:FireBolt(true)
+		-- self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_thunder_roar", {Duration=1})
+	end)
 	-- self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_thunder_roar_inc", {Duration=self:GetSpecialValueFor("duration")})
 
 	-- Particle effects
+end
+
+function rai_thunder_roar:FireBolt(fire_at_parent_origin)
+	local radius = self:GetSpecialValueFor("radius")
+	local damage = self:GetSpecialValueFor("damage")
+	local bolt_radius = self:GetSpecialValueFor("bolt_radius")
+	local t_stun_bonus = self:GetCaster():FetchTalent("special_bonus_rai_5") or 0
+	local ministun = self:GetSpecialValueFor("stun") + t_stun_bonus
+
+	loc = self:GetCaster():GetAbsOrigin()
+
+	-- local loc = self:GetCaster():GetAbsOrigin() + RandomVector(RandomInt(125,radius))
+
+	-- if fire_at_parent_origin then
+	-- 	loc = self:GetCaster():GetAbsOrigin()
+	-- end
+
+	-- self:InflictDamage(v,self:GetCaster(),damage,DAMAGE_TYPE_MAGICAL)
+	-- v:AddNewModifier(self:GetCaster(), nil, "modifier_stunned", {Duration=ministun})
+
+	self:GetCaster():EmitSound("Hero_Zuus.LightningBolt.Righteous")
+
+	local t = FindEnemies(self:GetCaster(),loc,bolt_radius)
+
+	for k,v in pairs(t) do
+		self:InflictDamage(v,self:GetCaster(),damage,DAMAGE_TYPE_MAGICAL)
+		-- v:AddNewModifier(self:GetCaster(), self, "modifier_stunned", hModifierTable)
+		v:AddSRModifier( self:GetCaster(), self, "modifier_stunned", ministun, nil )
+	end
+
+	local p = ParticleManager:CreateParticle("particles/units/heroes/hero_rai/thunder_roar_lightning_bolt.vpcf", PATTACH_WORLDORIGIN, nil)
+	ParticleManager:SetParticleControl(p, 0, loc+Vector(0,0,1200)) --[[Returns:void
+	Set the control point data for a control on a particle effect
+	]]
+	ParticleManager:SetParticleControl(p, 1, loc+Vector(0,0,100)) --[[Returns:void
+	Set the control point data for a control on a particle effect
+	]]
 end
 
 modifier_thunder_roar = class({})
@@ -20,6 +81,8 @@ function modifier_thunder_roar:OnCreated()
 
 		-- local t_bolts_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_rai_5") or 0
 
+		--particle
+
 		bolts = bolts
 
 		local amt = duration/bolts
@@ -27,6 +90,15 @@ function modifier_thunder_roar:OnCreated()
 		local n = 0
 
 		self:StartIntervalThink(amt)
+
+		self:GetAbility():FireBolt(true)
+
+		-- local n = 0
+		-- repeat
+		-- 	self:FireBolt(false)
+		-- 	n = n+1
+		-- until
+		-- 	n > bolts
 	end
 end
 
@@ -58,55 +130,43 @@ end
 
 function modifier_thunder_roar:OnIntervalThink()
 	if IsServer() then
-		local radius = self:GetAbility():GetSpecialValueFor("radius")
-		local damage = self:GetAbility():GetSpecialValueFor("damage")
-		local bolt_radius = self:GetAbility():GetSpecialValueFor("bolt_radius")
-		local t_stun_bonus = self:GetParent():FetchTalent("special_bonus_rai_5") or 0
-		local ministun = self:GetAbility():GetSpecialValueFor("ministun") + t_stun_bonus
-
-		if bolt_radius == 0 then bolt_radius = 225 end
-
-		local loc = self:GetParent():GetAbsOrigin()
-
-		local t = FindEnemiesRandom(self:GetParent(),loc,radius)
-
-		ToolsPrint(#t)
-
-		for k,vv in pairs(t) do
-			if vv then
-				ToolsPrint(k..": "..vv:GetName())
-			else
-				ToolsPrint(k..": NIL")
-			end
-		end
-
-		local v = t[1]
-
-		if not v then return end
-
-		local vloc = v:GetAbsOrigin()
-
-		self:GetAbility():InflictDamage(v,self:GetParent(),damage,DAMAGE_TYPE_MAGICAL)
-		v:AddNewModifier(self:GetParent(), nil, "modifier_stunned", {Duration=ministun})
-
-		v:EmitSound("Hero_Zuus.LightningBolt.Righteous") --[[Returns:void
-		 
-		]]
-
-		local t2 = FindEnemies(self:GetParent(),vloc,bolt_radius)
-
-		for k,vvv in pairs(t2) do
-			if vvv ~= v then
-				self:GetAbility():InflictDamage(vvv,self:GetParent(),damage*0.5,DAMAGE_TYPE_MAGICAL)
-			end
-		end
-
-		local p = ParticleManager:CreateParticle("particles/units/heroes/hero_rai/thunder_roar_lightning_bolt.vpcf", PATTACH_ABSORIGIN_FOLLOW, v)
-		ParticleManager:SetParticleControl(p, 0, v:GetAbsOrigin()+Vector(0,0,100)) --[[Returns:void
-		Set the control point data for a control on a particle effect
-		]]
-		ParticleManager:SetParticleControl(p, 1, v:GetAbsOrigin()+Vector(0,0,1200)) --[[Returns:void
-		Set the control point data for a control on a particle effect
-		]]
+		self:GetAbility():FireBolt(false)
 	end
 end
+
+-- function modifier_thunder_roar:FireBolt(fire_at_parent_origin)
+-- 	local radius = self:GetAbility():GetSpecialValueFor("radius")
+-- 	local damage = self:GetAbility():GetSpecialValueFor("damage")
+-- 	local bolt_radius = self:GetAbility():GetSpecialValueFor("bolt_radius")
+-- 	local t_stun_bonus = self:GetParent():FetchTalent("special_bonus_rai_5") or 0
+-- 	local ministun = self:GetAbility():GetSpecialValueFor("ministun") + t_stun_bonus
+
+-- 	if bolt_radius == 0 then bolt_radius = 225 end
+
+-- 	local loc = self:GetParent():GetAbsOrigin() + RandomVector(RandomInt(125,radius))
+
+-- 	if fire_at_parent_origin then
+-- 		loc = self:GetParent():GetAbsOrigin()
+-- 	end
+
+-- 	-- self:GetAbility():InflictDamage(v,self:GetParent(),damage,DAMAGE_TYPE_MAGICAL)
+-- 	-- v:AddNewModifier(self:GetParent(), nil, "modifier_stunned", {Duration=ministun})
+
+-- 	self:GetParent():EmitSound("Hero_Zuus.LightningBolt.Righteous") --[[Returns:void
+	
+-- 	-- ]]
+
+-- 	local t = FindEnemies(self:GetParent(),loc,bolt_radius)
+
+-- 	for k,v in pairs(t) do
+-- 		self:GetAbility():InflictDamage(v,self:GetParent(),damage,DAMAGE_TYPE_MAGICAL)
+-- 	end
+
+-- 	local p = ParticleManager:CreateParticle("particles/units/heroes/hero_rai/thunder_roar_lightning_bolt.vpcf", PATTACH_WORLDORIGIN, nil)
+-- 	ParticleManager:SetParticleControl(p, 0, loc+Vector(0,0,100)) --[[Returns:void
+-- 	Set the control point data for a control on a particle effect
+-- 	]]
+-- 	ParticleManager:SetParticleControl(p, 1, loc+Vector(0,0,1200)) --[[Returns:void
+-- 	Set the control point data for a control on a particle effect
+-- 	]]
+-- end

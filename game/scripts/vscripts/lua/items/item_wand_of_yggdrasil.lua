@@ -29,8 +29,8 @@ function item_wand_of_yggdrasil:OnSpellStart()
 		local hp = target:GetMaxHealth()
 		local mp = target:GetMaxMana()
 
-		local hp_drain = base_hp_drain + ( hp * pct_hp_drain )
-		local mp_drain = base_mp_drain + ( mp * pct_mp_drain )
+		local hp_drain = (base_hp_drain * self:GetCurrentCharges()) + ( hp * pct_hp_drain * self:GetCurrentCharges())
+		local mp_drain = (base_mp_drain * self:GetCurrentCharges()) + ( mp * pct_mp_drain * self:GetCurrentCharges())
 
 		if target:IsRoshan() then
 			hp_drain = hp_drain / 2
@@ -69,6 +69,8 @@ function item_wand_of_yggdrasil:OnSpellStart()
 
 		self:InflictDamage(target,caster,hp_drain,DAMAGE_TYPE_PURE)
 		target:ReduceMana(mp_drain)
+
+		self:SetCurrentCharges(0)
 
 		ParticleManager:CreateParticle("particles/items/yggdrasil_target.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 		target:EmitSound("Yggdrasil.Drain.Target")
@@ -109,6 +111,26 @@ end
 
 function modifier_yggdrasil:IsHidden()
 	return true
+end
+
+function modifier_yggdrasil:IsPurgable()
+	return false
+end
+
+function modifier_yggdrasil:OnCreated()
+	self:StartIntervalThink(8.0)
+end
+
+function modifier_yggdrasil:OnIntervalThink()
+	self:GainCharge()
+end
+
+function modifier_yggdrasil:GainCharge()
+	local charges = self:GetAbility():GetCurrentCharges()
+
+	if charges < self:GetAbility():GetSpecialValueFor("max_charges") then
+		self:GetAbility():SetCurrentCharges(charges + 1)
+	end
 end
 
 function modifier_yggdrasil:DeclareFunctions()
