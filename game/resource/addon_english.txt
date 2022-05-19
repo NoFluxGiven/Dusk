@@ -12,9 +12,7 @@
 //<br/><span class="changelog">- Change.</span>
 //<br/><font color='#b0e5ea'>- Change.</font>
 
-"game_version_scroller" "<font color='#a0db8e'>Welcome to Dusk! Play as one of 38 unique Heroes, with unique abilities and special items!</font>
-<br/><b><font color='#ff9900'><i>As always, see the <a href='http://steamcommunity.com/sharedfiles/filedetails/changelog/426167013'>official changelog</a> on the Workshop page for more information.</i></font></b>
-<br/><br/>This version brings a huge amount of changes. Check the Steam Workshop page for way more information, as above."
+"game_version_scroller" "<font color='#a0db8e'>Welcome to Dusk! Play as one of 38 unique Heroes, with unique abilities and special items!</font><br/><b><font color='#ff9900'><i>As always, see the <a href='http://steamcommunity.com/sharedfiles/filedetails/changelog/426167013'>official changelog</a> on the Workshop page for more information.</i></font></b><br/><br/>This version brings a huge amount of changes. Check the Steam Workshop page for way more information, as above."
 
 ////////////////////////////////////////
 ////////////// CHANGELOGS //////////////
@@ -22,86 +20,11 @@
 
 ////////////// NEW HEROES //////////////
 
-"new_hero_changelog" "<img src='file://{images}/heroes/npc_dota_hero_lycan.png' class='ChangelogImage'/>
-<br/><h1>Balthasar</h1>Guardian of the Emerald Flame
-<br/>
-<br/>A bully in lane and a bully in game, Balthasar is a dangerous and terrifying Hero, capable of chasing down opponents that would normally outrun or outrange their foes. His set of abilities allow him to strike from a distance with <b>Firebolt</b>, create a line of burning ground that grants him extreme movespeed with <b>Doomflame</b>, deal a portion of his attack damage as damage over time with <b>Emerald Fang</b>, and slow and damage his opponents in a large area, while revealing invisible enemies, with <b>Ward of the Emerald Flame</b>.
-<br/>
-<br/><img src='file://{images}/heroes/npc_dota_hero_sven.png' class='ChangelogImage'/>
-<br/><h1>Siegfried</h1>the Knight of Purgatory
-<br/>
-<br/>A dangerous foe and valuable ally, the Demonfire Knight commands respect from his enemies in battle, and his abilities feature the duality of action and consequence. With time-bending AoE slows in <b>Eon Shield</b>, <b>Hell Bent</b> granting him a frenzied onslaught of attacks, magic immunity upon spell cast with <b>Epoch's Protection</b> and the ability to globally assist an ally for a short time with the use of <b>Heaven Sent</b>, Siegfried is extremely dangerous and difficult to deal with when played correctly, but his insistence on being in the fray makes him the prime target for burst damage and disables."
+"new_hero_changelog" "<img src='file://{images}/heroes/npc_dota_hero_lycan.png' class='ChangelogImage'/><br/><h1>Balthasar</h1>Guardian of the Emerald Flame<br/><br/>A bully in lane and a bully in game, Balthasar is a dangerous and terrifying Hero, capable of chasing down opponents that would normally outrun or outrange their foes. His set of abilities allow him to strike from a distance with <b>Firebolt</b>, create a line of burning ground that grants him extreme movespeed with <b>Doomflame</b>, deal a portion of his attack damage as damage over time with <b>Emerald Fang</b>, and slow and damage his opponents in a large area, while revealing invisible enemies, with <b>Ward of the Emerald Flame</b>.<br/><br/><img src='file://{images}/heroes/npc_dota_hero_sven.png' class='ChangelogImage'/><br/><h1>Siegfried</h1>the Knight of Purgatory<br/><br/>A dangerous foe and valuable ally, the Demonfire Knight commands respect from his enemies in battle, and his abilities feature the duality of action and consequence. With time-bending AoE slows in <b>Eon Shield</b>, <b>Hell Bent</b> granting him a frenzied onslaught of attacks, magic immunity upon spell cast with <b>Epoch's Protection</b> and the ability to globally assist an ally for a short time with the use of <b>Heaven Sent</b>, Siegfried is extremely dangerous and difficult to deal with when played correctly, but his insistence on being in the fray makes him the prime target for burst damage and disables."
 
 ////////////// HERO CHANGES //////////////
 
-"hero_changelog" "
-<i>Patch 2.14a:</i>
-<br/><img src='file://{images}/heroes/npc_dota_hero_lycan.png' class='ChangelogImage'/>
-<br/><h1>Balthasar</h1>
-<br/>Level 20 Talent changed from +500 Doomflame Range to Doomflame Free Pathing.
-<br/>Level 25 Talent +600 Ward of the Emerald Flame Radius reduced to +350.
-<br/>Base movespeed reduced to 310 (was 315).
-<br/>Base Health regen reduced to 0.5 (was 1.0).
-<br/>Base Mana regen reduced to 0.5 (was 1.0).
-<br/>Base damage reduced to 48 - 51 (was 51 - 52).
-<br/>Base Armor increased by 1.
-<br/>Night vision reduced to 800 (was 1000).
-<br/><img src='file://{images}/heroes/npc_dota_hero_riki.png' class='ChangelogImage'/>
-<br/><h1>Lupin</h1>
-<br/>Beneath the Mask slow increased to 8/14/20/26% (was 8/12/16/20%).
-<br/>Beneath the Mask duration reduced to 2.5/3.0/3.5/4.0s (was 2/3/4/5s).
-<br/>Beneath the Mask now renders Lupin invisible, with no fade time, for the duration. Attacking, using items, or casting Spells does not reveal Lupin.
-<br/>Finisher cooldown reduced to 3s (was 9/8/7/6s).
-<br/>Finisher damage reduced to 30/60/90/120 (was 40/80/120/160).
-<br/>Finisher Mana cost reduced to 30/40/50/60 (was 75).
-<br/>Finisher slow duration reduced to 0.50s (was 0.75s).
-<br/>
-<br/><i>Patch 2.14:</i>
-<img src='file://{images}/heroes/npc_dota_hero_ursa.png' class='ChangelogImage'/>
-<br/><h1>Fury</h1>
-Roar duration reduced to 4s (was 5.25s).
-<br/>Berserk duration increased to 6s (was 4.5/5.0/5.5s).
-<br/>Berserk cooldown increased to 80/60/40s (was 60/50/40s).
-<br/>Berserk no longer grants bonus Rend and Bloodsport stacks.
-<br/>Berserk now prevents Fury's Health from dropping below 1 while it's active.
-<br/>Rend and Bloodsport no longer function on illusions.
-<br/>Rend and Bloodsport are now disabled by Break.
-<br/>Talent: Level 25 +4s Berserk Duration (was +3s Berserk Duration).
-<br/>
-<br/><img src='file://{images}/heroes/npc_dota_hero_bounty_hunter.png' class='ChangelogImage'/>
-<br/><h1>Shade</h1>
-Dark Hunger now grants Health and Mana based on the damage Shade deals (from any source). 10/15/20/25% of damage is converted to Health and Mana restored. Only 1/4th effective against creeps.
-<br/>Stalk now only deals Pure damage.
-<br/>Stalk damage increased to 50/100/150/200.
-<br/>Stalk cooldown reduced to 24/18/12/6s.
-<br/>Isolation no longer Silences.
-<br/>Isolation now applies a 25% slow.
-<br/>Isolation now reduces damage output by 60% (was 50%).
-<br/>
-<br/><img src='file://{images}/heroes/npc_dota_hero_spectre.png' class='ChangelogImage'/>
-<br/><h1>Phantasm</h1>
-Shadowstep cooldown increased to 60s (was 50/40/30/20s).
-<br/>Shadowstep delay time rescaled to 4.00/3.25/2.50/1.75s (was 3.00s).
-<br/>Shadowstep bonus movespeed increased to 30% (was 25%).
-<br/>Shadowstep now grants Phased movement and free pathing for the duration.
-<br/>Shadowstep now applies a Basic Dispel upon teleportation.	
-<br/>Nightmare now also prevents the target's allies from helping them with targeted Spells and Items.
-<br/>
-<br/><img src='file://{images}/heroes/npc_dota_hero_axe.png' class='ChangelogImage'/>
-<br/><h1>War</h1>
-Bloodlust duration reduced to 10 ticks (was 14 ticks).
-<br/>Bloodlust damage reduced to 15/25/35/45 (was 12/24/36/48).
-<br/>Bloodlust now slows by 15%.
-<br/>Bloodlust now ticks once every 0.75s (instead of once every 1.00s).
-<br/>Bloodlust is now removed if the affected unit kills a non-Illusion Hero, and is removed from all Heroes if War dies.
-<br/>Bloodlust does not tick down while attacking under the effects of War's Ultimate.
-<br/>Earthbreaker damage reduced to 75/125/175/225 (was 100/150/200/250).
-<br/>Earthbreaker stun changed to 1.50s (was 1.00/1.35/1.70/2.05s).
-<br/>Earthbreaker mana cost is now 75 (was 55/65/75/85).
-<br/>Earthbreaker radius reduced to 300 (was 325).
-<br/>Level 15 Talent changed to +100 Earthbreaker Radius (was +25 Berserker Aura AS/MS)
-<br/>Level 20 Talent reduced to +25 Bloodlust DPS (was +35)
-<br/>Level 25 Talent changed to -4s Earthbreaker Cooldown (was +200 Earthbreaker Radius)"
+"hero_changelog" "<i>Patch 2.14a:</i><br/><img src='file://{images}/heroes/npc_dota_hero_lycan.png' class='ChangelogImage'/><br/><h1>Balthasar</h1><br/>Level 20 Talent changed from +500 Doomflame Range to Doomflame Free Pathing.<br/>Level 25 Talent +600 Ward of the Emerald Flame Radius reduced to +350.<br/>Base movespeed reduced to 310 (was 315).<br/>Base Health regen reduced to 0.5 (was 1.0).<br/>Base Mana regen reduced to 0.5 (was 1.0).<br/>Base damage reduced to 48 - 51 (was 51 - 52).<br/>Base Armor increased by 1.<br/>Night vision reduced to 800 (was 1000).<br/><img src='file://{images}/heroes/npc_dota_hero_riki.png' class='ChangelogImage'/><br/><h1>Lupin</h1><br/>Beneath the Mask slow increased to 8/14/20/26% (was 8/12/16/20%).<br/>Beneath the Mask duration reduced to 2.5/3.0/3.5/4.0s (was 2/3/4/5s).<br/>Beneath the Mask now renders Lupin invisible, with no fade time, for the duration. Attacking, using items, or casting Spells does not reveal Lupin.<br/>Finisher cooldown reduced to 3s (was 9/8/7/6s).<br/>Finisher damage reduced to 30/60/90/120 (was 40/80/120/160).<br/>Finisher Mana cost reduced to 30/40/50/60 (was 75).<br/>Finisher slow duration reduced to 0.50s (was 0.75s).<br/><br/><i>Patch 2.14:</i><img src='file://{images}/heroes/npc_dota_hero_ursa.png' class='ChangelogImage'/><br/><h1>Fury</h1>Roar duration reduced to 4s (was 5.25s).<br/>Berserk duration increased to 6s (was 4.5/5.0/5.5s).<br/>Berserk cooldown increased to 80/60/40s (was 60/50/40s).<br/>Berserk no longer grants bonus Rend and Bloodsport stacks.<br/>Berserk now prevents Fury's Health from dropping below 1 while it's active.<br/>Rend and Bloodsport no longer function on illusions.<br/>Rend and Bloodsport are now disabled by Break.<br/>Talent: Level 25 +4s Berserk Duration (was +3s Berserk Duration).<br/><br/><img src='file://{images}/heroes/npc_dota_hero_bounty_hunter.png' class='ChangelogImage'/><br/><h1>Shade</h1>Dark Hunger now grants Health and Mana based on the damage Shade deals (from any source). 10/15/20/25% of damage is converted to Health and Mana restored. Only 1/4th effective against creeps.<br/>Stalk now only deals Pure damage.<br/>Stalk damage increased to 50/100/150/200.<br/>Stalk cooldown reduced to 24/18/12/6s.<br/>Isolation no longer Silences.<br/>Isolation now applies a 25% slow.<br/>Isolation now reduces damage output by 60% (was 50%).<br/><br/><img src='file://{images}/heroes/npc_dota_hero_spectre.png' class='ChangelogImage'/><br/><h1>Phantasm</h1>Shadowstep cooldown increased to 60s (was 50/40/30/20s).<br/>Shadowstep delay time rescaled to 4.00/3.25/2.50/1.75s (was 3.00s).<br/>Shadowstep bonus movespeed increased to 30% (was 25%).<br/>Shadowstep now grants Phased movement and free pathing for the duration.<br/>Shadowstep now applies a Basic Dispel upon teleportation.	<br/>Nightmare now also prevents the target's allies from helping them with targeted Spells and Items.<br/><br/><img src='file://{images}/heroes/npc_dota_hero_axe.png' class='ChangelogImage'/><br/><h1>War</h1>Bloodlust duration reduced to 10 ticks (was 14 ticks).<br/>Bloodlust damage reduced to 15/25/35/45 (was 12/24/36/48).<br/>Bloodlust now slows by 15%.<br/>Bloodlust now ticks once every 0.75s (instead of once every 1.00s).<br/>Bloodlust is now removed if the affected unit kills a non-Illusion Hero, and is removed from all Heroes if War dies.<br/>Bloodlust does not tick down while attacking under the effects of War's Ultimate.<br/>Earthbreaker damage reduced to 75/125/175/225 (was 100/150/200/250).<br/>Earthbreaker stun changed to 1.50s (was 1.00/1.35/1.70/2.05s).<br/>Earthbreaker mana cost is now 75 (was 55/65/75/85).<br/>Earthbreaker radius reduced to 300 (was 325).<br/>Level 15 Talent changed to +100 Earthbreaker Radius (was +25 Berserker Aura AS/MS)<br/>Level 20 Talent reduced to +25 Bloodlust DPS (was +35)<br/>Level 25 Talent changed to -4s Earthbreaker Cooldown (was +200 Earthbreaker Radius)"
 
 ////////////// ITEM CHANGES //////////////
 
@@ -109,18 +32,7 @@ Bloodlust duration reduced to 10 ticks (was 14 ticks).
 
 ////////////// BUGFIXES //////////////
 
-"misc_changelog" "<i>Patch 2.14a:</i>
-<br/>Fixed non-vanilla Talents not functioning properly.
-<br/>Balthasar's Level 25 Talent has been corrected to -8s Firebolt Cooldown instead of -12s Cooldown.
-<br/>
-<br/><i>Patch 2.14:</i>
-<br/><b>Lysander</b> has been temporarily disabled following a number of crashes related to his abilities.
-<br/>Fixed Alexander's Level 25 Talent not healing nearby allies.
-<br/>Fixed Paragon's Level 25 Talent not increasing Tranquility Seal's duration.
-<br/>Fixed Alroth's Solwave particle effect lingering past the actual duration.
-<br/>Fixed some missing animations for Bloodwarrior and Erra.
-<br/>Fixed Rage Potion not functioning properly.
-<br/>Fixed Ironblood Potion not functioning properly."
+"misc_changelog" "<i>Patch 2.14a:</i><br/>Fixed non-vanilla Talents not functioning properly.<br/>Balthasar's Level 25 Talent has been corrected to -8s Firebolt Cooldown instead of -12s Cooldown.<br/><br/><i>Patch 2.14:</i><br/><b>Lysander</b> has been temporarily disabled following a number of crashes related to his abilities.<br/>Fixed Alexander's Level 25 Talent not healing nearby allies.<br/>Fixed Paragon's Level 25 Talent not increasing Tranquility Seal's duration.<br/>Fixed Alroth's Solwave particle effect lingering past the actual duration.<br/>Fixed some missing animations for Bloodwarrior and Erra.<br/>Fixed Rage Potion not functioning properly.<br/>Fixed Ironblood Potion not functioning properly."
 
 ////////////////////////////////////////
 ////////////// HEROES //////////////////
@@ -201,8 +113,7 @@ Bloodlust duration reduced to 10 ticks (was 14 ticks).
 		"npc_dota_hero_wisp_bio" ""
 		"npc_dota_hero_sand_king_bio" ""
 		"npc_dota_hero_oracle_bio" ""
-		"npc_dota_hero_lycan_bio" "The ancient tribes of Iyat, once spanning the sundered plains, passed down many tales. One of which was that of the Great One, an elder of elders, their whim bending reality around them, their heart a roaring flame. It is said that their son grew jealous of such power, and wished to gain it for himself. Whenever asked, the Great One only spake: 'in due time.'
-As the son's jealousy grew, he devised a plan. Using the essence of envy, he forged a weapon: a blade of emerald fury, with the power to extract the abilities of the Great One. One night, he snuck into the Great One's keep, and went to strike him down with his blade. However, the Great One was prepared; he had seen his son forging this monstrosity. As the son landed the final blow, the Great One uttered a curse, sealing his soul into the sword itself. The son could not extract the powers, no matter how hard he tried. Defeated by his failures, he took his own life using that same blade. Yet death did not come easily to him; instead, the Emerald Blade and the Flame of the Great One combined, creating a jade flame. The son's form dissipated, and he was transformed into a creature of the night, a protector of the fire: The Wolf of the Emerald Flame."
+		"npc_dota_hero_lycan_bio" "The ancient tribes of Iyat, once spanning the sundered plains, passed down many tales. One of which was that of the Great One, an elder of elders, their whim bending reality around them, their heart a roaring flame. It is said that their son grew jealous of such power, and wished to gain it for himself. Whenever asked, the Great One only spake: 'in due time.' As the son's jealousy grew, he devised a plan. Using the essence of envy, he forged a weapon: a blade of emerald fury, with the power to extract the abilities of the Great One. One night, he snuck into the Great One's keep, and went to strike him down with his blade. However, the Great One was prepared; he had seen his son forging this monstrosity. As the son landed the final blow, the Great One uttered a curse, sealing his soul into the sword itself. The son could not extract the powers, no matter how hard he tried. Defeated by his failures, he took his own life using that same blade. Yet death did not come easily to him; instead, the Emerald Blade and the Flame of the Great One combined, creating a jade flame. The son's form dissipated, and he was transformed into a creature of the night, a protector of the fire: The Wolf of the Emerald Flame."
 		
 		"npc_dota_hero_elder_titan_bio" "Many eons ago, before "
 		
@@ -968,17 +879,19 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			"DOTA_Tooltip_ability_phantom_nightmare_duration"                                 "DURATION:"
 
 			"DOTA_Tooltip_ability_phantom_soul_wave"                                          "Soul Wave"
-			"DOTA_Tooltip_ability_phantom_soul_wave_description"                              "Emits a shockwave from Phantasm that deals Magical damage. She regains a portion of the damage dealt to all units as Health, after reductions and amplifications."
+			"DOTA_Tooltip_ability_phantom_soul_wave_description"                              "Emits a shockwave from Phantasm that deals Magical damage. She regains a portion of the damage dealt to all units as Health, after reductions and amplifications. Restores half the amount from creeps."
 			"DOTA_Tooltip_ability_phantom_soul_wave_damage"                                   "DAMAGE:"
 			"DOTA_Tooltip_ability_phantom_soul_wave_mult"                                     "%DAMAGE TO HEALING:"
+			"DOTA_Tooltip_ability_phantom_soul_wave_creep_mult"                               "%DAMAGE TO HEALING (CREEPS):"
 			"DOTA_Tooltip_ability_phantom_soul_wave_slow_duration"                            "DURATION:"
 			"DOTA_Tooltip_ability_phantom_soul_wave_slow"                                     "%SLOW:"
 			"DOTA_Tooltip_ability_phantom_soul_wave_radius"                                   "RADIUS:"
 
 			"DOTA_Tooltip_ability_phantom_deathstrike"                                        "Deathstrike"
-			"DOTA_Tooltip_ability_phantom_deathstrike_description"                            "The Phantasm's strikes are much more effective against targets close to death, dealing bonus Physical damage based upon their missing Health when below a threshold."
+			"DOTA_Tooltip_ability_phantom_deathstrike_description"                            "The Phantasm's strikes are much more effective against targets close to death, with a chance to deal bonus Physical damage based upon their missing Health when below a threshold."
 			"DOTA_Tooltip_ability_phantom_deathstrike_Lore"                            		  "Her banishment from the material plane had some unintended side effects; such as the ability to strike directly at the soul of her targets."
 			"DOTA_Tooltip_ability_phantom_deathstrike_threshold"                              "%THRESHOLD:"
+			"DOTA_Tooltip_ability_phantom_deathstrike_chance"                              	  "%CHANCE:"
 			"DOTA_Tooltip_ability_phantom_deathstrike_bonus_damage"                           "%MISSING HEALTH AS DAMAGE:"
 			
 			//--------------------
@@ -2270,16 +2183,15 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			///// TALENTS /////
 			
-			"DOTA_Tooltip_ability_special_bonus_bahamut_1" "+25 Desolation DPS"
-			"DOTA_Tooltip_ability_special_bonus_bahamut_2" "Fulmination Stacks -1 Armor"
-			"DOTA_Tooltip_ability_special_bonus_bahamut_3" "+50% Mega Flare Damage"
-			"DOTA_Tooltip_ability_special_bonus_bahamut_4" "Desolation AoE Applies Fulmination Stacks"
-			"DOTA_Tooltip_ability_special_bonus_bahamut_4_Description" "Desolation's AoE ticks each apply 1 stack of Fulmination to all affected targets."
+			"DOTA_Tooltip_ability_special_bonus_bahamut_1" "+{s:value} Desolation DPS"
+			"DOTA_Tooltip_ability_special_bonus_bahamut_2" "+{s:value} Fulmination Attack Range"
+			"DOTA_Tooltip_ability_special_bonus_bahamut_3" "+{s:value}% Mega Flare Damage/Speed"
+			"DOTA_Tooltip_ability_special_bonus_bahamut_4" "{s:value}x Desolation Damage/Tick Speed"
 			
 			///// MODIFIERS /////
 			
 			"DOTA_Tooltip_modifier_desolation"                                                "Desolation"
-			"DOTA_Tooltip_modifier_desolation_description"                                    "Taking damage over time to yourself and allies in an AoE, with some Magic Resistance burned away."
+			"DOTA_Tooltip_modifier_desolation_description"                                    "Taking %dps% damage per second, dealing the damage in an AoE, and some Magic Resistance burned away."
 
 			"DOTA_Tooltip_modifier_desolation_aura"                                           "Desolation"
 			"DOTA_Tooltip_modifier_desolation_aura_description"                               ""
@@ -2300,16 +2212,14 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			"DOTA_Tooltip_ability_bahamut_fulmination"                                        "Fulmination"
 			"DOTA_Tooltip_ability_bahamut_fulmination_description"                            "Bahamut pulls apart strands of reality, reweaving them into volatile arcane energy. His next 4 attacks are replaced with powerful Magical projectiles that have %attack_range_bonus% bonus attack range, increased projectile speed, deal damage equal to %damage% + his total attack damage, and apply a debuff that slows enemies by %move_slow%%% and reduces their Magic Resistance by %magic_res_reduction%%%. The debuff lasts %duration% seconds."
 			"DOTA_Tooltip_ability_bahamut_fulmination_damage"                                 "BONUS MAGICAL DAMAGE:"
-			"DOTA_Tooltip_ability_bahamut_fulmination_move_slow"                              "%MOVEMENT SLOW:"
-			"DOTA_Tooltip_ability_bahamut_fulmination_magic_res_reduction"                    "%MAGIC RESISTANCE REDUCTION:"
-			"DOTA_Tooltip_ability_bahamut_fulmination_shard_mana_drain"                   	  "%SHARD MANA DRAIN:"
-			"DOTA_Tooltip_ability_bahamut_fulmination_shard_description"                      "Increases Fulmination attacks by 1 and causes each attack to drain a portion of the target's current Mana."
+			"DOTA_Tooltip_ability_bahamut_fulmination_scepter_description"                     "Increases Fulmination attacks by %scepter_bonus_stacks%."
 
 			"DOTA_Tooltip_ability_bahamut_hidden_transform"                                   "Hidden Transform"
 			"DOTA_Tooltip_ability_bahamut_hidden_transform_description"                       ""
 
 			"DOTA_Tooltip_ability_bahamut_mega_flare"                                         "Mega Flare"
 			"DOTA_Tooltip_ability_bahamut_mega_flare_description"                             "Summons an orb of pure power that slowly travels towards the targeted point, detonating when it reaches it to deal massive damage.  Enemies closer to the center of the explosion take an additional instance of damage.  Has a minimum range it must travel before detonating."
+			"DOTA_Tooltip_ability_bahamut_mega_flare_shard_description"                       "Causes Mega Flare to leave behind damaging miasma. Deals %scepter_dps% damage per second over %scepter_duration% seconds in a %radius_outer% radius."
 			"DOTA_Tooltip_ability_bahamut_mega_flare_Note0"                             	  "The minimum cast range is 275.  Targeting a point below this range will force the targeted point to be 275 units away from the caster, in the direction they cast it."
 			"DOTA_Tooltip_ability_bahamut_mega_flare_damage_inner"                            "DAMAGE (INNER):"
 			"DOTA_Tooltip_ability_bahamut_mega_flare_radius_inner"                            "RADIUS (INNER):"
@@ -3171,11 +3081,11 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			
 			///// TALENTS /////
 			
-			"DOTA_Tooltip_ability_special_bonus_war_1" "FIGHT ME! +40% Mana From Attacks"
-			"DOTA_Tooltip_ability_special_bonus_war_1_Description" "40% of the healing you gain from enemy attacks during FIGHT ME!! is also restored as Mana."
-			"DOTA_Tooltip_ability_special_bonus_war_2" "+100 Earthbreaker Radius"
-			"DOTA_Tooltip_ability_special_bonus_war_3" "+25 Bloodlust DPS"
-			"DOTA_Tooltip_ability_special_bonus_war_4" "-4s Earthbreaker Cooldown"
+			"DOTA_Tooltip_ability_special_bonus_war_1" "+{s:value}% Wrath Movespeed"
+			"DOTA_Tooltip_ability_special_bonus_war_2" "+{s:value}% Bloodlust Slow"
+			"DOTA_Tooltip_ability_special_bonus_war_3" "+{s:value} Earthbreaker Stun"
+			"DOTA_Tooltip_ability_special_bonus_war_4" "Wrath Strong Dispel"
+			"DOTA_Tooltip_ability_special_bonus_war_5" "+{s:value}s Warbellow Duration"
 			
 			///// MODIFIERS /////
 			
@@ -3220,6 +3130,10 @@ As the son's jealousy grew, he devised a plan. Using the essence of envy, he for
 			"DOTA_Tooltip_ability_war_earthbreaker_damage"									  "%ATTACK DAMAGE:"
 			"DOTA_Tooltip_ability_war_earthbreaker_radius"                                    "RADIUS:"
 			"DOTA_Tooltip_ability_war_earthbreaker_stun"                                      "STUN:"
+
+			"DOTA_Tooltip_ability_war_wrath"						"Wrath"
+			"DOTA_Tooltip_ability_war_wrath_description"			"War unleashes the target ally's inner rage, granting them %attack_speed_bonus% attack speed and %movespeed_bonus% movespeed, but increasing the damage they take by %incoming_damage_bonus%%%."
+			"DOTA_Tooltip_ability_war_wrath_duration"				"DURATION:"
 
 			"DOTA_Tooltip_ability_war_warbellow"						"Warbellow"
 			"DOTA_Tooltip_ability_war_warbellow_description"			"War unleashes the malevolent energies of war itself to turn the tide of battle, causing all allies <b>globally</b> to emanate violent force. Deals %damage% damage in a %radius% radius around each allied Hero, and grants them a buff that copies %reflect%%% of any damage they take back to their assailant for %reflect_duration% seconds.\nGlobal."
