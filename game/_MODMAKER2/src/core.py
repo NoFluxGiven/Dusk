@@ -3,10 +3,16 @@ import fileops as Files
 from database import Database
 import json
 
-str = Files.LoadFileString("../../scripts/npc/npc_abilities_custom.txt")
-data = Parse(str)
+abilities = Files.LoadFileString("../scripts/npc/npc_abilities_custom.txt")
+abilitiesDict = Parse(abilities)
 
-with open('../test/testdata.json', 'w') as f:
-    json.dump(data, f)
+tooltips = Files.LoadFileString("../resource/addon_english.txt")
+tooltipsDict = Parse(tooltips)
+
+with open('../test/abilities.json', 'w+') as f:
+    json.dump(abilitiesDict, f)
+
+with open('../test/tooltips.json', 'w+') as f:
+    json.dump(tooltipsDict, f)
 
 db = Database()
