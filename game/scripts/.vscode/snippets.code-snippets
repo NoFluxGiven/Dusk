@@ -15,6 +15,18 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+	
+	"LinkedAbility":
+	{
+		"scope": "plaintext",
+		"body": [
+			"LinkedAbility",
+			"{",
+			"\t\"01\" \"${ability_name}\"",
+			"}"
+		],
+		"prefix": "LinkedAbility"
+	},
 
 	"SpecialValue": {
 		"scope": "lua",
