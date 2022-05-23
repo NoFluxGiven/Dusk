@@ -84,7 +84,7 @@ function modifier_divine_armour_lua:OnTakeDamage( keys )
 	local block_duration = self:GetAbility():GetSpecialValueFor("damage_block_duration")
 	local caster = self:GetParent()
 
-	local tbonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_2")
+	local tbonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_paragon_2")
 
 	if tbonus then block_duration = block_duration+tbonus end
 

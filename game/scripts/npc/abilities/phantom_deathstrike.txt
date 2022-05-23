@@ -37,12 +37,17 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"4 6 8 10"
+			"bonus_damage"					"6 8 10 12"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"threshold"						"40"
+			"threshold"						"50"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"chance"						"25"
 		}
 	}
 	

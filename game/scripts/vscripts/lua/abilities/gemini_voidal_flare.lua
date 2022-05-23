@@ -46,7 +46,7 @@ end
 -- 		local duration = self:GetSpecialValueFor("duration")
 -- 		local modifier = t:FindModifierByName("modifier_voidal_flare")
 
--- 		local t_purge = self:GetCaster():FetchTalent("special_bonus_gemini_3") or false
+-- 		local t_purge = self:GetCaster():FindTalentValue("special_bonus_gemini_3") or false
 
 -- 		if t:IsMagicImmune() then return end
 
@@ -63,7 +63,7 @@ end
 -- 			stack = modifier:GetStackCount()
 -- 		end
 
--- 		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_gemini_1") or 0
+-- 		local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_gemini_1") or 0
 -- 		local damage_bonus = self:GetSpecialValueFor("damage_bonus") + t_damage_bonus
 -- 		local damage = self:GetSpecialValueFor("damage") + damage_bonus * (stack-1)
 -- 		local stun = self:GetSpecialValueFor("stun") + self:GetSpecialValueFor("stun_bonus") * (stack-1)
@@ -79,7 +79,7 @@ function gemini_voidal_flare:OnProjectileHit(t,l)
 		local duration = self:GetSpecialValueFor("duration")
 		local modifier = t:FindModifierByName("modifier_voidal_flare")
 
-		local t_purge = self:GetCaster():FetchTalent("special_bonus_gemini_3") or false
+		local t_purge = self:GetCaster():FindTalentValue("special_bonus_gemini_3") or false
 
 		if t:IsMagicImmune() then return end
 
@@ -94,7 +94,7 @@ function gemini_voidal_flare:OnProjectileHit(t,l)
 			stack = modifier:GetStackCount()
 		end
 
-		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_gemini_1") or 0
+		local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_gemini_1") or 0
 		local damage_bonus = self:GetSpecialValueFor("damage") + t_damage_bonus
 
 		self:InflictDamage(t,self:GetCaster(),damage_bonus,DAMAGE_TYPE_MAGICAL)

@@ -23,11 +23,11 @@ function lupin_flashbang:OnSpellStart()
 		stun_duration = stun_duration + self:GetSpecialValueFor("scepter_stun")
 	end
 
-	local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_lupin_2") or 0
+	local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_lupin_2") or 0
 
 	damage = damage+t_damage_bonus
 
-	local t_duration_bonus = self:GetCaster():FetchTalent("special_bonus_lupin_4") or 0
+	local t_duration_bonus = self:GetCaster():FindTalentValue("special_bonus_lupin_4") or 0
 
 	duration = duration + t_duration_bonus
 

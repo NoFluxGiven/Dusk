@@ -54,7 +54,7 @@ function modifier_berserker_aura_buff:GetModifierPreAttack_BonusDamage()
 
 	if caster:PassivesDisabled() then return nil end
 
-	--local t_dmg_bonus = caster:FetchTalent("special_bonus_war_2") or 0
+	--local t_dmg_bonus = caster:FindTalentValue("special_bonus_war_2") or 0
 
 	local dmg = self:GetAbility():GetSpecialValueFor("max_bonus_damage")
 
@@ -80,7 +80,7 @@ function modifier_berserker_aura_buff:GetModifierAttackSpeedBonus_Constant()
 
 	-- local dmg = self:GetSpecialValueFor("max_bonus_damage")
 
-	local t_atk_bonus = caster:FetchTalent("special_bonus_war_2") or 0
+	local t_atk_bonus = caster:FindTalentValue("special_bonus_war_2") or 0
 
 	local atk = self:GetAbility():GetSpecialValueFor("max_bonus_attack_speed") + t_atk_bonus
 

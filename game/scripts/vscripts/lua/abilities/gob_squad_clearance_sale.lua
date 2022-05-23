@@ -264,7 +264,7 @@ end
 function modifier_clearance_sale_passive:OnAbilityFullyCast(params)
 	if params.unit == self:GetParent() then
 		if not params.ability:IsItem() then
-			local t_bombs = self:GetAbility():GetCaster():FetchTalent("special_bonus_gob_squad_3")
+			local t_bombs = self:GetAbility():GetCaster():FindTalentValue("special_bonus_gob_squad_3")
 			if t_bombs then
 				for i=1,t_bombs do
 					self:GetAbility():CreateBomb(self:GetParent())

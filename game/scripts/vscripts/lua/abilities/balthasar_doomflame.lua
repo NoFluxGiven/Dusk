@@ -148,7 +148,7 @@ function modifier_doomflame_buff:GetModifierMoveSpeed_Max()
 end
 
 function modifier_doomflame_buff:CheckState()
-	local t_freepathing = self:GetParent():FetchTalent("special_bonus_balthasar_2")
+	local t_freepathing = self:GetParent():FindTalentValue("special_bonus_balthasar_2")
 
 	local state = {
 		[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = false

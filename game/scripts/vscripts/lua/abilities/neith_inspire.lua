@@ -35,7 +35,7 @@ function modifier_inspire:OnAbilityExecuted(params)
 			local damage = self:GetAbility():GetSpecialValueFor("attack_damage")
 			local damage_creep = self:GetAbility():GetSpecialValueFor("attack_damage_creep")
 			local duration = self:GetAbility():GetSpecialValueFor("duration")
-			local bonus = p:FetchTalent("special_bonus_neith_1") or 0
+			local bonus = p:FindTalentValue("special_bonus_neith_1") or 0
 
 			duration = duration+bonus
 

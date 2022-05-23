@@ -23,7 +23,7 @@ function shard_magus_icicle_barrage:OnProjectileHit(t,l)
 	local damage = self:GetSpecialValueFor("damage")
 	local scepter_damage = self:GetSpecialValueFor("scepter_damage")
 
-	local t_mana_burn = self:GetCaster():FetchTalent("special_bonus_shard_magus_3") or 0
+	local t_mana_burn = self:GetCaster():FindTalentValue("special_bonus_shard_magus_3") or 0
 
 	if t then
 		-- local r = RandomInt(0,100)

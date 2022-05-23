@@ -25,7 +25,7 @@ function modifier_deep_freeze:OnAttackLanded(params)
 	local target = params.unit or params.target
 
 	local damage = self:GetAbility():GetSpecialValueFor("damage")
-	local t_stun_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_lich_1") or 0
+	local t_stun_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_lich_1") or 0
 	local stun = self:GetAbility():GetSpecialValueFor("stun") + t_stun_bonus
 
 	if attacker == self:GetParent() then

@@ -4,7 +4,7 @@ LinkLuaModifier("modifier_heroic_soul","lua/abilities/hero_heroic_soul",LUA_MODI
 
 function hero_heroic_soul:OnSpellStart()
 	if IsServer() then
-		local t_duration_bonus = self:GetCaster():FetchTalent("special_bonus_hero_1") or 0
+		local t_duration_bonus = self:GetCaster():FindTalentValue("special_bonus_hero_1") or 0
 		local duration = self:GetSpecialValueFor("duration")
 		self:GetCaster():EmitSound("Hero_Sven.GodsStrength")
 		ParticleManager:CreateParticle("particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster()) 

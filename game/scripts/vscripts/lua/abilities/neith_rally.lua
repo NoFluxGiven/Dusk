@@ -68,7 +68,7 @@ end
 
 function modifier_rally_buff:GetModifierPhysicalArmorBonus()
 	if IsClient() then
-		local armor_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_neith_2") or 0
+		local armor_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_neith_2") or 0
 		return armor_bonus
 	end
 end

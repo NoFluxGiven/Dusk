@@ -12,7 +12,7 @@ function tek_mosquito_missiles:OnChannelFinish(interrupt)
 end
 
 function tek_mosquito_missiles:OnProjectileHit(t)
-	local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_tek_3") or 0
+	local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_tek_3") or 0
 	local damage = self:GetSpecialValueFor("damage") + t_damage_bonus
 	if t then
 		self:InflictDamage(t,self:GetCaster(),damage,DAMAGE_TYPE_MAGICAL)

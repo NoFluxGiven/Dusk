@@ -4,7 +4,7 @@ LinkLuaModifier("modifier_firebolt","lua/abilities/balthasar_firebolt",LUA_MODIF
 
 function balthasar_firebolt:GetCooldown(level)
 	local base_cooldown = self.BaseClass.GetCooldown(self, level)
-	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_balthasar_4") or 0
+	local t_cooldown_reduction = self:GetCaster():FindTalentValue("special_bonus_balthasar_4") or 0
 	return base_cooldown - t_cooldown_reduction
 end
 

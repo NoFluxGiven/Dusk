@@ -4,7 +4,7 @@ function shard_magus_glacial_impact:OnSpellStart()
 
 	local pos = self:GetCursorPosition()
 
-	local t_stun_duration_bonus = self:GetCaster():FetchTalent("special_bonus_shard_magus_5") or 0
+	local t_stun_duration_bonus = self:GetCaster():FindTalentValue("special_bonus_shard_magus_5") or 0
 
 	local duration = self:GetSpecialValueFor("stun_duration")
 	local b_duration = self:GetSpecialValueFor("stun_duration") * t_stun_duration_bonus

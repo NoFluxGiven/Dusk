@@ -42,7 +42,7 @@ function tek_megaton_blast:OnSpellStart()
 end
 
 function tek_megaton_blast:OnProjectileHit(t,l)
-	local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_tek_2") or 0
+	local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_tek_2") or 0
 	local damage = self:GetSpecialValueFor("damage") + t_damage_bonus
 	local stun = self:GetSpecialValueFor("stun")
 	if t then

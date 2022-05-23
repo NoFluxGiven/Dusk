@@ -6,7 +6,7 @@ function aether_teleport:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 
-	local t_delay_bonus = caster:FetchTalent("special_bonus_aether_2") or 0
+	local t_delay_bonus = caster:FindTalentValue("special_bonus_aether_2") or 0
 
 	local delay_change = 1-(t_delay_bonus/100)
 
@@ -58,7 +58,7 @@ end
 
 -- function aether_teleport:GetCastRange()
 -- 	local cast_range = self.BaseClass.GetCastRange(self, self:GetCaster():GetAbsOrigin(), self:GetCursorTarget())
--- 	-- local t_cast_range_bonus = self:GetCaster():FetchTalent("special_bonus_aether_3") or 0
+-- 	-- local t_cast_range_bonus = self:GetCaster():FindTalentValue("special_bonus_aether_3") or 0
 
 -- 	return cast_range -- + t_cast_range_bonus
 -- end

@@ -29,7 +29,7 @@ function modifier_shatter:OnAttackLanded(params)
 
 		local attackdamage = caster:GetAttackDamage()
 
-		local t_mult_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_alroth_1") or 0
+		local t_mult_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_alroth_1") or 0
 
 		local mult = self:GetAbility():GetSpecialValueFor("damage_mult") + t_mult_bonus
 

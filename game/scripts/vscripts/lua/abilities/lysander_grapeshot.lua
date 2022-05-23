@@ -28,7 +28,7 @@ function lysander_grapeshot:OnSpellStart()
 
 		local cc_mult = self:GetSpecialValueFor("captains_compass_increase")/100
 
-		local bonus = c:FetchTalent("special_bonus_lysander_2") or 0
+		local bonus = c:FindTalentValue("special_bonus_lysander_2") or 0
 
 		local r = RandomInt(1,100)
 		local crit = self:GetSpecialValueFor("crit") + bonus

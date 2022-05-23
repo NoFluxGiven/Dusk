@@ -16,11 +16,11 @@
 	"Ability9"				""
 	"Ability10"				"special_bonus_attack_range_75" //
 	"Ability11"				"special_bonus_attack_damage_25" //
-	"Ability12"				"special_bonus_bahamut_1" // +25 Desolation DPS
-	"Ability13"				"special_bonus_bahamut_2" // Fulmination Stacks -1 Armor
-	"Ability14"				"special_bonus_bahamut_3" // +50% Mega Flare Damage
+	"Ability12"				"special_bonus_bahamut_1" // 
+	"Ability13"				"special_bonus_bahamut_2" // 
+	"Ability14"				"special_bonus_bahamut_3" // 
 	"Ability15"				"special_bonus_evasion_15" // 
-	"Ability16"				"special_bonus_bahamut_4" // Desolation Applies Fulmination Stacks Per Tick in AoE
+	"Ability16"				"special_bonus_bahamut_4" // 
 	"Ability17"				"special_bonus_agility_25" // 
 
 	"ArmorPhysical"				"2"									// Physical protection.

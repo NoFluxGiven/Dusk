@@ -93,7 +93,7 @@ if IsServer() then
 	function modifier_compression_sphere_aura:OnIntervalThink()
 		self:IncrementStackCount()
 
-		local t_dps = self:GetAbility():GetCaster():FetchTalent("special_bonus_baal_5")
+		local t_dps = self:GetAbility():GetCaster():FindTalentValue("special_bonus_baal_5")
 
 		if t_dps then
 			self:GetAbility():InflictDamage(self:GetParent(),self:GetAbility():GetCaster(),t_dps/2,DAMAGE_TYPE_MAGICAL)

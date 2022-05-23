@@ -44,7 +44,7 @@ function mana_knight_infusion_bolt:OnProjectileHit(t,l)
 		local max_damage = self:GetSpecialValueFor("max_damage")
 		local min_damage = self:GetSpecialValueFor("min_damage")
 
-		local t_stun_bonus = self:GetCaster():FetchTalent("special_bonus_mana_knight_4") or 0
+		local t_stun_bonus = self:GetCaster():FindTalentValue("special_bonus_mana_knight_4") or 0
 
 		local stun = self:GetSpecialValueFor("stun") + t_stun_bonus
 

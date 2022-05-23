@@ -103,7 +103,7 @@ end
 function modifier_rend_damage_amp:GetModifierIncomingDamage_Percentage()
 	local s = self:GetStackCount()
 
-	local t_damage_amp = self:GetAbility():GetCaster():FetchTalent("special_bonus_fury_2") or 0
+	local t_damage_amp = self:GetAbility():GetCaster():FindTalentValue("special_bonus_fury_2") or 0
 
 	local a = self:GetAbility():GetSpecialValueFor("damage_amp") + t_damage_amp
 

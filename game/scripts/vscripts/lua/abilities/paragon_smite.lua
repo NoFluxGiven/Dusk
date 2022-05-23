@@ -70,7 +70,7 @@ function modifier_smite:IsHidden()
 end
 
 function modifier_smite:OnDeath(params)
-  local tcheck = self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_4")
+  local tcheck = self:GetAbility():GetCaster():FindTalentValue("special_bonus_paragon_4")
   if not tcheck then return end
 
   local unit = params.unit

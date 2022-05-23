@@ -21,7 +21,7 @@ function modifier_emerald_fang_passive:OnAttackLanded(params)
 		if params.attacker == self:GetParent() then
 
 			local duration = self:GetAbility():GetSpecialValueFor("duration")
-			local t_duration_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_balthasar_1") or 0
+			local t_duration_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_balthasar_1") or 0
 
 			if params.target:IsBuilding() then return end
 

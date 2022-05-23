@@ -5,7 +5,7 @@ LinkLuaModifier("modifier_cleanse_heal_amp_display","lua/abilities/paragon_clean
 if IsServer() then
 
   function paragon_cleanse:CastFilterResultTarget( hTarget )
-    local t_target_buildings = self:GetCaster():FetchTalent("special_bonus_paragon_7")
+    local t_target_buildings = self:GetCaster():FindTalentValue("special_bonus_paragon_7")
     local caster = self:GetCaster()
 
     if ( hTarget:IsBuilding() ) then
@@ -21,7 +21,7 @@ if IsServer() then
   end
    
   function paragon_cleanse:GetCustomCastErrorTarget( hTarget )
-    local t_target_buildings = self:GetCaster():FetchTalent("special_bonus_paragon_7")
+    local t_target_buildings = self:GetCaster():FindTalentValue("special_bonus_paragon_7")
     if ( hTarget:IsBuilding() ) then
         if ( t_target_buildings ) then
           return ""
@@ -52,11 +52,11 @@ function paragon_cleanse:OnSpellStart()
   ]]
   target:EmitSound("Hero_Omniknight.Purification")
 
-  local t_stacking_heal_amp = self:GetCaster():FetchTalent("special_bonus_paragon_1")
+  local t_stacking_heal_amp = self:GetCaster():FindTalentValue("special_bonus_paragon_1")
 
-  local t_purge_debuffs = self:GetCaster():FetchTalent("special_bonus_paragon_5")
+  local t_purge_debuffs = self:GetCaster():FindTalentValue("special_bonus_paragon_5")
 
-  local t_target_buildings = self:GetCaster():FetchTalent("special_bonus_paragon_7")
+  local t_target_buildings = self:GetCaster():FindTalentValue("special_bonus_paragon_7")
 
   local a = FindAllies(caster,target:GetAbsOrigin(),radius)
 
@@ -112,7 +112,7 @@ function modifier_cleanse_heal_amp:OnCreated()
 end
 
 function modifier_cleanse_heal_amp:OnRefresh()
-  local t_target_buildings = self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_7")
+  local t_target_buildings = self:GetAbility():GetCaster():FindTalentValue("special_bonus_paragon_7")
 
   if IsServer() then
     self:IncrementStackCount()
@@ -127,5 +127,5 @@ function modifier_cleanse_heal_amp:DeclareFunctions()
 end
 
 function modifier_cleanse_heal_amp:GetModifierHealAmplify_Percentage()
-  return self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_1") * self:GetStackCount()
+  return self:GetAbility():GetCaster():FindTalentValue("special_bonus_paragon_1") * self:GetStackCount()
 end

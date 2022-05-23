@@ -11,7 +11,7 @@ function shade_isolation:OnSpellStart()
 	local t = self:GetCursorTarget()
 	local duration = self:GetSpecialValueFor("duration")
 	local radius = self:GetSpecialValueFor("radius")
-	local tcheck = self:GetCaster():FetchTalent("special_bonus_shade_4")
+	local tcheck = self:GetCaster():FindTalentValue("special_bonus_shade_4")
 	local damage = self:GetSpecialValueFor("damage")
 
 	t:AddNewModifier(c, self, "modifier_isolation", {Duration=duration})

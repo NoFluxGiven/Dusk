@@ -8,7 +8,7 @@ function paragon_tranquility_seal:OnSpellStart()
   local cteam = caster:GetTeam()
   local tteam = target:GetTeam()
   local duration = self:GetSpecialValueFor("duration")
-  local t_duration_bonus = caster:FetchTalent("special_bonus_paragon_6")
+  local t_duration_bonus = caster:FindTalentValue("special_bonus_paragon_6")
 
   duration = duration+t_duration_bonus
 
@@ -53,11 +53,11 @@ end
 
 function modifier_tranquility_seal:GetModifierConstantHealthRegen()
   if IsServer() then
-    if self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_3") then
+    if self:GetAbility():GetCaster():FindTalentValue("special_bonus_paragon_3") then
       if self:GetParent():GetTeam() == self:GetAbility():GetCaster():GetTeam() then
-        return self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_3")
+        return self:GetAbility():GetCaster():FindTalentValue("special_bonus_paragon_3")
       else
-        return -self:GetAbility():GetCaster():FetchTalent("special_bonus_paragon_3")
+        return -self:GetAbility():GetCaster():FindTalentValue("special_bonus_paragon_3")
       end
     end
   end

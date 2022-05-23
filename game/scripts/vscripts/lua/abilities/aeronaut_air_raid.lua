@@ -28,7 +28,7 @@ function modifier_air_raid:OnCreated(kv)
 	if IsServer() then
 		self.radius = self:GetAbility():GetSpecialValueFor("radius")
 
-		local t_interval_bonus = self:GetParent():FetchTalent("special_bonus_aeronaut_4") or 0
+		local t_interval_bonus = self:GetParent():FindTalentValue("special_bonus_aeronaut_4") or 0
 		self.interval = self:GetAbility():GetSpecialValueFor("interval") + t_interval_bonus
 		
 		self:StartIntervalThink(self.interval)

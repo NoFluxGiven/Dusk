@@ -4,7 +4,7 @@ LinkLuaModifier("modifier_agony","lua/abilities/faust_agony",LUA_MODIFIER_MOTION
 
 -- function faust_agony:GetCooldown(level)
 -- 	local base_cooldown = self.BaseClass.GetCooldown(self, level)
--- 	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_faust_3") 
+-- 	local t_cooldown_reduction = self:GetCaster():FindTalentValue("special_bonus_faust_3") 
 -- 	if t_cooldown_reduction then return 0 end
 -- 	return base_cooldown
 -- end
@@ -23,7 +23,7 @@ function faust_agony:OnSpellStart()
 	local initial_damage = self:GetSpecialValueFor("initial_damage")
 	local radius = self:GetSpecialValueFor("radius")
 
-	-- if self:GetCaster():GetHasTalent("special_bonus_faust_agony") then damage = damage+80 end
+	-- if self:GetCaster():HasTalent("special_bonus_faust_agony") then damage = damage+80 end
 
 	local enemies = FindEnemies(caster, caster:GetAbsOrigin(), radius)
 

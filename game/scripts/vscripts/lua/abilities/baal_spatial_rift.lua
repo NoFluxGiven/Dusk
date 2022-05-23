@@ -26,17 +26,17 @@ function baal_spatial_rift:OnChannelFinish(interrupted)
 		local radius = self:GetSpecialValueFor("radius")
 		local duration = self:GetSpecialValueFor("duration")
 
-		local t_slow_duration_bonus = self:GetCaster():FetchTalent("special_bonus_baal_3") or 0
+		local t_slow_duration_bonus = self:GetCaster():FindTalentValue("special_bonus_baal_3") or 0
 		local slow_duration = self:GetSpecialValueFor("slow_duration") + t_slow_duration_bonus
 		
-		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_baal_1") or 0
+		local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_baal_1") or 0
 		local damage = self:GetSpecialValueFor("damage") + t_damage_bonus
 
 		local ability = caster:FindAbilityByName("baal_port_out")
 
 		local bonus = 0
 
-		if caster:GetHasTalent("special_bonus_baal_spatial_rift") then
+		if caster:HasTalent("special_bonus_baal_spatial_rift") then
 			bonus = 100
 		end
 

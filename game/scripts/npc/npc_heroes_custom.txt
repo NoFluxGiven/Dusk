@@ -643,11 +643,11 @@
 	"Ability9"				""
 	"Ability10"				"special_bonus_attack_range_75" //
 	"Ability11"				"special_bonus_attack_damage_25" //
-	"Ability12"				"special_bonus_bahamut_1" // +25 Desolation DPS
-	"Ability13"				"special_bonus_bahamut_2" // Fulmination Stacks -1 Armor
-	"Ability14"				"special_bonus_bahamut_3" // +50% Mega Flare Damage
+	"Ability12"				"special_bonus_bahamut_1" // 
+	"Ability13"				"special_bonus_bahamut_2" // 
+	"Ability14"				"special_bonus_bahamut_3" // 
 	"Ability15"				"special_bonus_evasion_15" // 
-	"Ability16"				"special_bonus_bahamut_4" // Desolation Applies Fulmination Stacks Per Tick in AoE
+	"Ability16"				"special_bonus_bahamut_4" // 
 	"Ability17"				"special_bonus_agility_25" // 
 
 	"ArmorPhysical"				"2"									// Physical protection.
@@ -4439,22 +4439,22 @@
 	// Lasts 3/4/5s.
 	"Ability8"				""
 	"Ability9"				""
-	"Ability10"				"special_bonus_war_1" // FIGHT ME!! Gains 40% Mana From Attacks
-	"Ability11"				"special_bonus_exp_boost_20" //
-	"Ability12"				"special_bonus_war_2" // +100 Earthbreaker Radius
-	"Ability13"				"special_bonus_magic_resistance_15" //
-	"Ability14"				"special_bonus_attack_damage_60"
-	"Ability15"				"special_bonus_war_3" // +25 Bloodlust DPS
-	"Ability16"				"special_bonus_hp_regen_25" //
-	"Ability17"				"special_bonus_war_4" // -4s Earthbreaker Cooldown
+	"Ability10"				"special_bonus_war_1" // 
+	"Ability11"				"special_bonus_hp_275" //
+	"Ability12"				"special_bonus_war_2" // 
+	"Ability13"				"special_bonus_war_3" //
+	"Ability14"				"special_bonus_attack_speed_40"
+	"Ability15"				"special_bonus_war_4" //
+	"Ability16"				"special_bonus_war_5" //
+	"Ability17"				"special_bonus_attack_damage_100" // 
 	
 
-	"ArmorPhysical"				"0"									// Physical protection.
+	"ArmorPhysical"				"1"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackRange"				"150"
-	"AttackRate"				"1.95"
+	"AttackRange"				"180"
+	"AttackRate"				"2.00"
 	"AttackDamageMin"			"30"										// Damage range min.
 	"AttackDamageMax"			"40"										// Damage range max.
 
@@ -4463,7 +4463,7 @@
 	"AttributeStrengthGain"		"3.2"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"17"										// Base intelligence
 	"AttributeIntelligenceGain"	"1.9"										// Intelligence bonus per level.
-	"AttributeBaseAgility"		"21"										// Base agility
+	"AttributeBaseAgility"		"15"										// Base agility
 	"AttributeAgilityGain"		"1.7"										// Agility bonus per level.
 
 	//"BountyXP"					"0"									// Experience earn.

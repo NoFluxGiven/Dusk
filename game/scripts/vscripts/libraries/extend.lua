@@ -145,6 +145,15 @@ function CDOTA_BaseNPC:IsEthereal()
 	end
 
 	return isEthereal
+
+end
+
+function CDOTA_BaseNPC:HasShard()
+	if self:HasModifier("modifier_item_aghanims_shard") then
+		return true
+	end
+
+	return false
 end
 
 -- Returns true if the Talent is skilled, false if not, nil if the Talent doesn't exist
@@ -213,10 +222,10 @@ function CDOTABaseAbility:InflictDamage(target,attacker,damage,damage_type,flags
 
   	if not self then return end
 
-  	print("INFLICT: ","ABILITY: "..self:GetName(),"DAMAGE/TYPE: "..damage.." / "..damage_type.." (FINAL DAMAGE: "..final_amount..")")
+  	--[[print("INFLICT: ","ABILITY: "..self:GetName(),"DAMAGE/TYPE: "..damage.." / "..damage_type.." (FINAL DAMAGE: "..final_amount..")")
   	if flags ~= 0 then
   		print("FLAGS: "..flags)
-  	end
+  	end]]
 
   	return final_amount
 

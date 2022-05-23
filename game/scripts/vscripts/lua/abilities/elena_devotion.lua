@@ -64,14 +64,14 @@ function modifier_devotion_effect:GetModifierConstantHealthRegen()
 end
 
 function modifier_devotion_effect:GetModifierPhysicalArmorBonus()
-	local bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_elena_1") or 0
+	local bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_elena_1") or 0
 	local stack = self:GetStackCount()
 
 	return bonus * stack
 end
 
 function modifier_devotion_effect:GetModifierMagicalResistanceBonus()
-	local bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_elena_2") or 0
+	local bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_elena_2") or 0
 	local stack = self:GetStackCount()
 
 	return bonus * stack

@@ -34,7 +34,8 @@ end
 function war_warbellow:Bellow(unit, radius, damage)
     if not IsServer() then return end
 
-    local reflect_duration = self:GetSpecialValueFor("reflect_duration")
+    t_reflect_duration = self:GetCaster():FindTalentValue("special_bonus_war_5")
+    local reflect_duration = self:GetSpecialValueFor("reflect_duration") + t_reflect_duration
 
     local p = ParticleManager:CreateParticle("particles/units/heroes/hero_war/fight_me_damage.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
 	ParticleManager:SetParticleControl(p, 1, Vector(radius,0,0))
@@ -81,8 +82,8 @@ function modifier_warbellow:OnTakeDamage(params)
     if params.unit == self:GetParent() then
         if params.original_damage > 0 then
 
-            if damage_flags ~= nil then
-                if ( bit.band(params.damage_flags, DAMAGE_FLAG_REFLECTION) == DAMAGE_FLAG_REFLECTION ) then
+            if params.damage_flags ~= nil then
+                if ( bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION ) then
                     return
                 end
             end
@@ -90,7 +91,7 @@ function modifier_warbellow:OnTakeDamage(params)
             local reflect = self:GetAbility():GetSpecialValueFor("reflect")
             local reflected_damage = params.original_damage * (reflect / 100)
 
-            DealDamage(params.attacker, self:GetCaster(), reflected_damage, params.damage_type, self:GetAbility(), DAMAGE_FLAG_REFLECTION)
+            self:GetAbility():InflictDamage(params.attacker, self:GetCaster(), reflected_damage, params.damage_type, self:GetAbility(), DOTA_DAMAGE_FLAG_REFLECTION)
         end
     end
 end

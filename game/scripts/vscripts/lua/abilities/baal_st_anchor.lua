@@ -7,7 +7,7 @@ function baal_st_anchor:OnSpellStart()
 	local target = self:GetCursorTarget()
 	local duration = self:GetSpecialValueFor("duration")
 
-	local t_radius_bonus = self:GetCaster():FetchTalent("special_bonus_baal_2") or 0
+	local t_radius_bonus = self:GetCaster():FindTalentValue("special_bonus_baal_2") or 0
 	local radius = self:GetSpecialValueFor("radius") + t_radius_bonus
 
 	if target:TriggerSpellAbsorb(self) then return end
@@ -15,7 +15,7 @@ function baal_st_anchor:OnSpellStart()
 
 	local bonus = 0
 
-	if caster:GetHasTalent("special_bonus_baal_st_anchor") then
+	if caster:HasTalent("special_bonus_baal_st_anchor") then
 		bonus = 8
 	end
 
@@ -52,7 +52,7 @@ function modifier_st_anchor:OnIntervalThink()
 	local caster = self:GetCaster()
 	local target = self:GetParent()
 
-	local t_radius_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_baal_2") or 0
+	local t_radius_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_baal_2") or 0
 	local radius = self:GetAbility():GetSpecialValueFor("radius") + t_radius_bonus
 	
 	local stun = self:GetAbility():GetSpecialValueFor("stun")

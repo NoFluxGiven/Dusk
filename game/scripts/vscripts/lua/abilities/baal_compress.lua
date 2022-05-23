@@ -92,7 +92,7 @@ end
 function baal_compress:GetCastRange()
 	if IsServer() then
 		local bonus = 0
-		if self:GetCaster():GetHasTalent("special_bonus_baal_compress") then
+		if self:GetCaster():HasTalent("special_bonus_baal_compress") then
 			bonus = 175
 		end
 		return 275 + bonus

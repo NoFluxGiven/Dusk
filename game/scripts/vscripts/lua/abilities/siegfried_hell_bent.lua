@@ -39,7 +39,7 @@ function modifier_hell_bent:CheckState()
 end
 
 function modifier_hell_bent:GetModifierAttackSpeedBonus_Constant()
-	local t_attack_speed_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_siegfried_3") or 0
+	local t_attack_speed_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_siegfried_3") or 0
 	return self:GetAbility():GetSpecialValueFor("attack_speed") + t_attack_speed_bonus
 end
 

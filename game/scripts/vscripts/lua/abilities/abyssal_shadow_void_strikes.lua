@@ -73,7 +73,7 @@ function modifier_void_strikes_burn:OnRefresh()
 end
 
 function modifier_void_strikes:GetModifierAttackRangeBonus()
-	local bonus = self:GetParent():GetOwner():FetchTalent("special_bonus_gemini_4") or 0
+	local bonus = self:GetParent():GetOwner():FindTalentValue("special_bonus_gemini_4") or 0
 	return bonus
 end
 

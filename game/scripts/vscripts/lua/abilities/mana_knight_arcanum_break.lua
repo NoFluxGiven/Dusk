@@ -62,7 +62,7 @@ function modifier_arcanum_break_hit:OnAttackLanded(params)
 		local attacker = params.attacker
 		local target = params.target or params.unit
 
-		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_mana_knight_2") or 0
+		local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_mana_knight_2") or 0
 
 		local damage = self:GetAbility():GetSpecialValueFor("bonus_damage") + t_damage_bonus
 		local mana_burn = self:GetAbility():GetSpecialValueFor("mana_burn")

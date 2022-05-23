@@ -50,7 +50,7 @@ function modifier_gaias_fury:OnAttackLanded(params)
 
 	if attacker == self:GetParent() then
 
-		local t_stun_bonus = attacker:FetchTalent("special_bonus_reus_2") or 0
+		local t_stun_bonus = attacker:FindTalentValue("special_bonus_reus_2") or 0
 
 		local stun = self:GetAbility():GetSpecialValueFor("stun") + t_stun_bonus
 		local slow = self:GetAbility():GetSpecialValueFor("slow_duration")

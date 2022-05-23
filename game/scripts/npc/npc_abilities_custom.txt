@@ -5271,28 +5271,28 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"125"
+			"damage"						"100"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"dps"							"15 25 35 45"
+			"dps"							"30 40 50 60"
 			"LinkedSpecialBonus"			"special_bonus_bahamut_1"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"8.0"
+			"duration"						"5.0"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"550"
+			"radius"						"575"
 		}
 	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"magic_res_reduction"			"15 20 25 30"
+			"magic_res_reduction"			"12 16 20 24"
 		}
 	}
 	
@@ -5325,6 +5325,8 @@
 	"AbilityTextureName"			"bahamut_fulmination"
 	"AnimationPlaybackRate"			"2.0"
 
+	"HasScepterUpgrade"               "1"
+
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"0"
@@ -5349,7 +5351,7 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"40 60 80 100"
+			"bonus_damage"					"30 50 70 90"
 		}
 		"02"
 		{
@@ -5359,7 +5361,8 @@
 		"03" 
 		{
 			"var_type"						"FIELD_INTEGER"
-			"attack_range_bonus"			"250"
+			"attack_range_bonus"			"225"
+			"LinkedSpecialBonus"			"special_bonus_bahamut_2"
 		}
 		"04"
 		{
@@ -5370,6 +5373,11 @@
 		{
 			"var_type"						"FIELD_FLOAT"
 			"duration"						"8.0"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"scepter_bonus_stacks"			"3"
 		}
 	}
 	
@@ -5477,7 +5485,9 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	"AbilityTextureName"			"bahamut_mega_flare"
-	"AoERadius"						"700"
+	"AoERadius"						"525"
+
+	"HasShardUpgrade"				"1"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
@@ -5503,12 +5513,12 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage_inner"					"300 400 500"
+			"damage_inner"					"250 350 450"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius_inner"					"275"
+			"radius_inner"					"250"
 		}
 	"03"
 		{
@@ -5518,12 +5528,22 @@
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius_outer"					"550"
+			"radius_outer"					"525"
 		}
 	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
 			"speed"							"315"
+		}
+	"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"scepter_dps"					"40 50 60 70"
+		}
+	"07"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"scepter_duration"				"20.0"
 		}
 	}
 	
@@ -17198,7 +17218,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
 	"AbilityCastRange"				"400 450 500 550"
-	"AbilityCooldown"				"5"
+	"AbilityCooldown"				"4"
 	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -17206,7 +17226,7 @@
 	
 	// Damage.
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"60 80 100 120"
+	"AbilityDamage"					"60 75 90 105"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -22026,12 +22046,17 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"4 6 8 10"
+			"bonus_damage"					"6 8 10 12"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"threshold"						"40"
+			"threshold"						"50"
+		}
+	"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"chance"						"25"
 		}
 	}
 	
@@ -22059,7 +22084,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1000"
+	"AbilityCastRange"				"700"
 	"AbilityCastPoint"				"0.1"
 	
 	// Time		
@@ -22068,7 +22093,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"125"
+	"AbilityManaCost"				"250"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -22081,7 +22106,12 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"4.5 5.75 7.0"
+			"damage"						"350"
+		}
+	"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"stat_reduction"				"30 40 50"
 		}
 	}
 	
@@ -22137,7 +22167,7 @@
 		"02"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"delay"							"4.00"
+			"delay"							"2.00"
 		}
 		"03"
 		{
@@ -22179,7 +22209,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"450"
+	"AbilityCastRange"				"425"
 	"AbilityCastPoint"				"0.2"
 	
 	// Time		
@@ -22201,17 +22231,17 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"delay"							"0.50"
+			"delay"							"0.25"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"radius"						"450"
+			"radius"						"425"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"slow"							"16 22 28 34"
+			"slow"							"12 24 36 48"
 		}
 	"04"
 		{
@@ -22229,11 +22259,17 @@
 			"var_type"						"FIELD_INTEGER"
 			"mult"							"50"
 		}
+	"07"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"creep_mult"					"25"
+		}
 	}
 	
 	"precache"
 		{
-		"particle" "particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_explode.vpcf"
+		"particle" "particles/units/heroes/hero_phantom/soul_wave.vpcf"
+		"particle" "particles/units/heroes/hero_phantom/soul_wave_return.vpcf"
 		"particle" "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
 		"soundfile" "soundevents\hero_phantom.vsndevts"
 		}
@@ -27563,6 +27599,11 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
+	"LinkedAbility"
+	{
+		"01" "bahamut_desolation"
+	}
+
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -27570,7 +27611,7 @@
 		"01"
 		{
 			"var_type" "FIELD_INTEGER"
-			"value" "0"
+			"value" "25"
 		}
 	}
 }
@@ -27592,7 +27633,7 @@
 		"01"
 		{
 			"var_type" "FIELD_INTEGER"
-			"value" "1"
+			"value" "275"
 		}
 	}
 }
@@ -27614,7 +27655,7 @@
 		"01"
 		{
 			"var_type" "FIELD_INTEGER"
-			"value" "0"
+			"value" "40"
 		}
 	}
 }
@@ -27636,7 +27677,7 @@
 		"01"
 		{
 			"var_type" "FIELD_INTEGER"
-			"value" "0"
+			"value" "2"
 		}
 	}
 }
@@ -32463,6 +32504,11 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
+	"LinkedAbility"
+	{
+		"01" "war_wrath"
+	}
+
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -32470,7 +32516,7 @@
 		"01"
 		{
 			"var_type" "FIELD_INTEGER"
-			"value" "40"
+			"value" "8"
 		}
 	}
 }
@@ -32478,33 +32524,6 @@
 // War Talent 2:
 //=================================================================================================================
 "special_bonus_war_2"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"special_bonus_unique_centaur_2"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-	"LinkedAbility"
-	{
-		"01" "war_earthbreaker"
-	}
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type" "FIELD_INTEGER"
-			"value" "100"
-		}
-	}
-}
-//=================================================================================================================
-// War Talent 3:
-//=================================================================================================================
-"special_bonus_war_3"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
@@ -32524,7 +32543,34 @@
 		"01"
 		{
 			"var_type" "FIELD_INTEGER"
-			"value" "25"
+			"value" "12"
+		}
+	}
+}
+//=================================================================================================================
+// War Talent 3:
+//=================================================================================================================
+"special_bonus_war_3"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"special_bonus_unique_centaur_2"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"LinkedAbility"
+	{
+		"01" "war_earthbreaker"
+	}
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_FLOAT"
+			"value" "0.7"
 		}
 	}
 }
@@ -32546,7 +32592,7 @@
 		"01"
 		{
 			"var_type" "FIELD_INTEGER"
-			"value" "4"
+			"value" "1"
 		}
 	}
 }
@@ -32560,6 +32606,11 @@
 	"BaseClass"						"special_bonus_unique_centaur_2"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+	"LinkedAbility"
+	{
+		"01" "war_warbellow"
+	}
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -32567,8 +32618,8 @@
 	{
 		"01"
 		{
-			"var_type" "FIELD_INTEGER"
-			"value" "0"
+			"var_type" "FIELD_FLOAT"
+			"value" "2.5"
 		}
 	}
 }
@@ -38529,13 +38580,14 @@
         {
             "var_type"              "FIELD_INTEGER"
             "dot"                   "10 15 20 25"
-            "LinkedSpecialBonus"    "special_bonus_war_3"
+            
         }
 
         "05"
         {
             "var_type"              "FIELD_INTEGER"
             "slow"                  "15 20 25 30"
+            "LinkedSpecialBonus"    "special_bonus_war_2"
         }
 
         "06"
@@ -38610,13 +38662,13 @@
         {
             "var_type"              "FIELD_INTEGER"
             "radius"                "310"
-            "LinkedSpecialBonus"    "special_bonus_war_2"
         }
 
         "02"
         {
             "var_type"              "FIELD_FLOAT"
             "stun"                  "1.25 1.50 1.75 2.00"
+            "LinkedSpecialBonus"    "special_bonus_war_3"
         }
 
         "03"
@@ -38829,7 +38881,6 @@
         {
             "var_type"              "FIELD_INTEGER"
             "radius"                "380"
-            "LinkedSpecialBonus"    "special_bonus_war_2"
         }
 
         "02"
@@ -38848,6 +38899,7 @@
         {
             "var_type"              "FIELD_FLOAT"
             "reflect_duration"      "3.5 4.0 4.5"
+            "LinkedSpecialBonus"    "special_bonus_war_5"
         }
 
         "05"
@@ -38915,14 +38967,14 @@
         "02"
         {
             "var_type"                  "FIELD_INTEGER"
-            "movespeed_bonus"           "8 16 24 32"
+            "movespeed_bonus"           "6 8 10 12"
         }
-        "02"
+        "03"
         {
             "var_type"                  "FIELD_INTEGER"
             "incoming_damage_bonus"     "30"
         }
-        "03"
+        "04"
         {
             "var_type"                  "FIELD_FLOAT"
             "duration"                  "3.5"

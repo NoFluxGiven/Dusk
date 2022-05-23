@@ -76,22 +76,24 @@ function C_DOTABaseAbility:FetchTalentDep(handle,suffix)
 	end
 end
 
-function C_DOTA_BaseNPC:FetchTalent(talent_name,val) -- returns the value attached to the Talent if it is learned, nil if not
-  local ei = self:GetEntityIndex()
-  local t = CustomNetTables:GetTableValue("learned_abilities", tostring(ei))
-  local val = val or "value"
+function C_DOTA_BaseNPC:FindTalentValue(talentName, key)
+	local ab = self:FindAbilityByName(talentName)
+	if ab then
+		if ab:GetLevel() > 0 then
+			local value_name = key or "value"
+			return ab:GetSpecialValueFor(value_name)
+		end
+	end
 
-  local v = nil
+	return 0
+end
 
-  if t then
-  	v = t[talent_name]
+function C_DOTA_BaseNPC:HasShard()
+	if self:HasModifier("modifier_item_aghanims_shard") then
+		return true
+	end
 
-  	if type(v) == "table" then
-  		v = v[val]
-  	end
-  end
-
-  return v
+	return false
 end
 
 -- function C_DOTA_BaseNPC:FetchTalent(talent_name,val) -- returns the value attached to the Talent if it is learned, nil if not

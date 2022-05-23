@@ -1,6 +1,7 @@
 -- This is the entry-point to your game mode and should be used primarily to precache models/particles/sounds/etc
 
 require('internal/util')
+require('internal/methods/Server_CBaseNPC')
 require('duskdota')
 
 function Precache( context )

@@ -4,7 +4,7 @@ LinkLuaModifier("modifier_arc_twister","lua/abilities/rai_arc_twister",LUA_MODIF
 
 function rai_arc_twister:GetCooldown(level)
 	local base_cooldown = self.BaseClass.GetCooldown(self, level)
-	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_rai_6") or 0
+	local t_cooldown_reduction = self:GetCaster():FindTalentValue("special_bonus_rai_6") or 0
 	return base_cooldown - t_cooldown_reduction
 end
 
@@ -32,7 +32,7 @@ function rai_arc_twister:OnSpellStart()
 	No Description Set
 	]]
 
-	local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_rai_3") or 0
+	local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_rai_3") or 0
 
 	damage = t_damage_bonus + damage
 

@@ -39,7 +39,7 @@ function rai_thunder_roar:FireBolt(fire_at_parent_origin)
 	local radius = self:GetSpecialValueFor("radius")
 	local damage = self:GetSpecialValueFor("damage")
 	local bolt_radius = self:GetSpecialValueFor("bolt_radius")
-	local t_stun_bonus = self:GetCaster():FetchTalent("special_bonus_rai_5") or 0
+	local t_stun_bonus = self:GetCaster():FindTalentValue("special_bonus_rai_5") or 0
 	local ministun = self:GetSpecialValueFor("stun") + t_stun_bonus
 
 	loc = self:GetCaster():GetAbsOrigin()
@@ -79,7 +79,7 @@ function modifier_thunder_roar:OnCreated()
 		local bolts = self:GetAbility():GetSpecialValueFor("bolts")
 		local duration = self:GetAbility():GetSpecialValueFor("duration")
 
-		-- local t_bolts_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_rai_5") or 0
+		-- local t_bolts_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_rai_5") or 0
 
 		--particle
 
@@ -138,7 +138,7 @@ end
 -- 	local radius = self:GetAbility():GetSpecialValueFor("radius")
 -- 	local damage = self:GetAbility():GetSpecialValueFor("damage")
 -- 	local bolt_radius = self:GetAbility():GetSpecialValueFor("bolt_radius")
--- 	local t_stun_bonus = self:GetParent():FetchTalent("special_bonus_rai_5") or 0
+-- 	local t_stun_bonus = self:GetParent():FindTalentValue("special_bonus_rai_5") or 0
 -- 	local ministun = self:GetAbility():GetSpecialValueFor("ministun") + t_stun_bonus
 
 -- 	if bolt_radius == 0 then bolt_radius = 225 end

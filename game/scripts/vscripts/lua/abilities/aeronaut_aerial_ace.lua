@@ -28,7 +28,7 @@ function modifier_aerial_ace:GetModifierMoveSpeedBonus_Percentage()
 end
 
 function modifier_aerial_ace:GetModifierAttackSpeedBonus_Constant()
-	local t_attack_speed_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_aeronaut_2") or 0
+	local t_attack_speed_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_aeronaut_2") or 0
 	return ( self:GetAbility():GetSpecialValueFor("bonus_attack_speed") + t_attack_speed_bonus ) * self:GetStackCount()
 end
 
@@ -55,7 +55,7 @@ function modifier_aerial_ace:OnAttackLanded(kv)
 
 		local slow_duration = self:GetAbility():GetSpecialValueFor("slow_duration")
 
-		local t_bash = attacker:FetchTalent("special_bonus_aeronaut_3")
+		local t_bash = attacker:FindTalentValue("special_bonus_aeronaut_3")
 
 		if attacker == self:GetParent() then
 			if attacker:HasFlyMovementCapability() and not target:HasFlyMovementCapability() and not target:IsBuilding() then

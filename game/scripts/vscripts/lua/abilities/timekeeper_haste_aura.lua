@@ -88,7 +88,7 @@ function modifier_haste_aura_effect:GetModifierMoveSpeedBonus_Percentage()
 end
 
 function modifier_haste_aura_effect:GetModifierAttackSpeedBonus_Constant()
-	local t_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_timekeeper_3") or 0
+	local t_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_timekeeper_3") or 0
 	local bonus = self:GetAbility():GetSpecialValueFor("attackspeed_boost") + t_bonus --[[Returns:table
 	No Description Set
 	]]
@@ -97,7 +97,7 @@ end
 
 function modifier_haste_aura_effect:OnAbilityExecuted( params )
 	if not self:GetAbility():IsCooldownReady() then return end
-	local t_reduction_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_timekeeper_4") or 0
+	local t_reduction_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_timekeeper_4") or 0
 	local reduction = (self:GetAbility():GetSpecialValueFor("cooldown_reduction")+t_reduction_bonus)/100
 	local chance = self:GetAbility():GetSpecialValueFor("chance")
 

@@ -111,7 +111,7 @@ function set_sands_of_war:OnSpellStart()
 		  	}
 		  }
 
-		  local t_summon_extra = self:GetCaster():FetchTalent("special_bonus_set_1")
+		  local t_summon_extra = self:GetCaster():FindTalentValue("special_bonus_set_1")
 
 		  if t_summon_extra then
 		  	table.insert(summonList.right,"npc_dota_unit_sand_puppet_archer")
@@ -140,7 +140,7 @@ function set_sands_of_war:OnSpellStart()
 
 					self:syncLevel(caster,summon,self:GetSpecialValueFor("mult"))
 
-					local t_attack_speed = self:GetCaster():FetchTalent("special_bonus_set_3")
+					local t_attack_speed = self:GetCaster():FindTalentValue("special_bonus_set_3")
 
 					if t_attack_speed then
 						summon:AddNewModifier(caster, self, "modifier_sands_of_war_attack_speed", {Duration=duration})
@@ -214,6 +214,6 @@ function modifier_sands_of_war_attack_speed:DeclareFunctions()
 end
 
 function modifier_sands_of_war_attack_speed:GetModifierAttackSpeedBonus_Constant()
-	local aspd = self:GetAbility():GetCaster():FetchTalent("special_bonus_set_3") or 0
+	local aspd = self:GetAbility():GetCaster():FindTalentValue("special_bonus_set_3") or 0
 	return aspd
 end

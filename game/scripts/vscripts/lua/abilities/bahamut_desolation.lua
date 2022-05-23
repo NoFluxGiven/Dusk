@@ -7,6 +7,7 @@ function bahamut_desolation:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 
+	
 	local duration = self:GetSpecialValueFor("duration")
 
 	local damage = self:GetSpecialValueFor("damage")
@@ -14,17 +15,11 @@ function bahamut_desolation:OnSpellStart()
 	if target:TriggerSpellAbsorb(self) then return end
 	-- target:TriggerSpellReflect(self)
 
-	if self:GetCaster():GetHasTalent("special_bonus_bahamut_desolation") then duration = duration+7 end
+	
 
 	target:AddNewModifier(caster, self, "modifier_desolation", {Duration = duration}) --[[Returns:void
 	No Description Set
 	]]
-
-	local mod = target:FindModifierByName("modifier_fulmination_stack")
-
-	if mod then
-		mod:SetDuration(0.03,true)
-	end
 
 	--DealDamage(target,caster,damage,DAMAGE_TYPE_MAGICAL,self)
 	-- DEALDAMAGE is somewhat deprecated in Lua Abilities, as we can use the superior InflictDamage() instead.
@@ -95,22 +90,18 @@ end
 modifier_desolation_aura = class({})
 
 function modifier_desolation_aura:OnCreated()
-	self:StartIntervalThink(1.0)
+	local t_interval = self:GetAbility():GetCaster():FindTalentValue("special_bonus_bahamut_4")
+	if t_interval < 1 then
+		t_interval = 1
+	end
+	local t_dps_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_bahamut_1")
+	self.dps = self:GetAbility():GetSpecialValueFor("dps") + t_dps_bonus
+	self:StartIntervalThink(1.0 / t_interval)
 end
 
 function modifier_desolation_aura:OnIntervalThink()
 	if IsServer() then
-		local t_dps_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_bahamut_1") or 0
-		self:GetAbility():InflictDamage(self:GetParent(),self:GetAbility():GetCaster(),self:GetAbility():GetSpecialValueFor("dps")+t_dps_bonus,DAMAGE_TYPE_MAGICAL)	
-
-		local t_fulmination = self:GetAbility():GetCaster():FetchTalent("special_bonus_bahamut_4")
-
-		if t_fulmination then
-			local ab = self:GetAbility():GetCaster():FindAbilityByName("bahamut_fulmination")
-			local duration = ab:GetSpecialValueFor("time")
-
-			self:GetParent():AddNewModifier(self:GetAbility():GetCaster(), ab, "modifier_fulmination_stack", {Duration=duration})
-		end
+		self:GetAbility():InflictDamage(self:GetParent(),self:GetAbility():GetCaster(),self.dps,DAMAGE_TYPE_MAGICAL)
 	end
 end
 

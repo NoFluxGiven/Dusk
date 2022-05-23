@@ -9,7 +9,7 @@ function hawkeye_hit_n_run:OnSpellStart()
 		local facing = c:GetForwardVector()
 		local distance = self:GetSpecialValueFor("distance")
 		local duration = self:GetSpecialValueFor("duration")
-		local t_damage_bonus = c:FetchTalent("special_bonus_hawkeye_1") or 0
+		local t_damage_bonus = c:FindTalentValue("special_bonus_hawkeye_1") or 0
 		local damage = self:GetAbilityDamage() + t_damage_bonus
 		local radius = self:GetSpecialValueFor("radius")
 
@@ -72,7 +72,7 @@ if IsServer() then
 	function modifier_hit_n_run_thinker:OnIntervalThink()
 		local c = self:GetAbility():GetCaster()
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
-		local t_damage_bonus = c:FetchTalent("special_bonus_hawkeye_1") or 0
+		local t_damage_bonus = c:FindTalentValue("special_bonus_hawkeye_1") or 0
 		local damage = self:GetAbility():GetSpecialValueFor("damage") + t_damage_bonus
 		local en = FindEnemies(c,self:GetParent():GetAbsOrigin(),radius)
 		local duration = self:GetAbility():GetSpecialValueFor("slow_duration")

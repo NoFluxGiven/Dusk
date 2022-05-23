@@ -33,7 +33,7 @@ if IsServer() then
 
 	function modifier_paranoia:OnIntervalThink()
 		local target = self:GetParent()
-		local t_damage_mult = self:GetAbility():GetCaster():FetchTalent("special_bonus_horror_4") or 1
+		local t_damage_mult = self:GetAbility():GetCaster():FindTalentValue("special_bonus_horror_4") or 1
 		local damage_hero = self:GetAbility():GetSpecialValueFor("hero_damage") * t_damage_mult
 		local damage_creep = self:GetAbility():GetSpecialValueFor("creep_damage") * t_damage_mult
 		local radius = self:GetAbility():GetSpecialValueFor("radius")

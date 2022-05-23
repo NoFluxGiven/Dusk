@@ -63,7 +63,7 @@ function modifier_diffusion:OnTakeDamage(params)
 
 		if dtype == DAMAGE_TYPE_MAGICAL then
 			local stack = self:GetStackCount()
-			local t_max_stacks_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_ouroboros_2") or 0
+			local t_max_stacks_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_ouroboros_2") or 0
 			local max = self:GetAbility():GetSpecialValueFor("max_stacks") + t_max_stacks_bonus
 			local per = self:GetAbility():GetSpecialValueFor("per")
 

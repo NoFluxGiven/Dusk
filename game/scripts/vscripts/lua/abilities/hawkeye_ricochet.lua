@@ -11,7 +11,7 @@ function hawkeye_ricochet:OnSpellStart()
 		local t = self:GetCursorTarget()
 		local c = self:GetCaster()
 
-		local t_bonus = c:FetchTalent("special_bonus_hawkeye_2") or 0
+		local t_bonus = c:FindTalentValue("special_bonus_hawkeye_2") or 0
 
 		local n = self:GetSpecialValueFor("hits") + t_bonus
 

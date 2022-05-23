@@ -28,7 +28,7 @@ if IsServer() then
 
 		local no_of_casts = 1
 
-		local t_manacost = self:GetAbility():GetCaster():FetchTalent("special_bonus_ouroboros_4") or 0
+		local t_manacost = self:GetAbility():GetCaster():FindTalentValue("special_bonus_ouroboros_4") or 0
 
 		local parent = self:GetParent()
 

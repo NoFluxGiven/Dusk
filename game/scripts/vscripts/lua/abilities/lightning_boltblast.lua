@@ -7,7 +7,7 @@ function lightning_boltblast:OnSpellStart()
 	local c = self:GetCaster()
 	local point = self:GetCursorPosition()+Vector(0,0,100)
 
-	local bonus = c:FetchTalent("special_bonus_lightning_3") or 0
+	local bonus = c:FindTalentValue("special_bonus_lightning_3") or 0
 
 	local delay = self:GetSpecialValueFor("explosion_delay")*(1+bonus/100)
 
@@ -34,7 +34,7 @@ if IsServer() then
 
 		local c = self:GetAbility():GetCaster()
 
-		local t_damage_bonus = c:FetchTalent("special_bonus_lightning_3") or 0
+		local t_damage_bonus = c:FindTalentValue("special_bonus_lightning_3") or 0
 
 		local damage = self:GetAbility():GetSpecialValueFor("explosion_damage")*(1+t_damage_bonus/100) --[[Returns:table
 		No Description Set

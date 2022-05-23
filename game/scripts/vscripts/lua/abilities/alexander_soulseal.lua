@@ -54,7 +54,7 @@ end
 
 function modifier_soulseal:GetModifierMoveSpeedBonus_Percentage()
 	local bonus = 0
-	if self:GetAbility():GetCaster():GetHasTalent("special_bonus_alexander_soulseal") then
+	if self:GetAbility():GetCaster():HasTalent("special_bonus_alexander_soulseal") then
 		bonus = 15
 	end
 	return self:GetAbility():GetSpecialValueFor("slow") - bonus

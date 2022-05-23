@@ -6,7 +6,7 @@ function bahamut_mega_flare:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorPosition()
 
-  local t_damage_bonus = caster:FetchTalent("special_bonus_bahamut_3") or 0
+  local t_damage_bonus = caster:FindTalentValue("special_bonus_bahamut_3")
 
 	local r = self:GetSpecialValueFor("radius_inner")
 	local dmg = self:GetSpecialValueFor("damage_inner")
@@ -16,13 +16,11 @@ function bahamut_mega_flare:OnSpellStart()
   dmg = dmg * (1+t_damage_bonus/100)
   dmg2 = dmg2 * (1+t_damage_bonus/100)
 
-	if self:GetCaster():GetHasTalent("special_bonus_bahamut_mega_flare") then dmg = dmg*1.4 dmg2 = dmg2*1.4 end
-
 	local min = 350
 
 	local d = (target - caster:GetAbsOrigin()):Normalized()
 
-	local s = self:GetSpecialValueFor("speed")
+	local s = self:GetSpecialValueFor("speed") * (1+t_damage_bonus/100)
 
 	local unit = FastDummy(caster:GetAbsOrigin()+Vector(0,0,350),caster:GetTeamNumber(),8,400)
 	local distance_unit = FastDummy(target,caster:GetTeamNumber(),1,0)
@@ -82,12 +80,44 @@ function bahamut_mega_flare:OnSpellStart()
                         false)
 
   		for k,v in pairs(enemy_inner) do
-  			DealDamage(v,caster,dmg,DAMAGE_TYPE_MAGICAL)
+  			self:InflictDamage(v,caster,dmg,DAMAGE_TYPE_MAGICAL)
   		end
   		for k,v in pairs(enemy_outer) do
-  			DealDamage(v,caster,dmg2,DAMAGE_TYPE_MAGICAL)
+  			self:InflictDamage(v,caster,dmg2,DAMAGE_TYPE_MAGICAL)
   		end
-
+		if self:GetCaster():HasShard() then
+			CreateModifierThinker(self:GetCaster(), self, "modifier_mega_flare_shard_thinker", {Duration=self:GetSpecialValueFor("scepter_duration")}, target, self:GetCaster():GetTeamNumber(), false)
+		end
   		ScreenShake(caster:GetCenter(), 2400, 170, 2, 1200, 0, true)
   	end)
+end
+
+
+LinkLuaModifier("modifier_mega_flare_shard_thinker","lua/abilities/bahamut_mega_flare",LUA_MODIFIER_MOTION_NONE)
+
+modifier_mega_flare_shard_thinker = class({})
+
+function modifier_mega_flare_shard_thinker:OnCreated()
+	self.scepter_dps = self:GetAbility():GetSpecialValueFor("scepter_dps")
+	self.radius_outer = self:GetAbility():GetSpecialValueFor("radius_outer")
+
+	self.particle = ParticleManager:CreateParticle("particles/units/heroes/hero_bahamut/mega_flare_shard_miasma.vpcf", PATTACH_WORLDORIGIN, nil)
+	ParticleManager:SetParticleControl(self.particle, 0, self:GetParent():GetAbsOrigin()+Vector(0,0,75))
+	ParticleManager:SetParticleControl(self.particle, 1, Vector(self.radius_outer,0,0))
+
+	self:StartIntervalThink(1.0)
+end
+
+function modifier_mega_flare_shard_thinker:OnIntervalThink()
+	local e = FindEnemies(self:GetAbility():GetCaster(), self:GetParent():GetAbsOrigin(), self.radius_outer)
+
+	for k,v in pairs(e) do
+		self:GetAbility():InflictDamage(v, self:GetAbility():GetCaster(), self.scepter_dps, DAMAGE_TYPE_MAGICAL)
+		--particle
+		--v:GetAbilityByIndex(1):CreateVisibilityNode(self:GetParent():GetAbsOrigin(), 155, 1.0)
+	end
+end
+
+function modifier_mega_flare_shard_thinker:OnDestroy()
+	ParticleManager:DestroyParticle(self.particle, false)
 end

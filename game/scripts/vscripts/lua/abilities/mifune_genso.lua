@@ -10,7 +10,7 @@ if IsServer() then
 
 		if t:TriggerSpellAbsorb(self) then return end
 
-		local t_illusion_bonus = c:FetchTalent("special_bonus_mifune_3") or 0
+		local t_illusion_bonus = c:FindTalentValue("special_bonus_mifune_3") or 0
 
 		local n = self:GetSpecialValueFor("illusions") + t_illusion_bonus
 

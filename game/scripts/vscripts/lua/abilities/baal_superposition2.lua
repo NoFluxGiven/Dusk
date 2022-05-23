@@ -74,7 +74,7 @@ function modifier_superposition:CheckState()
 		[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = false
 	}
 
-	local t_free_pathing = self:GetAbility():GetCaster():FetchTalent("special_bonus_baal_6")
+	local t_free_pathing = self:GetAbility():GetCaster():FindTalentValue("special_bonus_baal_6")
 
 	if self:GetAbility():GetCaster():IsStunned() then
 		self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_superposition_reveal", {Duration=1}) --[[Returns:void
@@ -120,7 +120,7 @@ function modifier_superposition:GetAbsoluteNoDamagePhysical()
 end
 
 function modifier_superposition:GetModifierMoveSpeedBonus_Percentage()
-	local t_movespeed_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_baal_4") or 0
+	local t_movespeed_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_baal_4") or 0
 	return self:GetAbility():GetSpecialValueFor("bonus_ms") + t_movespeed_bonus
 end
 

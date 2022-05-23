@@ -48,7 +48,7 @@ function modifier_amplify:OnIntervalThink()
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 		local damage = self:GetAbility():GetSpecialValueFor("damage")
 
-		local t_dps = self:GetAbility():GetCaster():FetchTalent("special_bonus_rai_2") or 0
+		local t_dps = self:GetAbility():GetCaster():FindTalentValue("special_bonus_rai_2") or 0
 
 		damage = damage + t_dps
 
@@ -68,7 +68,7 @@ function modifier_amplify:OnDestroy()
 		local bonus = 0
 		local etargets = self:GetAbility():GetSpecialValueFor("targets")
 
-		local t_target_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_rai_4") or 0
+		local t_target_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_rai_4") or 0
 
 		etargets = etargets + t_target_bonus
 

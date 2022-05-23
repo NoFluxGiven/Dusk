@@ -5,7 +5,7 @@ LinkLuaModifier("modifier_monsoon_user","lua/abilities/neith_monsoon",LUA_MODIFI
 
 function neith_monsoon:GetCooldown(level)
 	local base_cooldown = self.BaseClass.GetCooldown(self, level)
-	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_neith_5") or 0
+	local t_cooldown_reduction = self:GetCaster():FindTalentValue("special_bonus_neith_5") or 0
 
 	return base_cooldown - t_cooldown_reduction
 end
@@ -13,7 +13,7 @@ end
 function neith_monsoon:OnSpellStart()
 	local c = self:GetCaster()
 	local radius = self:GetSpecialValueFor("shock_radius")
-	local t_attack_steal_bonus = c:FetchTalent("special_bonus_neith_4") or 0
+	local t_attack_steal_bonus = c:FindTalentValue("special_bonus_neith_4") or 0
 	local attack_steal = self:GetSpecialValueFor("attack_steal") + t_attack_steal_bonus
 	local duration = self:GetSpecialValueFor("duration")
 	local damage = self:GetAbilityDamage()

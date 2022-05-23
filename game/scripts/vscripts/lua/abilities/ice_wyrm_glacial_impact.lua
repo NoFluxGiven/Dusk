@@ -3,7 +3,7 @@ ice_wyrm_glacial_impact = class({})
 function ice_wyrm_glacial_impact:OnSpellStart()
 	local delay = self:GetSpecialValueFor("delay")
 
-	local t_stun_bonus = self:GetCaster():FetchTalent("special_bonus_shard_magus_5") or 0
+	local t_stun_bonus = self:GetCaster():FindTalentValue("special_bonus_shard_magus_5") or 0
 	local duration = self:GetSpecialValueFor("stun_duration") + t_stun_bonus
 	local radius = self:GetSpecialValueFor("radius")
 	local t = self:GetCursorPosition()

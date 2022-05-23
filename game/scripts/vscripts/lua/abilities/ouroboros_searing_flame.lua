@@ -7,7 +7,7 @@ LinkLuaModifier("modifier_searing_flame_scepter_dot_display","lua/abilities/ouro
 function ouroboros_searing_flame:OnSpellStart()
 	local caster = self:GetCaster()
 	local point = self:GetCursorPosition()
-	local t_cast_range_bonus = self:GetCaster():FetchTalent("special_bonus_ouroboros_5") or 0
+	local t_cast_range_bonus = self:GetCaster():FindTalentValue("special_bonus_ouroboros_5") or 0
 	local range = self:GetSpecialValueFor("range") + t_cast_range_bonus
 	local d = (point - caster:GetAbsOrigin()):Normalized()
 	local start_radius = self:GetSpecialValueFor("start_radius")
@@ -46,14 +46,14 @@ end
 
 function ouroboros_searing_flame:GetCastRange()
 	local cast_range = self.BaseClass.GetCastRange(self, self:GetCaster():GetAbsOrigin(), self:GetCaster())
-	local t_cast_range_bonus = self:GetCaster():FetchTalent("special_bonus_ouroboros_5") or 0
+	local t_cast_range_bonus = self:GetCaster():FindTalentValue("special_bonus_ouroboros_5") or 0
 	return cast_range + t_cast_range_bonus
 end
 
 function ouroboros_searing_flame:OnProjectileHit(t,l)
 	if IsServer() then
 		local caster = self:GetCaster()
-		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_ouroboros_3") or 0
+		local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_ouroboros_3") or 0
 		local damage = self:GetSpecialValueFor("damage")+t_damage_bonus
 		local dtype = self:GetAbilityDamageType()
 		local slow_duration = self:GetSpecialValueFor("slow_duration")

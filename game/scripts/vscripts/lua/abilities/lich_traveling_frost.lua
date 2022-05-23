@@ -9,7 +9,7 @@ function lich_traveling_frost:OnSpellStart()
 		local tpos = self:GetCursorPosition()
 
 		local range = self:GetSpecialValueFor("range")
-		local t_speed_bonus = self:GetCaster():FetchTalent("special_bonus_lich_3") or 0
+		local t_speed_bonus = self:GetCaster():FindTalentValue("special_bonus_lich_3") or 0
 		local speed = self:GetSpecialValueFor("speed") + t_speed_bonus
 
 		local dir = (tpos - cpos):Normalized()
@@ -20,11 +20,11 @@ end
 
 function lich_traveling_frost:OnProjectileHit_ExtraData(t,l,ed)
 	if IsServer() then
-		local t_stun_bonus = self:GetCaster():FetchTalent("special_bonus_lich_5") or 0
+		local t_stun_bonus = self:GetCaster():FindTalentValue("special_bonus_lich_5") or 0
 		local stun = self:GetSpecialValueFor("stun") + t_stun_bonus
 		local damage = self:GetSpecialValueFor("damage")
 
-		local t_speed_bonus = self:GetCaster():FetchTalent("special_bonus_lich_3") or 0
+		local t_speed_bonus = self:GetCaster():FindTalentValue("special_bonus_lich_3") or 0
 		local speed = self:GetSpecialValueFor("speed") + t_speed_bonus
 
 		local max_hits = 1

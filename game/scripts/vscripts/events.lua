@@ -600,7 +600,7 @@ end
 function duskDota:OnPlayerChat(keys)
   local teamonly = keys.teamonly
   local userID = keys.userid
-  local playerID = self.vUserIds[userID]:GetPlayerID()
+  local playerID = self.vUserIds[userID]
 
   local text = keys.text
 

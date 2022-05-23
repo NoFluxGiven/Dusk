@@ -9,7 +9,7 @@ function lightning_overload:OnSpellStart()
 	local slow_duration = self:GetSpecialValueFor("slow_duration")
 	--local stun_duration = self:GetSpecialValueFor("ministun")
 	local invuln_duration = self:GetSpecialValueFor("invuln_duration")
-	local bonus = c:FetchTalent("special_bonus_lightning_2") or 0
+	local bonus = c:FindTalentValue("special_bonus_lightning_2") or 0
 	local damage = self:GetSpecialValueFor("damage") + bonus
 	local dtype = self:GetAbilityDamageType()
 

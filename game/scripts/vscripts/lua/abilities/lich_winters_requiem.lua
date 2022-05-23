@@ -7,7 +7,7 @@ function lich_winters_requiem:OnSpellStart()
 		local caster = self:GetCaster()
 		local radius = self:GetSpecialValueFor("radius")
 
-		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_lich_4") or 0
+		local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_lich_4") or 0
 		local damage = self:GetSpecialValueFor("damage") + t_damage_bonus
 
 		local n = self:GetSpecialValueFor("targets")
@@ -71,6 +71,6 @@ function modifier_winters_requiem:DeclareFunctions()
 end
 
 function modifier_winters_requiem:GetModifierMoveSpeedBonus_Percentage()
-	local t_slow_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_lich_2") or 0
+	local t_slow_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_lich_2") or 0
 	return -(self:GetAbility():GetSpecialValueFor("slow") + t_slow_bonus)
 end

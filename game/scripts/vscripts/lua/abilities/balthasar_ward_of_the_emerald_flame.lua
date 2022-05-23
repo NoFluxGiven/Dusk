@@ -9,7 +9,7 @@ function balthasar_ward_of_the_emerald_flame:OnSpellStart()
 
 		local caster = self:GetCaster()
 		local radius = self:GetSpecialValueFor("radius")
-		local t_radius_bonus = caster:FetchTalent("special_bonus_balthasar_3") or 0
+		local t_radius_bonus = caster:FindTalentValue("special_bonus_balthasar_3") or 0
 		local duration = self:GetSpecialValueFor("duration")
 		local pos = self:GetCursorPosition()
 		local caster_pos = caster:GetAbsOrigin()
@@ -53,7 +53,7 @@ end
 
 function modifier_ward_of_the_emerald_flame_aura:GetAuraRadius()
 	local radius = self:GetAbility():GetSpecialValueFor("radius")
-	local t_radius_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_balthasar_3") or 0
+	local t_radius_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_balthasar_3") or 0
 
 	radius = radius + t_radius_bonus
 
@@ -96,7 +96,7 @@ end
 
 function modifier_ward_of_the_emerald_flame_truesight_aura:GetAuraRadius()
 	local radius = self:GetAbility():GetSpecialValueFor("radius")
-	local t_radius_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_balthasar_3") or 0
+	local t_radius_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_balthasar_3") or 0
 
 	radius = radius + t_radius_bonus
 

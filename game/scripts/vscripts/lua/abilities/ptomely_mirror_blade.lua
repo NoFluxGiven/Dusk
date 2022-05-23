@@ -6,7 +6,7 @@ function ptomely_mirror_blade:OnSpellStart()
 
 	local origin = caster:GetAbsOrigin()
 
-	local t_blades_bonus = caster:FetchTalent("special_bonus_ptomely_2") or 0
+	local t_blades_bonus = caster:FindTalentValue("special_bonus_ptomely_2") or 0
 
 	local blades = self:GetSpecialValueFor("blades") + t_blades_bonus
 	local speed = self:GetSpecialValueFor("projectile_speed")

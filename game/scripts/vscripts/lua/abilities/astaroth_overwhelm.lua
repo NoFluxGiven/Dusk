@@ -4,7 +4,7 @@ LinkLuaModifier("modifier_overwhelm","lua/abilities/astaroth_overwhelm",LUA_MODI
 
 function astaroth_overwhelm:GetCooldown(level)
 	local base_cooldown = self.BaseClass.GetCooldown(self, level)
-	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_astaroth_3") 
+	local t_cooldown_reduction = self:GetCaster():FindTalentValue("special_bonus_astaroth_3") 
 	if t_cooldown_reduction then return 0 end
 	return base_cooldown
 end
@@ -22,7 +22,7 @@ function astaroth_overwhelm:OnSpellStart()
 	local damage = self:GetAbilityDamage()
 	local radius = self:GetSpecialValueFor("radius")
 
-	if self:GetCaster():GetHasTalent("special_bonus_astaroth_overwhelm") then damage = damage+80 end
+	if self:GetCaster():HasTalent("special_bonus_astaroth_overwhelm") then damage = damage+80 end
 
 	target:AddNewModifier(caster, self, "modifier_overwhelm", {Duration = duration, dmg = damage, rds = radius}) --[[Returns:void
 	No Description Set

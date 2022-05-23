@@ -6,7 +6,7 @@ function elena_starlight:OnSpellStart()
 		local point = self:GetCursorPosition()
 		local d = (point-caster:GetAbsOrigin()):Normalized()
 
-		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_elena_3") or 0
+		local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_elena_3") or 0
 
 		local damage = self:GetSpecialValueFor("damage") + t_damage_bonus
 		local delay = self:GetSpecialValueFor("delay")
@@ -92,7 +92,7 @@ function elena_starlight:OnSpellStart()
 				end
 			end
 
-			local t_hero_damage_bonus = self:GetCaster():FetchTalent("special_bonus_elena_5") or 0
+			local t_hero_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_elena_5") or 0
 
 			local bonus = (self:GetSpecialValueFor("damage_bonus")+t_hero_damage_bonus)*n
 			damage = damage+bonus

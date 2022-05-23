@@ -46,7 +46,7 @@ function artificer_reshape:OnSpellStart()
 	transform_sound = "Artificer.Reshape." .. t[r]
 	transform_particle = "particles/units/heroes/hero_artificer/reshape_"..t[r].."_statue_glow.vpcf"
 
-	if caster:GetHasTalent("special_bonus_artificer_reshape") then ToolsPrint("BONUS!!") duration_bonus = 1.5 end
+	if caster:HasTalent("special_bonus_artificer_reshape") then ToolsPrint("BONUS!!") duration_bonus = 1.5 end
 
 	local duration = (ability:GetSpecialValueFor("duration") + duration_bonus)*creep_mult
 
@@ -100,7 +100,7 @@ end
 
 -- function modifier_reshape_lua:GetModifierIncomingDamage_Percentage()
 -- 	-- local bonus = 0
--- 	-- if self:GetAbility():GetCaster():GetHasTalent("special_bonus_artificer_reshape") then bonus = 25 end
+-- 	-- if self:GetAbility():GetCaster():HasTalent("special_bonus_artificer_reshape") then bonus = 25 end
 -- 	return -(self:GetAbility():GetSpecialValueFor("damage_reduction")) --[[Returns:table
 -- 	No Description Set
 -- 	]]

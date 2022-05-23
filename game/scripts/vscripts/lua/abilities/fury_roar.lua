@@ -52,7 +52,7 @@ function fury_roar:OnProjectileHit(target)
 	local duration = self:GetSpecialValueFor("duration")
 	local stack = 1
 
-	local t_stun = self:GetCaster():FetchTalent("special_bonus_fury_4")
+	local t_stun = self:GetCaster():FindTalentValue("special_bonus_fury_4")
 
 	if not target then return end
 
@@ -144,6 +144,6 @@ end
 
 function modifier_roar_enemy:GetModifierMoveSpeedBonus_Percentage()
 	local stack = self:GetStackCount()
-	local t_slow_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_fury_1") or 0
+	local t_slow_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_fury_1") or 0
 	return -( self:GetAbility():GetSpecialValueFor("slow") + t_slow_bonus ) * stack
 end

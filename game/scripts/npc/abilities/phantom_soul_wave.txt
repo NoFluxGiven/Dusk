@@ -19,7 +19,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"450"
+	"AbilityCastRange"				"425"
 	"AbilityCastPoint"				"0.2"
 	
 	// Time		
@@ -41,17 +41,17 @@
 	"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"delay"							"0.50"
+			"delay"							"0.25"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"radius"						"450"
+			"radius"						"425"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"slow"							"16 22 28 34"
+			"slow"							"12 24 36 48"
 		}
 	"04"
 		{
@@ -69,11 +69,17 @@
 			"var_type"						"FIELD_INTEGER"
 			"mult"							"50"
 		}
+	"07"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"creep_mult"					"25"
+		}
 	}
 	
 	"precache"
 		{
-		"particle" "particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_explode.vpcf"
+		"particle" "particles/units/heroes/hero_phantom/soul_wave.vpcf"
+		"particle" "particles/units/heroes/hero_phantom/soul_wave_return.vpcf"
 		"particle" "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
 		"soundfile" "soundevents\hero_phantom.vsndevts"
 		}

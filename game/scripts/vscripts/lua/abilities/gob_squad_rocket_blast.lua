@@ -66,7 +66,7 @@ end
 
 function gob_squad_rocket_blast:OnProjectileThink( l )
 	local c = self:GetCaster()
-	local t_ride_the_rocket_blast = c:HasModifier("modifier_rocket_blast_ride") --self:GetCaster():FetchTalent("special_bonus_gob_squad_4")
+	local t_ride_the_rocket_blast = c:HasModifier("modifier_rocket_blast_ride") --self:GetCaster():FindTalentValue("special_bonus_gob_squad_4")
 
 	if t_ride_the_rocket_blast then
 		local groundpos = GetGroundPosition(l, c) + Vector(0,0,65)
@@ -81,12 +81,12 @@ function gob_squad_rocket_blast:OnProjectileHit(t, l)
 	if IsServer() then
 		local c = self:GetCaster()
 		local r = self:GetSpecialValueFor("radius")
-		local t_damage_bonus = c:FetchTalent("special_bonus_gob_squad_1") or 0
+		local t_damage_bonus = c:FindTalentValue("special_bonus_gob_squad_1") or 0
 		local d = self:GetAbilityDamage() + t_damage_bonus
 
 		
 
-		local t_ride_the_rocket_blast = c:HasModifier("modifier_rocket_blast_ride") --self:GetCaster():FetchTalent("special_bonus_gob_squad_4")
+		local t_ride_the_rocket_blast = c:HasModifier("modifier_rocket_blast_ride") --self:GetCaster():FindTalentValue("special_bonus_gob_squad_4")
 
 		if t_ride_the_rocket_blast then
 			FindClearSpaceForUnit(c, l, true)

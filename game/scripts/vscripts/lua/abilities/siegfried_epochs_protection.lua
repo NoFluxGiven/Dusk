@@ -26,7 +26,7 @@ function modifier_epochs_protection:OnAbilityFullyCast(params)
 	if par:PassivesDisabled() then return end
 
 	local duration = self:GetAbility():GetSpecialValueFor("duration")
-	local t_duration_bonus = par:FetchTalent("special_bonus_siegfried_4") or 0
+	local t_duration_bonus = par:FindTalentValue("special_bonus_siegfried_4") or 0
 	duration = duration + t_duration_bonus
 
 	if unit ~= par then return end
@@ -42,7 +42,7 @@ modifier_epochs_protection_immunity = class({})
 
 function modifier_epochs_protection_immunity:OnCreated(kv)
 	if IsServer() then
-		local t_purge = self:GetAbility():GetCaster():FetchTalent("special_bonus_siegfried_1")
+		local t_purge = self:GetAbility():GetCaster():FindTalentValue("special_bonus_siegfried_1")
 
 		if t_purge then
 			self:GetParent():Purge(false,true,false,false,false)

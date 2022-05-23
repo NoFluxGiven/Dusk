@@ -54,7 +54,7 @@ function siegfried_eon_shield:OnProjectileHit(t, l)
 			local caster = self:GetCaster()
 			local delay = self:GetSpecialValueFor("delay")
 			local radius = self:GetSpecialValueFor("radius")
-			local t_radius_bonus = caster:FetchTalent("special_bonus_siegfried_2") or 0
+			local t_radius_bonus = caster:FindTalentValue("special_bonus_siegfried_2") or 0
 			radius = radius + t_radius_bonus
 			local mod = CreateModifierThinker( caster, self, "modifier_eon_shield_thinker", {Duration=delay}, l, caster:GetTeamNumber(), false )
 
@@ -79,7 +79,7 @@ function modifier_eon_shield_thinker:OnDestroy()
 	if IsServer() then
 		local caster = self:GetAbility():GetCaster()
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
-		local t_radius_bonus = caster:FetchTalent("special_bonus_siegfried_2") or 0
+		local t_radius_bonus = caster:FindTalentValue("special_bonus_siegfried_2") or 0
 		radius = radius + t_radius_bonus
 		local p = ParticleManager:CreateParticle("particles/units/heroes/hero_siegfried/eon_shield.vpcf", PATTACH_WORLDORIGIN, nil)
 

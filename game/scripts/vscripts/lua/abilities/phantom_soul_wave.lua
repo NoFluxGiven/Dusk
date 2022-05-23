@@ -11,7 +11,7 @@ function phantom_soul_wave:OnSpellStart()
 
 		local delay = self:GetSpecialValueFor("delay")
 
-		local t_slow_duration_bonus = self:GetCaster():FetchTalent("special_bonus_phantom_2") or 0
+		local t_slow_duration_bonus = self:GetCaster():FindTalentValue("special_bonus_phantom_2") or 0
 		local slow_duration = self:GetSpecialValueFor("slow_duration") + t_slow_duration_bonus
 
 		local mult = self:GetSpecialValueFor("mult")
@@ -19,12 +19,11 @@ function phantom_soul_wave:OnSpellStart()
 		local damage = self:GetSpecialValueFor("damage")
 
 		caster:EmitSound("Phantom.SoulWave")
-
-		CreateParticleHitloc(caster, "particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_explode.vpcf")
+		CreateParticleHitloc(caster, "particles/units/heroes/hero_phantom/soul_wave.vpcf")
 
 		for k,v in pairs(enemies) do
 			local dmg = self:InflictDamage(v,caster,damage,DAMAGE_TYPE_MAGICAL)
-			if not v:IsHero() then dmg = dmg * 0.25 end
+			if not v:IsHero() then dmg = dmg * 0.50 end
 			v:AddNewModifier(caster, self, "modifier_soul_wave", {Duration=slow_duration})
 			caster:AddNewModifier(caster, self, "modifier_soul_wave_count", {Duration=delay*2,stacks=dmg})
 		end

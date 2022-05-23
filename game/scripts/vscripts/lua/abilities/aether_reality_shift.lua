@@ -84,7 +84,7 @@ end
 
 function aether_reality_shift:GetCooldown()
 	local base_cooldown = self.BaseClass.GetCooldown(self, self:GetLevel())
-	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_aether_3") or 0
+	local t_cooldown_reduction = self:GetCaster():FindTalentValue("special_bonus_aether_3") or 0
 	return base_cooldown - t_cooldown_reduction
 end
 

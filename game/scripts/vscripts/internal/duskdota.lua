@@ -1,5 +1,8 @@
 -- This function initializes the game mode and is called before anyone loads into the game
 -- It can be used to pre-initialize any values/tables that will be needed later
+
+require('settings')
+
 function duskDota:_InitduskDota()
   if duskDota._reentrantCheck then
     return
@@ -41,35 +44,35 @@ function duskDota:_InitduskDota()
 
 
   -- This is multiteam configuration stuff
-  -- if USE_AUTOMATIC_PLAYERS_PER_TEAM then
-  --   local num = math.floor(10 / MAX_NUMBER_OF_TEAMS)
-  --   local count = 0
-  --   for team,number in pairs(TEAM_COLORS) do
-  --     if count >= MAX_NUMBER_OF_TEAMS then
-  --       GameRules:SetCustomGameTeamMaxPlayers(team, 0)
-  --     else
-  --       GameRules:SetCustomGameTeamMaxPlayers(team, num)
-  --     end
-  --     count = count + 1
-  --   end
-  -- else
-  --   local count = 0
-  --   for team,number in pairs(CUSTOM_TEAM_PLAYER_COUNT) do
-  --     if count >= MAX_NUMBER_OF_TEAMS then
-  --       GameRules:SetCustomGameTeamMaxPlayers(team, 0)
-  --     else
-  --       GameRules:SetCustomGameTeamMaxPlayers(team, number)
-  --     end
-  --     count = count + 1
-  --   end
-  -- end
+  if USE_AUTOMATIC_PLAYERS_PER_TEAM then
+    local num = math.floor(10 / MAX_NUMBER_OF_TEAMS)
+    local count = 0
+    for team,number in pairs(TEAM_COLORS) do
+      if count >= MAX_NUMBER_OF_TEAMS then
+        GameRules:SetCustomGameTeamMaxPlayers(team, 0)
+      else
+        GameRules:SetCustomGameTeamMaxPlayers(team, num)
+      end
+      count = count + 1
+    end
+  else
+    local count = 0
+    for team,number in pairs(CUSTOM_TEAM_PLAYER_COUNT) do
+      if count >= MAX_NUMBER_OF_TEAMS then
+        GameRules:SetCustomGameTeamMaxPlayers(team, 0)
+      else
+        GameRules:SetCustomGameTeamMaxPlayers(team, number)
+      end
+      count = count + 1
+    end
+  end
 
-  -- if USE_CUSTOM_TEAM_COLORS then
-  --   for team,color in pairs(TEAM_COLORS) do
-  --     SetTeamCustomHealthbarColor(team, color[1], color[2], color[3])
-  --   end
-  -- end
-  --DebugPrint('[DUSKDOTA] GameRules set')
+  if USE_CUSTOM_TEAM_COLORS then
+    for team,color in pairs(TEAM_COLORS) do
+      SetTeamCustomHealthbarColor(team, color[1], color[2], color[3])
+    end
+  end
+  -- DebugPrint('[DUSKDOTA] GameRules set')
 
   --InitLogFile( "log/duskdota.txt","")
 --ListenToGameEvent(string EventName, handle functionNameToCall, handle context) --[[Returns:int ]]

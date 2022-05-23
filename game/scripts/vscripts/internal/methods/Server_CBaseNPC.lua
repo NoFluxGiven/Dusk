@@ -16,6 +16,15 @@ function CDOTA_BaseNPC:FindTalentValue(talentName, key)
 	return 0
 end
 
+function CDOTA_BaseNPC:FindTalentValueNil(talentName, key)
+	if self:HasAbility(talentName) then
+		local value_name = key or "value"
+		return self:FindAbilityByName(talentName):GetSpecialValueFor(value_name)
+	end
+
+	return nil
+end
+
 function CDOTA_BaseNPC:HighestTalentTypeValue(talentType)
 	local value = 0
 	for i = 0, 23 do

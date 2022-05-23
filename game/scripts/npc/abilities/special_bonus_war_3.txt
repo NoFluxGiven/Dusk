@@ -11,7 +11,7 @@
 
 	"LinkedAbility"
 	{
-		"01" "war_bloodlust"
+		"01" "war_earthbreaker"
 	}
 
 	// Special
@@ -20,8 +20,8 @@
 	{
 		"01"
 		{
-			"var_type" "FIELD_INTEGER"
-			"value" "25"
+			"var_type" "FIELD_FLOAT"
+			"value" "0.7"
 		}
 	}
 }

@@ -46,6 +46,6 @@ function modifier_enthrall:OnTakeDamage(params)
 end
 
 function modifier_enthrall:GetModifierMagicalResistanceBonus()
-	local t_reduction_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_ptomely_1") or 0
+	local t_reduction_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_ptomely_1") or 0
 	return -( self:GetAbility():GetSpecialValueFor("magic_resistance_reduction") + t_reduction_bonus )
 end

@@ -6,7 +6,7 @@ function ptomely_astralise:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 
-	local t_duration_bonus = caster:FetchTalent("special_bonus_ptomely_3") or 0
+	local t_duration_bonus = caster:FindTalentValue("special_bonus_ptomely_3") or 0
 
 	local duration = self:GetSpecialValueFor("duration") + t_duration_bonus
 	local damage = self:GetSpecialValueFor("damage")

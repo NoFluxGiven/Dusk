@@ -88,7 +88,7 @@ function modifier_one_punch_air:OnCreated(kv)
 			damage = scepter_damage * attack_damage + damage
 		end
 
-		local t_stun_bonus = caster:FetchTalent("special_bonus_hero_4") or 0
+		local t_stun_bonus = caster:FindTalentValue("special_bonus_hero_4") or 0
 
 		local stun = self:GetAbility():GetSpecialValueFor("landing_stun") + t_stun_bonus
 

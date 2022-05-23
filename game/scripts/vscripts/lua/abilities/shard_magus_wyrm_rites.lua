@@ -7,12 +7,12 @@ function shard_magus_wyrm_rites:OnSpellStart()
 	local delay = self:GetSpecialValueFor("delay")
 	local duration = self:GetSpecialValueFor("duration")
 
-	local t_lvl_bonus = self:GetCaster():FetchTalent("special_bonus_shard_magus_5")
+	local t_lvl_bonus = self:GetCaster():FindTalentValue("special_bonus_shard_magus_5")
 
 	local lvl = self:GetSpecialValueFor("level")
 	local radius = self:GetSpecialValueFor("radius")
 
-	-- local t_damage_bonus = FetchTalent("special_bonus_shard_magus_6") or 0
+	-- local t_damage_bonus = FindTalentValue("special_bonus_shard_magus_6") or 0
 
 	local unit_name = "npc_dota_unit_ice_wyrm"
 	local player = caster:GetPlayerID()

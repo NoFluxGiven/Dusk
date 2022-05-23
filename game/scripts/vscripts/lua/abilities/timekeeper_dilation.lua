@@ -5,7 +5,7 @@ LinkLuaModifier("modifier_dilation","lua/abilities/timekeeper_dilation",LUA_MODI
 function timekeeper_dilation:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
-	local t_duration_bonus = self:GetCaster():FetchTalent("special_bonus_timekeeper_1") or 0
+	local t_duration_bonus = self:GetCaster():FindTalentValue("special_bonus_timekeeper_1") or 0
 	local duration = self:GetSpecialValueFor("duration") + t_duration_bonus
 
 	target:AddNewModifier(caster, self, "modifier_dilation", {Duration=duration}) --[[Returns:void

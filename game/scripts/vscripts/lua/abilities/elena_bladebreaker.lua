@@ -46,7 +46,7 @@ if IsServer() then
 	function modifier_bladebreaker:OnAttackLanded(params)
 		local attacker = params.attacker
 		local damage = self:GetAbility():GetSpecialValueFor("base_damage")
-		local t_adamage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_elena_4") or 0
+		local t_adamage_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_elena_4") or 0
 		local adamage = (self:GetAbility():GetSpecialValueFor("attack_damage")+t_adamage_bonus)/100
 
 		local duration = self:GetAbility():GetSpecialValueFor("disarm_duration")

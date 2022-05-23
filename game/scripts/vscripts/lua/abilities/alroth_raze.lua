@@ -5,7 +5,7 @@ LinkLuaModifier("modifier_raze_aura","lua/abilities/alroth_raze",LUA_MODIFIER_MO
 
 function alroth_raze:GetCooldown(level)
 	local base_cooldown = self.BaseClass.GetCooldown(self, level)
-local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_alroth_4") or 0
+local t_cooldown_reduction = self:GetCaster():FindTalentValue("special_bonus_alroth_4") or 0
 	return base_cooldown - t_cooldown_reduction
 end
 
@@ -90,7 +90,7 @@ if IsServer() then
 		No Description Set
 		]]
 
-		local t_max_hp_damage = self:GetAbility():GetCaster():FetchTalent("special_bonus_alroth_3") or 0
+		local t_max_hp_damage = self:GetAbility():GetCaster():FindTalentValue("special_bonus_alroth_3") or 0
 		local mhp = self:GetParent():GetMaxHealth()
 
 		local damage_bonus = (mhp * (t_max_hp_damage/100))*0.5

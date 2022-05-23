@@ -4,7 +4,7 @@ LinkLuaModifier("modifier_photonic_barrier","lua/abilities/faust_photonic_barrie
 
 -- function faust_photonic_barrier:GetCooldown(level)
 -- 	local base_cooldown = self.BaseClass.GetCooldown(self, level)
--- 	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_faust_3") 
+-- 	local t_cooldown_reduction = self:GetCaster():FindTalentValue("special_bonus_faust_3") 
 -- 	if t_cooldown_reduction then return 0 end
 -- 	return base_cooldown
 -- end
@@ -22,7 +22,7 @@ function faust_photonic_barrier:OnSpellStart()
 	local radius = self:GetSpecialValueFor("truesight_radius")
 	local knockback = self:GetSpecialValueFor("knockback_distance")
 
-	-- if self:GetCaster():GetHasTalent("special_bonus_faust_photonic_barrier") then damage = damage+80 end
+	-- if self:GetCaster():HasTalent("special_bonus_faust_photonic_barrier") then damage = damage+80 end
 
 	caster:AddNewModifier(caster, self, "modifier_photonic_barrier", {Duration = duration, dmg = damage, rds = radius, kbk = knockback}) --[[Returns:void
 	No Description Set

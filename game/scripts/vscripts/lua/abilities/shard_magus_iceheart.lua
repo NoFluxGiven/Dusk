@@ -51,7 +51,7 @@ function modifier_iceheart:OnAbilityExecuted(params)
 			if manacost <= 0 then return end
 			if ability:IsItem() then return end
 
-			local t_health_restore = p:FetchTalent("special_bonus_shard_magus_2")
+			local t_health_restore = p:FindTalentValue("special_bonus_shard_magus_2")
 
 			if t_health_restore then
 				local hp = caster:GetMaxHealth()

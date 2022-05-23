@@ -39,28 +39,28 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"125"
+			"damage"						"100"
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"dps"							"15 25 35 45"
+			"dps"							"30 40 50 60"
 			"LinkedSpecialBonus"			"special_bonus_bahamut_1"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"8.0"
+			"duration"						"5.0"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"550"
+			"radius"						"575"
 		}
 	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"magic_res_reduction"			"15 20 25 30"
+			"magic_res_reduction"			"12 16 20 24"
 		}
 	}
 	

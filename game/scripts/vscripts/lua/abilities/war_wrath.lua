@@ -27,10 +27,18 @@ function modifier_wrath:OnCreated(kv)
     -- self.base_physical_damage_reduction = self:GetAbility():GetSpecialValueFor("base_physical_damage_reduction")
 
     self.attack_speed_bonus = self:GetAbility():GetSpecialValueFor("attack_speed_bonus")
-    self.movespeed_bonus = self:GetAbility():GetSpecialValueFor("movespeed_bonus")
+
+    local t_movespeed = self:GetAbility():GetCaster():FindTalentValue("special_bonus_war_1")
+
+    self.movespeed_bonus = self:GetAbility():GetSpecialValueFor("movespeed_bonus") + t_movespeed
     self.incoming_damage_bonus = self:GetAbility():GetSpecialValueFor("incoming_damage_bonus")
 
-    self:GetParent():Purge(false, true, false, true, false)
+    -- Purge Talent
+
+    local t_purge = self:GetAbility():GetCaster():FindTalentValue("special_bonus_war_4") == 1
+    if t_purge then
+        self:GetParent():Purge(false, true, false, true, false)
+    end
 end
 
 function modifier_wrath:DeclareFunctions()

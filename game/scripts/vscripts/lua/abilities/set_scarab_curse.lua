@@ -99,7 +99,7 @@ function modifier_scarab_curse:OnCreated(kv)
 
 			local pct = self:GetAbility():GetSpecialValueFor("percent_damage_reduction") / 100
 
-			local t_interval_reduction = self:GetAbility():GetCaster():FetchTalent("special_bonus_set_4") or 0
+			local t_interval_reduction = self:GetAbility():GetCaster():FindTalentValue("special_bonus_set_4") or 0
 			local interval = self:GetAbility():GetSpecialValueFor("interval") + t_interval_reduction
 
 			local stack = math.ceil(pct * admg) + bdmg
@@ -118,7 +118,7 @@ function modifier_scarab_curse:OnCreated(kv)
 
 			self:StartIntervalThink(interval)
 		else
-			local t_interval_reduction = self:GetAbility():GetCaster():FetchTalent("special_bonus_set_4") or 0
+			local t_interval_reduction = self:GetAbility():GetCaster():FindTalentValue("special_bonus_set_4") or 0
 			local interval = self:GetAbility():GetSpecialValueFor("interval") + t_interval_reduction
 			local stack = kv.stack
 

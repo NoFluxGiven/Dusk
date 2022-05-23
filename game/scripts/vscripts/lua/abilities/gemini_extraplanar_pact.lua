@@ -18,7 +18,7 @@ function gemini_extraplanar_pact:OnSpellStart()
 	local health_restore = self:GetSpecialValueFor("health_regen")
 	local mana_restore = self:GetSpecialValueFor("mana_regen")
 
-	local t_regen_bonus = self:GetCaster():FetchTalent("special_bonus_gemini_2") or 0
+	local t_regen_bonus = self:GetCaster():FindTalentValue("special_bonus_gemini_2") or 0
 
 	local hp = target:GetMaxHealth()
 	local mp = target:GetMaxMana()
@@ -73,12 +73,12 @@ function modifier_extraplanar_pact:DeclareFunctions()
 end
 	
 -- function modifier_extraplanar_pact:GetModifierConstantHealthRegen()
--- 	local t_regen_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_gemini_2") or 0
+-- 	local t_regen_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_gemini_2") or 0
 -- 	return self:GetAbility():GetSpecialValueFor("health_regen") + t_regen_bonus
 -- end
 
 -- function modifier_extraplanar_pact:GetModifierConstantManaRegen()
--- 	local t_regen_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_gemini_2") or 0
+-- 	local t_regen_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_gemini_2") or 0
 -- 	return self:GetAbility():GetSpecialValueFor("mana_regen") + t_regen_bonus
 -- end
 

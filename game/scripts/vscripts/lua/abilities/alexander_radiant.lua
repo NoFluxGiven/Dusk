@@ -24,7 +24,7 @@ function alexander_radiant:OnSpellStart()
 
 	local radius = self:GetSpecialValueFor("radius")
 
-	local t_damage = self:GetCaster():FetchTalent("special_bonus_alexander_2")
+	local t_damage = self:GetCaster():FindTalentValue("special_bonus_alexander_2")
 
 	local p = CreateParticleWorld(caster:GetCenter(), "particles/units/heroes/hero_alexander/raise_the_shield_dome.vpcf")
 
@@ -61,7 +61,7 @@ function alexander_radiant:OnSpellStart()
 	No Description Set
 	]]
 
-	local t_affects_allies = self:GetCaster():FetchTalent("special_bonus_alexander_4")
+	local t_affects_allies = self:GetCaster():FindTalentValue("special_bonus_alexander_4")
 
 	if t_affects_allies then
 		caster:AddNewModifier(caster, self, "modifier_radiant_allies", {Duration = duration})

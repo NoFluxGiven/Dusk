@@ -25,7 +25,7 @@ function modifier_deathstrike:OnAttackStart(params)
 		local attacker = params.attacker
 		local target = params.target or params.unit
 
-		local t_threshold_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_phantom_1") or 0
+		local t_threshold_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_phantom_1") or 0
 		local threshold = self:GetAbility():GetSpecialValueFor("threshold") + t_threshold_bonus
 
 		if attacker == self:GetParent() then
@@ -40,11 +40,15 @@ function modifier_deathstrike:OnAttackStart(params)
 			if target:GetHealthPercent() > threshold then return end
 
 			-- local r = RandomInt(0, 100)
-			-- local chance = 100 - self:GetAbility():GetSpecialValueFor("chance")
+			local chance = self:GetAbility():GetSpecialValueFor("chance")
+
+			if RollPseudoRandom(chance, self) then
+				attacker:AddNewModifier(attacker, self:GetAbility(), "modifier_deathstrike_hit", {})
+			end
 
 			-- if r >= chance then
 				-- attacker:EmitSound("Hero_ChaosKnight.ChaosStrike")
-				attacker:AddNewModifier(attacker, self:GetAbility(), "modifier_deathstrike_hit", {})
+				
 
 				-- ParticleManager:CreateParticle("particles/units/heroes/hero_mana_knight/deathstrikee.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
 			-- end
@@ -100,6 +104,6 @@ function modifier_deathstrike_debuff:DeclareFunctions()
 end
 
 function modifier_deathstrike_debuff:GetModifierDamageOutgoing_Percentage()
-	local t_reduction_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_phantom_3") or 0
+	local t_reduction_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_phantom_3") or 0
 	return -self:GetAbility():GetSpecialValueFor("damage_reduction") + t_reduction_bonus
 end

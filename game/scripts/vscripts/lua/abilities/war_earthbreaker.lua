@@ -4,7 +4,7 @@ LinkLuaModifier("modifier_earthbreaker_arena","lua/abilities/war_earthbreaker",L
 
 function war_earthbreaker:GetCooldown(level)
 	local base_cooldown = self.BaseClass.GetCooldown(self, level)
-	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_war_4") or 0
+	local t_cooldown_reduction = self:GetCaster():FindTalentValue("special_bonus_war_4") or 0
 	return base_cooldown - t_cooldown_reduction
 end
 
@@ -18,10 +18,10 @@ function war_earthbreaker:OnSpellStart()
 
 	local damage = self:GetSpecialValueFor("damage")
 
-	local t_radius_bonus = caster:FetchTalent("special_bonus_war_2") or 0
+	local radius = self:GetSpecialValueFor("radius")
 
-	local radius = self:GetSpecialValueFor("radius") + t_radius_bonus
-	local stun = self:GetSpecialValueFor("stun")
+	local t_stun = self:GetCaster():FindTalentValue("special_bonus_war_3")
+	local stun = self:GetSpecialValueFor("stun") + t_stun
 	local initial = true
 
 	self:Slam(caster, start, offset, extra_offset, damage, t_radius_bonus, radius, stun, initial, 0, max_count)

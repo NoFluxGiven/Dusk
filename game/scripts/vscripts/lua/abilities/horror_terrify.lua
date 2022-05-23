@@ -48,7 +48,7 @@ function modifier_terrify:OnIntervalThink(kv)
 		local p = self:GetParent()
 		local range = self:GetAbility():GetSpecialValueFor("range")
 
-		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_horror_1") or 0
+		local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_horror_1") or 0
 		local damage = self:GetAbility():GetSpecialValueFor("damage") + t_damage_bonus
 
 		local duration = self:GetAbility():GetSpecialValueFor("debuff_duration")

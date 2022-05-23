@@ -7,7 +7,7 @@ function elena_guardian_bubble:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	local duration = self:GetSpecialValueFor("duration")
-	local t_block_bonus = self:GetCaster():FetchTalent("special_bonus_elena_4") or 0
+	local t_block_bonus = self:GetCaster():FindTalentValue("special_bonus_elena_4") or 0
 	local block = self:GetSpecialValueFor("block") + t_block_bonus
 
 	local particle = "particles/units/heroes/hero_elena/guardian_bubble.vpcf"

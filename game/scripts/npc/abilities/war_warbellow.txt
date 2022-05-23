@@ -42,7 +42,6 @@
         {
             "var_type"              "FIELD_INTEGER"
             "radius"                "380"
-            "LinkedSpecialBonus"    "special_bonus_war_2"
         }
 
         "02"
@@ -61,6 +60,7 @@
         {
             "var_type"              "FIELD_FLOAT"
             "reflect_duration"      "3.5 4.0 4.5"
+            "LinkedSpecialBonus"    "special_bonus_war_5"
         }
 
         "05"

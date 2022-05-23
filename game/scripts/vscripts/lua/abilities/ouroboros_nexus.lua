@@ -38,10 +38,10 @@ if IsServer() then
 	function modifier_nexus_thinker:OnIntervalThink()
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 		
-		local t_stun_duration_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_ouroboros_1") or 0
+		local t_stun_duration_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_ouroboros_1") or 0
 		local stun = self:GetAbility():GetSpecialValueFor("stun")+t_stun_duration_bonus
 
-		local t_pure_piercing = self:GetAbility():GetCaster():FetchTalent("special_bonus_ouroboros_6")
+		local t_pure_piercing = self:GetAbility():GetCaster():FindTalentValue("special_bonus_ouroboros_6")
 		local damage = self:GetAbility():GetAbilityDamage()
 		local dtype = self:GetAbility():GetAbilityDamageType()
 

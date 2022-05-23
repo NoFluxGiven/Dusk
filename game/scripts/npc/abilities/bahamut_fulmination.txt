@@ -14,6 +14,8 @@
 	"AbilityTextureName"			"bahamut_fulmination"
 	"AnimationPlaybackRate"			"2.0"
 
+	"HasScepterUpgrade"               "1"
+
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"0"
@@ -38,7 +40,7 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"40 60 80 100"
+			"bonus_damage"					"30 50 70 90"
 		}
 		"02"
 		{
@@ -48,7 +50,8 @@
 		"03" 
 		{
 			"var_type"						"FIELD_INTEGER"
-			"attack_range_bonus"			"250"
+			"attack_range_bonus"			"225"
+			"LinkedSpecialBonus"			"special_bonus_bahamut_2"
 		}
 		"04"
 		{
@@ -59,6 +62,11 @@
 		{
 			"var_type"						"FIELD_FLOAT"
 			"duration"						"8.0"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"scepter_bonus_stacks"			"3"
 		}
 	}
 	

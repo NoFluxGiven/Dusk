@@ -27,7 +27,7 @@ function modifier_astaroth_deathmark:OnAttackLanded(params)
 	local target = params.target or params.unit
 	local dur = self:GetAbility():GetSpecialValueFor("duration")
 
-	local t_dur_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_astaroth_2") or 0
+	local t_dur_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_astaroth_2") or 0
 
 	local buff_dur = self:GetAbility():GetSpecialValueFor("bonus_duration") + t_dur_bonus
 	local stack = self:GetAbility():GetSpecialValueFor("hits")
@@ -106,7 +106,7 @@ end
 
 function modifier_astaroth_deathmark_buff:GetModifierProcAttack_BonusDamage_Pure()
 	local r = self:GetAbility():GetSpecialValueFor("bonus_damage")
-	local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_astaroth_4") or 0
+	local t_damage_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_astaroth_4") or 0
 	return r + t_damage_bonus
 end
 

@@ -50,7 +50,7 @@ function reus_stoneblast:OnProjectileHit(t,l)
 	if t then
 		local stun = self:GetSpecialValueFor("stun")
 
-		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_reus_3") or 0
+		local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_reus_3") or 0
 		local damage = self:GetSpecialValueFor("damage") + t_damage_bonus
 		t:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {Duration=stun})
 		self:InflictDamage(t,self:GetCaster(),damage,DAMAGE_TYPE_PHYSICAL)

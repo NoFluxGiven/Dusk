@@ -176,13 +176,13 @@ function modifier_monolith_speed_unit:GetModifierMoveSpeedBonus_Percentage()
 end
 
 function modifier_monolith_speed_unit:GetModifierConstantManaRegen()
-	local t_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_aether_4") or 0
+	local t_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_aether_4") or 0
 	return self:GetAbility():GetSpecialValueFor("monolith_manaregen")+t_bonus
 	
 end
 
 function modifier_monolith_speed_unit:GetModifierConstantHealthRegen()
-	local t_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_aether_4") or 0
+	local t_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_aether_4") or 0
 	return self:GetAbility():GetSpecialValueFor("monolith_healthregen")+t_bonus
 end
 
@@ -232,12 +232,12 @@ function modifier_monolith_slow_unit:GetModifierMovespeedBonus_Percentage()
 end
 
 function modifier_monolith_slow_unit:GetModifierConstantManaRegen()
-	local t_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_aether_4") or 0
+	local t_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_aether_4") or 0
 	return -(self:GetAbility():GetSpecialValueFor("monolith_manaregen")+t_bonus)
 	
 end
 
 function modifier_monolith_slow_unit:GetModifierConstantHealthRegen()
-	local t_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_aether_4") or 0
+	local t_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_aether_4") or 0
 	return -(self:GetAbility():GetSpecialValueFor("monolith_healthregen")+t_bonus)
 end

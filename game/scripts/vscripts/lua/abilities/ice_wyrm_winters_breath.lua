@@ -26,7 +26,7 @@ function modifier_winters_breath:OnAttackLanded(params)
 
 	if a ~= self:GetParent() then return end
 
-	local t_damage_bonus = a:FetchTalent("special_bonus_shard_magus_5") or 0
+	local t_damage_bonus = a:FindTalentValue("special_bonus_shard_magus_5") or 0
 
 	local d = self:GetAbility():GetSpecialValueFor("bonus_damage")+t_damage_bonus
 	local r = self:GetAbility():GetSpecialValueFor("radius")

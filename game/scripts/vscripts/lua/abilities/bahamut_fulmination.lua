@@ -40,7 +40,12 @@ function modifier_fulmination:OnCreated()
 	self:GetParent():EmitSound("Bahamut.Fulmination.StartUp")
 
 	self.debuff_duration = self:GetAbility():GetSpecialValueFor("debuff_duration")
-	self.stack_count = self:GetAbility():GetSpecialValueFor("stack_count")
+
+	local scepter_bonus = 0
+	if self:GetParent():HasScepter() then
+		scepter_bonus = self:GetAbility():GetSpecialValueFor("scepter_bonus_stacks")
+	end
+	self.stack_count = self:GetAbility():GetSpecialValueFor("stack_count") + scepter_bonus
 	self:SetStackCount(self.stack_count)
 end
 
@@ -118,7 +123,8 @@ end
 
 function modifier_fulmination:GetModifierAttackRangeBonus(params)
 	if not IsServer() then return end
-	local attack_range_bonus = self:GetAbility():GetSpecialValueFor("attack_range_bonus")
+	local t_attack_range_bonus = self:GetParent():FindTalentValue("special_bonus_bahamut_2")
+	local attack_range_bonus = self:GetAbility():GetSpecialValueFor("attack_range_bonus") + t_attack_range_bonus
 
 	if params.unit then
 		if params.unit:IsBuilding() then attack_range_bonus = 0 end
@@ -254,7 +260,7 @@ end
 -- end
 
 -- function modifier_fulmination_stack:GetModifierPhysicalArmorBonus()
--- 	local t_armor_reduction = self:GetAbility():GetCaster():FetchTalent("special_bonus_bahamut_2") or 0
+-- 	local t_armor_reduction = self:GetAbility():GetCaster():FindTalentValue("special_bonus_bahamut_2") or 0
 -- 	return -t_armor_reduction * self:GetStackCount()
 -- end
 

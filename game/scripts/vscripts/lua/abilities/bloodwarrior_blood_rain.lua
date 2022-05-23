@@ -9,7 +9,7 @@ function bloodwarrior_blood_rain:OnSpellStart()
 
 	local radius = self:GetSpecialValueFor("radius")
 
-	local t_duration_bonus = self:GetCaster():FetchTalent("special_bonus_bloodwarrior_1") or 0
+	local t_duration_bonus = self:GetCaster():FindTalentValue("special_bonus_bloodwarrior_1") or 0
 
 	local duration = self:GetSpecialValueFor("rain_duration") + t_duration_bonus
 

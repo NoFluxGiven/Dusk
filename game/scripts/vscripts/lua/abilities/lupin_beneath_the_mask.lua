@@ -17,7 +17,7 @@ end
 
 -- 		local duration = self:GetSpecialValueFor("duration")
 
--- 		local t_duration_bonus = FetchTalent("special_bonus_lupin_6") or 0
+-- 		local t_duration_bonus = FindTalentValue("special_bonus_lupin_6") or 0
 
 -- 		duration = duration + t_duration_bonus
 
@@ -57,7 +57,7 @@ function modifier_beneath_the_mask:OnAttackLanded(params)
 
 		
 
-		--local t_duration_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_lupin_6") or 0
+		--local t_duration_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_lupin_6") or 0
 
 		duration = duration --+ t_duration_bonus
 
@@ -112,7 +112,7 @@ function modifier_beneath_the_mask_slow:GetEffectAttachType()
 end
 
 function modifier_beneath_the_mask_slow:GetModifierMoveSpeedBonus_Percentage()
-	local t_slow_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_lupin_1") or 0
+	local t_slow_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_lupin_1") or 0
 	local val = -(self:GetAbility():GetSpecialValueFor("slow")+t_slow_bonus)
 
 	return val
@@ -126,7 +126,7 @@ function modifier_beneath_the_mask_slow:CheckState()
 		[MODIFIER_STATE_SILENCED] = true
 	}
 
-	if self:GetAbility():GetCaster():FetchTalent("special_bonus_lupin_6") then
+	if self:GetAbility():GetCaster():FindTalentValue("special_bonus_lupin_6") then
 		state[MODIFIER_STATE_MUTED] = true
 	end
 	return state
@@ -155,7 +155,7 @@ function modifier_beneath_the_mask_bonus:CheckState()
 end
 
 function modifier_beneath_the_mask_bonus:GetModifierMoveSpeedBonus_Percentage()
-	local t_slow_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_lupin_1") or 0
+	local t_slow_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_lupin_1") or 0
 	return (self:GetAbility():GetSpecialValueFor("slow")+t_slow_bonus)
 end
 function modifier_beneath_the_mask_bonus:GetModifierAttackSpeedBonus_Constant()

@@ -9,7 +9,7 @@ function nu_flux_field:OnSpellStart()
 	local target = self:GetCursorPosition()
 
 	local radius = self:GetSpecialValueFor("radius")
-	local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_nu_2") or 0
+	local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_nu_2") or 0
 	local damage = self:GetSpecialValueFor("damage_over_time") + t_damage_bonus
 	local cast_damage = self:GetSpecialValueFor("damage_per_spell")
 	local duration = self:GetSpecialValueFor("duration")
@@ -118,7 +118,7 @@ end
 function modifier_flux_field_aura:OnIntervalThink()
 	if IsServer() then
 		local damage = self:GetAbility():GetSpecialValueFor("damage_over_time")
-		local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_nu_2") or 0
+		local t_damage_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_nu_2") or 0
 
 		damage = damage + t_damage_bonus
 		self:GetAbility():InflictDamage(self:GetParent(),self:GetAbility():GetCaster(),damage,DAMAGE_TYPE_MAGICAL)

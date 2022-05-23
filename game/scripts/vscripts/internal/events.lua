@@ -90,9 +90,8 @@ function duskDota:_OnConnectFull(keys)
 
   duskDota:_CaptureduskDota()
 
-  local entIndex = keys.index+1
   -- The Player entity of the joining user
-  local ply = EntIndexToHScript(entIndex)
+  local ply = keys.PlayerID
   
   local userID = keys.userid
 

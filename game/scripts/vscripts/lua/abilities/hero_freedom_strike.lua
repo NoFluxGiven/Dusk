@@ -5,7 +5,7 @@ LinkLuaModifier("modifier_freedom_strike_slow","lua/abilities/hero_freedom_strik
 
 function hero_freedom_strike:GetCooldown(level)
 	local base_cooldown = self.BaseClass.GetCooldown(self, level)
-	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_hero_2") or 0
+	local t_cooldown_reduction = self:GetCaster():FindTalentValue("special_bonus_hero_2") or 0
 	return base_cooldown - t_cooldown_reduction
 end
 

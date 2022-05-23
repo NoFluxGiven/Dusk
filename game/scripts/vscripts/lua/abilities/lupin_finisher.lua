@@ -24,7 +24,7 @@ function lupin_finisher:OnSpellStart()
 
 	local duration = self:GetSpecialValueFor("slow_duration")
 
-	local t_duration_bonus = self:GetCaster():FetchTalent("special_bonus_lupin_3") or 0
+	local t_duration_bonus = self:GetCaster():FindTalentValue("special_bonus_lupin_3") or 0
 
 	duration = duration + t_duration_bonus
 	crit_duration = self:GetSpecialValueFor("bonus_slow_duration")

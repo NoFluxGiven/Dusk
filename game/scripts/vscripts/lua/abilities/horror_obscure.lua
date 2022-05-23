@@ -18,7 +18,7 @@ function horror_obscure:OnSpellStart()
 	for k,v in pairs(enemies) do
 		self:InflictDamage(v,caster,d,DAMAGE_TYPE_MAGICAL)
 
-		local t_stun = caster:FetchTalent("special_bonus_horror_3")
+		local t_stun = caster:FindTalentValue("special_bonus_horror_3")
 		Timers:CreateTimer(0.15,function()
 			v:AddNewModifier(caster, self, "modifier_obscure", {Duration=duration})
 			if t_stun then

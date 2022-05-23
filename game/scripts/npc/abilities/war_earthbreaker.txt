@@ -41,13 +41,13 @@
         {
             "var_type"              "FIELD_INTEGER"
             "radius"                "310"
-            "LinkedSpecialBonus"    "special_bonus_war_2"
         }
 
         "02"
         {
             "var_type"              "FIELD_FLOAT"
             "stun"                  "1.25 1.50 1.75 2.00"
+            "LinkedSpecialBonus"    "special_bonus_war_3"
         }
 
         "03"

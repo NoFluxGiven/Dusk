@@ -12,7 +12,7 @@ function shade_stalk:OnSpellStart()
 	local t = self:GetCursorTarget()
 	local duration = self:GetSpecialValueFor("duration")
 
-	local tbonus_duration = self:GetCaster():FetchTalent("special_bonus_shade_1")
+	local tbonus_duration = self:GetCaster():FindTalentValue("special_bonus_shade_1")
 
 	if tbonus_duration then
 		duration = duration+tbonus_duration
@@ -69,7 +69,7 @@ function modifier_stalk:OnAttackLanded(params)
 		]]
 		local poison_duration = self:GetAbility():GetSpecialValueFor("poison_duration")
 
-		local tbonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_shade_6")
+		local tbonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_shade_6")
 		if tbonus then
 			damage = damage+tbonus
 		end
@@ -150,7 +150,7 @@ function modifier_stalk_poison:OnIntervalThink()
 		local agh_interval = 14
 		local dot = self:GetAbility():GetSpecialValueFor("poison_damage_over_time")
 		local dmg = dot / 2
-		local tbonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_shade_2")
+		local tbonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_shade_2")
 		if tbonus then dmg = dmg + tbonus end
 		local dtype = self:GetAbility():GetAbilityDamageType()
 		self:GetAbility():InflictDamage(self:GetParent(),self:GetCaster(),dmg,dtype,DOTA_DAMAGE_FLAG_BYPASSES_BLOCK)

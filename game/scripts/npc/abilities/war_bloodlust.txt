@@ -76,13 +76,14 @@
         {
             "var_type"              "FIELD_INTEGER"
             "dot"                   "10 15 20 25"
-            "LinkedSpecialBonus"    "special_bonus_war_3"
+            
         }
 
         "05"
         {
             "var_type"              "FIELD_INTEGER"
             "slow"                  "15 20 25 30"
+            "LinkedSpecialBonus"    "special_bonus_war_2"
         }
 
         "06"

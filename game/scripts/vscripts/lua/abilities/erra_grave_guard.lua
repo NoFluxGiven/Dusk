@@ -39,7 +39,7 @@ if IsServer() then
 
 		if not caster:IsRealHero() then return end
 
-		local t_aura = self:GetCaster():FetchTalent("special_bonus_erra_5")
+		local t_aura = self:GetCaster():FindTalentValue("special_bonus_erra_5")
 
 		local cast_me = self:GetAbility():IsCooldownReady() and self:GetAbility():IsOwnersManaEnough()
 
@@ -92,7 +92,7 @@ function modifier_grave_guard_aura:IsAura()
 end
 
 function modifier_grave_guard_aura:GetAuraRadius()
-	return self:GetAbility():GetCaster():FetchTalent("special_bonus_erra_5") or 1
+	return self:GetAbility():GetCaster():FindTalentValue("special_bonus_erra_5") or 1
 end
 
 function modifier_grave_guard_aura:GetAuraSearchFlags()
@@ -136,11 +136,11 @@ function modifier_grave_guard_recovery:DeclareFunctions()
 end
 
 function modifier_grave_guard_recovery:GetModifierConstantHealthRegen()
-	local t_regen_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_erra_3") or 0
+	local t_regen_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_erra_3") or 0
 	return self:GetAbility():GetSpecialValueFor("hp_recovery") + t_regen_bonus
 end
 
 function modifier_grave_guard_recovery:GetModifierConstantManaRegen()
-	local t_regen_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_erra_3") or 0
+	local t_regen_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_erra_3") or 0
 	return self:GetAbility():GetSpecialValueFor("mp_recovery") + t_regen_bonus
 end

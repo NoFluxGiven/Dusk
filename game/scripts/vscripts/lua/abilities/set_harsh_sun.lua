@@ -95,7 +95,7 @@ function modifier_harsh_sun_aura:GetBonusDayVision()
 end
 
 function modifier_harsh_sun_aura:GetModifierAttackSpeedBonus_Constant()
-	local t_attack_slow_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_set_2") or 0
+	local t_attack_slow_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_set_2") or 0
 	local amt = self:GetAbility():GetSpecialValueFor("attack_slow") + t_attack_slow_bonus
 	local camt = self:GetAbility():GetSpecialValueFor("creep_attack_slow") + t_attack_slow_bonus
 	if not self:GetParent():IsHero() then

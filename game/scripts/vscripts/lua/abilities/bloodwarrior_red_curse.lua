@@ -28,7 +28,7 @@ function modifier_red_curse_caster:GetModifierBonusStats_Strength()
 
 	local amt = time / targ
 
-	local t_strength_drain = self:GetAbility():GetCaster():FetchTalent("special_bonus_bloodwarrior_3") or 0
+	local t_strength_drain = self:GetAbility():GetCaster():FindTalentValue("special_bonus_bloodwarrior_3") or 0
 
 	local tbonus = self:GetAbility():GetSpecialValueFor("str_drain") + t_strength_drain
 
@@ -82,7 +82,7 @@ function modifier_red_curse:GetModifierBonusStats_Strength()
 
 	local amt = time / targ
 
-	local t_strength_drain = self:GetAbility():GetCaster():FetchTalent("special_bonus_bloodwarrior_3") or 0
+	local t_strength_drain = self:GetAbility():GetCaster():FindTalentValue("special_bonus_bloodwarrior_3") or 0
 
 	local tbonus = self:GetAbility():GetSpecialValueFor("str_drain") + t_strength_drain
 

@@ -33,7 +33,7 @@ function modifier_bushido:GetEffectName()
 end
 
 function modifier_bushido:GetModifierMoveSpeedBonus_Percentage()
-	local t_bonus = self:GetParent():FetchTalent("special_bonus_mifune_2") or 0
+	local t_bonus = self:GetParent():FindTalentValue("special_bonus_mifune_2") or 0
 	return t_bonus
 end
 

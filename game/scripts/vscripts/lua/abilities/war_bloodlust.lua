@@ -61,7 +61,8 @@ function modifier_bloodlust:GetModifierAttackSpeedBonus_Constant()
 end
 
 function modifier_bloodlust:GetModifierMoveSpeedBonus_Percentage()
-	return -self:GetAbility():GetSpecialValueFor("slow")
+	local t_slow = self:GetAbility():GetCaster():FindTalentValue("special_bonus_war_2")
+	return -self:GetAbility():GetSpecialValueFor("slow") + t_slow
 end
 
 function modifier_bloodlust:OnCreated(kv)
@@ -71,16 +72,15 @@ function modifier_bloodlust:OnCreated(kv)
 	self.attack_damage_percent = self:GetAbility():GetSpecialValueFor("attack_damage_percent")
 
 	if IsServer() then
-		self:SetStackCount(math.floor(kv.stacks))
-		local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_war_3") or 0
-		self.damage = self:GetAbility():GetSpecialValueFor("dot") + t_damage_bonus
+		self:SetStackCount(1)
+		self.damage = self:GetAbility():GetSpecialValueFor("dot")
 	end
 end
 
 function modifier_bloodlust:OnRefresh(kv)
 	if IsServer() then
 		self:SetStackCount(math.floor(kv.stacks))
-		local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_war_3") or 0
+		local t_damage_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_war_3") or 0
 
 		local new_damage = self:GetAbility():GetSpecialValueFor("dot") + t_damage_bonus
 
@@ -117,9 +117,10 @@ function modifier_bloodlust:OnAttackLanded(kv)
 			-- tick damage on attack
 
 			kv.attacker:EmitSound("War.Bloodlust.Attack")
-			self:TickDamage(2)
+			self:TickDamage(self:GetStackCount())
+			self:IncrementStackCount()
 			
-
+		
 			-- if self:GetStackCount()-1 > 0 then
 			-- 	self:SetStackCount(self:GetStackCount()-1)
 			-- else

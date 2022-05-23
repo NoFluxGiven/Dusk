@@ -1,0 +1,4 @@
+git diff v2.14 HEAD --unified=0 -- game/scripts/npc/heroes/ game/scripts/npc/abilities/ game/scripts/npc/items/ game/scripts/npc/units/ > changelog_2.14_to_current.diff
+git diff v2.14 HEAD -- game/resource/addon_english.txt > changelog_tooltips_2.14_to_current.diff
+
+git diff v2.14 HEAD --unified=0 -- game/resource/addon_english.txt > changelog_tooltips_2.14_to_current.diff

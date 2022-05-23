@@ -22,7 +22,7 @@ function modifier_mana_seal_aoe:OnCreated(kv)
 
 		self:GetParent():EmitSound("Hero_Dazzle.Weave")
 
-		local t_silence = self:GetAbility():GetCaster():FetchTalent("special_bonus_mana_knight_1")
+		local t_silence = self:GetAbility():GetCaster():FindTalentValue("special_bonus_mana_knight_1")
 
 		if t_silence then
 			local enemies = FindEnemies(self:GetAbility():GetCaster(),self:GetParent():GetAbsOrigin(),self.radius)
@@ -32,7 +32,7 @@ function modifier_mana_seal_aoe:OnCreated(kv)
 			end
 		end
 
-		local t_drain_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_mana_knight_3") or 0
+		local t_drain_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_mana_knight_3") or 0
 
 		self.mana_drain = ( self:GetAbility():GetSpecialValueFor("mana_removal") + t_drain_bonus ) / 100
 		self.slow_duration = self:GetAbility():GetSpecialValueFor("slow_duration")

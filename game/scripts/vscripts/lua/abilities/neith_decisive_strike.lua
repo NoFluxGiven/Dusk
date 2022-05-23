@@ -37,7 +37,7 @@ if IsServer() then
 			No Description Set
 			]]
 			self:InflictDamage(t,c,d,dtype)
-			if c:FetchTalent("special_bonus_neith_3") then
+			if c:FindTalentValue("special_bonus_neith_3") then
 				c:PerformAttack( t, true, true, true, true, false, false, true )
 			end
 		end

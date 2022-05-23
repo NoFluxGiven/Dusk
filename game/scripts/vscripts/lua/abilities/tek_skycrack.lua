@@ -61,7 +61,7 @@ end
 
 function tek_skycrack:OnProjectileHit(t,l)
 	local c = self:GetCaster()
-	local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_tek_1") or 0
+	local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_tek_1") or 0
 	local damage = self:GetSpecialValueFor("damage") + t_damage_bonus
 	local slow_duration = self:GetSpecialValueFor("duration")
 	if t then

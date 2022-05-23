@@ -8,7 +8,7 @@ function hero_justice_kick:OnSpellStart()
 
 	local mod = "modifier_justice_kick"
 
-	local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_hero_3") or 0
+	local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_hero_3") or 0
 
 	local damage = self:GetSpecialValueFor("damage") + t_damage_bonus
 	local duration = self:GetSpecialValueFor("duration")

@@ -95,7 +95,7 @@ end
 -- 	local damage = params.damage
 -- 	local heal = self:GetAbility():GetSpecialValueFor("heal")
 -- 	local creep_heal = self:GetAbility():GetSpecialValueFor("creep_heal")
--- 	local tbonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_shade_3")
+-- 	local tbonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_shade_3")
 -- 	if tbonus then
 -- 		heal = (heal + tbonus)
 -- 		creep_heal = (creep_heal)

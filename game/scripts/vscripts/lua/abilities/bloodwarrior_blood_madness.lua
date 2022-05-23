@@ -36,7 +36,7 @@ end
 
 function modifier_blood_madness:GetModifierPreAttack_BonusDamage()
 	local bonus = self:GetAbility():GetSpecialValueFor("bonus_damage")
-	local t_damage = self:GetAbility():GetCaster():FetchTalent("special_bonus_bloodwarrior_4") or 0
+	local t_damage = self:GetAbility():GetCaster():FindTalentValue("special_bonus_bloodwarrior_4") or 0
 	return bonus + t_damage
 end
 

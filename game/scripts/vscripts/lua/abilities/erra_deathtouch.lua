@@ -57,7 +57,7 @@ function modifier_deathtouch_dot:OnIntervalThink()
 end
 
 function modifier_deathtouch_dot:GetModifierMoveSpeedBonus_Percentage()
-	local slow = self:GetAbility():GetCaster():FetchTalent("special_bonus_erra_4") or 0
+	local slow = self:GetAbility():GetCaster():FindTalentValue("special_bonus_erra_4") or 0
 	return -slow
 end
 

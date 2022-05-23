@@ -40,7 +40,7 @@ function modifier_snipe_caster:OnAttackLanded(params)
 			]]
 			self:SetStackCount(self:GetStackCount()-1)
 
-			local t_apply_det_dart = self:GetAbility():GetCaster():FetchTalent("special_bonus_hawkeye_3")
+			local t_apply_det_dart = self:GetAbility():GetCaster():FindTalentValue("special_bonus_hawkeye_3")
 
 			if t_apply_det_dart then
 				local ab = self:GetAbility():GetCaster():FindAbilityByName("hawkeye_detonator_dart")
@@ -60,7 +60,7 @@ function modifier_snipe_caster:OnAttackLanded(params)
 end
 
 function modifier_snipe_caster:GetModifierAttackRangeBonus()
-	local t_attack_range_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_hawkeye_4") or 0
+	local t_attack_range_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_hawkeye_4") or 0
 	return self:GetAbility():GetSpecialValueFor("attack_range_bonus") + t_attack_range_bonus
 end
 

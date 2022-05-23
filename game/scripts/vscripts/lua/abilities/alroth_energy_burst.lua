@@ -2,7 +2,7 @@ alroth_energy_burst = class({})
 
 function alroth_energy_burst:GetCooldown(level)
 	local base_cooldown = self.BaseClass.GetCooldown(self, level)
-	local t_cooldown_reduction = self:GetCaster():FetchTalent("special_bonus_alroth_2") or 0
+	local t_cooldown_reduction = self:GetCaster():FindTalentValue("special_bonus_alroth_2") or 0
 	return base_cooldown - t_cooldown_reduction
 end
 

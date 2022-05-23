@@ -25,7 +25,7 @@ function aeronaut_upwind:OnSpellStart()
 	local damage = self:GetSpecialValueFor("damage")
 	local duration = self:GetSpecialValueFor("duration")
 
-	local t_c_duration_bonus = self:GetCaster():FetchTalent("special_bonus_aeronaut_5") or 0
+	local t_c_duration_bonus = self:GetCaster():FindTalentValue("special_bonus_aeronaut_5") or 0
 	local c_duration = self:GetSpecialValueFor("bonus_duration") + duration + t_c_duration_bonus
 
 	local enemies = FindEnemies(caster,pos,radius)

@@ -41,7 +41,7 @@ function modifier_astaroth_pain_curse:OnTakeDamage(params)
 		local duration = self:GetAbility():GetSpecialValueFor("slow_duration")
 		local cooldown = self:GetAbility():GetSpecialValueFor("cooldown")
 
-		local t_damage_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_astaroth_1") or 0
+		local t_damage_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_astaroth_1") or 0
 
 		local damage = self:GetAbility():GetSpecialValueFor("damage") + t_damage_bonus
 

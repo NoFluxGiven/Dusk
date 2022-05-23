@@ -46,14 +46,14 @@
         "02"
         {
             "var_type"                  "FIELD_INTEGER"
-            "movespeed_bonus"           "8 16 24 32"
+            "movespeed_bonus"           "6 8 10 12"
         }
-        "02"
+        "03"
         {
             "var_type"                  "FIELD_INTEGER"
             "incoming_damage_bonus"     "30"
         }
-        "03"
+        "04"
         {
             "var_type"                  "FIELD_FLOAT"
             "duration"                  "3.5"

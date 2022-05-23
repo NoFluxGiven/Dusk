@@ -33,7 +33,7 @@ function modifier_micronebula_tracker:OnTakeDamage(params)
 		local attacker = params.attacker
 		local unit = params.target or params.unit
 
-		local t_pct_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_nu_1") or 0
+		local t_pct_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_nu_1") or 0
 
 		local pct = ( self:GetAbility():GetSpecialValueFor("damage") + t_pct_bonus ) / 100
 

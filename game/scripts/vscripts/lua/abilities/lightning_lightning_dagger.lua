@@ -6,7 +6,7 @@ function lightning_lightning_dagger:OnSpellStart()
 	local c = self:GetCaster()
 	local t = self:GetCursorTarget()
 	local s = 2000
-	local bonus = c:FetchTalent("special_bonus_lightning_1") or 0
+	local bonus = c:FindTalentValue("special_bonus_lightning_1") or 0
 	local bounces = self:GetSpecialValueFor("bounces")+bonus
 
 	c:EmitSound("Hero_PhantomAssassin.Dagger.Cast")

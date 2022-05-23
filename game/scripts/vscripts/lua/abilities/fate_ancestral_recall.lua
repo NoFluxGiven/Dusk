@@ -38,7 +38,7 @@ function fate_ancestral_recall:OnChannelFinish(interrupt)
 
 			target:Purge(true,true,false,true,false)
 
-			local t_percent_bonus = self:GetCaster():FetchTalent("special_bonus_fate_4") or 0
+			local t_percent_bonus = self:GetCaster():FindTalentValue("special_bonus_fate_4") or 0
 
 			local mhp = target:GetMaxHealth()
 			local percent = ( self:GetSpecialValueFor("heal_percent") + t_percent_bonus )/100

@@ -8,18 +8,18 @@ function aether_disrupt:OnSpellStart()
 	local damage = self:GetSpecialValueFor("damage")
 	local duration = self:GetSpecialValueFor("duration")
 
-	-- if caster:GetHasTalent("aether_disrupt") then
+	-- if caster:HasTalent("aether_disrupt") then
 	-- 	damage = damage + 60
 	-- end
 
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_aether/aether_disrupt.vpcf", PATTACH_ROOTBONE_FOLLOW, caster)
 
 	if caster:IsHero() then
-		if caster:GetHasTalent("special_bonus_aether_disrupt") then
+		if caster:HasTalent("special_bonus_aether_disrupt") then
 			damage = damage+80
 		end
 	else
-		if caster:GetOwner():GetHasTalent("special_bonus_aether_disrupt") then
+		if caster:GetOwner():HasTalent("special_bonus_aether_disrupt") then
 			damage = damage+80
 		end
 	end

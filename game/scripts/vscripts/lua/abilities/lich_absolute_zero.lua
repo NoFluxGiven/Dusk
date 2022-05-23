@@ -7,7 +7,7 @@ function lich_absolute_zero:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 
-	local t_duration_bonus = self:GetCaster():FetchTalent("special_bonus_lich_5") or 0
+	local t_duration_bonus = self:GetCaster():FindTalentValue("special_bonus_lich_5") or 0
 	local duration = self:GetSpecialValueFor("duration") + t_duration_bonus
 
 	if target:TriggerSpellAbsorb(self) then return end

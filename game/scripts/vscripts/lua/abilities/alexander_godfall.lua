@@ -241,7 +241,7 @@ function modifier_godfall:OnAttackLanded(params)
 
 		local damage = attacker:GetAverageTrueAttackDamage(attacker)
 
-		local t_multiplier_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_alexander_3") or 0
+		local t_multiplier_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_alexander_3") or 0
 
 		local m = (self:GetAbility():GetSpecialValueFor("damage")+t_multiplier_bonus) / 100
 

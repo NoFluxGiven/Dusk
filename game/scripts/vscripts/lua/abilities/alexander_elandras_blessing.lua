@@ -38,7 +38,7 @@ function modifier_elandras_blessing:GetModifierPreAttack_BonusDamage()
 end
 
 function modifier_elandras_blessing:GetModifierPhysicalArmorBonus()
-	local t_armor_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_alexander_1") or 0
+	local t_armor_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_alexander_1") or 0
 	return self:GetAbility():GetSpecialValueFor("bonus_armor") + t_armor_bonus
 end
 

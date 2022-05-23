@@ -26,7 +26,7 @@ function modifier_dashy_dashy:OnCreated(kv)
 
 		self.dir = dir
 
-		local t_distance_bonus = p:FetchTalent("special_bonus_aeronaut_1") or 0
+		local t_distance_bonus = p:FindTalentValue("special_bonus_aeronaut_1") or 0
 
 		local distance = self:GetAbility():GetSpecialValueFor("distance") + t_distance_bonus
 
@@ -61,7 +61,7 @@ function modifier_dashy_dashy:OnIntervalThink()
 		local damage = self:GetAbility():GetSpecialValueFor("damage")
 		local stun = self:GetAbility():GetSpecialValueFor("stun")
 
-		local t_knockback_bonus = p:FetchTalent("special_bonus_aeronaut_1") or 0
+		local t_knockback_bonus = p:FindTalentValue("special_bonus_aeronaut_1") or 0
 		local knockback = self:GetAbility():GetSpecialValueFor("knockback") + t_knockback_bonus
 
 		local enemies = FindEnemies(p,p:GetAbsOrigin(),radius)

@@ -5,7 +5,7 @@ function fate_realign:OnSpellStart()
 		local caster = self:GetCaster()
 		local radius = self:GetSpecialValueFor("shock_radius")
 
-		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_fate_3") or 0
+		local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_fate_3") or 0
 
 		local damage = self:GetSpecialValueFor("damage")
 

@@ -14,12 +14,12 @@ function reus_magnitude:OnSpellStart()
 	local duration = self:GetSpecialValueFor("duration")
 	local radius = self:GetSpecialValueFor("radius")
 
-	local t_interval_bonus = self:GetCaster():FetchTalent("special_bonus_reus_4") or 0
+	local t_interval_bonus = self:GetCaster():FindTalentValue("special_bonus_reus_4") or 0
 	local interval = self:GetSpecialValueFor("quake_interval") + t_interval_bonus
 	
 	local slow_duration = self:GetSpecialValueFor("slow_duration")
 
-	local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_reus_1") or 0
+	local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_reus_1") or 0
 	local damage = self:GetSpecialValueFor("damage") + t_damage_bonus
 
 	CreateModifierThinker( caster, self,

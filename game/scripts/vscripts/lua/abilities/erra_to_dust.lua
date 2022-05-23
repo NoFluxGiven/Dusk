@@ -14,7 +14,7 @@ if IsServer() then
 
 		local radius = self:GetSpecialValueFor("radius")
 
-		local t_duration_bonus = self:GetCaster():FetchTalent("special_bonus_erra_2") or 0
+		local t_duration_bonus = self:GetCaster():FindTalentValue("special_bonus_erra_2") or 0
 
 		local duration = self:GetSpecialValueFor("duration") + t_duration_bonus
 

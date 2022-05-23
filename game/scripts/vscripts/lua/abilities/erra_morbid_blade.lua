@@ -9,7 +9,7 @@ if IsServer() then
 		local radius = self:GetSpecialValueFor("radius")
 		local threshold = self:GetSpecialValueFor("pure_threshold")
 
-		local t_damage_bonus = self:GetCaster():FetchTalent("special_bonus_erra_1") or 0
+		local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_erra_1") or 0
 
 		local damage = self:GetAbilityDamage() + t_damage_bonus
 		local lifesteal = (self:GetSpecialValueFor("lifesteal")/100)

@@ -75,7 +75,7 @@ if IsServer() then
 
 		if parent ~= attacker then return end
 
-		local t_pct_bonus = self:GetAbility():GetCaster():FetchTalent("special_bonus_bloodwarrior_2") or 0
+		local t_pct_bonus = self:GetAbility():GetCaster():FindTalentValue("special_bonus_bloodwarrior_2") or 0
 		t_pct_bonus = t_pct_bonus/100
 
 		local pct = self:GetAbility():GetSpecialValueFor("hp_percent")/100 + t_pct_bonus
