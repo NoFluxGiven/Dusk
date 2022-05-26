@@ -65,6 +65,7 @@
 	"precache"
 		{
 		"particle" "particles/test_particle/channel_field_1.vpcf"
+		"particle" "particles/units/heroes/hero_mifune/bushido_counter_attack.vpcf"
 		"particle" "particles/units/heroes/hero_skeletonking/skeleton_king_weapon_blur_critical.vpcf"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
 		}
