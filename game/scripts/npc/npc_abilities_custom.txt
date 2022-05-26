@@ -19188,6 +19188,7 @@
 	"precache"
 		{
 		"particle" "particles/test_particle/channel_field_1.vpcf"
+		"particle" "particles/units/heroes/hero_mifune/bushido_counter_attack.vpcf"
 		"particle" "particles/units/heroes/hero_skeletonking/skeleton_king_weapon_blur_critical.vpcf"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
 		}
@@ -19206,7 +19207,7 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/mifune_genso"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -19215,12 +19216,12 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"325"
+	"AbilityCastRange"				"500"
 	"AbilityCastPoint"				"0.0"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"25"
+	"AbilityCooldown"				"25 23 21 19"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -19237,7 +19238,7 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusion_damage"				"-80" // percentage total
+			"illusion_damage"				"-60" // percentage total
 		}
 	"02"
 		{
@@ -19246,13 +19247,13 @@
 		}
 	"03"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"illusion_duration"				"5"
+			"var_type"						"FIELD_FLOAT"
+			"illusion_duration"				"6"
 		}
 	"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusion_tooltip"				"20" // percentage total
+			"illusion_tooltip"				"40" // percentage total
 		}
 	"05"
 		{
@@ -19462,7 +19463,7 @@
 	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"slow"							"-25"
+			"slow"							"-35"
 		}
 	"06"
 		{
@@ -19537,7 +19538,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"attack_interval"			"0.10"
+			"attack_interval"			"0.12"
 		}
 
 		"04"

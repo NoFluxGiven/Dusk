@@ -6,6 +6,13 @@ LinkLuaModifier("modifier_zanmato_target_hero","lua/abilities/mifune_zanmato",LU
 LinkLuaModifier("modifier_zanmato_caster","lua/abilities/mifune_zanmato",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_zanmato_dummy","lua/abilities/mifune_zanmato",LUA_MODIFIER_MOTION_NONE)
 
+function TableConcat(t1,t2)
+    for i=1,#t2 do
+        t1[#t1+1] = t2[i]
+    end
+    return t1
+end
+
 function mifune_zanmato:OnSpellStart()
 	if IsServer() then
 		-- Cannot cast multiple stacks
@@ -18,7 +25,7 @@ function mifune_zanmato:OnSpellStart()
 		-- Inheritted variables
 		local caster = self:GetCaster()
 		local main_target = self:GetCursorTarget()
-		local targetPoint = main_target:GetAbsOrigin()
+		local targetPoint = main_target:GetAbsOrigin() - Vector(0,0,175)
 		local ability = self
 		local radius = ability:GetSpecialValueFor( "radius" )
 		local attack_interval = ability:GetSpecialValueFor( "attack_interval" )
@@ -27,7 +34,7 @@ function mifune_zanmato:OnSpellStart()
 		local modifierHeroName = "modifier_zanmato_target_hero"
 		local casterModifierName = "modifier_zanmato_caster"
 		local dummyModifierName = "modifier_zanmato_dummy"
-		local particleSlashName = "particles/units/heroes/hero_ember_spirit/ember_spirit_sleightoffist_tgt.vpcf"
+		local particleSlashName = "particles/units/heroes/hero_mifune/bushido_counter_attack.vpcf"
 		local particleTrailName = "particles/units/heroes/hero_ember_spirit/ember_spirit_sleightoffist_trail.vpcf"
 		local particleCastName = "particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_cast.vpcf"
 		local slashSound = "Hero_EmberSpirit.SleightOfFist.Damage"
@@ -43,6 +50,8 @@ function mifune_zanmato:OnSpellStart()
 		caster.zanmato_active = true
 		local dummy = CreateUnitByName( caster:GetName(), caster:GetAbsOrigin(), false, caster, nil, caster:GetTeamNumber() )
 		dummy:AddNewModifier( caster, self, dummyModifierName, {} )
+
+		caster:AddNewModifier( caster, self, casterModifierName, {})
 		
 		-- Casting particles
 		local castFxIndex = ParticleManager:CreateParticle( particleCastName, PATTACH_CUSTOMORIGIN, caster )
@@ -60,12 +69,13 @@ function mifune_zanmato:OnSpellStart()
 		)
 		
 		-- Start function
-		local castFxIndex = ParticleManager:CreateParticle( particleCastName, PATTACH_CUSTOMORIGIN, caster )
 		local units = FindUnitsInRadius(
 			caster:GetTeamNumber(), targetPoint, caster, radius, targetTeam,
 			targetType, targetFlag, unitOrder, false
 		)
-		
+
+		-- units = TableConcat(units, units)
+
 		for _, target in pairs( units ) do
 			counter = counter + 1
 			Timers:CreateTimer( counter * attack_interval, function()
@@ -73,8 +83,8 @@ function mifune_zanmato:OnSpellStart()
 					if target:IsAlive() then
 						target:AddNewModifier( caster, self, modifierTargetName, {} )
 						local trailFxIndex = ParticleManager:CreateParticle( particleTrailName, PATTACH_CUSTOMORIGIN, target )
-						ParticleManager:SetParticleControl( trailFxIndex, 0, target:GetAbsOrigin() )
-						ParticleManager:SetParticleControl( trailFxIndex, 1, caster:GetAbsOrigin() )
+						ParticleManager:SetParticleControl( trailFxIndex, 0, target:GetAbsOrigin() - Vector(0,0,175) )
+						ParticleManager:SetParticleControl( trailFxIndex, 1, caster:GetAbsOrigin() - Vector(0,0,175) )
 						
 						Timers:CreateTimer( 0.1, function()
 								ParticleManager:DestroyParticle( trailFxIndex, false )
