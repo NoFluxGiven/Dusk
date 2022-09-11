@@ -1,0 +1,2 @@
+cd "tools/_diff_changelog"
+. .env/Scripts/activate

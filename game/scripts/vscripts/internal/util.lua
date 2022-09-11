@@ -1349,3 +1349,7 @@ function RollPseudoRandom(base_chance, entity)
 		return false
 	end
 end
+
+function HeroParticle(hero, name)
+  return "particles/units/heroes/hero_"..hero:lower().."/"..name:lower()..".vpcf"
+end

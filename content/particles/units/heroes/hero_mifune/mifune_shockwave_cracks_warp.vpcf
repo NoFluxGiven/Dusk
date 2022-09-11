@@ -1,51 +1,34 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_ConstantColor =
-	[
-		255,
-		0,
-		0,
-		255,
-	]
-	m_flConstantRadius = 1.000000
+	m_ConstantColor = [ 0, 255, 0, 255 ]
+	m_flConstantRadius = 1.0
 	m_nMaxParticles = 128
 	m_bShouldHitboxesFallbackToRenderBounds = false
-	m_Operators =
+	m_nBehaviorVersion = 12
+	m_controlPointConfigurations = 
 	[
 		{
-			_class = "C_OP_FadeOutSimple"
-			m_flFadeOutTime = 1.000000
-		},
-		{
-			_class = "C_OP_Decay"
-		},
-		{
-			_class = "C_OP_InterpolateRadius"
-			m_flStartScale = 0.000000
-			m_flEndScale = 4.000000
-			m_flBias = 0.750000
+			m_name = "preview"
 		},
 	]
-	m_Renderers =
+	m_Emitters = 
 	[
 		{
-			_class = "C_OP_RenderSprites"
-			m_nOrientationType = 2
-			m_bGammaCorrectVertexColors = false
-			m_nSequenceCombineMode = "2"
-			m_bRefract = true
-			m_flRefractAmount = -0.500000
-			m_nRefractBlurType = "2"
-			m_hTexture = resource:"materials/particle/warp_flare_02.vtex"
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 64.0
+			}
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 140.000000
-			m_flRadiusMax = 160.000000
+			m_flRadiusMin = 140.0
+			m_flRadiusMax = 160.0
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
@@ -53,8 +36,8 @@
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 0.100000
-			m_fLifetimeMax = 0.200000
+			m_fLifetimeMin = 0.3
+			m_fLifetimeMax = 0.4
 		},
 		{
 			_class = "C_INIT_CreateFromParentParticles"
@@ -63,11 +46,37 @@
 			_class = "C_INIT_RandomRotation"
 		},
 	]
-	m_Emitters =
+	m_Operators = 
 	[
 		{
-			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 64.000000
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 1.0
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 0.0
+			m_flEndScale = 4.0
+			m_flBias = 0.75
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nOrientationType = "PARTICLE_ORIENTATION_WORLD_Z_ALIGNED"
+			m_bGammaCorrectVertexColors = false
+			m_bRefract = true
+			m_flRefractAmount = -0.5
+			m_nRefractBlurType = "2"
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/warp_flare_02.vtex"
+				},
+			]
 		},
 	]
 }

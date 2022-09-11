@@ -1,0 +1,89 @@
+"npc_dota_hero_dark_seer"
+{
+	"AbilityLayout" 		"4"
+	// "override_hero"			"npc_dota_hero_dark_seer"
+	"Role"					"Carry,Nuker"
+	"Rolelevels"			"3,2"
+	"Complexity"			"2"
+	"Ability1"				"luminary_stop"
+	// Luminary applies a debuff that, when he chooses, stuns and damages the target
+	// based on the time it spent applied.
+	// Deals 10/20/30/40 damage per second applied.
+	// Stuns for 0.6/0.7/0.8/0.9s per second applied.
+	// Maximum debuff duration is 4s.
+	// The maximum stun is therefore 2.4/2.8/3.2/3.6s.
+	// Undispellable.
+	// The stun freezes their cooldowns.
+	// If the spell is not activated before the debuff ends, the stun and damage applies
+	// as if it were held for 1s.
+	// 26/24/22/20s cooldown.
+	"Ability2"				"luminary_chronal_emission"
+	// Luminary fires a bolt at the target location, creating an area of temporal flux.
+	// Enemies within take damage over time, and their cooldowns tick up instead of down.
+	// Slows enemies by 30%.
+	// Deals 12/24/36/48 damage per second.
+	// 375 radius.
+	// Lasts 6s.
+	"Ability3"				"luminary_timewefter"
+	// Luminary drastically slows enemies and speeds up allies that are nearby when he casts a Spell.
+	// The buff/debuff lasts 0.75/1.00/1.25/1.50s.
+	// 500 radius.
+	// Slows enemies' movespeed, attack speed, cooldown ticks and cast points by 50%.
+	// Increases allies' movespeed, attack speed, cooldown ticks and cast points by 50%.
+	// Every 0.2s while applied, increases enemy cooldowns and decreases ally cooldowns by 0.1s.
+	"Ability4"				"luminary_cast_stop"
+	// Activates Stop.
+	"Ability5"				"generic_hidden"
+	"Ability6"				"luminary_temporal_overload"
+	// Enemies within a large radius take damage based on the total tallied cooldowns of all
+	// of their basic Abilities, and all their debuffs gain additional duration.
+	// Deals 20/25/30 damage per second tallied, and refreshes any debuffs on enemies, increasing their duration by 10/20/30%.
+	// 18s is the average tally, so this would be 360/450/540 damage.
+	// AGHANIM'S SCEPTER UPGRADE: Applies Stop to 1/2/3 enemy Heroes with the highest cooldown tally.
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				"special_bonus_luminary_1" // 
+	"Ability11"				"special_bonus_health_100" // 
+	"Ability12"				"special_bonus_movespeed_20" //
+	"Ability13"				"special_bonus_luminary_2" // +75 Raigeki Damage
+	"Ability14"				"special_bonus_luminary_3" // Bushido +15% Movespeed
+	"Ability15"				"special_bonus_luminary_4" // 
+	"Ability16"				"special_bonus_luminary_5" // +2 Genso Illusions
+	"Ability17"				"special_bonus_luminary_6" //
+
+	"ArmorPhysical"				"1"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackRange"				"175"
+	"AttackRate"				"1.7"
+	"AttackDamageMin"			"26"										// Damage range min.
+	"AttackDamageMax"			"35"										// Damage range max.
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"22"										// Base strength
+	"AttributeStrengthGain"		"2.6"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"34"										// Base intelligence
+	"AttributeIntelligenceGain"	"3.0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"12"										// Base agility
+	"AttributeAgilityGain"		"0.7"										// Agility bonus per level.
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"295"									// Speed.
+	"MovementTurnRate"			"0.6"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"2"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

@@ -1,0 +1,7 @@
+git diff v2.14 HEAD --unified=0 -- game/scripts/npc/heroes/ game/scripts/npc/abilities/ game/scripts/npc/items/ game/scripts/npc/units/ > tools/_diff_changelog/changelog_2.14_to_current.diff
+cd "tools/_diff_changelog"
+. .env/Scripts/activate
+py read_diff.py
+code output.md
+deactivate
+cd ../..

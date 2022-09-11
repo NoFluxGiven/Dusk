@@ -119,13 +119,13 @@
 	{
 		"scope": "lua",
 		"body": "AddSRModifier( ${caster}, ${ability}, ${modifier_name}, ${duration}, ${kv} )",
-		"prefix": "AddSRModifier"
+		"prefix": ":AddSRModifier"
 	},
 	"Function:Stun":
 	{
 		"scope": "lua",
 		"body": "Stun( ${caster}, ${ability}, ${duration} )",
-		"prefix": "Stun"
+		"prefix": ":Stun"
 	},
 
 	

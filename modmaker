@@ -1,0 +1,3 @@
+cd "tools/_MODMAKER"
+py modmaker.py
+cd ../..

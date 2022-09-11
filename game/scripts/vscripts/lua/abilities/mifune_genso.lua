@@ -86,6 +86,9 @@ if IsServer() then
 		-- Set the unit as an illusion
 		-- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle
 		illusion:AddNewModifier(caster, ability, "modifier_illusion", { duration = duration, outgoing_damage = outgoingDamage, incoming_damage = incomingDamage })
+		if caster:HasModifier("modifier_bushido") then
+			illusion:AddNewModifier(caster, ability, "modifier_bushido", { duration = duration })
+		end
 		
 		-- Without MakeIllusion the unit counts as a hero, e.g. if it dies to neutrals it says killed by neutrals, it respawns, etc.
 		illusion:MakeIllusion()
@@ -121,12 +124,28 @@ function modifier_genso_illusion:CheckState()
 	return state
 end
 
+
 function modifier_genso_illusion:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 		MODIFIER_EVENT_ON_DEATH
 	}
 	return funcs
+end
+
+function modifier_genso_illusion:OnCreated()
+	self:StartIntervalThink(0.25)
+end
+
+function modifier_genso_illusion:OnIntervalThink()
+	
+	local at = self:GetParent().attack_target
+
+	if at:HasModifier("modifier_zanmato_main_target") and not self:GetParent().byebye then
+		self:GetParent():AddActivityModifier("loser")
+		self:GetParent():StartGestureWithPlaybackRate(ACT_DOTA_TAUNT_STATUE, 2.00)
+		self:GetParent().byebye = true
+	end
 end
 
 function modifier_genso_illusion:OnDeath(params)

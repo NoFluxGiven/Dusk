@@ -8,9 +8,9 @@
 	"Ability1"				"horror_terrify" // The targeted enemy is slowed and forced to run away from Horror for a short time, taking damage over time over the duration.
 	"Ability2"				"horror_obscure" // Creates an area around Horror where darkness quickly spills out, dealing damage instantly and blinding enemies caught for 2/3/4/5s
 	// after a 0.75s delay. Affected enemies will miss their attacks.
-	"Ability3"				"horror_paranoia" // Horror curses the target unit with insurmountable paranoia. After a 1s delay, they will begin to take damage over time for each allied
-	// unit near them. Lasts 8s. The radius for checking for allied units is 1200. Heroes grant 4/8/12/16 damage per second, creeps grant 1/2/3/4 damage per second. At the end of the
-	// duration, they take bonus damage if there is still a Hero within 1200 units, equal to 125/175/225/275 damage.
+	"Ability3"				"horror_paranoia" // Horror curses the target unit with insurmountable paranoia. After a 1s delay, they will begin to take damage over time and are slowed for each allied
+	// unit near them. Lasts 8s. The radius for checking for allied units is 600. Heroes grant 4/8/12/16 damage per second, creeps grant 1/2/3/4 damage per second. At the end of the
+	// duration, they take bonus damage if there is still a Hero within 600 units, equal to 125/175/225/275 damage.
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
 	"Ability6"				"horror_sinister" // When activated, Horror gains vision of all enemies on the map. He may cast a subability to jump to an enemy, damaging them.

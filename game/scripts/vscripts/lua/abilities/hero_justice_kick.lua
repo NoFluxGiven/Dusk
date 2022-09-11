@@ -2,6 +2,17 @@ hero_justice_kick = class({})
 
 LinkLuaModifier("modifier_justice_kick","lua/abilities/hero_justice_kick",LUA_MODIFIER_MOTION_NONE)
 
+function hero_justice_kick:OnAbilityPhaseStart()
+	local caster = self:GetCaster()
+	local target = self:GetCursorTarget()
+
+	if caster == target then
+		return false
+	end
+
+	return true
+end
+
 function hero_justice_kick:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
@@ -16,7 +27,9 @@ function hero_justice_kick:OnSpellStart()
 	target:EmitSound("Hero.JusticeKick")
 	ParticleManager:CreateParticle("particles/units/heroes/hero_hero/hero_justice_kick.vpcf", PATTACH_ROOTBONE_FOLLOW, target)
 
-	self:InflictDamage(target,caster,damage,DAMAGE_TYPE_MAGICAL)
+	if target:GetTeam() ~= caster:GetTeam() then
+		self:InflictDamage(target,caster,damage,DAMAGE_TYPE_MAGICAL)
+	end
 
 	target:AddNewModifier(caster, self, mod, {Duration=duration})
 end
@@ -46,6 +59,9 @@ function modifier_justice_kick:OnCreated(kv)
 		local p = self:GetParent()
 		local facing = caster:GetForwardVector()
 		local distance = self:GetAbility():GetSpecialValueFor("distance")
+		local radius = self:GetAbility():GetSpecialValueFor("landing_radius")
+		local damage = self:GetAbility():GetSpecialValueFor("landing_damage")
+		local stun = self:GetAbility():GetSpecialValueFor("landing_stun")
 
 		Physics:Unit(p)
 		p:SetPhysicsFriction(0)
@@ -67,6 +83,18 @@ function modifier_justice_kick:OnCreated(kv)
 		end
 		)
 		Timers:CreateTimer(0.43,function()
+			local enemies = FindEnemies(caster,p:GetAbsOrigin(),radius)
+
+			ParticleManager:CreateParticle("particles/units/heroes/hero_hero/hero_justice_kick_land.vpcf", PATTACH_ABSORIGIN_FOLLOW, p)
+			p:EmitSound("Hero_Rubick.Telekinesis.Target.Land")
+
+			for k,v in pairs(enemies) do
+				if v == p then goto continue end
+				DealDamage(v,caster,damage,DAMAGE_TYPE_MAGICAL,self,0)
+				v:Stun( caster, ability, stun )
+				::continue::
+			end
+
 			FindClearSpaceForUnit(p,p:GetAbsOrigin(),true)
 			self:Destroy()
 		end

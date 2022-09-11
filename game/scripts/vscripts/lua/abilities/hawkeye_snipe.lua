@@ -40,9 +40,9 @@ function modifier_snipe_caster:OnAttackLanded(params)
 			]]
 			self:SetStackCount(self:GetStackCount()-1)
 
-			local t_apply_det_dart = self:GetAbility():GetCaster():FindTalentValue("special_bonus_hawkeye_3")
+			local t_apply_det_dart = self:GetAbility():GetCaster():FindTalentValue("special_bonus_hawkeye_3") or 0
 
-			if t_apply_det_dart then
+			if t_apply_det_dart ~= 0 then
 				local ab = self:GetAbility():GetCaster():FindAbilityByName("hawkeye_detonator_dart")
 
 				if not params.target:HasModifier("modifier_detonator_dart") and not params.target:IsBuilding()then

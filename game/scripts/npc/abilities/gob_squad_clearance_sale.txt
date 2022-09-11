@@ -1,20 +1,19 @@
 "gob_squad_clearance_sale"
 
-///@changelog
-///@version 2.2
-///@hero Gob Squad
-///@ability Clearance Sale
-///@changes #
-/// Removed Aghanim's Upgrade.
-/// Clearance Sale bombs no longer damage Gob Squad.
-/// Made it immediate cast.
-/// Added the giant bomb to the regular ability; it deals 400/500/600 damage in a 600 radius.
-/// Bomb explosion radius increased to 350.
-/// Bomb damage increased to 275/390/505.
-/// Interval increased to 1.00s per bomb.
-/// Slow now scales with level (20/40/60%).
-/// Stun duration increased to 0.50/0.75/1.00.
-/// Duration reduced to 8s.
+///$title Clearance Sale
+///$description Blah blah.
+
+///@version 2.3
+///@chg Removed Aghanim's upgrade.
+///@chg Clearance Sale bombs no longer damage Gob Squad.
+///@chg Made it immediate cast.
+///@chg Added the giant bomb to the regular ability; it deals 400/500/600 damage in a 600 radius.
+///@chg Bomb explosion radius increased to 350.
+///@chg Bomb damage increased to 275/390/505.
+///@chg Interval increased to 1.00s per bomb.
+///@chg Slow now scales with level (20/40/60%).
+///@chg Stun duration increased to 0.50/0.75/1.00.
+///@chg Duration reduced to 8s.
 
 {
 	// General

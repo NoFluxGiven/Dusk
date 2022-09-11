@@ -61,6 +61,10 @@ function modifier_dark_hunger_active:OnIntervalThink()
 	
 	for _,target in pairs(enemies) do
 		self:GetAbility():InflictDamage( target, self.caster, damage, damage_type )
+		if target:GetMana() > 0 then
+			target:ReduceMana(damage/2)
+			self.caster:GiveMana(damage/2)
+		end
 		self.caster:Heal(damage, self.caster)
 	end
 end

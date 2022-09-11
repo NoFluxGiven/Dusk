@@ -31,17 +31,17 @@
 	"Ability17"				"special_bonus_attack_damage_100" // 
 	
 
-	"ArmorPhysical"				"1"									// Physical protection.
+	"ArmorPhysical"				"3"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackRange"				"180"
-	"AttackRate"				"2.00"
-	"AttackDamageMin"			"30"										// Damage range min.
-	"AttackDamageMax"			"40"										// Damage range max.
+	"AttackRate"				"2.40"
+	"AttackDamageMin"			"40"										// Damage range min.
+	"AttackDamageMax"			"50"										// Damage range max.
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"30"										// Base strength
+	"AttributeBaseStrength"		"27"										// Base strength
 	"AttributeStrengthGain"		"3.2"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"17"										// Base intelligence
 	"AttributeIntelligenceGain"	"1.9"										// Intelligence bonus per level.
@@ -60,7 +60,7 @@
 	"MovementTurnRate"			"1.0"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
-	"StatusHealthRegen"			"2.5"									// Health regeneration rate.
+	"StatusHealthRegen"			"1.5"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
 	"StatusManaRegen"			"0.5"									// Mana regeneration rate.
 

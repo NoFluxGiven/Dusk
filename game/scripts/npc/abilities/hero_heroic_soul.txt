@@ -6,9 +6,8 @@
 ///@version 2.2
 ///@hero Hero
 ///@ability Heroic Soul
-///@changes #
-/// Reduced cooldown to 14s (was 20/18/16/14s).
-/// Reduced movespeed bonus to 32% (was 40%).
+///@chg Reduced cooldown to 14s (was 20/18/16/14s).
+///@chg Reduced movespeed bonus to 32% (was 40%).
 
 "hero_heroic_soul"
 {
@@ -56,7 +55,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_reduction"		"60"
+			"damage_reduction"		"80"
 		}
 		"05"
 		{

@@ -192,7 +192,7 @@
 		
 		"npc_dota_hero_faceless_void_hype" "None"
 		
-		"npc_dota_hero_tusk_hype" "Fast and furious, Hero is a get-in-get-out Hero with a fun to use skillset. Kick your enemies away with Justice Kick to set up for your pouncing Freedom Strike, break out of stuns and purgable disables with Heroic Soul, and obliterate your targets with the famed ONE PUNCH!!"
+		"npc_dota_hero_tusk_hype" "Fast and furious, Hero is a get-in-get-out Hero with a frenetic skillset. Kick your enemies away with Justice Kick to set up for your pouncing Freedom Strike, break out of stuns and purgable disables with Heroic Soul, and obliterate your targets with the famed ONE PUNCH!!"
 		
 		"npc_dota_hero_terrorblade_hype" "Possessing a good balance of Physical and Magical damage, Bahamut is a powerful mid-game Agility carry. Turn your enemies into a walking radiance with Desolation, increase the damage they take with Reckoning Aura, deal ever increasing Magical damage with Fulmination, and finish the fight with the obliterating Mega Flare."
 		
@@ -201,8 +201,6 @@
 		"npc_dota_hero_night_stalker_hype" "Horror is a dangerous ganker, capable of forcing enemies to run away from him with Terrify, blind them with Obscure, cause them to isolate themselves from their allies with Paranoia, and teleport to anyone he can see with Sinister."
 		
 		"npc_dota_hero_legion_commander_hype" "A pusher and teamfighter, Neith's capabilities are devastating in the first 20 minutes of the game. Steal your opponents' attack damage with Monsoon, crush them solo with Decisive Strike, increase your allies' attack damage with Inspire, and Rally your creeps and Heroes to take tower after tower!"
-		
-		"npc_dota_hero_dragon_knight_hype" "A servant of her Radiance, former paladin and wielder of the legendary Godfall, Alexander is a tanky and difficult to deal with carry that can buff allies, Break and Silence enemies, heal himself and demolish those who would dare stand against him with his Ultimate."
 		
 		"npc_dota_hero_doom_bringer_hype" "A commander of fire and ash, the being known as Alroth brings a great deal to the table when it comes to Magical damage. Boasting an array of abilities like the area of effect damage over time Maelstrom, instant cast Health draining explosion Energy Burst, Magic Resistance breaking Shatter, and powerful close range DoT Solwave, Alroth is capable of dealing with enemies his way, and no one else's."
 		
@@ -1271,8 +1269,8 @@
 			
 			///// TALENTS /////
 			
-			"DOTA_Tooltip_ability_special_bonus_mifune_1" "+75 Raigeki Damage"
-			"DOTA_Tooltip_ability_special_bonus_mifune_2" "Bushido +15% Movespeed"
+			"DOTA_Tooltip_ability_special_bonus_mifune_1" "+50 Raigeki Damage"
+			"DOTA_Tooltip_ability_special_bonus_mifune_2" "+500 Raigeki Range"
 			"DOTA_Tooltip_ability_special_bonus_mifune_3" "+2 Genso Illusions"
 
 			///// MODIFIERS /////
@@ -1283,33 +1281,34 @@
 			"DOTA_Tooltip_modifier_bushido_Description" "Gaining bonus Agility and percentage bonus damage based on your Agility."
 			
 			"DOTA_Tooltip_modifier_zanmato_main_target" "Zanmato"
+			"DOTA_Tooltip_modifier_zanmato_permanent_agility" "Zanmato Permanent Agility"
 			
 			///// ABILITIES /////
 			
 			"DOTA_Tooltip_ability_mifune_genso"                                               "Genso"
-			"DOTA_Tooltip_ability_mifune_genso_description"                                   "Creates an illusion to attack the targeted enemy.  The illusions can be killed and move slightly faster than Mifune himself, but cannot be controlled."
-			"DOTA_Tooltip_ability_mifune_genso_Note0"                                   	  "Illusions have a 15% movespeed bonus."
-			"DOTA_Tooltip_ability_mifune_genso_illusion_tooltip"                               "%ILLUSION OUTGOING DAMAGE:"
+			"DOTA_Tooltip_ability_mifune_genso_description"                                   "Creates multiple illusions to attack the targeted enemy. The illusions can be killed and move slightly faster than Mifune himself, but cannot be controlled. If the target dies, the illusions immediately disappear."
+			"DOTA_Tooltip_ability_mifune_genso_illusion_tooltip"                              "%ILLUSION OUTGOING DAMAGE:"
 			"DOTA_Tooltip_ability_mifune_genso_illusion_incoming"                             "%ILLUSION INCOMING DAMAGE:"
 			"DOTA_Tooltip_ability_mifune_genso_illusion_duration"                             "ILLUSION DURATION:"
-			"DOTA_Tooltip_ability_mifune_genso_illusions"                             		"ILLUSIONS:"
+			"DOTA_Tooltip_ability_mifune_genso_illusions"                             		  "ILLUSIONS:"
 			
 			"DOTA_Tooltip_ability_mifune_bushido"                                             "Bushido"
-			"DOTA_Tooltip_ability_mifune_bushido_Description"                                 "Mifune's intense training and discipline allows him to extract more benefits from his Agility. Upon activation, grants a percentage of his Base Agility as bonus Agility, and grants him bonus damage based upon his base damage for a short time."
+			"DOTA_Tooltip_ability_mifune_bushido_Description"                                 "Mifune's intense training and discipline allows him to extract more benefits from his Agility. Upon activation, grants %bonus_agility% additional Agility, plus %percent%%% of his Base Agility as bonus Agility, and %bonus_damage%%% bonus damage based upon his base damage for a short time."
 			"DOTA_Tooltip_ability_mifune_bushido_scepter_description"                         "Bushido grants %scepter_evasion%%% evasion. When an enemy misses an attack against Mifune in this form, he instantly counterattacks."
-			"DOTA_Tooltip_ability_mifune_bushido_percent"                                     "%BONUS AGILITY:"
+			"DOTA_Tooltip_ability_mifune_bushido_percent"                                     "%AGILITY INCREASE:"
+			"DOTA_Tooltip_ability_mifune_bushido_bonus_agility"                               "ADDITIONAL AGILITY BONUS:"
 			"DOTA_Tooltip_ability_mifune_bushido_bonus_damage"                                "%BONUS DAMAGE:"
 			"DOTA_Tooltip_ability_mifune_bushido_duration"                                    "DURATION:"
-			"DOTA_Tooltip_ability_mifune_bushido_scepter_evasion"                             "%EVASION:"
 
 			"DOTA_Tooltip_ability_mifune_raigeki"                                             "Raigeki"
-			"DOTA_Tooltip_ability_mifune_raigeki_description"                                 "Slashes to create a burst of energy that travels at speed towards the target point.  After a delay, a second shockwave explodes across the battlefield, dealing the same damage.  Both attacks slow the enemy."
+			"DOTA_Tooltip_ability_mifune_raigeki_description"                                 "Slashes to create a burst of energy that travels at speed towards the target point.  After a delay, a second shockwave erupts in the opposite direction. Both shockwaves slow the enemy."
+			"DOTA_Tooltip_ability_mifune_raigeki_shard_description"                           "Reduces the delay to %shard_delay% seconds, and adds an additional shockwave."
 			"DOTA_Tooltip_ability_mifune_raigeki_initial_damage"                              "DAMAGE:"
 			"DOTA_Tooltip_ability_mifune_raigeki_slow"                                        "%SLOW:"
 			"DOTA_Tooltip_ability_mifune_raigeki_delay"                                       "DELAY:"
 
 			"DOTA_Tooltip_ability_mifune_zanmato"                                             "Zanmato"
-			"DOTA_Tooltip_ability_mifune_zanmato_description"                                 "Mifune focuses for a moment, then unleashes the most powerful ability in his arsenal; he slashes at blinding speed, attacking all enemies in the radius of the spell.  After this ends, the energy created from his attacks converges on the main target, dealing Magical damage for each enemy within the radius.  The main target is stunned while Mifune is slashing.  Deals bonus damage to Heroes.\n\nUpgradable by Aghanim's Scepter."
+			"DOTA_Tooltip_ability_mifune_zanmato_description"                                 "Mifune focuses for a moment, then unleashes the most powerful ability in his arsenal; he slashes at blinding speed, attacking all enemies in the radius of the spell.  With each slash, the energy created from his attacks converges on the main target, dealing Magical damage for each enemy within the radius.  The main target is slowed while Mifune is slashing.  Deals bonus damage to Heroes.\n\nUpgradable by Aghanim's Scepter."
 			"DOTA_Tooltip_ability_mifune_zanmato_Note0"                                 	  "The main target is stunned for a minimum of 1s."
 			"DOTA_Tooltip_ability_mifune_zanmato_Note1"                                 	  "The slash preserves procs and orb effects."
 			"DOTA_Tooltip_ability_mifune_zanmato_Note2"                                 	  "The Orbs deal Magical damage, and converge on the main target when the initial slashes end."
@@ -2588,6 +2587,11 @@
 			//--------------------
 			//ALEXANDER
 			//--------------------
+
+			///// BIO /////
+
+			"npc_dota_hero_dragon_knight_hype" "A servant of her Radiance, former paladin and wielder of the legendary Godfall, Alexander is a tanky and difficult to deal with carry that can heal allies, Break and Silence enemies, and protect those in an area with his Raise the Shield and Ultimate, Godfall."
+			"npc_dota_hero_dragon_knight_npedesc1"	"Protects and heals allies while disabling key Heroes and reducing enemy damage"
 			
 			///// TALENTS /////
 			
@@ -2638,8 +2642,12 @@
 			"DOTA_Tooltip_ability_alexander_godfall_bolt_interval"				"BEAM INTERVAL:"
 			// "DOTA_Tooltip_ability_alexander_godfall_scepter_description"                      "Reduces cooldown, and Godfall applies Soulseal to all enemies within a 325 radius when the attack lands."
 
-			"DOTA_Tooltip_ability_alexander_lightburst"						"Lightburst"
-			"DOTA_Tooltip_ability_alexander_lightburst_description"			"Alexander creates a burst of light in a %radius% radius around him that immediately heals him for %heal%%% of his Max Health, deals %damage% damage to enemies, and sets them aflame, dealing %debuff_damage%%% of their own Max Health as damage per second for %debuff_duration% seconds."
+			"DOTA_Tooltip_ability_alexander_lightburst"							"Lightburst"
+			"DOTA_Tooltip_ability_alexander_lightburst_description"				"Alexander creates a burst of light in a %radius% radius around him. The light immediately heals him and nearby allies for %base_heal% + %heal%%% of their Max Health, and deals %damage% damage to enemies, setting them aflame, dealing damage over time based on their Max Health."
+			"DOTA_Tooltip_ability_alexander_lightburst_debuff_duration"			"BURN DURATION:"
+			"DOTA_Tooltip_ability_alexander_lightburst_debuff_damage"			"%MAX HEALTH BURN DAMAGE PER SECOND:"
+			"DOTA_Tooltip_ability_alexander_lightburst_radius"					"RADIUS:"
+
 
 			"DOTA_Tooltip_ability_alexander_radiant"                                          "Radiant"
 			"DOTA_Tooltip_ability_alexander_radiant_description"                              "Alexander is bathed in an unearthly light, a magick used oft by Paladins.  Causes opponents to miss attacks, as he rapidly recovers health over time."

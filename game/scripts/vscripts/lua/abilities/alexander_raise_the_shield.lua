@@ -34,12 +34,20 @@ function alexander_raise_the_shield:OnSpellStart()
     -- thinker
     -----------------
 
+    if self.t ~= nil and IsValidEntity(self.t) then
+        self.t:Destroy()
+    end
+
     self.t = CreateModifierThinker(caster, self, "modifier_raise_the_shield_aura", {Duration=duration}, caster_pos, caster:GetTeamNumber(), false)
 
     -- particle
     -----------------
 
     -- This is a field on the ability because thinkers hate storing data for some weird reason
+
+    if self.raise_the_shield_particle ~= nil then
+        ParticleManager:DestroyParticle(self.raise_the_shield_particle, false)
+    end
 
     self.raise_the_shield_particle = CreateParticleWorld(caster:GetCenter(), "particles/units/heroes/hero_alexander/raise_the_shield_dome.vpcf")
 
@@ -54,6 +62,14 @@ modifier_raise_the_shield = class({})
 
 function modifier_raise_the_shield:IsHidden() return false end
 function modifier_raise_the_shield:IsPurgable() return false end
+
+function modifier_raise_the_shield:GetEffectName()
+	return "particles/units/heroes/hero_alexander/raise_the_shield_orb.vpcf"
+end
+
+function modifier_raise_the_shield:GetEffectAttachType()
+    return "PATTACH_POINT_FOLLOW"
+end
 
 function modifier_raise_the_shield:OnCreated(kv)
     self.damage_reduction = self:GetAbility():GetSpecialValueFor("damage_reduction")
@@ -98,7 +114,9 @@ function modifier_raise_the_shield_aura:OnIntervalThink()
 end
 
 function modifier_raise_the_shield_aura:OnDestroy()
-    self:GetAbility().t:StopSound("Alexander.RaiseTheShield.Area")
+    if IsValidEntity(self:GetAbility().t) and IsServer() then
+        self:GetAbility().t:StopSound("Alexander.RaiseTheShield.Area")
+    end
     ParticleManager:DestroyParticle(self:GetAbility().raise_the_shield_particle, false)
 end
 

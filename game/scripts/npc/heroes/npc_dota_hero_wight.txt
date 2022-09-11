@@ -54,9 +54,10 @@
 	// Upon activation, Wight gains full vision of the closest enemy Hero globally.
 	// While using this ability, Wight has no vision around himself or
 	// units he owns.
+	// 
 	// Reveals invisible units as well.
 	// Lasts 8s.
-	// 90/60/30s cooldown.
+	// 90s cooldown.
 	"Ability5"				""
 	"Ability6"				"talent_attributes"
 	"Ability7"				"talent_attributes"

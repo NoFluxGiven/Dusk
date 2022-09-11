@@ -7,16 +7,25 @@ function alexander_lightburst:OnSpellStart()
 	local damage = self:GetSpecialValueFor("damage")
 	local debuff_duration = self:GetSpecialValueFor("debuff_duration")
 	local heal = self:GetSpecialValueFor("heal")
+	local base_heal = self:GetSpecialValueFor("base_heal")
 
 	local enemies = FindEnemies(self:GetCaster(),self:GetCaster():GetAbsOrigin(),radius)
+	local allies = FindAllies(self:GetCaster(),self:GetCaster():GetAbsOrigin(),radius)
 
 	local p = ParticleManager:CreateParticle("particles/units/heroes/hero_alexander/lightburst.vpcf", PATTACH_CENTER_FOLLOW, self:GetCaster())
 	ParticleManager:SetParticleControl(p, 1, Vector(radius,0,0))
 
 	self:GetCaster():EmitSound("Alexander.Lightburst")
 
-	local heal_amount = (heal / 100) * self:GetCaster():GetMaxHealth()
-		self:GetCaster():Heal(heal_amount, self:GetCaster())
+	for k,v in pairs(allies) do
+		local heal_amount = ( (heal / 100) * v:GetMaxHealth() ) + base_heal
+
+		if v == self:GetCaster() then heal_amount = heal_amount*2 end
+
+		v:Heal(heal_amount, self:GetCaster())
+	end
+
+	
 
 	for k,v in pairs(enemies) do
 		DealDamage(v,self:GetCaster(),damage,DAMAGE_TYPE_MAGICAL,self,0)

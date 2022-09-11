@@ -17,6 +17,7 @@ modifier_bushido = class({})
 function modifier_bushido:DeclareFunctions()
 	local funcs = {
 		MODIFIER_EVENT_ON_ATTACK_FAIL,
+		MODIFIER_EVENT_ON_ATTACK_LANDED,
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		-- MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
 		MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
@@ -31,9 +32,11 @@ end
 function modifier_bushido:GetEffectName()
 	return "particles/units/heroes/hero_mifune/bushido_unit.vpcf"
 end
-
+function modifier_bushido:AllowIllusionDuplicate()
+	return true
+end
 function modifier_bushido:GetModifierMoveSpeedBonus_Percentage()
-	local t_bonus = self:GetParent():FindTalentValue("special_bonus_mifune_2") or 0
+	local t_bonus = self:GetParent():HasScepter() and self:GetAbility():GetSpecialValueFor("scepter_evasion") or 0
 	return t_bonus
 end
 
@@ -47,9 +50,9 @@ if IsServer() then
 
 	function modifier_bushido:OnCreated()
 		local agi = self:GetParent():GetAgility()
-		local pct = self:GetAbility():GetSpecialValueFor("percent")/100
+		local base = self:GetAbility():GetSpecialValueFor("bonus_agility")
 
-		self:SetStackCount(math.floor(agi*pct))
+		self:SetStackCount(base)
 	end
 
 	function modifier_bushido:OnAttackFail(params)
@@ -63,6 +66,8 @@ if IsServer() then
 		a:EmitSound("Hero_Juggernaut.OmniSlash")
 		-- Particle
 
+		ParticleManager:CreateParticle( "particles/units/heroes/hero_mifune/bushido_counter_attack.vpcf", PATTACH_ABSORIGIN_FOLLOW, a )
+
 		p:PerformAttack(
 			a,
 			true,
@@ -73,6 +78,17 @@ if IsServer() then
 			false,
 			true
 		)
+	end
+
+	function modifier_bushido:OnAttackLanded(params)
+		local p = self:GetParent()
+		local a = params.attacker
+
+		if a ~= p then return end
+
+		local increase = self:GetAbility():GetSpecialValueFor("stack_increase")
+
+		self:SetStackCount(self:GetStackCount()+increase)
 	end
 
 end

@@ -1,129 +1,115 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_ConstantColor =
-	[
-		255,
-		0,
-		0,
-		255,
-	]
-	m_flConstantRadius = 1.000000
+	m_ConstantColor = [ 124, 252, 0, 255 ]
+	m_flConstantRadius = 1.0
 	m_nConstantSequenceNumber = 7
 	m_nMaxParticles = 512
 	m_bShouldHitboxesFallbackToRenderBounds = false
-	m_Operators =
+	m_nBehaviorVersion = 12
+	m_nFirstMultipleOverride_BackwardCompat = 3
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flStartTime = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 0.2
+			}
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 364.0
+			}
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 8.0
+			m_flRadiusMax = 12.0
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.5
+			m_fLifetimeMax = 1.5
+		},
+		{
+			_class = "C_INIT_CreateFromParentParticles"
+			m_flVelocityScale = 0.1
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ -16.0, -16.0, -8.0 ]
+			m_OffsetMax = [ 16.0, 16.0, 16.0 ]
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_vecOutputMin = [ -864.0, -864.0, 564.0 ]
+			m_vecOutputMax = [ 864.0, 864.0, 864.0 ]
+			m_flNoiseScaleLoc = 0.2
+		},
+		{
+			_class = "C_INIT_PositionWarp"
+			m_vecWarpMin = [ 1.0, 1.0, 0.0 ]
+			m_flWarpTime = 0.5
+			m_bDisableOperator = true
+		},
+	]
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_Decay"
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flStartScale = 2.000000
-			m_flEndScale = 0.000000
-			m_flBias = 0.750000
+			m_flStartScale = 2.0
+			m_flEndScale = 0.0
+			m_flBias = 0.75
 		},
 		{
 			_class = "C_OP_BasicMovement"
-			m_fDrag = 0.125000
+			m_fDrag = 0.125
 		},
 		{
 			_class = "C_OP_VectorNoise"
 			m_nFieldOutput = 0
-			m_vecOutputMin =
-			[
-				-32.000000,
-				-32.000000,
-				-4.000000,
-			]
-			m_vecOutputMax =
-			[
-				32.000000,
-				32.000000,
-				4.000000,
-			]
+			m_vecOutputMin = [ -32.0, -32.0, -4.0 ]
+			m_vecOutputMax = [ 32.0, 32.0, 4.0 ]
 			m_bAdditive = true
 		},
 		{
 			_class = "C_OP_FadeInSimple"
-			m_flFadeInTime = 0.125000
+			m_flFadeInTime = 0.125
 		},
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
-			m_nSequenceCombineMode = "2"
-			m_bAdditive = true
 			m_nRefractBlurType = "2"
-			m_hTexture = resource:"materials/particle/particle_flares/particle_flare_007b.vtex"
-		},
-	]
-	m_Initializers =
-	[
-		{
-			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 8.000000
-			m_flRadiusMax = 12.000000
-		},
-		{
-			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 0.500000
-			m_fLifetimeMax = 1.500000
-		},
-		{
-			_class = "C_INIT_CreateFromParentParticles"
-			m_flVelocityScale = 0.100000
-		},
-		{
-			_class = "C_INIT_PositionOffset"
-			m_OffsetMin =
+			m_vecTexturesInput = 
 			[
-				-16.000000,
-				-16.000000,
-				-8.000000,
+				{
+					m_hTexture = resource:"materials/particle/particle_flares/particle_flare_007b.vtex"
+				},
 			]
-			m_OffsetMax =
-			[
-				16.000000,
-				16.000000,
-				16.000000,
-			]
-		},
-		{
-			_class = "C_INIT_InitialVelocityNoise"
-			m_vecOutputMin =
-			[
-				-864.000000,
-				-864.000000,
-				564.000000,
-			]
-			m_vecOutputMax =
-			[
-				864.000000,
-				864.000000,
-				864.000000,
-			]
-			m_flNoiseScaleLoc = 0.200000
-		},
-		{
-			_class = "C_INIT_PositionWarp"
-			m_vecWarpMin =
-			[
-				1.000000,
-				1.000000,
-				0.000000,
-			]
-			m_flWarpTime = 0.500000
-			m_bDisableOperator = true
-		},
-	]
-	m_Emitters =
-	[
-		{
-			_class = "C_OP_ContinuousEmitter"
-			m_flStartTime = 0.200000
-			m_flEmitRate = 364.000000
+			m_nOutputBlendMode = "PARTICLE_OUTPUT_BLEND_MODE_ADD"
 		},
 	]
 }

@@ -1,0 +1,89 @@
+"Mifune.Zanmato.Success"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/zanmato_success.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "2.25"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Mifune.Zanmato.Failure"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/zanmato_failure.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "2.00"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Mifune.Zanmato.Kill"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/zanmato_kill.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "2.25"
+                    }
+                }
+            }
+        }
+    }
+
+}

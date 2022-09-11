@@ -13,18 +13,18 @@ function hero_one_punch:OnSpellStart()
 	local target = self:GetCursorTarget()
 
 	caster:AddNewModifier(caster, self, "modifier_one_punch", {Duration=0.03})
-
-	caster:PerformAttack(
-					target,
-					true,
-					true,
-					true,
-					false,
-					false,
-					false,
-					true
-				)
-
+	if target:GetTeam() ~= target:GetTeam() then
+		caster:PerformAttack(
+						target,
+						true,
+						true,
+						true,
+						false,
+						false,
+						false,
+						true
+					)
+	end
 	target:EmitSound("Hero_Tusk.WalrusPunch.Target")
 	target:EmitSound("Hero_Tusk.WalrusPunch.Damage")
 	target:EmitSound("Hero.OnePunch.Whistle")

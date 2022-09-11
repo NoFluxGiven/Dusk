@@ -53,6 +53,8 @@ function modifier_freedom_strike:OnCreated(kv)
 		end
 		)
 		Timers:CreateTimer(0.43,function()
+			GridNav:DestroyTreesAroundPoint(p:GetCenter(), radius, false)
+
 			local enemy = FindUnitsInRadius( p:GetTeamNumber(),
 	                              p:GetCenter(),
 	                              nil,

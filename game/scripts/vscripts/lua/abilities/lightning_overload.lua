@@ -7,7 +7,7 @@ function lightning_overload:OnSpellStart()
 	local c = self:GetCaster()
 	local radius = self:GetSpecialValueFor("radius")
 	local slow_duration = self:GetSpecialValueFor("slow_duration")
-	--local stun_duration = self:GetSpecialValueFor("ministun")
+	local ministun = self:GetSpecialValueFor("ministun")
 	local invuln_duration = self:GetSpecialValueFor("invuln_duration")
 	local bonus = c:FindTalentValue("special_bonus_lightning_2") or 0
 	local damage = self:GetSpecialValueFor("damage") + bonus
@@ -35,6 +35,9 @@ function lightning_overload:OnSpellStart()
 	for k,v in pairs(en) do
 		self:InflictDamage(v,c,damage,dtype)
 		v:AddNewModifier(c, self, "modifier_overload_slow", {Duration=slow_duration}) --[[Returns:void
+		No Description Set
+		]]
+		v:AddNewModifier(c, self, "modifier_stun", {Duration=ministun}) --[[Returns:void
 		No Description Set
 		]]
 	end

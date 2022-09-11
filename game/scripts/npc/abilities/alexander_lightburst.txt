@@ -42,7 +42,7 @@
 	"02"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"debuff_damage"				    "2.0 3.0 4.0 5.0"
+			"debuff_damage"				    "3.0 4.0 5.0 6.0"
 		}
 	"03"
 		{
@@ -57,7 +57,12 @@
     "05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"heal"						    "8 10 12 14"
+			"heal"						    "4 5 6 7"
+		}
+    "06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"base_heal"						"50 100 150 200"
 		}
 	}
 	

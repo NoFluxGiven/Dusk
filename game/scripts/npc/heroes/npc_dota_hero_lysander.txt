@@ -5,12 +5,52 @@
 	"Role"					"Nuker,Pusher,Initiator"
 	"Rolelevels"			"1,3,1"
 	"Complexity"			"2"
-	"Ability1"				"lysander_grapeshot" 
-	"Ability2"				"lysander_captains_compass" 
-	"Ability3"				"generic_hidden"
+	"Ability1"				"lysander_grapeshot"
+	// Lysander fires a shot from his blunderbuss, dealing Physical damage based on his attack damage.
+	// If the target is within 375 units, they are concussed, reducing their outgoing damage and attack speed.
+	// Deals 50/100/150/200 + 100% of Lysander's attack damage.
+	// Targets within 375 range are concussed for 4s, reducing their attack speed by 100 and their outgoing damage by 30%.
+	// 15% chance to double the damage.
+	// 900 range.
+	// 11s cooldown.
+	"Ability2"				"lysander_captains_compass"
+	// Lysander points the way with his magical compass, revealing the location of the nearest enemy Hero.
+	// Allies within a certain distance of that Hero gain bonus movespeed, and have True Strike against them.
+	// Reveals the closest Hero in an 1800 radius around Lysander.
+	// Allies within 900 range of that Hero gain 15/30/45/60% bonus movespeed, unitwalking, and when attacking them, 20/40/60/80 bonus damage and True Strike.
+	// Reveals invisible Heroes for half the duration.
+	// SHARD: Reveals invisible Heroes for the full duration, and deals 50 damage per second to affected units.
+	// Lasts 8s.
+	"Ability3"				"lysander_treasure_hunter"
+	// Every few minutes, a random location on the map becomes a Treasure Spot.
+	// When Lysander is within 450 range of one of these locations, it begins to glow.
+	// Lysander can channel this ability to dig up whatever Treasure he finds,
+	// gaining Gold, then one of bonus Gold, or a rare Artifact.
+	// There can be 3 active Treasure Spots at any one time.
+	// The Gold amount or rarity increases as the level of this ability increases.
+	// Artifacts are considered Neutral Items.
+	// Every 4 minutes a new Treasure Spot appears.
+	// The randomisation occurs upon pick-up, not upon the Treasure Spot spawning.
+	// Grants 125/250/375/500 Gold to Lysander. If an Artifact spawns, he gains half the amount.
+	// The Artifacts available are:
+
+	// * Protective Charm: consumed when Stunned - immediately applies a Strong Dispel and reduces incoming damage by 25% for 4s.
+	// * Bountiful Charm: consumed when killing a Hero - doubles the gold gained from killing them.
+	// * Raging Charm: consumed when attacking a Hero at less than 50% Health - increases damage by 75% and attack speed by 100.
+	// * Healing Charm: consumed when dropping below 50% Health - grants 100 Health regen for 4s.
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
-	"Ability6"				"lysander_phantom_fleet"
+	"Ability6"				"lysander_whirlpool"
+	// Lysander summons forth a whirlpool at his current location.
+	// The whirlpool deals damage over time, pulls enemies towards its centre, slows them, and reduces their Armor.
+	// Deals 50/70/90 damage per second.
+	// Applies a 100% slow and 12/16/20 Armor reduction, tapering in strength based on the distance from the centre, with a minimum slow of 25%.
+	// Enemies are dragged towards the centre at a speed of 200/250/300.
+	// At the end of the duration, the centre erupts, dealing 300/400/500 Magical damage and stunning for 2.7s in a 300 radius.
+	// AGHS: Increases the radius by 200, and spawns four cannons on each side of the whirlpool, firing cannonballs inward, and gradually changing their firing angle.
+	// The cannonballs deal 80/120/160 Physical damage. Each cannon fires a cannonball every 0.35s.
+	// 1200 radius.
+	// Lasts 5s.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""

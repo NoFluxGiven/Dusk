@@ -1594,7 +1594,7 @@
 	"02"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"debuff_damage"				    "2.0 3.0 4.0 5.0"
+			"debuff_damage"				    "3.0 4.0 5.0 6.0"
 		}
 	"03"
 		{
@@ -1609,7 +1609,12 @@
     "05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"heal"						    "8 10 12 14"
+			"heal"						    "4 5 6 7"
+		}
+    "06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"base_heal"						"50 100 150 200"
 		}
 	}
 	
@@ -12196,21 +12201,20 @@
 }
 "gob_squad_clearance_sale"
 
-///@changelog
-///@version 2.2
-///@hero Gob Squad
-///@ability Clearance Sale
-///@changes #
-/// Removed Aghanim's Upgrade.
-/// Clearance Sale bombs no longer damage Gob Squad.
-/// Made it immediate cast.
-/// Added the giant bomb to the regular ability; it deals 400/500/600 damage in a 600 radius.
-/// Bomb explosion radius increased to 350.
-/// Bomb damage increased to 275/390/505.
-/// Interval increased to 1.00s per bomb.
-/// Slow now scales with level (20/40/60%).
-/// Stun duration increased to 0.50/0.75/1.00.
-/// Duration reduced to 8s.
+///$title Clearance Sale
+///$description Blah blah.
+
+///@version 2.3
+///@chg Removed Aghanim's upgrade.
+///@chg Clearance Sale bombs no longer damage Gob Squad.
+///@chg Made it immediate cast.
+///@chg Added the giant bomb to the regular ability; it deals 400/500/600 damage in a 600 radius.
+///@chg Bomb explosion radius increased to 350.
+///@chg Bomb damage increased to 275/390/505.
+///@chg Interval increased to 1.00s per bomb.
+///@chg Slow now scales with level (20/40/60%).
+///@chg Stun duration increased to 0.50/0.75/1.00.
+///@chg Duration reduced to 8s.
 
 {
 	// General
@@ -13278,13 +13282,12 @@
 ///@version 2.2
 ///@hero Hero
 ///@ability Freedom Strike
-///@changes #
-/// Increased slow to 25%.
-/// Rescaled slow duration to 2.0/2.5/3.0/3.5s
-/// Reduced cooldown to 5s (was 12/10/8/6s).
-/// Reduced Mana cost to 55.
-/// Increased radius to 275 (was 250).
-/// Now slows attack speed by 100.
+///@chg Increased slow to 25%.
+///@chg Rescaled slow duration to 2.0/2.5/3.0/3.5s
+///@chg Reduced cooldown to 5s (was 12/10/8/6s).
+///@chg Reduced Mana cost to 55.
+///@chg Increased radius to 275 (was 250).
+///@chg Now slows attack speed by 100.
 
 "hero_freedom_strike"
 {
@@ -13369,9 +13372,8 @@
 ///@version 2.2
 ///@hero Hero
 ///@ability Heroic Soul
-///@changes #
-/// Reduced cooldown to 14s (was 20/18/16/14s).
-/// Reduced movespeed bonus to 32% (was 40%).
+///@chg Reduced cooldown to 14s (was 20/18/16/14s).
+///@chg Reduced movespeed bonus to 32% (was 40%).
 
 "hero_heroic_soul"
 {
@@ -13419,7 +13421,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_reduction"		"60"
+			"damage_reduction"		"80"
 		}
 		"05"
 		{
@@ -13593,13 +13595,13 @@
 //=====================================================================================================
 
 ///@changelog
-///@version 2.2
+///@version 2.3
 ///@hero Hero
 ///@ability Justice Kick
 ///@changes #
-/// Reduced cooldown to 5s (was 8/7/6/5s).
-/// Improved cast point to 0.25s (was 0.3s).
-/// Increased slow duration to 1.3s (was 1.0s).
+///@chg Reduced cooldown to 5s (was 8/7/6/5s).
+///@chg Improved cast point to 0.25s (was 0.3s).
+///@chg Increased slow duration to 1.3s (was 1.0s).
 
 "hero_justice_kick"
 {
@@ -13609,7 +13611,7 @@
 	"ScriptFile"					"lua/abilities/hero_justice_kick"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -13625,7 +13627,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"5"
+	"AbilityCooldown"				"6"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -13660,6 +13662,21 @@
 			"var_type"					"FIELD_INTEGER"
 			"duration"					"1.3"
 		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"landing_damage"			"70 110 150 190"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"landing_stun"				"0.6 0.9 1.2 1.5"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"landing_radius"			"250"
+		}
 	}
 	
 	"precache"
@@ -13681,7 +13698,7 @@
 	"ScriptFile"					"lua/abilities/hero_one_punch"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -13697,7 +13714,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"90 80 70"
+	"AbilityCooldown"				"70 60 50"
 	"HasScepterUpgrade"				"1"
 
 	// Cost
@@ -13715,7 +13732,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"crit"						"225 250 275"
+			"crit"						"225 300 375"
 		}
 		"02"
 		{
@@ -13725,28 +13742,28 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"landing_aoe"				"250"
+			"landing_aoe"				"280"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"landing_damage"			"240 300 360"
+			"landing_damage"			"240 450 560"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"landing_stun"				"1.25 1.50 1.75"
+			"landing_stun"				"1.75 2.50 3.25"
 			"LinkedSpecialBonus"		"special_bonus_hero_4"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"scepter_crit"				"300 325 350"
+			"scepter_crit"				"325 400 475"
 		}
 		"07"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"scepter_landing_damage"	"150 175 200"
+			"scepter_landing_damage"	"150"
 		}
 	}
 	
@@ -17143,7 +17160,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"5"
+	"AbilityCooldown"				"7"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -17160,17 +17177,17 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"explosion_delay"			"1.0"
+			"explosion_delay"			"1.1"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"explosion_damage"			"100 140 180 220"
+			"explosion_damage"			"120 180 240 300"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"movespeed_slow"			"-40"
+			"movespeed_slow"			"-65"
 		}
 		"04"
 		{
@@ -17185,7 +17202,7 @@
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"radius"					"315"
+			"radius"					"335"
 		}
 	}
 	
@@ -17218,15 +17235,11 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
 	"AbilityCastRange"				"400 450 500 550"
-	"AbilityCooldown"				"4"
+	"AbilityCooldown"				"2.4"
 	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"70"
-	
-	// Damage.
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"60 75 90 105"
+	"AbilityManaCost"				"45 65 85 105"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -17235,18 +17248,23 @@
 		"01"
 		{
 			"var_type"								"FIELD_FLOAT"
-			"duration"								"0.25"
+			"duration"								"0.45"
 		}
 		"02"
 		{
 			"var_type"								"FIELD_INTEGER"
-			"slow"									"100"
+			"slow"									"50"
 		}
 		"03"
 		{
 			"var_type"								"FIELD_INTEGER"
-			"bounces"								"5"
+			"bounces"								"2"
 			"LinkedSpecialBonus"					"special_bonus_lightning_1"
+		}
+		"04"
+		{
+			"var_type"								"FIELD_INTEGER"
+			"damage"								"30 90 150 210"
 		}
 	}
 	
@@ -17490,7 +17508,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"10 9 8"
+	"AbilityCooldown"				"12 10 8"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -17507,7 +17525,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"150 200 250"
+			"damage"					"175 225 275"
 			"LinkedSpecialBonus"		"special_bonus_lightning_2"
 		}
 		"02"
@@ -17518,22 +17536,22 @@
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"ministun"					"0.0"
+			"ministun"					"0.45"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"-50"
+			"slow"						"-75"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"2.0 3.0 4.0"
+			"slow_duration"				"2.5"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"invuln_duration"			"1.50"
+			"invuln_duration"			"1.00"
 		}
 	}
 	
@@ -17607,12 +17625,12 @@
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"attack_speed"				"80 120 160 200"
+			"attack_speed"				"60 100 140 180"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"buff_duration"				"2"
+			"buff_duration"				"1.75"
 		}
 	}
 	
@@ -19124,6 +19142,9 @@
 //=====================================================================================================
 // MIFUNE: Bushido
 //=====================================================================================================
+
+///@issue Mifune using this + Zanmato with scepter crashes the game. Potentially infinite attacks, as while invulnerable attacks always fail?
+
 "mifune_bushido"
 {
 	// General
@@ -19138,17 +19159,17 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"0"
-	"AbilityCastPoint"				"0.3"
+	"AbilityCastPoint"				"0.2"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"38 32 26 20"
+	"AbilityCooldown"				"42 36 30 24"
 
 	"HasScepterUpgrade"				"1"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"80"
+	"AbilityManaCost"				"95"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -19161,27 +19182,22 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"percent"						"15 20 25 30" // percentage total
+			"stack_increase"				"3 4 5 6" // percent
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"10 15 20 25" // percent
+			"bonus_agility"					"12 16 20 24"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"base_attack_time"				"1.0"
+			"duration"						"7.0"
 		}
 	"04"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"8.0"
-		}
-	"05"
-		{
 			"var_type"						"FIELD_INTEGER"
-			"scepter_evasion"				"50"
+			"scepter_evasion"				"65"
 		}
 	}
 	
@@ -19200,6 +19216,13 @@
 //=====================================================================================================
 // MIFUNE: Genso
 //=====================================================================================================
+
+///$title Genso
+///$description Summons %illusions% illusions of Mifune to strike at the target enemy. The illusions deal %illusion_tooltip%%% damage, and move %illusion_bonus_movespeed%%% faster, but take %illusion_incoming%%% damage.
+
+///@version 2.3
+///@chg Now applies an initial flat Agility buff on activation.
+
 "mifune_genso"
 {
 	// General
@@ -19243,12 +19266,12 @@
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusion_incoming"				"400" // percentage total
+			"illusion_incoming"				"600" // percentage total
 		}
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"illusion_duration"				"6"
+			"illusion_duration"				"3.5 5.0 6.5 8.0"
 		}
 	"04"
 		{
@@ -19263,7 +19286,7 @@
 	"06"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusions"						"1 2 3 4"
+			"illusions"						"4"
 			"LinkedSpecialBonus"			"special_bonus_mifune_3"
 		}
 	}
@@ -19419,18 +19442,20 @@
 	"AnimationPlaybackRate"			"0.9"
 	"AbilityTextureName"			"mifune_raigeki"
 
+	"HasShardUpgrade"               "1"
+
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1000"
+	"AbilityCastRange"				"800"
 	"AbilityCastPoint"				"0.3"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"6"
+	"AbilityCooldown"				"8"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"65 75 85 95"
+	"AbilityManaCost"				"95"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -19443,32 +19468,27 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"initial_damage"				"80 120 160 200"
+			"initial_damage"				"65 90 115 130"
 		}
 	"02"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"explosion_damage"				"60 90 120 150"
+			"var_type"						"FIELD_FLOAT"
+			"delay"							"1.15"
 		}
 	"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"delay"							"1.25"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"range"							"1250"
-		}
-	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
 			"slow"							"-35"
 		}
-	"06"
+	"04"
 		{
 			"var_type"						"FIELD_FLOAT"
 			"slow_duration"					"2"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"shard_delay"					"0.75"
 		}
 
 	}
@@ -19478,6 +19498,7 @@
 		"particle" "particles/test_particle/channel_field_1.vpcf"
 		"particle" "particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
 		"particle" "particles/units/heroes/hero_mifune/mifune_shockwave.vpcf"
+		"particle" "particles/units/heroes/hero_mifune/mifune_shockwave_cast_b.vpcf"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
 		}
 
@@ -19486,6 +19507,11 @@
 //=====================================================================================================
 // MIFUNE: Zanmato
 //=====================================================================================================
+
+///@version 2.3
+///@chg Reworked: now performs a deadly strike against a single target. If the unit is below [20/25/30%] Health, they are instantly killed. Otherwise, they take [300] Physical damage. Has a [0.6s] delay before the damage occurs.
+///@abilityspecials threshold, base_damage, delay
+///@chg 
 "mifune_zanmato"
 {
 	// General
@@ -19494,18 +19520,19 @@
 	"ScriptFile"					"lua/abilities/mifune_zanmato"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
-	"AoERadius"						"600"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 	"AbilityTextureName"			"mifune_zanmato"
+	"AnimationPlaybackRate"			"0.8"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"450"
-	"AbilityCastPoint"				"0.3"
+	"AbilityCastRange"				"650 700 750"
+	"AbilityCastPoint"				"0.4"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -19513,7 +19540,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"115"
+	"AbilityManaCost"				"200"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -19526,44 +19553,33 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"radius"					"650"
+			"threshold"					"22"
 		}
-		
 		"02"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_hero_damage"			"75 125 175"
+			"var_type"					"FIELD_FLOAT"
+			"delay"						"1.3"
 		}
 					
 		"03"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"attack_interval"			"0.12"
+			"var_type"					"FIELD_INTEGER"
+			"base_percent_damage"		"22"
 		}
 
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"creep_damage_penalty"		"0"
+			"bonus_agility"				"4 6 8"
 		}
 
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"orb_damage"				"80 120 160"
-		}
+		   
 	}
 	
 	"precache"
 	{
-		"soundfile"						"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
-		"soundfile" 					"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
-		"particle"						"particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_cast.vpcf"
-		"particle"						"particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_caster.vpcf" // for dummy
-		"particle"						"particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_targetted_marker.vpcf"
-		"particle"						"particles/units/heroes/hero_ember_spirit/ember_spirit_sleightoffist_tgt.vpcf"
-		"particle"						"particles/units/heroes/hero_ember_spirit/ember_spirit_sleightoffist_trail.vpcf"
-		"particle"						"particles/units/heroes/hero_mifune/mifune_orb.vpcf"
+		"soundfile"						"soundevents/hero_mifune.vsndevts"
+		"particle"						"particles/units/heroes/hero_mifune/zanmato_slash_2.vpcf"
 		"particle"						"particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf"
 	}
 
@@ -30119,7 +30135,7 @@
 		"01"
 		{
 			"var_type" "FIELD_INTEGER"
-			"value" "0"
+			"value" "50"
 		}
 	}
 }
@@ -30141,7 +30157,7 @@
 		"01"
 		{
 			"var_type" "FIELD_INTEGER"
-			"value" "15"
+			"value" "500"
 		}
 	}
 }

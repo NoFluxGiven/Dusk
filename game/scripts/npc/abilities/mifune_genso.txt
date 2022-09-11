@@ -1,6 +1,13 @@
 //=====================================================================================================
 // MIFUNE: Genso
 //=====================================================================================================
+
+///$title Genso
+///$description Summons %illusions% illusions of Mifune to strike at the target enemy. The illusions deal %illusion_tooltip%%% damage, and move %illusion_bonus_movespeed%%% faster, but take %illusion_incoming%%% damage.
+
+///@version 2.3
+///@chg Now applies an initial flat Agility buff on activation.
+
 "mifune_genso"
 {
 	// General
@@ -44,12 +51,12 @@
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusion_incoming"				"400" // percentage total
+			"illusion_incoming"				"600" // percentage total
 		}
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"illusion_duration"				"6"
+			"illusion_duration"				"3.5 5.0 6.5 8.0"
 		}
 	"04"
 		{
@@ -64,7 +71,7 @@
 	"06"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"illusions"						"1 2 3 4"
+			"illusions"						"4"
 			"LinkedSpecialBonus"			"special_bonus_mifune_3"
 		}
 	}

@@ -16,18 +16,20 @@
 	"AnimationPlaybackRate"			"0.9"
 	"AbilityTextureName"			"mifune_raigeki"
 
+	"HasShardUpgrade"               "1"
+
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1000"
+	"AbilityCastRange"				"800"
 	"AbilityCastPoint"				"0.3"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"6"
+	"AbilityCooldown"				"8"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"65 75 85 95"
+	"AbilityManaCost"				"95"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,32 +42,27 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"initial_damage"				"80 120 160 200"
+			"initial_damage"				"65 90 115 130"
 		}
 	"02"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"explosion_damage"				"60 90 120 150"
+			"var_type"						"FIELD_FLOAT"
+			"delay"							"1.15"
 		}
 	"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"delay"							"1.25"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"range"							"1250"
-		}
-	"05"
 		{
 			"var_type"						"FIELD_INTEGER"
 			"slow"							"-35"
 		}
-	"06"
+	"04"
 		{
 			"var_type"						"FIELD_FLOAT"
 			"slow_duration"					"2"
+		}
+	"04"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"shard_delay"					"0.75"
 		}
 
 	}
@@ -75,6 +72,7 @@
 		"particle" "particles/test_particle/channel_field_1.vpcf"
 		"particle" "particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
 		"particle" "particles/units/heroes/hero_mifune/mifune_shockwave.vpcf"
+		"particle" "particles/units/heroes/hero_mifune/mifune_shockwave_cast_b.vpcf"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
 		}
 

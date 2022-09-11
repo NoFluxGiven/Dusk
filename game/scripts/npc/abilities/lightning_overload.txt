@@ -20,7 +20,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"10 9 8"
+	"AbilityCooldown"				"12 10 8"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"150 200 250"
+			"damage"					"175 225 275"
 			"LinkedSpecialBonus"		"special_bonus_lightning_2"
 		}
 		"02"
@@ -48,22 +48,22 @@
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"ministun"					"0.0"
+			"ministun"					"0.45"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"slow"						"-50"
+			"slow"						"-75"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"2.0 3.0 4.0"
+			"slow_duration"				"2.5"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"invuln_duration"			"1.50"
+			"invuln_duration"			"1.00"
 		}
 	}
 	

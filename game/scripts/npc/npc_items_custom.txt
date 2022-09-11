@@ -1177,12 +1177,12 @@
 		"08"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"hp_drain"			"15"
+			"hp_drain"			"20"
 		}
 		"09"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"mp_drain"			"15"
+			"mp_drain"			"20"
 		}
 		"10"
 		{

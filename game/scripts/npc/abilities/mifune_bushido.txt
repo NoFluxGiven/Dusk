@@ -1,6 +1,9 @@
 //=====================================================================================================
 // MIFUNE: Bushido
 //=====================================================================================================
+
+///@issue Mifune using this + Zanmato with scepter crashes the game. Potentially infinite attacks, as while invulnerable attacks always fail?
+
 "mifune_bushido"
 {
 	// General
@@ -15,17 +18,17 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"0"
-	"AbilityCastPoint"				"0.3"
+	"AbilityCastPoint"				"0.2"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"38 32 26 20"
+	"AbilityCooldown"				"42 36 30 24"
 
 	"HasScepterUpgrade"				"1"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"80"
+	"AbilityManaCost"				"95"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -38,27 +41,22 @@
 	"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"percent"						"15 20 25 30" // percentage total
+			"stack_increase"				"3 4 5 6" // percent
 		}
 	"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"10 15 20 25" // percent
+			"bonus_agility"					"12 16 20 24"
 		}
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"base_attack_time"				"1.0"
+			"duration"						"7.0"
 		}
 	"04"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"8.0"
-		}
-	"05"
-		{
 			"var_type"						"FIELD_INTEGER"
-			"scepter_evasion"				"50"
+			"scepter_evasion"				"65"
 		}
 	}
 	

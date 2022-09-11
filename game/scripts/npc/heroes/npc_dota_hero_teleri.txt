@@ -8,47 +8,51 @@
 	"Complexity"			"1"
 	"Ability1"				"teleri_shock_arrow"
 	// Teleri readies her bow, then looses an electric bolt that deals damage and slows the target.
-	// The bolt has no travel time and deals 60/120/180/240 damage, slowing by 100% for 1s.
-	// When the bolt lands, it propagates to enemies in an area behind the target, and applies
-	// an attack. The attack preserves all procs.
+	// The bolt has a fast travel time and deals 60/120/180/240 damage, slowing by 100% for 1s.
+	// When the bolt lands, after the slow duration, it explodes, propagating to enemies in an
+	// area behind the target, and applying an attack. The attack preserves all procs.
+	// The ability cannot propagate to enemies it has already affected in the same cast.
 	// Applies the same effect to all enemies in a 250 radius 175 units away from the target.
 	// This is based on Teleri's current position.
 	// 9s cooldown.
 	"Ability2"				"teleri_tijadis_gambit"
-	// Teleri invokes the power of her tribe, striking 3 random targets in a radius with lightning
+	// Teleri invokes the power of her tribe, marking, then striking, 3 random targets in a radius with lightning
 	// bolts that deal damage and ministun, after a delay.
 	// Teleri may be struck by the bolts as well.
 	// If Teleri is struck by a bolt, she takes far less damage, and is empowered, gaining
 	// regen, movespeed and attackspeed for a short time. Stacks fully.
 	// After a 1s delay, deals 100/175/250/325 damage to each target in a 700 radius
 	// and ministuns for 0.4s.
-	// If Teleri is hit by a bolt, she takes 50% less damage from it, is still ministunned,
-	// and gains 8/16/24/32 Health regen, 30/40/50/60 attack speed and 10/20/30% movespeed for 4s.
-	// The bolts have a 0.2s delay between them. Bolts can only hit each unit once, with
+	// If Teleri is hit by a bolt, she takes 60% less damage from it, is still ministunned,
+	// and gains 16/32/48/64 Health regen, 30/40/50/60 attack speed and 8/12/16/20% movespeed for 5s.
+	// The bolts have a 0.4s delay between them. Bolts can only hit each unit once, with
 	// the exception of Teleri.
 	// Damage Teleri takes from this ability is non-lethal.
 	// 14s cooldown.
 	// If Teleri is hit with all 3 Bolts, she receives the following:
-	// 489 damage
-	// 96 Health Regen (384 Health regained, so reduces total damage to 105)
+	// 390 damage
+	// 1.2s stun
+	// 192 Health Regen (960 Health regained)
 	// 180 attack speed
-	// 90% movespeed
+	// 80% movespeed
 	"Ability3"				"teleri_grace_of_the_thunder_archer"
-	// Teleri dashes towards a closeby location, gaining bonus attack speed and attacking
-	// units on the way.
-	// Dashes up to 400 units away, gaining 30/60/90/120 attack speed for 2s.
-	// As she dashes, up to 2/3/4/5 random enemies within her attack range are attacked once.
-	// The dash takes 0.3s to complete.
-	// 4s cooldown.
+	// Teleri unleashes a blast of electrical energy that empowers herself and a nearby target ally,
+	// increasing their movespeed, and granting Evasion for a short time.
+	// The next attack her or her target makes is empowered, unleashing an arc of electricity that slows, damages
+	// and reduces the magic resistance of the attack target.
+	// The on-attack effect does not activate for the first 0.5s.
+	// Grants 30/35/40/45% movespeed and 70% Evasion for 3.00/4.00/5.00/6.00s to both Teleri and her ally.
+	// The on-attack effect deals 60/120/180/240 Magical damage, slows by 10/30/50/70%, and reduces Magic res by
+	// 30% for 2s. It applies even if the attack misses.
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
 	"Ability6"				"teleri_blitz"
 	// Unleashes a storm of electric arrows upon the target area, dealing damage in random locations.
 	// Each arrow deals her base damage + 30/50/70 bonus as Magical damage in a 75 radius.
-	// The arrows land every 0.20s over a 3s duration, and have a 15/20/25% chance to apply her attack
-	// modifiers on the hit targets (as a 0 damage attack.)
+	// The arrows land every 0.10s over a 2s duration.
 	// 275 radius.
 	// 90s cooldown.
+	// Has 1/2/3 charges.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""

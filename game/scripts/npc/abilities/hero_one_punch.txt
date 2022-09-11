@@ -9,7 +9,7 @@
 	"ScriptFile"					"lua/abilities/hero_one_punch"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -25,7 +25,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"90 80 70"
+	"AbilityCooldown"				"70 60 50"
 	"HasScepterUpgrade"				"1"
 
 	// Cost
@@ -43,7 +43,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"crit"						"225 250 275"
+			"crit"						"225 300 375"
 		}
 		"02"
 		{
@@ -53,28 +53,28 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"landing_aoe"				"250"
+			"landing_aoe"				"280"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"landing_damage"			"240 300 360"
+			"landing_damage"			"240 450 560"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"landing_stun"				"1.25 1.50 1.75"
+			"landing_stun"				"1.75 2.50 3.25"
 			"LinkedSpecialBonus"		"special_bonus_hero_4"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"scepter_crit"				"300 325 350"
+			"scepter_crit"				"325 400 475"
 		}
 		"07"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"scepter_landing_damage"	"150 175 200"
+			"scepter_landing_damage"	"150"
 		}
 	}
 	

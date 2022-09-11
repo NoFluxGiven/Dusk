@@ -31,3 +31,7 @@ function FetchTalentValue(talent_name,val) -- grabs the value of the Talent or n
 
   return nil
 end
+
+function HeroParticle(hero, name)
+  return "particles/units/heroes/hero_"..hero:lower().."/"..name:lower()..".vpcf"
+end

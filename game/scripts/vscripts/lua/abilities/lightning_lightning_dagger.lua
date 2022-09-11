@@ -55,7 +55,7 @@ function lightning_lightning_dagger:OnProjectileHit_ExtraData(target,location,ex
 	if target:TriggerSpellAbsorb(self) then return end
 	target:TriggerSpellReflect(self)
 
-	local damage = self:GetAbilityDamage()
+	local damage = self:GetSpecialValueFor("damage")
 	local jump_radius = 600
 
 	local duration = self:GetSpecialValueFor("duration")
