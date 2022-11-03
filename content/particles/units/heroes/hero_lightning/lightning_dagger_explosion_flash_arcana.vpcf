@@ -1,23 +1,57 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf45:version{73c3d623-a141-4df2-b548-41dd786e6300} -->
 {
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 4
-	m_Renderers = 
+	m_nBehaviorVersion = 12
+	m_Emitters = 
 	[
 		{
-			_class = "C_OP_RenderSprites"
-			VisibilityInputs = 
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
 			{
-				m_nCPin = 3
-				m_flInputMax = 0.1
-				m_flProxyRadius = 12.0
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 3.0
 			}
-			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_bAdditive = true
-			m_bDisableZBuffering = true
-			m_flOverbrightFactor = 15.0
-			m_hTexture = resource:"materials/particle/particle_glow_05.vtex"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_nType = "PF_TYPE_RANDOM_UNIFORM"
+				m_flRandomMin = 0.18
+				m_flRandomMax = 0.2
+				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+			}
+			m_nOutputField = 1
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fSpeedMax = 48.0
+			m_fSpeedMin = 24.0
+			m_nControlPointNumber = 3
+		},
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_nType = "PF_TYPE_RANDOM_UNIFORM"
+				m_flRandomMin = 20.0
+				m_flRandomMax = 124.0
+				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+			}
+		},
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+			m_nOutputField = 7
 		},
 	]
 	m_Operators = 
@@ -43,33 +77,25 @@
 			m_ColorFade = [ 151, 221, 204, 255 ]
 		},
 	]
-	m_Initializers = 
+	m_Renderers = 
 	[
 		{
-			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 0.18
-			m_fLifetimeMax = 0.2
-		},
-		{
-			_class = "C_INIT_CreateWithinSphere"
-			m_fSpeedMax = 48.0
-			m_fSpeedMin = 24.0
-			m_nControlPointNumber = 3
-		},
-		{
-			_class = "C_INIT_RandomRadius"
-			m_flRadiusMax = 124.0
-			m_flRadiusMin = 20.0
-		},
-		{
-			_class = "C_INIT_RandomAlpha"
-		},
-	]
-	m_Emitters = 
-	[
-		{
-			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 3
+			_class = "C_OP_RenderSprites"
+			VisibilityInputs = 
+			{
+				m_nCPin = 3
+				m_flInputMax = 0.1
+				m_flProxyRadius = 12.0
+			}
+			m_bDisableZBuffering = true
+			m_flOverbrightFactor = 15.0
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/particle_glow_05.vtex"
+				},
+			]
+			m_nOutputBlendMode = "PARTICLE_OUTPUT_BLEND_MODE_ADD"
 		},
 	]
 }

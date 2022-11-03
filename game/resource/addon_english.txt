@@ -269,9 +269,7 @@
 		//"DOTA_Shop_Category_Basics"				"ABILITIES"
 		//"DOTA_Shop_Category_Upgrades"			"ITEMS"
 		
-		//--------------------
-		//Variable
-		//--------------------
+		///@hero Variable
 		
 		// To create a new key ( like $health ) just add the entry here
 		//"dota_ability_variable_health"			"Health"					// $health
@@ -293,15 +291,11 @@
 		//"dota_ability_variable_attack_range"	"Attack Range <font color='#7d7d7d'>(Ranged Only)</font>"    // $attack_range
 		//"dota_ability_variable_cast_range"	    "Cast Range"                // $cast_range
 		
-		//--------------------
-		//Announcements
-		//--------------------
+		///@hero Announcements
 		
 		"dota_shop_spawn" "The Dark Materials shop is now open for business!"
 		
-		//--------------------
-		//Abilities
-		//--------------------
+		///@hero Abilities
 		"DOTA_Tooltip_ability_example_ability"										"Detonation"
 		"DOTA_Tooltip_ability_example_ability_description"				"Detonator channels a charge and releases an explosion around the caster if the channel is successful, dealing damage and knocking back all enemies in range of the explosion"
 		"DOTA_Tooltip_ability_example_ability_Lore"								""
@@ -346,11 +340,11 @@
 
 		///@BEGIN HEROES
 			
-			//--------------------
-			//PARAGON
-			//--------------------
+			///@hero PARAGON
+
+			"npc_dota_hero_paragon_npedesc1"    "Heals allies, punishes streaks, and prevents outgoing and incoming damage"
 			
-			///// TALENTS /////
+			///@talents PARAGON
 			
 			"DOTA_Tooltip_ability_special_bonus_paragon_1" "Cleanse Stacking 10% Heal Amp (45s)"
 			"DOTA_Tooltip_ability_special_bonus_paragon_2" "+1s Divine Armour Duration"
@@ -361,7 +355,7 @@
 			"DOTA_Tooltip_ability_special_bonus_paragon_6" "+4s Tranquil Seal Duration"
 			"DOTA_Tooltip_ability_special_bonus_paragon_7" "Cleanse Can Target Buildings (50%)"
 			
-			///// MODIFIERS /////
+			///@modifiers PARAGON
 			
 			"DOTA_Tooltip_modifier_tranquility_seal"                                          "Tranquil Seal"
 			"DOTA_Tooltip_modifier_tranquility_seal"                              "Cannot deal or receive damage."
@@ -375,8 +369,8 @@
 			"DOTA_Tooltip_modifier_divine_armour_block_lua"                              "Divine Armour"
 			"DOTA_Tooltip_modifier_divine_armour_block_lua_Description"                  "Taking reduced damage for a short time."
 			
-			///// ABILITIES /////
-			
+			///@abilities PARAGON
+
 			"DOTA_Tooltip_ability_paragon_cleanse"											"Cleanse"
 			"DOTA_Tooltip_ability_paragon_cleanse_description"								"Heals an ally or deals damage to an enemy.  Additionally heals allies in a radius around them for a smaller amount."
 			"DOTA_Tooltip_ability_paragon_cleanse_Note0"									"Secondary Heal does not affect the primary target."
@@ -423,9 +417,7 @@
 			"DOTA_Tooltip_ability_paragon_conversion_bonus_mana_regen"                        "BONUS MANA REGEN:"
 			"DOTA_Tooltip_ability_paragon_conversion_duration"                        		  "DURATION:"
 			
-			//--------------------
-			//CRIMSON
-			//--------------------
+			///@hero CRIMSON
 			"DOTA_Tooltip_ability_crimson_life_drain"											"Destruction Sphere"
 			"DOTA_Tooltip_ability_crimson_life_drain_description"								"Summons a sphere that, after a short delay, explodes, dealing Magical damage based on the missing health of affected targets."
 			"DOTA_Tooltip_ability_crimson_life_drain_Lore"										"A sphere of ruinous intent."
@@ -456,9 +448,7 @@
 			"DOTA_Tooltip_ability_crimson_disintegrate_mres_reduction"									"%MAGIC RESISTANCE REDUCTION:"
 			"DOTA_Tooltip_ability_crimson_disintegrate_move_slow"										"%SLOW:"
 			
-			//--------------------
-			//ELEMENTALIST
-			//--------------------
+			///@hero ELEMENTALIST
 			
 			"DOTA_Tooltip_ability_elementalist_ice_bolt" "Ice Bolt"
 			"DOTA_Tooltip_ability_elementalist_ice_bolt_description" "Fires a bolt of ice at the target, damaging them and slowing their attack and move speed.  Passively causes Elementalist's attacks to slow enemies.  Trinity causes Elementalist's attacks to slow enemies more based upon the level of this skill."
@@ -489,7 +479,8 @@
 
 	"npc_dota_hero_bounty_hunter"    "Shade"
 	"npc_dota_hero_bounty_hunter_bio"    "Few possess a reputation capable of striking fear into the Arca of the realm, but the Nightwalker was one. A veteran assassin, and a slayer of countless mages, he tore across Lochraith at the drop of a coin, seemingly unstoppable. Not all lives were his, however; a young Arca had seen him coming days in advance, and set a devious trap. Caught in a powerful binding spell, he prepared to take his last breath, but the Arca hesitated. For all the trouble he had caused, all those he had killed in the name of avarice, he deserved worse than death. His punishment would forever be wandering a dark void, unable to escape, with no need for material goods, with no quarries to find. She hastily weaved a dark, terrible curse, full of isolation and solitude. But curses are fickle creatures, born of terrible, turbulent emotions. She realised her mistake all but a second too late. Using the very threads she had weaved prior, the Nightwalker tore her from the plane, imprisoning her in a desolate realm, using his undying connection with her to weave dark magic of his own."
-	"npc_dota_hero_bounty_hunter_hype"    "Shade is a powerful Agility Hero that relies on his enemies being isolated to deal his damage. His blades are coated in Darkwyrm Venom, dealing damage based on the amount of debuffs his opponent has. He can Stalk a target to inflict a large amount of Physical damage and slow, and he can sustain in fights with his terrifying Dark Hunger. His Ultimate, Isolation, may remove an enemy from their allies, crippling their ability to deal damage."
+	"npc_dota_hero_bounty_hunter_hype"    "An evasive Hero with a focus on isolating and subsequently destroying his enemies, Shade can drain Health and Mana, become untargetable, and even render their nearby allies useless for a short time."
+	"npc_dota_hero_bounty_hunter_npedesc1"    "Stalks, drains, isolates and strikes at enemies while evading ganks"
 
 	///// TALENTS /////
 
@@ -549,9 +540,7 @@
 		"DOTA_Tooltip_modifier_venomous_lua"    "Venomous"
 		"DOTA_Tooltip_modifier_venomous_lua_description"    "Taking damage over time and losing Armor."
 
-//--------------------
-//LICH
-//--------------------
+///@hero LICH
 
 	///// TALENTS /////
 	
@@ -615,9 +604,9 @@
 	
 	///// DEPRECATED /////
 			
-			//--------------------
-			//HAWKEYE
-			//--------------------
+			///@hero HAWKEYE
+
+			"npc_dota_hero_sniper_npedesc1"    "Rapidly attacks and explodes enemies with a detonator dart"
 			
 			///// TALENTS /////
 			
@@ -688,6 +677,8 @@
 			//--------------------
 			//GEMINI (VOIDWALKER)
 			//--------------------
+
+			"npc_dota_hero_rubick_npedesc1"    "Disrupts fights and teleports around the map"
 			
 			///// TALENTS /////
 			
@@ -768,9 +759,9 @@
 			"DOTA_Tooltip_ability_gemini_abyssal_vortex_chargetime" "VORTEX DURATION:"
 			"DOTA_Tooltip_ability_gemini_abyssal_vortex_pull_speed" "PULL STRENGTH:"
 			
-			//--------------------
-			//FURY
-			//--------------------
+			///@hero FURY
+
+			"npc_dota_hero_ursa_npedesc1"    "Resists disarms and slows, and roars to slow enemies globally"
 			
 			///// TALENTS /////
 			
@@ -807,6 +798,37 @@
 			"DOTA_Tooltip_ability_fury_terashock_attack_speed_bonus_hero" "ATTACK SPEED BONUS PER HERO:"
 			"DOTA_Tooltip_ability_fury_terashock_attack_speed_bonus_creep" "ATTACK SPEED BONUS PER CREEP:"
 			
+			"DOTA_Tooltip_ability_fury_force_of_nature" "Force of Nature"
+			"DOTA_Tooltip_ability_fury_force_of_nature_Description" "Fury ignores Disarms, and resists being slowed. In addition, Fury has a %crit_chance%%% chance to critically strike enemies. While Disarmed, he loses a small amount of attack speed instead."
+			"DOTA_Tooltip_ability_fury_force_of_nature_crit_chance" "%CRITICAL CHANCE:"
+			"DOTA_Tooltip_ability_fury_force_of_nature_crit_damage" "%CRITICAL DAMAGE:"
+			"DOTA_Tooltip_ability_fury_force_of_nature_attack_speed_reduction" "DISARM ATTACK SPEED REDUCTION:"
+			"DOTA_Tooltip_ability_fury_force_of_nature_slow_reduction" "%SLOW RESISTANCE:"
+
+			
+			"DOTA_Tooltip_ability_fury_roar"                                                  "Bloody Roar"
+			"DOTA_Tooltip_ability_fury_roar_Description"                                      "Fury roars, slowing enemies in a %radius% radius, and slightly slowing enemies globally. Any enemy below %threshold%%% Health is revealed and slowed more drastically, with attacks against them having a %bash_chance%%% chance to bash, dealing %bash_damage% bonus damage and stunning for %bash_duration% seconds."
+			"DOTA_Tooltip_ability_fury_roar_radius"                                           "RADIUS:"
+			"DOTA_Tooltip_ability_fury_roar_duration"                                         "DURATION:"
+			"DOTA_Tooltip_ability_fury_roar_bonus_movespeed"                                  "%BONUS MOVESPEED:"
+			"DOTA_Tooltip_ability_fury_roar_slow"                                             "%BASE SLOW:"
+			"DOTA_Tooltip_ability_fury_roar_global_slow"                                      "%GLOBAL SLOW:"
+			"DOTA_Tooltip_ability_fury_roar_low_health_slow_multiplier"                       "LOW HEALTH SLOW MULTIPLIER:"
+			
+			"DOTA_Tooltip_ability_fury_bloodsport" 					"Bloodsport"
+			"DOTA_Tooltip_ability_fury_bloodsport_description" 		"The Deathbeast has such insatiable bloodlust that strikes against enemies have an almost supernatural tendency to make them bleed. Deals damage over time based on the target's missing Health, and leaves behind a blood trail for Heroes. While on the blood trail, that Hero's position is revealed to his team."
+			"DOTA_Tooltip_ability_fury_bloodsport_damage_per_second" "%MISSING HEALTH DAMAGE PER SECOND:"
+			"DOTA_Tooltip_ability_fury_bloodsport_duration"			 "DURATION:"
+			
+			"DOTA_Tooltip_ability_fury_berserk" 						"Berserk"
+			"DOTA_Tooltip_ability_fury_berserk_description" 			"With a frenzied roar, Fury lives up to his name, entering a state of frenzy, doubling the efficacy of all of his abilities. Increases his attack speed, causes Rend and Bloodsport to apply an additional stack, and doubles the damage, slow and bonuses if Roar is used while active."
+			"DOTA_Tooltip_ability_fury_berserk_duration" 				"DURATION:"
+			"DOTA_Tooltip_ability_fury_berserk_bonus_attackspeed" 		"BONUS ATTACKSPEED:"
+			"DOTA_Tooltip_ability_fury_berserk_bonus_stacks" 			"REND/BLOODSPORT STACK BONUS:"
+			"DOTA_Tooltip_ability_fury_berserk_roar_cooldown_reduction" "ROAR COOLDOWN REDUCTION:"
+
+			///// DEPRECATED /////
+
 			"DOTA_Tooltip_ability_fury_rend" "Rend"
 			"DOTA_Tooltip_ability_fury_rend_description" "With each strike, Fury rends his target's flesh, reducing their maximum Health."
 			"DOTA_Tooltip_ability_fury_rend_max_hp_removal_per_stack" "HP REMOVAL PER STACK:"
@@ -814,30 +836,7 @@
 			"DOTA_Tooltip_ability_fury_rend_" "MAXIMUM:"
 			"DOTA_Tooltip_ability_fury_rend_reset_time" "DURATION:"
 			
-			"DOTA_Tooltip_ability_fury_roar"                                                  "Roar"
-			"DOTA_Tooltip_ability_fury_roar_Description"                                      "Fury unleashes a roar that leaves his enemies shaken and fearing for their lives. The sonic blast reduces their movespeed, damages them, and empowers Fury for each unit hit, granting him bonus attack speed, movespeed, and damage."
-			"DOTA_Tooltip_ability_fury_roar_damage"                                           "DAMAGE:"
-			"DOTA_Tooltip_ability_fury_roar_range"                                            "RANGE:"
-			"DOTA_Tooltip_ability_fury_roar_duration"                                         "DURATION:"
-			"DOTA_Tooltip_ability_fury_roar_bonus_movespeed"                                  "%BONUS MOVESPEED:"
-			"DOTA_Tooltip_ability_fury_roar_bonus_attackspeed"                                "BONUS ATTACK SPEED:"
-			"DOTA_Tooltip_ability_fury_roar_bonus_damage"                                     "BONUS DAMAGE:"
-			"DOTA_Tooltip_ability_fury_roar_slow"                                             "%SLOW:"
-			
-			"DOTA_Tooltip_ability_fury_bloodsport" "Bloodsport"
-			"DOTA_Tooltip_ability_fury_bloodsport_description" "The Deathbeast has such insatiable bloodlust that strikes against his opponents have an almost supernatural tendency to make them bleed.  Damages over time for each stack on the target.  Stacks last for 6s, and ignore damage block."
-			"DOTA_Tooltip_ability_fury_bloodsport_bleed" "DAMAGE:"
-			
-			"DOTA_Tooltip_ability_fury_berserk" "Berserk"
-			"DOTA_Tooltip_ability_fury_berserk_description" "With a frenzied roar, Fury lives up to his name, entering a state of frenzy, doubling the efficacy of all of his abilities. Increases his attack speed, causes Rend and Bloodsport to apply an additional stack, and doubles the damage, slow and bonuses if Roar is used while active."
-			"DOTA_Tooltip_ability_fury_berserk_duration" "DURATION:"
-			"DOTA_Tooltip_ability_fury_berserk_bonus_attackspeed" "BONUS ATTACKSPEED:"
-			"DOTA_Tooltip_ability_fury_berserk_bonus_stacks" "REND/BLOODSPORT STACK BONUS:"
-			"DOTA_Tooltip_ability_fury_berserk_roar_cooldown_reduction" "ROAR COOLDOWN REDUCTION:"
-			
-			//--------------------
-			//PHANTOM
-			//--------------------
+			///@hero PHANTOM
 			
 			///// TALENTS /////
 			
@@ -892,9 +891,7 @@
 			"DOTA_Tooltip_ability_phantom_deathstrike_chance"                              	  "%CHANCE:"
 			"DOTA_Tooltip_ability_phantom_deathstrike_bonus_damage"                           "%MISSING HEALTH AS DAMAGE:"
 			
-			//--------------------
-			//IRONFIST
-			//--------------------
+			///@hero IRONFIST
 			
 			///// TALENTS /////
 			
@@ -1031,9 +1028,7 @@
 			"DOTA_Tooltip_ability_ironfist_focus_blue_mana_burn"                              "MANA BURN:"
 			"DOTA_Tooltip_ability_ironfist_focus_blue_duration"                          	  "DURATION:"
 			
-			//--------------------
-			//ALCHEMIST
-			//--------------------
+			///@hero ALCHEMIST
 			
 			"DOTA_Tooltip_ability_alchemist_alchemise"                                        "Alchemise"
 			"DOTA_Tooltip_ability_alchemist_alchemise_description"                            "Transmutes the target enemy unit into gold, granting the Alchemist a large boost to his bank balance.  Passively grants gold per second."
@@ -1059,9 +1054,7 @@
 			"DOTA_Tooltip_ability_alchemist_motherloads_Note0"                          	  "The unit still grants its normal bounty as well as the bonus gold."
 			"DOTA_Tooltip_ability_alchemist_motherloads_percent"                              "%BOUNTY INCREASE:"
 			
-			//--------------------
-			//ELENA
-			//--------------------
+			///@hero ELENA
 			
 			///// TALENTS /////
 			
@@ -1169,9 +1162,7 @@
 			"DOTA_Tooltip_ability_elena_graveguard_duration"                                  "DURATION:"
 			"DOTA_Tooltip_ability_elena_graveguard_percent"                                   "PERCENT:"
 			
-			//--------------------
-			//TIMEKEEPER
-			//--------------------
+			///@hero TIMEKEEPER
 			
 			///// TALENTS /////
 			
@@ -1263,9 +1254,7 @@
 			"DOTA_Tooltip_ability_timekeeper_chaos_wave_radius"                               "RADIUS:"
 			"DOTA_Tooltip_ability_timekeeper_chaos_wave_stun"                                 "STUN:"
 			
-			//--------------------
-			//MIFUNE
-			//--------------------
+			///@hero MIFUNE
 			
 			///// TALENTS /////
 			
@@ -1293,7 +1282,7 @@
 			"DOTA_Tooltip_ability_mifune_genso_illusions"                             		  "ILLUSIONS:"
 			
 			"DOTA_Tooltip_ability_mifune_bushido"                                             "Bushido"
-			"DOTA_Tooltip_ability_mifune_bushido_Description"                                 "Mifune's intense training and discipline allows him to extract more benefits from his Agility. Upon activation, grants %bonus_agility% additional Agility, plus %percent%%% of his Base Agility as bonus Agility, and %bonus_damage%%% bonus damage based upon his base damage for a short time."
+			"DOTA_Tooltip_ability_mifune_bushido_Description"                                 "Mifune's intense training and discipline allows him to extract more benefits from his Agility. Upon activation, grants %bonus_agility% bonus Agility, then %stack_increase% additional Agility per attack he makes."
 			"DOTA_Tooltip_ability_mifune_bushido_scepter_description"                         "Bushido grants %scepter_evasion%%% evasion. When an enemy misses an attack against Mifune in this form, he instantly counterattacks."
 			"DOTA_Tooltip_ability_mifune_bushido_percent"                                     "%AGILITY INCREASE:"
 			"DOTA_Tooltip_ability_mifune_bushido_bonus_agility"                               "ADDITIONAL AGILITY BONUS:"
@@ -1308,7 +1297,7 @@
 			"DOTA_Tooltip_ability_mifune_raigeki_delay"                                       "DELAY:"
 
 			"DOTA_Tooltip_ability_mifune_zanmato"                                             "Zanmato"
-			"DOTA_Tooltip_ability_mifune_zanmato_description"                                 "Mifune focuses for a moment, then unleashes the most powerful ability in his arsenal; he slashes at blinding speed, attacking all enemies in the radius of the spell.  With each slash, the energy created from his attacks converges on the main target, dealing Magical damage for each enemy within the radius.  The main target is slowed while Mifune is slashing.  Deals bonus damage to Heroes.\n\nUpgradable by Aghanim's Scepter."
+			"DOTA_Tooltip_ability_mifune_zanmato_description"                                 "Mifune unleashes a strike against the target enemy, slashing through any Heroes and other units in a line, and rendering him Invulnerable. After a short delay, the targets takes %slash_damage%%% of his attack damage as Pure damage, and are slowed. All targets are frozen during the delay."
 			"DOTA_Tooltip_ability_mifune_zanmato_Note0"                                 	  "The main target is stunned for a minimum of 1s."
 			"DOTA_Tooltip_ability_mifune_zanmato_Note1"                                 	  "The slash preserves procs and orb effects."
 			"DOTA_Tooltip_ability_mifune_zanmato_Note2"                                 	  "The Orbs deal Magical damage, and converge on the main target when the initial slashes end."
@@ -1333,9 +1322,7 @@
 			"DOTA_Tooltip_ability_mifune_zanmato_scepter_bonus_hero_damage"                           "BONUS HERO DAMAGE:"
 			"DOTA_Tooltip_ability_mifune_zanmato_scepter_orb_damage"                                  "ORB DAMAGE:"
 			
-			//--------------------
-			//VULCAN
-			//--------------------
+			///@hero VULCAN
 			
 			///// TALENTS /////
 			
@@ -1354,9 +1341,7 @@
 			
 			
 			
-			//--------------------
-			//LIGHTNING
-			//--------------------
+			///@hero LIGHTNING
 			
 			///// TALENTS /////
 			
@@ -1447,9 +1432,7 @@
 			"DOTA_Tooltip_ability_lightning_blinding_speed2_max_stack"                 		  "MAX STACK:"
 			"DOTA_Tooltip_ability_lightning_blinding_speed2_duration"                 		  "STACK DURATION:"
 			
-			//--------------------
-			//OUROBOROS
-			//--------------------
+			///@hero OUROBOROS
 			
 			///// TALENTS /////
 			
@@ -1524,9 +1507,7 @@
 			"DOTA_Tooltip_ability_ouroboros_dragons_wing_slow"                                "%SLOW:"
 			"DOTA_Tooltip_ability_ouroboros_dragons_wing_slow_duration"                       "SLOW DURATION:"
 		
-			//--------------------
-			//TRICKSTER
-			//--------------------
+			///@hero TRICKSTER
 			
 			"DOTA_Tooltip_ability_trickster_disappearing_act"                                 "Disappearing Act"
 			"DOTA_Tooltip_ability_trickster_disappearing_act_description"                     "The targeted ally or enemy is temporarily removed from the game, reappearing at a random nearby spot after the duration.  Instantly kills non-Hero units."
@@ -1547,9 +1528,7 @@
 			"DOTA_Tooltip_ability_trickster_surprise_description"                             "Fires a bolt of energy that deals large Magical damage, stuns, and disarms the target."
 			"DOTA_Tooltip_ability_trickster_surprise_magic_missile_disarm"                    "DURATION:"
 			
-			//--------------------
-			//TEK
-			//--------------------
+			///@hero TEK
 			
 			///// TALENTS /////
 			
@@ -1643,9 +1622,7 @@
 			"DOTA_Tooltip_ability_tek_aerial_assault_mines_amount"                            "AMOUNT OF MISSILES:"
 			"DOTA_Tooltip_ability_tek_aerial_assault_mines_delay"                             "DELAY:"
 			
-			//--------------------
-			//REUS
-			//--------------------
+			///@hero REUS
 			
 			///// TALENTS /////
 			
@@ -1715,9 +1692,7 @@
 			"DOTA_Tooltip_ability_reus_stoneblast_stun"                                       "STUN:"
 			"DOTA_Tooltip_ability_reus_stoneblast_damage"                                     "DAMAGE:"
 			
-			//--------------------
-			//LYSANDER
-			//--------------------
+			///@hero LYSANDER
 			
 			///// TALENTS /////
 			
@@ -1768,9 +1743,7 @@
 			"DOTA_Tooltip_ability_lysander_phantom_fleet_ministun"                            "MINISTUN:"
 			"DOTA_Tooltip_ability_lysander_phantom_fleet_duration"                            "DURATION:"
 			
-			//--------------------
-			//BLOODWARRIOR
-			//--------------------
+			///@hero BLOODWARRIOR
 			
 			///// TALENTS /////
 			
@@ -1907,9 +1880,7 @@
 			"DOTA_Tooltip_ability_sanguine_hunter_soul_claw_heal"             				  "%HEAL:"
 			"DOTA_Tooltip_ability_sanguine_hunter_soul_claw_duration"                         "BUFF DURATION:"
 			
-			//--------------------
-			//AETHER
-			//--------------------
+			///@hero AETHER
 			
 			///// TALENTS /////
 			
@@ -1964,9 +1935,7 @@
 			"DOTA_Tooltip_ability_aether_teleport_Note0"                                	  "Teleports the unit to the position Aether was in when the spell was cast, not when the spell ends."
 			"DOTA_Tooltip_ability_aether_teleport_delay"                                      "DELAY:"
 			
-			//--------------------
-			//SET
-			//--------------------
+			///@hero SET
 			
 			///// TALENTS /////
 			
@@ -2062,9 +2031,7 @@
 			"DOTA_Tooltip_ability_set_sand_puppet_warrior"                                    "Warrior"
 			"DOTA_Tooltip_ability_set_sand_puppet_warrior_description"                        "This creature is a Sand Puppet of the Warrior variety.  Has a small attack range and medium movement speed, but deals high damage, slows enemy movement speed and gains bonus movespeed passively.  The slow and movespeed bonus increases as its level does."
 			
-			//--------------------
-			//NEITH
-			//--------------------
+			///@hero NEITH
 			
 			///// TALENTS /////
 			
@@ -2123,9 +2090,7 @@
 			"DOTA_Tooltip_ability_neith_rally_scepter_duration"                               "SCEPTER DURATION:"
 			"DOTA_Tooltip_ability_neith_rally_scepter_radius"                               "SCEPTER RADIUS:"
 			
-			//--------------------
-			//FATE
-			//--------------------
+			///@hero FATE
 			
 			///// TALENTS /////
 			
@@ -2176,9 +2141,7 @@
 			"DOTA_Tooltip_ability_fate_chains_of_fate_damage_hero"                                    "%DAMAGE (HERO):"
 			"DOTA_Tooltip_ability_fate_chains_of_fate_damage_creep"                              "%DAMAGE (CREEP):"
 			
-			//--------------------
-			//BAHAMUT
-			//--------------------
+			///@hero BAHAMUT
 			
 			///// TALENTS /////
 			
@@ -2233,9 +2196,7 @@
 			"DOTA_Tooltip_ability_bahamut_reckoning_aura_spell_amp_steal"                              "%SPELL AMP STEAL:"
 			
 			
-			//--------------------
-			//HORROR
-			//--------------------
+			///@hero HORROR
 			
 			///// TALENTS /////
 			
@@ -2319,9 +2280,7 @@
 			"DOTA_Tooltip_ability_horror_sinister_crit_bonus"                               		  "%CRITICAL DAMAGE PER HIT:"
 			"DOTA_Tooltip_ability_horror_sinister_duration"                                   "DURATION:"
 			
-			//--------------------
-			//HERO
-			//--------------------
+			///@hero HERO
 			
 			///// TALENTS /////
 			
@@ -2381,9 +2340,7 @@
 			"DOTA_Tooltip_ability_hero_hyper_kick_slow"                                     "%SLOW:"
 			"DOTA_Tooltip_ability_hero_hyper_kick_duration"                                 "DURATION:"
 			
-			//--------------------
-			//CHRONOS
-			//--------------------
+			///@hero CHRONOS
 			
 			"DOTA_Tooltip_ability_special_bonus_chronos_1" ""
 			"DOTA_Tooltip_ability_special_bonus_chronos_2" ""
@@ -2422,9 +2379,7 @@
 			"DOTA_Tooltip_ability_chronos_warp_duration"                                      "SLOW DURATION:"
 			"DOTA_Tooltip_ability_chronos_warp_delay"                                         "DELAY:"
 			
-			//--------------------
-			//BAAL
-			//--------------------
+			///@hero BAAL
 			
 			///// TALENTS /////
 			
@@ -2529,9 +2484,7 @@
 			"DOTA_Tooltip_ability_baal_superposition2_duration"                               "DURATION:"
 			"DOTA_Tooltip_ability_baal_superposition2_bonus_ms"                               "%SPEED BONUS:"
 			
-			//--------------------
-			//ALROTH
-			//--------------------
+			///@hero ALROTH
 			
 			///// TALENTS /////
 			
@@ -2584,9 +2537,7 @@
 			"DOTA_Tooltip_ability_alroth_solwave_damage_per_second"                                    "DAMAGE PER SECOND:"
 			"DOTA_Tooltip_ability_alroth_solwave_duration"                                    "DURATION:"
 			
-			//--------------------
-			//ALEXANDER
-			//--------------------
+			///@hero ALEXANDER
 
 			///// BIO /////
 
@@ -2674,9 +2625,7 @@
 			"DOTA_Tooltip_ability_alexander_steadfast_hp_damage"                          "%CURRENT HEALTH AS DAMAGE:"
 			"DOTA_Tooltip_ability_alexander_steadfast_hp_armor"                          "%CURRENT HEALTH AS ARMOR:"
 			
-			//--------------------
-			//ODIN
-			//--------------------
+			///@hero ODIN
 			
 			"DOTA_Tooltip_ability_special_bonus_odin_1" ""
 			"DOTA_Tooltip_ability_special_bonus_odin_2" ""
@@ -2710,9 +2659,7 @@
 			"DOTA_Tooltip_ability_odin_sleipnirs_veil_duration"                               "DURATION:"
 			"DOTA_Tooltip_ability_odin_sleipnirs_veil_slow"                                   "%SLOW:"
 			
-			//--------------------
-			//ASTAROTH
-			//--------------------
+			///@hero ASTAROTH
 			
 			///// TALENTS /////
 			
@@ -2780,9 +2727,7 @@
 			"DOTA_Tooltip_ability_astaroth_pain_transferral_duration"                         "DURATION:"
 			"DOTA_Tooltip_ability_astaroth_pain_transferral_damage"                           "%DAMAGE:"
 			
-			//--------------------
-			//NU
-			//--------------------
+			///@hero NU
 			
 			///// TALENTS /////
 			
@@ -2907,9 +2852,7 @@
 			"DOTA_Tooltip_ability_mana_knight_vorpal_assault_mana_burn"                    	  "MANA BURN:"
 			"DOTA_Tooltip_ability_mana_knight_vorpal_assault_silence_duration"                     "SILENCE DURATION PER BOLT:"
 			
-			//--------------------
-			//ARTIFICER
-			//--------------------
+			///@hero ARTIFICER
 			
 			//TALENTS
 			
@@ -3332,7 +3275,7 @@
 			///// ABILITIES /////
 			
 			"DOTA_Tooltip_ability_lupin_beneath_the_mask"                                     "Beneath The Mask"
-			"DOTA_Tooltip_ability_lupin_beneath_the_mask_Description"                         "Lupin's next attack against a Hero deals bonus Physical damage, Silencing them and stealing some of their Health, movespeed and attack speed."
+			"DOTA_Tooltip_ability_lupin_beneath_the_mask_Description"                         "Lupin's next attack against a Hero deals bonus Physical damage, Silencing them and stealing some of their Health, movespeed and attack speed. Lupin becomes invisible for the duration."
 			"DOTA_Tooltip_ability_lupin_beneath_the_mask_damage"                              "HEALTH STEAL/DAMAGE:"
 			"DOTA_Tooltip_ability_lupin_beneath_the_mask_slow"                                "%MOVESPEED STEAL:"
 			"DOTA_Tooltip_ability_lupin_beneath_the_mask_attack_speed_steal"                  "ATTACK SPEED STEAL:"
@@ -3662,10 +3605,7 @@
 		///@END HEROES
 
 		///@BEGIN ITEMS			
-		
-		//------------------------
-		// Items
-		//------------------------
+	
 		"DOTA_Tooltip_ability_item_example_item"										"Shield Blaster"
 		"DOTA_Tooltip_ability_item_example_item_description"							"Gives the caster a 50% damage reduction for 4 seconds while firing a projectile that deals damage 125 PURE damage to any enemy it hits."
 		"DOTA_Tooltip_ability_item_example_item_Lore"								""
@@ -3683,14 +3623,14 @@
 		"DOTA_Tooltip_ability_item_eloras_music_box_bonus_armor"                              	  "+$armor"
 		
 		"DOTA_Tooltip_ability_item_eloras_locket"                                             "Elora's Locket"
-		"DOTA_Tooltip_ability_item_eloras_locket_description"                                 "<h1>Active: Cursed Image</h1>Summons an illusory image of the target enemy that lasts %duration% seconds. Deals %illusion_outgoing_damage%%% damage and takes %illusion_incoming_damage%%% damage. The illusion deals %bonus_magical_damage% bonus Magical damage when striking the Hero that they are a copy of."
+		"DOTA_Tooltip_ability_item_eloras_locket_description"                                 "<h1>Active: Cursed Image</h1>Summons an illusory image of the target enemy that lasts %duration% seconds. Deals %illusion_outgoing_damage%%% damage and takes %illusion_incoming_damage%%% damage. The illusion deals %bonus_magical_damage% bonus Magical damage when striking the Hero that they are a copy of/"
 		"DOTA_Tooltip_ability_item_eloras_locket_bonus_strength"                              "+$str"
 		"DOTA_Tooltip_ability_item_eloras_locket_bonus_armor"                              	  "+$armor"
 		
 		//**********************************************************************
 		//**** REGULAR ITEMS
 		//**********************************************************************
-		
+	
 		//////////////////////////////////////////////////////////////////////
 		//// IMPROVED WAND
 		//////////////////////////////////////////////////////////////////////
@@ -3726,27 +3666,38 @@
 		"DOTA_Tooltip_ability_item_seers_lantern_bonus_mana_regen"                        "+$mana_regen"
 		
 		//////////////////////////////////////////////////////////////////////
-		//// WAND OF YGGDRASIL
+		//// PANOPTICA
 		//////////////////////////////////////////////////////////////////////
 		
 		// Improved Wand, Oblivion Staff, 600 Gold Recipe (2400 + 1650 + 600 = 4650)
+		///@TODO
+		"DOTA_Tooltip_ability_item_panoptica"                                            "Panoptica"
+		"DOTA_Tooltip_ability_item_panoptica_description"                                "<h1>Active: Unending Eyes</h1>Applies a curse to the target unit. The curse slows by up to %slow%%% and steals %health_steal%%% of their Max Health every second, with the effects getting stronger over time. If the target is not visible to the wielder's team, the effects are muted.\n\n<h1>Passive: Truesight</h1>The wielder reveals invisible units and Wards in a %true_sight_radius% radius."
+		"DOTA_Tooltip_ability_item_panoptica_Note0"                              		 "The slow amount and Health steal increase from 20% to 100% over the full duration, and continue to increase while the effect is muted."
+		"DOTA_Tooltip_ability_item_panoptica_bonus_health_regen"                         "+$hp_regen"
+		"DOTA_Tooltip_ability_item_panoptica_bonus_intelligence"                         "+$int"
+		"DOTA_Tooltip_ability_item_panoptica_bonus_strength"                         	 "+$str"
+		"DOTA_Tooltip_ability_item_panoptica_bonus_agility"                         	 "+$agi"
+		"DOTA_Tooltip_ability_item_panoptica_bonus_attack_speed"                         "+$attack"
+		"DOTA_Tooltip_ability_item_panoptica_bonus_damage"                         		 "+$damage"
+		"DOTA_Tooltip_ability_item_panoptica_bonus_mana_regen"                         	 "+$mana_regen"
+
+		//////////////////////////////////////////////////////////////////////
+		//// FEYSHIELD
+		//////////////////////////////////////////////////////////////////////
 		
-		"DOTA_Tooltip_ability_item_wand_of_yggdrasil"                                            "Wand of Yggdrasil"
-		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_description"                                "<h1>Active: Greater Drain</h1>Drains %hp_drain% Health, %hp_percent_drain%%% of the max Health, %mp_drain% Mana, and %mp_percent_drain%%% max Mana per charge from the target enemy. After a %delay% second delay, you regain the amount drained as Health and Mana.<h1>Passive: Replenish</h1>Gains a charge every 8 seconds."
-		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_Note0"                              		 "The drain deals Pure damage, and is not blocked by Spell Immunity."
-		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_bonus_health_regen"                         "+$hp_regen"
-		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_bonus_intelligence"                         "+$int"
-		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_bonus_strength"                         	 "+$str"
-		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_bonus_agility"                         	 "+$agi"
-		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_bonus_attack_speed"                         "+$attack"
-		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_bonus_damage"                         		 "+$damage"
-		"DOTA_Tooltip_ability_item_wand_of_yggdrasil_bonus_mana_regen"                         	 "+$mana_regen"
+		// Improved Wand, Oblivion Staff, 600 Gold Recipe (2400 + 1650 + 600 = 4650)
+		///@TODO
+		"DOTA_Tooltip_ability_item_feyshield"                                            "Feyshield"
+		"DOTA_Tooltip_ability_item_feyshield_description"                                "<h1>Active: Curse of the Fey</h1>Applies a shield that renders you invulnerable to Magical damage. The next Hero to deal damage to you Dispels the shield, and is afflicted with a curse that, after %delay% seconds, deals %damage% damage and stuns them for %stun_duration% seconds."
+		"DOTA_Tooltip_ability_item_feyshield_bonus_armor"                         		"+$armor"
+		"DOTA_Tooltip_ability_item_feyshield_bonus_intelligence"                         "+$int"
 		
 		
 		//////////////////////////////////////////////////////////////////////
 		//// BLACK ROSE
 		//////////////////////////////////////////////////////////////////////
-		
+		///@TODO
 		"DOTA_Tooltip_ability_item_black_rose"                                             "Black Rose"
 		"DOTA_Tooltip_ability_item_black_rose_description"                                 "<h1>Active: Rending Darkness</h1>After a %active_delay% second delay, the target enemy takes %damage% Pure damage, both the caster and the target are stunned for %active_duration% seconds and take %active_damage_increase%%% bonus damage from all sources while stunned. If either target is more than %max_distance% units away when the delay ends, nothing happens. Both the debuff and the stun cannot be purged."
 		"DOTA_Tooltip_ability_item_black_rose_Note0"                                 	  "The debuff cannot be applied to the same target during the delay time or the stun duration."
@@ -3757,9 +3708,9 @@
 		//////////////////////////////////////////////////////////////////////
 		//// HEPHAESTUS' HAMMER
 		//////////////////////////////////////////////////////////////////////
-		
+		///@TODO
 		"DOTA_Tooltip_ability_item_hephaestus_hammer"                                             "Hephaestus' Hammer"
-		"DOTA_Tooltip_ability_item_hephaestus_hammer_description"                                 "<h1>Active: Guardian Wall</h1>Surrounds all structures within %aura_radius% units with a protective wall of energy, reducing their incoming damage by %active_damage_reduction%%%, granting %active_regen_bonus% bonus Health regen, and causing enemies that attack those structures to be afflicted with a %active_move_slow%%% movement slow and %active_att_slow% attack slow for %active_slow_duration% seconds.\n\n<h1>Passive: Reinforce</h1>Grants %aura_armor_bonus% Armor to nearby structures within a %aura_radius% radius."
+		"DOTA_Tooltip_ability_item_hephaestus_hammer_description"                                 "<h1>Active: Guardian Slam</h1>The wielder leaps to a nearby target Building and strikes the ground. Any allied Buildings in the %radius% radius become Fortified. Enemy Buildings take %damage% Pure damage and are Stunned for %stun_duration%, and enemy Heroes in the radius take %hero_damage% and have their attack speed slowed by %slow%%%. Lasts %duration% seconds. You cannot target a Building that has been affected by this ability in the last 30 seconds.\n\n<h1>Passive: Reinforce</h1>Grants %aura_armor_bonus% Armor to all Buildings globally while this Item is off cooldown. Does not stack."
 		"DOTA_Tooltip_ability_item_hephaestus_hammer_lore"                                 		  "Forged of a benevolent master, it glows dimly with a blue light. Its core, embedded in the hammer's hilt, threatens blinding, sunlike properties, but remains a calm yellow."
 		"DOTA_Tooltip_ability_item_hephaestus_hammer_bonus_health_regen"                              "+$hp_regen"
 		"DOTA_Tooltip_ability_item_hephaestus_hammer_bonus_mana_regen"                              "+$mana_regen"
@@ -3778,14 +3729,12 @@
 		//////////////////////////////////////////////////////////////////////
 		//// DEATHSCYTHE
 		//////////////////////////////////////////////////////////////////////
-		
-		"DOTA_Tooltip_ability_item_deathscythe"                                           "Deathscythe"
-		"DOTA_Tooltip_ability_item_deathscythe_Description"                               "<h1>Passive: Soulclaimer</h1>Attacks the wielder makes against Heroes purge buffs, slow by %slow%%% for %slow_duration% seconds, remove %percent_damage%%% of their current Health, and place this item on cooldown. The removal cannot be reduced, amplified or blocked."
-		"DOTA_Tooltip_ability_item_deathscythe_lore"                               		  "Studied for eons, the Deathscythe's soul bending properties have perplexed even the most learned of scholars."
-		"DOTA_Tooltip_ability_item_deathscythe_bonus_intelligence"                        "+$int"
-		"DOTA_Tooltip_ability_item_deathscythe_bonus_strength"                            "+$str"
+		///@TODO
+		"DOTA_Tooltip_ability_item_deathscythe"                                           "Kalismar"
+		"DOTA_Tooltip_ability_item_deathscythe_Description"                               "<h1>Passive: Soulclaimer</h1>The next attack made by the wielder tears away parts of the target's soul, stealing %mana_steal%%% of their current Mana and reducing their Stats by %stat_reduction%, and dealing %damage_over_time%x the wielder's Int per second for %duration% seconds."	
+		"DOTA_Tooltip_ability_item_deathscythe_lore"                               		  "Studied for eons, the Kalismar's soul bending properties have perplexed even the most learned of scholars."
 		"DOTA_Tooltip_ability_item_deathscythe_bonus_damage"                              "+$damage"
-		"DOTA_Tooltip_ability_item_deathscythe_bonus_mana_regen"                          "+$mana_regen"
+		"DOTA_Tooltip_ability_item_deathscythe_bonus_attack_speed"                        "+$attack"
 		
 		//////////////////////////////////////////////////////////////////////
 		//// CRYSTAL FOCUS
@@ -3811,7 +3760,7 @@
 		//////////////////////////////////////////////////////////////////////
 		
 		"DOTA_Tooltip_ability_item_soul_vial"                                             "Soul Vial"
-		"DOTA_Tooltip_ability_item_soul_vial_description"                                 "<h1>Passive: Soul Collection</h1>Grants bonus damage for each charge, gaining a charge each time a unit is killed.  Heroes grant 8 charges instead.\n\n<h1>Active: Consume</h1>Devour the souls in the Vial to regain Health over time and bonus damage."
+		"DOTA_Tooltip_ability_item_soul_vial_description"                                 "<h1>Passive: Soul Collection</h1>Grants bonus damage for each charge, gaining a charge each time a unit is killed. Heroes grant 8 charges instead."
 		"DOTA_Tooltip_ability_item_soul_vial_lore"                                 		  "An ancient relic, first lauded by the Artificers for its swirling etheria, but quickly forbidden upon discovery of its macabre secrets."
 		"DOTA_Tooltip_ability_item_soul_vial_max_charges"                                 "MAX CHARGES:"
 		"DOTA_Tooltip_ability_item_soul_vial_damage_per_charge"                           "DAMAGE PER CHARGE:"
@@ -3842,6 +3791,14 @@
 		
 		"DOTA_Tooltip_modifier_grim_gauntlet_slow"                                        "Grim Gauntlet"
 		"DOTA_Tooltip_modifier_grim_gauntlet_slow_Description"                            "Being slowed and damaged."
+
+		//////////////////////////////////////////////////////////////////////
+		//// Eternal Timepiece
+		//////////////////////////////////////////////////////////////////////
+		
+		"DOTA_Tooltip_ability_item_eternal_timepiece"                                             "Eternal Timepiece"
+		"DOTA_Tooltip_ability_item_eternal_timepiece_description"                                 "<h1>Passive: Temporal Step</h1>Your cast points, turn rate, and projectiles are %speed_up%%% faster, and every %boost_interval% seconds, you gain %boost_movespeed%%% movespeed and %boost_status_resist%%% Status Resistance for %boost_duration% seconds.\n\n<h1>Active: Stop</h1>: The target enemy is slowed by %active_slow%%% and has their cooldowns paused for %duration% seconds."
+		"DOTA_Tooltip_ability_item_eternal_timepiece_lore"                                 		  "Those that touch its surface, even once, can hear the maddening echoes of both past and future."
 		
 		//////////////////////////////////////////////////////////////////////
 		//// PURGING DUST
@@ -3903,6 +3860,8 @@
 		
 		"DOTA_Tooltip_modifier_item_rage_potion"                                          "Rage Potion"
 		"DOTA_Tooltip_modifier_item_rage_potion_Description"                              "Grants bonus attack speed and attack damage for 6s."
+
+		///@END ITEMS
 		
 		/////////////////////////////////////////////////////////////////////////
 		
