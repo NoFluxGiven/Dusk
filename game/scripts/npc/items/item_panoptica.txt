@@ -1,19 +1,17 @@
 //=================================================================================================================
-// wand_of_yggdrasil
+// panoptica
 //=================================================================================================================
-"item_wand_of_yggdrasil"
+"item_panoptica"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"item_lua"
-	"ScriptFile"					"lua/items/item_wand_of_yggdrasil"
+	"ScriptFile"					"lua/items/item_panoptica"
 	"ID"							"3040"  //Valve's version of this item uses the ID "39".
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"Model"							"models/props_gameplay/clarity.mdl"
-	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-	"AbilityTextureName"			"item_wand_of_yggdrasil"
+	"AbilityTextureName"			"item_panoptic_wand"
 	
 	// Stats		
 	//-------------------------------------------------------------------------------------------------------------
@@ -27,7 +25,7 @@
 	"ItemCost"                      "1900"
     "ItemShopTags"                  ""
     "ItemQuality"                   "epic"
-    "ItemAliases"                   "wand_of_yggdrasil"
+    "ItemAliases"                   "panoptica"
     "ItemRequiresCharges"           "1"
     "ItemDisplayCharges"            "1"
     "ItemPermanent"                 "1"

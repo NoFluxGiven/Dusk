@@ -426,6 +426,8 @@ end
 function duskDota:OnEntityKilled( keys )
   --DebugPrint( '[DUSKDOTA] OnEntityKilled Called' )
   --DebugPrintTable( keys )
+
+  print("ENTITY KILLED")
   
 
   -- The Unit that was Killed
@@ -493,6 +495,16 @@ function duskDota:OnEntityKilled( keys )
     local respawn_reduction_level = ab:GetLevel()
     respawn_multiplier = 1-ab:GetLevelSpecialValueFor("respawn", respawn_reduction_level)/100
    end
+
+   one_v_one_multiplier = 1
+
+   print(PlayerResource:GetPlayerCountForTeam(hero:GetTeam()))
+
+   if PlayerResource:GetPlayerCountForTeam(hero:GetTeam()) == 1 then
+    one_v_one_multiplier = 0.35
+   end
+
+   respawn_multiplier = respawn_multiplier * one_v_one_multiplier
 
    respawn_time = respawn_time * respawn_multiplier
 
@@ -601,8 +613,42 @@ function duskDota:OnPlayerChat(keys)
   local teamonly = keys.teamonly
   local userID = keys.userid
   local playerID = self.vUserIds[userID]
+  local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 
   local text = keys.text
+
+  if GameRules:IsCheatMode() then
+    if text == "-respawnall" or text == "-ra" then
+      for k,v in pairs(HeroList:GetAllHeroes()) do
+        v:SetTimeUntilRespawn(1)
+      end
+    end
+
+    if text == "-respawnother" or text == "-ro" then
+      for k,v in pairs(HeroList:GetAllHeroes()) do
+        if v ~= hero then
+          v:SetTimeUntilRespawn(1)
+        end
+      end
+    end
+
+    if text == "-teleportall" or text == "-ta" then
+      for k,v in pairs(HeroList:GetAllHeroes()) do
+        FindClearSpaceForUnit(v, hero:GetAbsOrigin(), true)
+      end
+    end
+
+    if text == "-t" then
+        local pos = hero:GetCursorPosition()
+        FindClearSpaceForUnit(hero, pos, true)
+    end
+
+    if text == "-position" then
+      for k,v in pairs(HeroList:GetAllHeroes()) do
+        print(hero:GetAbsOrigin())
+      end
+    end
+  end
 
   if text == "big sniff" then
     ShowMessage("snig biff")

@@ -6,6 +6,38 @@
 	"Role"					"Carry"
 	"Rolelevels"			"3"
 	"Complexity"			"1"
+	//// REWORK
+
+	// Q - Spectral Step
+
+	// Phantom jumps to a target spot, draining Health from nearby enemies and temporarily rendering herself and her enemies Ethereal.
+	// Ethereal enemies take 40% bonus Magical damage, cannot attack, and are slowed by 50%, but are immune to Physical damage.
+	// While Ethereal from this effect, Phantom has the same effects, except she instead takes 20% bonus Magical damage, moves 15% faster,
+	// and can attack Ethereal enemies, with her attacks dealing Magical damage for the duration.
+	// 500/600/700/800 range.
+	// 275 radius.
+	// Lasts 3/4/5/6s.
+
+	// W - Violent Echoes
+
+	// When Phantom kills an enemy Hero, she gains an Echo stack.
+	// The next time she makes an attack against another Hero, an additional attack is made every 1.00s per stack, preserving all procs.
+	// Undispellable.
+
+	// E - Psychic Scream
+
+	// Phantom unleashes a wave of psychic energy that slows and Silences enemies and allies in a radius, dealing Magical damage to enemies.
+	// Both enemies and allies are Silenced and slowed by 30/40/50/60%.
+	// Lasts 3/4/5/6s for enemies and 2s for allies.
+	// Deals 140/200/260/320 damage.
+	// 500 radius.
+	// Phantom is unaffected.
+
+	// R - Nightmare
+
+	// Pulls the energies of the Nightmare realm into this reality, surrounding herself with them.
+	// Enemies in range cannot recover Health or Mana, and cannot be targeted by allied Spells or Items.
+
 	"Ability1"				"phantom_shadowstep" // Phantom teleports to the target enemy Hero. After 6s, she returns to her original position.
 	// 1200/2400/3600/4800 range.
 	"Ability2"				"phantom_soul_wave" // Deals Magical damage around Phantom equal to a multiplier of her combined Stats.  Slows affected enemies.

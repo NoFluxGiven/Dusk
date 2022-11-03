@@ -112,12 +112,13 @@ function modifier_bloodlust:OnAttackLanded(kv)
 	-- if IsServer() then
 		if kv.attacker == self:GetParent() then
 			-- if kv.attacker:HasModifier("modifier_fight_me") then return end
-			if not kv.attacker:IsHero() then return end
 
 			-- tick damage on attack
 
-			kv.attacker:EmitSound("War.Bloodlust.Attack")
-			self:TickDamage(self:GetStackCount())
+			local mult = kv.attacker:IsHero() and 1 or 0.5
+
+			if kv.attacker:IsHero() then kv.attacker:EmitSound("War.Bloodlust.Attack") end
+			self:TickDamage(self:GetStackCount() * mult)
 			self:IncrementStackCount()
 			
 		

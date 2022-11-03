@@ -34,17 +34,19 @@
 	"ArmorPhysical"				"5"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackRange"				"150"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"650"
 	"AttackRate"				"1.6"
 	"AttackDamageMin"			"21"										// Damage range min.
 	"AttackDamageMax"			"23"										// Damage range max.
+	"ProjectileModel"            "particles/units/heroes/hero_lightning/lightning_dagger_arcana.vpcf"
+	"ProjectileSpeed"            "1200"
 
 	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-	"AttributeBaseStrength"		"23"										// Base strength
-	"AttributeStrengthGain"		"2"										// Strength bonus per level.
-	"AttributeBaseIntelligence"	"23"										// Base intelligence
-	"AttributeIntelligenceGain"	"2.0"										// Intelligence bonus per level.
+	"AttributeBaseStrength"		"21"										// Base strength
+	"AttributeStrengthGain"		"1.8"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"22"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.1"										// Intelligence bonus per level.
 	"AttributeBaseAgility"		"16"										// Base agility
 	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.	
 
@@ -56,16 +58,16 @@
 	//"RingRadius"				"70"
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"290"									// Speed.
-	"MovementTurnRate"			"0.7"									// Turning rate.
+	"MovementSpeed"				"285"									// Speed.
+	"MovementTurnRate"			"0.6"									// Turning rate.
 
 	//"StatusHealth"			"981"									// Base health.
 	"StatusHealthRegen"			"1"									// Health regeneration rate.
 	//"StatusMana"				"387"										// Base mana.
-	"StatusManaRegen"			"1"									// Mana regeneration rate.
+	"StatusManaRegen"			"0.5"									// Mana regeneration rate.
 
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
-	"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
+	"VisionDaytimeRange"		"1600"									// Range of vision in the day time.
 
 	"Talents"
 	{

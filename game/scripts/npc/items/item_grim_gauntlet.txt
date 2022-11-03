@@ -9,8 +9,6 @@
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
     "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
-    "Model"                         "models/props_gameplay/red_box.vmdl" 
-    "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
     "AbilityTextureName"            "item_grim_gauntlet"
     "FightRecapLevel"               "1"
     

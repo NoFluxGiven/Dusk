@@ -24,7 +24,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"100"
+	"AbilityManaCost"				"200"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"175 225 275"
+			"damage"					"150 200 250"
 			"LinkedSpecialBonus"		"special_bonus_lightning_2"
 		}
 		"02"
@@ -58,12 +58,12 @@
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"2.5"
+			"slow_duration"				"1.25"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"invuln_duration"			"1.00"
+			"invuln_duration"			"1.25"
 		}
 	}
 	

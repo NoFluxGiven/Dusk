@@ -11,8 +11,6 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"Model"							"models/props_gameplay/clarity.mdl"
-	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 	"AbilityTextureName"			"item_black_rose"
 	
 	// Stats		

@@ -57,10 +57,14 @@ function modifier_ancient_arena:OnCreated(kv)
 		local duration = self:GetDuration()-0.05
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 
-		self.particle = WorldParticle("particles/units/heroes/hero_reus/reus_rockfall.vpcf",self:GetParent():GetAbsOrigin())
-		ParticleManager:SetParticleControl(self.particle, 2, Vector(radius,0,0)) --[[Returns:void
-		Set the control point data for a control on a particle effect
-		]]
+		self.particle = CreateParticleWorld(self:GetParent():GetAbsOrigin(), "particles/units/heroes/hero_reus/reus_rockfall.vpcf",{
+			[2] = Vector(radius,0,0)
+		})
+		-- ParticleManager:SetParticleControl(self.particle, 2, Vector(radius,0,0)) --[[Returns:void
+		-- Set the control point data for a control on a particle effect
+		-- ]]
+
+		ScreenShake(caster:GetAbsOrigin(), 250, 5, 1, 1000*1.5, 0, true)
 
 		Timers:CreateTimer(duration,function()
 			ParticleManager:DestroyParticle(self.particle,false)
@@ -69,6 +73,8 @@ function modifier_ancient_arena:OnCreated(kv)
 		Timers:CreateTimer(0.6,function()
 			caster:EmitSound("Hero_EarthSpirit.StoneRemnant.Impact")
 			caster:EmitSound("Hero_EarthSpirit.StoneRemnant.Impact")
+
+			ScreenShake(caster:GetAbsOrigin(), 1000, 5, 1, 1000*1.5, 0, true)
 
 			caster:AddNewModifier(caster, self:GetAbility(), "modifier_ancient_arena_caster", {Duration=duration})
 

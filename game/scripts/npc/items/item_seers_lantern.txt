@@ -10,8 +10,6 @@
 	"ID"							"3041"  //Valve's version of this item uses the ID "39".
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-	"Model"							"models/props_gameplay/clarity.mdl"
-	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 	"AbilityTextureName"			"item_seers_lantern"
 	
 	// Stats		

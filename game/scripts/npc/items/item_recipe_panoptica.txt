@@ -2,26 +2,26 @@
 // Author: Rook
 // Date: January 29, 2015
 
-"item_recipe_wand_of_yggdrasil"
+"item_recipe_panoptica"
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
     "BaseClass"                     "item_datadriven"
     "ID"                            "2040"  //Valve's version of this item uses the ID "122".
-    "Model"                         "models/props_gameplay/recipe.mdl"
+    "Model"                         "models/props_gameplay/recipe.vmdl"
     "AbilityTextureName"            "item_recipe"
     
     // Item Info
     //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"                      "1200"
+    "ItemCost"                      "1550"
     "ItemShopTags"                  ""
     
     // Recipe
     //-------------------------------------------------------------------------------------------------------------
     "ItemRecipe"                    "1"
-    "ItemResult"                    "item_wand_of_yggdrasil"
+    "ItemResult"                    "item_panoptica"
     "ItemRequirements"
     {
-        "01"                        "item_magic_wand;item_oblivion_staff;item_null_talisman"
+        "01"                        "item_magic_wand;item_oblivion_staff;item_oblivion_staff;item_gem"
     }
 }

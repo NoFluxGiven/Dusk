@@ -8,11 +8,23 @@ function hero_heroic_soul:OnSpellStart()
 		local duration = self:GetSpecialValueFor("duration")
 		self:GetCaster():EmitSound("Hero_Sven.GodsStrength")
 		ParticleManager:CreateParticle("particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster()) 
+
+		local mult = 1
+
+		if self:GetCaster():IsStunned() then
+			-- sound
+			-- particle
+
+			mult = 2
+		end
+
 		self:GetCaster():Purge(false, true, false, true, false)
 
-		self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_heroic_soul", {Duration=duration}) --[[Returns:void
+		local m = self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_heroic_soul", {Duration=duration * mult}) --[[Returns:void
 		No Description Set
 		]]
+
+		m:SetStackCount(mult)
 	end
 end
 
@@ -32,15 +44,15 @@ function modifier_heroic_soul:GetStatusEffectName()
 end
 
 function modifier_heroic_soul:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor("bonus_movespeed")
+	return self:GetAbility():GetSpecialValueFor("bonus_movespeed") * self:GetStackCount()
 end
 
 function modifier_heroic_soul:GetModifierPreAttack_BonusDamage()
-	return self:GetAbility():GetSpecialValueFor("bonus_damage")
+	return self:GetAbility():GetSpecialValueFor("bonus_damage") * self:GetStackCount()
 end
 
 function modifier_heroic_soul:GetModifierIncomingDamage_Percentage()
 	if self:GetElapsedTime() < self:GetAbility():GetSpecialValueFor("damage_reduction_duration") then
-		return -self:GetAbility():GetSpecialValueFor("damage_reduction")
+		return -self:GetAbility():GetSpecialValueFor("damage_reduction") * self:GetStackCount()
 	end
 end

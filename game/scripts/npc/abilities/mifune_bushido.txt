@@ -2,6 +2,8 @@
 // MIFUNE: Bushido
 //=====================================================================================================
 
+///@todo sound effect + particle on hit
+///@todo sound effect on start
 ///@issue Mifune using this + Zanmato with scepter crashes the game. Potentially infinite attacks, as while invulnerable attacks always fail?
 
 "mifune_bushido"
@@ -51,7 +53,7 @@
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"7.0"
+			"duration"						"7.5"
 		}
 	"04"
 		{

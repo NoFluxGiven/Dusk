@@ -22,7 +22,7 @@ function set_sirocco:OnSpellStart()
 
 		ScreenShake(pos, 200, 80, duration, 600, 0, true)
 
-		local p = WorldParticle( "particles/units/heroes/hero_set/set_sinkhole.vpcf", pos, { Vector(radius,0,0) } )
+		local p = CreateParticleWorld( "particles/units/heroes/hero_set/set_sinkhole.vpcf", pos, { Vector(radius,0,0) } )
 
 		Timers:CreateTimer(duration-0.50,function()
 			thinker:StopSound("Hero_Warlock.Upheaval")

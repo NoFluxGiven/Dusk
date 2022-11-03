@@ -2,6 +2,7 @@ hero_one_punch = class({})
 
 LinkLuaModifier("modifier_one_punch","lua/abilities/hero_one_punch",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_one_punch_air","lua/abilities/hero_one_punch",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_one_punch_min_hp","lua/abilities/hero_one_punch",LUA_MODIFIER_MOTION_NONE)
 
 function hero_one_punch:OnAbilityPhaseStart()
 	if self:GetCaster():IsDisarmed() then return false end
@@ -13,7 +14,8 @@ function hero_one_punch:OnSpellStart()
 	local target = self:GetCursorTarget()
 
 	caster:AddNewModifier(caster, self, "modifier_one_punch", {Duration=0.03})
-	if target:GetTeam() ~= target:GetTeam() then
+	target:AddNewModifier(target, self, "modifier_one_punch_min_hp", {Duration=0.06})
+	if target:GetTeam() ~= caster:GetTeam() then
 		caster:PerformAttack(
 						target,
 						true,
@@ -66,7 +68,20 @@ function modifier_one_punch:CheckState()
 	return state
 end
 
-function modifier_one_punch:IsHidden()
+modifier_one_punch_min_hp = class({})
+
+function modifier_one_punch_min_hp:DeclareFunctions()
+	local func = {
+		MODIFIER_PROPERTY_MIN_HEALTH
+	}
+	return func
+end
+
+function modifier_one_punch_min_hp:GetMinHealth()
+	return 1
+end
+
+function modifier_one_punch_min_hp:IsHidden()
 	return true
 end
 

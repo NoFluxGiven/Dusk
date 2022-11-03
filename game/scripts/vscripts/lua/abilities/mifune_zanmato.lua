@@ -34,31 +34,57 @@ function mifune_zanmato:OnSpellStart()
 
 	local caster_time = 0.36
 
-	local base_percent_damage = (self:GetSpecialValueFor("base_percent_damage") / 100) * target:GetHealth()
-
 	local slash = "slash_weak"
 
 	local sound = "Mifune.Zanmato.Failure"
 
-	if ( target:GetHealthPercent() < threshold ) then
-		target:AddNewModifier(caster, self, "modifier_zanmato_main_target", {duration=delay})
-		caster:AddActivityModifier("mask_lord")
-		caster:StartGestureWithPlaybackRate(ACT_DOTA_SPAWN, 0.85)
-		caster:AddNewModifier(caster, self, "modifier_zanmato_caster", {duration=delay+caster_time})
-		caster:Purge(false, true, false, true, false)
-		Timers:CreateTimer(delay+caster_time, function()
-			caster:FadeGesture(ACT_DOTA_SPAWN)
-			caster:ClearActivityModifiers()
-		end)
-		slash = "slash_2"
-		sound = "Mifune.Zanmato.Success"
+	local units = FindUnitsInLine(caster:GetTeam(), start_pos, end_pos, nil, 100, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_BASIC, 0)
+	
+
+	for k,v in pairs(units) do
+		local base_percent_damage = (self:GetSpecialValueFor("base_percent_damage") / 100) * v:GetHealth()
+
+		caster:PerformAttack(v, true, true, true, false, false, true, true)
+
+		-- if ( v:GetHealthPercent() < threshold and v:IsHero() ) then
+			v:AddNewModifier(caster, self, "modifier_zanmato_main_target", {duration=delay})
+			caster:AddActivityModifier("mask_lord")
+			caster:StartGestureWithPlaybackRate(ACT_DOTA_SPAWN, 0.85)
+			caster:AddNewModifier(caster, self, "modifier_zanmato_caster", {duration=delay+caster_time})
+			-- caster:Purge(false, true, false, true, false)
+			Timers:CreateTimer(delay+caster_time, function()
+				caster:FadeGesture(ACT_DOTA_SPAWN)
+				caster:ClearActivityModifiers()
+			end)
+			slash = "slash_2"
+			sound = "Mifune.Zanmato.Success"
+
+		-- end
+
+		-- if not v:IsHero() and not v:IsAncient() then
+		-- 	base_percent_damage = v:GetHealth()
+		-- end
+		-- self:InflictDamage(v, caster, base_percent_damage, DAMAGE_TYPE_PURE )
 	end
+
+	-- if ( target:GetHealthPercent() < threshold ) then
+	-- 	target:AddNewModifier(caster, self, "modifier_zanmato_main_target", {duration=delay})
+	-- 	caster:AddActivityModifier("mask_lord")
+	-- 	caster:StartGestureWithPlaybackRate(ACT_DOTA_SPAWN, 0.85)
+	-- 	caster:AddNewModifier(caster, self, "modifier_zanmato_caster", {duration=delay+caster_time})
+	-- 	caster:Purge(false, true, false, true, false)
+	-- 	Timers:CreateTimer(delay+caster_time, function()
+	-- 		caster:FadeGesture(ACT_DOTA_SPAWN)
+	-- 		caster:ClearActivityModifiers()
+	-- 	end)
+	-- 	slash = "slash_2"
+	-- 	sound = "Mifune.Zanmato.Success"
+	-- end
 
 	local p = ParticleManager:CreateParticle("particles/units/heroes/hero_mifune/zanmato_" .. slash .. ".vpcf", PATTACH_WORLDORIGIN, nil)
 		ParticleManager:SetParticleControl(p, 0, start_pos)
 		ParticleManager:SetParticleControl(p, 1, end_pos)
 
-	self:InflictDamage(target, caster, base_percent_damage, DAMAGE_TYPE_PURE )
 	target:EmitSound(sound)
 	FindClearSpaceForUnit(caster, end_pos, true)
 end
@@ -85,10 +111,17 @@ function modifier_zanmato_main_target:CheckState()
 	return state
 end
 
+function modifier_zanmato_main_target:OnCreated()
+	if not IsServer() then return end
+	self.slash_damage =  ( self:GetAbility():GetSpecialValueFor("slash_damage") / 100 ) * self:GetAbility():GetCaster():GetAverageTrueAttackDamage(target)
+end
+
 function modifier_zanmato_main_target:OnDestroy()
 
 	if not IsServer() then return end
 	local target = self:GetParent()
+
+	local slash_damage = self.slash_damage
 
 	local start_pos = target:GetAbsOrigin() + Vector(0,0,-325)
 	local end_pos = target:GetAbsOrigin() + Vector(0,0,450)
@@ -97,10 +130,10 @@ function modifier_zanmato_main_target:OnDestroy()
 		ParticleManager:SetParticleControl(p, 0, start_pos)
 		ParticleManager:SetParticleControl(p, 1, end_pos)
 
-	target:Purge(true, false, false, false, true)
-	target:Kill(self:GetAbility(), self:GetAbility():GetCaster())
+	self:GetAbility():InflictDamage(target, self:GetAbility():GetCaster(), slash_damage, DAMAGE_TYPE_PURE )
+	-- target:Purge(true, false, false, false, true)
 	target:EmitSound("Mifune.Zanmato.Kill")
-	if target:IsRealHero() then
+	if target:IsRealHero() and not target:IsAlive() then
 		self:GetAbility():GetCaster():AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_zanmato_permanent_agility", {})
 	end
 end

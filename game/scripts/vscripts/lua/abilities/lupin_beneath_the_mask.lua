@@ -126,7 +126,7 @@ function modifier_beneath_the_mask_slow:CheckState()
 		[MODIFIER_STATE_SILENCED] = true
 	}
 
-	if self:GetAbility():GetCaster():FindTalentValue("special_bonus_lupin_6") then
+	if self:GetAbility():GetCaster():FindTalentValue("special_bonus_lupin_6") > 0 then
 		state[MODIFIER_STATE_MUTED] = true
 	end
 	return state

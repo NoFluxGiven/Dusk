@@ -6,6 +6,28 @@
 	"Role"					"Support,Disabler,Escape"
 	"Rolelevels"			"2,1,2"
 	"Complexity"			"3"
+
+	// REWORK
+
+	// Q - Voidal Flare
+	// Stuns the target, then after a short delay, returns them to their position 4s ago.
+
+	// W - Voidwalker
+	// Immediately teleports to a location on the map that isn't a part of either team's base.
+	// Goes on cooldown for 4.5s when Voidwalker takes damage from enemy Heroes.
+	// 9s cooldown.
+
+	// E - Trickster Space
+	// Creates an area where enemy's targeted Spells are randomly redirected towards another valid target.
+
+	// R - Outsider's Pact
+	// Applies a Pact to either Voidwalker or an ally, making them shrug off damage and negative effects.
+	// Applies a Strong Dispel, then increases Status Resistance and Damage Resistance by 40/50/60%.
+	// The Hero gains 70/140/210 attack damage, but is Silenced and Muted for the duration.
+	// AGHANIM'S SCEPTER: Increases the duration by 1s, and grants 20/30/40% bonus damage output.
+	// Lasts 6s.
+	// 140/120/100s cooldown.
+
 	"Ability1"				"gemini_voidal_flare"
 	// The Voidwalker fires a flare of dark energy at the target, damaging and stunning them.
 	// Each time he targets the same enemy, the damage and stun time doubles, up to a maximum.

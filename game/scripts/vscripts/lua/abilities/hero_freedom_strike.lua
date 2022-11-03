@@ -25,11 +25,17 @@ function modifier_freedom_strike:OnCreated(kv)
 		local caster = self:GetParent()
 		local p = self:GetParent()
 		local facing = caster:GetForwardVector()
-		local distance = self:GetAbility():GetSpecialValueFor("charge")
+		local heroic_soul_buff = 1
 
-		local damage = self:GetAbility():GetSpecialValueFor("damage")
+		if (caster:HasModifier("modifier_heroic_soul") and caster:HasScepter()) then
+			heroic_soul_buff = 2
+		end
 
-		local duration = self:GetAbility():GetSpecialValueFor("duration")
+		local distance = self:GetAbility():GetSpecialValueFor("charge") * heroic_soul_buff
+
+		local damage = self:GetAbility():GetSpecialValueFor("damage") * heroic_soul_buff
+
+		local duration = self:GetAbility():GetSpecialValueFor("duration") * heroic_soul_buff
 
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 

@@ -1,12 +1,13 @@
-item_wand_of_yggdrasil = class({})
+item_panoptica = class({})
 
-LinkLuaModifier("modifier_yggdrasil","lua/items/item_wand_of_yggdrasil",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_panoptica","lua/items/item_panoptica",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_panoptica_debuff","lua/items/item_panoptica",LUA_MODIFIER_MOTION_NONE)
 
-function item_wand_of_yggdrasil:GetIntrinsicModifierName()
-	return "modifier_yggdrasil"
+function item_panoptica:GetIntrinsicModifierName()
+	return "modifier_panoptica"
 end
 
-function item_wand_of_yggdrasil:OnSpellStart()
+function item_panoptica:OnSpellStart()
 	if IsServer() then
 		local caster = self:GetCaster()
 		local target = self:GetCursorTarget()
@@ -44,7 +45,7 @@ function item_wand_of_yggdrasil:OnSpellStart()
 		--   Target = caster,
 		--   Source = target,
 		--   Ability = self,  
-		--   EffectName = "particles/items/yggdrasil_drain_proj.vpcf",
+		--   EffectName = "particles/items/panoptica_drain_proj.vpcf",
 		--   vSpawnOrigin = target:GetAttachmentOrigin(DOTA_PROJECTILE_ATTACHMENT_HITLOCATION),
 		--   fDistance = 20000,
 		--   fStartRadius = 75,
@@ -86,7 +87,7 @@ function item_wand_of_yggdrasil:OnSpellStart()
 	end
 end
 
--- function item_wand_of_yggdrasil:OnProjectileHit( t, l )
+-- function item_panoptica:OnProjectileHit( t, l )
 -- 	if IsServer() then
 -- 		print("HIT")
 -- 		if t then
@@ -96,36 +97,36 @@ end
 -- 				t:Heal(hp_drain, t)
 -- 				t:GiveMana(mp_drain)
 
--- 				target:EmitSound("Yggdrasil.Drain")
+-- 				target:EmitSound("panoptica.Drain")
 
 -- 				ParticleManager:CreateParticle("particles/items/improved_magic_wand.vpcf", PATTACH_ABSORIGIN_FOLLOW, t)
 -- 		end
 -- 	end
 -- end
 
-modifier_yggdrasil = class({})
+modifier_panoptica = class({})
 
-function modifier_yggdrasil:GetAttributes()
+function modifier_panoptica:GetAttributes()
 	return MODIFIER_ATTRIBUTE_MULTIPLE
 end
 
-function modifier_yggdrasil:IsHidden()
+function modifier_panoptica:IsHidden()
 	return true
 end
 
-function modifier_yggdrasil:IsPurgable()
+function modifier_panoptica:IsPurgable()
 	return false
 end
 
-function modifier_yggdrasil:OnCreated()
+function modifier_panoptica:OnCreated()
 	self:StartIntervalThink(8.0)
 end
 
-function modifier_yggdrasil:OnIntervalThink()
+function modifier_panoptica:OnIntervalThink()
 	self:GainCharge()
 end
 
-function modifier_yggdrasil:GainCharge()
+function modifier_panoptica:GainCharge()
 	local charges = self:GetAbility():GetCurrentCharges()
 
 	if charges < self:GetAbility():GetSpecialValueFor("max_charges") then
@@ -133,7 +134,7 @@ function modifier_yggdrasil:GainCharge()
 	end
 end
 
-function modifier_yggdrasil:DeclareFunctions()
+function modifier_panoptica:DeclareFunctions()
 	local func = {
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
@@ -146,30 +147,31 @@ function modifier_yggdrasil:DeclareFunctions()
 	return func
 end
 
-function modifier_yggdrasil:GetModifierBonusStats_Intellect()
+function modifier_panoptica:GetModifierBonusStats_Intellect()
 	return self:GetAbility():GetSpecialValueFor("bonus_int")
 end
 
-function modifier_yggdrasil:GetModifierBonusStats_Strength()
+function modifier_panoptica:GetModifierBonusStats_Strength()
 	return self:GetAbility():GetSpecialValueFor("bonus_str")
 end
 
-function modifier_yggdrasil:GetModifierBonusStats_Agility()
+function modifier_panoptica:GetModifierBonusStats_Agility()
 	return self:GetAbility():GetSpecialValueFor("bonus_agi")
 end
 
-function modifier_yggdrasil:GetModifierAttackSpeedBonus_Constant()
+function modifier_panoptica:GetModifierAttackSpeedBonus_Constant()
 	return self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
 end
 
-function modifier_yggdrasil:GetModifierPreAttack_BonusDamage()
+function modifier_panoptica:GetModifierPreAttack_BonusDamage()
 	return self:GetAbility():GetSpecialValueFor("bonus_damage")
 end
 
-function modifier_yggdrasil:GetModifierConstantHealthRegen()
+function modifier_panoptica:GetModifierConstantHealthRegen()
 	return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
 end
 
-function modifier_yggdrasil:GetModifierConstantManaRegen()
+function modifier_panoptica:GetModifierConstantManaRegen()
 	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 end
+

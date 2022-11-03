@@ -1,15 +1,47 @@
 shard_magus_glacial_impact = class({})
 
-function shard_magus_glacial_impact:OnSpellStart()
+function shard_magus_glacial_impact:OnAbilityPhaseStart()
+
+	local radius = self:GetSpecialValueFor("radius")
 
 	local pos = self:GetCursorPosition()
 
+	-- sound
+
+	self.particle = ParticleManager:CreateParticle("particles/units/heroes/hero_shard_magus/pre_glacial_impact.vpcf", PATTACH_WORLDORIGIN, u)
+	ParticleManager:SetParticleControl(self.particle, 0, pos)
+	ParticleManager:SetParticleControl(self.particle, 1, Vector(radius,0,0))
+
+	return true
+
+end
+
+function shard_magus_glacial_impact:OnAbilityPhaseInterrupted()
+	ParticleManager:DestroyParticle(self.particle, false)
+end
+
+function shard_magus_glacial_impact:OnSpellStart()
+
+	local radius = self:GetSpecialValueFor("radius")
+
+	local pos = self:GetCursorPosition()
+
+	Timers:CreateTimer(0.2, function()
+		self:Impact(pos)
+	end)
+
+
+
+end
+
+function shard_magus_glacial_impact:Impact(pos)
+	
 	local t_stun_duration_bonus = self:GetCaster():FindTalentValue("special_bonus_shard_magus_5") or 0
 
 	local duration = self:GetSpecialValueFor("stun_duration")
 	local b_duration = self:GetSpecialValueFor("stun_duration") * t_stun_duration_bonus
 	local radius = self:GetSpecialValueFor("radius")
-	local t = self:GetCursorPosition()
+	local t = pos --self:GetCursorPosition()
 
 	local damage = self:GetSpecialValueFor("damage")
 
@@ -52,7 +84,4 @@ function shard_magus_glacial_impact:OnSpellStart()
 			b:AddNewModifier(self:GetCaster(), nil, "modifier_stunned", {Duration=b_duration})
 		end
 	end
-
-			
-
 end

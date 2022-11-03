@@ -1,6 +1,9 @@
 //=====================================================================================================
 // HERO: One Punch
 //=====================================================================================================
+///@changes
+/// The initial hit now never reduces enemies below 1 HP.
+/// BKB now prevents both the Stun and the damage from the AoE portion of the ability.
 "hero_one_punch"
 {
 	// General
@@ -20,7 +23,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"150"
+	"AbilityCastRange"				"165"
 	"AbilityCastPoint"				"0.5"
 	
 	// Time		
@@ -43,12 +46,12 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"crit"						"225 300 375"
+			"crit"						"175 225 300"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"landing_delay"				"1.50"
+			"landing_delay"				"1.60"
 		}
 		"03"
 		{
@@ -63,7 +66,7 @@
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"landing_stun"				"1.75 2.50 3.25"
+			"landing_stun"				"1.50 1.75 2.00"
 			"LinkedSpecialBonus"		"special_bonus_hero_4"
 		}
 		"06"

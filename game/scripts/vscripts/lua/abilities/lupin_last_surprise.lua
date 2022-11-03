@@ -31,6 +31,10 @@ function lupin_last_surprise:GetCastRange(location, target)
 	if self:GetCaster():HasModifier("modifier_calling_card_caster") then
 		return 0
 	end
+	local t = self:GetCaster():FindTalentValue("special_bonus_lupin_5")
+	if t > 0 then
+		return self.BaseClass.GetCastRange(self, location, target) + t
+	end
 	return self.BaseClass.GetCastRange(self, location, target)
 end
 
@@ -208,7 +212,7 @@ function modifier_calling_card_caster:OnIntervalThink()
 		if not IsServer() then return end
 
 		local inc = 254 / 6
-		self:GetAbility().calling_card_thinker:EmitSoundParams("Lupin.CallingCard.Pulse."..self:GetStackCount(), 1, 0.8 + self:GetStackCount() * 0.1, 0)
+		self:GetAbility().calling_card_thinker:EmitSoundParams("Lupin.CallingCard.Pulse."..math.min(self:GetStackCount(),6), 1, 0.8 + self:GetStackCount() * 0.1, 0)
 
 		local radius = self.radius + self.radius_increase_per_stack * self:GetStackCount()
 		if self:GetAbility().calling_card_thinker_particle ~= nil then

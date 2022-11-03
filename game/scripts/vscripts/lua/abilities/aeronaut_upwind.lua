@@ -10,7 +10,7 @@ function aeronaut_upwind:OnAbilityPhaseStart()
 
 	local radius = self:GetSpecialValueFor("radius")
 
-	WorldParticle("particles/units/heroes/hero_aeronaut/aeronaut_upwind_precast.vpcf",pos,{ [1] = Vector(radius,0,0) })
+	CreateParticleWorld("particles/units/heroes/hero_aeronaut/aeronaut_upwind_precast.vpcf",pos,{ [1] = Vector(radius,0,0) })
 	caster:EmitSound("Hero_Invoker.Tornado.Cast")
 
 	return true
@@ -30,7 +30,7 @@ function aeronaut_upwind:OnSpellStart()
 
 	local enemies = FindEnemies(caster,pos,radius)
 
-	local p = WorldParticle("particles/units/heroes/hero_aeronaut/aeronaut_upwind.vpcf",pos,{ [1] = Vector(radius,0,0) })
+	local p = CreateParticleWorld("particles/units/heroes/hero_aeronaut/aeronaut_upwind.vpcf",pos,{ [1] = Vector(radius,0,0) })
 	
 	caster:EmitSound("Hero_Invoker.Tornado")
 

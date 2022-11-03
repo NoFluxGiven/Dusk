@@ -8,7 +8,7 @@
     //-------------------------------------------------------------------------------------------------------------
     "BaseClass"                     "item_datadriven"
     "ID"                            "2036"  //Valve's version of this item uses the ID "122".
-    "Model"                         "models/props_gameplay/recipe.mdl"
+    "Model"                         "models/props_gameplay/recipe.vmdl"
     "AbilityTextureName"            "item_recipe"
     
     // Item Info
@@ -22,6 +22,6 @@
     "ItemResult"                    "item_deathscythe"
     "ItemRequirements"
     {
-        "01"                        "item_echo_sabre;item_relic"
+        "01"                        "item_diffusal_blade;item_witch_blade"
     }
 }

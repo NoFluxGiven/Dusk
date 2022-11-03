@@ -13405,28 +13405,23 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"bonus_damage"			"15 30 45 60"
+			"bonus_damage"			"30 50 70 90"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_movespeed"		"32"
+			"bonus_movespeed"		"24"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"3"
+			"duration"				"2.0"
 			"LinkedSpecialBonus"	"special_bonus_hero_1"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_reduction"		"80"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"damage_reduction_duration" "0.75"
+			"damage_reduction"		"40"
 		}
 	}
 
@@ -13690,6 +13685,9 @@
 //=====================================================================================================
 // HERO: One Punch
 //=====================================================================================================
+///@changes
+/// The initial hit now never reduces enemies below 1 HP.
+/// BKB now prevents both the Stun and the damage from the AoE portion of the ability.
 "hero_one_punch"
 {
 	// General
@@ -13709,7 +13707,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"150"
+	"AbilityCastRange"				"165"
 	"AbilityCastPoint"				"0.5"
 	
 	// Time		
@@ -13732,12 +13730,12 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"crit"						"225 300 375"
+			"crit"						"175 225 300"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"landing_delay"				"1.50"
+			"landing_delay"				"1.60"
 		}
 		"03"
 		{
@@ -13752,7 +13750,7 @@
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"landing_stun"				"1.75 2.50 3.25"
+			"landing_stun"				"1.50 1.75 2.00"
 			"LinkedSpecialBonus"		"special_bonus_hero_4"
 		}
 		"06"
@@ -17164,7 +17162,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"80 90 100 110"
+	"AbilityManaCost"				"150"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -17222,7 +17220,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"				"ability_lua"
 	"ScriptFile"			"lua/abilities/lightning_lightning_dagger"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -17234,12 +17232,12 @@
 		// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
-	"AbilityCastRange"				"400 450 500 550"
-	"AbilityCooldown"				"2.4"
+	"AbilityCastRange"				"700"
+	"AbilityCooldown"				"6"
 	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"45 65 85 105"
+	"AbilityManaCost"				"0"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -17248,7 +17246,7 @@
 		"01"
 		{
 			"var_type"								"FIELD_FLOAT"
-			"duration"								"0.45"
+			"duration"								"1.75 2.50 3.25 4.00"
 		}
 		"02"
 		{
@@ -17258,13 +17256,18 @@
 		"03"
 		{
 			"var_type"								"FIELD_INTEGER"
-			"bounces"								"2"
+			"bounces"								"1"
 			"LinkedSpecialBonus"					"special_bonus_lightning_1"
 		}
 		"04"
 		{
 			"var_type"								"FIELD_INTEGER"
-			"damage"								"30 90 150 210"
+			"damage"								"50 100 150 200"
+		}
+		"05"
+		{
+			"var_type"								"FIELD_INTEGER"
+			"chance"								"35"
 		}
 	}
 	
@@ -17512,7 +17515,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"100"
+	"AbilityManaCost"				"200"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -17525,7 +17528,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"175 225 275"
+			"damage"					"150 200 250"
 			"LinkedSpecialBonus"		"special_bonus_lightning_2"
 		}
 		"02"
@@ -17546,12 +17549,12 @@
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"2.5"
+			"slow_duration"				"1.25"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"invuln_duration"			"1.00"
+			"invuln_duration"			"1.25"
 		}
 	}
 	
@@ -17609,7 +17612,7 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"radius"					"300"
+			"radius"					"375"
 		}
 		"03"
 		{
@@ -17620,12 +17623,12 @@
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"movespeed"					"10 20 30 40"
+			"movespeed"					"15 20 25 30"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"attack_speed"				"60 100 140 180"
+			"attack_speed"				"40 80 120 160"
 		}
 		"06"
 		{
@@ -18002,7 +18005,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"movespeed_reduction"		"40 45 50 55"
+			"movespeed_reduction"		"30 35 40 45"
 		}
 		"04"
 		{
@@ -18022,7 +18025,7 @@
 		"07"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"radius"					"375"
+			"radius"					"325"
 		}
 		"08"
 		{
@@ -18032,7 +18035,7 @@
 		"09"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"scepter_stun"				"1.75"
+			"scepter_stun"				"1.00"
 		}
 		"10"
 		{
@@ -18083,7 +18086,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"40 35 30"
+	"AbilityCooldown"				"80 75 70"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -19143,6 +19146,8 @@
 // MIFUNE: Bushido
 //=====================================================================================================
 
+///@todo sound effect + particle on hit
+///@todo sound effect on start
 ///@issue Mifune using this + Zanmato with scepter crashes the game. Potentially infinite attacks, as while invulnerable attacks always fail?
 
 "mifune_bushido"
@@ -19192,7 +19197,7 @@
 	"03"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"7.0"
+			"duration"						"7.5"
 		}
 	"04"
 		{
@@ -19536,7 +19541,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"125"
+	"AbilityCooldown"				"90 80 70"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -19564,7 +19569,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"base_percent_damage"		"22"
+			"slash_damage"				"200 275 350"
 		}
 
 		"04"
@@ -22752,7 +22757,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"110"
+	"AbilityCooldown"				"110 100 90"
 	"HasScepterUpgrade"             "1"
 
 	// Cost

@@ -42,7 +42,7 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"radius"					"300"
+			"radius"					"375"
 		}
 		"03"
 		{
@@ -53,12 +53,12 @@
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"movespeed"					"10 20 30 40"
+			"movespeed"					"15 20 25 30"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"attack_speed"				"60 100 140 180"
+			"attack_speed"				"40 80 120 160"
 		}
 		"06"
 		{

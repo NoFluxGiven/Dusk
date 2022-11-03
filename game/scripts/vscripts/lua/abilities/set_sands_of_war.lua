@@ -146,7 +146,7 @@ function set_sands_of_war:OnSpellStart()
 						summon:AddNewModifier(caster, self, "modifier_sands_of_war_attack_speed", {Duration=duration})
 					end
 
-					WorldParticle("particles/units/heroes/hero_set/set_spawn_sand_puppet.vpcf",origin_unit:GetAbsOrigin())
+					CreateParticleWorld("particles/units/heroes/hero_set/set_spawn_sand_puppet.vpcf",origin_unit:GetAbsOrigin())
 				end
 			end
 

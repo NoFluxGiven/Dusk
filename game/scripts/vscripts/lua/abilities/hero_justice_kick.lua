@@ -58,9 +58,16 @@ function modifier_justice_kick:OnCreated(kv)
 		local caster = self:GetAbility():GetCaster()
 		local p = self:GetParent()
 		local facing = caster:GetForwardVector()
-		local distance = self:GetAbility():GetSpecialValueFor("distance")
+
+		local heroic_soul_buff = 1
+
+		if (caster:HasModifier("modifier_heroic_soul") and caster:HasScepter()) then
+			heroic_soul_buff = 2
+		end
+		
+		local distance = self:GetAbility():GetSpecialValueFor("distance") * heroic_soul_buff
 		local radius = self:GetAbility():GetSpecialValueFor("landing_radius")
-		local damage = self:GetAbility():GetSpecialValueFor("landing_damage")
+		local damage = self:GetAbility():GetSpecialValueFor("landing_damage") * heroic_soul_buff
 		local stun = self:GetAbility():GetSpecialValueFor("landing_stun")
 
 		Physics:Unit(p)

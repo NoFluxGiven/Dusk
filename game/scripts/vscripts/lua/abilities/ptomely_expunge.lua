@@ -22,6 +22,10 @@ function modifier_expunge:DeclareFunctions()
 	return func
 end
 
+function modifier_expunge:GetAttributes()
+	return MODIFIER_ATTRIBUTE_PERMANENT
+end
+
 function modifier_expunge:GetModifierMoveSpeedBonus_Percentage()
 	return -self:GetAbility():GetSpecialValueFor("slow")
 end

@@ -6,8 +6,6 @@
     "ScriptFile"                    "lua/items/item_soul_vial"
     "ID"                            "3015"  //Valve's version of this item uses the ID "34".
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-    "Model"                         "models/props_gameplay/magic_wand.mdl"
-    "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
     "AbilityTextureName"            "item_soul_vial"
     
     // Stats        

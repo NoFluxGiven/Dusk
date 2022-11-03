@@ -1,5 +1,5 @@
 //=================================================================================================================
-// Deathscythe
+// Kalismar
 //=================================================================================================================
 "item_deathscythe"
 {
@@ -10,14 +10,12 @@
 	"ID"							"3036"  //Valve's version of this item uses the ID "39".
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	"Model"							"models/props_gameplay/clarity.mdl"
-	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-	"AbilityTextureName"			"item_deathscythe"
+	"AbilityTextureName"			"item_kalismar"
 	
 	// Stats		
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastPoint"              "0"
-	"AbilityCooldown"				"8"
+	"AbilityCooldown"				"12"
 	"AbilityManaCost"				"0"
 	"AbilityCastRange"				"0"
 	
@@ -48,42 +46,67 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"bonus_intelligence" "10"
+			"bonus_damage"		"50"
 		}
 		"02"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"bonus_strength"	"10"
+			"bonus_attack_speed" "40"
 		}
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"bonus_damage"		"85"
+			"bonus_int"			"30"
 		}
 		"04"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"bonus_attack_speed" "20"
+			"bonus_agi" 		"20"
 		}
 		"05"
 		{
-			"var_type"			"FIELD_FLOAT"
-			"bonus_mana_regen"	"0.85"
+			"var_type"			"FIELD_INTEGER"
+			"bonus_armor" 		"6"
 		}
 		"06"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"percent_damage" "16" // percentage
+			"bonus_proj_speed" 	"350"
 		}
 		"07"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"slow" 				"100" // percentage
+			"mana_steal" 		"15" // percentage
 		}
 		"08"
 		{
+			"var_type"			"FIELD_INTEGER"
+			"stat_reduction" 	"8" // percentage
+		}
+		"09"
+		{
 			"var_type"			"FIELD_FLOAT"
-			"slow_duration" 	"1.75"
+			"duration" 			"4.0"
+		}
+		"10"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"damage_over_time" 	"0.75"
+		}
+		"11"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"slow" 				"35"
+		}
+		"12"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"mana_damage" 		"40"
+		}
+		"13"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"illusion_mana_damage" 	"25"
 		}
 	}
 }
