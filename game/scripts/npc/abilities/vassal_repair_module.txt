@@ -35,19 +35,11 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-    "01"
+    "AbilityValues"
         {
-            "var_type"                      "FIELD_INTEGER"
-            "health_recovery"               "60" // percentage total
+            "health_recovery" "60"
+            "radius" "500"
         }
-    "02"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "radius"                        "500" // percentage total
-        }
-    }
     
     "precache"
         {

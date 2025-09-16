@@ -14,24 +14,12 @@
     
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"              "FIELD_INTEGER"
-            "aspd"                  "-5 -10 -15 -20"
+            "aspd" "-5 -10 -15 -20"
+            "damage" "-4 -6 -8 -10"
+            "duration" "2"
         }
-        "02"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "damage"                "-4 -6 -8 -10"
-        }
-        "03"
-        {
-            "var_type"              "FIELD_FLOAT"
-            "duration"              "2"
-        }
-    }
 
     "precache"
     {

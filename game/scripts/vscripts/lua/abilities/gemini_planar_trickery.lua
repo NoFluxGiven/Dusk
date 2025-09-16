@@ -1,12 +1,13 @@
 gemini_planar_trickery = class({})
 
 LinkLuaModifier("modifier_planar_trickery","lua/abilities/gemini_planar_trickery",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_planar_trickery_buff","lua/abilities/gemini_planar_trickery",LUA_MODIFIER_MOTION_NONE)
 
 function gemini_planar_trickery:OnSpellStart()
 	if IsServer() then
 		local c = self:GetCaster()
-		local t = self:GetCursorTarget()
-		local pos = t:GetAbsOrigin()
+		-- local t = self:GetCursorTarget()
+		local pos = self:GetCursorPosition()
 
 		local duration = self:GetSpecialValueFor("duration")
 
@@ -78,4 +79,27 @@ function modifier_planar_trickery:OnDestroy()
 
 		c:SwapAbilities(ab1:GetName(), ab2:GetName(), true, false)
 	end
+end
+
+modifier_planar_trickery_buff = class({})
+
+function modifier_planar_trickery_buff:GetEffectName()
+	return "particles/units/heroes/hero_phantom_assassin_persona/pa_persona_phantom_blur_active.vpcf"
+end
+
+function modifier_planar_trickery_buff:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_EVASION_CONSTANT
+	}
+
+	return funcs
+end
+
+function modifier_planar_trickery_buff:GetModifierEvasion_Constant()
+	return self:GetAbility():GetSpecialValueFor("bonus_evasion")
+end
+
+function modifier_planar_trickery_buff:GetModifierMoveSpeedBonus_Percentage()
+	return self:GetAbility():GetSpecialValueFor("bonus_movespeed")
 end

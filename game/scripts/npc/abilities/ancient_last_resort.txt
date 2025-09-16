@@ -38,19 +38,11 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"duration"					"8"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"1250"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "8"
+            "radius" "1250"
+        }
 	
 	"precache"
 		{

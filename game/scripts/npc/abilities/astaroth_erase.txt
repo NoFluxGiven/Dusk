@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/astaroth_erase"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -34,34 +34,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"15"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"hp_damage"						"20"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"mana_damage"					"10"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"current_hp_damage"				"4.5 6 7.5"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"current_mana_damage"			"3 5 7"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "15"
+            "hp_damage" "20"
+            "mana_damage" "10"
+            "current_hp_damage" "4.5 6 7.5"
+            "current_mana_damage" "3 5 7"
+        }
 	
 	"precache"
 		{

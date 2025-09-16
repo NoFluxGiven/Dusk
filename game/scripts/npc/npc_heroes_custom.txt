@@ -436,6 +436,124 @@
 	"VisionNighttimeRange"		"800"									// Range of vision at night time.
 	"VisionDaytimeRange"		"1800"									// Range of vision in the day time.
 }
+"npc_dota_hero_silencer"
+{
+	"AbilityLayout" 		"4"
+	//"override_hero"			"npc_dota_hero_silencer"
+	"SoundSet"		"Hero_Silencer"
+	"Role"					"Nuker"
+	"Rolelevels"			"3"
+	"Complexity"			"1"
+	"Ability1"				"arbiter_dictum"
+	"Ability2"				"arbiter_judgment"
+	"Ability3"				"arbiter_detainment"
+	"Ability4"				"arbiter_dictum_focus"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"arbiter_greater_dictum"
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				"special_bonus_arbiter_1" // +2 arbiter Dagger Bounces
+	"Ability11"				"special_bonus_magic_resistance_10" // 
+	"Ability12"				"special_bonus_intelligence_12" // 
+	"Ability13"				"special_bonus_arbiter_2" // +60 Overload Damage
+	"Ability14"				"special_bonus_arbiter_3" // +40% Boltblast Delay/Damage
+	"Ability15"				"special_bonus_cooldown_reduction_15" // 
+	"Ability16"				"special_bonus_spell_amplify_15" // 
+	"Ability17"				"special_bonus_arbiter_4" // +20% Spark Slow
+
+	"ArmorPhysical"				"5"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"525"
+	"AttackRate"				"1.6"
+	"AttackDamageMin"			"21"										// Damage range min.
+	"AttackDamageMax"			"23"										// Damage range max.
+	"ProjectileModel"            "particles/units/heroes/hero_arbiter/arbiter_dagger_arcana.vpcf"
+	"ProjectileSpeed"            "1200"
+
+	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"19"										// Base strength
+	"AttributeStrengthGain"		"1.8"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"22"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.1"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"16"										// Base agility
+	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.	
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"285"									// Speed.
+	"MovementTurnRate"			"0.6"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0.5"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	"VisionDaytimeRange"		"1600"									// Range of vision in the day time.
+
+	"Talents"
+	{
+	    "1" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lightning_health"
+		            "MODIFIER_PROPERTY_HEALTH_BONUS" "200"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_lightning_spell_amp"
+		            "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE" "4"
+		        }
+	   		}
+	    "2" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lightning_damage"
+		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "35"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_lightning_spark"
+		            "v" "8"
+		        }
+	    	}
+	    "3" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lightning_boltblast"
+		            "v" "45"
+		        }
+		        "right"
+		        {
+		            "name" "special_bonus_lightning_movespeed"
+		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "50"
+		        }
+	    	}
+	    "4" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lightning_lightning_dagger"
+		            "v" "6"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_lightning_overload"
+		            "v" "115"
+		        }
+	    	}
+	}
+}
 "npc_dota_hero_artificer"
 {
 	"AbilityLayout" 		"4"
@@ -2193,6 +2311,7 @@
 {
 	"AbilityLayout" 		"4"
 	//"override_hero"			"npc_dota_hero_phantom_assassin"
+	"SoundSet"		"Hero_Silencer"
 	"Role"					"Nuker"
 	"Rolelevels"			"3"
 	"Complexity"			"1"
@@ -2209,7 +2328,6 @@
 	// Lightning becomes a mass of electrical energy,
 	// gaining complete invulnerability and disjointing projectiles,
 	// and dealing damage, slowing, and ministunning enemies around her.
-	// She cannot cast Spells, attack or move whilst invulnerable.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -2226,15 +2344,17 @@
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackRange"				"650"
+	"AttackRange"				"525"
 	"AttackRate"				"1.6"
 	"AttackDamageMin"			"21"										// Damage range min.
 	"AttackDamageMax"			"23"										// Damage range max.
 	"ProjectileModel"            "particles/units/heroes/hero_lightning/lightning_dagger_arcana.vpcf"
 	"ProjectileSpeed"            "1200"
 
+	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+
 	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-	"AttributeBaseStrength"		"21"										// Base strength
+	"AttributeBaseStrength"		"19"										// Base strength
 	"AttributeStrengthGain"		"1.8"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"22"										// Base intelligence
 	"AttributeIntelligenceGain"	"2.1"										// Intelligence bonus per level.
@@ -2315,7 +2435,8 @@
 "npc_dota_hero_riki"
 {
 	"AbilityLayout" 		"4"
-	//"override_hero"			"npc_dota_hero_riki"
+	// "override_hero"			"npc_dota_hero_riki"
+	// "HeroId" 				"32"
 	"HeroSelectSoundEffect"	"Lupin.BeneathTheMask"
 	"NewHero"				"1"
 	"Role"					"Carry,Nuker,Initiator"
@@ -2341,6 +2462,9 @@
 	// to the target location. Enemies between the two locations are struck with an attack that deals critical damage, and are Dazed for 2/2.5/3.0s.
 	// Deals 175/200/225% damage.
 	// 500/600/700 range.
+	"Ability7"				"generic_hidden"
+	"Ability8"				"generic_hidden"
+	"Ability9"				"generic_hidden"
 	"Ability10"				"special_bonus_attack_damage_25"
 	"Ability11"				"special_bonus_lupin_1" // +12% Beneath the mask Slow
 	"Ability12"				"special_bonus_lupin_2" // +125 Flashbang Damage
@@ -2349,6 +2473,22 @@
 	"Ability15"				"special_bonus_lupin_4" // +1.75s Flashbang Daze Duration
 	"Ability16"				"special_bonus_lupin_5" // +1000 Last Surprise Range
 	"Ability17"				"special_bonus_lupin_6" // Beneath the Mask Mutes
+
+	"Facets"
+	{
+		"lupin_siphoner"
+		{
+			"Icon"				"healing"
+			"Color"				"Purple"
+			"GradientID"		"1"
+		}
+		"lupin_infamy" 
+		{
+			"Icon"				"vision"
+			"Color"				"Red"
+			"GradientID"		"3"
+		}
+	}
 
 	"ArmorPhysical"				"0"									// Physical protection.
 	"MagicalResistance"				"25"									// Magical protection (percentage).
@@ -2627,6 +2767,7 @@
 	// The illusions cannot be controlled, can move over terrain, and instantly die when their target dies.
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
+	// 
 	"Ability6"				"mifune_zanmato"
 	"Ability7"				""
 	"Ability8"				""
@@ -2682,11 +2823,36 @@
 	"Role"					"Carry,Pusher"
 	"Rolelevels"			"2,2"
 	"Complexity"			"2"
+	// Neith whirls her halberd around, striking enemies multiple times in a short radius.
+	// Deals damage equal to a portion of her attack damage, and each strike empowers the damage dealt.
+	// Spins 2/3/4/5 times, with 0.3s between each spin.
+	// Each deals 40 Physical damage.
+	// For each Hero hit, it gains 20 additional damage and the radius grows by 10/15/20/25.
+	// Creeps provide 0.25x the bonus.
+	// 20s cooldown.
 	"Ability1"				"neith_monsoon"
+	// Neith strikes at her attack target. The Attack deals 50/100/150/200 bonus damage, and slows the target for a short time, Breaking their Passives.
+	// Slows by 100% for 0.8s.
+	// Applies a Break effect that lasts 3/4/5/6s.
+	// Applies her attack modifiers and attack damage. Instantly kills creeps.
+	// 16s cooldown.
 	"Ability2"				"neith_decisive_strike"
+	// Whenever Neith kills an enemy Hero or creep, she grants a short-lived buff to allies, increasing their movespeed and health regen.
+	// The effect grows stronger each time it's applied within a duration.
 	"Ability3"				"neith_inspire"
 	"Ability4"				"generic_hidden"
+	// This levels with Neith's Ultimate.
+	// Neith commands nearby lane creeps to attack the target enemy Hero. They gain a all-damage shield, bonus damage and attack speed.
+	// Grants 15/25/35 damage and 100 attack speed, and a 250/350/450 damage shield.
+	// Lasts 4.5s.
+	// 60/45/30s cooldown.
 	"Ability5"				"generic_hidden"
+	// Neith lets out a cry of triumph, rallying nearby allies to her cause. Heroes gain a large amount of status resistance, damage reduction, movement speed and slow resistance.
+	// Creeps are rendered completely immune to damage and spell effects.
+	// Grants 30/40/50% Status Resistance, 30/40/50% damage reduction, 15/20/25% Movement Speed, and 60/80/100% Slow Resistance.
+	// Lasts 4.5s.
+	// Aghanim's Scepter Upgrade: Rally upgrades nearby lane creeps to Mega Creeps, and restores them to full Health and Mana. These Mega Creeps die after 8/12/16s.
+	// 90s cooldown.
 	"Ability6"				"neith_rally"
 	"Ability7"				""
 	"Ability8"				""
@@ -3215,7 +3381,7 @@
 	// Pride can instantly deal damage to,
 	// and jump to, the last unit he dealt damage to with his attacks.
 	// Deals 40/80/120/160 damage and slows for 25% for 2s.
-	// 5s cooldown.
+	// 6s cooldown.
 	// Must be cast within 4s of attacking a target (applies a debuff).
 	"Ability3"				"pride_lionheart"
 	// Pride's bravery knows no bounds, as through his veins courses the blood of Elyat.
@@ -3231,15 +3397,10 @@
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
 	"Ability6"				"pride_echospear"
-	// Pride afflicts a powerful hex upon the target enemy, passed down through his bloodline,
-	// that causes damage sources inflicted during its duration to echo multiple times.
-	// At the end of the buff duration, a 30/40/50% portion of the total damage
-	// they received echoes 2/3/4 times,
-	// reducing to 30/40/50% each echo.
-	// There is a 2s delay between each echo.
-	// Initial buff lasts 5s.
-	// Deals Pure damage and pierces Spell Immunity.
-	// 70s cooldown.
+	// Pride gains a temporary boon, allowing him to strike multiple times whenever
+	// he attacks an enemy. Whenever he lands an attack on an enemy Hero, they receive stacks
+	// of Echospear, which tick down every 2 seconds, striking them for 30/50/70% of Pride's
+	// base damage. Preserves attack modifiers.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -4260,6 +4421,22 @@
 	"Ability16"				"special_bonus_tek_3" // +15 Mosquito Missiles Damage
 	"Ability17"				"special_bonus_cooldown_reduction_15" // 
 
+	"Facets"
+	{
+		"tek_compound_tech"
+		{
+			"Icon"				"grenade"
+			"Color"				"Red"
+			"GradientID"		"0"
+		}
+		"tek_gigaton_blast"
+		{
+			"Icon"				"grenade"
+			"Color"				"Red"
+			"GradientID"		"0"
+		}
+	}
+
 	//"Ability3"				"tek_aerial_assault_mines" // Tek can place 3/4/5/6 targets in quick succession within a huge range. 
 	// Upon placing all of them, or 2s after placing a target without placing another, Tek fires some small mines up into the stratosphere, where they quickly land at the targeted spots.
 	// After a short delay, the mines explode, dealing Magical damage in an AoE.
@@ -4312,11 +4489,9 @@
 	"Ability1"				"teleri_shock_arrow"
 	// Teleri readies her bow, then looses an electric bolt that deals damage and slows the target.
 	// The bolt has a fast travel time and deals 60/120/180/240 damage, slowing by 100% for 1s.
-	// When the bolt lands, after the slow duration, it explodes, propagating to enemies in an
-	// area behind the target, and applying an attack. The attack preserves all procs.
-	// The ability cannot propagate to enemies it has already affected in the same cast.
-	// Applies the same effect to all enemies in a 250 radius 175 units away from the target.
-	// This is based on Teleri's current position.
+	// When the bolt lands, after the slow duration, it electrocutes the target for 4s, propagating to enemies in an
+	// area behind the target.
+	// Applies the same effect to all enemies in a 275 radius from the target.
 	// 9s cooldown.
 	"Ability2"				"teleri_tijadis_gambit"
 	// Teleri invokes the power of her tribe, marking, then striking, 3 random targets in a radius with lightning

@@ -40,7 +40,7 @@ function modifier_deep_freeze:OnAttackLanded(params)
 
 			self:GetAbility():InflictDamage(target,attacker,damage,DAMAGE_TYPE_MAGICAL)
 			target:AddNewModifier(attacker, self:GetAbility(), "modifier_deep_freeze_stun", {Duration=stun})
-			self:GetAbility():UseResources(true, true, true)
+			self:GetAbility():UseResources(true, true, true, true)
 		end
 	end
 end

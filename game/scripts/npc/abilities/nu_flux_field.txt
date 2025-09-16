@@ -35,35 +35,18 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage_over_time"			"10 20 30 40"
-			"LinkedSpecialBonus"		"special_bonus_nu_2"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage_per_cast"			"80 160 240 320"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"400"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"10"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun_duration"				"0.75 1.50 2.25 3.00"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage_over_time"
+            {
+                "value" "10 20 30 40"
+                "LinkedSpecialBonus" "special_bonus_nu_2"
+            }
+            "damage_per_cast" "80 160 240 320"
+            "radius" "400"
+            "duration" "10"
+            "stun_duration" "0.75 1.50 2.25 3.00"
+        }
 	
 	"precache"
 		{

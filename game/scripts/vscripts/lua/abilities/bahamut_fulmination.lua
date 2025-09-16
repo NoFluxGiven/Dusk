@@ -191,7 +191,7 @@ function modifier_fulmination_debuff:OnIntervalThink()
 
 	local mana_burn = min( (self.mana_burn_per_second/100 * self:GetParent():GetMaxMana()), self:GetParent():GetMana() ) * 0.5
 
-	self:GetParent():ReduceMana(mana_burn)
+	self:GetParent():Script_ReduceMana(mana_burn)
 	self:GetAbility():InflictDamage(self:GetParent(), self:GetAbility():GetCaster(), mana_burn, DAMAGE_TYPE_MAGICAL)
 end
 

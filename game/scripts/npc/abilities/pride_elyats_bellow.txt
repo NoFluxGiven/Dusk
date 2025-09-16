@@ -18,11 +18,11 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.6"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.3"
 
 		"AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
-		"AnimationPlaybackRate"         "0.5"
+		"AnimationPlaybackRate"         "1"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -38,27 +38,14 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"75 125 175 225"
-			}
-
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"debuff_duration"			"2.0 2.5 3.0 3.5"
-			}
-
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"radius"					"275"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "60 90 120 150"
+            "debuff_duration" "3.00"
+            "radius" "275"
+			"initial_delay" "0.5"
+			"delay" "1.5"
+        }
 		
 		"precache"
 			{

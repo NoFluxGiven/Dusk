@@ -30,32 +30,13 @@
 
     // Stats
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"              "FIELD_INTEGER"
-            "damage"                "75 150 225 300"
+            "damage" "75 150 225 300"
+            "distance" "500 575 650 725"
+            "stun" "1.0"
+            "radius" "300"
         }
-        
-        "02"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "distance"              "500 575 650 725"
-        }
-
-        "03"
-        {
-            "var_type"              "FIELD_FLOAT"
-            "stun"                  "1.0"
-        }
-
-         "04"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "radius"                "300"
-        }
-    }
 
     "precache"
     {

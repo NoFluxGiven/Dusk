@@ -15,7 +15,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"300"
+	"AbilityCastRange"				"375"
 	"AbilityCastPoint"				"0"
 	
 	// Time		
@@ -32,40 +32,26 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"20 30 40 50"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"375"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"-10 -15 -20 -25"
-			"LinkedSpecialBonus"		"special_bonus_lightning_4"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"movespeed"					"15 20 25 30"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"attack_speed"				"40 80 120 160"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"buff_duration"				"1.75"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage_per_stack" "15 20 25 30"
+            "radius" "375"
+            "slow"
+            {
+                "value" "-10 -15 -20 -25"
+                "LinkedSpecialBonus" "special_bonus_lightning_4"
+            }
+			"mana_regen_per_stack" "4 8 12 16"
+			"cooldown_reduction_per_stack" "8 10 12 14"
+			"movement_speed_per_stack" "4 8 12 16"
+			"attack_speed_per_stack" "20 30 40 50"
+			"damage_reduction_per_stack" "8"
+			"threshold" "200"
+            "charge_duration" "3.25"
+			"debuff_duration" "1.5"
+			"buff_duration" "3"
+			"max_stacks" "6"
+        }
 	
 	"precache"
 		{

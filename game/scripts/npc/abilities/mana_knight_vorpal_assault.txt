@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/mana_knight_vorpal_assault"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -34,29 +34,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"50"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bolts"						"5 7 9"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"mana_burn"					"30 40 50"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"silence_duration"			"0.75"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "50"
+            "bolts" "5 7 9"
+            "mana_burn" "30 40 50"
+            "silence_duration" "0.75"
+        }
 	
 	"precache"
 		{

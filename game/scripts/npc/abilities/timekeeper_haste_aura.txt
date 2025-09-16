@@ -32,46 +32,24 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"cooldown_reduction"			"8 12 16 20"
-			"LinkedSpecialBonus"			"special_bonus_timekeeper_4"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"900"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"speed_boost"					"2 4 6 8"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"attackspeed_boost"				"8 16 24 32"
-			"LinkedSpecialBonus"			"special_bonus_timekeeper_3"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"chance"						"50"
-		}
-	"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"active_chance"					"100"
-		}
-	"07"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"act_duration"					"8"
-		}
-	}
+	"AbilityValues"
+        {
+            "cooldown_reduction"
+            {
+                "value" "8 12 16 20"
+                "LinkedSpecialBonus" "special_bonus_timekeeper_4"
+            }
+            "radius" "900"
+            "speed_boost" "2 4 6 8"
+            "attackspeed_boost"
+            {
+                "value" "8 16 24 32"
+                "LinkedSpecialBonus" "special_bonus_timekeeper_3"
+            }
+            "chance" "50"
+            "active_chance" "100"
+            "act_duration" "8"
+        }
 
 	"precache"
 	{

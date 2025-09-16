@@ -1,0 +1,52 @@
+//=====================================================================================================
+// pride: merciless
+//=====================================================================================================
+"pride_echospear"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"lua/abilities/pride_echospear"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"pride_echospear"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.1"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"75"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"180"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityValues"
+        {
+			"max_stacks" "8 12 16"
+            "duration" "10"
+            "debuff_duration" "24"
+            "base_damage" "60 80 100"
+			"tick_interval" "0.35"
+        }
+	
+	"precache"
+		{
+		"particle" "particles/units/heroes/hero_faceless_void/faceless_void_time_lock_bash.vpcf"
+		"soundfile" "soundevents/hero_pride.vsndevts"
+
+		}
+}

@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/fate_ancestral_recall"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELED"
 	"AbilityChannelTime"			"2.0"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -36,31 +36,21 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"8.0"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"level_bonus"					"7 11 15"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"heal_percent"					"35"
-			"LinkedSpecialBonus"			"special_bonus_fate_4"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"mana_restore_percent"			"30"
-			"LinkedSpecialBonus"			"special_bonus_fate_4"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "8.0"
+            "level_bonus" "7 11 15"
+            "heal_percent"
+            {
+                "value" "35"
+                "LinkedSpecialBonus" "special_bonus_fate_4"
+            }
+            "mana_restore_percent"
+            {
+                "value" "30"
+                "LinkedSpecialBonus" "special_bonus_fate_4"
+            }
+        }
 	
 	"precache"
 		{

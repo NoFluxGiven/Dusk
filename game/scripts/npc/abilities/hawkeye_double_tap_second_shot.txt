@@ -35,24 +35,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"mult"						"0.30 0.40 0.50 0.60"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"mult_scepter"				"1.00 1.10 1.20 1.30"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"base_damage"				"50"
-		}
-	}
+	"AbilityValues"
+        {
+            "mult" "0.30 0.40 0.50 0.60"
+            "mult_scepter" "1.00 1.10 1.20 1.30"
+            "base_damage" "50"
+        }
 	
 	"precache"
 		{

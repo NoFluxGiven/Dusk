@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "norwegian"
+"Tokens"
+{
+"chat_filterbutton"	"Filtre"
+"filter_joinleave"	"Blir med / forlater"
+"filter_namechange"	"Navneendringer"
+"filter_publicchat"	"Offentlig prat"
+"filter_servermsg"	"Tjenermeldinger"
+"filter_teamchange"	"Lagendringer"
+"chat_say"			"Skriv:"
+"chat_say_team"	    "Skriv (LAG):"
+"chat_say_coach"	"Skriv (TIL STUDENTER):"
+"chat_say_student"	"Skriv (TIL MENTOR):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

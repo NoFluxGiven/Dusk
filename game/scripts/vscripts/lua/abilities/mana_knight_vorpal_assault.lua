@@ -25,7 +25,7 @@ function mana_knight_vorpal_assault:OnSpellStart()
 				ParticleManager:SetParticleControlEnt(p,1,target,PATTACH_POINT_FOLLOW,"attach_hitloc",target:GetCenter(),true)
 				target:EmitSound("ManaKnight.VorpalAssault.Hit")
 				self:InflictDamage(target,caster,damage,DAMAGE_TYPE_MAGICAL)
-				target:ReduceMana(mana_damage)
+				target:Script_ReduceMana(mana_damage)
 				target:AddNewModifier(caster, self, "modifier_vorpal_assault_silence", {Duration=0.75})
 			end)
 		end

@@ -17,6 +17,25 @@ function neith_rally:OnSpellStart()
 	local scepter_duration = self:GetSpecialValueFor("scepter_duration")
 	local scepter_radius = self:GetSpecialValueFor("scepter_radius")
 
+	local f = FindEnemies(c, c:GetAbsOrigin(), 5000, DOTA_UNIT_TARGET_BUILDING)        
+
+	if #f > 0 then
+		for i=1,4 do
+			local unit = CreateUnitByName("npc_dota_creep_badguys_melee", c:GetAbsOrigin(), true, c, c:GetPlayerOwner(), c:GetTeam())
+			unit:AddNewModifier(c, self, "modifier_kill", {Duration=20})
+			Timers:CreateTimer(0.04 * i, function()
+				local order = {
+					UnitIndex = unit:GetEntityIndex(),
+					OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+					Position = f[1]:GetAbsOrigin(),
+					Queue = true
+				}
+				ExecuteOrderFromTable(order)
+			end)
+		end
+	end
+	
+
 	if c:HasScepter() then
 		duration = scepter_duration
 		radius = scepter_radius

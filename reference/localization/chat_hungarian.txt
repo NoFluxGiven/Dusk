@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "hungarian"
+"Tokens"
+{
+"chat_filterbutton"	"Szűrők"
+"filter_joinleave"	"Belépők/Kilépők"
+"filter_namechange"	"Névváltások"
+"filter_publicchat"	"Nyilvános csevegés"
+"filter_servermsg"	"Szerverüzenetek"
+"filter_teamchange"	"Csapatváltások"
+"chat_say"			"Mond :"
+"chat_say_team"	    "Mond (CSAPAT) :"
+"chat_say_coach"	"Mond (TANULÓKNAK):"
+"chat_say_student"	"Mond (EDZŐNEK):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

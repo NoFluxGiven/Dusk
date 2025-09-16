@@ -31,30 +31,13 @@
     
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"          "FIELD_FLOAT"
-            "tick_interval"     "0.1 0.1 0.1 0.1"
+            "tick_interval" "0.1 0.1 0.1 0.1"
+            "channel_time" "2.50"
+            "total_damage" "160"
+            "damage_per_tick" "6.4"
         }
-        "02"
-        {
-            "var_type"          "FIELD_FLOAT"
-            "channel_time"      "2.50"
-        }
-        "03"
-        {
-            "var_type"          "FIELD_FLOAT"
-            "total_damage"      "160"
-        }
-        // Extra, calculated as total_damage / channel_time * tick_interval
-        "03"
-        {
-            "var_type"          "FIELD_FLOAT"
-            "damage_per_tick"   "6.4"
-        }
-    }
 
     "precache"
     {

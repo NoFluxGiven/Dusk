@@ -24,7 +24,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"16"
+	"AbilityCooldown"				"20"
 
 	// Damage.
 	//-------------------------------------------------------------------------------------------------------------
@@ -32,34 +32,21 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"125"
+	"AbilityManaCost"				"60 100 140 180"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health_regen"			"100 175 250 325"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"mana_regen"			"80 140 200 260"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"2.25"
-			"LinkedSpecialBonus"	"special_bonus_gemini_2"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"out_of_game_duration"	"2.25"
-		}
-	}
+	"AbilityValues"
+        {
+            "health_regen" "80 160 240 320"
+            "mana_regen" "80 140 200 260"
+            "duration"
+            {
+                "value" "2.25"
+                "LinkedSpecialBonus" "special_bonus_gemini_2"
+            }
+            "out_of_game_duration" "2.25"
+        }
 
 	"precache"
 	{

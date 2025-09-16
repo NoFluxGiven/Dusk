@@ -36,38 +36,23 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"50 100 150 200"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"325"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"1.00 1.50 2.00 2.5"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_attack_range"		"175 250 325 400"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"bonus_duration"			"1.75 2.00 2.25 2.50"
-			"LinkedSpecialBonus"		"special_bonus_aeronaut_5"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "50 100 150 200"
+            "radius" "325"
+            "duration" "1.00 1.50 2.00 2.5"
+            "bonus_attack_range" "175 250 325 400"
+            "bonus_duration"
+            {
+                "value" "1.75 2.00 2.25 2.50"
+                "LinkedSpecialBonus" "special_bonus_aeronaut_5"
+            }
+        }
 	
 	"precache"
 		{
 		"particle" "particles/units/heroes/hero_aeronaut/blast.vpcf"
+		"particle" "particles/units/heroes/hero_aeronaut/aeronaut_upwind.vpcf"
+		"particle" "particles/units/heroes/hero_aeronaut/aeronaut_upwind_precast.vpcf"
 		}
 }

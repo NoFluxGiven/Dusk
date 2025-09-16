@@ -17,6 +17,7 @@
 	// The illusions cannot be controlled, can move over terrain, and instantly die when their target dies.
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
+	// 
 	"Ability6"				"mifune_zanmato"
 	"Ability7"				""
 	"Ability8"				""

@@ -9,11 +9,9 @@
 	"Ability1"				"teleri_shock_arrow"
 	// Teleri readies her bow, then looses an electric bolt that deals damage and slows the target.
 	// The bolt has a fast travel time and deals 60/120/180/240 damage, slowing by 100% for 1s.
-	// When the bolt lands, after the slow duration, it explodes, propagating to enemies in an
-	// area behind the target, and applying an attack. The attack preserves all procs.
-	// The ability cannot propagate to enemies it has already affected in the same cast.
-	// Applies the same effect to all enemies in a 250 radius 175 units away from the target.
-	// This is based on Teleri's current position.
+	// When the bolt lands, after the slow duration, it electrocutes the target for 4s, propagating to enemies in an
+	// area behind the target.
+	// Applies the same effect to all enemies in a 275 radius from the target.
 	// 9s cooldown.
 	"Ability2"				"teleri_tijadis_gambit"
 	// Teleri invokes the power of her tribe, marking, then striking, 3 random targets in a radius with lightning

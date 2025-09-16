@@ -6,7 +6,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"				"ability_datadriven"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -50,29 +50,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"chargetime"			"5.00 5.75 6.50"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"675"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"pull_speed"			"120 180 240"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"scepter_stundur"		"1.40"
-		}
-	}
+	"AbilityValues"
+        {
+            "chargetime" "5.00 5.75 6.50"
+            "radius" "675"
+            "pull_speed" "120 180 240"
+            "scepter_stundur" "1.40"
+        }
 
 	"OnSpellStart"
 	{

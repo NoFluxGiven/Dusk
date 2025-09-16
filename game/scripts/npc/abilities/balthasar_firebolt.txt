@@ -51,32 +51,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"base_damage"			"60 120 180 240"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"3"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"dot"					"10 20 30 40"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"projectiles"			"1"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"attack_damage"			"20 30 40 50"
-		}
-	}
+	"AbilityValues"
+        {
+            "base_damage" "60 120 180 240"
+            "duration" "3"
+            "dot" "10 20 30 40"
+            "projectiles" "1"
+            "attack_damage" "20 30 40 50"
+        }
 }

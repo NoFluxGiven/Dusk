@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/baal_superposition2"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
@@ -33,25 +33,16 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"5.0 5.5 6.0"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_ms"						"10 15 20"
-			"LinkedSpecialBonus"			"special_bonus_baal_4"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"mres_reduction"				"0"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "5.0 5.5 6.0"
+            "bonus_ms"
+            {
+                "value" "10 15 20"
+                "LinkedSpecialBonus" "special_bonus_baal_4"
+            }
+            "mres_reduction" "0"
+        }
 	
 	"precache"
 		{

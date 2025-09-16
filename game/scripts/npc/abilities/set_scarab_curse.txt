@@ -38,40 +38,19 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"base_damage" 			"15 20 25 30"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"percent_damage_reduction" "12 20 28 36"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"slow" 					"15"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"interval"				"0.9"
-			"LinkedSpecialBonus"	"special_bonus_set_4"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"8"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"retarget_range"		"700"
-		}
-	}
+	"AbilityValues"
+        {
+            "base_damage" "15 20 25 30"
+            "percent_damage_reduction" "12 20 28 36"
+            "slow" "15"
+            "interval"
+            {
+                "value" "0.9"
+                "LinkedSpecialBonus" "special_bonus_set_4"
+            }
+            "duration" "8"
+            "retarget_range" "700"
+        }
 
 	"precache"
 	{

@@ -32,30 +32,17 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"80 120 160 200"
-			"LinkedSpecialBonus"		"special_bonus_aether_1"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"300"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"2.05 2.30 2.45 2.70"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"-25 -40 -55 -70"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage"
+            {
+                "value" "80 120 160 200"
+                "LinkedSpecialBonus" "special_bonus_aether_1"
+            }
+            "radius" "300"
+            "duration" "2.05 2.30 2.45 2.70"
+            "slow" "-25 -40 -55 -70"
+        }
 	
 	"precache"
 		{

@@ -7,7 +7,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -34,29 +34,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"base_damage"				"100 150 200" // deals this much extra Magical damage on his attack
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"mana_drain"				"15 20 25" // drains this much Max Mana for the attack, and deals damage equal to the amount drained
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"-50"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"1"
-		}
-	}
+	"AbilityValues"
+        {
+            "base_damage" "100 150 200"
+            "mana_drain" "15 20 25"
+            "slow" "-50"
+            "slow_duration" "1"
+        }
 	
 	"precache"
 		{

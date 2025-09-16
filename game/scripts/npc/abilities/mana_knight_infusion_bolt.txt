@@ -34,31 +34,17 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"damage"					"20 30 40 50" // percentage of the opponent's missing Mana amount
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun"						"2"
-			"LinkedSpecialBonus"		"special_bonus_mana_knight_4"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"max_damage"				"475"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"min_damage"				"50"
-		}
-
-	}
+	"AbilityValues"
+        {
+            "damage" "20 30 40 50"
+            "stun"
+            {
+                "value" "2"
+                "LinkedSpecialBonus" "special_bonus_mana_knight_4"
+            }
+            "max_damage" "475"
+            "min_damage" "50"
+        }
 	
 	"precache"
 		{

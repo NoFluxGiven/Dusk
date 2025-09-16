@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "ukrainian"
+"Tokens"
+{
+"chat_filterbutton"	"Фільтри"
+"filter_joinleave"	"Долучення/залишення"
+"filter_namechange"	"Зміни псевдонімів"
+"filter_publicchat"	"Загальний чат"
+"filter_servermsg"	"Повідомлення сервера"
+"filter_teamchange"	"Зміни команд"
+"chat_say"			"Написати:"
+"chat_say_team"	    "Написати (КОМАНДІ):"
+"chat_say_coach"	"Написати (УЧНЯМ):"
+"chat_say_student"	"Написати (ТРЕНЕРУ):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "swedish"
+"Tokens"
+{
+"chat_filterbutton"	"Filter"
+"filter_joinleave"	"Går med/går ur"
+"filter_namechange"	"Namnändringar"
+"filter_publicchat"	"Offentlig chatt"
+"filter_servermsg"	"Servermeddelanden"
+"filter_teamchange"	"Lagändringar"
+"chat_say"			"Skriv :"
+"chat_say_team"	    "Skriv (LAG) :"
+"chat_say_coach"	"Säg (TILL ELEVER):"
+"chat_say_student"	"Säg (TILL COACH):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

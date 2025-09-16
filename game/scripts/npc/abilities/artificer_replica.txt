@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/artificer_replica"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -36,54 +36,18 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"illusion_duration"				"20 30 40" // percentage total
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"illusion_damage"				"0" // percentage total
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"illusion_incoming"				"0" // percentage total
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"illusion_damage_tooltip"		"100" // percentage total
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"illusion_incoming_tooltip"		"100" // percentage total
-		}
-	"06"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"scepter_illusion_duration"		"10 15 20" // percentage total
-		}
-	"07"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"scepter_illusion_damage"		"-50" // percentage total
-		}
-	"08"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"scepter_illusion_incoming"		"200" // percentage total
-		}
-	"09"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"scepter_radius"				"1000" // percentage total
-		}
-	}
+	"AbilityValues"
+        {
+            "illusion_duration" "20 30 40"
+            "illusion_damage" "0"
+            "illusion_incoming" "0"
+            "illusion_damage_tooltip" "100"
+            "illusion_incoming_tooltip" "100"
+            "scepter_illusion_duration" "10 15 20"
+            "scepter_illusion_damage" "-50"
+            "scepter_illusion_incoming" "200"
+            "scepter_radius" "1000"
+        }
 	
 	"precache"
 		{

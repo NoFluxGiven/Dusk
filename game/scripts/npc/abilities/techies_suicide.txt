@@ -41,19 +41,11 @@
 	
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"400"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"stun"					"0.4 0.8 1.2 1.6"
-		}
-	}
+	"AbilityValues"
+        {
+            "radius" "400"
+            "stun" "0.4 0.8 1.2 1.6"
+        }
 
 	"Modifiers"
 	{

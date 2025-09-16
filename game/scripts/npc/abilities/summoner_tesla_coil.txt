@@ -29,34 +29,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"slow"							"-5 -10 -15 -20"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage"						"10 15 20 25"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"interval"						"0.30"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bounces"						"0 1 2 3"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"attack_slow"					"-10 -15 -20 -25"
-		}
-	}
+	"AbilityValues"
+        {
+            "slow" "-5 -10 -15 -20"
+            "damage" "10 15 20 25"
+            "interval" "0.30"
+            "bounces" "0 1 2 3"
+            "attack_slow" "-10 -15 -20 -25"
+        }
 	
 	"precache"
 		{

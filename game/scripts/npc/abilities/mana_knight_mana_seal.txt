@@ -38,51 +38,21 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"mana_removal"				"4 6 8 10" // percent of Max Mana per second (0.25s intervals)
-			"LinkedSpecialBonus"		"special_bonus_mana_knight_3"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"80 140 200 260"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow"						"100" // per 1 percent of Mana
-		}
-		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"10"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"350"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"1.5"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"cooldown"					"4.0"
-		}
-		"08"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"mana_removal_scepter"		"6 9 12 15" // percent of Max Mana per second (0.1s intervals)
-		}
-
-	}
+	"AbilityValues"
+        {
+            "mana_removal"
+            {
+                "value" "4 6 8 10"
+                "LinkedSpecialBonus" "special_bonus_mana_knight_3"
+            }
+            "damage" "80 140 200 260"
+            "slow" "100"
+            "duration" "10"
+            "radius" "350"
+            "slow_duration" "1.5"
+            "cooldown" "4.0"
+            "mana_removal_scepter" "6 9 12 15"
+        }
 	
 	"precache"
 		{

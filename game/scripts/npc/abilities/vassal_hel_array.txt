@@ -37,19 +37,11 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-    "01"
+    "AbilityValues"
         {
-            "var_type"                      "FIELD_INTEGER"
-            "armor_reduction"              "-4" // percentage total
+            "armor_reduction" "-4"
+            "duration" "10"
         }
-    "02"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "duration"                      "10"
-        }
-    }
     
     "precache"
         {

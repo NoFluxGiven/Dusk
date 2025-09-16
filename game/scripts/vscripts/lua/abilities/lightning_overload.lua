@@ -54,29 +54,11 @@ function modifier_overload_slow:DeclareFunctions()
 end
 
 function modifier_overload_slow:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor("slow")
+	return -self:GetAbility():GetSpecialValueFor("slow")
 end
 
 function modifier_overload_slow:GetModifierAttackSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor("slow")
-end
-
-modifier_overload_slow = class({})
-
-function modifier_overload_slow:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
-	}
-	return funcs
-end
-
-function modifier_overload_slow:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor("slow")
-end
-
-function modifier_overload_slow:GetModifierAttackSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor("slow")
+	return -self:GetAbility():GetSpecialValueFor("slow")
 end
 
 modifier_overload_invuln = class({})

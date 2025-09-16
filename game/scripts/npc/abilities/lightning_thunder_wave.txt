@@ -31,49 +31,17 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"explosions"				"4 6 8 10" // not used
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"25 40 55 70"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"interval"					"0.1"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"-20"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"225"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"speed"						"750"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"duration"					"3"
-		}
-		"08"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"lightning_damage"			"40 60 80 100"
-		}
-	}
+	"AbilityValues"
+        {
+            "explosions" "4 6 8 10"
+            "damage" "25 40 55 70"
+            "interval" "0.1"
+            "slow" "-20"
+            "radius" "225"
+            "speed" "750"
+            "duration" "3"
+            "lightning_damage" "40 60 80 100"
+        }
 	
 	"precache"
 		{

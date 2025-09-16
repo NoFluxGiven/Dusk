@@ -34,24 +34,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"spell_amp_steal"				"25"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"slow"							"20 30 40 50"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"3.5 4.0 4.5 5.0"
-		}
-	}
+	"AbilityValues"
+        {
+            "spell_amp_steal" "25"
+            "slow" "20 30 40 50"
+            "duration" "3.5 4.0 4.5 5.0"
+        }
 	
 	"precache"
 		{

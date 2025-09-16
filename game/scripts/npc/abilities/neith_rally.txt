@@ -8,7 +8,7 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/neith_rally"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"FightRecapLevel"				"1"
@@ -31,50 +31,17 @@
 	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage_increase"			"20 30 40"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage_increase_creep" 	"4 8 12"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"attack_speed_increase"		"30 60 90"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_movespeed"			"10"
-		}
-		// Extra variables
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"6"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"575"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"scepter_duration"			"8"
-		}
-		"08"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"scepter_radius"			"700"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage_increase" "20 30 40"
+            "damage_increase_creep" "4 8 12"
+            "attack_speed_increase" "30 60 90"
+            "bonus_movespeed" "10"
+            "duration" "6"
+            "radius" "575"
+            "scepter_duration" "8"
+            "scepter_radius" "700"
+        }
 	
 	// Data driven
 	//-------------------------------------------------------------------------------------------------------------

@@ -26,24 +26,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"slow"					"-4 -6 -8 -10 -12 -14 -16 -18"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"slow_duration"			"1"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"movespeed_bonus"		"5 10 15 20 25 30 35 40"
-		}
-	}
+	"AbilityValues"
+        {
+            "slow" "-4 -6 -8 -10 -12 -14 -16 -18"
+            "slow_duration" "1"
+            "movespeed_bonus" "5 10 15 20 25 30 35 40"
+        }
 
 	"precache"
 	{

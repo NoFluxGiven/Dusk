@@ -3,7 +3,7 @@
     // General
     //-------------------------------------------------------------------------------------
     "BaseClass" "ability_datadriven"
-    "AbilityType"   "DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityType"   "ABILITY_TYPE_ULTIMATE"
     "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
     "AbilityUnitDamageType" "DAMAGE_TYPE_PHYSICAL"
     "AbilityTextureName" "summoner_build_sentinel"
@@ -19,9 +19,9 @@
 
     // Special
     //-------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-    }
+    "AbilityValues"
+        {
+        }
 
     "precache"
     {

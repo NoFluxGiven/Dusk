@@ -2,6 +2,7 @@ mifune_zanmato = class({})
 
 -- LinkLuaModifier("modifier_zanmato_target","lua/abilities/mifune_zanmato",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_zanmato_main_target","lua/abilities/mifune_zanmato",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_zanmato_debuff_slow","lua/abilities/mifune_zanmato",LUA_MODIFIER_MOTION_NONE)
 -- LinkLuaModifier("modifier_zanmato_target_hero","lua/abilities/mifune_zanmato",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_zanmato_caster","lua/abilities/mifune_zanmato",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_zanmato_permanent_agility","lua/abilities/mifune_zanmato",LUA_MODIFIER_MOTION_NONE)
@@ -28,6 +29,7 @@ function mifune_zanmato:OnSpellStart()
 
 	local threshold = self:GetSpecialValueFor("threshold")
 	local delay = self:GetSpecialValueFor("delay")
+	local duration = self:GetSpecialValueFor("duration")
 
 	local start_pos = caster:GetAbsOrigin()+Vector(0,0,75)
 	local end_pos = target:GetAbsOrigin() + caster:GetForwardVector() * 275
@@ -123,6 +125,8 @@ function modifier_zanmato_main_target:OnDestroy()
 
 	local slash_damage = self.slash_damage
 
+	local duration = self:GetAbility():GetSpecialValueFor("duration")
+
 	local start_pos = target:GetAbsOrigin() + Vector(0,0,-325)
 	local end_pos = target:GetAbsOrigin() + Vector(0,0,450)
 
@@ -133,6 +137,7 @@ function modifier_zanmato_main_target:OnDestroy()
 	self:GetAbility():InflictDamage(target, self:GetAbility():GetCaster(), slash_damage, DAMAGE_TYPE_PURE )
 	-- target:Purge(true, false, false, false, true)
 	target:EmitSound("Mifune.Zanmato.Kill")
+	target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_zanmato_debuff_slow", {Duration=duration})
 	if target:IsRealHero() and not target:IsAlive() then
 		self:GetAbility():GetCaster():AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_zanmato_permanent_agility", {})
 	end
@@ -140,6 +145,23 @@ end
 
 function modifier_zanmato_main_target:GetModifierMoveSpeed_Absolute()
 	return 0
+end
+
+modifier_zanmato_debuff_slow = class({})
+
+function modifier_zanmato_debuff_slow:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MAX,
+		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
+	}
+end
+
+function modifier_zanmato_debuff_slow:GetModifierMoveSpeed_AbsoluteMax()
+	return 225
+end
+
+function modifier_zanmato_debuff_slow:GetModifierDamageOutgoing_Percentage()
+	return -50
 end
 
 modifier_zanmato_caster = class({})

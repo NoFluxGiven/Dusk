@@ -31,29 +31,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"650"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_armor"					"3"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"bonus_regen"					"3"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"15"
-		}
-	}
+	"AbilityValues"
+        {
+            "radius" "650"
+            "bonus_armor" "3"
+            "bonus_regen" "3"
+            "bonus_damage" "15"
+        }
 	
 	"precache"
 		{

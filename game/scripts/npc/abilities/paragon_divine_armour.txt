@@ -29,35 +29,18 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"450"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_heal"			"6 8 10 12"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"threshold"				"250"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_reduction"		"-20 -30 -40 -50"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"damage_block_duration"	"2.5"
-			"LinkedSpecialBonus"	"special_bonus_paragon_2"
-		}
-	}
+	"AbilityValues"
+        {
+            "radius" "450"
+            "damage_heal" "6 8 10 12"
+            "threshold" "250"
+            "damage_reduction" "-20 -30 -40 -50"
+            "damage_block_duration"
+            {
+                "value" "2.5"
+                "LinkedSpecialBonus" "special_bonus_paragon_2"
+            }
+        }
 
 	"precache"
 	{

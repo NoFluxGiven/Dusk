@@ -8,13 +8,13 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/tek_mosquito_missiles"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastAnimation"			"ACT_DOTA_TELEPORT"
-	"AbilityChannelTime" "0.8"
+	"AbilityChannelTime"            "0.8"
 	"AbilityTextureName"			"tek_mosquito_missiles"
 
 	// Casting
@@ -36,25 +36,16 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"interval"					"0.05"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"range"						"1200"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"10 20 30 40"
-			"LinkedSpecialBonus"		"special_bonus_tek_3"
-		}
-	}
+	"AbilityValues"
+        {
+            "interval" "0.05"
+            "range" "1200"
+            "damage"
+            {
+                "value" "10 20 30 40"
+                "LinkedSpecialBonus" "special_bonus_tek_3"
+            }
+        }
 	
 	"precache"
 		{

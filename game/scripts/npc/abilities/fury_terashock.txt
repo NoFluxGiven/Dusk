@@ -33,50 +33,17 @@
 	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"shock_radius"				"320"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"movement_slow"				"-25 -30 -35 -40"
-		}
-		// Extra variables
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"debuff_duration"			"0.4"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"3.8"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"armor_reduction"			"-1 -2 -3 -4"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"attack_speed_bonus_creep"	"5 10 15 20"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"attack_speed_bonus_hero"	"10 20 30 40"
-		}
-		"08"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_duration"			"4"
-		}
-	}
+	"AbilityValues"
+        {
+            "shock_radius" "320"
+            "movement_slow" "-25 -30 -35 -40"
+            "debuff_duration" "0.4"
+            "slow_duration" "3.8"
+            "armor_reduction" "-1 -2 -3 -4"
+            "attack_speed_bonus_creep" "5 10 15 20"
+            "attack_speed_bonus_hero" "10 20 30 40"
+            "bonus_duration" "4"
+        }
 	
 	// Data driven
 	//-------------------------------------------------------------------------------------------------------------

@@ -28,24 +28,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"20"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"heal_from_target"		"10 20 30 40"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"heal_damage_to_target"	"10 20 30 40"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "20"
+            "heal_from_target" "10 20 30 40"
+            "heal_damage_to_target" "10 20 30 40"
+        }
 
 	"precache"
 	{

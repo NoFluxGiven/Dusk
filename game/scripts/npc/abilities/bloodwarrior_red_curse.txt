@@ -35,29 +35,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"6 7 8 9"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_reduction"				"20 30 40 50"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"str_drain"						"6 8 10 12"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"slow"							"35"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "6 7 8 9"
+            "damage_reduction" "20 30 40 50"
+            "str_drain" "6 8 10 12"
+            "slow" "35"
+        }
 	
 	"precache"
 		{

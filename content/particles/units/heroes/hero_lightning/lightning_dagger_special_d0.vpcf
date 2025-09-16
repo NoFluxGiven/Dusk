@@ -4,6 +4,20 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 4
 	m_nBehaviorVersion = 12
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
 	m_Emitters = 
 	[
 		{
@@ -63,7 +77,7 @@
 		{
 			_class = "C_OP_InterpolateRadius"
 			m_flStartScale = 0.5
-			m_flEndScale = 1.8
+			m_flEndScale = 2.6
 		},
 		{
 			_class = "C_OP_Decay"

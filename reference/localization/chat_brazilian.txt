@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "brazilian"
+"Tokens"
+{
+"chat_filterbutton"	"Filtros"
+"filter_joinleave"	"Entradas/saídas"
+"filter_namechange"	"Trocas de nome"
+"filter_publicchat"	"Conversa pública"
+"filter_servermsg"	"Mensagens do servidor"
+"filter_teamchange"	"Trocas de equipe"
+"chat_say"			"Falar:"
+"chat_say_team"	    "Falar (EQUIPE):"
+"chat_say_coach"	"Falar (AOS APRENDIZES):"
+"chat_say_student"	"Falar (AO INSTRUTOR):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

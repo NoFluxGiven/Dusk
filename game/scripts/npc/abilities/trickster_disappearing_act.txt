@@ -38,14 +38,10 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"4"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "4"
+        }
 
 	"OnSpellStart"
 	{

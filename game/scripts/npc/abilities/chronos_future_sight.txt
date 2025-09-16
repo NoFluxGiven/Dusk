@@ -31,24 +31,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"chance"						"50"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"575"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"6"
-		}
-	}
+	"AbilityValues"
+        {
+            "chance" "50"
+            "radius" "575"
+            "duration" "6"
+        }
 	
 	"precache"
 		{

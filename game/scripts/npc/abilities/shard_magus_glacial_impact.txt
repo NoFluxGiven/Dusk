@@ -20,7 +20,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/shard_magus_glacial_impact"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AoERadius"						"%radius"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -33,8 +33,8 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"875"
-	"AbilityCastPoint"				"0.4"
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.2"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -50,30 +50,19 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun_duration"				"1.4 2.0 2.6"
-			"LinkedSpecialBonus"		"special_bonus_shard_magus_5"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"200 300 400"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"400"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"shatter_threshold"			"10 11 12"
-		}
-	}
+	"AbilityValues"
+        {
+            "stun_duration"
+            {
+                "value" "1.4 2.0 2.6"
+                "LinkedSpecialBonus" "special_bonus_shard_magus_5"
+            }
+            "damage" "350 500 650"
+            "radius" "400"
+            "shatter_threshold" "10 11 12"
+			"movement_slow" "6 8 10"
+			"duration" "40.0"
+        }
 	
 	"precache"
 		{

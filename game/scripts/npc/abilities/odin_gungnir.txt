@@ -3,7 +3,7 @@
     // General
     //-------------------------------------------------------------------------------------------------------------
     "BaseClass"             "ability_datadriven"
-    "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityType"                   "ABILITY_TYPE_ULTIMATE"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
     "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL" 
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
@@ -44,29 +44,13 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"          "FIELD_FLOAT"
-            "arrow_speed"       "1500"
+            "arrow_speed" "1500"
+            "arrow_stun" "2.0 3.0 4.0"
+            "arrow_radius" "325"
+            "scepter_damage" "625 750 875"
         }
-        "02"
-        {
-            "var_type"          "FIELD_FLOAT"
-            "arrow_stun"        "2.0 3.0 4.0"
-        }
-        "03"
-        {
-            "var_type"          "FIELD_INTEGER"
-            "arrow_radius"      "325"
-        }
-        "04"
-        {
-            "var_type"          "FIELD_INTEGER"
-            "scepter_damage"    "625 750 875"
-        }
-    }
 
     "OnSpellStart"
     {

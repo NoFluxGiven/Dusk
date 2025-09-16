@@ -38,34 +38,16 @@
 	
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"120 160 200 240"
-			"LinkedSpecialBonus"	"special_bonus_reus_3"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"125"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"range"					"1500"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"speed"					"1100"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"stun"					"1.2 1.6 2.0 2.4"
-		}
-				
-	}
+	"AbilityValues"
+        {
+            "damage"
+            {
+                "value" "120 160 200 240"
+                "LinkedSpecialBonus" "special_bonus_reus_3"
+            }
+            "radius" "125"
+            "range" "1500"
+            "speed" "1100"
+            "stun" "1.2 1.6 2.0 2.4"
+        }
 }

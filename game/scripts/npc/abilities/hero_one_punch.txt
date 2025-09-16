@@ -10,7 +10,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/hero_one_punch"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -24,7 +24,7 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"165"
-	"AbilityCastPoint"				"0.5"
+	"AbilityCastPoint"				"0.38"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -41,45 +41,20 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"crit"						"175 225 300"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"landing_delay"				"1.60"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"landing_aoe"				"280"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"landing_damage"			"240 450 560"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"landing_stun"				"1.50 1.75 2.00"
-			"LinkedSpecialBonus"		"special_bonus_hero_4"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"scepter_crit"				"325 400 475"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"scepter_landing_damage"	"150"
-		}
-	}
+	"AbilityValues"
+        {
+            "crit" "175 225 300"
+            "landing_delay" "1.60"
+            "landing_aoe" "280"
+            "landing_damage" "240 450 560"
+            "landing_stun"
+            {
+                "value" "1.50 1.75 2.00"
+                "LinkedSpecialBonus" "special_bonus_hero_4"
+            }
+            "scepter_crit" "325 400 475"
+            "scepter_landing_damage" "150"
+        }
 	
 	"precache"
 		{
@@ -87,7 +62,9 @@
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
 		"particle" "particles/units/heroes/hero_tusk/tusk_walruspunch_start.vpcf"
-		"particle" "particles/units/heroes/hero_hero/one_punch_mega_crit.vpcf"
+		"particle" "particles/units/heroes/hero_hero/hero_one_punch_mega_crit.vpcf"
+		"particle" "particles/units/heroes/hero_hero/one_punch_air.vpcf"
+		"particle" "particles/units/heroes/hero_hero/one_punch_land.vpcf"
 		"particle" "particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
 		}
 }

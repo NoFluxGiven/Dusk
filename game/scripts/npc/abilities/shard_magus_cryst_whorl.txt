@@ -45,45 +45,20 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"interval"					"2.0" // grace period => slow => stun
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"6.0"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"phase_duration"			"1.25 1.5 1.75 2.0" // the amount of time each buff remains
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"275"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"100 175 250 325" // total
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"15 30 45 60"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"initial_damage"			"100"
-			"LinkedSpecialBonus"		"special_bonus_shard_magus_1"
-		}
-	}
+	"AbilityValues"
+        {
+            "interval" "2.0"
+            "duration" "6.0"
+            "phase_duration" "1.25 1.5 1.75 2.0"
+            "radius" "275"
+            "damage" "100 175 250 325"
+            "slow" "15 30 45 60"
+            "initial_damage"
+            {
+                "value" "100"
+                "LinkedSpecialBonus" "special_bonus_shard_magus_1"
+            }
+        }
 	
 	"precache"
 		{

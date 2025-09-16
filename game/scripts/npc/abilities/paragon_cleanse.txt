@@ -35,30 +35,17 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"heal"					"100 160 220 280"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"radius"					"310"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"secondary"				"75 100 125 150"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"heal_amp"				"0"
-			"LinkedSpecialBonus"	"special_bonus_paragon_1"
-		}
-	}
+	"AbilityValues"
+        {
+            "heal" "100 160 220 280"
+            "radius" "310"
+            "secondary" "75 100 125 150"
+            "heal_amp"
+            {
+                "value" "0"
+                "LinkedSpecialBonus" "special_bonus_paragon_1"
+            }
+        }
 
 	"precache"
 	{

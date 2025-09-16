@@ -147,3 +147,243 @@
     }
 
 }
+
+"Voidwalker.AbyssalShadow.AttackHit1"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/abyssal_hit2.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.20"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Voidwalker.AbyssalShadow.AttackHit2"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/abyssal_hit2.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.20"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Voidwalker.AbyssalShadow.AttackHit3"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/abyssal_hit3.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.20"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Voidwalker.AbyssalShadow.AttackHit4"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/abyssal_hit4.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.20"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Voidwalker.AbyssalShadow.AttackHit5"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/abyssal_hit5.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.20"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Voidwalker.AbyssalShadow.AttackHit6"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/abyssal_hit6.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.20"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Voidwalker.AbyssalShadow.AttackHit7"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/abyssal_hit7.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.20"
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+"Voidwalker.AbyssalShadow.AttackHit8"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "dota_update_default"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/abyssal_hit8.vsnd"
+                        }
+                    }
+                    "volume"
+                    {
+                        "value" "1.20"
+                    }
+                }
+            }
+        }
+    }
+
+}

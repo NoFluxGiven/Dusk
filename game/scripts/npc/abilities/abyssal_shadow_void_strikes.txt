@@ -30,38 +30,18 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"30 35 40"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"10"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"phys_armor"			"1 2 3"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"magic_res"				"3 4 5"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"max_stacks"			"4"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "20 30 40"
+            "duration" "2.5"
+            "phys_armor" "1 2 3"
+            "magic_res" "3 4 5"
+            "max_stacks" "6"
+        }
 
 	"precache"
 	{
-		"particle"			"particles/units/heroes/hero_abyssal_shadow/void_strikes_hit.vpcf"
+		"particle"			"particles/units/heroes/hero_gemini/void_strikes_hit.vpcf"
 		"particle"			"particles/units/heroes/hero_tusk/tusk_ice_shards_projectile.vpcf" // placeholder
 	}
 }

@@ -24,34 +24,14 @@
     
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"              "FIELD_FLOAT"
-            "root"                  "1.00 1.40 1.80 2.20"
+            "root" "1.00 1.40 1.80 2.20"
+            "speed" "550"
+            "radius" "225"
+            "damage" "100 150 200 250"
+            "movement_slow" "20 30 40 50"
         }
-        "02"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "speed"                 "550"
-        }
-        "03"
-        {
-            "var_type"              "FIELD_FLOAT"
-            "radius"                "225"
-        }
-        "04"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "damage"                "100 150 200 250"
-        }
-        "05"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "movement_slow"         "20 30 40 50"
-        }
-    }
 
     "precache"
     {

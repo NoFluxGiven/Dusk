@@ -37,35 +37,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"initial_damage"				"65 90 115 130"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"delay"							"1.15"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"slow"							"-35"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"slow_duration"					"2"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"shard_delay"					"0.75"
-		}
-
-	}
+	"AbilityValues"
+        {
+            "initial_damage" "65 90 115 130"
+            "delay" "1.15"
+            "slow" "-35"
+            "slow_duration" "2"
+            "shard_delay" "0.75"
+        }
 	
 	"precache"
 		{

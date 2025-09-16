@@ -7,26 +7,33 @@ function lightning_lightning_dagger:GetIntrinsicModifierName()
 	return "modifier_lightning_dagger"
 end
 
--- function lightning_lightning_dagger:OnSpellStart()
--- 	local c = self:GetCaster()
--- 	local t = self:GetCursorTarget()
--- 	local s = 2000
--- 	local bonus = c:FindTalentValue("special_bonus_lightning_1") or 0
--- 	local bounces = self:GetSpecialValueFor("bounces")+bonus
+function lightning_lightning_dagger:OnSpellStart()
+	local c = self:GetCaster()
+	local t = self:GetCursorTarget()
+	local s = 2000
+	local bonus = c:FindTalentValue("special_bonus_lightning_1") or 0
+	local bounces = self:GetSpecialValueFor("bounces")+bonus
+	local time_between_shots = self:GetSpecialValueFor("time_between_shots")
+	local count = self:GetSpecialValueFor("count")
 
--- 	c:EmitSound("Hero_PhantomAssassin.Dagger.Cast")
+	c:EmitSound("Hero_PhantomAssassin.Dagger.Cast")
 
--- 	self:FireDagger(t,{		
--- 		bounces_left = bounces,
--- 		-- [tostring(t:GetEntityIndex())] = 1
--- 	})
+	for i=1,count do
+		Timers:CreateTimer(i * time_between_shots,
+		function()
+			self:FireDagger(t, {
+			bounces_left = bounces,
+			-- [tostring(t:GetEntityIndex())] = 1
+		})
+		end)
+	end
 
--- end
+end
 
 function lightning_lightning_dagger:FireDagger(t,extradata,spawn_origin)
 
 	local c = self:GetCaster()
-	c:EmitSound("Hero_PhantomAssassin.Dagger.Cast")
+	c:EmitSound("Lightning.VoltJavelin.Throw")
 	local spawn_origin = spawn_origin or c
 	local info = 
 	  {
@@ -45,7 +52,7 @@ function lightning_lightning_dagger:FireDagger(t,extradata,spawn_origin)
 	  iUnitTargetType = DOTA_UNIT_TARGET_HERO+DOTA_UNIT_TARGET_BASIC,
 	  fExpireTime = GameRules:GetGameTime() + 10.0,
 	  bDeleteOnHit = true,
-	  iMoveSpeed = 3000,
+	  iMoveSpeed = 1200,
 	  bProvidesVision = false,
 	  iVisionRadius = 0,
 	  iVisionTeamNumber = c:GetTeamNumber(),
@@ -69,13 +76,19 @@ function lightning_lightning_dagger:OnProjectileHit_ExtraData(target,location,ex
 
 	-- self:GetCaster():PerformAttack(target, true, true, true, true, false, false, true)
 
-	target:EmitSound("Hero_PhantomAssassin.Dagger.Target")
+	target:EmitSound("Lightning.VoltJavelin.Hit")
 
 	self:InflictDamage(target,self:GetCaster(),damage,DAMAGE_TYPE_MAGICAL)
 
 	target:AddNewModifier(self:GetCaster(), self, "modifier_lightning_dagger_slow", {Duration=duration}) --[[Returns:void
 	No Description Set
 	]]
+
+	local mod = self:GetCaster():FindModifierByName("modifier_spark")
+
+	-- if mod ~= nil then
+	-- 	mod:Activate(target:GetAbsOrigin())
+	-- end
 
 	local en = FindEnemiesRandom(self:GetCaster(),target:GetAbsOrigin(),jump_radius)
 
@@ -110,13 +123,15 @@ function modifier_lightning_dagger:OnAttack(event)
 	if event.attacker ~= self:GetParent() then return end
 	if event.target:IsBuilding() then return end
 	if not self:GetAbility():IsCooldownReady() then return end
+	if not (self:GetParent():GetMana() >= self:GetAbility():GetManaCost(self:GetAbility():GetLevel())) then return end
+	if not self:GetParent():IsRealHero() then return end
 
 	local bonus = event.attacker:FindTalentValue("special_bonus_lightning_1") or 0
 	local bounces = self:GetAbility():GetSpecialValueFor("bounces")+bonus
 	local chc = self:GetAbility():GetSpecialValueFor("chance")
 
 	if RollPseudoRandom( chc, self:GetParent() ) then
-		self:GetAbility():UseResources(true, false, true)
+		-- self:GetAbility():UseResources(true, false, true, true)
 		self:GetAbility():FireDagger(event.target,{		
 					bounces_left = bounces,
 					-- [tostring(t:GetEntityIndex())] = 1
@@ -135,4 +150,8 @@ end
 
 function modifier_lightning_dagger_slow:GetModifierMoveSpeedBonus_Percentage()
 	return -self:GetAbility():GetSpecialValueFor("slow")
+end
+
+function modifier_lightning_dagger_slow:GetEffectName()
+	return "particles/units/heroes/hero_lightning/lightning_dagger_special_debuff.vpcf"
 end

@@ -41,35 +41,18 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"50 100 150 200"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"80"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun"						"0.75"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"knockback"					"250"
-			"LinkedSpecialBonus"		"special_bonus_aeronaut_1"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"distance"					"500 550 600 650"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "50 100 150 200"
+            "radius" "80"
+            "stun" "0.75"
+            "knockback"
+            {
+                "value" "250"
+                "LinkedSpecialBonus" "special_bonus_aeronaut_1"
+            }
+            "distance" "500 550 600 650"
+        }
 	
 	"precache"
 		{

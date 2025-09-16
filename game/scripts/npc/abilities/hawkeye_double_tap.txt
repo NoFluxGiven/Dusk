@@ -35,44 +35,16 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"base_damage"				"30 40 50 60"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"duration"					"12"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"range"						"1600"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"shot_speed_scepter"		"4000"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"range_scepter"				"2000"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"mult"						"0.50 0.60 0.70 0.80"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"mult_scepter"				"2.00"
-		}
-	}
+	"AbilityValues"
+        {
+            "base_damage" "30 40 50 60"
+            "duration" "12"
+            "range" "1600"
+            "shot_speed_scepter" "4000"
+            "range_scepter" "2000"
+            "mult" "0.50 0.60 0.70 0.80"
+            "mult_scepter" "2.00"
+        }
 	
 	"precache"
 		{

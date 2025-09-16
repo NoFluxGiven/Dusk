@@ -42,24 +42,12 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"          "FIELD_FLOAT"
-            "duration"          "3 4 5 6"
+            "duration" "3 4 5 6"
+            "slow" "-40"
+            "slow_duration" "2.5"
         }
-        "02"
-        {
-            "var_type"          "FIELD_INTEGER"
-            "slow"              "-40"
-        }
-        "03"
-        {
-            "var_type"          "FIELD_FLOAT"
-            "slow_duration"     "2.5"
-        }
-    }
 
     "OnSpellStart"
     {

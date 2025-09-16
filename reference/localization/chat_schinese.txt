@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "schinese"
+"Tokens"
+{
+"chat_filterbutton"	"过滤器"
+"filter_joinleave"	"加入/离开"
+"filter_namechange"	"名称更改"
+"filter_publicchat"	"公共聊天"
+"filter_servermsg"	"服务器消息"
+"filter_teamchange"	"团队更改"
+"chat_say"			"发言 :"
+"chat_say_team"	    "发言 (团队) :"
+"chat_say_coach"	"说（对学员）："
+"chat_say_student"	"说（对教练）："
+"chat_sourcetv"     "（Dota TV）%s1"
+}
+}

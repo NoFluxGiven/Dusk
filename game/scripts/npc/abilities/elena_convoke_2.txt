@@ -33,19 +33,11 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_per_convoke_stack"		"10 12 14 16" // deals half the damage to mana as well
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"max_damage"					"300 350 400 450" // deals half the damage to mana as well
-		}
-	}
+	"AbilityValues"
+        {
+            "damage_per_convoke_stack" "10 12 14 16"
+            "max_damage" "300 350 400 450"
+        }
 	
 	"precache"
 		{

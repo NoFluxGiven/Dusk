@@ -13,7 +13,7 @@
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AnimationPlaybackRate"			"1.2"
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"paragon_smite"
@@ -34,29 +34,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"200 300 400"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"scepter_damage"		"300 400 500"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"scepter_damage_bonus"		"100 175 250"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"residual_damage"			"200 250 300"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "200 300 400"
+            "scepter_damage" "300 400 500"
+            "scepter_damage_bonus" "100 175 250"
+            "residual_damage" "200 250 300"
+        }
 
 	"precache"
 	{

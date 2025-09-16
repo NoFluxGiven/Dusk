@@ -19,6 +19,10 @@ function modifier_amplify:DeclareFunctions()
 	}
 end
 
+-- function modifier_amplify:GetAttributes()
+-- 	return MODIFIER_ATTRIBUTE_MULTIPLE
+-- end
+
 function modifier_amplify:GetModifierMoveSpeedBonus_Percentage()
 	return self.bonus_movespeed
 end
@@ -43,6 +47,10 @@ function modifier_amplify:OnCreated()
 	end
 end
 
+function modifier_amplify:OnRefresh()
+	self:Shock()
+end
+
 function modifier_amplify:OnIntervalThink()
 	if IsServer() then
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
@@ -61,7 +69,7 @@ function modifier_amplify:OnIntervalThink()
 	end
 end
 
-function modifier_amplify:OnDestroy()
+function modifier_amplify:Shock()
 	if IsServer() then
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 		local edamage = self:GetAbility():GetSpecialValueFor("end_damage")
@@ -119,6 +127,10 @@ function modifier_amplify:OnDestroy()
 			-- ]]
 		end
 	end
+end
+
+function modifier_amplify:OnDestroy()
+	self:Shock()
 end
 
 modifier_amplify_slow = class({})

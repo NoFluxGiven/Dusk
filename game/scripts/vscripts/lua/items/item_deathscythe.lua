@@ -150,7 +150,7 @@ function modifier_deathscythe_onattack:OnAttackLanded(kv)
 				CreateParticleHitloc(defender,"particles/items/deathscythe_strike.vpcf")
 				attacker:EmitSound("Deathscythe.Attack")
 
-				self:GetAbility():UseResources(true, true, true)
+				self:GetAbility():UseResources(true, true, true, true)
 
 			end
 		end

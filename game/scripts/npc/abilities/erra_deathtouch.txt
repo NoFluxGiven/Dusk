@@ -5,7 +5,7 @@
     "BaseClass"             "ability_lua"
     "ScriptFile"            "lua/abilities/erra_deathtouch"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-    "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityType"                   "ABILITY_TYPE_ULTIMATE"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
     "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
@@ -30,20 +30,11 @@
 
     // Stats
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"              "FIELD_INTEGER"
-            "dot_amount"            "80 160 240"
+            "dot_amount" "70 140 210"
+            "dot_duration" "12.0"
         }
-        
-        "02"
-        {
-            "var_type"              "FIELD_FLOAT"
-            "dot_duration"          "12.0"
-        }
-    }
 
     "precache"
     {

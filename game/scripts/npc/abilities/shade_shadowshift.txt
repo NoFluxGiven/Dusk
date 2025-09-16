@@ -38,19 +38,11 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"2.25"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"movespeed"					"20 30 40 50"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "2.25"
+            "movespeed" "20 30 40 50"
+        }
 	
 	"precache"
 		{

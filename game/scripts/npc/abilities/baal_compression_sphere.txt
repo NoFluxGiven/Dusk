@@ -34,34 +34,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"10.00"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"400"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"move_slow"						"-2 -4 -6 -8" // per second
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"attack_slow"					"-3 -6 -9 -12"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"turn_slow"						"-10"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "10.00"
+            "radius" "400"
+            "move_slow" "-2 -4 -6 -8"
+            "attack_slow" "-3 -6 -9 -12"
+            "turn_slow" "-10"
+        }
 	
 	"precache"
 		{

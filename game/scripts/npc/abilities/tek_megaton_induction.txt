@@ -30,29 +30,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"max_stacks"			"3"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"interval"				"4.0"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"50 75 100 125"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"300"
-		}
-	}
+	"AbilityValues"
+        {
+            "max_stacks" "3"
+            "interval" "4.0"
+            "damage" "50 75 100 125"
+            "radius" "300"
+        }
 
 	"precache"
 	{

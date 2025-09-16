@@ -39,29 +39,13 @@
 	
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_per_ten_percent" "25 35 45 55"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"slow_per_ten_percent" 	"50"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration" 				"12"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"heal" 					"20 25 30 35"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage_per_ten_percent" "25 35 45 55"
+            "slow_per_ten_percent" "50"
+            "duration" "12"
+            "heal" "20 25 30 35"
+        }
 	
 	"OnSpellStart"
 	{

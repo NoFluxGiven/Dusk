@@ -14,9 +14,16 @@ if IsServer() then
 
 		local t
 
-		local en = FindEnemiesRandom(c,c:GetAbsOrigin(),r)
+		t = c:GetAttackTarget()
 
-		t = en[1]
+		print("ATTACK TARGET")
+		print(t)
+
+		if not t then
+			local en = FindEnemiesRandom(c,c:GetAbsOrigin(),r)
+
+			t = en[1]
+		end
 
 		local p = ParticleManager:CreateParticle("particles/units/heroes/hero_neith/neith_decisive_blow.vpcf", PATTACH_ABSORIGIN_FOLLOW, c) --[[Returns:int
 		Creates a new particle effect
@@ -37,9 +44,7 @@ if IsServer() then
 			No Description Set
 			]]
 			self:InflictDamage(t,c,d,dtype)
-			if c:FindTalentValue("special_bonus_neith_3") then
-				c:PerformAttack( t, true, true, true, true, false, false, true )
-			end
+			c:PerformAttack( t, true, true, true, true, false, false, true )
 		end
 	end
 end
@@ -69,11 +74,11 @@ function modifier_decisive_strike_slow:DeclareFunctions()
 end
 
 function modifier_decisive_strike_slow:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor("slow")
+	return -self:GetAbility():GetSpecialValueFor("slow")
 end
 
 function modifier_decisive_strike_slow:GetModifierAttackSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor("slow")
+	return -self:GetAbility():GetSpecialValueFor("slow")
 end
 
 function modifier_decisive_strike_slow:GetModifierPhysicalArmorBonus()

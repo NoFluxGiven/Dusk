@@ -40,45 +40,22 @@
 	
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"800"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"quake_interval"		"3.00"
-			"LinkedSpecialBonus"	"special_bonus_reus_4"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"slow_duration"			"1.0 1.2 1.4 1.6"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"12"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"slow"					"70"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"50 65 80 95"
-			"LinkedSpecialBonus"	"special_bonus_reus_1"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"ally_slow"				"25"
-		}
-				
-	}
+	"AbilityValues"
+        {
+            "radius" "800"
+            "quake_interval"
+            {
+                "value" "3.00"
+                "LinkedSpecialBonus" "special_bonus_reus_4"
+            }
+            "slow_duration" "1.0 1.2 1.4 1.6"
+            "duration" "12"
+            "slow" "70"
+            "damage"
+            {
+                "value" "50 65 80 95"
+                "LinkedSpecialBonus" "special_bonus_reus_1"
+            }
+            "ally_slow" "25"
+        }
 }

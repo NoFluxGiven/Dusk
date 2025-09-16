@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "polish"
+"Tokens"
+{
+"chat_filterbutton"	"Filtry"
+"filter_joinleave"	"Dołączenia/odłączenia"
+"filter_namechange"	"Zmiany nazwy"
+"filter_publicchat"	"Czat publiczny"
+"filter_servermsg"	"Komunikaty serwera"
+"filter_teamchange"	"Zmiany drużyny"
+"chat_say"			"Mów:"
+"chat_say_team"	    "Mów (DRUŻYNA):"
+"chat_say_coach"	"Mów (DO UCZNIÓW):"
+"chat_say_student"	"Mów (DO TRENERA):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

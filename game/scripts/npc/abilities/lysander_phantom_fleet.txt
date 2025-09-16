@@ -9,7 +9,7 @@
 	"ScriptFile"			"lua/abilities/lysander_phantom_fleet"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 	"AbilityCastAnimation"			"ACT_DOTA_TELEPORT_END"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
@@ -32,54 +32,18 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"speed"					"200"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"60 90 120"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"minimum_interval"		"0.5"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"maximum_interval"		"1"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"interval"				"1"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"slow"					"35"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"ministun"				"0.15"
-		}
-		"08"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"14"
-		}
-		"09"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"boat_damage"			"25 50 75"
-		}
-	}
+	"AbilityValues"
+        {
+            "speed" "200"
+            "damage" "60 90 120"
+            "minimum_interval" "0.5"
+            "maximum_interval" "1"
+            "interval" "1"
+            "slow" "35"
+            "ministun" "0.15"
+            "duration" "14"
+            "boat_damage" "25 50 75"
+        }
 
 	"precache"
 	{

@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"            		"lua/abilities/bahamut_mega_flare"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -38,44 +38,16 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_inner"					"250 350 450"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius_inner"					"250"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_outer"					"200 250 300"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius_outer"					"525"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"speed"							"315"
-		}
-	"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"scepter_dps"					"40 50 60 70"
-		}
-	"07"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"scepter_duration"				"20.0"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage_inner" "300 400 500"
+            "radius_inner" "250"
+            "damage_outer" "300 375 450"
+            "radius_outer" "525"
+            "speed" "315"
+            "scepter_dps" "40 50 60 70"
+            "scepter_duration" "20.0"
+        }
 	
 	"precache"
 		{

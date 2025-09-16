@@ -35,55 +35,22 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"80 120 160 200"
-			"LinkedSpecialBonus"		"special_bonus_lich_4"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"delay"						"0.8"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"interval"					"0.15"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"900"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage_radius"				"175"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"buffer"					"600"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"targets"					"2 3 4 5"
-		}
-		"08"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"25"
-		}
-		"09"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"2.0"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage"
+            {
+                "value" "80 120 160 200"
+                "LinkedSpecialBonus" "special_bonus_lich_4"
+            }
+            "delay" "0.8"
+            "interval" "0.15"
+            "radius" "900"
+            "damage_radius" "175"
+            "buffer" "600"
+            "targets" "2 3 4 5"
+            "slow" "25"
+            "slow_duration" "2.0"
+        }
 	
 	"precache"
 		{

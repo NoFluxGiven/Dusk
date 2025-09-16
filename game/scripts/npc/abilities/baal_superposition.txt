@@ -6,7 +6,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
@@ -33,34 +33,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"16"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_as"						"30 50 70"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_ar"						"200 400 600"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"750 875 1000"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"slow"							"-40"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "16"
+            "bonus_as" "30 50 70"
+            "bonus_ar" "200 400 600"
+            "radius" "750 875 1000"
+            "slow" "-40"
+        }
 	
 	"precache"
 		{

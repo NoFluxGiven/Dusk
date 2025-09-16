@@ -42,29 +42,13 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"          "FIELD_INTEGER"
-            "true_sight"        "1 1 1 1"
+            "true_sight" "1 1 1 1"
+            "duration" "3 3.5 4 4.5"
+            "radius" "450"
+            "bonus_movespeed" "-15"
         }
-        "02"
-        {
-            "var_type"          "FIELD_FLOAT"
-            "duration"          "3 3.5 4 4.5"
-        }
-        "03"
-        {
-            "var_type"          "FIELD_INTEGER"
-            "radius"            "450"
-        }
-        "04"
-        {
-            "var_type"          "FIELD_INTEGER"
-            "bonus_movespeed"   "-15"
-        }
-    }
 
     "OnSpellStart"
     {

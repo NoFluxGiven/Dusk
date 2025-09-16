@@ -714,7 +714,7 @@
 			///// ABILITIES /////			
 			
 			"DOTA_Tooltip_ability_gemini_voidal_flare" "Voidal Flare"
-			"DOTA_Tooltip_ability_gemini_voidal_flare_description" "The Voidwalker fires a flare of dark energy at the target, dealing Magical damage and stunning them. The damage and duration increase by a flat amount each time it is used on the same target, up to a maximum amount of times."
+			"DOTA_Tooltip_ability_gemini_voidal_flare_description" "The Voidwalker fires a flare of dark energy at the target, dealing Magical damage and stunning them. The damage and duration increase by a flat amount each time it is used on the same target within a limited duration."
 			"DOTA_Tooltip_ability_gemini_voidal_flare_stun" "INITIAL STUN:"
 			"DOTA_Tooltip_ability_gemini_voidal_flare_damage" "INITIAL DAMAGE:"
 			"DOTA_Tooltip_ability_gemini_voidal_flare_stun_bonus" "BONUS STUN:"
@@ -736,7 +736,7 @@
 			"DOTA_Tooltip_ability_gemini_planar_trickery_activate_description" "Teleports Voidwalker to a placed Planar Trickery portal on the map."
 			
 			"DOTA_Tooltip_ability_gemini_abyssal_shadow"                                      "Abyssal Shadow"
-			"DOTA_Tooltip_ability_gemini_abyssal_shadow_Description"                          "The Voidwalker summons a powerful being from another plane to help him fight. The creature floats behind him at all times and attacks anything nearby. Each level in this ability increases the creature's damage.<br/>The creature's attacks deal bonus Magical damage that increases with each strike. It is invulnerable and untargetable."
+			"DOTA_Tooltip_ability_gemini_abyssal_shadow_Description"                          "The Voidwalker summons a powerful being from another plane to help him fight. The creature floats behind him at all times and attacks nearby enemies. Each level in this ability increases the creature's damage.<br/>The creature's attacks deal bonus Magical damage that increases with each strike, up to a maximum. It is invulnerable and untargetable."
 			"DOTA_Tooltip_ability_gemini_abyssal_shadow_level"                                "LEVEL:"
 			"DOTA_Tooltip_ability_gemini_abyssal_shadow_duration"                             "DURATION:"
 			"DOTA_Tooltip_ability_gemini_abyssal_shadow_bonus_damage"                             "BONUS DAMAGE PER ATTACK:"
@@ -1271,6 +1271,7 @@
 			
 			"DOTA_Tooltip_modifier_zanmato_main_target" "Zanmato"
 			"DOTA_Tooltip_modifier_zanmato_permanent_agility" "Zanmato Permanent Agility"
+			"DOTA_Tooltip_modifier_zanmato_debuff_slow" "Zanmato Debuff"
 			
 			///// ABILITIES /////
 			
@@ -1297,7 +1298,7 @@
 			"DOTA_Tooltip_ability_mifune_raigeki_delay"                                       "DELAY:"
 
 			"DOTA_Tooltip_ability_mifune_zanmato"                                             "Zanmato"
-			"DOTA_Tooltip_ability_mifune_zanmato_description"                                 "Mifune unleashes a strike against the target enemy, slashing through any Heroes and other units in a line, and rendering him Invulnerable. After a short delay, the targets takes %slash_damage%%% of his attack damage as Pure damage, and are slowed. All targets are frozen during the delay."
+			"DOTA_Tooltip_ability_mifune_zanmato_description"                                 "Mifune unleashes a strike against the target enemy, slashing through any Heroes and other units in a line, and rendering him Invulnerable. After a short delay, the targets takes %slash_damage%%% of his attack damage as Pure damage, and are slowed, cutting their maximum movespeed and outgoing damage in half for %duration%. All targets are frozen during the delay."
 			"DOTA_Tooltip_ability_mifune_zanmato_Note0"                                 	  "The main target is stunned for a minimum of 1s."
 			"DOTA_Tooltip_ability_mifune_zanmato_Note1"                                 	  "The slash preserves procs and orb effects."
 			"DOTA_Tooltip_ability_mifune_zanmato_Note2"                                 	  "The Orbs deal Magical damage, and converge on the main target when the initial slashes end."
@@ -1364,14 +1365,16 @@
 			"DOTA_Tooltip_modifier_spark_slow"                                                "Spark"
 			"DOTA_Tooltip_modifier_spark_slow_Description"                                    "Being slowed a bit."
 			
+			"DOTA_Tooltip_modifier_spark_buff"                                                "Spark"
+			"DOTA_Tooltip_modifier_spark_buff_Description"                                    "Gaining %."
+			
 			///// ABILITIES /////
 			
 			"DOTA_Tooltip_ability_lightning_lightning_dagger"                                 "Lightning Daggers"
-			"DOTA_Tooltip_ability_lightning_lightning_dagger_description"                     "Lightning throws a dagger at the target enemy, dealing a small amount of Magical damage and slowing. The dagger bounces to a random nearby target a number of times before stopping."
+			"DOTA_Tooltip_ability_lightning_lightning_dagger_description"                     "Lightning has a chance with each attack to throw a dagger at the target enemy, striking them an additional time, dealing %damage% bonus Magical damage, and slowing them by %slow%%% for %duration% seconds. When cast on an enemy Hero, Lightning throws 3 daggers in quick succession."
 			"DOTA_Tooltip_ability_lightning_lightning_dagger_Lore"                     	   "The Tijadi have unending prowess with their throwing daggers, able to strike with pinpoint accuracy at the most elusive of foes."
 			"DOTA_Tooltip_ability_lightning_lightning_dagger_slow"              		   "%SLOW:"
 			"DOTA_Tooltip_ability_lightning_lightning_dagger_duration"              "SLOW DURATION:"
-			"DOTA_Tooltip_ability_lightning_lightning_dagger_bounces"                     "BOUNCES:"
 			
 			"DOTA_Tooltip_ability_lightning_boltblast"                                        "Boltblast"
 			"DOTA_Tooltip_ability_lightning_boltblast_Description"                            "Lightning summons forth a payload of electrical energy that detonates after a short delay, dealing damage and slowing enemies in an AoE."
@@ -1383,8 +1386,8 @@
 			"DOTA_Tooltip_ability_lightning_boltblast_radius"                                 "RADIUS:"
 			
 			"DOTA_Tooltip_ability_lightning_overload"                                         "Overload"
-			"DOTA_Tooltip_ability_lightning_overload_description"                             "Slows and damages enemies in an area around Lightning."
-			"DOTA_Tooltip_ability_lightning_overload_Lore"                             		  "Those who face the Tijadi in close combat rarely live long enough to see their full strength."
+			"DOTA_Tooltip_ability_lightning_overload_description"                             "Lightning unleashes a blast of energy that renders her Invulnerable for a short time, dealing %damage% in a %radius% radius, and slowing enemies' movespeed and attack speed by %slow%%%."
+			"DOTA_Tooltip_ability_lightning_overload_Lore"                             		  "After her theft of the Core, she realised only a fraction of its immense power is needed to evade her foes."
 			"DOTA_Tooltip_ability_lightning_overload_damage"                                  "DAMAGE:"
 			"DOTA_Tooltip_ability_lightning_overload_radius"                                  "RADIUS:"
 			"DOTA_Tooltip_ability_lightning_overload_move_slow"                               "%MOVE SLOW:"
@@ -1392,11 +1395,13 @@
 			"DOTA_Tooltip_ability_lightning_overload_duration"                             	  "SLOW DURATION:"
 			
 			"DOTA_Tooltip_ability_lightning_spark"                                            "Spark"
-			"DOTA_Tooltip_ability_lightning_spark_Description"                                "Each time Lightning casts a spell, enemies in a large radius around her take Magical damage and are slowed by a small amount."
-			"DOTA_Tooltip_ability_lightning_spark_Lore"                                		  "A Tijadi's fury can set the very air of the battlefield crackling and ready to destroy their foes."
-			"DOTA_Tooltip_ability_lightning_spark_bonus_damage"                               "DAMAGE:"
-			"DOTA_Tooltip_ability_lightning_spark_radius"                                     "RADIUS:"
-			"DOTA_Tooltip_ability_lightning_spark_slow"                                       "%SLOW:"
+			"DOTA_Tooltip_ability_lightning_spark_Description"                                "As Lightning deals Magical damage to enemies, she charges up, gaining Spark stacks up to a maximum of %max_stacks% stacks. Every %threshold% damage dealt to enemies she gains an additional stack. After %charge_duration%s, the Spark stacks are consumed, granting her a buff for %buff_duration% seconds that gives her %mana_regen_per_stack% mana regeneration, %movement_speed_per_stack%%% movement speed, %attack_speed_per_stack% attack speed, %damage_reduction_per_stack%%% damage reduction, and instantly reducing her on cooldown abilities by %cooldown_reduction_per_stack%%%, per stack. While she has the buff, she gains stacks at half the rate."
+			"DOTA_Tooltip_ability_lightning_spark_Note0"                                "Lightning can continue to gain stacks while affected by Spark's buffs."
+			"DOTA_Tooltip_ability_lightning_spark_Note1"                                "The damage put towards the threshold is calculated before reduction or amplification."
+			"DOTA_Tooltip_ability_lightning_spark_Note2"                                "Damaging non-Hero units (including illusions) provides 0.25x the damage total."
+			"DOTA_Tooltip_ability_lightning_spark_Lore"                                		  "A Tijadi's fury can set the very air crackling."
+			"DOTA_Tooltip_ability_lightning_spark_charge_duration"                               "CHARGE DURATION:"
+			"DOTA_Tooltip_ability_lightning_spark_buff_duration"                               "BUFF DURATION:"
 			
 			///// DEPRECATED /////
 
@@ -1458,8 +1463,9 @@
 			
 			///// ABILITIES /////
 			
-			"DOTA_Tooltip_ability_ouroboros_searing_flame"                                    "Searing Flame"
-			"DOTA_Tooltip_ability_ouroboros_searing_flame_description"                        "Ouroboros unleashes an incredible whorl of superheated gases from his vesicles, dealing damage to, and crippling for a very short time, enemies caught in the cone."
+			"DOTA_Tooltip_ability_ouroboros_searing_flame"                                    "Searing Elements"
+			"DOTA_Tooltip_ability_ouroboros_searing_flame_description"                        "Ouroboros unleashes an incredible whorl of superheated gases from his vesicles, dealing damage to, and crippling for a very short time, enemies caught in the cone. The effect changes dependent on the Element Ouroboros is using, which changes randomly after any cast of an active Spell.\n\nFIRE: Deals %fire_damage% bonus damage, and %fire_damage_over_time% per second for %fire_duration% seconds.\nICE: Slows the enemy by %ice_slow%%% for %ice_duration%.\nAIR: Knocks enemies back %air_knockback% units, slowing them by %air_slow%%% for %air_duration%.\nVOID: Changes the damage type to Pure, and renders enemies and allies Out of Game for %void_duration% seconds."
+			"DOTA_Tooltip_ability_ouroboros_searing_flame_lore"                        		  "The Immortal Ouroboros swallowed long ago still thrums with power, now simply a source of energy for the cursed Changeling."
 			"DOTA_Tooltip_ability_ouroboros_searing_flame_scepter_description"                        "Increases slow and applies a stacking damage over time effect to targets hit."
 			"DOTA_Tooltip_ability_ouroboros_searing_flame_slow"                        		  "%SLOW:"
 			"DOTA_Tooltip_ability_ouroboros_searing_flame_damage"                        	  "DAMAGE:"
@@ -1469,13 +1475,14 @@
 			"DOTA_Tooltip_ability_ouroboros_searing_flame_Note0"                        	  "Travels past the max cast range by 125 units."
 
 			"DOTA_Tooltip_ability_ouroboros_nexus"                                            "Nexus"
-			"DOTA_Tooltip_ability_ouroboros_nexus_description"                                "Summons a devastating concentrated blast of flame from the sky after a short delay, dealing massive damage to enemies caught in the AoE.  Stuns for a short time."
+			"DOTA_Tooltip_ability_ouroboros_nexus_description"                                "Summons a devastating concentrated blast of elemental energies from the sky after a short delay, dealing large damage to enemies caught in the AoE. The effect changes dependent on the Element Ouroboros is using, which changes randomly after any cast of an active Spell, and is shared across them.\n\nFIRE: Deals %fire_damage% bonus damage, and %fire_damage_over_time% per second for %fire_duration% seconds.\nICE: Freezes the enemy, stunning them for %ice_duration%.\nAIR: Sucks enemies towards the Nexus in a %air_radius% radius, before knocking them away %air_knockback%.\nVOID: Applies a Strong Dispel to enemies hit, and Breaks them for %void_duration%."
 			"DOTA_Tooltip_ability_ouroboros_nexus_radius"                     "RADIUS:"
 			"DOTA_Tooltip_ability_ouroboros_nexus_delay"              "DELAY:"
 			"DOTA_Tooltip_ability_ouroboros_nexus_stun"              "STUN DURATION:"
 			
 			"DOTA_Tooltip_ability_ouroboros_diffusion"                                      "Diffusion"
 			"DOTA_Tooltip_ability_ouroboros_diffusion_description"                          "As Ouroboros takes Magical damage, his scales diffuse its energies, converting it to life force. Increases Magic Resistance and Health and Mana regen based on the damage Ouroboros takes."
+			"DOTA_Tooltip_ability_ouroboros_diffusion_lore"                          		"While the Immortal's Curse may have crippled their ability to shift between forms, being trapped between still grants useful traits."
 			"DOTA_Tooltip_ability_ouroboros_diffusion_Note0"                          "Damage below or between the threshold of 100 still increases Magic Resistance, Health regen and Mana regen, but does not show as a buff stack."
 			"DOTA_Tooltip_ability_ouroboros_diffusion_magic_res"                            "%MAGIC RESISTANCE PER STACK:"
 			"DOTA_Tooltip_ability_ouroboros_diffusion_health_regen"                  "HEALTH REGEN PER STACK:"
@@ -1484,10 +1491,11 @@
 			"DOTA_Tooltip_ability_ouroboros_diffusion_duration"                     "DURATION:"
 			"DOTA_Tooltip_ability_ouroboros_diffusion_per"                     		"DAMAGE FOR +1 STACK:"
 			
-			"DOTA_Tooltip_ability_ouroboros_dualcast"                                      "Dualcast"
+			"DOTA_Tooltip_ability_ouroboros_dualcast"                                      "Mirrorspell"
 			"DOTA_Tooltip_ability_ouroboros_dualcast_description"                          "Ouroboros takes advantage of his extra appendage and spellcasting prowess combined, casting Spells twice in quick succession, provided he has the mana to do so. Consumes a multiplier of the original Mana cost of the Spell for the second cast."
+			"DOTA_Tooltip_ability_ouroboros_dualcast_lore"                          	   "The first moment the Immortal's machinery whirred to life, it echoed throughout time. Even now, trapped in the gullet of the Changeling, these echoes persist."
 			"DOTA_Tooltip_ability_ouroboros_dualcast_delay"                            "SPELL DELAY:"
-			"DOTA_Tooltip_ability_ouroboros_dualcast_mana_cost"                        "%MANA COST:"	
+			"DOTA_Tooltip_ability_ouroboros_dualcast_mana_cost"                        "%MANA COST:"
 			//"DOTA_Tooltip_ability_ouroboros_dualcast_mana_cost_item"                        "%MANA COST (ITEM):"
 			
 			///// DEPRECATED /////
@@ -3172,7 +3180,7 @@
 			"DOTA_Tooltip_ability_special_bonus_rai_3" "+75 Arc Twister Damage"
 			"DOTA_Tooltip_ability_special_bonus_rai_4" "+2 Amplify Targets"
 			"DOTA_Tooltip_ability_special_bonus_rai_5" "+0.25s Thunder Roar Ministun"
-			"DOTA_Tooltip_ability_special_bonus_rai_6" "-4s Arc Twister Cooldown"
+			"DOTA_Tooltip_ability_special_bonus_rai_6" "-1s Arc Twister Cooldown"
 			
 			///// MODIFIERS /////
 			
@@ -3236,6 +3244,14 @@
 			"DOTA_Tooltip_ability_special_bonus_lupin_4" "+1.75s Flashbang Daze Duration"
 			"DOTA_Tooltip_ability_special_bonus_lupin_5" "+1000 Last Surprise Range"
 			"DOTA_Tooltip_ability_special_bonus_lupin_6" "Beneath the Mask Mutes"
+
+			///// FACETS /////
+
+			"DOTA_Tooltip_Facet_lupin_siphoner"	"Siphoner"
+			"DOTA_Tooltip_Facet_lupin_siphoner_description"	"<b color='white'>Beneath the Mask</b> no longer renders Lupin invisible or Silences the target, and its duration is reduced. However, it steals more health and movespeed, and always steals <b>125</b> attack speed."
+
+			"DOTA_Tooltip_Facet_lupin_infamy"	"Infamy"
+			"DOTA_Tooltip_Facet_lupin_infamy_description"	"<b color='white'>Calling Card</b> applies a slow and short-lived <b>Fear</b> effect to enemies affected by the slash."
 			
 			///// MODIFIERS /////
 			

@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"				"ability_lua"
 	"ScriptFile"			"lua/abilities/neith_inspire"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOUR_AUTOCAST"	
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"neith_inspire"
 
@@ -26,29 +26,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"attack_damage"			"3 6 9 12"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"8"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"575"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"attack_damage_creep"	"2 3 4 5"
-		}
-	}
+	"AbilityValues"
+        {
+            "health_regen" "5 10 15 20"
+            "duration" "6"
+            "radius" "700"
+            "health_regen_creep" "10 20 30 40"
+        }
 
 	"precache"
 	{

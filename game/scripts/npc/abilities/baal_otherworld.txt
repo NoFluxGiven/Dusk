@@ -32,24 +32,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"4 5 6 7"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_ms"						"15 20 25 30"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"mres_reduction"				"-50"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "4 5 6 7"
+            "bonus_ms" "15 20 25 30"
+            "mres_reduction" "-50"
+        }
 	
 	"precache"
 		{

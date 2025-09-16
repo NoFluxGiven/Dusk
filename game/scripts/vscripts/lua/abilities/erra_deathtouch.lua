@@ -31,7 +31,7 @@ function modifier_deathtouch_dot:IsPurgable() return false end
 
 function modifier_deathtouch_dot:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_DISABLE_HEALING,
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
 	}
 	return funcs
@@ -54,6 +54,10 @@ function modifier_deathtouch_dot:OnIntervalThink()
 
 		self:GetAbility():InflictDamage(self:GetParent(),self:GetAbility():GetCaster(),dot,DAMAGE_TYPE_MAGICAL)
 	end
+end
+
+function modifier_deathtouch_dot:GetDisableHealing()
+	return 1
 end
 
 function modifier_deathtouch_dot:GetModifierMoveSpeedBonus_Percentage()

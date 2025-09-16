@@ -50,46 +50,24 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"proc_damage"				"40 80 120 160"
-			"LinkedSpecialBonus"		"special_bonus_shade_6"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"movespeed_bonus"			"12 20 28 36"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"12"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"poison_slow"				"30 40 50 60"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"poison_damage_over_time"	"20 30 40 50"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"poison_duration"			"4.0"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"6.0"
-			"LinkedSpecialBonus"		"special_bonus_shade_1"
-		}
-	}
+	"AbilityValues"
+        {
+            "proc_damage"
+            {
+                "value" "40 80 120 160"
+                "LinkedSpecialBonus" "special_bonus_shade_6"
+            }
+            "movespeed_bonus" "12 20 28 36"
+            "slow" "12"
+            "poison_slow" "30 40 50 60"
+            "poison_damage_over_time" "20 30 40 50"
+            "poison_duration" "4.0"
+            "duration"
+            {
+                "value" "6.0"
+                "LinkedSpecialBonus" "special_bonus_shade_1"
+            }
+        }
 	
 	"precache"
 		{

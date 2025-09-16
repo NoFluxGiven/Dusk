@@ -35,36 +35,22 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"6 8 10 12"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage"						"100 125 150 175"
-			"LinkedSpecialBonus"			"special_bonus_baal_1"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"230"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"slow"							"-40 -60 -80 -100"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"slow_duration"					"2.5"
-			"LinkedSpecialBonus"			"special_bonus_baal_3"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "6 8 10 12"
+            "damage"
+            {
+                "value" "100 125 150 175"
+                "LinkedSpecialBonus" "special_bonus_baal_1"
+            }
+            "radius" "230"
+            "slow" "-40 -60 -80 -100"
+            "slow_duration"
+            {
+                "value" "2.5"
+                "LinkedSpecialBonus" "special_bonus_baal_3"
+            }
+        }
 	
 	"precache"
 		{

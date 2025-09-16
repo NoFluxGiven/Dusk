@@ -32,44 +32,21 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"debuff_duration"				"5.0"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"debuff_damage"				    "3.0 4.0 5.0 6.0"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"425"
-		}
-    "04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage"						"90 120 150 180"
-		}
-    "05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"heal"						    "4 5 6 7"
-		}
-    "06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"base_heal"						"50 100 150 200"
-		}
-	}
+	"AbilityValues"
+        {
+            "debuff_duration" "5.0"
+            "debuff_damage" "3.0 4.0 5.0 6.0"
+            "radius" "425"
+            "damage" "90 120 150 180"
+            "heal" "4 5 6 7"
+            "base_heal" "50 100 150 200"
+        }
 	
 	"precache"
 		{
 		"particle" "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_ambient.vpcf"
 		"particle" "particles/status_fx/status_effect_keeper_spirit_form.vpcf"
+		"particle" "particles/units/heroes/hero_alexander/lightburst.vpcf"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
 		}
 	

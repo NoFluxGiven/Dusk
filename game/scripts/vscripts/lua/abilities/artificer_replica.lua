@@ -68,7 +68,7 @@ function artificer_replica:_GenerateReplica(aghs_unit)
 		if ability ~= nil then 
 			local abilityLevel = ability:GetLevel()
 			local abilityName = ability:GetAbilityName()
-			local abilityIsUlt = ability:GetAbilityType() == DOTA_ABILITY_TYPE_ULTIMATE
+			local abilityIsUlt = ability:GetAbilityType() == ABILITY_TYPE_ULTIMATE
 			local illusionAbility = illusion:FindAbilityByName(abilityName)
 			illusionAbility:SetLevel(abilityLevel)
 		end

@@ -35,15 +35,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"3.0 3.5 4.0 4.5"
-			"LinkedSpecialBonus"			"special_bonus_fate_1"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration"
+            {
+                "value" "3.0 3.5 4.0 4.5"
+                "LinkedSpecialBonus" "special_bonus_fate_1"
+            }
+        }
 	
 	"precache"
 		{

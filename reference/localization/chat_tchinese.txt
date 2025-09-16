@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "tchinese"
+"Tokens"
+{
+"chat_filterbutton"	"過濾器"
+"filter_joinleave"	"加入/離開"
+"filter_namechange"	"變更名稱"
+"filter_publicchat"	"公開交談"
+"filter_servermsg"	"伺服器訊息"
+"filter_teamchange"	"變更團隊"
+"chat_say"			"發言："
+"chat_say_team"	    "發言（團隊）："
+"chat_say_coach"	"說（對學生）："
+"chat_say_student"	"說（對教練）："
+"chat_sourcetv"     "（Dota TV）%s1"
+}
+}

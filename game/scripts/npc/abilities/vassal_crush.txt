@@ -37,24 +37,12 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"            "FIELD_INTEGER"
-            "as_reduction"        "-20 -25 -30 -35"
-        }
-        "02"
-        {
-            "var_type"            "FIELD_INTEGER"
+            "as_reduction" "-20 -25 -30 -35"
             "movespeed_reduction" "-30 -40 -50 -60"
+            "radius" "300"
         }
-        "03"
-        {
-            "var_type"            "FIELD_INTEGER"
-            "radius"              "300"
-        }
-    }
     
     "precache"
     {

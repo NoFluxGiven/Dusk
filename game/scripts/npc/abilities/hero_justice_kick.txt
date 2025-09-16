@@ -47,51 +47,27 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"90 120 150 180"
-			"LinkedSpecialBonus"		"special_bonus_hero_3"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"distance"					"475"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"-100"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"duration"					"1.3"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"landing_damage"			"70 110 150 190"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"landing_stun"				"0.6 0.9 1.2 1.5"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"landing_radius"			"250"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage"
+            {
+                "value" "90 120 150 180"
+                "LinkedSpecialBonus" "special_bonus_hero_3"
+            }
+            "distance" "475"
+            "slow" "-100"
+            "duration" "1.3"
+            "landing_damage" "70 110 150 190"
+            "landing_stun" "0.6 0.9 1.2 1.5"
+            "landing_radius" "250"
+        }
 	
 	"precache"
 		{
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
 		"soundfile" "soundevents/hero_hero.vsndevts"
 		"particle" "particles/units/heroes/hero_hero/hero_justice_kick.vpcf"
+		"particle" "particles/units/heroes/hero_hero/hero_justice_kick_land.vpcf"
 		"particle" "particles/units/heroes/hero_hero/one_punch_mega_crit.vpcf"
 		}
 }

@@ -35,34 +35,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"stun"							"1.25"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"175"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"0.5"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"delay"							"0.35"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"hits"							"3"
-		}
-	}
+	"AbilityValues"
+        {
+            "stun" "1.25"
+            "radius" "175"
+            "duration" "0.5"
+            "delay" "0.35"
+            "hits" "3"
+        }
 	
 	"precache"
 		{

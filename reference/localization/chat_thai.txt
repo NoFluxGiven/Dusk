@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "thai"
+"Tokens"
+{
+"chat_filterbutton"	"ตัวกรอง"
+"filter_joinleave"	"เข้าร่วม/ออก"
+"filter_namechange"	"เปลี่ยนชื่อ"
+"filter_publicchat"	"แช็ตสาธารณะ"
+"filter_servermsg"	"ข้อความระบบ"
+"filter_teamchange"	"เปลี่ยนทีม"
+"chat_say"			"พูด :"
+"chat_say_team"	    "พูด (ทีม) :"
+"chat_say_coach"	"พูด (ถึงนักเรียน):"
+"chat_say_student"	"พูด (ถึงโค้ช):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

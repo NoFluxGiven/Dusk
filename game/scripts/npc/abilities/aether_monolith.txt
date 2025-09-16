@@ -24,61 +24,27 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"										"FIELD_FLOAT"
-			"monolith_time"									"45"
-		}
-		"02"
-		{
-			"var_type"										"FIELD_INTEGER"
-			"monolith_speed"								"10 15 20 25"
-		}
-		"03"
-		{
-			"var_type"										"FIELD_INTEGER"
-			"monolith_effect_radius"						"475"
-		}
-		"04"
-		{
-			"var_type"										"FIELD_INTEGER"
-			"monolith_slow"									"-10 -15 -20 -25"
-		}
-		"05"
-		{
-			"var_type"										"FIELD_FLOAT"
-			"monolith_manaregen"							"1 2 3 4"
-			"LinkedSpecialBonus"							"special_bonus_aether_4"
-		}
-		"06"
-		{
-			"var_type"										"FIELD_FLOAT"
-			"monolith_healthregen"							"2 4 6 8"
-			"LinkedSpecialBonus"							"special_bonus_aether_4"
-		}
-		"07"
-		{
-			"var_type"										"FIELD_INTEGER"
-			"min_placement_radius_buffer_scepter"			"525"
-		}
-		"08"
-		{
-			"var_type"										"FIELD_INTEGER"
-			"cooldown_scepter"								"4"
-		}
-		"09"
-		{
-			"var_type"										"FIELD_INTEGER"
-			"max_monoliths_scepter"							"3"
-		}
-		"10"
-		{
-			"var_type"										"FIELD_INTEGER"
-			"monolith_time_scepter"							"75"
-		}
-	}
+	"AbilityValues"
+        {
+            "monolith_time" "45"
+            "monolith_speed" "10 15 20 25"
+            "monolith_effect_radius" "475"
+            "monolith_slow" "-10 -15 -20 -25"
+            "monolith_manaregen"
+            {
+                "value" "1 2 3 4"
+                "LinkedSpecialBonus" "special_bonus_aether_4"
+            }
+            "monolith_healthregen"
+            {
+                "value" "2 4 6 8"
+                "LinkedSpecialBonus" "special_bonus_aether_4"
+            }
+            "min_placement_radius_buffer_scepter" "525"
+            "cooldown_scepter" "4"
+            "max_monoliths_scepter" "3"
+            "monolith_time_scepter" "75"
+        }
 	
 	// Data driven
 	//-------------------------------------------------------------------------------------------------------------

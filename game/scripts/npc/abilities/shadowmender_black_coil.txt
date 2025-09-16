@@ -36,14 +36,10 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"damage_per_missing_health_percent"					"1 1.5 2 2.5"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage_per_missing_health_percent" "1 1.5 2 2.5"
+        }
 	
 	"precache"
 		{

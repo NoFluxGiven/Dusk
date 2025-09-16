@@ -33,29 +33,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"5.0 6.0 7.0 8.0"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"delay"							"2.00"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_movespeed"				"12 20 28 36"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_evasion"					"100"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "5.0 6.0 7.0 8.0"
+            "delay" "2.00"
+            "bonus_movespeed" "12 20 28 36"
+            "bonus_evasion" "100"
+        }
 	
 	"precache"
 		{

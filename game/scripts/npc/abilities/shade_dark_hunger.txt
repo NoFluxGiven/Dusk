@@ -43,29 +43,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"health_drain"				"20 35 50 65"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"6.00"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"interval"					"0.25"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"350"
-		}
-	}
+	"AbilityValues"
+        {
+            "health_drain" "20 35 50 65"
+            "duration" "6.00"
+            "interval" "0.25"
+            "radius" "350"
+        }
 	
 	"precache"
 		{

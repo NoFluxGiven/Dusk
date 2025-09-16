@@ -33,39 +33,15 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"6"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"rain_duration"					"4.00"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"350"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage"						"20 30 40 50"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"slow"							"6 8 10 12"
-		}
-	"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"lifesteal"						"20 30 40 50"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "6"
+            "rain_duration" "4.00"
+            "radius" "350"
+            "damage" "20 30 40 50"
+            "slow" "6 8 10 12"
+            "lifesteal" "20 30 40 50"
+        }
 	
 	"precache"
 		{

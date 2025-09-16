@@ -12,7 +12,7 @@
 	// Pride can instantly deal damage to,
 	// and jump to, the last unit he dealt damage to with his attacks.
 	// Deals 40/80/120/160 damage and slows for 25% for 2s.
-	// 5s cooldown.
+	// 6s cooldown.
 	// Must be cast within 4s of attacking a target (applies a debuff).
 	"Ability3"				"pride_lionheart"
 	// Pride's bravery knows no bounds, as through his veins courses the blood of Elyat.
@@ -28,15 +28,10 @@
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
 	"Ability6"				"pride_echospear"
-	// Pride afflicts a powerful hex upon the target enemy, passed down through his bloodline,
-	// that causes damage sources inflicted during its duration to echo multiple times.
-	// At the end of the buff duration, a 30/40/50% portion of the total damage
-	// they received echoes 2/3/4 times,
-	// reducing to 30/40/50% each echo.
-	// There is a 2s delay between each echo.
-	// Initial buff lasts 5s.
-	// Deals Pure damage and pierces Spell Immunity.
-	// 70s cooldown.
+	// Pride gains a temporary boon, allowing him to strike multiple times whenever
+	// he attacks an enemy. Whenever he lands an attack on an enemy Hero, they receive stacks
+	// of Echospear, which tick down every 2 seconds, striking them for 30/50/70% of Pride's
+	// base damage. Preserves attack modifiers.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""

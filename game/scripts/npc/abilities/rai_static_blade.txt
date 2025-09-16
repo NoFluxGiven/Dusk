@@ -32,29 +32,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage"						"30 60 90 120"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"silence_duration"				"0.8 1.2 1.6 2.0"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"slow"							"35"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"proc_chance"					"15 20 25 30"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "30 60 90 120"
+            "silence_duration" "0.8 1.2 1.6 2.0"
+            "slow" "35"
+            "proc_chance" "15 20 25 30"
+        }
 	
 	"precache"
 		{

@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "turkish"
+"Tokens"
+{
+"chat_filterbutton"	"Filtreler"
+"filter_joinleave"	"Katılımlar/Ayrılmalar"
+"filter_namechange"	"İsim Değişiklikleri"
+"filter_publicchat"	"Herkese Açık Sohbet"
+"filter_servermsg"	"Sunucu Mesajları"
+"filter_teamchange"	"Takım Değişiklikleri"
+"chat_say"			"Yaz :"
+"chat_say_team"	    "Yaz (TAKIM) :"
+"chat_say_coach"	"Yaz (ÖĞRENCİLERİNE):"
+"chat_say_student"	"Yaz (KOÇUNA):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

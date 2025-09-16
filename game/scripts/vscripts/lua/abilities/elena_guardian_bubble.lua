@@ -27,15 +27,20 @@ modifier_guardian_bubble = class({})
 
 function modifier_guardian_bubble:DeclareFunctions()
 	local funcs = {
-
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
 	}
 	return funcs
 end
 
+function modifier_guardian_bubble:GetModifierMoveSpeed_Absolute()
+	return self:GetParent():GetTeam() == self:GetAbility():GetCaster():GetTeam() and 100 or 100
+end
+
 function modifier_guardian_bubble:CheckState()
 	local state = {
-		[MODIFIER_STATE_STUNNED] = true,
-		[MODIFIER_STATE_FROZEN] = true
+		[MODIFIER_STATE_SILENCED] = true,
+		[MODIFIER_STATE_MUTED] = true,
+		[MODIFIER_STATE_DISARMED] = true
 	}
 
 	return state

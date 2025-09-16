@@ -34,29 +34,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"10.0" // percentage total
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"hero_damage"					"20 25 30 35"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"creep_damage"					"3 6 9 12"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"700 800 900 1000"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "10.0"
+            "hero_damage" "20 25 30 35"
+            "creep_damage" "3 6 9 12"
+            "radius" "700 800 900 1000"
+        }
 	
 	"precache"
 		{

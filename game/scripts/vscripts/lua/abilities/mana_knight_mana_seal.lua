@@ -58,7 +58,7 @@ function modifier_mana_seal_aoe:OnIntervalThink()
 
 			if mana <= 0 then return end
 
-			v:ReduceMana( (mana*self.mana_drain) * interval )
+			v:Script_ReduceMana( (mana*self.mana_drain) * interval )
 			local diff = v:GetManaPercent()
 			local p = ParticleManager:CreateParticle("particles/units/heroes/hero_mana_knight/mana_seal_drain.vpcf", PATTACH_ABSORIGIN_FOLLOW, v)
 			ParticleManager:SetParticleControl(p, 1, Vector(diff,0,0))

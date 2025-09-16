@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "korean"
+"Tokens"
+{
+"chat_filterbutton"	"필터"
+"filter_joinleave"	"입장/퇴장"
+"filter_namechange"	"이름 변경"
+"filter_publicchat"	"공개 채팅"
+"filter_servermsg"	"서버 메시지"
+"filter_teamchange"	"팀 변경"
+"chat_say"			"대화:"
+"chat_say_team"	    "대화 (팀) :"
+"chat_say_coach"	"대화(멘티에게):"
+"chat_say_student"	"대화(멘토에게):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

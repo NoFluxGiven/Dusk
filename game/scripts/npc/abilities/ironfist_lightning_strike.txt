@@ -30,29 +30,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"attacks"						"4"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"bat"							"0.5"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_attack_speed"			"50 100 150 200"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"4"
-		}
-	}
+	"AbilityValues"
+        {
+            "attacks" "4"
+            "bat" "0.5"
+            "bonus_attack_speed" "50 100 150 200"
+            "duration" "4"
+        }
 	
 	"precache"
 		{

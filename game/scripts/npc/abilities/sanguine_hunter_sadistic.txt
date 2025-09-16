@@ -25,39 +25,15 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"regen"					"2 4 6 8"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"threshold"				"50"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"900"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"lifesteal"				"25 30 35 40"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"movespeed"				"7 8 9 10"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"15 20 25 30"
-		}
-	}
+	"AbilityValues"
+        {
+            "regen" "2 4 6 8"
+            "threshold" "50"
+            "radius" "900"
+            "lifesteal" "25 30 35 40"
+            "movespeed" "7 8 9 10"
+            "damage" "15 20 25 30"
+        }
 
 	"precache"
 	{

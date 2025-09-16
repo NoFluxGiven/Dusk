@@ -23,16 +23,16 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"600"
+	"AbilityCastRange"				"575"
 	"AbilityCastPoint"				"0.48"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"15"
+	"AbilityCooldown"				"17"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"95"
+	"AbilityManaCost"				"115"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,49 +40,29 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage_per_attack"			"10 20 30 40"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"140"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"0.80"
-			"LinkedSpecialBonus"		"special_bonus_lupin_3"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"bonus_slow_duration"		"1.00 1.50 2.00 2.50"
-			"LinkedSpecialBonus"		"special_bonus_lupin_3"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun"						"0.70"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"attack_duration"			"4.0"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"attack_limit"				"8"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage_per_attack" "10 20 30 40"
+            "slow" "140"
+            "slow_duration"
+            {
+                "value" "0.80"
+                "LinkedSpecialBonus" "special_bonus_lupin_3"
+            }
+            "bonus_slow_duration"
+            {
+                "value" "1.75"
+                "LinkedSpecialBonus" "special_bonus_lupin_3"
+            }
+            "stun" "0.40"
+            "attack_duration" "4.0"
+            "attack_limit" "8"
+        }
 	
 	"precache"
 		{
 		"particle" "particles/units/heroes/hero_lupin/lupin_finisher.vpcf"
+		"particle" "particles/units/heroes/hero_lupin/lupin_finisher_normal.vpcf"
+		"particle" "particles/units/heroes/hero_lupin/lupin_finisher_crit.vpcf"
 		}
 }

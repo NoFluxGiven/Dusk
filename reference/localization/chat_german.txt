@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "german"
+"Tokens"
+{
+"chat_filterbutton"	"Filter"
+"filter_joinleave"	"Betreten/Verlassen"
+"filter_namechange"	"Namensänderungen"
+"filter_publicchat"	"Öffentlicher Chat"
+"filter_servermsg"	"Servermeldungen"
+"filter_teamchange"	"Teamänderungen"
+"chat_say"			"Nachricht:"
+"chat_say_team"	    "Nachricht (TEAM):"
+"chat_say_coach"	"Nachricht (AN SCHÜLER):"
+"chat_say_student"	"Nachricht (AN MENTOR):"
+"chat_sourcetv"     "(Dota-TV) %s1"
+}
+}

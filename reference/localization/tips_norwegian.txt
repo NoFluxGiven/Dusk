@@ -1,0 +1,624 @@
+﻿"lang"
+{ 
+	"Language" "norwegian" 
+	"Tokens" 
+	{
+
+//INTRODUCTORY LOADSCREEN TIPS		(0 to 25 games played)
+		"dota_tip_introduction_1"		"Prøv å slåss mot kryp og fiendtlige helter innenfor angrepsrekkevidden til tårnene dine."
+		"dota_tip_introduction_2"		"Vær forsiktig når du krysser elven inn i fiendens territorium."
+		"dota_tip_introduction_3"		"Husk å kjøpe gjenstander for å gjenopprette helse og mana i begynnelsen av kampen."
+		"dota_tip_introduction_4"		"Kjøp og bruk Town Portal Scrolls for å komme deg rundt på kartet raskt."
+		"dota_tip_introduction_6"		"Enkelte gjenstander kan kun kjøpes i de hemmelige butikkene."
+		"dota_tip_introduction_7"		"De fleste helter lærer seg den ultimate evnen på nivå 6, og den oppgraderes på nivå 12 og 18."
+		"dota_tip_introduction_8"		"Å få siste stikk på et kryp eller en helt belønner deg med ekstra gull."
+		"dota_tip_introduction_9"		"Hver spiller har sin egen kurer som kan hente gjenstander til dem mens de befinner seg i stiene."
+		"dota_tip_introduction_10"		"Gjenstander kjøpt mens du er borte fra en butikk, plasseres i forrådet ditt slik at du kan hente dem senere eller få dem levert med kureren din."
+		"dota_tip_introduction_11"		"En innstilling for fargeblindhet er tilgjengelig i innstillingene hvis det trengs."
+		"dota_tip_introduction_12"		"Det finnes mange måter å behandle samtaleinnstillingene dine på under fanen «Sosialt» i innstillingene."
+
+//LORE TIPS (everyone sees these)
+		"dota_tip_lore_1" 					"Atos, Fordervets herre, har et fragment av essensen sin skjult i Rod of Atos."
+		"dota_tip_lore_2" 					"Eye of Skadi ble bevoktet av asurdragene."
+		"dota_tip_lore_3" 					"Shadow Blade tilhørte en gang en konge som for lengst er glemt."
+		"dota_tip_lore_4"					"Crystal Maiden og Lina er søstre."
+		"dota_tip_lore_5"					"Den magiske hammeren Mjollnir ble laget til Tor av dvergene Brokk og Sindre."
+		"dota_tip_lore_6"					"Meteor Hammer ble laget av metaller funnet i en landsby som ble ødelagt av en stjernestorm."
+		"dota_tip_lore_7"					"Guardian Greaves ble laget til ære for Allvitenheten."
+		"dota_tip_lore_8"					"Det ryktes at Aeon Disk ble smuglet ut av Elfenbensinkubatoriet."
+		"dota_tip_lore_9"					"Crimson Guard er et kyrass som opprinnelig ble laget for å beskytte mot det fryktede Årsbeistet."
+
+//UNIVERSAL LOADSCREEN TIPS		(25+ games played)
+		"dota_tip_universal_1"				"Opplesere og grensesnittutseender deles mellom alle spillere i en kamp. Du kan velge mellom dem ved å trykke på knappen for delt innhold på resultattavlen."
+		"dota_tip_universal_2"				"Hold deg rolig. Husk at det bare er et spill."
+		"dota_tip_universal_3"				"Du kan dempe frekke spillere ved å gå til resultattavlen, som du får tilgang til med knappene på venstre side i toppfeltet."
+		"dota_tip_universal_4"				"Etter at du har valgt en helt, kan du trykke på minikartet nede til venstre for å informere lagkamerater om hvilken sti du planlegger å gå til når kampen begynner."
+		"dota_tip_universal_5"				"Syntes du det var gøy å spille sammen med noen? Anbefal dem ved å trykke på anbefalingsikonet over navnet til spilleren i oversikten etter kampen."
+		"dota_tip_universal_6"				"Du kan holde nede Alt og så trykke på en evne for å informere lagkamerater om nedkjølingsstatusen til evnen."
+		"dota_tip_universal_7"				"Du kan informere lagkamerater om at en fiendtlig helt mangler ved å holde nede Alt og trykke på heltens portrett i toppfeltet."
+		"dota_tip_universal_8"				"Vær høflig – spesielt mot lagkameratene dine. Folk hører ikke på deg hvis du er frekk."
+		"dota_tip_universal_9"				"Spillere som forlater en kamp, mottar en straff."
+		"dota_tip_universal_10"				"Alle kan kjøpe varder, Dust of Appearance og Smoke of Deceit. Hvis laget ditt trenger noe, ikke vær redd for å kjøpe det!"
+		"dota_tip_universal_11"				"Vær snill mot nye spillere. Alle må begynne et sted."
+		"dota_tip_universal_12"				"Lykke til. Kos deg."
+		"dota_tip_universal_13"				"Valg av helt har betydning. Mange helter kan fungere som motsvar på andre helter, og mange heltekombinasjoner er mye sterkere og nyttigere enn en enkelt helt alene."
+		"dota_tip_universal_14"				"Hvis du holder nede Shift, kan du angi handlinger som skal utføres i rekkefølge."
+		"dota_tip_universal_15"				"Din stemme teller! Gå til Dota 2s workshop og stem på gjenstander du vil at skal selges i Dota 2."
+		"dota_tip_universal_16"				"Globale gjenstander kan legges til en i blanding, som gjør at det velges ut en tilfeldig gjenstand i blandingen for denne plassen i hver kamp."
+		"dota_tip_universal_17"				"Oppmuntring kan hjelpe laget med å vinne."
+		"dota_tip_universal_18"				"Foretrekker du å se ikoner av helters ansikter heller enn fargekodede symboler på minikartet? Du kan endre dette i innstillingene."
+		"dota_tip_universal_19"				"Husk å reise deg opp og strekke deg litt mellom kamper."
+		"dota_tip_universal_20"				"Husk: Alle spiller en dårlig kamp i ny og ne. Alle gjør feil."
+		"dota_tip_universal_21"				"Vil du at minikartet skal dukke opp på den andre siden av skjermen? Du kan endre dette i innstillingene."
+		"dota_tip_universal_22"				"Du kan justere hvor ofte helters stemmer høres i innstillingene."
+		"dota_tip_universal_23"				"Du kan laste ned repriser av kamper fra historikkfanen på profilen. En god måte å bli bedre på er å se kampene dine fra et nytt perspektiv!"
+		"dota_tip_universal_24"				"Du kan holde nede Alt og trykke på en evne eller gjenstand for å informere lagkamerater om at den er klar, på nedkjøling eller at du ikke har nok mana til å bruke den."
+		"dota_tip_universal_25"				"Du kan fremdeles bruke gjenstander når du er stilnet, men ikke når du er dempet."
+		"dota_tip_universal_26"				"Avbrøt du Town Portal Scroll ved et uhell? I innstillingene er det et alternativ som gjør at det kreves en stoppekommando for å avbryte en teleportering."
+		"dota_tip_universal_27"				"Hold nede Alt og trykk på en gjenstand i en fiendtlig helts oppakning for å gi laget ditt beskjed om at fienden har gjenstanden."
+		"dota_tip_universal_28"				"Hold nede Alt og trykk på tilbakekjøpstasten din, eller på gullet ditt, for å gi laget ditt beskjed om tilbakekjøpsstatusen din."
+		"dota_tip_universal_29"				"I All Pick begynner spillere å miste startgull om de ikke har valgt en helt før tiden går ut."
+		"dota_tip_universal_30"				"Dota 2 er i konstant utvikling. Nye funksjoner legges til. Nye helter introduseres, og eksisterende helter og mekanikker kan justeres. Hold deg oppdatert om de siste endringene i bloggen til Dota 2!"
+		"dota_tip_universal_31"				"Prøv å ikke få flere fiender enn de fem du allerede kjemper mot."
+		"dota_tip_universal_33"				"En innstilling for fargeblindhet er tilgjengelig i innstillingene hvis nødvendig."
+		"dota_tip_universal_34"				"Hold nede Alt og trykk på en fiendtlig helts helse- og manalinje, eller din egen, for å gi laget ditt beskjed om heltens nåværende helse og mana."
+		"dota_tip_universal_35"				"Du kan informere laget ditt om aktive styrkelser og svekkelser på helten din ved å holde nede Alt og trykke på effektenes ikoner – dette fungerer også på fiendtlige helter."
+		"dota_tip_universal_36"				"Hvis du holder nede Alt og trykker på Glyph of Fortification, informerer du laget ditt om nåværende status. Hvis du vil at laget ditt ikke skal bruke Glyph of Fortification, kan du holde både Ctrl og Alt når du trykker på den."
+		"dota_tip_universal_37"				"Hold nede Alt og trykk på gjenopplivingstiden din for å gi laget ditt beskjed om gjenværende tid."
+		"dota_tip_universal_38"				"Bruk samtalehjulet for å raskt sende forhåndsvalgte meldinger til lagkameratene dine. Replikker i samtalehjulet kan tilpasses i innstillingene."
+		"dota_tip_universal_39"				"Meldinger i samtalehjulet oversettes så de vises på språket som mottakende spiller bruker."
+		"dota_tip_universal_40"				"Du kan tilordne evnetaster til hurtigbruk for å bruke evner der musepekeren befinner seg med et enkelt tastetrykk."
+		"dota_tip_universal_42"				"I innstillingene kan du velge å eksponere statistikk fra offentlige kamper slik at tredjeparter kan hente dette."
+		"dota_tip_universal_43"				"I innstillingene kan du angi gjenstander og evner til å automatisk brukes på helten din ved bruk av dobbelttrykk på evneikonet, eller dobbelttrykk på evnens tilordnede tast."
+		"dota_tip_universal_44"				"Aldri gi opp! Å drepe en fiendtlig helt er verdt mer gull og erfaring hvis laget ditt er svakere enn fiendelaget."
+		"dota_tip_universal_45"				"Alle har ansvar for å gjøre samfunnet til Dota så vennligsinnet og imøtekommende som mulig."
+		"dota_tip_universal_46"				"Vil du se hvordan proffene spiller Dota? Ta en titt på alle turneringene i Dota 2 som finner sted over hele verden. Kanskje lærer du deg noen nye triks med favoritthelten."
+		"dota_tip_universal_47"				"Du kan slå av autoangrep i innstillingene."
+		"dota_tip_universal_49"			"Å ødelegge en av fiendens tårn eller brakker er vanligvis mer verdifullt for laget ditt enn å drepe en fiendtlig helt."
+		"dota_tip_universal_50"			"Hold deg rolig og høflig, så er det sannsynligvis lettere for deg å motivere lagkameratene dine."
+		"dota_tip_universal_51"			"Rolige spillere tar nesten alltid bedre avgjørelser."
+		"dota_tip_universal_52"			"Planlegg alltid neste steg."
+		"dota_tip_universal_53"			"Selv et tap er god øvelse for neste seier."
+		"dota_tip_universal_54"			"Bruk heltedemofunksjonen, som finnes i heltefanen, for å finne ut hvordan du spiller som en ny helt, øve deg på siste stikk eller gi favoritthelten en fin stil."
+		"dota_tip_universal_55"			"Du kan se bruksrekkevidden til formlene dine ved å slå på visning av evners rekkevidde i innstillingene."
+		"dota_tip_universal_56"			"Ikke vær redd for å eksperimentere ved å spille en helt du ikke kjenner så godt."
+		"dota_tip_universal_57"			"Dota er best med venner."
+		"dota_tip_universal_58"			"Ikke nøl med å dempe frekke spillere."
+		"dota_tip_universal_59"			"Prøv å ikke dvele ved feil og tabber. Lær av dem, og gå videre."
+		"dota_tip_universal_60"			"Hold øye med minikartet."
+		"dota_tip_universal_61"			"Hvis du opplever at spillet hakker når du bruker stemmesamtalen, kan du prøve å gå til innstillingene og slå på «Effektivisert trykk for å snakke»."
+		"dota_tip_universal_62"			"Dusørruner dukker opp når kampen begynner, og deretter hvert 3. minutt."
+		"dota_tip_universal_63"			"I de fleste tilfeller er det raskere å tjene gull og erfaring ved å drepe stikryp enn jungelkryp."
+		"dota_tip_universal_64"			"Bygninger med aktiv Backdoor Protection kan identifiseres gjennom skjoldikonet ved siden av helselinjen. Den blå barrieren dukker også opp rundt bygningen når den angripes."
+		"dota_tip_universal_65"			"Tårn, Ancient-en og fontenen gir klarsyn som avslører usynlige enheter i nærheten. Brakker, våkelys og utposter gir ikke klarsyn."
+		"dota_tip_universal_66"			"Beleiringskryp gjør ekstra skade på tårn, og sikter på fiendtlige bygninger når mulig."
+		"dota_tip_universal_67"			"Hvis du har problemer med å håndtere en spesifikk helt, prøv å spille som den helten. Da finner du fort ut av svakhetene dens."
+		"dota_tip_universal_68"			"Alle tårn gir ekstra rustning til allierte i nærheten. 3 for de første tårnene, og 5 for alle de andre."
+		"dota_tip_universal_69"			"Dempede helter kan ikke bruke gjenstander."
+		"dota_tip_universal_70"			"Stilnede helter kan ikke bruke evner."
+		"dota_tip_universal_71"			"Avbrudd hindrer heltens passive evner i å virke."
+		"dota_tip_universal_73"			"Healing Salve og Clarity kan kun avbrytes av helter og Roshan."
+		"dota_tip_universal_74"			"Hold nede Alt og venstreklikk på kartet for å gi et kontekstpling til lagkameratene dine."
+		"dota_tip_universal_76"			"Nøytrale mynter har høyere sannsynlighet for å slippes fra ancient-kryp."
+
+//BEGINNER LOADSCREEN TIPS		(25 - 150 games played)
+		"dota_tip_beginner_1"					"Hvis du merker at en fiendtlig helt er borte fra stien, kan du gi beskjed til lagkamerater ved å si «Topp/midt/bunn er borte» («Missing Top/Middle/Bottom»). Kanskje redder det livet til en lagkamerat!"
+		"dota_tip_beginner_2"					"Du kan øke nivået på evnene dine ved å holde Ctrl og trykke på evnens hurtigtast."
+		"dota_tip_beginner_3"					"Plasser varder og aktiver ukaprede våkelys for å avsløre deler av kartet og få innblikk i fiendelagets bevegelser."
+		"dota_tip_beginner_4"					"Kureren din kan levere gjenstander til deg slik at du kan holde deg i stiene og få enda mer erfaring og gull."
+		"dota_tip_beginner_5"					"Sentry Wards avslører usynlige enheter i nærheten, samt fiendtlige varder."
+		"dota_tip_beginner_7"					"Roshan er mye enklere å drepe hvis du reduserer rustningen hans."
+		"dota_tip_beginner_10"				"Hold nede Shift og trykk på gjenstander i butikken for å legge dem til i hurtigkjøp."
+		"dota_tip_beginner_11"				"Å få siste stikk på et tårn gjør at du tjener mer gull når det ødelegges."
+		"dota_tip_beginner_12"				"Den trygge stien («safe lane») er den lengste stien på lagets side av elven. For Dire er dette den øvre stien, mens for Radiant er det den nedre stien."
+		"dota_tip_beginner_13"				"Den vanskelige stien («hard lane») er den korteste stien på lagets side av elven. For Dire er dette den nedre stien, mens for Radiant er det den øvre stien."
+		"dota_tip_beginner_15"				"Ekstra bevegelseshastighet fra støvler stables ikke. Uansett hvor mange bein helten din har, så trenger du kun ett par støvler."
+		"dota_tip_beginner_16"				"Du kan vise en fiendtlig helts oppakning og evner ved å velge den."
+		"dota_tip_beginner_17"				"Det er ofte lurt å ha med seg en Town Portal Scroll."
+		"dota_tip_beginner_18"				"Det er mange hemmelige veier skjult i trærne, som ofte kalles «juke-steder». Bruk disse for å slippe unna angrep, eller sette opp et bakholdsangrep."
+		"dota_tip_beginner_19"				"Bruk Dust of Appearance for å avsløre og hemme usynlige fiender i nærheten."
+		"dota_tip_beginner_20"				"En kraftrune dukker opp i elven hvert andre minutt etter seks minutter har gått i kampen, enten nord eller sør for midtstien."
+		"dota_tip_beginner_21"				"Hvis du har en Bottle, oppbevares runer når du plukker dem opp, slik at de kan brukes på et senere tidspunkt. Når du plukker opp dusør-, visdoms- eller vannruner, fylles også to ladninger i flasken, og kraftruner fyller den opp fullstendig."
+		"dota_tip_beginner_22"				"Du kan velge mellom mange spillerskapte bygg til helten ved å åpne alle veiledninger på venstre side i toppfeltet i butikken."
+		"dota_tip_beginner_25"				"Sjekk minikartet ofte! Det er mulig du er i ferd med å bli utsatt for et bakholdsangrep."
+		"dota_tip_beginner_26"				"Ofte er den beste måten å lære seg helters svakheter på å spille en kamp som dem."
+		"dota_tip_beginner_28"				"Å ødelegge fienders brakker gjør krypene til laget ditt i den aktuelle stien sterkere."
+		"dota_tip_beginner_29"				"Tårn kan se og angripe usynlige enheter."
+		"dota_tip_beginner_31"				"Vær oppmerksom på posisjonen din når du angriper kryp. Du kan ende opp med å skyve lagets kryp, og deg selv, inn i farlig territorium."
+		"dota_tip_beginner_33"				"Flere klipper har spesielle markeringer for å fremheve gode plasser å plassere Observer Wards."
+		"dota_tip_beginner_36"				"Du får raskt tilbake både helse og mana ved å være i nærheten av lagets fontene."
+		"dota_tip_beginner_40"				"Styrke øker maks helse og helseregenerasjon. Smidighet øker rustning og angrepshastighet. Intelligens øker maks mana, manaregenerasjon og magiresistens."
+		"dota_tip_beginner_41"				"Den hemmelige butikken er ikke egentlig hemmelig."
+		"dota_tip_beginner_42"				"En «carry» er en helt som langsomt blir sterkere og sterkere, og som er sterk mot slutten av kampen. En støttehelt («support») er ofte sterkest tidlig i kampen, mens de senere i kampen forsterker lagets slagkraft."
+		"dota_tip_beginner_43"				"Så lenge helten din er nær et drap når det finner sted, så mottar du erfaring."
+		"dota_tip_beginner_44"				"Du kan midlertidig forsterke bygningene og krypene dine slik at de ikke tar skade ved å bruke Glyph of Fortification. Bruk den med omhu – den har veldig lang nedkjøling."
+		"dota_tip_beginner_45"				"Du kan bruke Town Portal Scroll til å teleportere til en hvilken som helst alliert bygning. Med Boots of Travel kan du også teleportere til allierte enheter som ikke er helter, og med Boots of Travel 2 kan du teleportere til allierte helter også."
+		"dota_tip_beginner_47"				"Når du bruker en Tango, er helseregenerasjonen alltid den samme uavhengig av størrelsen på treet du bruker opp."
+		"dota_tip_beginner_48"				"Det finnes mange nettsteder og videoer som kan hjelpe deg med å finne ut mer om generell taktikk, lagoppsett og strategier for favorittheltene dine."
+ 		"dota_tip_beginner_49"				"Du kan gi en lagkamerat en av tangoene dine ved å bruke dem på lagkameraten. Men vær forsiktig med når du gjør dette, ettersom en delt tango forsvinner etter en stund hvis den ikke brukes opp."
+		"dota_tip_beginner_50"				"Du kan bruke Healing Salve og Clarity på lagkamerater. Spre kjærligheten!"
+		"dota_tip_beginner_53"				"Observer Wards og Sentry Wards kan ikke plasseres inni Roshans groper."
+		"dota_tip_beginner_54"				"En uavhentet kraftrune forsvinner etter to minutter."
+		"dota_tip_beginner_55"				"Å tjene gull ved å drepe kryp kalles ofte høsting («farming»)."
+		"dota_tip_beginner_56"				"Når en helt dør, mister den upålitelig gull og gir gull og XP til de som drepte den. Så du bør helst unngå å dø – og drep fiendtlige helter når det er mulig!"
+		"dota_tip_beginner_57"				"Det finnes områder for dusørruner i hver jungel. De dukker opp hvert 3. minutt fra og med minutt 0. Første gang de dukker opp, dukker de også opp på begge runestedene i elven."
+
+
+//INTERMEDIATE LOADSCREEN TIPS		(75+ games played)
+		"dota_tip_intermediate_1"			"2. tårn og oppover har flere mål mens Glyph er aktivert. Det angriper opptil fire ytterligere mål og prioriterer de nærmeste enhetene."
+		"dota_tip_intermediate_2"			"Gjenstander i ryggsekken eller forrådet kjøles ned med halv hastighet."
+		"dota_tip_intermediate_3"			"Etter at Roshan drepes, så gjenopplives han etter 8 til 11 minutter."
+		"dota_tip_intermediate_4"			"Nøytrale kryp skapes etter 1 minutt, og deretter ved hvert hele minutt."
+		"dota_tip_intermediate_6"			"Enkelte formler kan unngås ved å bruke Blink Dagger eller ved å bli usynlig."
+		"dota_tip_intermediate_8"			"Det er en fordel å stå ovenfor andre, ettersom en fiende kan bomme på angrep eller miste deg av syne i krigståken."
+		"dota_tip_intermediate_9"			"Ved bruk at Pipe of Insight får du og allierte en barriere mot magisk skade som reduserer formelskade fra fiendtlige helter."
+		"dota_tip_intermediate_10"			"Assault Cuirass øker rustningen og angrepshastigheten til lagkamerater i nærheten, og reduserer rustningen til fiender i nærheten."
+		"dota_tip_intermediate_11"			"Når et tårn angriper deg, kan du tilbakestille tårnets mål ved å gi ordre om å angripe et alliert kryp."
+		"dota_tip_intermediate_12"			"Hvis det er plassert en varde eller enhet nær en nøytral krypleir, kan det hindre skapningene i leiren fra å bli skapt når tiden runder minuttet."
+		"dota_tip_intermediate_13"			"Monkey King Bar gir deg treffsikkerhet, som ofte hindrer fiendtlige helter fra å unnvike angripene dine når du angriper i oppoverbakke."
+		"dota_tip_intermediate_14"			"Å dobbelttrykke på Blink Dagger gjør at du automatisk blinker mot fontenen til laget ditt."
+		"dota_tip_intermediate_15"			"Du kan angripe allierte kryp som er nær ved å dø. Bruk dette for å berøve gullet fiender får fra siste stikk."
+		"dota_tip_intermediate_16"			"Magisk skade kan reduseres av gjenstander som gir magisk resistens."
+		"dota_tip_intermediate_17"			"Fysisk skade kan reduseres av gjenstander som gir rustning."
+		"dota_tip_intermediate_18"			"Ren skade reduseres ikke av rustning eller magisk resistens."
+		"dota_tip_intermediate_20"			"Hvis du endrer det primære attributtet på Power Treads, kan det avbryte både usynlighet og kanaliserte formler, slik som Town Portal Scroll."
+		"dota_tip_intermediate_21"			"Å trekke ut alle de nøytrale krypene fra en leir nær minuttet gjør at leiren kan gjenoppstå. Bruk dette for å maksimere antallet kryp du dreper."
+		"dota_tip_intermediate_22"			"Å holde Ctrl lar deg bruke Bottle-regenerasjon på en alliert helt. Men runer på flaske kan ikke deles."
+		"dota_tip_intermediate_23"			"Sitter du fast i basen? Du kan fremdeles kjøpe fra den hemmelige butikken ved å sende kureren dit. Bare vær forsiktig så du ikke sender den rett inn i fiendens styrker!"
+		"dota_tip_intermediate_24"			"Når det ikke er noen fiendtlige kryp i nærheten, har tårn og brakker Backdoor Protection, som reduserer skaden de tar og lar dem gjenopprette egen helse."
+		"dota_tip_intermediate_25"			"Quelling Blade gjør kun ekstra skade på stikryp og nøytrale kryp."
+		"dota_tip_intermediate_26"			"Verdiene på skadeblokkeringen fra Vanguard eller Crimson Guard henviser til typen helt som bærer skjoldet, ikke den som angriper."
+		"dota_tip_intermediate_27"			"Dagon og Boots of Travel kan oppgraderes ved å kjøpe oppskriftene igjen."
+		"dota_tip_intermediate_28"			"Du kan gi en lagkamerat en enkelt varde ved å holde Ctrl, trykke på varden i oppakningen, og så trykke på lagkameraten."
+		"dota_tip_intermediate_29"			"Blink Dagger og Force Staff kan brukes for å klatre opp og ned klipper."
+		"dota_tip_intermediate_30"			"Bruk Quelling Blade eller Battle Fury til å hogge ned trær og lage en ny vei gjennom skogen."
+		"dota_tip_intermediate_31"			"Illusjoner og kryp fordriver ikke Smoke of Deceit. Kun fiendtlige helter og tårn kan gjøre dette."
+		"dota_tip_intermediate_33"			"Hold Alt for å vise ytterligere informasjon i beskrivelsene til flere evner og gjenstander."
+		"dota_tip_intermediate_34"			"Brakker avslører ikke usynlige enheter eller varder."
+		"dota_tip_intermediate_35"			"Tilbakekjøp har en nedkjøling på 8 minutter."
+		"dota_tip_intermediate_36"			"Styrke-, smidighets- og intelligenshelter får 1 angrepskade for hvert poeng i det primære attributtet. Allsidighetshelter får 0,7 angrepsskade for hvert poeng i alle attributter."
+		"dota_tip_intermediate_37"			"Fra og med andre dødsfall slipper Roshan Cheese når han drepes på Radiant-siden, og Roshan's Banner når han drepes på Dire-siden."
+		"dota_tip_intermediate_38"			"Illusjoner av helter gjør mye mindre skade på Roshan."
+		"dota_tip_intermediate_39"			"Husk å sjekke alliertes oppakninger før du kjøper en gjenstand med en auraeffekt. En lagkamerat kan allerede ha gjenstanden, og de fleste auraer stables ikke."
+		"dota_tip_intermediate_41"			"Lammelsesvarigheter fra ulike evner stables ikke. Du kan holde en fiende lammet lenger ved å bruke evner på riktig tidspunkt."
+		"dota_tip_intermediate_42"			"Teleporteringer fra Town Portal Scroll blir ikke avbrutt av stilninger eller tilbakeslag."
+		"dota_tip_intermediate_43"			"Jo nærmere et tårn er egen Ancient, jo mer gull gir det av å bli ødelagt."
+		"dota_tip_intermediate_45"			"Ved bruk av Soul Ring får du ekstra mana selv om du allerede har full mana."
+		"dota_tip_intermediate_46"			"Du kan ødelegge allierte tårn når de har under 10 % helse. Når et tårn berøves, får hvert lag halvparten av dusøren."
+		"dota_tip_intermediate_49"			"Fysisk skade, som utføres av vanlige angrep, enkelte helteevner og enkelte gjenstander, kan reduseres med rustning eller blokkeres ved å bli eterisk."
+		"dota_tip_intermediate_50"			"Magisk skade, som utføres av de fleste evnene til helter og gjenstander, kan reduseres med magisk resistens. Evner som gir svekkelsesimmunitet, kan betydelig øke magisk resistens."
+		"dota_tip_intermediate_51"			"Aktivering av Manta Style flytter deg fra den opprinnelige plasseringen din når illusjonene dukker opp. Bruk dette for å forvirre fiender!"
+		"dota_tip_intermediate_53"			"Bruk skjoldet til den flygende kureren fornuftig. Det har veldig lang nedkjøling."
+		"dota_tip_intermediate_54"			"Fjernkamphelter og -enheter har en pseudo-tilfeldig sjanse for å bomme når de angriper i oppoverbakke."
+		"dota_tip_intermediate_55"			"Roshan blir sterkere for hvert minutt. Han får ekstra helse, skade og rustning."
+		"dota_tip_intermediate_56"			"Dusørruner gir gull til hele laget uansett hvilken helt det er som plukker dem opp."
+		"dota_tip_intermediate_57"			"Enkelte evner kan gå gjennom svekkelsesimmunitet. Hver evnes interaksjon med svekkelsesimmunitet vises i evnens beskrivelse."
+		"dota_tip_intermediate_58"			"Vurder å spare gull til tilbakekjøp. Å kjøpe tilbake på rett tidspunkt kan gjøre et desperat forsvar til en rask snuoperasjon."
+		"dota_tip_intermediate_59"			"Illusjoner gjør 60 % mindre skade på fiendtlige bygninger."
+		"dota_tip_intermediate_60"			"Høsting i jungelen kan være farlig! Det kan være lurt å kjøpe og sette ut noen varder for å stoppe fienders forsøk på bakholdsangrep."
+		"dota_tip_intermediate_61"			"Hver helt når sin maksimale effektivitet på forskjellige tidspunkter i kampen."
+		"dota_tip_intermediate_62"			"Hvis alle fiendtlige helter har forsvunnet fra minikartet, er det mulig at de prøver å drepe Roshan eller setter opp et bakholdsangrep."
+		"dota_tip_intermediate_63"			"Prøv å sette ut varder nær målet laget ditt har lyst til å angripe."
+		"dota_tip_intermediate_64"			"Du blir en bedre carry-spiller av å lære å spille som en støttespiller. Du blir en bedre støttespiller av å lære å spille som en carry-spiller."
+		"dota_tip_intermediate_65"			"Scan avslører fiendtlige helter i et valgt område i en kort periode."
+		"dota_tip_intermediate_66"			"Du kan mate en mango til en alliert ved å ctrl-klikke på mangoen og så på den allierte."
+	 	"dota_tip_intermediate_67"			"Hvis en Divine Rapier slippes og ikke plukkes opp av noen fiendtlige helter, kan allierte plukke den opp, men kun den opprinnelige eieren kan bruke den. Når den først blir plukket opp av en fiende, kan alle fritt bruke den."
+		"dota_tip_intermediate_71"			"Å kanalisere en Town Portal Scroll tar lengre tid hvis en annen helt har teleportert seg til det samme området nylig."
+		"dota_tip_intermediate_72"			"Har laget ditt Urn of Shadows eller Vladmir's Offering? Det kan være mer effektivt å bygge gjenstander som hele laget kan dra nytte av."
+		"dota_tip_intermediate_73"			"Tangoer er dobbelt så effektive når de brukes for å spise et tre som ble laget av en Iron Branch."
+		"dota_tip_intermediate_74"			"Town Portal Scroll oppgradert med Boots of Travel avbrytes hvis destinasjonsenheten dør under kanalisering."
+		"dota_tip_intermediate_75"			"Å stable en nøytral leir gir deg en prosent av dusøren når krypene drepes av allierte."
+		"dota_tip_intermediate_76"			"Fra tredje dødsfall slipper Roshan Refresher Shard på Radiant-siden og Aghanim's Blessing på Dire-siden."
+		"dota_tip_intermediate_77"			"Aghanim's Shard oppgraderer en av heltens evner direkte uten å bruke en gjenstandsplass."
+		"dota_tip_intermediate_78"			"Aghanim's Shard kan ikke kjøpes før det har gått 15 minutter av kampen."
+		"dota_tip_intermediate_79"			"Nedkjølingen til Glyph of Fortification tilbakestilles når det første tårnet på hvert nivå ødelegges (unntatt nivå 4)."
+
+//ADVANCED LOADSCREEN TIPS		(150+ games played)
+		"dota_tip_advanced_1"				"Pålitelig gull tjenes fra passiv gull og aktivering av dusørruner. Alt annet er upålitelig gull, som kan mistes når du dør."
+		"dota_tip_advanced_2"				"Du kan trekke ut skapningene i den nøytrale krypleiren nær lagets trygge sti og ta dem med inn i stikrypene."
+		"dota_tip_advanced_3"				"Flere gjenstander kan deles opp til komponentene ved å høyreklikke på dem i oppakningen og velge «Demonter». Bruk disse komponentene om igjen til nye gjenstander!"
+		"dota_tip_advanced_4"				"Bruk kontrollgrupper til å gi ordre til ulike sett av enheter du kontrollerer. For å angi en kontrollgruppe må du velge en enhet eller enheter, holde Ctrl og trykke et tall. For å velge den kontrollgruppen trykker du da på det samme tallet."
+		"dota_tip_advanced_5"				"Hvis du er i ferd med å dø, kan du trykke på tasten for hurtigkjøp for å bruke gullet ditt før det forsvinner!"
+		"dota_tip_advanced_6"				"Å bytte det primære attributtet på Power Treads til intelligens kan gi deg litt ekstra mana."
+		"dota_tip_advanced_7"				"Hvis du har en Armlet of Mordiggian, kan du slå på Unholy Strength for å midlertidig få økt helse. Den tillagte helsen fjernes når du slår av Unholy Strength, ned til minst 1 helse."
+		"dota_tip_advanced_8"				"Når du angriper med en Desolator, får også det første angrepet fordelen av målets reduserte rustning."
+		"dota_tip_advanced_9"				"Ved aktivering av Manta Style fjernes en rekke svekkelser, og det gjør at enkelte prosjektiler som allerede er i luften, kommer til å bomme."
+		"dota_tip_advanced_10"				"Bruk av tilbakekjøp legger til 25 sekunder på spillerens neste dødsfall."
+		"dota_tip_advanced_11"				"Cheese og Refresher Shard kan begge selges for 500 gull."
+		"dota_tip_advanced_17"				"Hvis du er innenfor rekkevidde av flere auraer som har samme type effekt, så er det kun den kraftigste auraen som er aktiv."
+		"dota_tip_advanced_18"				"Hvis du vet at du er i ferd med å dø, vurder å ta turen innom en nøytral krypleir eller til Roshan, og la dem drepe deg istedenfor. Dette gjør at fiendelaget ikke får gull og erfaring fra å drepe deg."
+		"dota_tip_advanced_19"				"Nærkampbrakker regenerer 5 helse i sekundet. Fjernkampbrakker regenerer ikke."
+		"dota_tip_advanced_23"				"Shadow Blade kan fremdeles aktiveres under kanalisering av Town Portal Scroll eller under kanalisering av formler."
+		"dota_tip_advanced_24"				"Å bytte Power Treads til smidighet mens du helbredes gjør at helsen og manaen gjenopprettes litt raskere. Bare husk å bytte tilbake igjen!"
+		"dota_tip_advanced_25"				"Aegis of the Immortal kan angripes og berøves."
+		"dota_tip_advanced_26"				"Illusjoner gir delte auraer fra opphavshelten til enheter i nærheten."
+		"dota_tip_advanced_28"				"Det er ikke nødvendig å ødelegge fiendelagets brakker for å skade tårnene nær Ancient-en. Det er valgfritt å ødelegge brakker."
+		"dota_tip_advanced_30"				"Virkningene fra Dust of Appearance kan fordrives, men påføres på nytt hvis enheten går inn i området igjen."
+		"dota_tip_advanced_31"				"Runer kan angripes og berøves."
+		"dota_tip_advanced_32"				"Kløyveskade er fysisk skade, som reduseres av rustning."
+		"dota_tip_advanced_33"				"De ytre tårnene har ikke Backdoor Protection."
+		"dota_tip_advanced_34"				"De 2. tårnene mister Backdoor Protection hvis et fiendtlig stikryp er i nærheten. Disse tårnene har sin egen Backdoor Protection."
+		"dota_tip_advanced_35"				"Alle 3. og 4. tårn, brakker og Ancienten deler Backdoor Protection, som deaktiveres når et fiendtlig stikryp er i nærheten av basen."
+		"dota_tip_advanced_36"				"Backdoor Protection fortsetter å være deaktivert i en liten stund selv etter at alle fiendtlige kryp i området har dødd."
+		"dota_tip_advanced_37"				"Blade Mail returnerer samme type skade som ble mottatt."
+		"dota_tip_advanced_39"				"Eye of Skadi går gjennom svekkelsesimmunitet og kan ikke fordrives."
+		"dota_tip_advanced_40"				"Husk å alltid ha en Town Portal Scroll på deg."
+		"dota_tip_advanced_42"				"Enkelte nøytrale kryp bruker evnene sine når det er mange enheter i nærheten."
+		"dota_tip_advanced_43"				"Ancient-kryp har høy magiresistens. Det kan være mye mindre effektivt å drepe dem med formler sammenlignet med andre nøytrale kryp."
+		"dota_tip_advanced_44"				"Vanlige angrep har en ettersvinganimasjon som spilles av etter angrepspunktet. Eventuelle ordre avbryter denne animasjonen, og dette kan brukes for å følge etter et mål raskere."
+		"dota_tip_advanced_45"				"En fiendtlig helt får kun ladninger til Magic Wand hvis de kan se deg når du bruker en formel. Du kan bruke dette for å finne fiendtlige varder."
+		"dota_tip_advanced_46"				"Shiva's Guard gir flygende sikt i en radius på 800 rundt bæreren ved bruk, som gjør den til et nyttig verktøy til å speide i oppoverbakke eller forbi hindringer."
+		"dota_tip_advanced_48"				"Hvis du angriper en helt mens du er minst 500 enheter unna nærkampkryp, kommer de ikke til å angripe deg."
+		
+
+//HERO-SPECIFIC TIPS (see them if the hero is in the game)
+		"dota_tip_hero_abaddon_1"			"Abaddons Borrowed Time kan fremdeles aktiveres manuelt når Abaddon er påvirket av avbrudd."
+		"dota_tip_hero_abaddon_2"			"Abaddons Aphotic Shield gjør alltid full skade i et område rundt den beskyttede allierte når evnen utløper, uavhengig av hvor mye skade som ble absorbert."
+		"dota_tip_hero_abaddon_3"			"Abaddon kan bruke evnen Aphotic Shield for å fjerne de fleste svekkelser og hemminger fra allierte helter."
+		"dota_tip_hero_abaddon_4"			"Abaddons Curse of Avernus fungerer på bygninger, noe som gjør ham veldig god på beleiring."
+		"dota_tip_hero_abaddon_5"			"Abaddons Borrowed Time kan aktiveres manuelt selv når han er hemmet eller sover, noe som fjerner de fleste svekkelser."
+		"dota_tip_hero_abaddon_6"			"Abaddon kan dø før Borrowed Time aktiveres automatisk hvis skadeforekomsten som får ham under aktiveringsterskelen, også dreper ham."
+		"dota_tip_hero_abaddon_7"			"Bruk av lammelser eller uskadeliggjøringer med lav skade, slik som Eul's Scepter, er en effektiv måte å hindre Abaddon fra å ta skade under Borrowed Time."
+		"dota_tip_hero_abaddon_8"			"Abaddons Aphotic Shield skader ikke enheter Abaddon ikke kan se. Du kan bruke krigståken eller usynlighet for å unngå skade."
+
+		"dota_tip_hero_abyssal_underlord_1"	"Underlords Firestorm gjør en prosent av målets maks helse som magisk skade med hver bølge. Dette betyr at den er veldig effektiv mot helter med høy helse."
+
+		"dota_tip_hero_alchemist_1"			"Gull som Alchemist tjener gjennom Greevil's Greed, er upålitelig."
+		"dota_tip_hero_alchemist_2"			"Acid Spray gjør fysisk skade og reduserer rustning, noe som gjør det til et effektivt verktøy for å drepe ancient-kryp eller Roshan."
+		"dota_tip_hero_alchemist_3"			"Med riktig timing kan lammelsen fra Alchemists Unstable Concoction unngås ved å bruke Manta Style eller Eul's Scepter – til og med av Alchemist selv."
+		"dota_tip_hero_alchemist_4"			"Hvis Alchemist stilnes eller ikke har en fiendtlig helt å sikte på når Unstable Concoction når sitt fulle potensiale, lammer Alchemist seg selv i stedet."
+		"dota_tip_hero_alchemist_5"			"Bonusen for dusørruner fra Alchemists Greevil's Greed gjelder kun Alchemist selv. Det har ingenting å si hvem som plukker opp selve runen."
+		"dota_tip_hero_alchemist_6"			"Alchemists Chemical Rage gir ham mye ekstra helseregenerasjon, som kan reduseres av Spirit Vessel, Orb of Corrosion, Shiva's Guard, Eye of Skadi eller Ancient Apparitions Ice Blast."
+
+
+		"dota_tip_hero_ancient_apparition_1" "Ancient Apparitions Ice Blast hindrer helbredelseseffekter på enheter som påvirkes. Hvis et offers helse faller under en kritisk terskel, blir enheten drept."
+
+		"dota_tip_hero_arc_warden_1"		"Arc Wardens gule Magnetic Field gir unnvikelse til allierte innenfor feltet mot angrep som kommer fra utenfor feltet, deriblant tårnangrep. Tempest Doubles blå Magnetic Field gir ingen slik beskyttelse."
+		"dota_tip_hero_arc_warden_2"		"Arc Wardens gule Magnetic Field gir også unnvikelse til allierte bygninger mot angrep som kommer fra utenfor feltet."
+		"dota_tip_hero_arc_warden_4"		"Skaden fra Arc Wardens Flux kan unnvikes ved å stå nær en alliert enhet, men hemmingen blir værende."
+
+		"dota_tip_hero_axe_1"				"Axes Battle Hunger kan fordrives ved å få siste stikk eller berøve en enhet."
+		"dota_tip_hero_axe_2"				"Axes Berserker's Call går gjennom svekkelsesimmunitet, så det er en effektiv måte å få tak i fiender som har en Black King Bar."
+		"dota_tip_hero_axe_4"				"Battle Hunger hemmer kun fiender så lenge de ikke er vendt mot Axe."
+		"dota_tip_hero_axe_5"				"Axes illusjoner, for eksempel fra illusjonsrunen eller Manta Style, har Counter Helix med full styrke."
+		"dota_tip_hero_axe_6"				"Axes Culling Blade kan drepe mål selv gjennom Dazzles Shallow Grave eller Oracles False Promise, men går ikke gjennom Linken's Sphere."
+		"dota_tip_hero_axe_7"				"Axes Culling Blade kan brukes for å drepe kurerer."
+
+		"dota_tip_hero_bane_1"				"Du kan frigjøre en alliert fra marerittet til Banes Nightmare ved å angripe dem, men det gir deg marerittet istedenfor."
+		"dota_tip_hero_bane_2"				"Bane kan avbryte Nightmare selv om han også er påvirket av evnen, men han kan ikke det hvis han er stilnet."
+		"dota_tip_hero_bane_3"				"Banes Nightmare gjør målet udødelig i en veldig kort periode ved bruk, og kan brukes for å redusere innkommende skade på allierte."
+		"dota_tip_hero_bane_4"				"Bane har mange evner med enkeltmål, som gjør Linken's Sphere og Lotus Orb veldig effektive mot ham."
+
+		"dota_tip_hero_batrider_1"			"Batriders Sticky Napalm gjør ekstra magisk skade på offeret når Batrider angriper. Sticky Napalm utløses ikke når andre enheter angriper målet."
+
+		"dota_tip_hero_beastmaster_1"		"Beastmasters Primal Roar lammer svekkelsesimmune mål."
+		"dota_tip_hero_beastmaster_2"		"Beastmasters Wild Axes kan brukes for å hogge ned trær og avsløre skjulte fiender."
+		"dota_tip_hero_beastmaster_3"		"Beastmasters Inner Beast påvirker allierte helter, samt kryp og tilkalte enheter. Enheter som skapes med Helm of the Overlord eller Helm of the Dominator, får veldig store fordeler fra denne auraen."
+		"dota_tip_hero_beastmaster_4"		"Linken's Sphere blokkerer Beastmasters Primal Roar fullstendig for hovedmålet."
+		"dota_tip_hero_beastmaster_5"		"Tilkalte enheter fra Beastmasters Call of the Wild er veldig nyttige til å speide og plage fiendtlige helter, men de gir en betydelig mengde gull og erfaring hvis de drepes."
+		"dota_tip_hero_beastmaster_6"		"En sterk fordrivelse, som Aeon Disk eller Abaddons Aphotic Shield, kan brukes for å fjerne lammelsen fra Beastmasters Primal Roar."
+
+		"dota_tip_hero_bloodseeker_1"		"Det er mulig å bruke en Town Portal Scroll mens man er påvirket av Bloodseekers Rupture uten å ta ytterligere skade."
+		"dota_tip_hero_bloodseeker_2"		"Vær forsiktig når du er skadet; Bloodseekers Thirst gir ham sikt og klarsyn på fiender som har under 25 % helse."
+		"dota_tip_hero_bloodseeker_4"		"Bloodseekers Bloodrage gir formelstyrkelse og ekstra angrepshastighet. Angrepshastigheten halveres ved bruk på allierte."
+		"dota_tip_hero_bloodseeker_5"		"Linken's Sphere blokkerer Bloodseekers Rupture, så det kan være en nyttig investering på visse helter i møte med Bloodseeker."
+		"dota_tip_hero_bloodseeker_6"		"Bloodseekers Bloodrage øker ladninger på Magic Stick eller Magic Wand, så de kan være veldig nyttige mot ham tidlig i kampen."
+		"dota_tip_hero_bloodseeker_7"		"Bloodseekers Thirst gjør det mulig for ham å overskride den vanlige maksgrensen på 550 for bevegelseshastighet."
+		"dota_tip_hero_bloodseeker_8"		"Hvis du har nok helse, kan Blade Mail være veldig effektiv for å vende Rupture mot Bloodseeker."
+
+		"dota_tip_hero_bounty_hunter_1"		"Allierte får kun ekstra gull fra Bounty Hunters Track hvis de er innenfor en rekkevidde på 1200 av offeret når det dør. Bounty Hunter selv har ingen begrensning på rekkevidde for ekstra gull fra Track og får bonusen selv om han er død."
+		"dota_tip_hero_bounty_hunter_2"		"Alt+trykk på svekkelsesikonet til Track kunngjør hvor mye gull målet har."
+
+		"dota_tip_hero_brewmaster_1"		"Når Brewmasters Primal Split utløper, dukker Brewmaster opp igjen ved den første av sine overlevende elementer i følgende rekkefølge: Earth, Storm, Fire og Void."
+		"dota_tip_hero_brewmaster_4"		"Under Primal Split følger alle auraene til Brewmaster den første av sine levende elementer i følgende rekkefølge: Earth, Storm, Fire og Void."
+		"dota_tip_hero_brewmaster_6"		"Brewmasters Storm Brewling kan bruke Dispel Magic for å avbryte egen Cyclone."
+
+		"dota_tip_hero_bristleback_1"		"Når Bristleback er påvirket av avbrudd, er evnen Bristleback deaktivert, noe som betydelig reduserer overlevelsesevnen hans."
+		"dota_tip_hero_bristleback_3"		"Bristleback kan bruke Viscous Nasal Goo flere ganger på samme fiender for å redusere rustning og angrepshastighet kraftig. Dette gjør det til en effektiv evne når man angriper Roshan."
+		"dota_tip_hero_bristleback_4"		"Hvis Bristleback forhindres i å hele tiden bruke Quill Spray, for eksempel ved at han er stilnet, reduseres skaden Bristleback kan gjøre betydelig."
+		"dota_tip_hero_bristleback_5"		"Bristlebacks evner må ikke treffe noen fiendtlige enheter for å utløse Warpath."
+		"dota_tip_hero_bristleback_6"		"Skaden fra Bristlebacks Quill Spray er fysisk, og kan reduseres med rustning."
+		"dota_tip_hero_bristleback_7"		"Bristleback liker å bruke mange formler, så Magic Stick eller Magic Wand er veldig effektiv når de brukes mot ham."
+
+		"dota_tip_hero_broodmother_1"		"Angrepene til Broodmothers Spiderlings gjør at de valgte enhetene skaper en Spiderite i øyeblikket de dør."
+
+		"dota_tip_hero_centaur_1"			"Centaur Warrunners Retaliate speiler innkommende skade tilbake som fysisk skade. Dette reflekterer også skade fra tårnangrep."
+		"dota_tip_hero_centaur_2"			"Centaur Warrunners Double Edge gjør magisk skade som kan reduseres av magiresistens hos målene, samt Centaur Warrunner selv."
+		"dota_tip_hero_centaur_3"			"Centaur Warrunners Stampede er global og kan brukes for å hjelpe allierte med å angripe eller komme seg unna selv om han er langt unna."
+		"dota_tip_hero_centaur_4"			"Rod of Atos eller Eul's Scepter er en god måte å stoppe Centaur Warrunners allierte fra å komme seg unna under Stampede."
+		"dota_tip_hero_centaur_5"			"Centaur Warrunner har mye helse, så evner som gjør skade basert på en fiendes helse, slik som Lifestealers Feast eller Necrophos' Heartstopper Aura, er veldig effektive."
+
+		"dota_tip_hero_chaos_knight_1" 		"Chaos Knights Phantasm gjør ham usårlig i et lite øyeblikk, noe som lar ham avlede prosjektiler og unngå uskadeliggjøringer."
+		"dota_tip_hero_chaos_knight_2"		"Prosjektilet til Chaos Knights Chaos Bolt beveger seg sakte og kan avledes med et velberegnet bruk av Blink eller Eul's Scepter."
+		"dota_tip_hero_chaos_knight_3"		"Hvis Chaos Knight bruker Armlet of Mordiggian før han bruker Phantasm, får kopiene også ekstra skade og helse."
+		"dota_tip_hero_chaos_knight_5"		"Den visuelle effekten til Chaos Knights Reality Rift dukker opp umiddelbart etter bruk, men den kan allikevel forhindres ved å blinke bort eller forsvinne inn i krigståken."
+		"dota_tip_hero_chaos_knight_6"		"Det meste av skaden fra Chaos Knight er fysisk, og den kan dermed reduseres med Ghost Scepter og gjenstander som gir rustning."
+		"dota_tip_hero_chaos_knight_7"		"Chaos Knights Reality Rift samler alle illusjonene han har i nærheten, gjelder også dem fra Manta Style og illusjonsruner, samt dem fra andre helter skapt med Aghanim's Scepter."
+
+		"dota_tip_hero_chen_1"				"Chens Penitence øker angrepshastigheten til alle allierte enheter som angriper den valgte enheten."
+
+		"dota_tip_hero_crystal_maiden_1"	"Crystal Maidens Frostbite, som andre rotfestelser, kan brukes til å avbryte en fiende som kanaliserer Town Portal Scroll."
+		"dota_tip_hero_crystal_maiden_2"	"Crystal Maidens Crystal Nova gir litt sikt på bakken der den brukes, som kan være nyttig for å speide i skjulte områder eller etter fiender som prøver å løpe vekk mellom trærne."
+		"dota_tip_hero_crystal_maiden_3"	"Som de fleste rotfestelser kan Crystal Maidens Frostbite motvirkes ved hjelp av fordrivelser fra gjenstander som Eul's Scepter eller Manta Style."
+		"dota_tip_hero_crystal_maiden_4"	"Crystal Maidens Freezing Field oppgradert av Aghanim's Scepter bruker Frostbite på fiender som oppholder seg for lenge i området."
+
+		"dota_tip_hero_dark_seer_1"			"Dark Seers Ion Shell gjør skade på fiender rundt målet, selv om de ikke er synlige."
+
+		"dota_tip_hero_dark_willow_1"		"Når Dark Willow er påvirket av Shadow Realm, kan hun fremdeles bli påvirket av evner med et virkeområde."
+
+		"dota_tip_hero_dazzle_1"			"Dazzles Shallow Grave forhindrer målet i å dø så lenge evnen varer uansett skademengde fra alle slags kilder, men evner med øyeblikkelig drapseffekt kan fremdeles drepe en enhet gjennom Shallow Grave."
+
+		"dota_tip_hero_death_prophet_1"		"Skaden fra Death Prophets Exorcism-ånder er fysisk skade og kan reduseres av rustning."
+
+		"dota_tip_hero_disruptor_1"			"Disruptors Thunder Strike pulserer hvert andre sekund. Glimpse flytter målet fire sekunder tilbake i tid. Du kan bruke Thunder Strike til å beregne en Glimpse."
+
+		"dota_tip_hero_doom_bringer_1" 		"Dooms evne Doom gjør ren skade, som ikke kan reduseres av rustning eller magiresistens."
+		"dota_tip_hero_doom_bringer_2" 		"Devour gir ikke bare Doom den valgte enhetens aktive evne, men også enhetens passive evner og auraer, noe som gjør Doom uunnværlig i lagkamper."
+		"dota_tip_hero_doom_bringer_3" 		"Linken's Sphere er en god måte å blokkere Dooms Doom. Doom kan motvirke dette ved å sluke et nøytralt kryp med en målrettet evne, bygge en aktiv gjenstand eller ved å bruke Aghanim's Scepter-oppgraderingen."
+		"dota_tip_hero_doom_bringer_4" 		"Scorched Earth skader fiender i nærheten og gir Doom økt bevegelseshastighet."
+		"dota_tip_hero_doom_bringer_6" 		"Talentoppgraderingen av Doom gir den avbrudd, som gjør den veldig effektiv mot fiender som har sterke passive evner, slik som Phantom Assassin og Spirit Breaker."
+
+		"dota_tip_hero_dragon_knight_1"		"Dragon Knights Corrosive Breath i drageform påvirker bygninger i tillegg til enheter, noe som gjør den effektiv ved beleiring."
+		"dota_tip_hero_dragon_knight_2" 	"Skadereduksjonen til Dragon Knights Breathe Fire er veldig nyttig når han og motstandere utveksler angrep, eller for å gjøre det vanskeligere for fienden å ta siste stikket på kryp."
+		"dota_tip_hero_dragon_knight_3" 	"Mye av Dragon Knights overlevelsesevne kommer fra den passive evnen Dragon Blood, som gir ham ekstra helseregenerasjon og rustning. Det gjør ham imidlertid utsatt mot avbrudd fra evner som Vipers Viper Strike eller gjenstanden Silver Edge."
+		"dota_tip_hero_dragon_knight_4"		"I drageform blir Dragon Knight en fjernkamphelt, som gjør at han drar nytte av gjenstander som Hurricane Pike, men mister bonusene fra nærkampgjenstander som Echo Sabre."
+		"dota_tip_hero_dragon_knight_5"		"Dragon Knight er avhengig av å kunne komme nær målene sine for å være effektiv. Evner og gjenstander som hemmer ham, som Shiva's Guard og Rod of Atos, er veldig effektive til å holde ham på avstand."
+		"dota_tip_hero_dragon_knight_6"		"Dragon Knights høye rustningsverdi gjør ham veldig motstandsdyktig mot fysisk skade, men den kan reduseres av gjenstander som Assault Cuirass og Medallion of Courage."
+
+		"dota_tip_hero_drow_ranger_1"		"Drow Rangers Frost Arrows tiltrekker seg ikke krypaggro hvis den brukes manuelt istedenfor på automatisk bruk. Du kan bruke dette til å forstyrre fiender i stien."
+		"dota_tip_hero_drow_ranger_2"		"Drow Rangers Gust uskadeliggjør ikke fiendtlige enheter eller avbryter kanalisering av gjenstander som Town Portal Scroll. Fiendtlige helter som dyttes unna av Gust, kan fremdeles bruke gjenstander og angripe."
+		"dota_tip_hero_drow_ranger_4"		"Drow Rangers oppgradering fra Aghanim's Scepter fyller Frost Arrows og Multishot med Hypothermia, som reduserer målets helseregenerasjon og gjør at de tar ekstra skade fra Frost Arrows for hver stabel."
+		"dota_tip_hero_drow_ranger_5"		"Drow Ranger er avhengig av å holde avstand fra fiender, noe som gjør henne sårbar mot Blink Dagger eller Shadow Blade."
+
+		"dota_tip_hero_earth_spirit_2"		"Earth Spirit kan bruke gjenstander og evner under Rolling Boulder, som gjør at han kan legge opp til fremtidige angrep."
+		"dota_tip_hero_earth_spirit_3"		"Å stå foran Earth Spirit når han bruker Rolling Boulder, er en god måte å hindre ham i å rømme."
+		"dota_tip_hero_earth_spirit_4"		"Med god beregning kan Earth Spirit bruke samme Stone Remnant til å hemme, stilne og lamme en fiende, slik at han kan spare andre til senere bruk."
+		"dota_tip_hero_earth_spirit_5"		"Bruk av Boulder Smash på allierte kan være en effektiv måte å få dem i sikkerhet eller flytte dem til en fordelaktig posisjon."
+		"dota_tip_hero_earth_spirit_6"		"Oppgraderingen av Geomagnetic Grip med Aghanim's Shard gjør det enkelt for Earth Spirit å redde allierte som angripes av fiender."
+		"dota_tip_hero_earth_spirit_7"		"Enchant Remnant gjør målet midlertidig usårlig, så Earth Spirit kan bruke den til å redde allierte som er i fare."
+
+		"dota_tip_hero_earthshaker_1"		"Earthshakers Echo Slam gjør mer skade når flere fiendtlige enheter er i virkeområdet. Prøv å spre dere når dere møter Earthshaker."
+		"dota_tip_hero_earthshaker_2"		"Earthshakers Fissure flytter enheter til den ene eller andre siden når de treffes, som gjør at han kan flytte allierte eller fiender til mer fordelaktige posisjoner."
+		"dota_tip_hero_earthshaker_3"		"Siden Earthshakers ekstra skade fra Enchant Totem varer lenger enn nedkjølingen til selve formelen, kan han gjøre enorm fysisk skade hvis den brukes før og under slåsskampen."
+		"dota_tip_hero_earthshaker_4"		"Earthshaker er veldig avhengig av gjenstander som Blink Dagger og Force Staff for å komme seg inn i en god posisjon til å bruke formlene sine. Det er viktig å begrense mobiliteten hans for å redusere skaden han gjør."
+		"dota_tip_hero_earthshaker_5"		"Earthshakers Enchant Totem brukes ikke opp hvis angrepet bommer."
+		"dota_tip_hero_earthshaker_6"		"I motsetning til Earthshakers andre evner har ikke Echo Slam noen brukstid, som gjør den fin til å begynne slåsskamper med fiender før de kan reagere med defensive gjenstander."
+		"dota_tip_hero_earthshaker_7"		"Den lange rekkevidden til Fissure er fin for å blokkere fiendens rømningsvei eller til og med hindre allierte kryp fra å gå videre i en liten stund."
+		"dota_tip_hero_earthshaker_8"		"Mye av Earthshakers nytte kommer fra den enorme mengden med uskadeliggjøring han kan bidra med. Svekkelsesimmunitet fra en gjenstand som Black King Bar er viktig for å redusere effektiviteten hans."
+
+		"dota_tip_hero_elder_titan_1"		"Elder Titans Natural Order reduserer fienders rustning når de er i nærheten av ham og magiresistens når de er i nærheten av Elder Titans ånd."
+
+		"dota_tip_hero_ember_spirit_1" 		"Ember Spirits Searing Chains kan avbryte kanaliseringen av Town Portal Scroll, men avbryter ikke andre kanaliserte evner."
+
+		"dota_tip_hero_enchantress_1"		"Enchantress' svekkelse fra Untouchable kan reduseres ved å raskt angripe et annet mål under angrepets ettersving."
+		"dota_tip_hero_enchantress_2"		"Enchantress' Nature's Attendants velger tilfeldige skadde allierte enheter i nærheten. Den er mye mindre effektiv når den brukes nær skadde allierte kryp."
+		"dota_tip_hero_enchantress_3"		"Enchantress' Enchant påfører målet en grunnleggende fordrivelse."
+
+		"dota_tip_hero_enigma_1"			"Enigmas Midnight Pulse gjør skade basert på en prosentdel av målets gjeldende helse."
+
+		"dota_tip_hero_faceless_void_1"		"Faceless Voids Time Walk avleder ikke prosjektiler. Time Walk er en helbredende effekt og kan forhindres av Ancient Apparitions Ice Blast eller reduseres med Spirit Vessel."
+
+		"dota_tip_hero_furion_1"			"Nature's Prophets trær fra Sprout kan hogges ned med Quelling Blade eller Battle Fury, eller fortæres med en Tango."
+
+		"dota_tip_hero_gyrocopter_1"		"Gyrocopters Homing Missile kan spore usynlige mål, men gir ikke klarsyn."
+
+		"dota_tip_hero_huskar_1"			"Huskars Burning Spears gjør ekstra magisk skade, eller ren skade hvis tilhørende talent velges. Burning Spears påvirker ikke bygninger."
+		"dota_tip_hero_huskar_2"			"Huskars Life Break påfører en grunnleggende fordrivelse og gir svekkelsesimmunitet under hoppet."
+
+		"dota_tip_hero_invoker_1"			"Invokers Sun Strike gjør ren skade, som ikke kan reduseres med magiresistens eller svekkelsesimmunitet."
+
+		"dota_tip_hero_jakiro_1"			"Jakiros Liquid Fire påvirker bygninger, noe som gjør den effektiv ved beleiring."
+
+		"dota_tip_hero_juggernaut_1"		"Juggernaut hopper til tilfeldige mål i nærheten under Omnislash. Isolerte fiender tar mer skade fra den enn fiender som er omringet av sine allierte."
+		"dota_tip_hero_juggernaut_2"		"Juggernauts Blade Fury kan brukes til å gi svekkelsesimmunitet før eller under kanalisering av en Town Portal Scroll."
+		"dota_tip_hero_juggernaut_3"		"Juggernaut kan bruke Blink Dagger før Omnislash for å nå mål som ellers ikke kunne nås."
+		"dota_tip_hero_juggernaut_4"		"Juggernauts Omnislash gjør fysisk skade som kan fullstendig oppheves ved å bruke Ghost Scepter eller Eul's Scepter."
+		"dota_tip_hero_juggernaut_5"		"Juggernauts vanlige angrep gjør ikke skade mens Blade Fury er aktiv, bortsett fra på bygninger og varder."
+		"dota_tip_hero_juggernaut_6"		"Healing Ward er svært effektiv til å helbrede Juggernauts lag og kan være et prioritert mål for fiender under lagkamper."
+
+		"dota_tip_hero_keeper_of_the_light_1" "Når Keeper of the Light er i Spirit Form, kan Illuminate helbrede allierte uansett om det er dag eller natt."
+
+		"dota_tip_hero_kunkka_1" 			"Aeon Disk er ofte en god gjenstand å bygge i sluttfasen når man møter en Kunkka som har mange skadegjenstander."
+
+		"dota_tip_hero_legion_commander_1"	"Selv om Legion Commanders Duel går gjennom svekkelsesimmuniteten fra Black King Bar, kan evnen blokkeres med Linken's Sphere."
+
+		"dota_tip_hero_leshrac_1"			"Leshracs Diabolic Edict kan treffe bygninger, noe som gjør den effektiv ved beleiring."
+
+		"dota_tip_hero_lich_1"				"Når Lich kanaliserer Sinister Gaze, går den valgte enheten sakte mot Lich. Hvis den brukes på et kryp, gjør den middels skade per sekund på det."
+		"dota_tip_hero_lich_2"				"Lichs Frost Shield kan brukes på allierte bygninger."
+
+		"dota_tip_hero_life_stealer_1" 		"Lifestealers Open Wounds fra Shard gir allierte helseran mot offeret med alle slags angrep, deriblant formler."
+
+		"dota_tip_hero_lion_1"				"Lions Hex og Mana Drain ødelegger øyeblikkelig svake illusjoner."
+
+		"dota_tip_hero_lone_druid_1"		"Lone Druids Spirit Bear gjør ekstra skade på bygninger og er derfor effektiv ved beleiring."
+		"dota_tip_hero_lone_druid_2"		"Lone Druids Spirit Bear kan plukke opp runer. Lone Druid trenger heller ikke å være i nærheten."
+
+		"dota_tip_hero_luna_1"				"Lunas Eclipse fortsetter i hele varigheten selv om Luna stilnes eller lammes. Eclipse stopper hvis Luna dør."
+
+		"dota_tip_hero_lycan_2"				"Lycans Shapeshift gir bonuser i form av kritisk skade og bevegelseshastighet til alle enheter han kontrollerer."
+
+		"dota_tip_hero_magnataur_1"			"Magnus' Empower gir målet kløyving, som gjør fysiske skade i et område rundt hvert angrep."
+
+		"dota_tip_hero_medusa_1"			"Medusas Mystic Snake får økt skade og gjenopprettet mana for hvert påfølgende hopp. Gjenopprettet mana er en prosentdel fiendenes maks mana."
+
+		"dota_tip_hero_meepo_1"				"Meepo får XP eller gull når en av klonene hans får XP eller gull. Meepo dør når en av klonene hans dør."
+
+		"dota_tip_hero_mirana_1"			"Miranas Sacred Arrow flyr gjennom allierte enheter."
+		"dota_tip_hero_mirana_2"			"Med Miranas Moonlight Shadow og Smoke of Deceit kan et lag bevege seg usynlig rundt på kartet i en god stund."
+		"dota_tip_hero_mirana_3"			"Miranas Sacred Arrow har en betydelig reisetid. En lagkamerat som kan tilrettelegge med en uskadeliggjøring først, øker Miranas mulighet til å treffe fiendtlige helter."
+		"dota_tip_hero_mirana_4"			"Miranas Sacred Arrow kan være veldig nyttig for å speide i mørke områder av kartet."
+		"dota_tip_hero_mirana_5"			"Miranas Moonlight Shadow kan brukes offensivt til å sette opp snikangrep mot fiendelaget."
+		"dota_tip_hero_mirana_6"			"Å ha med seg Dust of Appearance eller Sentry Ward kan bety forskjellen på tap og seier når man møter et lag som har Mirana."
+		"dota_tip_hero_mirana_7"			"Evner med sterke fordrivelser, slik som Abaddons Aphotic Shield, er gode til å fjerne en lang lammelse fra en alliert forårsaket av Miranas Sacred Arrow."
+
+		"dota_tip_hero_monkey_king_1"		"Monkey Kings Boundless Strike ignorerer unnvikelse, så den kan ikke bomme."
+
+		"dota_tip_hero_morphling_1"			"Stilning kan være en effektiv måte å få kontroll på en sleip Morphling."
+		"dota_tip_hero_morphling_2"			"Morphling kan bruke evner og gjenstander, slik som Town Portal Scrolls, under Waveform."
+		"dota_tip_hero_morphling_5"			"Evner som avbryter helbredelse, slik som Ancient Apparitions Ice Blast, hindrer Morphling fra å få helse når han skifter attributter."
+		"dota_tip_hero_morphling_6"			"Morphling fortsetter å endre attributter selv om han uskadeliggjøres eller stilnes."
+
+		"dota_tip_hero_naga_siren_1"		"Naga Siren er udødelig og svekkelsesimmun i en kort periode under bruk av Mirror Image, og avleder også prosjektiler."
+		"dota_tip_hero_naga_siren_2"		"Naga Sirens Song of the Siren får ikke svekkelsesimmune fiender til å sove, som kan brukes til å isolere en enkelt svekkelsesimmun helt fra fiendelaget."
+
+		"dota_tip_hero_necrolyte_1"			"Necrophos' Ghost Shroud gjør ham immun mot fysiske angrep, men han tar ekstra magisk skade i denne tilstanden."
+		"dota_tip_hero_necrolyte_2"			"Necrophos' Reaper's Scythe gjør skade etter en forsinkelse. Offeret kan reddes av helbredelse eller skadehindrende effekter under ljåanimasjonen."
+
+		"dota_tip_hero_night_stalker_1"		"Night Stalkers nattbonuser gjelder også under Lunas Eclipse."
+
+		"dota_tip_hero_nyx_assassin_1" 		"Nyx Assassins Spiked Carapace reflekterer skade uansett hvor langt unna angriperen er, og selv om angriperen er usynlig."
+
+		"dota_tip_hero_obsidian_destroyer_1" "Outworld Destroyers Arcane Orb gjør ren skade, som ikke kan reduseres med magiresistens, men den oppheves fullstendig av svekkelsesimmunitet."
+
+		"dota_tip_hero_ogre_magi_1"			"Ogre Magis Bloodlust kan brukes på tårn."
+
+		"dota_tip_hero_omniknight_1"		"Omniknights Purification gjør ren skade, som ikke kan reduseres av magiresistens."
+
+		"dota_tip_hero_oracle_1"			"Oracles Fate's Edict forhindrer magisk skade på det allierte målet, gjelder også skade fra Purifying Flames. Denne kombinasjonen kan brukes for å helbrede Oracle's allierte."
+		"dota_tip_hero_oracle_2"			"Oracles Fortune's End kan fordrive mange styrkelser på fiendtlige helter, deriblant helbredelseseffekten fra Purifying Flames."
+		"dota_tip_hero_oracle_3"			"Oracles ultimat False Promise dobler all helbredelse på målet mens den er aktiv. Dette gjelder også gjenstander som Urn of Shadows, Magic Wand og Mekansm."
+		"dota_tip_hero_oracle_4"			"Hvis kulen over målet brenner under Oracles False Promise, har målet tatt dødelig skade og kommer til å dø når effekten utløper med mindre det helbredes."
+
+		"dota_tip_hero_pangolier_1"			"Pangoliers Swashbuckle ignorerer unnvikelse, så den kan ikke bomme."
+
+		"dota_tip_hero_phantom_assassin_1"	"Aeon Disk eller Blade Mail kan være gode gjenstander å bygge når man går i kamp mot en Phantom Assassin med høy utbruddsskade."
+
+		"dota_tip_hero_phantom_lancer_1"	"Phantom Lancer velger ofte å bygge Diffusal Blade. Svekkelsesimmunitet fra Black King Bar kan brukes til å motvirke denne effekten."
+		"dota_tip_hero_phantom_lancer_2"	"Phantom Lancer er avhengig av å ha mange illusjoner for å gjøre mesteparten av skaden sin. Det kan være nyttig å investere i gjenstander som gjør det raskt å drepe disse illusjonene, slik som Shiva's Guard eller Mjollnir."
+		"dota_tip_hero_phantom_lancer_3"	"Phantom Lancer kan bruke Doppelganger til å fordrive visse svekkelser og avlede prosjektiler."
+		"dota_tip_hero_phantom_lancer_4"	"Illusjoner av Phantom Lancer som er skapt av fiendtlige evner, slik som Shadow Demons Disruption og Terrorblades Reflection, har fremdeles en sjanse til å splittes til flere illusjoner."
+		"dota_tip_hero_phantom_lancer_5"	"Hvis Phantom Lancer påføres avbrudd, fra en gjenstand som Silver Edge eller en evne som Vipers Viper Strike, hindres Phantom Lancer fra å skape flere illusjoner fra Juxtapose."
+
+		"dota_tip_hero_phoenix_1"			"Phoenix kan bruke gjenstander og evner under Icarus Dive."
+
+		"dota_tip_hero_puck_1"				"Stilning kan være en effektiv måte å få kontroll på en listig Puck."
+		"dota_tip_hero_puck_2"				"Phase Shift gjør at Puck trygt kan vente på Illusory Orbs bevegelse eller Blink Daggers nedkjøling etter skade og flytte seg umiddelbart uten at motstanderne kan reagere."
+		"dota_tip_hero_puck_5"				"Puck har mange områdeevner, så derfor er det viktig å holde seg spredt når man spiller på motstanderlaget."
+		"dota_tip_hero_puck_6"				"Siden Pucks defensive evner har veldig kort brukstid, bør motstanderlaget velge å angripe Puck raskt med gjenstander som Blink Dagger eller Shadow Blade."
+
+		"dota_tip_hero_pudge_1"				"Pudges Dismember kanaliseres og kan avbrytes ved å stilne eller lamme."
+		"dota_tip_hero_pudge_2"				"Pudge er ofte avhengig av å angripe fra uventede vinkler. Motstanderne kan øke egen sjanse for overlevelse mot Pudge ved å ha god sikt med varder."
+		"dota_tip_hero_pudge_3"				"Pudge kan bruke Meat Hook til å hente runer til seg selv eller overlate dem til allierte på et trygt sted."
+		"dota_tip_hero_pudge_4"				"Pudges Meat Hook går gjennom svekkelsesimmunitet, så han kan flytte på svekkelsesimmune fiender og avbryte kanaliserte evner."
+		"dota_tip_hero_pudge_5"				"Pudges Rot gjør magisk skade på seg selv og motstanderen. Han velger ofte å kjøpe gjenstander som gir magiresistens, slik at han tar mindre skade av evnen selv."
+		"dota_tip_hero_pudge_6"				"Pudge kan bruke Meat Hook til å trekke inn allierte i sikkerhet uten å skade dem."
+		"dota_tip_hero_pudge_8"				"Lydeffektene til Meat Hook og Dismember kan høres i krigståken, noe som gjør at fiendene kan gjette hva Pudge holder på med."
+		"dota_tip_hero_pudge_10"			"Pudge har naturlig lav rustning. Fysiske angrep, særlig sammen med evner som reduserer rustning, kan være dødelige."
+		"dota_tip_hero_pudge_11"			"Hvis du ikke kan lamme eller stilne Pudge for å hindre at han bruker Dismember på en allierte, kan en sterk fordrivelse som Abaddons Aphotic Shield eller Legion Commanders Press the Attack på den allierte også gjøre susen."
+
+		"dota_tip_hero_pugna_1"				"Pugnas Nether Blast gjør halv skade på bygninger."
+
+		"dota_tip_hero_queenofpain_1"		"Queen of Pains Sonic Wave gjør ren skade, som ikke kan reduseres med magiresistens. Den går også gjennom svekkelsesimmunitet."
+
+		"dota_tip_hero_rattletrap_1"		"Evner som stilner, lammer og forviser, stopper ikke Clockwerks Battery Assault. Den eneste måten å stoppe den tidlig på er å drepe Clockwerk."
+		"dota_tip_hero_rattletrap_2"		"Clockwerks Hookshot lammer motstandere i en god stund, noe som gir ham tiden til å plassere Power Cogs på strategiske steder, slik at de kan dytte fienden i ønsket retning og uskadeliggjøre dem ytterligere."
+		"dota_tip_hero_rattletrap_3"		"Du kan unnslippe Clockwerks Power Cogs med en Force Staff, men du kommer til å utløse det nærmeste tannhjulets tilbakeslag og manabrann mens du passerer gjennom dem."
+		"dota_tip_hero_rattletrap_4"		"Hookshot trekker Clockwerk mot en enhet, om den så er fiendtlig eller alliert. Dette kan være en effektiv måte å komme seg unna på."
+		"dota_tip_hero_rattletrap_5"		"Fiender som har lange brukstider, kanaliserte evner eller lave angrepshastigheter, kan fullstendig forhindres i å gjøre noe hvis de isoleres mot Clockwerks Battery Assault."
+		"dota_tip_hero_rattletrap_6"		"Clockwerks Rocket Flare er veldig nyttig for å speide etter fiendens bevegelser eller sakte legge press på stier som er langt unna laget."
+
+		"dota_tip_hero_razor_1"				"Razors Plasma Field gjør mer skade jo større avstand det er til målet."
+		"dota_tip_hero_razor_2"				"Plasma Field gir sikt til Razor, slik at han kan lete etter fiender som gjemmer seg blant trær eller over bakketopper."
+		"dota_tip_hero_razor_3"				"Razors Static Link kan ikke fordrives eller hindres på vanlig vis, så derfor er det viktig å bryte lenken ved å bevege seg ut av Razors rekkevidde så raskt som mulig."
+		"dota_tip_hero_razor_4"				"Razors Static Link gir ikke klarsyn på målet, men Razor kan fremdeles spore det lenkede målets bevegelser gjennom usynlighet."
+		"dota_tip_hero_razor_5"				"Razor er avhengig av rask bevegelseshastighet for å holde følge med fiender han skader med Eye of the Storm eller tapper med Static Link. Gjenstander som forhindrer ham i å bevege seg, slik som Rod of Atos, kan være en god måte å håndtere ham på."
+		"dota_tip_hero_razor_6"				"Razors Eye of the Storm prioriterer mål som tappes med Static Link."
+		"dota_tip_hero_razor_7"				"Ved å bruke en ny Eye of the Storm med Refresher Orb eller Refresher Shard dannes en ny storm, som dobler skaden fra Eye of the Storm."
+
+		"dota_tip_hero_riki_1"				"Riki er udødelig og usynlig under Tricks of the Trade, og kan ikke avsløres med klarsyn så lenge formelen varer."
+
+		"dota_tip_hero_rubick_1"			"Rubick kan bruke stjålne formler med relativt lav brukstid, selv om den opprinnelige brukerens brukstid er veldig lang (med noen få unntak)."
+
+		"dota_tip_hero_sand_king_1"			"Sand Kings Epicenter fortsetter å pulsere under hele varigheten, selv om Sand King selv dør."
+		"dota_tip_hero_sand_king_2"			"Sand King kan bruke Sand Storm og Burrowstrike for å avlede og utmanøvrere fiender ved å bli usynlig og gå under ufremkommelig terreng."
+		"dota_tip_hero_sand_king_3"			"Å ha med seg avsløringsmuligheter, slik som Dust of Appearance, kan være veldig viktig når man prøver å finne Sand King under Sand Storm."
+		"dota_tip_hero_sand_king_4"			"Sand King kan påføre Caustic Finale på mange enheter samtidig, noe som kan føre til en enorm mengde skade når det utløses."
+
+		"dota_tip_hero_shadow_demon_1" 		"Shadow Demons Disseminate kan brukes på en alliert eller en fiende."
+
+		"dota_tip_hero_shadow_fiend_1"		"Shadow Fiend bruker en gratis Requiem of Souls på nåværende nivå når han dør, selv om evnen er på nedkjøling. Den er imidlertid litt svakere siden han mister en del av sjelene sine før bruk."
+		"dota_tip_hero_shadow_fiend_2"		"Shadow Fiends Necromastery bidrar sterkt til skaden han kan gjøre. Etter at Shadow Fiend dør, blir han vesentlig svakere inntil han får tilbake tapte sjeler."
+		"dota_tip_hero_shadow_fiend_3"		"Shadow Fiend er flink til å drepe kryp og nøytrale kryp veldig raskt. Å ta fra ham mulighetene til å gjøre det svekker slagkraften hans senere i kampen."
+		"dota_tip_hero_shadow_fiend_4"		"Shadow Fiend lider av en ganske lav helse og svak bevegelighet. Han kan være et prioritert mål for fiender med høy utbruddsskade."
+		"dota_tip_hero_shadow_fiend_5"		"Shadow Fiends Requiem of Souls har en lang brukstid. Shadow Fiend kan avbryte den tidlig for bedre plassering eller timing, mens fiendene kan avbryte den under bruk. Requiem of Souls får ikke nedkjøling ved bruk før den er fullstendig brukt."
+		"dota_tip_hero_shadow_fiend_6"		"En stor mengde utgående skade kan gjøre Shadow Fiend sårbar overfor fiender som har Blade Mail."
+
+		"dota_tip_hero_shadow_shaman_1"		"Shadow Shamans Mass Serpent Wards påvirkes ikke av skadeblokkering, slik som fra Crimson Guard."
+
+		"dota_tip_hero_shredder_1"			"Når Timbersaw er påvirket av avbrudd, får han ikke flere stabler av Reactive Armor, men eksisterende stabler fortsetter å gi rustning og helseregenerasjon."
+
+		"dota_tip_hero_skeleton_king_1"		"Wraith Kings Reincarnate blir utløst selv om Wraith King er påvirket av avbrudd. Den utløses ikke hvis Wraith King ikke har nok mana. Aghanim's Shard reduserer manakostnaden til 0."
+
+		"dota_tip_hero_skywrath_mage_1"		"Skywrath Mages Arcane Bolt gjør vesentlig mer skade basert på intelligensen hans."
+
+		"dota_tip_hero_slardar_1"			"Slardars Corrosive Haze gir klarsyn og sikt over målet."
+
+		"dota_tip_hero_slark_1"				"Når Slark er påvirket av Shadow Dance, kan han ikke avsløres av klarsyn."
+
+		"dota_tip_hero_sniper_1"			"Snipers Shrapnel påvirker ikke bygninger. Flere forekomster av Shrapnel stables ikke på det samme målet."
+
+		"dota_tip_hero_spectre_1"			"Spectres Dispersion reflekterer deler av skaden tatt til alle fiender rundt dem med samme skadetype. Den reflekterer mer skade til enheter som er nærmere Spectre. Hvis hun har flere enheter rundt seg, reduseres ikke mengden skaden hver enkelte fiende tar."
+
+		"dota_tip_hero_spirit_breaker_1"	"Spirit Breakers Charge of Darkness kan brukes for å utløse en fiendes Linken's Sphere på hvilken som helst avstand, så lenge Spirit Breaker har sikt over målet."
+
+		"dota_tip_hero_storm_spirit_1"		"Stilning kan være en effektiv måte å få kontroll på en unnvikende Storm Spirit."
+		"dota_tip_hero_storm_spirit_2"		"Storm Spirit er usårlig under Ball Lightning, som gjør at han kan unnvike og avlede mange lammelser og angrep."
+		"dota_tip_hero_storm_spirit_3"		"Storm Spirit kan bruke gjenstander og evner under Ball Lightning, som er spesielt nyttig når han angriper intetanende fiender eller prøver å teleportere tilbake til basen."
+		"dota_tip_hero_storm_spirit_4"		"Overload påføres etter at Storm Spirit bruker en av evnene sine, deriblant Ball Lightning. Storm Spirits skade maksimeres ved å angripe etter å ha brukt hver evne."
+		"dota_tip_hero_storm_spirit_5"		"Ball Lightning gir ikke bare ypperlig bevegelighet, men det er en god skadekilde når den brukes på lang avstand. En viktig del av Storm Spirits skade ligger i å kunne treffe en fiende på lang avstand."
+		"dota_tip_hero_storm_spirit_6"		"Storm Spirit er veldig avhengig av mana for å slåss. Gjenstander og evner som rammer manaen hans, slik som Diffusal Blade eller Nyx Assassins Vendetta, kan være svært ødeleggende for Storm Spirit."
+		"dota_tip_hero_storm_spirit_7"		"Storm Spirits usårlighet under Ball Lightning betyr at han kan fullstendig ignorere de fleste negative effekter fra bevegelsesbaserte formler, som Bloodseekers Rupture."
+
+		"dota_tip_hero_sven_1"				"Svens Great Cleave gjør fysisk skade i et område bak angrepsmålet. Skaden reduseres av rustning."
+		"dota_tip_hero_sven_2"				"Svens Warcry gir ham og allierte økt bevegelseshastighet og rustning."
+		"dota_tip_hero_sven_3"				"Sven er avhengig av å være nær fiender for å gjøre store mengder skade. Å begrense bevegeligheten hans med gjenstander som Rod of Atos eller evner som Nature's Prophets Sprout er en veldig god måte å redusere skaden hans under God's Strength."
+		"dota_tip_hero_sven_4"				"Mesteparten av Svens skade kommer fra de fysiske angrepene hans og kan hindres med avvæpninger, slik som Heaven's Halberd."
+		"dota_tip_hero_sven_5"				"Å unngå Svens angrep med kilder til unnvikelse, slik som Butterfly eller Heaven's Halberd, eller å være fysisk immun, for eksempel med Ghost Scepter, er effektive måter å overleve Svens skade på."
+		"dota_tip_hero_sven_6"				"Svens God's Strength kan være nyttig ikke bare for lagkamper, men også for å utføre mål som å drepe fiendtlige tårn eller Roshan."
+
+		"dota_tip_hero_techies_2"			"Techies' Blast Off kan avbrytes ved å påføre tvungne bevegelseseffekter (som Force Staff eller Rubicks Telekinesis) på Techies under hoppet."
+
+		"dota_tip_hero_templar_assassin_1"	"Templar Assassins Refraction blokkerer en rekke skadeforekomster, uavhengig av mengden skade de forekomstene hadde gjort."
+
+		"dota_tip_hero_tidehunter_1"		"Tidehunters Kraken Shell gjør det veldig vanskelig å forhindre ham fra å bruke Ravage, for hvis man gjør nok skade på ham, utløses en sterk fordrivelse, som fjerner lammelser og de fleste andre uskadeliggjøringer fra ham."
+
+		"dota_tip_hero_tinker_1"			"Tinkers Heat-Seeking Missiles låser seg kun til mål som Tinker kan se ved bruk. De kan ikke avledes ved å løpe inn i krigståken."
+
+		"dota_tip_hero_tiny_2"				"Tinys Toss avbryter kanalisering av evner – selv de som brukes av allierte helter."
+		"dota_tip_hero_tiny_3"				"Spredningsskaden fra Tinys Tree Grab er fysisk skade, som reduseres av rustning og skadeblokkering."
+		"dota_tip_hero_tiny_4"				"Tidlig i kampen gjør Tiny ofte mye dødelig magisk skade, som kan reduseres av å ha Infused Raindrops."
+		"dota_tip_hero_tiny_5"				"Seint i kampen kan Tinys plutselige skadeutbrudd forhindres med Aeon Disk."
+		"dota_tip_hero_tiny_6"				"Tiny har veldig treg angrepshastighet, og han avhenger av gjenstander og styrkelser av angrepshastighet fra allierte for å gjøre mye skade."
+
+		"dota_tip_hero_troll_warlord_1"		"Troll Warlords Fervor får ikke stabler når angrepene unnvikes, noe som gjør unnvikelse en effektiv måte å redusere skaden hans."
+
+		"dota_tip_hero_tusk_1"				"Tusks Snowball gjør ekstra skade for hver helt inni den."
+
+		"dota_tip_hero_undying_1"			"Undyings Tombstone skaper ikke zombier for usynlige enheter i nærheten, og eksisterende zombier utløper hvis målet deres blir usynlig."
+
+		"dota_tip_hero_ursa_1"				"Ursas Fury Swipes gjør at hvert angrep på samme mål gjør mer skade enn det forrige angrepet. Dette fungerer også mot Roshan, men ikke på bygninger."
+
+		"dota_tip_hero_vengeful_spirit_2"	"Vengeful Spirits Nether Swap avbryter kanaliserte formler både på allierte og fiender."
+
+		"dota_tip_hero_viper_1"				"Vipers Viper Strike forårsaker avbrudd på påvirkede mål, som uskadeliggjør passive evner. Dette kan være veldig effektivt mot helter som Bristleback."
+
+		"dota_tip_hero_visage_1"			"Visages Gravekeeper's Cloak blir svakere når spillere skader Visage, men regenereres raskt. Gravekeeper's Cloak påvirker også Visages vardøger."
+		"dota_tip_hero_visage_3"			"Visages Grave Chill gir også ekstra angrepshastighet og bevegelseshastighet til vardøger i nærheten."
+		"dota_tip_hero_visage_4"			"Visages vardøger kan ødelegge trær ved å bruke Stone Form over et tre."
+
+		"dota_tip_hero_warlock_1"			"Warlocks Fatal Bonds gjør at skade mot målene deles, uavhengig av hvor stor avstand det er mellom dem."
+
+		"dota_tip_hero_weaver_1"			"Biller fra Weavers The Swarm gjør fysisk skade, som kan reduseres med rustning, men ikke med unnvikelse eller skadeblokkering."
+
+		"dota_tip_hero_windrunner_1" 		"Windranger kan velge å ikke angripe målet for Focus Fire ved å angripe et annet mål eller ved å utstede en stoppkommando."
+
+		"dota_tip_hero_winter_wyvern_1"		"Splinter fra Winter Wyverns Splinter Blast treffer usynlige enheter, samt enheter i krigståken."
+		"dota_tip_hero_winter_wyvern_2"		"Winter Wyverns Winter's Curse forhindrer rammede fiender fra å ta skade fra alle unntatt Winter Wyvern og hennes kontrollerte enheter."
+
+		"dota_tip_hero_wisp_1"				"Når Io er forbundet med en alliert, beveger den seg i samme hastighet som den allierte."
+
+		"dota_tip_hero_zuus_1"				"Zeus' Lightning Bolt kan brukes på bakken for å avsløre usynlige enheter i nærheten, deriblant varder."
+		
+	}
+}

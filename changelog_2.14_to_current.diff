@@ -1045,7 +1045,7 @@ index e189a03..3948a14 100644
 +++ b/game/scripts/npc/abilities/lightning_overload.txt
 @@ -10 +10 @@
 -	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
++	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 @@ -18,2 +18,2 @@
 -	"AbilityCastRange"				"250"
 -	"AbilityCastPoint"				"0"
@@ -1089,7 +1089,7 @@ index 8ffdce5..c7d39ee 100644
 --- a/game/scripts/npc/abilities/lightning_spark.txt
 +++ b/game/scripts/npc/abilities/lightning_spark.txt
 @@ -10 +10 @@
--	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+-	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 +	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 @@ -18 +18 @@
 -	"AbilityCastRange"				"900"
@@ -2721,7 +2721,7 @@ index 0000000..05ec6d9
 +    "BaseClass"             "ability_lua"
 +    "ScriptFile"            "lua/abilities/war_warbellow"
 +    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-+    "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
++    "AbilityType"                   "ABILITY_TYPE_ULTIMATE"
 +    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
 +    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
 +    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"

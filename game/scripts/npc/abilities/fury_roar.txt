@@ -21,46 +21,20 @@
 			
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage"						"50 100 150 200"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"range"							"600"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"4.00"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_movespeed"				"3"
-		}
-		"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_attackspeed"				"10"
-		}
-		"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"5"
-		}
-		"07"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"slow"							"12 16 20 24"
-			"LinkedSpecialBonus"			"special_bonus_fury_1"
-		}
-
-	}
+	"AbilityValues"
+        {
+            "damage" "50 100 150 200"
+            "range" "600"
+            "duration" "4.00"
+            "bonus_movespeed" "3"
+            "bonus_attackspeed" "10"
+            "bonus_damage" "5"
+            "slow"
+            {
+                "value" "12 16 20 24"
+                "LinkedSpecialBonus" "special_bonus_fury_1"
+            }
+        }
 	
 	// Data driven
 	//-------------------------------------------------------------------------------------------------------------

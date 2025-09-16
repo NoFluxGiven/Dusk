@@ -34,29 +34,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"min_delay"						"3"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"max_delay"						"12"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"min_damage"					"55 75 125 175"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"max_damage"					"125 230 335 440"
-		}
-	}
+	"AbilityValues"
+        {
+            "min_delay" "3"
+            "max_delay" "12"
+            "min_damage" "55 75 125 175"
+            "max_damage" "125 230 335 440"
+        }
 	
 	"precache"
 		{

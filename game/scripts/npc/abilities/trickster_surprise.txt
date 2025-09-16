@@ -42,24 +42,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"magic_missile_speed"	"2250"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"magic_missile_stun"	"0.75"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"magic_missile_disarm"	"3 4 5 6"
-		}
-	}
+	"AbilityValues"
+        {
+            "magic_missile_speed" "2250"
+            "magic_missile_stun" "0.75"
+            "magic_missile_disarm" "3 4 5 6"
+        }
 
 	"OnSpellStart"
 	{

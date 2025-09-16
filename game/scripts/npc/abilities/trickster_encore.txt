@@ -8,7 +8,7 @@
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"FightRecapLevel"				"1"
@@ -40,19 +40,11 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"8 10 12"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration_scepter"		"20 25 30"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "8 10 12"
+            "duration_scepter" "20 25 30"
+        }
 
 	"OnSpellStart"
 	{

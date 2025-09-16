@@ -5,11 +5,45 @@
 	"Role"					"Carry,Pusher"
 	"Rolelevels"			"2,2"
 	"Complexity"			"2"
+	// Neith charges, gaining bonus movespeed and slow resistance, and becoming Disarmed and Muted for a short time. After the charge duration ends,
+	// or if she reactivates this ability, she unleashes a whirlwind of strikes in front of her based on the time spent charging.
+	// Charges for up to 2.5s. Every 0.5s charged adds 1 strike, with a minimum of 0.5s of charge time, and a maximum of 5 strikes.
+	// Each strike deals 30/50/70/90% of her attack damage in a 225 radius, travelling 175 units, with the distance increasing by 25/30/35/40 per strike.
+	// Strikes occur with 0.15s between them, and Neith strikes 75 units in front of her.
+	// Therefore she makes a maximum of 5 strikes, dealing 150/250/350/450% of her attack damage, with the maximum travel distance of 275/325/375/425 units.
+	// Neith does not make strikes while Stunned.
+	// 24/20/16/12s cooldown.
+	// Aghanim's Scepter Upgrade: Increases the maximum charge time to 5s. While charging, whenever Neith is attacked, she responds with an immediate strike towards the attacker,
+	// and gains a bonus strike that can exceed the maximum strike limit after finishing charging.
 	"Ability1"				"neith_monsoon"
+	// Neith strikes a devastating blow against the last Hero she attacked within range. The attack is far more effective when the target is Stunned.
+	// The blow deals large Physical damage, and drastically slows them for a short time. If the target is Stunned, the slow duration and damage is multiplied.
+	// Makes an attack against the target with 20/40/60/80 bonus damage, slowing them by 100% for 1s. If the target is Stunned, the damage and slow duration are
+	// increased to 1.5/2.0/2.5/3.0x the original values, and this ability applies Break.
+	// Aghanim's Shard Upgrade: Grants Debuff Immunity for 1s. The duration of the effect is also multiplied against Stunned targets.
 	"Ability2"				"neith_decisive_strike"
-	"Ability3"				"neith_inspire"
+	// While Neith is in close combat with enemy Heroes, she gains insight into their strengths and weaknesses, and can instruct allies to take advantage of them.
+	// Every attack Neith lands on an enemy Hero applies a stack of Tactical Edge. Neith can target them with the active component of this ability to consume the stacks,
+	// making them more vulnerable to damage from her allies for a short time.
+	// Each attack applies 1 stack, to a maximum of 4 stacks.
+	// Stacks last 5s, with the duration refreshing on each attack.
+	// When activated, applies a debuff that is exponentially more potent the more stacks of Tactical Edge were applied to them.
+	// Additionally, commands nearby creeps to attack the target for the debuff duration.
+	// Per stack, grants 10/15/20/25 bonus attack speed to allies that attack the target, increases total damage taken by 2/3/4/5%, and reduces total damage dealt by 2/3/4/5%.
+	// The value doubles per stack applied, meaning the maximum bonuses are:
+	// 80/120/160/200 bonus attack speed
+	// 16/24/32/40% incoming/outgoing damage increase/decrease.
+	// Lasts 5s.
+	"Ability3"				"neith_tactical_edge"
 	"Ability4"				"generic_hidden"
 	"Ability5"				"generic_hidden"
+	// Neith lets out a cry of triumph, rallying nearby allies to her cause. Immediately applies bonus movespeed, slow immunity and damage reduction to allies in a large radius.
+	// In a smaller radius, marks allies to receive bonus Status Resistance and a Strong Dispel after a short delay.
+	// All allies within a 1200 radius immediately receive 25% movespeed bonus, 100% slow resistance, and 35% reduced incoming damage for 5.5s (4s + the delay time).
+	// Then, applies a buff to any allies within a 400 radius of Neith that applies a Strong Dispel, and 50% Status Resistance for 4s after the delay time.
+	// The effects of the inner radius apply after a 1.5s delay in the area where Neith was upon cast, whereas the effects of the outer radius apply instantly.
+	// The delay time buff can be purged with a Basic Dispel, but all other effects are undispellable.
+	// 120/110/100s cooldown.
 	"Ability6"				"neith_rally"
 	"Ability7"				""
 	"Ability8"				""

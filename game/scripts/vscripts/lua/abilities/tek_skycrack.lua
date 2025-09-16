@@ -67,7 +67,7 @@ function tek_skycrack:OnProjectileHit(t,l)
 	if t then
 		if c:HasScepter() then
 			local mana_burn = self:GetSpecialValueFor("scepter_burn")/100
-			t:ReduceMana(mana_burn*damage)
+			t:Script_ReduceMana(mana_burn*damage)
 		end
 		self:InflictDamage(t,c,damage,DAMAGE_TYPE_MAGICAL)
 		t:AddNewModifier(c, self, "modifier_skycrack", {Duration=slow_duration})

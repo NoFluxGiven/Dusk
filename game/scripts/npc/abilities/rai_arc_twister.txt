@@ -33,20 +33,15 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage"						"50 80 110 140"
-			"LinkedSpecialBonus"			"special_bonus_rai_3"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"delay"							"0.16"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage"
+            {
+                "value" "50 80 110 140"
+                "LinkedSpecialBonus" "special_bonus_rai_3"
+            }
+            "delay" "0.16"
+        }
 	
 	"precache"
 		{

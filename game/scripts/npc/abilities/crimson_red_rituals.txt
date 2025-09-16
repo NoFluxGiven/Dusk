@@ -29,29 +29,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"75 125 175 225"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"speed"					"550"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"0.75"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"slow"					"-100"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "75 125 175 225"
+            "speed" "550"
+            "duration" "0.75"
+            "slow" "-100"
+        }
 
 	"precache"
 	{

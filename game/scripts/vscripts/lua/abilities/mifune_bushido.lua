@@ -83,12 +83,14 @@ if IsServer() then
 	function modifier_bushido:OnAttackLanded(params)
 		local p = self:GetParent()
 		local a = params.attacker
+		local t = params.target
 
 		if a ~= p then return end
+		if t:IsBuilding() then return end
 
 		local increase = self:GetAbility():GetSpecialValueFor("stack_increase")
 
-		self:SetStackCount(self:GetStackCount()+increase)
+		self:SetStackCount(self:GetStackCount() + increase)
 	end
 
 end

@@ -72,7 +72,7 @@ function modifier_arcanum_break_hit:OnAttackLanded(params)
 			ParticleManager:CreateParticle("particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 			target:AddNewModifier(attacker, self:GetAbility(), "modifier_arcanum_break_spell_damage", {Duration=duration})
 			self:GetAbility():InflictDamage(target,attacker,damage,DAMAGE_TYPE_MAGICAL)
-			target:ReduceMana(mana_burn)
+			target:Script_ReduceMana(mana_burn)
 
 			self:GetAbility():UseResources(true, true, true)
 			self:Destroy()

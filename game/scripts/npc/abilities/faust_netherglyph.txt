@@ -8,7 +8,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/faust_netherglyph"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"faust_netherglyph"
@@ -32,39 +32,15 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"magic_res_reduction"			"30"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"spell_amp"						"30"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"mana_regen"					"25"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"8.0"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"timeout"						"4.0"
-		}
-	"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"225"
-		}
-	}
+	"AbilityValues"
+        {
+            "magic_res_reduction" "30"
+            "spell_amp" "30"
+            "mana_regen" "25"
+            "duration" "8.0"
+            "timeout" "4.0"
+            "radius" "225"
+        }
 	
 	"precache"
 		{

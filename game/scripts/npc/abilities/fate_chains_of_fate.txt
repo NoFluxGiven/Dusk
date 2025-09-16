@@ -35,30 +35,17 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"10"
-			"LinkedSpecialBonus"			"special_bonus_fate_2"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"900"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_hero"					"15 20 25 30"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_creep"					"6 8 10 12"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration"
+            {
+                "value" "10"
+                "LinkedSpecialBonus" "special_bonus_fate_2"
+            }
+            "radius" "900"
+            "damage_hero" "15 20 25 30"
+            "damage_creep" "6 8 10 12"
+        }
 	
 	"precache"
 		{

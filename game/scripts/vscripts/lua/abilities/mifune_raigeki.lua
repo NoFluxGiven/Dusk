@@ -7,7 +7,7 @@ function mifune_raigeki:OnAbilityPhaseStart()
 
 	local cast_particle = "particles/units/heroes/hero_mifune/mifune_shockwave_cast_b.vpcf"
 
-	CreateParticleHitloc(caster,cast_particle)
+	CreateParticleHitloc(caster, cast_particle)
 
 	-- Sound
 	-- Wind whoosh, Japanese feel?

@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/lich_absolute_zero"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -34,45 +34,23 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"5.00 5.75 6.5"
-			"LinkedSpecialBonus"		"special_bonus_lich_5"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"575"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"move_slow"					"100"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"attack_slow"				"100"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"cast_slow"					"50"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"aura_move_slow"			"20 30 40"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"aura_attack_slow"			"20 30 40"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration"
+            {
+                "value" "5.00 5.75 6.5"
+                "LinkedSpecialBonus" "special_bonus_lich_5"
+            }
+            "radius" "575"
+            "move_slow" "125 200 275"
+            "attack_slow" "250"
+            "cast_slow" "50"
+            "aura_move_slow" "60 80 100"
+            "aura_attack_slow" "60 80 100"
+            "aura_freeze_time" "2.5"
+            "aura_freeze_duration" "0.8 1.6 2.4"
+            "aura_damage_per_second" "25"
+        }
 	
 	"precache"
 		{

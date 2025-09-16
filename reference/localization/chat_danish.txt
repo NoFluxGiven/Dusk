@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "danish"
+"Tokens"
+{
+"chat_filterbutton"	"Filtre"
+"filter_joinleave"	"Tilslutter/forlader"
+"filter_namechange"	"Navneændringer"
+"filter_publicchat"	"Offentlig chat"
+"filter_servermsg"	"Serverbeskeder"
+"filter_teamchange"	"Holdændringer"
+"chat_say"			"Sig:"
+"chat_say_team"	    "Sig (HOLD):"
+"chat_say_coach"	"Sig (TIL ELEVER):"
+"chat_say_student"	"Sig (TIL COACH):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

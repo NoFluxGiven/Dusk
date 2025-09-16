@@ -4,7 +4,7 @@
     //-------------------------------------------------------------------------------------------------------------
     "BaseClass"             "ability_lua"
     "ScriptFile"            "lua/abilities/siegfried_heaven_sent"
-    "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityType"                   "ABILITY_TYPE_ULTIMATE"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
     "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -27,19 +27,11 @@
     
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"              "FIELD_FLOAT"
-            "duration"              "8.75"
+            "duration" "8.75"
+            "scepter_health_regen" "60 90 120"
         }
-        "02"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "scepter_health_regen"  "60 90 120"
-        }
-    }
 
     "precache"
     {

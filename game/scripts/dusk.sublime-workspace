@@ -559,10 +559,21 @@
 			}
 		},
 		{
+			"contents": "Package Control Messages\n========================\n\nPackage Control\n---------------\n\n  Version 4.0.0 Release Notes\n  ===========================\n\n\n  Major Changes\n  -------------\n\n  - Requires at least ST3143 (1.0)\n\n  - drops support for python 2.x\n\n  - adds support for python 3.8\n\n  - Package and library version scheme changed from SemVer to PEP440\n    for better pre-release handling and compatibility with python packages.\n\n    Note: Package versions should still follow SemVer like `<major>.<minor>.<micro>`\n\n  - Dependencies are now called libraries.\n\n    They are installed to Data/Libs as ordinary python packages.\n\n    Existing managed dependencies are automatically converted.\n\n    Can install python wheels (*.whl)\n\n  - Channel/repository scheme v1.0 and v1.2 are no longer supported\n    as they contain only packages for no longer supported ST2.\n\n  - New channel/repository scheme v4.0.0 is introduced,\n    which allows to specify supported `python_versions`.\n\n    Parsing and installing \"requirements.txt\" is however not yet supported.\n\n    For working examples checkout example-channel.json and example-repository.json\n    from Package Control Github repository.\n\n\n  Note for Package Devs\n  ---------------------\n\n    packagecontrol.io does not yet support the new 4.0.0 scheme\n    and thus doesn't ship python 3.8 dependencies/libraries.\n\n    Therefore do not upgrade repositories to 4.0.0 scheme,\n    which are included in default channel.\n\n    You can however create your own 4.0.0 repository and\n    add it via 'Package Control: Add Repository'.\n\n    Metadata for python 3.8 compatible libraries are maintained at\n\n      https://github.com/packagecontrol/channel\n\n    and shipped via\n\n      https://packagecontrol.github.io/channel/channel_v4.json\n\n    so all packages can already migrate to python 3.8\n\n\n  New features include:\n  ---------------------\n\n    - support for python 3.8 dependencies (now called libraries)\n    - add openssl 3.0 support via asn1crypto 1.5.1 and oscrypto 1.3.0\n    - prune backups older than 14 days (#145)\n    - provide all relevant operations via ApplicationCommands (#1071)\n      + Advanced Disable Packages (disable_packages)\n      + Advanced Enable Packages (enable_packages)\n      + Advanced Install Packages (install_packages)\n      + Advanced Upgrade Packages (upgrade_packages)\n      + Advanced Remove Packages (remove_packages)\n    - allow relative paths in channel.json and repository.json (#1329)\n    - hide (auto-generated?) packages via `.hidden-sublime-package` file (#1429)\n    - support for cooperate_packages (#1406, #1633)\n    - IntelliSense support for for channel.json/repository.json via jsonschemas\n    - support for asset based Github/Gitlab releases (#1484)\n\n\n  Bug fixes include:\n  ------------------\n\n    - abort package operation if backup fails (#1000)\n    - fix long path support on Windows (#1020)\n    - fix missing packages not being installed if an overriding unpacked package exists (#1155)\n    - fix errors being displayed for git/hg tracked packages without remote (#1167)\n    - fix not all git/hg tracked packages being upgraded\n    - fix packages in auto_upgrade_ignore setting being renamed without upgrade (#1370)\n    - fix corruption of installed_packages or ignored_packages settings\n    - fix backup/restore of ST's \"auto\" color schemes and themes\n    - fix manual package upgrades converting unmanaged packages to managed ones (#1272)\n    - fix libraries not being upgraded by auto upgrader\n    - fix prompt for ST restart before all operations are completed\n    - fix SSL_CERT_FILE environment variable being ignored\n    - fix repositories of channels without cache not being downloaded (#1354, #1601)\n    - fix QuickPanelItem parse errors in URLs (#1580)\n    - fix unavailable libraries being reported as successfully installed (#1605)\n    - fix error message flooding\n    - keep ingored_packages clean by removing non-existing packages\n\n    ...\n\n    The full list of addressed bugs can be found at:\n\n      https://github.com/wbond/package_control/milestone/1",
+			"settings":
+			{
+				"buffer_size": 4051,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
 			"file": "npc/abilities/neith_decisive_strike.txt",
 			"settings":
 			{
-				"buffer_size": 2509,
+				"buffer_size": 2268,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -1140,7 +1151,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -1170,7 +1181,7 @@
 						"translation.y": 21755.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1200,7 +1211,7 @@
 						"translation.y": 456.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1228,7 +1239,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1256,24 +1267,54 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "npc/abilities/neith_decisive_strike.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2509,
+						"buffer_size": 4051,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								693,
-								693
+								4051,
+								4051
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 114.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "npc/abilities/neith_decisive_strike.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2268,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1285,7 +1326,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]

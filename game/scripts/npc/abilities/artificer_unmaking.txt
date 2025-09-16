@@ -43,24 +43,12 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"                      "FIELD_FLOAT"
-            "duration"                      "4.0"
+            "duration" "4.0"
+            "damage" "3.25 4.50 5.75 7.00"
+            "base_damage" "20 30 40 50"
         }
-        "02"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "damage"                        "3.25 4.50 5.75 7.00" // Percent of Current Health per second
-        }
-        "03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "base_damage"                   "20 30 40 50"
-        }
-    }
 
     "Modifiers"
     {

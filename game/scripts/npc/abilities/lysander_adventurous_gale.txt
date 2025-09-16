@@ -31,40 +31,15 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"distance"				"1200"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"slow"					"-50 -75 -100 -140"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"155"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"60 120 180 240"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"6"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"lingering_movespeed"	"16"
-		}
-		
-	}
+	"AbilityValues"
+        {
+            "distance" "1200"
+            "slow" "-50 -75 -100 -140"
+            "radius" "155"
+            "damage" "60 120 180 240"
+            "duration" "6"
+            "lingering_movespeed" "16"
+        }
 
 	"precache"
 	{

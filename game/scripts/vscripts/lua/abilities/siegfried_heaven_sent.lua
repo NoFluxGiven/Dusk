@@ -19,7 +19,7 @@ function siegfried_heaven_sent:OnSpellStart()
 		--caster:StopGesture()
 
 		caster:StartGesture(ACT_DOTA_SPAWN)
-		Timers:CreateTimer(0.2,function()
+		Timers:CreateTimer(0.4,function()
 			caster:FadeGesture(ACT_DOTA_SPAWN)
 		end)
 

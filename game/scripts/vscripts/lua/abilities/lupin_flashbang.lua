@@ -12,6 +12,11 @@ end
 
 function lupin_flashbang:OnSpellStart()
 	local caster = self:GetCaster()
+	
+	-- local ability_count = caster:GetAbilityCount()
+	-- for i=1,ability_count do
+	-- 	print( ( caster:GetAbilityByIndex(i) or caster ):GetName() )
+	-- end
 
 	local damage = self:GetSpecialValueFor("damage")
 	local radius = self:GetSpecialValueFor("radius")

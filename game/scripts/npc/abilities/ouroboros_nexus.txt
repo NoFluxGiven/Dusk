@@ -43,25 +43,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"275"
-		}
-		
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"delay"						"0.7"
-		}
-					
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun"						"1.00 1.40 1.80 2.20"
-			"LinkedSpecialBonus"		"special_bonus_ouroboros_1"
-		}
-	}
+	"AbilityValues"
+        {
+            "radius" "275"
+            "delay" "0.7"
+            "stun"
+            {
+                "value" "1.00 1.40 1.80 2.20"
+                "LinkedSpecialBonus" "special_bonus_ouroboros_1"
+            }
+        }
 }

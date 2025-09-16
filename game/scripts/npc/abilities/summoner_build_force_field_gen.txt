@@ -18,14 +18,10 @@
 
     // Special
     //-------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type" "FIELD_INTEGER"
             "damage" "25"
         }
-    }
 
     "precache"
     {

@@ -24,19 +24,11 @@
     
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"              "FIELD_INTEGER"
-            "damage"                "125 200 275 350"
+            "damage" "125 200 275 350"
+            "radius" "225"
         }
-        "02"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "radius"                "225"
-        }
-    }
 
     "precache"
     {

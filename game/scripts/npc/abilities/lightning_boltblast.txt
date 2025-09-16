@@ -18,12 +18,12 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"600"
+	"AbilityCastRange"				"750"
 	"AbilityCastPoint"				"0.2"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"7"
+	"AbilityCooldown"				"8"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -35,39 +35,15 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"explosion_delay"			"1.1"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"explosion_damage"			"120 180 240 300"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"movespeed_slow"			"-65"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"attack_slow"				"-50"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"1.2 1.6 2.0 2.4"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"335"
-		}
-	}
+	"AbilityValues"
+        {
+            "explosion_delay" "1.1"
+            "explosion_damage" "120 180 240 300"
+            "movespeed_slow" "-65"
+            "attack_slow" "-50"
+            "slow_duration" "1.2 1.6 2.0 2.4"
+            "radius" "335"
+        }
 	
 	"precache"
 		{

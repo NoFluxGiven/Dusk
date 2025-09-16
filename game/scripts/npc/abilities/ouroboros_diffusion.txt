@@ -30,40 +30,19 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"magic_res"				"6" // per 100 points of damage absorbed
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"mana_regen"			"2 3 4 5" // per 100 points of damage absorbed
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"health_regen"			"2 3 4 5" // per 100 points of damage absorbed
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"per"					"100"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"10"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"max_stacks"			"2 4 6 8"
-			"LinkedSpecialBonus"	"special_bonus_ouroboros_2"
-		}
-	}
+	"AbilityValues"
+        {
+            "magic_res" "6"
+            "mana_regen" "2 3 4 5"
+            "health_regen" "2 3 4 5"
+            "per" "100"
+            "duration" "10"
+            "max_stacks"
+            {
+                "value" "2 4 6 8"
+                "LinkedSpecialBonus" "special_bonus_ouroboros_2"
+            }
+        }
 
 	"precache"
 	{

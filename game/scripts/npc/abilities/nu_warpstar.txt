@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/nu_warpstar"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AoERadius"						"350"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -37,33 +37,18 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"200 275 350"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"375"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"delay"						"2.00"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun"						"1.6"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "200 275 350"
+            "radius" "375"
+            "delay" "2.00"
+            "stun" "1.6"
+        }
 	
 	"precache"
 		{
 		"particle" "particles/units/heroes/hero_nu/warpstar.vpcf"
+		"particle" "particles/units/heroes/hero_nu/warpstar_end.vpcf"
 		"soundfile" "soundevents/hero_nu.vsndevts"
 		}
 }

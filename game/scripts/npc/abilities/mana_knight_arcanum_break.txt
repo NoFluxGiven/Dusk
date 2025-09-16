@@ -34,35 +34,18 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"				"15 30 45 60"
-			"LinkedSpecialBonus"		"special_bonus_mana_knight_2"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"4"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"spell_damage_reduction"	"20 30 40 50"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"mana_burn"					"50 75 100 125"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"chance"					"30"
-		}
-	}
+	"AbilityValues"
+        {
+            "bonus_damage"
+            {
+                "value" "15 30 45 60"
+                "LinkedSpecialBonus" "special_bonus_mana_knight_2"
+            }
+            "duration" "4"
+            "spell_damage_reduction" "20 30 40 50"
+            "mana_burn" "50 75 100 125"
+            "chance" "30"
+        }
 	
 	"precache"
 		{

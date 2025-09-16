@@ -25,24 +25,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"hp_damage"				"2 4 6 8"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"hp_armor"				"1 2 3 4"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"4"
-		}
-	}
+	"AbilityValues"
+        {
+            "hp_damage" "2 4 6 8"
+            "hp_armor" "1 2 3 4"
+            "duration" "4"
+        }
 
 	"precache"
 	{

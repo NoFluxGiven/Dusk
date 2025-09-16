@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/tek_tesla_microarray"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -34,35 +34,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"325 400 475"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"295"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun"						"1.50 1.75 2.00"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"mana_drain"				"20"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"chargetime"				"0.85"
-		}
-		
-	}
+	"AbilityValues"
+        {
+            "damage" "325 400 475"
+            "radius" "295"
+            "stun" "1.50 1.75 2.00"
+            "mana_drain" "20"
+            "chargetime" "0.85"
+        }
 	
 	"precache"
 		{

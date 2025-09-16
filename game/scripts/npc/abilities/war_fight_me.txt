@@ -5,7 +5,7 @@
     "BaseClass"             "ability_lua"    
     "ScriptFile"            "lua/abilities/war_fight_me"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-    "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityType"                   "ABILITY_TYPE_ULTIMATE"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
@@ -33,38 +33,14 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"              "FIELD_FLOAT"
-            "duration"              "3.5"
+            "duration" "3.5"
+            "radius" "375"
+            "bonus_attack_speed" "0"
+            "damage_per_attack" "20 30 40"
+            "base_damage" "60 120 180"
         }
-        
-        "02"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "radius"                "375"
-        }
-
-        "03"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "bonus_attack_speed"    "0"
-        }
-
-        "04"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "damage_per_attack"     "20 30 40"
-        }
-
-        "05"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "base_damage"           "60 120 180"
-        }
-    }
 
     "precache"
     {

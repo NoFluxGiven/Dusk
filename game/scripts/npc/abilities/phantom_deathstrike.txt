@@ -32,24 +32,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"6 8 10 12"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"threshold"						"50"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"chance"						"25"
-		}
-	}
+	"AbilityValues"
+        {
+            "bonus_damage" "6 8 10 12"
+            "threshold" "50"
+            "chance" "25"
+        }
 	
 	"precache"
 		{

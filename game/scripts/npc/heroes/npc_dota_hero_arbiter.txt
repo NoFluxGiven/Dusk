@@ -1,0 +1,120 @@
+"npc_dota_hero_silencer"
+{
+	"AbilityLayout" 		"4"
+	//"override_hero"			"npc_dota_hero_silencer"
+	"SoundSet"		"Hero_Silencer"
+	"Role"					"Nuker"
+	"Rolelevels"			"3"
+	"Complexity"			"1"
+	"Ability1"				"arbiter_dictum"
+	"Ability2"				"arbiter_judgment"
+	// Applies a Basic Dispel in a large AoE around Arbiter. Any on cooldown Abilities or Items
+	// that enemies possess have their cooldowns frozen for 4/6/8/10s. Places Refresher Orb on cooldown for 10s.
+	"Ability3"				"arbiter_confiscate"
+	"Ability4"				"arbiter_dictum_focus"
+	"Ability5"				"generic_hidden"
+	"Ability6"				"arbiter_greater_dictum"
+	"Ability7"				""
+	"Ability8"				""
+	"Ability9"				""
+	"Ability10"				"special_bonus_arbiter_1" // +2 arbiter Dagger Bounces
+	"Ability11"				"special_bonus_magic_resistance_10" // 
+	"Ability12"				"special_bonus_intelligence_12" // 
+	"Ability13"				"special_bonus_arbiter_2" // +60 Overload Damage
+	"Ability14"				"special_bonus_arbiter_3" // +40% Boltblast Delay/Damage
+	"Ability15"				"special_bonus_cooldown_reduction_15" // 
+	"Ability16"				"special_bonus_spell_amplify_15" // 
+	"Ability17"				"special_bonus_arbiter_4" // +20% Spark Slow
+
+	"ArmorPhysical"				"5"									// Physical protection.
+	"MagicalResistance"				"25"									// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackRange"				"525"
+	"AttackRate"				"1.6"
+	"AttackDamageMin"			"21"										// Damage range min.
+	"AttackDamageMax"			"23"										// Damage range max.
+	"ProjectileModel"            "particles/units/heroes/hero_arbiter/arbiter_dagger_arcana.vpcf"
+	"ProjectileSpeed"            "1200"
+
+	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+
+	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"19"										// Base strength
+	"AttributeStrengthGain"		"1.8"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"22"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.1"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"16"										// Base agility
+	"AttributeAgilityGain"		"2.0"										// Agility bonus per level.	
+
+	//"BountyXP"					"0"									// Experience earn.
+	//"BountyGoldMin"				"0"										// Gold earned min.
+	//"BountyGoldMax"				"0"										// Gold earned max.
+
+	//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	//"RingRadius"				"70"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"285"									// Speed.
+	"MovementTurnRate"			"0.6"									// Turning rate.
+
+	//"StatusHealth"			"981"									// Base health.
+	"StatusHealthRegen"			"1"									// Health regeneration rate.
+	//"StatusMana"				"387"										// Base mana.
+	"StatusManaRegen"			"0.5"									// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+	"VisionDaytimeRange"		"1600"									// Range of vision in the day time.
+
+	"Talents"
+	{
+	    "1" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lightning_health"
+		            "MODIFIER_PROPERTY_HEALTH_BONUS" "200"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_lightning_spell_amp"
+		            "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE" "4"
+		        }
+	   		}
+	    "2" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lightning_damage"
+		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "35"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_lightning_spark"
+		            "v" "8"
+		        }
+	    	}
+	    "3" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lightning_boltblast"
+		            "v" "45"
+		        }
+		        "right"
+		        {
+		            "name" "special_bonus_lightning_movespeed"
+		            "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "50"
+		        }
+	    	}
+	    "4" {
+		        "left"
+		        {      
+		            "name" "special_bonus_lightning_lightning_dagger"
+		            "v" "6"
+		        }
+		        "right"
+		        {       
+		            "name" "special_bonus_lightning_overload"
+		            "v" "115"
+		        }
+	    	}
+	}
+}

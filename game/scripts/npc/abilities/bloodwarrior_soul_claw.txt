@@ -33,34 +33,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"4.0"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"ministun_duration"				"0.30"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"hp_percent"					"6 8 10 12"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"chance"						"25"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"internal_cooldown"				"1.50"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "4.0"
+            "ministun_duration" "0.30"
+            "hp_percent" "6 8 10 12"
+            "chance" "25"
+            "internal_cooldown" "1.50"
+        }
 	
 	"precache"
 		{

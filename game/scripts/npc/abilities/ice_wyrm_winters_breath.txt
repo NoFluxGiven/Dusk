@@ -31,29 +31,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"325"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"25 35 45"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_over_time"		"25 35 45"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"6.0"
-		}
-	}
+	"AbilityValues"
+        {
+            "radius" "325"
+            "bonus_damage" "25 35 45"
+            "damage_over_time" "25 35 45"
+            "duration" "6.0"
+        }
 
 	"precache"
 	{

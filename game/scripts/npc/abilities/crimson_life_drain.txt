@@ -34,29 +34,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"base_damage"				"125 200 275 350"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"increase"					"0.10 0.15 0.20 0.25" //each point of health missing from the target increases the damage by this much against them
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"delay"						"2.3"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"aoe"						"425"
-		}
-	}
+	"AbilityValues"
+        {
+            "base_damage" "125 200 275 350"
+            "increase" "0.10 0.15 0.20 0.25"
+            "delay" "2.3"
+            "aoe" "425"
+        }
 	
 	"precache"
 		{

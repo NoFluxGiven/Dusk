@@ -6,7 +6,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -35,39 +35,15 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"basedamage"				"250 360 470"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"decrease_unit"				"25"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"silence_duration"			"5"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"isolation_bonus"			"12 16 20"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"vision"					"80"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"check_radius"				"400"
-		}
-	}
+	"AbilityValues"
+        {
+            "basedamage" "250 360 470"
+            "decrease_unit" "25"
+            "silence_duration" "5"
+            "isolation_bonus" "12 16 20"
+            "vision" "80"
+            "check_radius" "400"
+        }
 	
 	"precache"
 		{

@@ -31,14 +31,10 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_damage_buildings"		"160"
-		}
-	}
+	"AbilityValues"
+        {
+            "bonus_damage_buildings" "160"
+        }
 	
 	"precache"
 		{

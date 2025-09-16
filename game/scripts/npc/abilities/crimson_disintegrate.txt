@@ -6,7 +6,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -42,59 +42,19 @@
 	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"25 30 35"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage_scepter"			"30 40 50"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"mana_cost_scepter"			"600"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"damage_delay"				"0.65"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"cooldown_scepter"			"60.0"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"armor_reduction"			"-4 -8 -12"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"mres_reduction"			"-16 -22 -34"
-		}
-		"08"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"move_slow"					"-40 -50 -60"
-		}
-		"09"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"duration"					"5"
-		}
-		"10"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"attack_slow"				"-60 -120 -180"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "25 30 35"
+            "damage_scepter" "30 40 50"
+            "mana_cost_scepter" "600"
+            "damage_delay" "0.65"
+            "cooldown_scepter" "60.0"
+            "armor_reduction" "-4 -8 -12"
+            "mres_reduction" "-16 -22 -34"
+            "move_slow" "-40 -50 -60"
+            "duration" "5"
+            "attack_slow" "-60 -120 -180"
+        }
 
 	"OnSpellStart"
 	{

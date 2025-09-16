@@ -8,7 +8,7 @@
 	"BaseClass"				"ability_lua"
 	"ScriptFile"			"lua/abilities/elena_guardian_bubble"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 	"FightRecapLevel"				"1"
@@ -21,7 +21,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"30 24 18 12"
+	"AbilityCooldown"				"40 32 24 16"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -29,20 +29,15 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"2.25"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_to_healing"		"100"
-			"LinkedSpecialBonus"	"special_bonus_elena_4"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "3.50"
+            "damage_to_healing"
+            {
+                "value" "100"
+                "LinkedSpecialBonus" "special_bonus_elena_4"
+            }
+        }
 
 	"precache"
 	{

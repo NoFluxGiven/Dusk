@@ -788,7 +788,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"item_lua"
 	"ScriptFile"					"lua/items/item_rage_potion"
-	"ID"							"500"
+	"ID"							"5500"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"

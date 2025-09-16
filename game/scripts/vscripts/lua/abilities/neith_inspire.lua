@@ -27,13 +27,15 @@ function modifier_inspire:OnAbilityExecuted(params)
 			No Description Set
 			]]
 
+			local autocast = ability:GetAutoCastState()
+
 			if manacost <= 0 then return end
 
 			if ability:IsItem() then return end
 
 			local radius = self:GetAbility():GetSpecialValueFor("radius")
-			local damage = self:GetAbility():GetSpecialValueFor("attack_damage")
-			local damage_creep = self:GetAbility():GetSpecialValueFor("attack_damage_creep")
+			local damage = self:GetAbility():GetSpecialValueFor("health_regen")
+			local damage_creep = self:GetAbility():GetSpecialValueFor("health_regen_creep")
 			local duration = self:GetAbility():GetSpecialValueFor("duration")
 			local bonus = p:FindTalentValue("special_bonus_neith_1") or 0
 
@@ -44,7 +46,9 @@ function modifier_inspire:OnAbilityExecuted(params)
 			for k,v in pairs(ent) do
 				local stacks
 				if not v:IsHero() then
-					stacks = damage_creep
+					if not autocast then
+						stacks = damage_creep
+					end
 				else
 					stacks = damage
 				end
@@ -65,7 +69,7 @@ modifier_inspire_buff = class({})
 
 function modifier_inspire_buff:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
+		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT
 	}
 	return funcs
 end
@@ -80,7 +84,7 @@ function modifier_inspire_buff:OnCreated(kv)
 	end
 end
 
-function modifier_inspire_buff:GetModifierPreAttack_BonusDamage()
+function modifier_inspire_buff:GetModifierConstantHealthRegen()
 	return self:GetStackCount()
 end
 

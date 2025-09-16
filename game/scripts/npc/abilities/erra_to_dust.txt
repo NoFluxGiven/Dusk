@@ -18,7 +18,7 @@
 
     // Time     
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"               "40 35 30 25"
+    "AbilityCooldown"               "20"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -30,33 +30,17 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"              "FIELD_FLOAT"
-            "hp_to_bonus_str"       "2 2.75 3.5 4.25"
-        }
-        
-        "02"
-        {
-            "var_type"              "FIELD_FLOAT"
+            "hp_to_bonus_str" "2 2.75 3.5 4.25"
             "creep_hp_to_bonus_str" "0.5"
+            "duration"
+            {
+                "value" "6"
+                "LinkedSpecialBonus" "special_bonus_erra_2"
+            }
+            "radius" "700"
         }
-
-        "03"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "duration"              "6"
-            "LinkedSpecialBonus"    "special_bonus_erra_2"
-        }
-
-        "04"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "radius"                "700"
-        }
-    }
 
     "precache"
     {

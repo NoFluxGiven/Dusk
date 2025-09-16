@@ -32,45 +32,19 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"              "FIELD_FLOAT"
-            "damage"                "0.60"
+            "damage" "0.60"
+            "blades"
+            {
+                "value" "3 4 5 6"
+                "LinkedSpecialBonus" "special_bonus_ptomely_2"
+            }
+            "projectile_speed" "2000"
+            "radius" "165"
+            "range" "1500"
+            "vision_radius" "400"
         }
-        
-        "02"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "blades"                "3 4 5 6"
-            "LinkedSpecialBonus"    "special_bonus_ptomely_2"
-        }
-
-        "03"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "projectile_speed"      "2000"
-        }
-
-        "04"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "radius"                "165"
-        }
-
-        "05"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "range"                 "1500"
-        }
-
-        "06"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "vision_radius"         "400"
-        }
-    }
 
     "precache"
     {

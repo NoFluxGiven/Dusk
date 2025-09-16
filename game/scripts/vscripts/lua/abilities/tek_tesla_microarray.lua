@@ -49,13 +49,16 @@ function modifier_tesla:OnDestroy()
 			local vdamage = damage
 			--if v:IsStunned() then vdamage = vdamage * 2 end
 
-			local mana_drain_amount = v:GetMana() * (mana_drain/100)
+			local mana_drain_amount = v:GetMaxMana() * (mana_drain/100)
 
-			self:GetAbility():InflictDamage(v,caster,vdamage,DAMAGE_TYPE_MAGICAL)
+			self:GetAbility():InflictDamage(v, caster, vdamage, DAMAGE_TYPE_MAGICAL)
 			v:AddNewModifier(caster, self:GetAbility(), "modifier_tesla_debuff", {Duration=stun})
-			v:ReduceMana(mana_drain_amount)
+			if v:GetMana() > 0 and v.Script_Script_ReduceMana ~= nil then
+				v:Script_Script_ReduceMana(mana_drain_amount, self:GetAbility())
+				caster:GiveMana(mana_drain_amount)
+			end
 			v:EmitSound("Hero_Invoker.SunStrike.Ignite.Apex")
-			caster:GiveMana(mana_drain_amount)
+			
 		end
 	end
 end

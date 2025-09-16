@@ -1,10 +1,36 @@
 abyssal_shadow_void_strikes = class({})
 
 LinkLuaModifier("modifier_void_strikes","lua/abilities/abyssal_shadow_void_strikes",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_void_strikes_attack_speed","lua/abilities/abyssal_shadow_void_strikes",LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_void_strikes_burn","lua/abilities/abyssal_shadow_void_strikes",LUA_MODIFIER_MOTION_NONE)
 
 function abyssal_shadow_void_strikes:GetIntrinsicModifierName()
 	return "modifier_void_strikes"
+end
+
+modifier_void_strikes_attack_speed = class({})
+
+function modifier_void_strikes_attack_speed:DeclareFunctions()
+	local func = {
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+	}
+
+	return func
+end
+
+function modifier_void_strikes_attack_speed:OnCreated()
+	self:SetStackCount(1)
+end
+
+function modifier_void_strikes_attack_speed:OnRefresh()
+	if self:GetStackCount() < 25 then
+		self:IncrementStackCount()
+	end
+end
+
+function modifier_void_strikes_attack_speed:GetModifierAttackSpeedBonus_Constant()
+	return 100
+	-- return self:GetStackCount() * 5
 end
 
 modifier_void_strikes = class({})
@@ -12,7 +38,8 @@ modifier_void_strikes = class({})
 function modifier_void_strikes:DeclareFunctions()
 	local func = {
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
-		MODIFIER_EVENT_ON_ATTACK_START
+		MODIFIER_EVENT_ON_ATTACK_START,
+		MODIFIER_EVENT_ON_ATTACK_FINISHED
 	}
 	return func
 end
@@ -34,6 +61,19 @@ function modifier_void_strikes:OnAttackLanded(params)
 		CreateParticleHitloc(params.target,"particles/units/heroes/hero_gemini/void_strikes_hit.vpcf")
 
 		params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_void_strikes_burn", {Duration=duration})
+		self:GetParent():FindModifierByName("modifier_void_strikes_attack_speed")
+
+		local modifier = params.target:FindModifierByName("modifier_void_strikes_burn")
+		local stacks = modifier:GetStackCount()
+
+		params.target:EmitSound("Voidwalker.AbyssalShadow.AttackHit"..stacks)
+		print("Voidwalker.AbyssalShadow.AttackHit"..stacks)
+
+		-- if kv.target ~= self.last_target then
+		-- 	self:GetParent():FindModifierByName("modifier_void_strikes_attack_speed"):SetStackCount(0)
+		-- end
+		-- self:GetParent():AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_void_strikes_attack_speed", {Duration=10})
+		-- self.last_target = params.target
 	end
 end
 

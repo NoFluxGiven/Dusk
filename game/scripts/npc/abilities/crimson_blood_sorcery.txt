@@ -25,19 +25,11 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"mult"					"0.75"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"regen"					"2 4 6 8"
-		}
-	}
+	"AbilityValues"
+        {
+            "mult" "0.75"
+            "regen" "2 4 6 8"
+        }
 
 	"precache"
 	{

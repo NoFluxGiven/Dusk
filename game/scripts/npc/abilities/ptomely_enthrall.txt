@@ -34,20 +34,15 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"magic_resistance_reduction" "12 16 20 24"
-			"LinkedSpecialBonus"		 "special_bonus_ptomely_1"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"duration"					"8"
-		}
-	}
+	"AbilityValues"
+        {
+            "magic_resistance_reduction"
+            {
+                "value" "12 16 20 24"
+                "LinkedSpecialBonus" "special_bonus_ptomely_1"
+            }
+            "duration" "8"
+        }
 	
 	"precache"
 		{

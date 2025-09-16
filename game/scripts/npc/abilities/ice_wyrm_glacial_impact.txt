@@ -36,29 +36,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"delay"						"1.0"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun_duration"				"0.75"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"200 300 400" // the amount of time each buff remains
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"300"
-		}
-	}
+	"AbilityValues"
+        {
+            "delay" "1.0"
+            "stun_duration" "0.75"
+            "damage" "200 300 400"
+            "radius" "300"
+        }
 	
 	"precache"
 		{

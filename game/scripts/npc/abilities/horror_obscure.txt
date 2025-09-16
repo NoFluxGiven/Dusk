@@ -38,34 +38,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"2.0 3.0 4.0 5.0" // percentage total
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"miss_chance"					"100"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"350"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage"						"80 140 200 260"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"delay"							"0.75"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "2.0 3.0 4.0 5.0"
+            "miss_chance" "100"
+            "radius" "350"
+            "damage" "80 140 200 260"
+            "delay" "0.75"
+        }
 	
 	"precache"
 		{

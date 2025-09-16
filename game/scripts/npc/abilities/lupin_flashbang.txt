@@ -40,61 +40,27 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"125"
-			"LinkedSpecialBonus"		"special_bonus_lupin_2"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"2.00 2.75 3.50 4.25"
-			"LinkedSpecialBonus"		"special_bonus_lupin_4"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"movespeed_reduction"		"30 35 40 45"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"cast_point_increase"		"75"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"attack_range_reduction"	"100 200 300 400"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"attack_speed_reduction"	"25 50 75 100"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"325"
-		}
-		"08"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun"						"0.3"
-		}
-		"09"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"scepter_stun"				"1.00"
-		}
-		"10"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"scepter_cdr"				"4"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage"
+            {
+                "value" "125"
+                "LinkedSpecialBonus" "special_bonus_lupin_2"
+            }
+            "duration"
+            {
+                "value" "2.00 2.75 3.50 4.25"
+                "LinkedSpecialBonus" "special_bonus_lupin_4"
+            }
+            "movespeed_reduction" "30 35 40 45"
+            "cast_point_increase" "75"
+            "attack_range_reduction" "100 200 300 400"
+            "attack_speed_reduction" "25 50 75 100"
+            "radius" "325"
+            "stun" "0.3"
+            "scepter_stun" "1.00"
+            "scepter_cdr" "4"
+        }
 	
 	"precache"
 		{

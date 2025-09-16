@@ -33,29 +33,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"120"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"projectile_speed"			"3000"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_scepter"		"1000"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cooldown_scepter"			"0.5"
-			}
-	}
+	"AbilityValues"
+        {
+            "duration" "120"
+            "projectile_speed" "3000"
+            "cast_range_scepter" "1000"
+            "cooldown_scepter" "0.5"
+        }
 	
 	"precache"
 		{

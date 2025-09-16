@@ -37,29 +37,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"9999"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"knockback"					"9001"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"-100"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"duration"					"9999"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "9999"
+            "knockback" "9001"
+            "slow" "-100"
+            "duration" "9999"
+        }
 	
 	"precache"
 		{

@@ -29,36 +29,22 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"140 200 260 320"
-			"LinkedSpecialBonus"	"special_bonus_elena_3"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"heal_percentage"		"65"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"delay"					"0.75"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"range"					"1200"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_bonus"			"20" // per Hero hit on either team
-			"LinkedSpecialBonus"	"special_bonus_elena_5"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage"
+            {
+                "value" "100 140 180 220"
+                "LinkedSpecialBonus" "special_bonus_elena_3"
+            }
+            "heal_percentage" "65"
+            "delay" "0.75"
+            "range" "1200"
+            "damage_bonus"
+            {
+                "value" "40"
+                "LinkedSpecialBonus" "special_bonus_elena_5"
+            }
+        }
 
 	"precache"
 	{

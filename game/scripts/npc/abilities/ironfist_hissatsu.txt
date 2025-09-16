@@ -34,24 +34,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"movespeed"						"522"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"250"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"2"
-		}
-	}
+	"AbilityValues"
+        {
+            "movespeed" "522"
+            "radius" "250"
+            "duration" "2"
+        }
 	
 	"precache"
 		{

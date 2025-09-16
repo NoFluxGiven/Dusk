@@ -24,45 +24,20 @@
     
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"              "FIELD_FLOAT"
-            "duration"              "3.5"
+            "duration" "3.5"
+            "proj_speed" "3000"
+            "range"
+            {
+                "value" "1000 1200 1400 1600"
+                "LinkedSpecialBonus" "special_bonus_balthasar_2"
+            }
+            "radius" "275"
+            "damage" "50 100 150 200"
+            "damage_over_time" "10 20 30 40"
+            "movespeed" "1000"
         }
-        "02"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "proj_speed"            "3000"
-        }
-        "03"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "range"                 "1000 1200 1400 1600"
-            "LinkedSpecialBonus"    "special_bonus_balthasar_2"
-        }
-        "04"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "radius"                "275"
-        }
-        "05"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "damage"                "50 100 150 200"
-        }
-        "06"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "damage_over_time"      "10 20 30 40"
-        }
-        "07"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "movespeed"             "1000"
-        }
-    }
 
     "precache"
     {

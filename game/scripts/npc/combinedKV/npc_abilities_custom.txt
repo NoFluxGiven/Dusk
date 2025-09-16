@@ -148,7 +148,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/aeronaut_air_raid"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -628,7 +628,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/aether_reality_shift"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
   	"AbilityTextureName"			"aether_reality_shift"
@@ -1317,7 +1317,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -1530,7 +1530,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/alexander_godfall"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
   	"AbilityChannelTime"			"1"
   	"AbilityTextureName"			"alexander_godfall"
@@ -2126,7 +2126,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
   	"AoERadius"						"%radius"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -2256,7 +2256,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/alroth_solwave"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -2755,7 +2755,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/artificer_replica"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -2854,7 +2854,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -3306,7 +3306,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/astaroth_erase"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -4723,7 +4723,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
   	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
@@ -4897,7 +4897,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/baal_superposition2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
   	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
@@ -5603,7 +5603,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -6028,7 +6028,7 @@
       "BaseClass"             "ability_lua"
       "ScriptFile"            "lua/abilities/balthasar_ward_of_the_emerald_flame"
       "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
-      "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+      "AbilityType"                   "ABILITY_TYPE_ULTIMATE"
       "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
       "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
       "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
@@ -6104,7 +6104,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/bloodwarrior_blood_madness"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"AnimationPlaybackRate"			"0.95"
   	"AbilityTextureName"			"bloodwarrior_blood_madness"
@@ -6432,7 +6432,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -7133,7 +7133,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -8079,7 +8079,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
   	"AbilityTextureName"			"invoker_invoke"
   
@@ -8189,7 +8189,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/elena_bladebreaker"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"AbilityDamageType"				"DAMAGE_TYPE_PURE"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -8651,7 +8651,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
   	"AbilityTextureName"			"elena_diverge"
   
@@ -8860,7 +8860,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
   	"AbilityTextureName"			"elena_diverge"
   	"AoERadius"						"550"
@@ -9420,7 +9420,7 @@
       "BaseClass"             "ability_lua"
       "ScriptFile"            "lua/abilities/erra_deathtouch"
       "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-      "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+      "AbilityType"                   "ABILITY_TYPE_ULTIMATE"
       "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
       "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
       "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
@@ -9885,7 +9885,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/fate_ancestral_recall"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELED"
   	"AbilityChannelTime"			"2.0"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -10162,7 +10162,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
   	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -10280,7 +10280,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -10718,7 +10718,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/faust_forbidden_knowledge"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
   	"AbilityTextureName"			"faust_forbidden_knowledge"
@@ -10867,7 +10867,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/faust_netherglyph"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
   	"AbilityTextureName"			"faust_netherglyph"
@@ -11203,7 +11203,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"				"ability_lua"
   	"ScriptFile"			"lua/abilities/fury_berserk"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
   	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
   	"AbilityTextureName"			"fury_rampage"
@@ -11732,7 +11732,7 @@
   	"ScriptFile"			"lua/abilities/gemini_abyssal_shadow"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
   	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -11790,7 +11790,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"				"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -11989,7 +11989,7 @@
   	"ScriptFile"			"lua/abilities/gemini_dimensionquake"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"FightRecapLevel"				"1"
   	"AbilityTextureName"			"gemini_dimensionquake"
   
@@ -12594,7 +12594,7 @@
   	"BaseClass"				"ability_lua"
   	"ScriptFile"			"lua/abilities/gob_squad_clearance_sale"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
   	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -12953,7 +12953,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/hawkeye_detonator_dart"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -13356,7 +13356,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -14037,7 +14037,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/hero_one_punch"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -14194,7 +14194,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"				"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -14790,7 +14790,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/horror_sinister"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -15479,7 +15479,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/ironfist_change_stance"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"MaxLevel"						"1"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
   	"AbilityTextureName"			"ironfist_change_stance"
@@ -15748,7 +15748,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilitySharedCooldown"			"ironfist_focus"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -15874,7 +15874,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilitySharedCooldown"			"ironfist_focus"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -16012,7 +16012,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilitySharedCooldown"			"ironfist_focus"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -16945,7 +16945,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/lich_absolute_zero"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -17278,7 +17278,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"AbilityTextureName"			"lightning_blinding_speed"
   
@@ -17508,7 +17508,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
   	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -17991,7 +17991,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/lightning_overload"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
   	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -18518,7 +18518,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/lupin_last_surprise"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -18921,7 +18921,7 @@
   	"ScriptFile"			"lua/abilities/lysander_phantom_fleet"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
   	"AbilityCastAnimation"			"ACT_DOTA_TELEPORT_END"
   	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
@@ -19366,7 +19366,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/mana_knight_vorpal_assault"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -19440,7 +19440,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -19986,7 +19986,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/mifune_zanmato"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
   	"AoERadius"						"600"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -20075,7 +20075,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
   	"AoERadius"						"600"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -20708,7 +20708,7 @@
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/neith_rally"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
   	"FightRecapLevel"				"1"
@@ -21127,7 +21127,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/nu_warpstar"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
   	"AoERadius"						"350"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -21369,7 +21369,7 @@
       // General
       //-------------------------------------------------------------------------------------------------------------
       "BaseClass"             "ability_datadriven"
-      "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+      "AbilityType"                   "ABILITY_TYPE_ULTIMATE"
       "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
       "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL" 
       "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
@@ -22004,7 +22004,7 @@
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
   	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
   	"FightRecapLevel"				"1"
@@ -22490,7 +22490,7 @@
   	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
   	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AnimationPlaybackRate"			"1.2"
   	"FightRecapLevel"				"1"
   	"AbilityTextureName"			"paragon_smite"
@@ -22677,7 +22677,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/phantom_nightmare"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -23344,7 +23344,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/ptomely_expunge"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -23511,7 +23511,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -23836,7 +23836,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/rai_thunder_roar"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
   	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
@@ -24033,7 +24033,7 @@
   	"BaseClass"				"ability_lua"
   	"ScriptFile"			"lua/abilities/reus_ancient_arena"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"				   
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
   	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -24345,7 +24345,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -25291,7 +25291,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"				"ability_datadriven"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"FightRecapLevel"				"1"
   	"AbilityChannelTime"			"15"
   	"AbilityTextureName"			"set_an_army_beneath_the_sands"
@@ -25969,7 +25969,7 @@
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityTextureName"			"set_sirocco"
   
   	// Casting
@@ -26136,7 +26136,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/shade_isolation"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -26218,7 +26218,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -26791,7 +26791,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/shard_magus_glacial_impact"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
   	"AoERadius"						"%radius"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -27038,7 +27038,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/shard_magus_wyrm_rites"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
   	"AoERadius"						"%radius"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -27259,7 +27259,7 @@
       //-------------------------------------------------------------------------------------------------------------
       "BaseClass"             "ability_lua"
       "ScriptFile"            "lua/abilities/siegfried_heaven_sent"
-      "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+      "AbilityType"                   "ABILITY_TYPE_ULTIMATE"
       "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
       "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
       "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -27395,7 +27395,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -27426,7 +27426,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -27457,7 +27457,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -27488,7 +27488,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -27519,7 +27519,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -27550,7 +27550,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -27581,7 +27581,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -27607,7 +27607,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -27633,7 +27633,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -27664,7 +27664,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -27690,7 +27690,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -27716,7 +27716,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -27747,7 +27747,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -27773,7 +27773,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -27804,7 +27804,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -27830,7 +27830,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -27856,7 +27856,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -27882,7 +27882,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -27913,7 +27913,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -27939,7 +27939,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -27965,7 +27965,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -27996,7 +27996,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28022,7 +28022,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28048,7 +28048,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28074,7 +28074,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28100,7 +28100,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28126,7 +28126,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28152,7 +28152,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -28183,7 +28183,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -28214,7 +28214,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -28245,7 +28245,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -28276,7 +28276,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -28307,7 +28307,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -28338,7 +28338,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -28369,7 +28369,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -28400,7 +28400,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28426,7 +28426,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28452,7 +28452,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28478,7 +28478,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28504,7 +28504,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28530,7 +28530,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28556,7 +28556,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28582,7 +28582,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28608,7 +28608,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -28639,7 +28639,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -28670,7 +28670,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -28701,7 +28701,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -28732,7 +28732,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28758,7 +28758,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28784,7 +28784,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28810,7 +28810,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28836,7 +28836,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28862,7 +28862,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28888,7 +28888,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28914,7 +28914,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -28940,7 +28940,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -28971,7 +28971,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29002,7 +29002,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29033,7 +29033,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29064,7 +29064,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29095,7 +29095,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29126,7 +29126,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29157,7 +29157,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29183,7 +29183,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29209,7 +29209,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29235,7 +29235,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29266,7 +29266,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29297,7 +29297,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29328,7 +29328,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29359,7 +29359,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29385,7 +29385,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29411,7 +29411,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29442,7 +29442,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29473,7 +29473,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29498,7 +29498,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29529,7 +29529,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29555,7 +29555,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29581,7 +29581,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29612,7 +29612,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29638,7 +29638,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29664,7 +29664,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29690,7 +29690,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29716,7 +29716,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29742,7 +29742,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29768,7 +29768,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29794,7 +29794,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29820,7 +29820,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29846,7 +29846,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29872,7 +29872,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29898,7 +29898,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29929,7 +29929,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -29960,7 +29960,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -29986,7 +29986,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30017,7 +30017,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30043,7 +30043,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30069,7 +30069,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30100,7 +30100,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30126,7 +30126,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30157,7 +30157,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30188,7 +30188,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30214,7 +30214,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30240,7 +30240,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30271,7 +30271,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30302,7 +30302,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30333,7 +30333,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30364,7 +30364,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30390,7 +30390,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30416,7 +30416,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30442,7 +30442,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30468,7 +30468,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30494,7 +30494,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30520,7 +30520,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30551,7 +30551,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30582,7 +30582,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30613,7 +30613,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30644,7 +30644,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30675,7 +30675,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30701,7 +30701,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30727,7 +30727,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30753,7 +30753,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30779,7 +30779,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30805,7 +30805,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30831,7 +30831,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -30857,7 +30857,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30888,7 +30888,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30919,7 +30919,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30950,7 +30950,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -30981,7 +30981,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31007,7 +31007,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -31038,7 +31038,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31064,7 +31064,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -31095,7 +31095,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31121,7 +31121,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -31152,7 +31152,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31178,7 +31178,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31204,7 +31204,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31230,7 +31230,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -31261,7 +31261,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -31292,7 +31292,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -31323,7 +31323,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31349,7 +31349,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31375,7 +31375,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31401,7 +31401,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31427,7 +31427,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -31458,7 +31458,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31484,7 +31484,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31510,7 +31510,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31536,7 +31536,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -31567,7 +31567,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31593,7 +31593,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31619,7 +31619,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -31650,7 +31650,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31676,7 +31676,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31702,7 +31702,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -31733,7 +31733,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -31764,7 +31764,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -31795,7 +31795,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31821,7 +31821,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31847,7 +31847,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31873,7 +31873,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31899,7 +31899,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31925,7 +31925,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31951,7 +31951,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -31977,7 +31977,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32003,7 +32003,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32029,7 +32029,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32060,7 +32060,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32091,7 +32091,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32122,7 +32122,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32148,7 +32148,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32174,7 +32174,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32200,7 +32200,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32230,7 +32230,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32260,7 +32260,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32290,7 +32290,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32320,7 +32320,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32350,7 +32350,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32380,7 +32380,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32410,7 +32410,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32441,7 +32441,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32472,7 +32472,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32503,7 +32503,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32529,7 +32529,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32555,7 +32555,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32581,7 +32581,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32612,7 +32612,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32638,7 +32638,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32664,7 +32664,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32690,7 +32690,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32716,7 +32716,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32742,7 +32742,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32773,7 +32773,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32804,7 +32804,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32835,7 +32835,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32866,7 +32866,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32897,7 +32897,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -32923,7 +32923,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32953,7 +32953,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -32984,7 +32984,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -33015,7 +33015,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -33046,7 +33046,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33072,7 +33072,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33098,7 +33098,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33124,7 +33124,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -33155,7 +33155,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33181,7 +33181,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -33212,7 +33212,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33238,7 +33238,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33264,7 +33264,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -33295,7 +33295,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -33326,7 +33326,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -33357,7 +33357,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33383,7 +33383,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33409,7 +33409,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -33440,7 +33440,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -33471,7 +33471,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33497,7 +33497,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   	// Special
   	//-------------------------------------------------------------------------------------------------------------
@@ -33523,7 +33523,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   	// Special
   	//-------------------------------------------------------------------------------------------------------------
@@ -33549,7 +33549,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	//"LinkedAbility"
@@ -33581,7 +33581,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33607,7 +33607,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33633,7 +33633,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33659,7 +33659,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33685,7 +33685,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33711,7 +33711,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33737,7 +33737,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33763,7 +33763,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33789,7 +33789,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33815,7 +33815,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33841,7 +33841,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -33872,7 +33872,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -33903,7 +33903,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -33934,7 +33934,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33960,7 +33960,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -33986,7 +33986,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -34012,7 +34012,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -34038,7 +34038,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -34064,7 +34064,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -34090,7 +34090,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -34116,7 +34116,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -34142,7 +34142,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -34168,7 +34168,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -34194,7 +34194,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -34225,7 +34225,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	"LinkedAbility"
@@ -34256,7 +34256,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -34282,7 +34282,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -34308,7 +34308,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"special_bonus_unique_centaur_2"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+  	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   
   	// Special
@@ -34544,7 +34544,7 @@
       // General
       //-------------------------------------------------------------------------------------
       "BaseClass" "ability_datadriven"
-      "AbilityType"   "DOTA_ABILITY_TYPE_ULTIMATE"
+      "AbilityType"   "ABILITY_TYPE_ULTIMATE"
       "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
       "AbilityUnitDamageType" "DAMAGE_TYPE_PHYSICAL"
       "AbilityTextureName" "summoner_build_sentinel"
@@ -35654,7 +35654,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"				"ability_datadriven"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
   	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -36769,7 +36769,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -36876,7 +36876,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
   	"AbilityTextureName"			"tek_powerup"
@@ -37170,7 +37170,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/tek_tesla_microarray"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -37247,7 +37247,7 @@
   	// General
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_datadriven"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
   	"AbilityTextureName"			"timekeeper_chaos_wave"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -37347,7 +37347,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/timekeeper_chronoshift"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -37411,7 +37411,7 @@
   	//-------------------------------------------------------------------------------------------------------------
   	"BaseClass"						"ability_lua"
   	"ScriptFile"					"lua/abilities/timekeeper_chronoshift_end"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -38517,7 +38517,7 @@
   	"BaseClass"				"ability_datadriven"
   	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
   	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-  	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+  	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
   	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
   	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
   	"FightRecapLevel"				"1"
@@ -40608,7 +40608,7 @@
       "BaseClass"             "ability_lua"    
       "ScriptFile"            "lua/abilities/war_fight_me"
       "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-      "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+      "AbilityType"                   "ABILITY_TYPE_ULTIMATE"
       "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
       "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"
       "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"

@@ -29,20 +29,15 @@
 	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"shock_radius"				"425"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"75 150 225 300"
-			"LinkedSpecialBonus"		"special_bonus_fate_4"
-		}
-	}
+	"AbilityValues"
+        {
+            "shock_radius" "425"
+            "damage"
+            {
+                "value" "75 150 225 300"
+                "LinkedSpecialBonus" "special_bonus_fate_4"
+            }
+        }
 	
 	// Data driven
 	//-------------------------------------------------------------------------------------------------------------

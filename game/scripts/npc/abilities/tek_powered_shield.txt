@@ -32,19 +32,11 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"reduction"					"-30 -45 -60 -75"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"duration"					"8"
-		}
-	}
+	"AbilityValues"
+        {
+            "reduction" "-30 -45 -60 -75"
+            "duration" "8"
+        }
 	
 	"precache"
 		{

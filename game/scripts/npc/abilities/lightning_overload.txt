@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/lightning_overload"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -24,7 +24,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"200"
+	"AbilityManaCost"				"125 150 175"
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -32,40 +32,19 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"150 200 250"
-			"LinkedSpecialBonus"		"special_bonus_lightning_2"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"375"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"ministun"					"0.45"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"-75"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"1.25"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"invuln_duration"			"1.25"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage"
+            {
+                "value" "150 200 250"
+                "LinkedSpecialBonus" "special_bonus_lightning_2"
+            }
+            "radius" "375"
+            "ministun" "0.45"
+            "slow" "100"
+            "slow_duration" "0.75"
+            "invuln_duration" "0.25"
+        }
 	
 	"precache"
 		{

@@ -38,29 +38,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"stack_increase"				"3 4 5 6" // percent
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_agility"					"12 16 20 24"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"7.5"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"scepter_evasion"				"65"
-		}
-	}
+	"AbilityValues"
+        {
+            "stack_increase" "3 4 5 6"
+            "bonus_agility" "12 16 20 24"
+            "duration" "7.5"
+            "scepter_evasion" "65"
+        }
 	
 	"precache"
 		{

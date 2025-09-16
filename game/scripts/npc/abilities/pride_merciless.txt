@@ -34,39 +34,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"40 80 120 160"
-		}
-
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"debuff_duration"			"2.5"
-		}
-
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"4.5"
-		}
-
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"movement_slow"				"25 30 35 40"
-		}
-
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"attack_slow"				"50"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "40 80 120 160"
+            "debuff_duration" "2.5"
+            "duration" "4.5"
+            "movement_slow" "25 30 35 40"
+            "attack_slow" "50"
+        }
 	
 	"precache"
 		{

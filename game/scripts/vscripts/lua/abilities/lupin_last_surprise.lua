@@ -230,7 +230,7 @@ function modifier_calling_card_caster:OnDestroy()
 		t:Destroy()
 	end
 
-	self:GetAbility():UseResources(false, false, true)
+	self:GetAbility():UseResources(false, false, true, true)
 	
 	if self:GetAbility().calling_card_thinker_particle ~= nil then
 		ParticleManager:DestroyParticle(self:GetAbility().calling_card_thinker_particle, false)
@@ -264,6 +264,8 @@ function modifier_calling_card_caster:Activate()
 
 		print(v:GetName())
 
+		local fear_duration = self:GetAbility():GetSpecialValueFor("fear_duration")
+
 		if v:IsRealHero() then
 			local gold_steal = self:GetAbility():GetSpecialValueFor("gold_steal_per_stack") * self:GetStackCount()
 			total_gold = total_gold + gold_steal
@@ -277,8 +279,11 @@ function modifier_calling_card_caster:Activate()
 
 			v:ModifyGold(-gold_steal, false, DOTA_ModifyGold_Unspecified)
 		end
+		if fear_duration > 0 then
+			v:AddNewModifier(caster, self:GetAbility(), "modifier_fear", {duration=fear_duration})
+		end
 		CreateParticleHitloc(v, "particles/units/heroes/hero_lupin/calling_card_unit.vpcf")
-		DealDamage(v,caster,self.damage_per_stack * self:GetStackCount(),self:GetAbility():GetAbilityDamageType(),self:GetAbility(),DOTA_DAMAGE_FLAG_BYPASSES_BLOCK+DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES)
+		DealDamage(v,caster,self.damage_per_stack * self:GetStackCount(),self:GetAbility():GetAbilityDamageType(),self:GetAbility(),DOTA_DAMAGE_FLAG_BYPASSES_PHYSICAL_BLOCK+DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES)
 	end
 
 	ScreenShake(caster:GetCenter(), 100, 4, 0.4, 600, 0, true)
@@ -305,7 +310,7 @@ function modifier_calling_card_caster:Activate()
 		GridNav:DestroyTreesAroundPoint(caster:GetAbsOrigin(), radius, false)
 	end)
 
-	-- self:GetAbility():UseResources(true, true, true)
+	-- self:GetAbility():UseResources(true, true, true, true)
 	self:Destroy()
 end
 
@@ -332,10 +337,10 @@ function modifier_calling_card_debuff:OnCreated(kv)
 
 	self.interval = self:GetAbility():GetSpecialValueFor("interval")
 
-	self:SetStackCount(kv.stacks)
-
+	
 	--- server block
 	if not IsServer() then return end
+	self:SetStackCount(kv.stacks)
 
 	-- if self:GetAbility():GetCaster():HasScepter() then
 		-- self:GetParent():Purge(true, false, false, false, false)

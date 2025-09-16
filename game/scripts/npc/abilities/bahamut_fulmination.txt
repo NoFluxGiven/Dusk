@@ -35,40 +35,19 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"30 50 70 90"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"projectile_speed_increase"		"1100"
-		}
-		"03" 
-		{
-			"var_type"						"FIELD_INTEGER"
-			"attack_range_bonus"			"225"
-			"LinkedSpecialBonus"			"special_bonus_bahamut_2"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"stack_count"					"3"
-		}
-		"05"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"8.0"
-		}
-		"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"scepter_bonus_stacks"			"3"
-		}
-	}
+	"AbilityValues"
+        {
+            "bonus_damage" "30 50 70 90"
+            "projectile_speed_increase" "1100"
+            "attack_range_bonus"
+            {
+                "value" "225"
+                "LinkedSpecialBonus" "special_bonus_bahamut_2"
+            }
+            "stack_count" "3"
+            "duration" "8.0"
+            "scepter_bonus_stacks" "3"
+        }
 	
 	"precache"
 		{

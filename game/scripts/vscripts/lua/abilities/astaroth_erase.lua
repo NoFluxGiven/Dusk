@@ -64,7 +64,7 @@ function modifier_erase:OnIntervalThink()
 		local mdamage = (self.mana_damage + (target:GetMana() * self.cmana_damage)) * self.tick_time
 
 		DealDamage(target,self:GetAbility():GetCaster(),damage,DAMAGE_TYPE_MAGICAL)
-		target:ReduceMana(mdamage)
+		target:Script_ReduceMana(mdamage)
 	end
 end
 

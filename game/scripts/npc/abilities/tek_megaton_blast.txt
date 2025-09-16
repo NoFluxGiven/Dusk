@@ -39,23 +39,8 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"125 200 275 350"
-			"LinkedSpecialBonus"	"special_bonus_tek_2"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"stun"					"0.50"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"delay"					"2.00"
-		}
-	}
+	"AbilityValues"
+        {
+            "special_bonus_facet_gigaton_blast" "+2.0"
+        }
 }

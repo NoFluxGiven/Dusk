@@ -27,34 +27,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"								"FIELD_FLOAT"
-			"duration"								"0.15 0.30 0.45 0.60"
-		}
-		"02"
-		{
-			"var_type"								"FIELD_FLOAT"
-			"mark_damage"							"20 40 60 80"
-		}
-		"03"
-		{
-			"var_type"								"FIELD_INTEGER"
-			"mark_slow"								"-100"
-		}
-		"04"
-		{
-			"var_type"								"FIELD_FLOAT"
-			"mark_slow_duration"					"0.75"
-		}
-		"05"
-		{
-			"var_type"								"FIELD_INTEGER"
-			"mark_aoe"								"250"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "0.15 0.30 0.45 0.60"
+            "mark_damage" "20 40 60 80"
+            "mark_slow" "-100"
+            "mark_slow_duration" "0.75"
+            "mark_aoe" "250"
+        }
 	
 	// Data driven
 	//-------------------------------------------------------------------------------------------------------------

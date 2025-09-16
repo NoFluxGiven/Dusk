@@ -11,10 +11,15 @@ function rai_static_blade:GetBehavior()
 	return DOTA_ABILITY_BEHAVIOR_PASSIVE
 end
 
-function rai_static_blade:Proc(target)
+function rai_static_blade:Proc(target, use)
 	if target:IsBuilding() then return end
 	if target:IsMagicImmune() then return end
-	if not self:IsCooldownReady() then return end
+
+	if ( use == nil ) then
+		use = true
+	end
+
+	if not self:IsCooldownReady() and use == true then return end
 
 	local duration = self:GetSpecialValueFor("silence_duration")
 	local damage = self:GetSpecialValueFor("damage")
@@ -23,7 +28,9 @@ function rai_static_blade:Proc(target)
 
 	self:InflictDamage(target,self:GetCaster(),damage,DAMAGE_TYPE_MAGICAL)
 
-	self:UseResources(false, false, true)
+	if use then
+		self:UseResources(false, false, true)
+	end
 
 	ParticleManager:CreateParticle("particles/units/heroes/hero_rai/static_blade_strike.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 	target:EmitSound("Rai.StaticBlade")

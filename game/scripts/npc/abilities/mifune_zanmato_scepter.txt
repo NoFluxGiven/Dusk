@@ -6,7 +6,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	"AoERadius"						"600"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -33,38 +33,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius_scepter"			"750"
-		}
-		
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_hero_damage_scepter"	"150 225 300"
-		}
-					
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"attack_interval"			"0.2"
-		}
-
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"creep_damage_penalty"		"0"
-		}
-
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"orb_damage"				"60 70 80"
-		}
-	}
+	"AbilityValues"
+        {
+            "radius_scepter" "750"
+            "bonus_hero_damage_scepter" "150 225 300"
+            "attack_interval" "0.2"
+            "creep_damage_penalty" "0"
+            "orb_damage" "60 70 80"
+        }
 	
 	"precache"
 	{

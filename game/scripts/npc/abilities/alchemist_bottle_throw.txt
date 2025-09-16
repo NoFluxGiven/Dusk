@@ -39,65 +39,20 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"tango_damage"					"4 6 8 10"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"tango_duration"				"15"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"flask_damage"					"75 100 125 150"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"clarity_mana_burn"				"30 40 50 60"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"smoke_of_deceit_duration"		"6"
-		}
-	"06"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"dust_slow"						"-10 -15 -20 -25"
-		}
-	"07"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"dust_duration"					"10"
-		}
-	"08"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"enhanced_dust_slow"			"-20 -30 -40 -50"
-		}
-	"09"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"enhanced_smoke_of_deceit_duration"			"12"
-		}
-	"10"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"enhanced_tango_damage"			"8 12 20 24"
-		}
-	"11"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"enhanced_flask_damage"			"150 200 250 300"
-		}
-		
-	}
+	"AbilityValues"
+        {
+            "tango_damage" "4 6 8 10"
+            "tango_duration" "15"
+            "flask_damage" "75 100 125 150"
+            "clarity_mana_burn" "30 40 50 60"
+            "smoke_of_deceit_duration" "6"
+            "dust_slow" "-10 -15 -20 -25"
+            "dust_duration" "10"
+            "enhanced_dust_slow" "-20 -30 -40 -50"
+            "enhanced_smoke_of_deceit_duration" "12"
+            "enhanced_tango_damage" "8 12 20 24"
+            "enhanced_flask_damage" "150 200 250 300"
+        }
 	
 	"precache"
 		{

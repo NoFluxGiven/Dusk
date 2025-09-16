@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/ptomely_expunge"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -36,39 +36,15 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"2.5"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"mana_drain"				"25 40 55"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"575"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"75"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"scepter_mana_drain"		"15"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"base_drain"				"150 200 250"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "2.5"
+            "mana_drain" "25 40 55"
+            "radius" "575"
+            "slow" "75"
+            "scepter_mana_drain" "15"
+            "base_drain" "150 200 250"
+        }
 	
 	"precache"
 		{

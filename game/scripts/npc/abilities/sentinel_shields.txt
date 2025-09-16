@@ -30,14 +30,10 @@
 
     // Specialhj
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"            "FIELD_INTEGER"
-            "bonus_armor"            "15"
+            "bonus_armor" "15"
         }
-    }
     
     "precache"
         {

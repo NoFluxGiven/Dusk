@@ -139,36 +139,12 @@
 	
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"0.5"
-		}
-		
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"400 600 800 1000"
-		}
-		
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"550 550 600 650"
-		}
-		
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"distance"				"400 500 600 700"
-		}
-		
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"height"				"100 200 300 400"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "0.5"
+            "damage" "400 600 800 1000"
+            "radius" "550 550 600 650"
+            "distance" "400 500 600 700"
+            "height" "100 200 300 400"
+        }
 }

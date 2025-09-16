@@ -32,29 +32,18 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"8.0"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_reduction"				"22 28 34 40"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"450"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "8.0"
+            "damage_reduction" "22 28 34 40"
+            "radius" "450"
+        }
 	
 	"precache"
 		{
 		"particle" "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_ambient.vpcf"
 		"particle" "particles/status_fx/status_effect_keeper_spirit_form.vpcf"
+		"particle" "particles/units/heroes/hero_alexander/raise_the_shield_dome.vpcf"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
 		}
 	

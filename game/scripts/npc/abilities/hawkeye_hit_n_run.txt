@@ -37,40 +37,19 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"30 40 50 60"
-			"LinkedSpecialBonus"		"special_bonus_hawkeye_1"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"duration"					"4"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"325"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"-24 -36 -48 -60"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"0.50"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"distance"					"600"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage"
+            {
+                "value" "30 40 50 60"
+                "LinkedSpecialBonus" "special_bonus_hawkeye_1"
+            }
+            "duration" "4"
+            "radius" "325"
+            "slow" "-24 -36 -48 -60"
+            "slow_duration" "0.50"
+            "distance" "600"
+        }
 	
 	"precache"
 		{

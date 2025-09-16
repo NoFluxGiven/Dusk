@@ -36,46 +36,24 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"80 120 160 200"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun"						"1.2 1.6 2.0 2.4"
-			"LinkedSpecialBonus"		"special_bonus_lich_5"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"speed"						"900"
-			"LinkedSpecialBonus"		"special_bonus_lich_3"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"width"						"150"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"range"						"2000"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"scepter_units"				"4"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"scepter_radius"			"120"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "80 120 160 200"
+            "stun"
+            {
+                "value" "1.2 1.6 2.0 2.4"
+                "LinkedSpecialBonus" "special_bonus_lich_5"
+            }
+            "speed"
+            {
+                "value" "900"
+                "LinkedSpecialBonus" "special_bonus_lich_3"
+            }
+            "width" "150"
+            "range" "2000"
+            "scepter_units" "4"
+            "scepter_radius" "120"
+        }
 	
 	"precache"
 		{

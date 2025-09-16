@@ -34,35 +34,18 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage"						"100"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"dps"							"30 40 50 60"
-			"LinkedSpecialBonus"			"special_bonus_bahamut_1"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"5.0"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"575"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"magic_res_reduction"			"12 16 20 24"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "100"
+            "dps"
+            {
+                "value" "30 40 50 60"
+                "LinkedSpecialBonus" "special_bonus_bahamut_1"
+            }
+            "duration" "5.0"
+            "radius" "575"
+            "magic_res_reduction" "12 16 20 24"
+        }
 	
 	"precache"
 		{

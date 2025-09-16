@@ -29,19 +29,11 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"4"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"range"					"300 600 900 1200"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "4"
+            "range" "300 600 900 1200"
+        }
 
 	"precache"
 	{

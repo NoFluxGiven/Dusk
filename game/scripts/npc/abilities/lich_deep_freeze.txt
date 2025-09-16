@@ -28,20 +28,15 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"40 80 120 160"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"stun"				"0.50 0.60 0.70 0.80"
-			"LinkedSpecialBonus"	"special_bonus_lich_1"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "40 80 120 160"
+            "stun"
+            {
+                "value" "0.50 0.60 0.70 0.80"
+                "LinkedSpecialBonus" "special_bonus_lich_1"
+            }
+        }
 
 	"precache"
 	{

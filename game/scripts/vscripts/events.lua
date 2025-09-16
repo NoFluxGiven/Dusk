@@ -427,7 +427,7 @@ function duskDota:OnEntityKilled( keys )
   --DebugPrint( '[DUSKDOTA] OnEntityKilled Called' )
   --DebugPrintTable( keys )
 
-  print("ENTITY KILLED")
+  -- print("ENTITY KILLED")
   
 
   -- The Unit that was Killed
@@ -615,6 +615,8 @@ function duskDota:OnPlayerChat(keys)
   local playerID = self.vUserIds[userID]
   local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 
+  print( teamonly, userID, playerID, hero )
+
   local text = keys.text
 
   if GameRules:IsCheatMode() then
@@ -647,6 +649,10 @@ function duskDota:OnPlayerChat(keys)
       for k,v in pairs(HeroList:GetAllHeroes()) do
         print(hero:GetAbsOrigin())
       end
+    end
+
+    if text == "-si" then
+      hero:AddNewModifier(hero, nil, "modifier_spell_immunity", {Duration=12})
     end
   end
 

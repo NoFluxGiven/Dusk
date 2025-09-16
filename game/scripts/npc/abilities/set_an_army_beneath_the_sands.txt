@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"FightRecapLevel"				"1"
 	"AbilityChannelTime"			"15"
 	"AbilityTextureName"			"set_an_army_beneath_the_sands"
@@ -27,49 +27,17 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"interval"				"1.00"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"950"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"slow"					"-20 -40 -60"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"scepter_interval"		"0.75"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"40 60 80"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"scepter_slow"			"-75"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"scepter_damage"		"60 80 100"
-		}
-		"08"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"level_multiplier"		"0.64"
-		}
-	}
+	"AbilityValues"
+        {
+            "interval" "1.00"
+            "radius" "950"
+            "slow" "-20 -40 -60"
+            "scepter_interval" "0.75"
+            "damage" "40 60 80"
+            "scepter_slow" "-75"
+            "scepter_damage" "60 80 100"
+            "level_multiplier" "0.64"
+        }
 
 	"precache"
 	{

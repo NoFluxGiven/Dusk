@@ -23,11 +23,11 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"4.00 3.25 2.50 1.75"
+	"AbilityCooldown"				"1.75" ///@change Cooldown reduced to 1.75s (was 4.00/3.25/2.50/1.75s).
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"50 75 100 125"
+	"AbilityManaCost"				"75" ///@change Mana Cost reduced to 75 (was 50/75/100/125).
 
 	"HasScepterUpgrade"				"1"
 	
@@ -37,40 +37,19 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"80 120 160 200"
-			"LinkedSpecialBonus"		"special_bonus_tek_1"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"1.5"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"range"						"650"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"20 30 40 50"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"scepter_cooldown"			"1.0"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"scepter_burn"				"40"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage"
+            {
+                "value" "80 120 160 200"
+                "LinkedSpecialBonus" "special_bonus_tek_1"
+            }
+            "duration" "1.5"
+            "range" "650"
+            "slow" "20 30 40 50"
+            "scepter_cooldown" "1.0"
+            "scepter_burn" "40"
+        }
 	
 	"precache"
 		{

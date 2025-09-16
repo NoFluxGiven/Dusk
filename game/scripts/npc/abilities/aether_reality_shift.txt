@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/aether_reality_shift"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityTextureName"			"aether_reality_shift"
@@ -31,34 +31,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"duration"					"4"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"400 425 450"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun"						"2 3 4"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"225 350 475"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"predamage"					"200 300 400"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "4"
+            "radius" "400 425 450"
+            "stun" "2 3 4"
+            "damage" "225 350 475"
+            "predamage" "200 300 400"
+        }
 	
 	"precache"
 		{

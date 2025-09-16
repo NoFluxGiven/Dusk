@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "romanian"
+"Tokens"
+{
+"chat_filterbutton"	"Filtre"
+"filter_joinleave"	"Intrări/Ieșiri"
+"filter_namechange"	"Schimbări de nume"
+"filter_publicchat"	"Discuție Publică"
+"filter_servermsg"	"Mesajele Serverului"
+"filter_teamchange"	"Schimbări de echipă"
+"chat_say"			"Spune :"
+"chat_say_team"	    "Spune (ECHIPĂ) :"
+"chat_say_coach"	"Spune (STUDENȚILOR):"
+"chat_say_student"	"Spune (ANTRENORULUI):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

@@ -36,29 +36,13 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-    "01"
+    "AbilityValues"
         {
-            "var_type"                      "FIELD_INTEGER"
-            "centre_damage"                 "250" // percentage total
+            "centre_damage" "250"
+            "outer_damage" "175"
+            "centre_radius" "200"
+            "outer_radius" "400"
         }
-    "02"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "outer_damage"                  "175" // percentage total
-        }
-    "03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "centre_radius"                 "200" // percentage total
-        }
-    "04"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "outer_radius"                  "400" // percentage total
-        }
-    }
     
     "precache"
         {

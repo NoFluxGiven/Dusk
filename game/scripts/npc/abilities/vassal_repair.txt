@@ -30,19 +30,11 @@
     
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"          "FIELD_INTEGER"
-            "heal"              "20"
+            "heal" "20"
+            "channel_time" "60"
         }
-        "02"
-        {
-            "var_type"          "FIELD_INTEGER"
-            "channel_time"      "60"
-        }
-    }
 
     "precache"
         {

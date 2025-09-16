@@ -42,10 +42,14 @@ function shard_magus_icicle_barrage:OnProjectileHit(t,l)
 			]]
 		end
 
+		if not t:IsHero() then
+			damage = damage * 0.35
+		end
+
 		self:InflictDamage(t,self:GetCaster(),damage,DAMAGE_TYPE_MAGICAL)
 
 		if t_mana_burn > 0 then
-			t:ReduceMana(t_mana_burn)
+			t:Script_ReduceMana(t_mana_burn)
 		end
 
 		local p = ParticleManager:CreateParticle("particles/units/heroes/hero_shard_magus/icicle_hit.vpcf", PATTACH_POINT_FOLLOW, t)
@@ -62,6 +66,7 @@ function modifier_icicle_barrage:OnCreated()
 	if IsServer() then
 		local amt = self:GetAbility():GetSpecialValueFor("icicles")
 		local duration = self:GetDuration() - 1.35
+		local delay = self:GetAbility():GetSpecialValueFor("delay")
 
 		self.dir = self:GetParent().dir
 
@@ -71,7 +76,7 @@ function modifier_icicle_barrage:OnCreated()
 		No Description Set
 		]]
 
-		Timers:CreateTimer(1, function()
+		Timers:CreateTimer(delay, function()
 
 			self:StartIntervalThink(int)
 

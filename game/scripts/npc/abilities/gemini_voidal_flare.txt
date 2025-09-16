@@ -31,7 +31,7 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"14"
+	"AbilityCooldown"				"17"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -39,23 +39,17 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"75 150 225 300"
-			"LinkedSpecialBonus"	"special_bonus_gemini_1"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"2.50 3.25 4.00 4.75"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"slow"					"35"
-		}
-	}
+	"AbilityValues"
+        {
+			"damage"
+			{
+				"value"				"80 120 160 200"
+				"special_bonus_gemini_1"	"+100"
+			}
+			"duration" "2.00"
+			"duration_damage_amp" "90"
+			"damage_bonus" "60"
+			"duration_bonus" "0.5 0.75 1.00 1.25"
+			"slow" "35"
+        }
 }

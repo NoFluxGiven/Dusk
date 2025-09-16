@@ -42,49 +42,17 @@
 	
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"start_radius"			"145 145 145 145"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"end_radius"			"145 145 145 145"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"range"					"1600"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"speed"					"1050"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"slow"					"-50"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"slow_duration"			"1.40 1.80 2.20 2.60"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"radius"				"300"
-		}
-		"08"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"projectile_speed"		"1000"
-		}
-	}
+	"AbilityValues"
+        {
+            "start_radius" "145 145 145 145"
+            "end_radius" "145 145 145 145"
+            "range" "1600"
+            "speed" "1050"
+            "slow" "-50"
+            "slow_duration" "1.40 1.80 2.20 2.60"
+            "radius" "300"
+            "projectile_speed" "1000"
+        }
 
 	"Modifiers"
 	{

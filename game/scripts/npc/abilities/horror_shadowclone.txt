@@ -29,35 +29,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"illusion_duration"		"6 9 12 15"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"illusion_damage"		"-50 -45 -40 -35"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"illusion_incoming"		"225"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"illusion_bonus_attack_speed" "15 20 25 30"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"illusion_bonus_move_speed" "10 20 30 40"
-		}
-		
-	}
+	"AbilityValues"
+        {
+            "illusion_duration" "6 9 12 15"
+            "illusion_damage" "-50 -45 -40 -35"
+            "illusion_incoming" "225"
+            "illusion_bonus_attack_speed" "15 20 25 30"
+            "illusion_bonus_move_speed" "10 20 30 40"
+        }
 
 	"precache"
 	{

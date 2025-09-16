@@ -35,44 +35,16 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"cooldown_increase"				"20 30 40 50" // percentage total
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"slow"							"-20 -40 -60 -80"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"5" // increased from 2/3/4/5
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"respawn_tooltip"				"10 20 30 40"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"respawn_increase"				"1.1 1.2 1.3 1.4"
-		}
-	"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"casttime_increase"				"140 160 180 200"
-		}
-	"07"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"speed"							"20 40 60 80"
-		}
-	}
+	"AbilityValues"
+        {
+            "cooldown_increase" "20 30 40 50"
+            "slow" "-20 -40 -60 -80"
+            "duration" "5"
+            "respawn_tooltip" "10 20 30 40"
+            "respawn_increase" "1.1 1.2 1.3 1.4"
+            "casttime_increase" "140 160 180 200"
+            "speed" "20 40 60 80"
+        }
 	
 	"precache"
 		{

@@ -41,40 +41,19 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"illusion_damage"				"-60" // percentage total
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"illusion_incoming"				"600" // percentage total
-		}
-	"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"illusion_duration"				"3.5 5.0 6.5 8.0"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"illusion_tooltip"				"40" // percentage total
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"illusion_bonus_movespeed"		"25"
-		}
-	"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"illusions"						"4"
-			"LinkedSpecialBonus"			"special_bonus_mifune_3"
-		}
-	}
+	"AbilityValues"
+        {
+            "illusion_damage" "-75 -70 -65 -60"
+            "illusion_incoming" "450"
+            "illusion_duration" "4"
+            "illusion_tooltip" "25 30 35 40"
+            "illusion_bonus_movespeed" "25"
+            "illusions"
+            {
+                "value" "4"
+                "LinkedSpecialBonus" "special_bonus_mifune_3"
+            }
+        }
 	
 	"precache"
 		{

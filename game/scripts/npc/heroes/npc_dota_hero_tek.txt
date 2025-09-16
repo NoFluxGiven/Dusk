@@ -27,6 +27,22 @@
 	"Ability16"				"special_bonus_tek_3" // +15 Mosquito Missiles Damage
 	"Ability17"				"special_bonus_cooldown_reduction_15" // 
 
+	"Facets"
+	{
+		"tek_compound_tech"
+		{
+			"Icon"				"grenade"
+			"Color"				"Red"
+			"GradientID"		"0"
+		}
+		"tek_gigaton_blast"
+		{
+			"Icon"				"grenade"
+			"Color"				"Red"
+			"GradientID"		"0"
+		}
+	}
+
 	//"Ability3"				"tek_aerial_assault_mines" // Tek can place 3/4/5/6 targets in quick succession within a huge range. 
 	// Upon placing all of them, or 2s after placing a target without placing another, Tek fires some small mines up into the stratosphere, where they quickly land at the targeted spots.
 	// After a short delay, the mines explode, dealing Magical damage in an AoE.

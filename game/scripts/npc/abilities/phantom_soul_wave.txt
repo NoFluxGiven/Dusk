@@ -36,45 +36,20 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"delay"							"0.25"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"radius"						"425"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"slow"							"12 24 36 48"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"slow_duration"					"3.0"
-			"LinkedSpecialBonus"			"special_bonus_phantom_2"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage"						"70 140 210 280"
-		}
-	"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"mult"							"50"
-		}
-	"07"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"creep_mult"					"25"
-		}
-	}
+	"AbilityValues"
+        {
+            "delay" "0.25"
+            "radius" "425"
+            "slow" "12 24 36 48"
+            "slow_duration"
+            {
+                "value" "3.0"
+                "LinkedSpecialBonus" "special_bonus_phantom_2"
+            }
+            "damage" "70 140 210 280"
+            "mult" "50"
+            "creep_mult" "25"
+        }
 	
 	"precache"
 		{

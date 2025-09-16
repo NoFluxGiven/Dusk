@@ -4,7 +4,7 @@
 
 ///@version 2.3
 ///@chg Reworked: now performs a deadly strike against a single target. If the unit is below [20/25/30%] Health, they are instantly killed. Otherwise, they take [300] Physical damage. Has a [0.6s] delay before the damage occurs.
-///@abilityspecials threshold, base_damage, delay
+///@AbilitySpecials threshold, base_damage, delay
 ///@chg 
 "mifune_zanmato"
 {
@@ -12,7 +12,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/mifune_zanmato"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -42,33 +42,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"threshold"					"22"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"delay"						"1.3"
-		}
-					
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slash_damage"				"200 275 350"
-		}
-
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_agility"				"4 6 8"
-		}
-
-		   
-	}
+	"AbilityValues"
+        {
+            "threshold" "22"
+            "delay" "1.3"
+            "slash_damage" "200 275 350"
+            "duration" "4.5"
+            "bonus_agility" "4 6 8"
+        }
 	
 	"precache"
 	{

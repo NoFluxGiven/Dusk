@@ -7,7 +7,7 @@
     "BaseClass"             "ability_lua"
     "ScriptFile"            "lua/abilities/war_warbellow"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-    "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityType"                   "ABILITY_TYPE_ULTIMATE"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
@@ -35,40 +35,18 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        
-        "01"
+    "AbilityValues"
         {
-            "var_type"              "FIELD_INTEGER"
-            "radius"                "380"
+            "radius" "380"
+            "damage" "250 400 550"
+            "reflect" "100"
+            "reflect_duration"
+            {
+                "value" "3.5 4.0 4.5"
+                "LinkedSpecialBonus" "special_bonus_war_5"
+            }
+            "propagation_radius" "0"
         }
-
-        "02"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "damage"                "250 400 550"
-        }
-
-        "03"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "reflect"               "100"
-        }
-
-        "04"
-        {
-            "var_type"              "FIELD_FLOAT"
-            "reflect_duration"      "3.5 4.0 4.5"
-            "LinkedSpecialBonus"    "special_bonus_war_5"
-        }
-
-        "05"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "propagation_radius"    "0"
-        }
-    }
 
     "precache"
     {

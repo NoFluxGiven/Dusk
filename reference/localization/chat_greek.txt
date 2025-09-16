@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "greek"
+"Tokens"
+{
+"chat_filterbutton"	"Φίλτρο"
+"filter_joinleave"	"Συμμετέχει/Αποχωρεί"
+"filter_namechange"	"Αλλαγές ονόματος"
+"filter_publicchat"	"Δημόσια συνομιλία"
+"filter_servermsg"	"Μηνύματα διακομιστή"
+"filter_teamchange"	"Αλλαγές ομάδας"
+"chat_say"			"Μήνυμα:"
+"chat_say_team"	    "Μήνυμα (ΟΜΑΔΑ):"
+"chat_say_coach"	"Μήνυμα (ΣΕ ΜΑΘΗΤΕΣ):"
+"chat_say_student"	"Μήνυμα (ΣΕ ΚΑΘΟΔΗΓΗΤΗ):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

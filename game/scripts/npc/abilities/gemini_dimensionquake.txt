@@ -9,7 +9,7 @@
 	"ScriptFile"			"lua/abilities/gemini_dimensionquake"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"gemini_dimensionquake"
 
@@ -32,24 +32,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"450"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"175 290 415"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"stun"					"3.00 4.00 5.00"
-		}
-	}
+	"AbilityValues"
+        {
+            "radius" "450"
+            "damage" "175 290 415"
+            "stun" "3.00 4.00 5.00"
+        }
 
 	"precache"
 	{

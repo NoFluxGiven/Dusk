@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"lua/abilities/faust_forbidden_knowledge"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"faust_forbidden_knowledge"
@@ -31,24 +31,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"cooldown_reduction"			"8 10 12"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"max_stacks"					"5"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"6.0"
-		}
-	}
+	"AbilityValues"
+        {
+            "cooldown_reduction" "8 10 12"
+            "max_stacks" "5"
+            "duration" "6.0"
+        }
 	
 	"precache"
 		{

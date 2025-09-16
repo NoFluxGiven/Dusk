@@ -36,27 +36,11 @@
 
     // Special Values
     //----------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"                  "FIELD_INTEGER"
-            "attack_speed_bonus"        "250"
+            "attack_speed_bonus" "250"
+            "movespeed_bonus" "6 8 10 12"
+            "incoming_damage_bonus" "30"
+            "duration" "3.5"
         }
-        "02"
-        {
-            "var_type"                  "FIELD_INTEGER"
-            "movespeed_bonus"           "6 8 10 12"
-        }
-        "03"
-        {
-            "var_type"                  "FIELD_INTEGER"
-            "incoming_damage_bonus"     "30"
-        }
-        "04"
-        {
-            "var_type"                  "FIELD_FLOAT"
-            "duration"                  "3.5"
-        }
-    }
 }

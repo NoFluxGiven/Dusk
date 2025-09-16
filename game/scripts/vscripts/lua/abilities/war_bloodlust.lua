@@ -115,7 +115,7 @@ function modifier_bloodlust:OnAttackLanded(kv)
 
 			-- tick damage on attack
 
-			local mult = kv.attacker:IsHero() and 1 or 0.5
+			local mult = kv.attacker:IsHero() and 1 or 0.7
 
 			if kv.attacker:IsHero() then kv.attacker:EmitSound("War.Bloodlust.Attack") end
 			self:TickDamage(self:GetStackCount() * mult)

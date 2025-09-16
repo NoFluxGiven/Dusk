@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"				"ability_lua"
 	"ScriptFile"			"lua/abilities/fury_berserk"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"AbilityTextureName"			"fury_rampage"
@@ -18,30 +18,17 @@
 			
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_attackspeed"				"200 300 400"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"bat"							"1.0"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"2.5"
-			"LinkedSpecialBonus"			"special_bonus_fury_4"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"cooldown_reduction"			"1.5 2.25 3.0"
-		}
-	}
+	"AbilityValues"
+        {
+            "bonus_attackspeed" "200 300 400"
+            "bat" "1.0"
+            "duration"
+            {
+                "value" "2.5"
+                "LinkedSpecialBonus" "special_bonus_fury_4"
+            }
+            "cooldown_reduction" "1.5 2.25 3.0"
+        }
 	
 	// Data driven
 	//-------------------------------------------------------------------------------------------------------------

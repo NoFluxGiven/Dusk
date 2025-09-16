@@ -31,49 +31,17 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"counter_time"					"1.0"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"reduction"						"50"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage"						"125 175 225 275"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"stun"							"0.8"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"perfect_time"					"0"
-		}
-	"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"perfect_damage"				"150 200 250 300"
-		}
-	"07"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"perfect_stun"					"0.75 1.00 1.25 1.50"
-		}
-	"08"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"base_damage"					"40 50 60 70"
-		}
-	}
+	"AbilityValues"
+        {
+            "counter_time" "1.0"
+            "reduction" "50"
+            "damage" "125 175 225 275"
+            "stun" "0.8"
+            "perfect_time" "0"
+            "perfect_damage" "150 200 250 300"
+            "perfect_stun" "0.75 1.00 1.25 1.50"
+            "base_damage" "40 50 60 70"
+        }
 	
 	"precache"
 		{

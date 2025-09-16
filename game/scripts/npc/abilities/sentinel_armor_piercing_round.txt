@@ -34,14 +34,10 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"            "FIELD_INTEGER"
-            "armor_reduction"     "-1"
+            "armor_reduction" "-1"
         }
-    }
     
     "precache"
         {

@@ -34,19 +34,11 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"movespeed"						"3 5 7 9"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"attkspeed"						"7 14 21 28"
-		}
-	}
+	"AbilityValues"
+        {
+            "movespeed" "3 5 7 9"
+            "attkspeed" "7 14 21 28"
+        }
 	
 	"precache"
 		{

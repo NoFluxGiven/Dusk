@@ -7,6 +7,25 @@
 	m_nConstantSequenceNumber = 2
 	m_nFirstMultipleOverride_BackwardCompat = 4
 	m_nBehaviorVersion = 12
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 4
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
 	m_PreEmissionOperators = 
 	[
 		{
@@ -115,7 +134,7 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 1, 9, 187, 255 ]
+			m_ColorFade = [ 255, 69, 0 ]
 		},
 	]
 	m_Renderers = 

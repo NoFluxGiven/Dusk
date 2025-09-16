@@ -28,30 +28,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_regen"			"5"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"20"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aura_damage"			"70"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aura_radius"			"700"
-		}
-		
-	}
+	"AbilityValues"
+        {
+            "bonus_regen" "5"
+            "bonus_armor" "20"
+            "aura_damage" "70"
+            "aura_radius" "700"
+        }
 
 	"precache"
 	{

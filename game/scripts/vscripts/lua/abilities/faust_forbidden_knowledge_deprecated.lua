@@ -54,7 +54,7 @@ function modifier_forbidden_knowledge_deprecated:GetModifierProcAttack_BonusDama
 	-- if target_mana < mana_drain then
 	-- 	mana_drain = target_mana
 	-- end
-	-- params.target:ReduceMana(mana_drain)
+	-- params.target:Script_ReduceMana(mana_drain)
 	-- params.attacker:GiveMana(mana_drain)
 	return dmg
 end

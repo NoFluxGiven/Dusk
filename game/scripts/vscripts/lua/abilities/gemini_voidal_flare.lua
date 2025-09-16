@@ -5,6 +5,7 @@
 gemini_voidal_flare = class({})
 
 LinkLuaModifier("modifier_voidal_flare","lua/abilities/gemini_voidal_flare",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_voidal_flare_damage_amp","lua/abilities/gemini_voidal_flare",LUA_MODIFIER_MOTION_NONE)
 
 function gemini_voidal_flare:OnSpellStart()
 	local c = self:GetCaster()
@@ -77,29 +78,63 @@ end
 function gemini_voidal_flare:OnProjectileHit(t,l)
 	if t then
 		local duration = self:GetSpecialValueFor("duration")
-		local modifier = t:FindModifierByName("modifier_voidal_flare")
+		local duration_damage_amp = self:GetSpecialValueFor("duration_damage_amp")
+		local base_damage_bonus = self:GetSpecialValueFor("damage_bonus")
+		local base_duration_bonus = self:GetSpecialValueFor("duration_bonus")
+		local modifier = t:FindModifierByName("modifier_voidal_flare_damage_amp")
 
 		local t_purge = self:GetCaster():FindTalentValue("special_bonus_gemini_3") or false
 
 		if t:IsMagicImmune() then return end
 
 		if t_purge then
-			t:Purge(false, true, false, false, false)
+			-- t:Purge(false, true, false, false, false)
 		end
 
-		t:AddNewModifier(self:GetCaster(), self, "modifier_voidal_flare", {Duration=duration, stack=1})
-		-- will set the stack to 1 if creating, or add when refreshing
+		local damage_bonus = 0
+		local duration_bonus = 0
 
 		if modifier then
 			stack = modifier:GetStackCount()
+			damage_bonus = base_damage_bonus * stack
+			duration_bonus = base_duration_bonus * stack
 		end
 
-		local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_gemini_1") or 0
-		local damage_bonus = self:GetSpecialValueFor("damage") + t_damage_bonus
+		t:AddNewModifier(self:GetCaster(), self, "modifier_voidal_flare", {Duration=duration + duration_bonus, stack=1})
+		t:AddNewModifier(self:GetCaster(), self, "modifier_voidal_flare_damage_amp", {Duration=duration_damage_amp, stack=1})
+		-- will set the stack to 1 if creating, or add when refreshing
 
-		self:InflictDamage(t,self:GetCaster(),damage_bonus,DAMAGE_TYPE_MAGICAL)
+		
+
+		local t_damage_bonus = self:GetCaster():FindTalentValue("special_bonus_gemini_1") or 0
+		local damage = self:GetSpecialValueFor("damage") + t_damage_bonus + damage_bonus
+
+		self:InflictDamage(t,self:GetCaster(), damage, DAMAGE_TYPE_MAGICAL)
 
 		t:EmitSound("Voidwalker.VoidalFlare.Hit")
+	end
+end
+
+modifier_voidal_flare_damage_amp = class({})
+
+function modifier_voidal_flare_damage_amp:OnCreated(kv)
+	print("CREATED")
+	PrintTable(kv)
+	if IsServer() then
+		local stacks = kv.stack
+
+		self:SetStackCount(stacks)
+	end
+end
+
+function modifier_voidal_flare_damage_amp:OnRefresh(kv)
+	print("REFRESHED")
+	if IsServer() then
+		print("Stacks:")
+		local stacks = kv.stack
+		print(stacks)
+
+		self:SetStackCount(self:GetStackCount() + stacks)
 	end
 end
 
@@ -114,7 +149,7 @@ end
 
 function modifier_voidal_flare:CheckState()
 	local state = {
-		[MODIFIER_STATE_DISARMED] = true,
+		-- [MODIFIER_STATE_DISARMED] = true,
 		[MODIFIER_STATE_SILENCED] = true
 	}
 

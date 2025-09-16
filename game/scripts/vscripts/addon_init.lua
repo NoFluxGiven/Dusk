@@ -54,3 +54,5 @@ if IsClient() then
 	require("libraries/extend_client")
 	require("internal/util_client")
 end
+
+require("libraries/barrier")

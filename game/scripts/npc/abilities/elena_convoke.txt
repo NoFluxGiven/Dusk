@@ -34,34 +34,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage"						"15 30 45 60" // to both health and mana
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"radius"						"350 375 400 425"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"8"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"creep_heal"					"3 6 9 12"
-		}
-	"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"ally_heal"						"8 16 24 32"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "15 30 45 60"
+            "radius" "350 375 400 425"
+            "duration" "8"
+            "creep_heal" "3 6 9 12"
+            "ally_heal" "8 16 24 32"
+        }
 	
 	"precache"
 		{

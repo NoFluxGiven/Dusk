@@ -46,25 +46,16 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"750"
-			"LinkedSpecialBonus"	"special_bonus_baal_2"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"stun"					"1.25 2.00 2.75 3.5"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"6"
-		}
-	}
+	"AbilityValues"
+        {
+            "radius"
+            {
+                "value" "750"
+                "LinkedSpecialBonus" "special_bonus_baal_2"
+            }
+            "stun" "1.25 2.00 2.75 3.5"
+            "duration" "6"
+        }
 
 	"OnSpellStart"
 	{

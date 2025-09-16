@@ -34,24 +34,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"50 75 100 125"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"trinity_as"				"20 40 60 80"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_as"					"4 8 12 16"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage" "50 75 100 125"
+            "trinity_as" "20 40 60 80"
+            "bonus_as" "4 8 12 16"
+        }
 	
 	"precache"
 		{

@@ -30,30 +30,13 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"8 10 12 14"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"increase"				"15"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"10"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"movespeed"				"20 25 30 35"
-		}
-		
-	}
+	"AbilityValues"
+        {
+            "duration" "8 10 12 14"
+            "increase" "15"
+            "damage" "10"
+            "movespeed" "20 25 30 35"
+        }
 
 	"precache"
 	{

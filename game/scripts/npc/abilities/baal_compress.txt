@@ -45,19 +45,11 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"magic_missile_speed"	"1250"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"4.00 5.00 6.00 7.00"
-		}
-	}
+	"AbilityValues"
+        {
+            "magic_missile_speed" "1250"
+            "duration" "4.00 5.00 6.00 7.00"
+        }
 
 	"Modifiers"
 	{

@@ -34,34 +34,14 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"damage_mult"				"0.50 0.60 0.70 0.80"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"6"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"mres_reduction"			"-12 -18 -24 -30"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"-12 -16 -20 -24"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"mana_burn"					"2.0"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage_mult" "0.50 0.60 0.70 0.80"
+            "duration" "6"
+            "mres_reduction" "-12 -18 -24 -30"
+            "slow" "-12 -16 -20 -24"
+            "mana_burn" "2.0"
+        }
 	
 	"precache"
 		{

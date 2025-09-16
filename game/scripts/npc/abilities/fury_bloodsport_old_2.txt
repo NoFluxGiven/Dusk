@@ -13,24 +13,12 @@
 			
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"crit_chance"					"15"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bleed"							"4 6 8 10"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bleed_duration"				"25"
-		}
-	}
+	"AbilityValues"
+        {
+            "crit_chance" "15"
+            "bleed" "4 6 8 10"
+            "bleed_duration" "25"
+        }
 	
 	// Data driven
 	//-------------------------------------------------------------------------------------------------------------

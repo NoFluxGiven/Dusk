@@ -37,30 +37,17 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"4"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage"						"16 24 32 40" // percent of damage taken over the effect's duration
-			"LinkedSpecialBonus"			"special_bonus_nu_1"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"aoe"							"375"
-		}
-	"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"damage_duration"				"3"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "4"
+            "damage"
+            {
+                "value" "16 24 32 40"
+                "LinkedSpecialBonus" "special_bonus_nu_1"
+            }
+            "aoe" "375"
+            "damage_duration" "3"
+        }
 	
 	"precache"
 		{

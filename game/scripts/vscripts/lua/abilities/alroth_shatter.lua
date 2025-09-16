@@ -43,7 +43,7 @@ function modifier_shatter:OnAttackLanded(params)
 			No Description Set
 			]]
 			self:GetAbility():InflictDamage(target,caster,damage,DAMAGE_TYPE_MAGICAL)
-			target:ReduceMana(damage*mana_burn)
+			target:Script_ReduceMana(damage*mana_burn)
 			self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()-1))
 			caster:EmitSound("Alroth.Shatter")
 			CreateParticleHitloc(target,"particles/units/heroes/hero_alroth/shatter_hit_target_enemy.vpcf")

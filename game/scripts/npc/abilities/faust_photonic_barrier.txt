@@ -39,24 +39,12 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-	"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"						"8.00"
-		}
-	"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"truesight_radius"				"600"
-		}
-	"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_reduction"				"35 50 65"
-		}
-	}
+	"AbilityValues"
+        {
+            "duration" "8.00"
+            "truesight_radius" "600"
+            "damage_reduction" "35 50 65"
+        }
 	
 	"precache"
 		{

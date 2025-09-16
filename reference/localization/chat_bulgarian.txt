@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "bulgarian"
+"Tokens"
+{
+"chat_filterbutton"	"Филтри"
+"filter_joinleave"	"Присъединявания/напускания"
+"filter_namechange"	"Промени в прякорите"
+"filter_publicchat"	"Публичен чат"
+"filter_servermsg"	"Сървърни съобщения"
+"filter_teamchange"	"Промяна на отборите"
+"chat_say"			"Кажете:"
+"chat_say_team"	    "Кажете (ДО ОТБОРА):"
+"chat_say_coach"	"Кажете (ДО УЧЕНИЦИТЕ):"
+"chat_say_student"	"Кажете (ДО ТРЕНЬОРА):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

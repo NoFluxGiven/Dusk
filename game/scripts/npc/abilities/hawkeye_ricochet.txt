@@ -37,20 +37,15 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"hits"						"4"
-			"LinkedSpecialBonus"		"special_bonus_hawkeye_2"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage_reduction"			"-70 -55 -40 -25"
-		}
-	}
+	"AbilityValues"
+        {
+            "hits"
+            {
+                "value" "4"
+                "LinkedSpecialBonus" "special_bonus_hawkeye_2"
+            }
+            "damage_reduction" "-70 -55 -40 -25"
+        }
 	
 	"precache"
 		{

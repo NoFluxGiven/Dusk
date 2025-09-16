@@ -23,31 +23,16 @@
 			
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"reset_time"					"6" ///@< RESET TIME:
-		}
-		"02"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"reset_time_roshan"				"4"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_amp"					"2 3 4 5"
-			"LinkedSpecialBonus"			"special_bonus_fury_2"
-			"modifiers" {
-				"modifier_fury_damage_amp" {
-					"name" "Rend Damage Amplification"
-					"description" "Taking more damage when being struck by attacks."
-				}
-			}
-		}
-	}
+	"AbilityValues"
+        {
+            "reset_time" "6"
+            "reset_time_roshan" "4"
+            "damage_amp"
+            {
+                "value" "2 3 4 5"
+                "LinkedSpecialBonus" "special_bonus_fury_2"
+            }
+        }
 	
 	// Data driven
 	//-------------------------------------------------------------------------------------------------------------

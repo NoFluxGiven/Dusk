@@ -1,0 +1,18 @@
+﻿"lang"
+{
+"Language" "czech"
+"Tokens"
+{
+"chat_filterbutton"	"Filtry"
+"filter_joinleave"	"Připojení/Odpojení"
+"filter_namechange"	"Změny jmen"
+"filter_publicchat"	"Veřejný chat"
+"filter_servermsg"	"Zprávy serveru"
+"filter_teamchange"	"Změny týmu"
+"chat_say"			"Zpráva:"
+"chat_say_team"	    "Zpráva (TÝM):"
+"chat_say_coach"	"Zpráva (STUDENTI):"
+"chat_say_student"	"Zpráva (TRENÉR):"
+"chat_sourcetv"     "(Dota TV) %s1"
+}
+}

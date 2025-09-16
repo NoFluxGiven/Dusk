@@ -44,34 +44,14 @@
 	
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"350"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"4"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"movespeed_bonus"		"60"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health_damage"			"50"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"total"					"70"
-		}
-	}
+	"AbilityValues"
+        {
+            "radius" "350"
+            "duration" "4"
+            "movespeed_bonus" "60"
+            "health_damage" "50"
+            "total" "70"
+        }
 
 	"Modifiers"
 	{

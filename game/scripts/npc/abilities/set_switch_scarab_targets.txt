@@ -29,12 +29,8 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"percent_damage_reduction" "15 30 45 60"
-		}
-	}
+	"AbilityValues"
+        {
+            "percent_damage_reduction" "15 30 45 60"
+        }
 }

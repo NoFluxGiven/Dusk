@@ -37,30 +37,17 @@
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"80 160 240 320"
-			"LinkedSpecialBonus"		"special_bonus_nu_3"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"100"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"1.00 1.75 2.50 3.25"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"275"
-		}
-	}
+	"AbilityValues"
+        {
+            "damage"
+            {
+                "value" "80 160 240 320"
+                "LinkedSpecialBonus" "special_bonus_nu_3"
+            }
+            "slow" "100"
+            "slow_duration" "1.00 1.75 2.50 3.25"
+            "radius" "275"
+        }
 	
 	"precache"
 		{

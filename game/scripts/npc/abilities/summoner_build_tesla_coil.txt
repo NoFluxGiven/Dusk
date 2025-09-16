@@ -18,19 +18,11 @@
 
     // Special
     //-------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
+    "AbilityValues"
         {
-            "var_type"                      "FIELD_INTEGER"
-            "slow_tooltip"                  "-5 -10 -15 -20"
+            "slow_tooltip" "-5 -10 -15 -20"
+            "damage_tooltip" "10 15 20 25"
         }
-        "02"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "damage_tooltip"                "10 15 20 25"
-        }
-    }
 
     "precache"
     {

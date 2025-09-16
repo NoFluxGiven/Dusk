@@ -2,6 +2,7 @@
 {
 	"AbilityLayout" 		"4"
 	//"override_hero"			"npc_dota_hero_phantom_assassin"
+	"SoundSet"		"Hero_Silencer"
 	"Role"					"Nuker"
 	"Rolelevels"			"3"
 	"Complexity"			"1"
@@ -18,7 +19,6 @@
 	// Lightning becomes a mass of electrical energy,
 	// gaining complete invulnerability and disjointing projectiles,
 	// and dealing damage, slowing, and ministunning enemies around her.
-	// She cannot cast Spells, attack or move whilst invulnerable.
 	"Ability7"				""
 	"Ability8"				""
 	"Ability9"				""
@@ -35,15 +35,17 @@
 	"MagicalResistance"				"25"									// Magical protection (percentage).
 
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackRange"				"650"
+	"AttackRange"				"525"
 	"AttackRate"				"1.6"
 	"AttackDamageMin"			"21"										// Damage range min.
 	"AttackDamageMax"			"23"										// Damage range max.
 	"ProjectileModel"            "particles/units/heroes/hero_lightning/lightning_dagger_arcana.vpcf"
 	"ProjectileSpeed"            "1200"
 
+	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+
 	"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-	"AttributeBaseStrength"		"21"										// Base strength
+	"AttributeBaseStrength"		"19"										// Base strength
 	"AttributeStrengthGain"		"1.8"										// Strength bonus per level.
 	"AttributeBaseIntelligence"	"22"										// Base intelligence
 	"AttributeIntelligenceGain"	"2.1"										// Intelligence bonus per level.

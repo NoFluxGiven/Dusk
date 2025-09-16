@@ -16,6 +16,10 @@
 
 	//==========================================
 
+	// Custom Heroes
+
+	"npc_dota_hero_riki" "1"
+
 	// Full Conversion Completed (Lua+Talents):
 
 	"npc_dota_hero_ember_spirit" "1"
@@ -38,22 +42,21 @@
 	"npc_dota_hero_leshrac" "1"
 	"npc_dota_hero_necrolyte" "1"
 	"npc_dota_hero_enigma" "1"
-	"npc_dota_hero_riki" "1"
 	"npc_dota_hero_crystal_maiden" "1"
 	"npc_dota_hero_sand_king" "1"
 	"npc_dota_hero_shredder" "1"
+	"npc_dota_hero_legion_commander" "1" // NEITH - needs rework but i like
 
-	"npc_dota_hero_night_stalker" "0" // weird
-	"npc_dota_hero_bloodseeker" "0" // boring
-	"npc_dota_hero_doom_bringer" "0" // very boring
-	"npc_dota_hero_oracle" "0" // confusing
-	"npc_dota_hero_chaos_knight" "0" // very boring
-	"npc_dota_hero_keeper_of_the_light" "0" // boring and weird
-	"npc_dota_hero_legion_commander" "0" // needs rework
-	"npc_dota_hero_lich" "0" // boring
-	"npc_dota_hero_omniknight" "0" // boring
+	"npc_dota_hero_night_stalker" "0" // TERROR - weird
+	"npc_dota_hero_bloodseeker" "0" // SANGUINE - boring
+	"npc_dota_hero_doom_bringer" "0" // ALROTH - very boring
+	"npc_dota_hero_oracle" "0" // FATE - confusing?
+	"npc_dota_hero_chaos_knight" "0" // MANA KNIGHT - yawn very boring
+	"npc_dota_hero_keeper_of_the_light" "0" // TIMEKEEPERERER - boring and weird and super not interesting
+	"npc_dota_hero_lich" "0" // THE LICH - boring
+	"npc_dota_hero_omniknight" "0" // PARAGON - boring boring boring boring boring boring boring boring but I like his ult
 
-	"npc_dota_hero_jakiro" "0" // slight rework
+	"npc_dota_hero_jakiro" "1" // slight rework
 	"npc_dota_hero_wisp" "0" // rework
 	"npc_dota_hero_ursa" "0" // rework
 	
